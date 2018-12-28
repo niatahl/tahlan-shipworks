@@ -1,0 +1,9 @@
+{
+	"id":"tahlan", # internal id
+	"name":"Tahlan Shipworks", # displayed to the player
+	"author":"Nia and Nicke",
+	"version":"0.1",
+	"description":"The Knights of Ni made a ship pack",
+	"gameVersion":"0.8.1a",
+	"jars":["jars/TahlanShipworks.jar"],
+}

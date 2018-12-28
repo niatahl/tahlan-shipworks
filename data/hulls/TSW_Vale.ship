@@ -1,0 +1,324 @@
+{
+  "bounds": [
+    -62,
+    -15,
+    -66,
+    -16.5,
+    -61,
+    -22,
+    -43,
+    -25.5,
+    -40,
+    -30.5,
+    -68.5,
+    -30.5,
+    -73,
+    -27.5,
+    -91,
+    -28,
+    -73,
+    -39,
+    -46,
+    -42,
+    -42,
+    -57,
+    -27,
+    -58.5,
+    2,
+    -74,
+    14.5,
+    -73,
+    -5.5,
+    -53.5,
+    14,
+    -45.5,
+    15,
+    -40,
+    24,
+    -39.5,
+    38.5,
+    -30,
+    57.5,
+    -27.5,
+    60,
+    -30.5,
+    80,
+    -27.5,
+    75,
+    -17.5,
+    88,
+    -10,
+    82,
+    -4,
+    82,
+    4,
+    88,
+    10,
+    75,
+    17.5,
+    80,
+    27.5,
+    60,
+    30.5,
+    57.5,
+    27.5,
+    38.5,
+    30,
+    24,
+    39.5,
+    15,
+    40,
+    14,
+    45.5,
+    -5.5,
+    53.5,
+    14.5,
+    73,
+    2,
+    74,
+    -27,
+    58.5,
+    -42,
+    57,
+    -46,
+    42,
+    -73,
+    39,
+    -91,
+    28,
+    -73,
+    27.5,
+    -68.5,
+    30.5,
+    -40,
+    30.5,
+    -43,
+    25.5,
+    -61,
+    22,
+    -66,
+    16.5,
+    -62,
+    15,
+    -59,
+    -0
+  ],
+  "builtInWings": [],
+  "center": [
+    77,
+    93.5
+  ],
+  "collisionRadius": 116,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 6,
+      "length": 60.5,
+      "location": [
+        -46.5,
+        44.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 6
+    },
+    {
+      "angle": -180,
+      "contrailSize": 6,
+      "length": 60.5,
+      "location": [
+        -46.5,
+        -44.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 6
+    },
+    {
+      "angle": 180,
+      "contrailSize": 5,
+      "length": 58.5,
+      "location": [
+        -45.5,
+        49
+      ],
+      "style": "HIGH_TECH",
+      "width": 5
+    },
+    {
+      "angle": -180,
+      "contrailSize": 5,
+      "length": 58.5,
+      "location": [
+        -45.5,
+        -49
+      ],
+      "style": "HIGH_TECH",
+      "width": 5
+    },
+    {
+      "angle": 180,
+      "contrailSize": 6,
+      "length": 55.5,
+      "location": [
+        -44.5,
+        53
+      ],
+      "style": "HIGH_TECH",
+      "width": 6
+    },
+    {
+      "angle": -180,
+      "contrailSize": 6,
+      "length": 55.5,
+      "location": [
+        -44.5,
+        -53
+      ],
+      "style": "HIGH_TECH",
+      "width": 6
+    },
+    {
+      "angle": -180,
+      "contrailSize": 10,
+      "length": 45,
+      "location": [
+        -63.5,
+        -11.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 45,
+      "location": [
+        -63.5,
+        11.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    },
+    {
+      "angle": -180,
+      "contrailSize": 48,
+      "length": 55.5,
+      "location": [
+        -61.5,
+        -0
+      ],
+      "style": "HIGH_TECH",
+      "width": 48
+    }
+  ],
+  "height": 184,
+  "hullId": "TSW_Vale",
+  "hullName": "Vale",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 117.5,
+  "spriteName": "graphics/tahlan/ships/TSW_Vale.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0001",
+      "locations": [
+        72.5,
+        19
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0002",
+      "locations": [
+        72.5,
+        -19
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 36,
+      "arc": 165,
+      "id": "WS0003",
+      "locations": [
+        -0.5,
+        39
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -36,
+      "arc": 165,
+      "id": "WS0004",
+      "locations": [
+        -0.5,
+        -39
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0005",
+      "locations": [
+        -19.5,
+        27
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "WS0006",
+      "locations": [
+        -19.5,
+        -27
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0007",
+      "locations": [
+        78.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0008",
+      "locations": [
+        30,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "LARGE",
+      "type": "ENERGY"
+    }
+  ],
+  "width": 154
+}

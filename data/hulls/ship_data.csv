@@ -1,0 +1,17 @@
+name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,tags,rarity,breakProb,minPieces,maxPieces,number
+Yukikaze,TSW_Yukikaze,Cruiser,High Tech,displacer,20,7000,700,14000,17000,800,110,,100,80,50,50,70,1400,OMNI,,180,0.4,0.6,,,0,100,140,110,3,33,9,70000,3,12,600,0.25,30,30,,kaze_bp,,0.5,2,3,59423
+Korikaze,TSW_Korikaze,Drone Frigate,High Tech,displacer,5,2000,300,3000,2500,300,45,,130,160,110,60,120,250,OMNI,,180,0.4,0.6,,,0,0,20,20,1,20,9,15000,5,10,300,0.25,5,5,,kaze_bp,,0.4,2,2,59429
+Firemane,TSW_Firemane,Modified Freighter,Low Tech,flarelauncher,7,6000,1400,8000,3600,300,80,,50,25,10,12,12,1400,NONE,,150,0.5,1,,,80,160,300,60,3,20,7,50000,3,20,480,0.25,8,8,,,,0.6,2,3,411.2
+Vale,TSW_Vale,Fast Cruiser,Unknown,displacer,20,6000,500,9000,,600,90,,110,70,50,40,40,1200,OMNI,,360,0.3,0.7,,,0,0,100,60,1,35,9,100000,3,12,480,0.25,35,35,,,,0.5,2,3,59423
+Ambrosia,TSW_Ambrosia,Carrier,Unknown,recalldevice,20,8000,1000,4000,4000,200,130,3,40,20,10,10,10,1800,OMNI,,120,0.4,1,,,190,280,100,60,4,15,8,65000,4,12,420,0.25,20,20,CARRIER,rare_bp,,0.4,2,3,410
+Alva,TSW_Alva,Stealth Carrier,Unknown,displacer,30,12000,1300,14000,12500,800,260,6,35,20,15,8,8,3000,OMNI,,180,0.4,0.8,,,500,1400,300,300,18,20,8,300000,3,12,720,0.25,40,40,"CARRIER, COMBAT",,,0.4,2,4,500
+Kodai,TSW_Kodai,Cruiser,Midline,maneuveringjets,14,8000,900,10000,10500,650,100,1,55,35,24,18,24,1100,FRONT,,160,0.4,0.8,,,170,300,300,120,3,33,8,46000,3,12,480,0.25,24,24,,rare_bp,,0.5,2,3,121212
+Exa Pico,TSW_Exa_Pico,Drone Frigate,Unknown,displacer,10,4000,400,5000,,300,30,1,140,200,150,60,120,200,OMNI,,360,0.4,0.7,,,0,0,30,30,1,22,9,30000,5,20,300,0.25,15,15,,rare_bp,,0.5,2,2,121245
+Castigator,TSW_Castigator,Assault Cruiser,Low Tech,maneuveringjets,16,8000,1400,12000,10500,600,180,,50,30,20,15,20,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,64000,3,15,480,0.25,30,30,,rare_bp,,0.5,2,3,401
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#fighters,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Exec M,TSW_Exec_M,Combat Drone,,,,300,50,1000,,100,0,,200,300,250,90,180,30,OMNI,,360,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,565656
+Exec S,TSW_Exec_S,Assault Drone,,,,150,30,500,,100,0,,250,300,250,90,180,30,OMNI,,360,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,565656
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

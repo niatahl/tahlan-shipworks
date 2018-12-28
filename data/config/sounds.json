@@ -1,0 +1,21 @@
+{
+	"TSW_shiva_loop":{
+        "sounds":[
+			{"file":"sounds/tahlan/weapons/TSW_shiva_loop.ogg","pitch":2,"volume":0.9},
+        ],
+    },
+	"TSW_traze_fire":{
+        "sounds":[
+            {"file":"sounds/tahlan/weapons/TSW_traze_fire.ogg","pitch":1.4,"volume":1},
+			{"file":"sounds/tahlan/weapons/TSW_traze_fire.ogg","pitch":1.45,"volume":1},
+			{"file":"sounds/tahlan/weapons/TSW_traze_fire.ogg","pitch":1.5,"volume":1}
+       	],
+   	},
+	"TSW_garuda_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/TSW_garuda_fire.ogg","pitch":1.05,"volume":1},
+			{"file":"sounds/tahlan/weapons/TSW_garuda_fire.ogg","pitch":1,"volume":1},
+			{"file":"sounds/tahlan/weapons/TSW_garuda_fire.ogg","pitch":0.95,"volume":1},
+        ],
+    },
+}

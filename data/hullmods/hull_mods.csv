@@ -1,0 +1,9 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+Cooperative Protocols,TSW_cooperative_protocols_yuki,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.TSW_CooperativeProtocolsYuki,"The Yukikaze and Korikaze hulls were specifically developed to be fielded in tandem. The Yukikaze features a powerful array of control devices and transmitters which allows it to provide detailed combat information for any nearby Korikaze-class vessels.
+
+If any allied Korikaze-class ship is within %s SU, this ship counts its ECM rating as %s higher, has %s improved autofire accuracy, and gains %s additional top speed and acceleration.
+
+If at least %s Korikaze-class ships are within this range, all bonuses are increased by %s.",Bonus when grouped with Korikazes,graphics/tahlan/hullmods/cooperative_protocols.png
+Cooperative Protocols,TSW_cooperative_protocols_kori,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.TSW_CooperativeProtocolsKori,"The Korikaze and Yukikaze hulls were specifically developed to be fielded in tandem. The Korikaze has fine-tuned transcievers allowing it to accurately exchange information and combat data with a nearby Yukikaze-class vessel.
+
+If an allied Yukikaze-class ship is within %s SU, this ship ignores %s of enemy ECM, counts its ECM rating as %s higher, and gains %s additional range for all weapons.",Bonus when grouped with a Yukikaze,graphics/tahlan/hullmods/cooperative_protocols.png

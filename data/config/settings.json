@@ -1,0 +1,14 @@
+{
+	"plugins":{
+		"NicToyCustomTrailPlugin":"data.scripts.plugins.NicToyCustomTrailPlugin",
+		"TSW_ProjectileTrailHandlerPlugin":"data.scripts.plugins.TSW_ProjectileTrailHandlerPlugin",
+		},  
+	"graphics":{
+		"TSW_fx":{
+		},
+		"misc":{
+			"TSW_cooperative_protocols_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols.png",
+			"TSW_cooperative_protocols_multi_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols_multi.png",
+		},
+	}
+}

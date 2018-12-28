@@ -1,0 +1,20 @@
+{
+	"id":"TSW_traze_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+#	"onHitEffect":"data.scripts.weapons.SRD_EquityOnHitEffect",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":140.0,
+	"width":15,
+	"fadeTime":0.1,
+	"fringeColor":[100,150,255,150],
+	"coreColor":[140,200,255,250],
+    "glowColor":[100,150,255,150],
+	"glowRadius":50,
+	"hitGlowRadius":100,	
+	"textureType":"WEAVE",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	#"textureType":["graphics/sylphon/fx/emp_arcs.png","graphics/sylphon/fx/emp_arcs.png"],
+	"textureScrollSpeed":-32,
+	"pixelsPerTexel":1.0,
+}
