@@ -2,8 +2,8 @@
 	"id":"tahlan", # internal id
 	"name":"Tahlan Shipworks", # displayed to the player
 	"author":"Nia and Nicke",
-	"version":"0.1",
+	"version":"0.2",
 	"description":"The Knights of Ni made a ship pack",
-	"gameVersion":"0.8.1a",
+	"gameVersion":"0.9a",
 	"jars":["jars/TahlanShipworks.jar"],
 }

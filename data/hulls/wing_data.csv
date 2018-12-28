@@ -1,3 +1,3 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,num,role,role desc,refit,base value,,,,,,,,,,,,,number
-TSW_Exec_M_drone_wing,TSW_Exec_M_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,2,SUPPORT,Drone,5,2000,,,,,,,,,,,,,223
-TSW_Exec_S_drone_wing,TSW_Exec_S_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,3,SUPPORT,Drone,5,2000,,,,,,,,,,,,,224
+tahlan_Exec_M_drone_wing,tahlan_Exec_M_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,2,SUPPORT,Drone,5,2000,,,,,,,,,,,,,223
+tahlan_Exec_S_drone_wing,tahlan_Exec_S_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,3,SUPPORT,Drone,5,2000,,,,,,,,,,,,,224

@@ -1,14 +1,13 @@
 {
 	"plugins":{
-		"NicToyCustomTrailPlugin":"data.scripts.plugins.NicToyCustomTrailPlugin",
-		"TSW_ProjectileTrailHandlerPlugin":"data.scripts.plugins.TSW_ProjectileTrailHandlerPlugin",
+		"tahlan_ProjectileTrailHandlerPlugin":"data.scripts.plugins.tahlan_ProjectileTrailHandlerPlugin",
 		},  
 	"graphics":{
-		"TSW_fx":{
+		"tahlan_fx":{
 		},
 		"misc":{
-			"TSW_cooperative_protocols_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols.png",
-			"TSW_cooperative_protocols_multi_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols_multi.png",
+			"tahlan_cooperative_protocols_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols.png",
+			"tahlan_cooperative_protocols_multi_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols_multi.png",
 		},
 	}
 }
