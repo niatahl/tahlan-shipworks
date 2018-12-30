@@ -1,0 +1,52 @@
+{
+	
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
+	},
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		#"tags":{},
+		#"hulls":{},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp"],
+		#"hulls":[],
+	},
+	"knownShips":{
+		#"tags":[],
+		"hulls":[
+			"tahlan_Castella",
+			"tahlan_Kodai",
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		#"tags":[],
+		#"hulls":[],
+	},
+	
+	"knownFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	"priorityFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	
+	"knownWeapons":{
+		#"tags":[],
+		#"weapons":[],
+	},
+	"priorityWeapons":{
+		#"tags":[],
+		#"weapons":[],
+	},
+	
+	"knownHullMods":{
+		#"tags":["base_bp", "independent"],
+		#"hullMods":[],
+	},
+
+},	

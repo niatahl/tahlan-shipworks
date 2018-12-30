@@ -1,0 +1,70 @@
+{
+	
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
+	},
+	
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		#"tags":{"dara_pirate_bp":2,},
+		"hulls":{
+			"dara_prophecy_pirates":0.25, # Supposed to be a rare encounter
+			"dara_gypsymoth":0.1, # Supposed to be a VERY rare encounter
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		#"tags":["base_bp", "pirate_bp"],
+		#"hulls":[],
+	},
+	"knownShips":{
+		#"tags":[],
+		"hulls":[
+			"dara_mousetrap",
+			"dara_bull",
+			"dara_gypsymoth",
+			"dara_prophecy_pirates",
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		#"tags":[],
+		#"hulls":[],
+	},
+	
+	"knownFighters":{
+		"tags":["pirate_bp","dara_oc_bp"],
+		"fighters":[
+			"dara_rogue_wing",
+			"dara_warhammer_wing",
+			"dara_talon_k_wing",
+		],
+	},
+	"priorityFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	
+	"knownWeapons":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "pirates"],
+		"weapons":[
+			"dara_manticore",
+		],
+	},
+	"priorityWeapons":{
+		#"tags":[],
+		#"weapons":[],
+	},
+	
+	"knownHullMods":{
+		#"tags":["base_bp", "pirates"],
+		"hullMods":[
+			"dara_repurposedbays",
+		],
+	},
+	
+}
+
+
+
+

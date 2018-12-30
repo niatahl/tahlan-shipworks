@@ -1,0 +1,117 @@
+{
+	# should be a copy of "combatSmall", minus variants that are annoying to fight in low numbers
+	# for example, no Hyperions or fast beam-based kiting loadouts, or ships with damper field
+	"combatSmallForSmallFleet":{
+	},
+	"combatSmall":{
+		"tahlan_Korikaze_ion":10,
+		"tahlan_Exa_Pico_standard":10,
+	},
+	"combatMedium":{
+		"tahlan_Bento_standard":10,
+		"tahlan_Vale_standard":10,
+	},
+	"combatLarge":{
+		"tahlan_Castigator_standard":10,
+		"tahlan_Yukikaze_brawler":10,
+		"tahlan_Yukikaze_lancer":10,
+		"tahlan_Firemane_support":10,
+		},
+	"combatCapital":{
+		"SRD_Equilibrium_standard":10,
+		"SRD_Equilibrium_missile":10,
+		"SRD_Equilibrium_prototype":5,
+		"SRD_Equilibrium_exalted":5,
+		"SRD_Finis_Astra_standard":5,
+		"SRD_Seresvalla_standard":10,
+		"SRD_Seresvalla_elite":10,
+		"SRD_Seresvalla_barrage":10,
+		"SRD_Replekia_andromeda":10,
+			
+		"SRD_Metafalica_standard":5,
+		
+		"SRD_Equilibrium_balance_flag":5,
+	},
+	
+	
+	# hybrid ships with good combat and cargo capacity
+	"combatFreighterSmall":{
+	},
+	"combatFreighterMedium":{
+	},
+	"combatFreighterLarge":{
+	},
+	
+	"civilianRandom":{
+	},
+
+	# carriers
+	"carrierSmall":{
+	},
+	"carrierMedium":{
+			"tahlan_Ambrosia_standard":10,
+	},
+	"carrierLarge":{
+			"tahlan_Castella_standard":10,
+	},
+
+	# phase ships
+	"phaseSmall":{
+	},
+	"phaseMedium":{
+	},
+	"phaseLarge":{
+	},
+	"phaseCapital":{
+	},
+
+	# freighters and such
+	"freighterSmall":{
+	},
+	"freighterMedium":{
+	},
+	"freighterLarge":{
+	},
+	
+	"tankerSmall":{
+	},
+	"tankerMedium":{
+		"tahlan_Bento_standard":10,
+	},
+	"tankerLarge":{
+	},
+	
+	"personnelSmall":{
+	},
+	"personnelMedium":{
+	},
+	"personnelLarge":{
+	},
+	
+	"linerSmall":{
+	},
+	"linerMedium":{
+	},
+	"linerLarge":{
+	},
+	
+	# utility ships
+	"tug":{
+	},
+	"crig":{
+	},
+	"utility":{
+	},
+	
+
+
+	# Old/unused below this line
+	"fastAttack":{
+	},
+
+	"escortSmall":{
+	},
+	"escortMedium":{
+	},
+	
+}

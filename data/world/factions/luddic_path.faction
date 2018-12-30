@@ -1,0 +1,68 @@
+{
+	
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
+		"dara_junker_OD":30,
+	},
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		#"tags":{
+		#	"LP_bp":1,
+		#},
+		"hulls":{
+			"tahlan_Castella_lp":0.5,
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		#"tags":["base_bp", "LP_bp"],
+		#"hulls":[
+		#	"enforcer",
+		#	"hammerhead",
+		#	"sunder",
+		#],
+	},
+	"knownShips":{
+		#"tags":["base_bp", "LP_bp", "luddic_path"],
+		#"hulls":[
+		#	"enforcer",
+		#	"hammerhead",
+		#	"sunder",
+		#],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		#"tags":[],
+		#"hulls":[],
+	},
+	
+	"knownFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	"priorityFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	
+	"knownWeapons":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "LP_bp", "luddic_path"],
+		#"weapons":[],
+	},
+	"priorityWeapons":{
+		#"tags":[],
+		#"weapons":[],
+	},
+	
+	"knownHullMods":{
+		#"tags":["base_bp", "luddic_path"],
+		#"hullMods":[],
+	},
+	
+},
+
+
+
+
+
+

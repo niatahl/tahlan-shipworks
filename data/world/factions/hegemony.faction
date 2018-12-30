@@ -1,0 +1,56 @@
+{
+	#id:"hegemony",
+	
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	#"variantOverrides":{},
+	
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		#"tags":{},
+		"hulls":{
+			"tahlan_Castigator:0.2",
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		#"tags":["base_bp", "heg_aux_bp", "lowtech_bp"],
+		#"hulls":[],
+	},
+	
+	"knownShips":{
+		#"tags":["base_bp", "heg_aux_bp", "lowtech_bp", "midline_bp", "XIV_bp", "hegemony"],
+		"hulls":[
+			"tahlan_Castigator",
+			
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		#"tags":[],
+		#"hulls":[],
+	},
+	
+	"knownFighters":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "hegemony"],
+		#"fighters":[],
+	},
+	"priorityFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	
+	"knownWeapons":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "hegemony"],
+		#"weapons":[],
+	},
+	"priorityWeapons":{
+		#"tags":[],
+		#"weapons":[],
+	},
+	
+	"knownHullMods":{
+		#"tags":["base_bp", "hegemony"],
+		#"hullMods":[],
+	},
+
+},

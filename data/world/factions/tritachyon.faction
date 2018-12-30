@@ -1,0 +1,63 @@
+{
+	
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
+	},
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		#"tags":{
+		#},
+		"hulls":{
+			"tahlan_Yukikaze":0.2,
+			"tahlan_Korikaze":0.4,
+			"tahlan_Vale":0.1,
+			"tahlan_Exa_Pico":0.1,
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		"tags":[],
+		"hulls":[
+			"tahlan_Kodai",
+		],
+	},
+	"knownShips":{
+		"tags":[],
+		"hulls":[
+			"tahlan_Yukikaze",
+			"tahlan_Korikaze",
+			"tahlan_Vale",
+			"tahlan_Exa_Pico",
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		#"tags":[],
+		#"hulls":[],
+	},
+	
+	"knownFighters":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tritachyon"],
+		#"fighters":[],
+	},
+	"priorityFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	
+	"knownWeapons":{
+		#"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "tritachyon"],
+		#"weapons":[],
+	},
+	"priorityWeapons":{
+		#"tags":[],
+		#"weapons":[],
+	},
+	
+	"knownHullMods":{
+		#"tags":["base_bp", "tritachyon"],
+		#"hullMods":[],
+	},
+	
+},
+
