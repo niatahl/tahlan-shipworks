@@ -1,0 +1,8 @@
+0.2
+
+- First semi-public release featuring a small number of ships
+
+
+0.1
+
+- Initial version

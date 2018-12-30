@@ -1,0 +1,2 @@
+name,id,tags,rarity,base price,stack size,cargo space,icon,sound id,sound id drop,plugin,plugin params,desc,order
+Project Kaze Blueprint Package,tahlan_kaze_package,package_bp,0.2,100000,1000,1,graphics/icons/cargo/blueprint_hightech.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,tahlan_kaze_bp,"Enables heavy industry to construct ship hulls related to the secretive ""Project Kaze"".",210

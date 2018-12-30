@@ -1,0 +1,70 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 0,
+  "fluxVents": 45,
+  "goalVariant": true,
+  "hullId": "tahlan_Castella",
+  "hullMods": [
+    "targetingunit",
+    "expanded_deck_crew"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Castella_standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "hurricane",
+        "WS0004": "hurricane"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hveldriver",
+        "WS0002": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "flak",
+        "WS0006": "flak",
+        "WS0007": "flak",
+        "WS0008": "flak"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "vulcan",
+        "WS0010": "vulcan",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan",
+        "WS0013": "vulcan",
+        "WS0014": "vulcan",
+        "WS0015": "vulcan",
+        "WS0016": "vulcan",
+        "WS0017": "vulcan",
+        "WS0018": "vulcan"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "wings": [
+    "broadsword_wing",
+    "broadsword_wing",
+    "hoplon_wing",
+    "hoplon_wing",
+    "hoplon_wing"
+  ]
+}
