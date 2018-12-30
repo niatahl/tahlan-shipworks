@@ -1,9 +1,11 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip
 Shiva,tahlan_shiva,2,,2200,500,600,,,500,15,32,,,,ENERGY,,500,0.1,0.1,,,,,,,3000,,,,,,beam14,,High Tech,,Assault,,,,,Inhibits movement of targets hit,,,,
 Garuda,tahlan_garuda,1,1,400,2500,,500,,50,30,0,3,0.1,,ENERGY,100,,0,2,1,,0,0,0,,,700,100,5,150,"DO_NOT_AIM,SYSTEM, SHOW_IN_CODEX","missile8, strike3",,High Tech,,Fire Support,,,,,,,,,
-Traze,tahlan_traze,3,0.8,3000,700,,500,300,20,15,30,5,0.8,1,ENERGY,600,,0.1,0.35,,,,,,,,1000,,,,,energy20,,Unknown,,Strike,,,,,,,,,
 Vector Ray,tahlan_vector_ray,1,,200,400,150,,,20,100,4,,,,ENERGY,,150,0,0.25,,,,,,,2400,,,,,"PD, SYSTEM","pd7, beam7, SR",,Unknown,,Point Defense,,,,,,,,,
 XM Beamer,tahlan_xm_beamer,1,,200,500,400,,,20,100,4,,,,FRAGMENTATION,,100,0,0.25,,,,,,,5000,,,,,"PD, SYSTEM","pd7, beam7, SR",,Unknown,,Point Defense,,,,,,,,,
 XS Beamer,tahlan_xs_beamer,1,,200,500,400,,,20,100,4,,,,FRAGMENTATION,,150,0,0.25,,,,,,,5000,,,,,"PD, SYSTEM","pd7, beam7, SR",,Unknown,,Point Defense,,,,,,,,,
 Providence Edge,tahlan_providence_edge,1,,5000,1000,1000,,,50,5,20,,,,ENERGY,,1000,0.1,0.1,,,,,,,5000,,,,,SYSTEM,"beam20, LR",,Unknown,,Strike,,,,,,,,,
+Unstable Thermal Pulse Cannon,tahlan_utpc,0,,100000,700,,200,,0,0,,,,,ENERGY,300,,0,4.6,3,0.2,0,5,1,2,,1000,,,,"SYSTEM,SHOW_IN_CODEX",,,,,Assault,,,,,"Can spawn up to %s splinter projectiles per shot, dealing %s energy and EMP damage each",5 | 40,,,
+Unstable Thermal Pulse Cannon,tahlan_utpc_splinter,0,,100000,700,,40,50,0,0,,,,,ENERGY,40,,0,4.6,3,0.2,0,10,2,5,,1000,,,,"SYSTEM,SHOW_IN_CODEX",,,,,,,,,,,,,,
+Mining Lance,tahlan_mininglance,1,,1500,600,1500,,,0,20,10,,,,ENERGY,,2000,0.25,0.5,1,5,,,,,3200,,,,,SYSTEM,"energy14, beam10, rare_bp",,,,General,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

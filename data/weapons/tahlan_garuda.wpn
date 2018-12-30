@@ -1,0 +1,27 @@
+{
+  "animationType": "NONE",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_garuda_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_garuda",
+  "projectileSpecId": "tahlan_garuda_msl",
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "",
+  "type": "MISSILE"
+}

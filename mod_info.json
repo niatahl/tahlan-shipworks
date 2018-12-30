@@ -6,4 +6,5 @@
 	"description":"The Knights of Ni made a ship pack",
 	"gameVersion":"0.9a",
 	"jars":["jars/TahlanShipworks.jar"],
+	"modPlugin":"data.scripts.tahlan_ModPlugin"
 }

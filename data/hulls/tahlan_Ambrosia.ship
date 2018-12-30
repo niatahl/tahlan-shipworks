@@ -1,0 +1,247 @@
+{
+  "bounds": [
+    16,
+    7,
+    107,
+    7,
+    114,
+    0.5,
+    114,
+    -38,
+    107,
+    -45,
+    -107,
+    -45,
+    -114,
+    -38,
+    -114,
+    -28.5,
+    -111.5,
+    -19,
+    -114,
+    -8.5,
+    -114,
+    0.5,
+    -107.5,
+    7,
+    -105.5,
+    12.5,
+    -98,
+    13,
+    -98.5,
+    37,
+    -105,
+    38.5,
+    -97,
+    41.5,
+    -62,
+    41.5,
+    -53.5,
+    49.5,
+    -26,
+    51.5,
+    -17,
+    71.5,
+    -8.5,
+    71.5,
+    -8.5,
+    60,
+    13.5,
+    57,
+    8,
+    50,
+    8,
+    36,
+    20.5,
+    24.5,
+    21,
+    15.5
+  ],
+  "builtInWings": [],
+  "center": [
+    73,
+    116
+  ],
+  "collisionRadius": 144,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 27,
+      "length": 63,
+      "location": [
+        -100.5,
+        25
+      ],
+      "style": "LOW_TECH",
+      "width": 27
+    },
+    {
+      "angle": 180,
+      "contrailSize": 21,
+      "length": 16.5,
+      "location": [
+        -113,
+        -19
+      ],
+      "style": "HIGH_TECH",
+      "width": 21
+    },
+    {
+      "angle": 180,
+      "contrailSize": 4,
+      "length": 26.5,
+      "location": [
+        -114,
+        -12
+      ],
+      "style": "HIGH_TECH",
+      "width": 4
+    },
+    {
+      "angle": 180,
+      "contrailSize": 4,
+      "length": 26.5,
+      "location": [
+        -114,
+        -26
+      ],
+      "style": "HIGH_TECH",
+      "width": 4
+    }
+  ],
+  "height": 232,
+  "hullId": "tahlan_Ambrosia",
+  "hullName": "Ambrosia",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    -6.5
+  ],
+  "shieldRadius": 132.5,
+  "spriteName": "graphics/tahlan/ships/tahlan_Ambrosia.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 213,
+      "id": "WS0001",
+      "locations": [
+        11,
+        19
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0002",
+      "locations": [
+        1,
+        45
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 42,
+      "arc": 360,
+      "id": "WS0003",
+      "locations": [
+        -38.5,
+        41.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -90,
+      "arc": 5,
+      "id": "WS0004",
+      "locations": [
+        -36,
+        -40.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -90,
+      "arc": 5,
+      "id": "WS0005",
+      "locations": [
+        -58,
+        -40
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -90,
+      "arc": 5,
+      "id": "WS0006",
+      "locations": [
+        -80,
+        -40
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        74.5,
+        -27,
+        85,
+        -31,
+        66.5,
+        -31
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        39,
+        -27,
+        50.5,
+        -32,
+        28.5,
+        -31.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        2,
+        -26.5,
+        13,
+        -31.5,
+        -9,
+        -32.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 121
+}

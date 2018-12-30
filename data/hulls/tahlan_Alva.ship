@@ -1,0 +1,527 @@
+{
+  "bounds": [
+    -110.5,
+    -9,
+    -134,
+    -9,
+    -146.5,
+    -15,
+    -115,
+    -31.5,
+    -68,
+    -31.5,
+    -64,
+    -27,
+    -55,
+    -27,
+    -50,
+    -31,
+    -37,
+    -31,
+    -31.5,
+    -33,
+    -34.5,
+    -37,
+    -75,
+    -36.5,
+    -81,
+    -43,
+    -80.5,
+    -81.5,
+    -74,
+    -88,
+    141,
+    -87.5,
+    146.5,
+    -81,
+    146.5,
+    -43,
+    140,
+    -37,
+    19.5,
+    -37,
+    19.5,
+    -32,
+    45.5,
+    -31,
+    52,
+    -25,
+    52,
+    -8.5,
+    45.5,
+    -2.5,
+    45.5,
+    2.5,
+    52,
+    8.5,
+    52,
+    25,
+    45.5,
+    31,
+    19.5,
+    32,
+    19.5,
+    37,
+    140,
+    37,
+    146.5,
+    43,
+    146.5,
+    81,
+    141,
+    87.5,
+    -74,
+    88,
+    -80.5,
+    81.5,
+    -81,
+    43,
+    -75,
+    36.5,
+    -34.5,
+    37,
+    -31.5,
+    33,
+    -37,
+    31,
+    -50,
+    31,
+    -55,
+    27,
+    -64,
+    27,
+    -68,
+    31.5,
+    -115,
+    31.5,
+    -146.5,
+    15,
+    -134,
+    9,
+    -110.5,
+    9
+  ],
+  "builtInMods": [
+    "insulatedengine",
+    "operations_center"
+  ],
+  "builtInWeapons": {
+    "WS0010": "tahlan_vector_ray",
+    "WS0011": "tahlan_vector_ray",
+    "WS0012": "tahlan_vector_ray",
+    "WS0013": "tahlan_vector_ray",
+    "WS0014": "tahlan_vector_ray",
+    "WS0015": "tahlan_vector_ray",
+    "WS0016": "tahlan_providence_edge"
+  },
+  "builtInWings": [],
+  "center": [
+    91,
+    149
+  ],
+  "collisionRadius": 196,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 17,
+      "length": 27,
+      "location": [
+        -80.5,
+        62
+      ],
+      "style": "HIGH_TECH",
+      "width": 17
+    },
+    {
+      "angle": -180,
+      "contrailSize": 17,
+      "length": 27,
+      "location": [
+        -80.5,
+        -62
+      ],
+      "style": "HIGH_TECH",
+      "width": 17
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 41,
+      "location": [
+        -81,
+        69
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 41,
+      "location": [
+        -81,
+        -69
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 41,
+      "location": [
+        -81,
+        55
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 41,
+      "location": [
+        -81,
+        -55
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 41,
+      "location": [
+        -112,
+        5.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 41,
+      "location": [
+        -112,
+        -5.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 57,
+      "location": [
+        -114,
+        -0
+      ],
+      "style": "HIGH_TECH",
+      "width": 10
+    }
+  ],
+  "height": 298,
+  "hullId": "tahlan_Alva",
+  "hullName": "Alva",
+  "hullSize": "CAPITAL_SHIP",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 185.5,
+  "spriteName": "graphics/tahlan/ships/tahlan_Alva.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 90,
+      "arc": 0,
+      "id": "WS0003",
+      "locations": [
+        -25,
+        84
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -90,
+      "arc": 0,
+      "id": "WS0004",
+      "locations": [
+        -25,
+        -84
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 90,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        -3,
+        84
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -90,
+      "arc": 0,
+      "id": "WS0002",
+      "locations": [
+        -3,
+        -84
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 90,
+      "arc": 0,
+      "id": "WS0005",
+      "locations": [
+        -47,
+        84
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -90,
+      "arc": 0,
+      "id": "WS0006",
+      "locations": [
+        -47,
+        -84
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0007",
+      "locations": [
+        42,
+        17
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0008",
+      "locations": [
+        42,
+        -17
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 280,
+      "id": "WS0009",
+      "locations": [
+        -65,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "UNIVERSAL"
+    },
+    {
+      "angle": 40,
+      "arc": 213,
+      "id": "WS0012",
+      "locations": [
+        -9,
+        22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -40,
+      "arc": 213,
+      "id": "WS0013",
+      "locations": [
+        -9,
+        -22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 90,
+      "arc": 213,
+      "id": "WS0010",
+      "locations": [
+        -16,
+        22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -90,
+      "arc": 213,
+      "id": "WS0011",
+      "locations": [
+        -16,
+        -22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 130,
+      "arc": 213,
+      "id": "WS0014",
+      "locations": [
+        -23,
+        22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -130,
+      "arc": 213,
+      "id": "WS0015",
+      "locations": [
+        -23,
+        -22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        108,
+        68.5,
+        119,
+        76.5,
+        96.5,
+        77
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        72,
+        68.5,
+        83,
+        77,
+        61,
+        78
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        36,
+        69.5,
+        47.5,
+        77.5,
+        26.5,
+        78
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 4",
+      "locations": [
+        107.5,
+        -70.5,
+        117,
+        -74.5,
+        97,
+        -75.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 5",
+      "locations": [
+        71,
+        -70,
+        85,
+        -75.5,
+        61.5,
+        -76.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 6",
+      "locations": [
+        35.5,
+        -70,
+        46.5,
+        -76,
+        25.5,
+        -76.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0016",
+      "locations": [
+        44,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    }
+  ],
+  "width": 182
+}
