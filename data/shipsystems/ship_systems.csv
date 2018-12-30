@@ -1,0 +1,4 @@
+name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,icon
+Assault Burn,tahlan_stormdrive,1,,,,,,,,,0.5,1,0.5,10,,,,,,,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
+Guardian Field,tahlan_guardfield,,,0.025,,,,,,,1,3,1,10,,,,TRUE,TRUE,,,,,,graphics/icons/hullsys/fortress_shield.png
+Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,15,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png

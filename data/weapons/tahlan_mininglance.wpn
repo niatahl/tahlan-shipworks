@@ -1,0 +1,36 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "fringeColor":[255,0,0,175],
+  "coreColor":[255,155,155,255],
+  "glowColor":[255,155,155,255],
+  "hardpointAngleOffsets": [
+    -0,
+    0
+  ],
+  "hardpointOffsets": [
+    13.5,
+    5,
+    13.5,
+    -5
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "tahlan_mininglance",
+  "pixelsPerTexel": 5,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 64,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "",
+  "type": "ENERGY",
+  "width": 20,
+  "fireSoundTwo":"phase_beam_loop",
+}

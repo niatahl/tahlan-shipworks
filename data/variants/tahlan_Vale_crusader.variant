@@ -1,0 +1,48 @@
+{
+  "displayName": "Crusader",
+  "fluxCapacitors": 0,
+  "fluxVents": 15,
+  "goalVariant": true,
+  "hullId": "tahlan_Vale",
+  "hullMods": [
+    "unstable_injector"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Vale_crusader",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "plasma"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "irpulse",
+        "WS0002": "irpulse",
+        "WS0007": "irpulse"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "ioncannon",
+        "WS0006": "ioncannon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "pdlaser",
+        "WS0004": "pdlaser"
+      }
+    }
+  ],
+  "wings": []
+}
