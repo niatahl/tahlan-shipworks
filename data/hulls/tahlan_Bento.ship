@@ -30,10 +30,7 @@
   "builtInMods": [
     "armoredweapons"
   ],
-  "builtInWeapons": {
-    "WS0006": "pilum",
-    "WS0007": "pilum"
-  },
+  "builtInWeapons": {},
   "builtInWings": [],
   "center": [
     69,

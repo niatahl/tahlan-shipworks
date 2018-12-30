@@ -106,10 +106,7 @@
   "builtInMods": [
     "high_maintenance"
   ],
-  "builtInWeapons": {
-    "WS0005": "taclaser",
-    "WS0006": "taclaser"
-  },
+  "builtInWeapons": {},
   "builtInWings": [],
   "center": [
     77,
