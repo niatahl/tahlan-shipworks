@@ -1,16 +1,12 @@
 {
 	
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
 	"variantOverrides":{
 	},
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		#"tags":{},
-		"hulls":{
-			"dara_lysander":0.25,
-			"dara_sturmovik_s":0.1,
-			"dara_gypsymoth":0.1,
-			"dara_starlifter":0.5,
-		},
+		#"hulls":{},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
@@ -18,15 +14,11 @@
 		#"hulls":[],
 	},
 	"knownShips":{
-		"tags":["dara_prosp_bp", "dara_acanthina_bp"],
+		#"tags":[],
 		"hulls":[
-			"dara_insurgent",
-			"dara_mirage",
-			"dara_sturmovik_s",
-			"dara_lysander",
-			"dara_gypsymoth",
-			"dara_harrier",
-			"dara_starlifter",
+			"tahlan_Castella",
+			"tahlan_Kodai",
+			"tahlan_Ambrosia",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -34,32 +26,28 @@
 		#"tags":[],
 		#"hulls":[],
 	},
+	
 	"knownFighters":{
-		"tags":["dara_oc_bp"],
-		"fighters":[
-			"dara_enigma_wing",
-			"dara_firebird_wing",
-			"dara_cayman_wing",
-			"dara_talon_k_wing",
-		],
-	},
-	"priorityFighters":{
-		"tags":["dara_oc_bp"],
+		#"tags":[],
 		#"fighters":[],
 	},
+	"priorityFighters":{
+		#"tags":[],
+		#"fighters":[],
+	},
+	
 	"knownWeapons":{
-		"tags":["dara_prosp_bp"],
+		#"tags":[],
 		#"weapons":[],
 	},
 	"priorityWeapons":{
 		#"tags":[],
 		#"weapons":[],
 	},
-	"knownHullMods":{
-		#"tags":["base_bp", "scavengers"],
-		"hullMods":[
-			"dara_repurposedbays",
-		],
-	},
 	
+	"knownHullMods":{
+		#"tags":["base_bp", "independent"],
+		#"hullMods":[],
+	},
+
 },	

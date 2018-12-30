@@ -8,7 +8,7 @@
 	"hullFrequency":{
 		#"tags":{},
 		"hulls":{
-			"tahlan_Castigator:0.2",
+			"tahlan_Castigator":0.2,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -20,8 +20,7 @@
 	"knownShips":{
 		#"tags":["base_bp", "heg_aux_bp", "lowtech_bp", "midline_bp", "XIV_bp", "hegemony"],
 		"hulls":[
-			"tahlan_Castigator",
-			
+			"tahlan_Castigator",			
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
