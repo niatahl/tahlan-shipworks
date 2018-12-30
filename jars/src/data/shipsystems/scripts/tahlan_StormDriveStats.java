@@ -12,8 +12,8 @@ public class tahlan_StormDriveStats extends BaseShipSystemScript {
         if (state == ShipSystemStatsScript.State.OUT) {
             stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
         } else {
-            stats.getMaxSpeed().modifyFlat(id, 400f * effectLevel);
-            stats.getAcceleration().modifyFlat(id, 1000f * effectLevel);
+            stats.getMaxSpeed().modifyFlat(id, 300f * effectLevel);
+            stats.getAcceleration().modifyFlat(id, 600f * effectLevel);
             stats.getEmpDamageTakenMult().modifyMult(id, 0.5f);
             stats.getArmorDamageTakenMult().modifyMult(id, 0.5f);
             stats.getHullDamageTakenMult().modifyMult(id, 0.5f);
