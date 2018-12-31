@@ -7,13 +7,13 @@
 	"length":70.0,
 	"width":6,
 	"fadeTime":0.5,
-	"fringeColor":[255,100,100,255],
-	"coreColor":[255,215,205,200],
-	"glowColor":[255,0,0,60],
-	"glowSize":30,
-	#"textureType":"ROUGH",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	"fringeColor":[255,200,200,255],
+	"coreColor":[255,225,225,200],
+	#"glowColor":[255,0,0,60],
+	#"glowSize":30,
+	"textureType":"ROUGH",  # now also used for "BALLISTIC_AS_BEAM", if specified
 	#"textureType":["graphics/fx/emp_arcs.png","graphics/fx/emp_arcs.png"],
 	"textureScrollSpeed":64,
 	"pixelsPerTexel":5.0,
-	"bulletSprite":"graphics/tahlan/missiles/tahlan_utpc_shot_splinter.png",
+	#"bulletSprite":"graphics/tahlan/missiles/tahlan_utpc_shot_splinter.png",
 }

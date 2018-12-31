@@ -13,14 +13,14 @@ public class tahlan_StyrixOnHitEffect implements OnHitEffectPlugin {
     //private static final float DAMAGE_MULT = 0.3f;
 
     //Variables for explosion visuals
-    private static final Color EXPLOSION_COLOR = new Color(255f/255f, 135f/255f, 40f/255f, 130f/255f);
+    private static final Color EXPLOSION_COLOR = new Color(255f / 255f, 135f / 255f, 40f / 255f, 130f / 255f);
     private static final float EXPLOSION_SIZE = 130f;
     private static final float EXPLOSION_DURATION_MIN = 0.3f;
     private static final float EXPLOSION_DURATION_MAX = 0.7f;
 
     //Variables for the small particles generated with the explosion
     private static final int PARTICLE_COUNT = 4;
-    private static final Color PARTICLE_COLOR = new Color(255f/255f, 135f/255f, 40f/255f, 130f/255f);
+    private static final Color PARTICLE_COLOR = new Color(255f / 255f, 135f / 255f, 40f / 255f, 130f / 255f);
     private static final float PARTICLE_SIZE_MIN = 8f;
     private static final float PARTICLE_SIZE_MAX = 12f;
     private static final float PARTICLE_SPEED_MAX = 3f;
@@ -32,8 +32,9 @@ public class tahlan_StyrixOnHitEffect implements OnHitEffectPlugin {
             return;
         }
 
-        Global.getCombatEngine().applyDamage(target, point, 100f, DamageType.HIGH_EXPLOSIVE, 0, true, false, null, true);
-        Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR ,EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);
+        Float critLevel = MathUtils.getRandomNumberInRange(0.2f, 1f);
+        Global.getCombatEngine().applyDamage(target, point, critLevel * 50f, DamageType.HIGH_EXPLOSIVE, 0, true, false, null, true);
+        Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, critLevel * EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);
         for (int i = 0; i < PARTICLE_COUNT; i++) {
             Global.getCombatEngine().addHitParticle(point, MathUtils.getRandomPointInCircle(null, PARTICLE_SPEED_MAX), MathUtils.getRandomNumberInRange(PARTICLE_SIZE_MIN, PARTICLE_SIZE_MAX),
                     MathUtils.getRandomNumberInRange(PARTICLE_BRIGHTNESS_MIN, PARTICLE_BRIGHTNESS_MAX), MathUtils.getRandomNumberInRange(EXPLOSION_DURATION_MIN, EXPLOSION_DURATION_MAX), PARTICLE_COLOR);

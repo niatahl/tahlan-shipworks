@@ -16,7 +16,7 @@
   "id": "tahlan_styrix",
   "muzzleFlashSpec": {
     "length": 120,
-    "particleColor": [255,140,40,155],
+    "particleColor": [255,220,180,155],
     "particleCount": 50,
     "particleDuration": 0.8,
     "particleSizeMin": 15,

@@ -1,0 +1,40 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_porph_fire",
+  "glowColor": [255,140,80,155],
+  "everyFrameEffect": "data.scripts.weapons.tahlan_PorphyrionMuzzleFlashScript",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_porphyrion_hp_glow.png",
+  "hardpointOffsets": [
+    6.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_porphyrion_hp_base.png",
+  "id": "tahlan_porph",
+  "muzzleFlashSpec": {
+    "length": 80,
+    "particleColor": [255,200,120,155],
+    "particleCount": 30,
+    "particleDuration": 0.8,
+    "particleSizeMin": 15,
+    "particleSizeRange": 25,
+    "spread": 10
+  },
+  "projectileSpecId": "tahlan_porph_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_porphyrion_turret_glow.png",
+  "turretOffsets": [
+    -1,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_porphyrion_turret_base.png",
+  "type": "BALLISTIC"
+}

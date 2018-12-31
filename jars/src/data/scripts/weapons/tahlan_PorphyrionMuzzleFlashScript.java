@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPlugin {
+public class tahlan_PorphyrionMuzzleFlashScript implements EveryFrameWeaponEffectPlugin {
 
     /*
 
@@ -38,8 +38,7 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 20);
-        ON_SHOT_PARTICLE_COUNT.put("default", 10);
+        ON_SHOT_PARTICLE_COUNT.put("default", 5);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -65,59 +64,59 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //  should instead set up their coordinates manually with PARTICLE_SPAWN_POINT_TURRET and PARTICLE_SPAWN_POINT_HARDPOINT
     private static final Map<String, Boolean> SPAWN_POINT_ANCHOR_ALTERNATION = new HashMap<>();
     static {
-        SPAWN_POINT_ANCHOR_ALTERNATION.put("default", true);
+        SPAWN_POINT_ANCHOR_ALTERNATION.put("default", false);
     }
 
     //The position the particles are spawned (or at least where their arc originates when using offsets) compared to their weapon's center [or shot offset, see
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a turret (or HIDDEN)
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_TURRET = new HashMap<>();
     static {
-        PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(0f, 0f));
+        PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(5f, -5f));
+        PARTICLE_SPAWN_POINT_TURRET.put("FLASH_ID_2", new Vector2f(-5f, -5f));
     }
 
     //The position the particles are spawned (or at least where their arc originates when using offsets) compared to their weapon's center [or shot offset, see
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a hardpoint
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_HARDPOINT = new HashMap<>();
     static {
-        PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(0f, 0f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(5f, 2.5f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("FLASH_ID_2", new Vector2f(-5f, 2.5f));
     }
 
     //Which kind of particle is spawned (valid values are "SMOOTH", "BRIGHT" and "SMOKE")
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
     static {
-        PARTICLE_TYPE.put("default", "SMOKE");
+        PARTICLE_TYPE.put("default", "SMOOTH");
     }
 
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(255,255,220, 165));
+        PARTICLE_COLOR.put("default", new Color(255,200,120, 165));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 10f);
+        PARTICLE_SIZE_MIN.put("default", 15f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
-        PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("default", 25f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MIN.put("default", 30f);
-        PARTICLE_VELOCITY_MIN.put("FLASH_ID_2", 0f);
+        PARTICLE_VELOCITY_MIN.put("default", 10f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MAX.put("default", 70f);
-        PARTICLE_VELOCITY_MAX.put("FLASH_ID_2", 20f);
+        PARTICLE_VELOCITY_MAX.put("default", 30f);
     }
 
     //The shortest duration a particle will last before completely fading away
@@ -129,7 +128,7 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1.2f);
+        PARTICLE_DURATION_MAX.put("default", 1f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
@@ -147,15 +146,15 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
     private static final Map<String, Float> PARTICLE_ARC = new HashMap<>();
     static {
-        PARTICLE_ARC.put("default", 30f);
-        PARTICLE_ARC.put("FLASH_ID_2", 360f);
+        PARTICLE_ARC.put("default", 90f);
     }
 
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.
     //  For example: 90f = the center of the arc is 90 degrees clockwise around the weapon, 0f = the same arc center as the weapon's facing.
     private static final Map<String, Float> PARTICLE_ARC_FACING = new HashMap<>();
     static {
-        PARTICLE_ARC_FACING.put("default", 0f);
+        PARTICLE_ARC_FACING.put("default", 135f);
+        PARTICLE_ARC_FACING.put("FLASH_ID_2", -135f);
     }
 
     //How far away from the screen's edge the particles are allowed to spawn. Lower values mean better performance, but
@@ -176,7 +175,7 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     private boolean shouldOffsetBarrelExtra = false;
 
     //Instantiator
-    public tahlan_ArmigerMuzzleFlashScript() {}
+    public tahlan_PorphyrionMuzzleFlashScript() {}
 
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         //Don't run while paused, or without a weapon

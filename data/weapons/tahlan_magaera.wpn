@@ -1,0 +1,45 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "LINKED",
+  "fireSoundTwo": "tahlan_magaera_fire",
+  "glowColor": [255,140,80,155],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_magaera_hp_glow.png",
+  "hardpointOffsets": [
+    -1.5,
+    3.5,
+    -1.5,
+    -3.5
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_magaera_hp_base.png",
+  "id": "tahlan_magaera",
+  "muzzleFlashSpec": {
+    "length": 60,
+    "particleColor": [255,220,180,155],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 10
+  },
+  "projectileSpecId": "tahlan_magaera_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_magaera_turret_glow.png",
+  "turretOffsets": [
+    -5,
+    3.5,
+    -5,
+    -3.5
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_magaera_turret_base.png",
+  "type": "BALLISTIC"
+}
