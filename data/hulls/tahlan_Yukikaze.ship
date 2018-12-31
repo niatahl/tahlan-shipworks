@@ -36,8 +36,6 @@
 	"tahlan_cooperative_protocols_yuki"
   ],
   "builtInWeapons": {
-    "WS0001": "tahlan_shiva",
-    "WS0002": "tahlan_shiva",
     "WS0009": "tahlan_garuda",
     "WS0010": "tahlan_garuda",
     "WS0011": "tahlan_garuda",
@@ -173,7 +171,7 @@
       ],
       "mount": "TURRET",
       "size": "LARGE",
-      "type": "BUILT_IN"
+      "type": "ENERGY"
     },
     {
       "angle": -0,
@@ -185,7 +183,7 @@
       ],
       "mount": "TURRET",
       "size": "LARGE",
-      "type": "BUILT_IN"
+      "type": "ENERGY"
     },
     {
       "angle": -45,

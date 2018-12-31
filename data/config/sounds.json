@@ -13,9 +13,23 @@
    	},
 	"tahlan_garuda_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.05,"volume":1},
-			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1,"volume":1},
-			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.95,"volume":1},
+           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.85,"volume":0.8},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.9,"volume":0.8},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.95,"volume":0.8},
+        ],
+    },
+	"tahlan_styrix_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.05,"volume":1.3},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.0,"volume":1.3},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.95,"volume":1.3},
+        ],
+    },
+	"tahlan_armiger_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_armiger_fire.ogg","pitch":1.05,"volume":1.3},
+			{"file":"sounds/tahlan/weapons/tahlan_armiger_fire.ogg","pitch":1.00,"volume":1.3},
+			{"file":"sounds/tahlan/weapons/tahlan_armiger_fire.ogg","pitch":0.95,"volume":1.3},
         ],
     },
 }

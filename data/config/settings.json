@@ -8,11 +8,11 @@
     },
 	"graphics":{
 		"tahlan_fx":{
-			"trail_clean":"graphics/trails/fx/trails_clean.png",
-			"trail_fuzzy":"graphics/trails/fx/trails_fuzzy.png",
-			"trail_smooth":"graphics/trails/fx/trails_smooth.png",
-			"trail_zappy":"graphics/trails/fx/trails_zappy.png",
-			"trail_contrail":"graphics/trails/fx/trails_contrail.png",
+			"trail_clean":"graphics/tahlan/fx/trails_clean.png",
+			"trail_fuzzy":"graphics/tahlan/fx/trails_fuzzy.png",
+			"trail_smooth":"graphics/tahlan/fx/trails_smooth.png",
+			"trail_zappy":"graphics/tahlan/fx/trails_zappy.png",
+			"trail_contrail":"graphics/tahlan/fx/trails_contrail.png",
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",

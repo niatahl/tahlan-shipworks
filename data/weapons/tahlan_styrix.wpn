@@ -1,0 +1,40 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_styrix_fire",  
+  "everyFrameEffect":"data.scripts.weapons.tahlan_StyrixMuzzleFlashScript",
+  "glowColor": [255,140,80,155],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_styrix_hp_glow.png",
+  "hardpointOffsets": [
+    1,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_styrix_hp_base.png",
+  "id": "tahlan_styrix",
+  "muzzleFlashSpec": {
+    "length": 120,
+    "particleColor": [255,140,40,155],
+    "particleCount": 50,
+    "particleDuration": 0.8,
+    "particleSizeMin": 15,
+    "particleSizeRange": 25,
+    "spread": 10
+  },
+  "projectileSpecId": "tahlan_styrix_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_styrix_turret_glow.png",
+  "turretOffsets": [
+    -12,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_styrix_turret_base.png",
+  "type": "BALLISTIC"
+}
