@@ -10,11 +10,11 @@
   ],
   "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_armiger_hp_recoil.png",
   "hardpointOffsets": [
-    52,
+    48,
     9.5,
-    53,
+    49,
     0,
-    52,
+    48,
     -9.5
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_armiger_hp_base.png",
@@ -47,11 +47,11 @@
   ],
   "turretGunSprite": "graphics/tahlan/weapons/tahlan_armiger_turret_recoil.png",
   "turretOffsets": [
-    40,
+    36,
     9.5,
-    41,
+    37,
     0,
-    40,
+    36,
     -9.5
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_armiger_turret_base.png",
