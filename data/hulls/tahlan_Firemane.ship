@@ -210,6 +210,30 @@
       "mount": "HARDPOINT",
       "size": "LARGE",
       "type": "BALLISTIC"
+    },
+    {
+      "angle": 103,
+      "arc": 180,
+      "id": "WS0007",
+      "locations": [
+        -64,
+        83
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": -103,
+      "arc": 180,
+      "id": "WS0008",
+      "locations": [
+        -64,
+        -83
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "SYSTEM"
     }
   ],
   "width": 182

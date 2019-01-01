@@ -1,9 +1,9 @@
 {
 	"id":"tahlan_magaera_shot",
 	"specClass":"projectile",
-	"spawnType":"BALLISTIC",
-	"collisionClass":"PROJECTILE_FF",
-	"collisionClassByFighter":"PROJECTILE_FIGHTER",	
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":50.0,
 	"width":3.0,
 	"fadeTime":0.15,

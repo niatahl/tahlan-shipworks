@@ -15,7 +15,7 @@
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_styrix_hp_base.png",
   "id": "tahlan_styrix",
   "muzzleFlashSpec": {
-    "length": 120,
+    "length": 100,
     "particleColor": [255,220,180,155],
     "particleCount": 50,
     "particleDuration": 0.8,

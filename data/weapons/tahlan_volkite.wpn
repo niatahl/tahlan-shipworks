@@ -1,0 +1,46 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "vulcan_cannon_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_volkite_hp_glow.png",
+  "hardpointOffsets": [
+    15,
+    2.5,
+    15,
+    -2.5
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_volkite_hp_base.png",
+  "id": "tahlan_volkite",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "particleColor": [255,220,180,155],
+    "particleCount": 10,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 20
+  },
+  "projectileSpecId": "tahlan_volkite_shot",
+  "size": "SMALL",
+  "renderHints": ["RENDER_BARREL_BELOW"],
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_volkite_turret_recoil.png",
+  "turretOffsets": [
+    13,
+    2.5,
+    13,
+    -2.5
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_volkite_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 4
+}
