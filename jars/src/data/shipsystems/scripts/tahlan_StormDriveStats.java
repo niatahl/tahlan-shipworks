@@ -47,9 +47,11 @@ public class tahlan_StormDriveStats extends BaseShipSystemScript {
 //		}
         return -1;
     }
+
     public float getInOverride(ShipAPI ship) {
         return -1;
     }
+
     public float getOutOverride(ShipAPI ship) {
         return -1;
     }
@@ -59,7 +61,16 @@ public class tahlan_StormDriveStats extends BaseShipSystemScript {
     }
 
     public int getUsesOverride(ShipAPI ship) {
-        return -1;
+        if (ship.getHullSize() == HullSize.FRIGATE){
+            return 3;
+        }
+        if (ship.getHullSize() == HullSize.DESTROYER){
+            return 3;
+        }
+        if (ship.getHullSize() == HullSize.CRUISER){
+            return 2;
+        }
+        return-1;
     }
 }
 

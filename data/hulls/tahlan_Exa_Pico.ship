@@ -45,6 +45,12 @@
     -21,
     8
   ],
+  "builtInMods": [
+    "tahlan_knightrefit"
+  ],
+  "builtInWeapons": {
+    "WS0003": "tahlan_exa_pico_glow"
+  },
   "builtInWings": [
     "tahlan_Exec_M_drone_wing"
   ],
@@ -215,6 +221,18 @@
       "mount": "HIDDEN",
       "size": "LARGE",
       "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "WS0003",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "LARGE",
+      "type": "DECORATIVE"
     }
   ],
   "width": 84

@@ -20,6 +20,7 @@
   ],
   "hardpointSprite": "",
   "id": "tahlan_utpc",
+  "interruptibleBurst": true,
   "muzzleFlashSpec": {
     "length": 50,
     "particleColor": [

@@ -5,6 +5,7 @@
 		},  
 	"designTypeColors":{
             "Unknown":[255,255,255,255],
+            "The Great Houses":[160,150,140,255],
     },
 	"graphics":{
 		"tahlan_fx":{
@@ -21,9 +22,12 @@
 		"misc":{
 			"tahlan_cooperative_protocols_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols.png",
 			"tahlan_cooperative_protocols_multi_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols_multi.png",
+			"tahlan_knightrefit_icon":"graphics/tahlan/icons/hullsys/tahlan_knightrefit.png",
+			"tahlan_lens_flare":"graphics/tahlan/fx/tahlan_lens_flare.png",
 		},
 		"blueprint_packages":{
-			"tahlan_kaze_package":"graphics/tahlan/icons/cargo/package_kaze.png",
+			"tahlan_kaze_package":"graphics/tahlan/icons/cargo/tahlan_package_kaze.png",
+			"tahlan_knight_package":"graphics/tahlan/icons/cargo/tahlan_package_knight.png",
 		},
 	}
 }

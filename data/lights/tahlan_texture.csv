@@ -1,5 +1,6 @@
 id,type,frame,magnitude,map,path
 tahlan_Castigator,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Castigator_Normal.png
+tahlan_Castigator_knight,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Castigator_knight_Normal.png
 tahlan_Yukikaze,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Yukikaze_Normal.png
 tahlan_Korikaze,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Korikaze_Normal.png
 tahlan_Alva,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Alva_Normal.png

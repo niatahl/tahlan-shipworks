@@ -1,0 +1,21 @@
+{
+	# Reserved engine style ids (can not be used):
+	# "CUSTOM"
+	
+	"TAHLAN_GH_ENGINE":{
+		#"glowSprite":"graphics/fx/engineglow32.png", # not implemented
+		#"glowShape":"graphics/fx/engineflame32.png",
+		"engineColor":[190,130,65,255],
+		"engineCampaignColor":[190,130,65,255],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":3,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0.5,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[200,90,70,75],
+		#"contrailCampaignColor":[120,50,50,50],
+		"type":"SMOKE" # GLOW or SMOKE
+	}
+}
+

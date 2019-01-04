@@ -7,3 +7,8 @@ If at least %s Korikaze-class ships are within this range, all bonuses are incre
 Cooperative Protocols,tahlan_cooperative_protocols_kori,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CooperativeProtocolsKori,"The Korikaze and Yukikaze hulls were specifically developed to be fielded in tandem. The Korikaze has fine-tuned transcievers allowing it to accurately exchange information and combat data with a nearby Yukikaze-class vessel.
 
 If an allied Yukikaze-class ship is within %s SU, this ship ignores %s of enemy ECM, counts its ECM rating as %s higher, and gains %s additional range for all weapons.",Bonus when grouped with a Yukikaze,graphics/tahlan/hullmods/cooperative_protocols.png
+Kassadari Engineering,tahlan_knightrefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_KnightRefit,"A rare ship constructed by the Great Houses.
+
+Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s. Armor is reduced by %s based on hull size to make room for the exposed components of the system and monthly supply cost is increased by %s.
+
+In emergency situations the Temporal Circuit will enter overdrive mode. Activating automatically if hull integrity falls below %s, the time acceleration is boosted to %s.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png

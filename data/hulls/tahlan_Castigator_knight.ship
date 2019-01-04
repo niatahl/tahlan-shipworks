@@ -89,6 +89,9 @@
     -140.5,
     11.5
   ],
+  "builtInMods": [
+    "tahlan_knightrefit"
+  ],
   "builtInWeapons": {
     "WS0015": "tahlan_utpc",
     "WS0016": "tahlan_utpc",
@@ -191,7 +194,7 @@
     }
   ],
   "height": 293,
-  "hullId": "tahlan_Castigator",
+  "hullId": "tahlan_Castigator_knight",
   "hullName": "Castigator",
   "hullSize": "CRUISER",
   "shieldCenter": [
@@ -199,8 +202,8 @@
     -0
   ],
   "shieldRadius": 178,
-  "spriteName": "graphics/tahlan/ships/tahlan_Castigator.png",
-  "style": "LOW_TECH",
+  "spriteName": "graphics/tahlan/ships/tahlan_Castigator_knight.png",
+  "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

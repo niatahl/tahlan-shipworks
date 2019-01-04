@@ -1,9 +1,8 @@
 {
 	
 	# variantOverrides restricts hulls to listed variants and adjusts their probability
-	"variantOverrides":{
-		"dara_junker_OD":30,
-	},
+	#"variantOverrides":{
+	#},
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		#"tags":{

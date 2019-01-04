@@ -51,6 +51,6 @@ Roughtness Clamp:0
 Curvature from Normal:False
 &
 -3,93_Smooth
-85,27_Smooth
-165,27_Smooth
+99,29_Smooth
+151,29_Smooth
 253,93_Smooth

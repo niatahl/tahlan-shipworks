@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   "everyFrameEffect": "data.scripts.weapons.tahlan_ArmigerMuzzleFlashScript",
-  "fireSoundTwo": "heavy_mauler_fire",
+  "fireSoundTwo": "tahlan_armiger_fire",
   "hardpointAngleOffsets": [
     0,
     0,
