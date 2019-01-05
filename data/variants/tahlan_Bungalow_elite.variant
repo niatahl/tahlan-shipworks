@@ -1,0 +1,37 @@
+{
+    "displayName": "Elite",
+    "fluxCapacitors": 0,
+    "fluxVents": 20,
+    "hullId": "tahlan_Bungalow",
+    "hullMods": [],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Bungalow_elite",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hveldriver",
+                "WS0002": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "hoplon_wing",
+        "hoplon_wing",
+        "hoplon_wing",
+        "broadsword_wing"
+    ]
+}

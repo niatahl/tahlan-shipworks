@@ -19,6 +19,7 @@
 			"tahlan_Castella",
 			"tahlan_Kodai",
 			"tahlan_Ambrosia",
+			"tahlan_Nessie",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -38,7 +39,9 @@
 	
 	"knownWeapons":{
 		#"tags":[],
-		#"weapons":[],
+		"weapons":[
+			"tahlan_armiger",
+		],
 	},
 	"priorityWeapons":{
 		#"tags":[],

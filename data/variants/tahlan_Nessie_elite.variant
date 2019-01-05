@@ -1,0 +1,47 @@
+{
+    "displayName": "E1337",
+    "fluxCapacitors": 29,
+    "fluxVents": 0,
+    "hullId": "tahlan_Nessie",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Nessie_elite",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0013": "hellbore"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "hammer",
+                "WS0010": "hammer",
+                "WS0011": "hammer",
+                "WS0012": "hammer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "lightneedler",
+                "WS0002": "lightneedler",
+                "WS0003": "lightneedler",
+                "WS0004": "lightneedler"
+            }
+        }
+    ]
+}

@@ -36,7 +36,9 @@
 	
 	"knownWeapons":{
 		#"tags":[],
-		#"weapons":[],
+		"weapons":[
+			"tahlan_armiger",
+		],
 	},
 	"priorityWeapons":{
 		#"tags":[],

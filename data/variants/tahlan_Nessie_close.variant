@@ -1,0 +1,50 @@
+{
+    "displayName": "Close Assault",
+    "fluxCapacitors": 30,
+    "fluxVents": 2,
+    "hullId": "tahlan_Nessie",
+    "hullMods": [
+        "unstable_injector",
+        "fluxbreakers"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Nessie_close",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0013": "devastator"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "reaper",
+                "WS0010": "reaper",
+                "WS0011": "reaper",
+                "WS0012": "reaper"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "lightdualmg",
+                "WS0002": "lightdualmg",
+                "WS0003": "lightdualmg",
+                "WS0004": "lightdualmg"
+            }
+        }
+    ]
+}

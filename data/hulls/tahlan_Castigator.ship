@@ -89,6 +89,9 @@
     -140.5,
     11.5
   ],
+  "builtInMods": [
+	"tahlan_advballistics"
+  ],
   "builtInWeapons": {
     "WS0015": "tahlan_utpc",
     "WS0016": "tahlan_utpc",

@@ -1,0 +1,301 @@
+{
+  "bounds": [
+    -86.5,
+    -31.5,
+    -89,
+    -62,
+    -95,
+    -69.5,
+    -79,
+    -66.5,
+    -55,
+    -84,
+    -35,
+    -86,
+    -32.5,
+    -81,
+    -19,
+    -81,
+    -12,
+    -87,
+    1.5,
+    -87,
+    7,
+    -79,
+    55,
+    -78.5,
+    64.5,
+    -65.5,
+    76,
+    -65,
+    87,
+    -53.5,
+    73,
+    -45,
+    61.5,
+    -20.5,
+    61.5,
+    20.5,
+    73,
+    45,
+    87,
+    53.5,
+    76,
+    65,
+    64.5,
+    65.5,
+    55,
+    78.5,
+    7,
+    79,
+    1.5,
+    87,
+    -12,
+    87,
+    -19,
+    81,
+    -32.5,
+    81,
+    -35,
+    86,
+    -55,
+    84,
+    -79,
+    66.5,
+    -95,
+    69.5,
+    -89,
+    62,
+    -86.5,
+    31.5
+  ],
+  "builtInWings": [],
+  "center": [
+    88,
+    95.5
+  ],
+  "collisionRadius": 157,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 27,
+      "location": [
+        -91.5,
+        55.5
+      ],
+      "style": "LOW_TECH",
+      "width": 10
+    },
+    {
+      "angle": -180,
+      "contrailSize": 10,
+      "length": 27,
+      "location": [
+        -91.5,
+        -55.5
+      ],
+      "style": "LOW_TECH",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 12,
+      "length": 35,
+      "location": [
+        -92.5,
+        44
+      ],
+      "style": "LOW_TECH",
+      "width": 12
+    },
+    {
+      "angle": -180,
+      "contrailSize": 12,
+      "length": 35,
+      "location": [
+        -92.5,
+        -44
+      ],
+      "style": "LOW_TECH",
+      "width": 12
+    },
+    {
+      "angle": 180,
+      "contrailSize": 15,
+      "length": 31,
+      "location": [
+        -90.5,
+        7
+      ],
+      "style": "LOW_TECH",
+      "width": 15
+    },
+    {
+      "angle": -180,
+      "contrailSize": 15,
+      "length": 31,
+      "location": [
+        -90.5,
+        -7
+      ],
+      "style": "LOW_TECH",
+      "width": 15
+    }
+  ],
+  "height": 191,
+  "hullId": "tahlan_Bungalow",
+  "hullName": "Bungalow",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 145,
+  "spriteName": "graphics/tahlan/ships/tahlan_Bungalow.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 39.5,
+      "arc": 104,
+      "id": "WS0001",
+      "locations": [
+        -34,
+        28.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -39.5,
+      "arc": 104,
+      "id": "WS0002",
+      "locations": [
+        -34,
+        -28.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 21,
+      "arc": 104,
+      "id": "WS0003",
+      "locations": [
+        49.5,
+        56
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -21,
+      "arc": 104,
+      "id": "WS0004",
+      "locations": [
+        49.5,
+        -56
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -55.5,
+      "arc": 104,
+      "id": "WS0005",
+      "locations": [
+        -9.5,
+        -76
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 67,
+      "arc": 123,
+      "id": "WS0006",
+      "locations": [
+        -9.5,
+        76
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 180,
+      "arc": 150,
+      "id": "WS0007",
+      "locations": [
+        -62,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        2,
+        40,
+        -7,
+        34
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        2.5,
+        -39.5,
+        -5.5,
+        -33.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        -8.5,
+        26.5,
+        -4.5,
+        18.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 4",
+      "locations": [
+        -9,
+        -26,
+        -4,
+        -17.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 176
+}

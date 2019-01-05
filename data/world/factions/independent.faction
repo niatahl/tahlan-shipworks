@@ -5,7 +5,9 @@
 	},
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
-		#"tags":{},
+		"tags":{
+			"tahlan_knight_bp":0.2,
+		},
 		#"hulls":{},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -14,7 +16,7 @@
 		#"hulls":[],
 	},
 	"knownShips":{
-		#"tags":[],
+		"tags":["tahlan_knight_bp"],
 		"hulls":[
 			"tahlan_Castella",
 			"tahlan_Kodai",
@@ -36,8 +38,10 @@
 	},
 	
 	"knownWeapons":{
-		#"tags":[],
-		#"weapons":[],
+		"tags":["tahlan_knight_bp"],
+		"weapons":[
+			"tahlan_armiger",
+		],
 	},
 	"priorityWeapons":{
 		#"tags":[],

@@ -198,8 +198,8 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_SPAWN_OFFSETS.put("tahlan_utpc_shot_splinter", 30f);
         TRAIL_SPAWN_OFFSETS.put("tahlan_porph_shot", 30f);
         TRAIL_SPAWN_OFFSETS.put("tahlan_armiger_shot", 0f);
-        TRAIL_SPAWN_OFFSETS.put("tahlan_styrix_shot", 40f);
-        TRAIL_SPAWN_OFFSETS.put("tahlan_magaera_shot", 30f);
+        TRAIL_SPAWN_OFFSETS.put("tahlan_styrix_shot", 20f);
+        TRAIL_SPAWN_OFFSETS.put("tahlan_magaera_shot", 15f);
         TRAIL_SPAWN_OFFSETS.put("tahlan_hekaton_torp", 10f);
     }
 
@@ -327,10 +327,13 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                         TRAIL_OPACITIES.get(specID) * opacityMult, TRAIL_DURATIONS_IN.get(specID), TRAIL_DURATIONS_MAIN.get(specID), TRAIL_DURATIONS_OUT.get(specID), TRAIL_BLEND_SRC.get(specID),
                         TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), TRAIL_SCROLL_SPEEDS.get(specID), sidewayVel, null);
 
+                Vector2f glowOffsetPoint = new Vector2f((float) Math.cos(Math.toRadians(proj.getFacing())) * 20f, (float) Math.sin(Math.toRadians(proj.getFacing())) * 20f);
+                Vector2f glowSpawnPosition = new Vector2f(glowOffsetPoint.x + proj.getLocation().x, glowOffsetPoint.y + proj.getLocation().y);
+
                 if (projectileTrailIDs3.get(proj) == null) {
                     projectileTrailIDs3.put(proj, MagicTrailPlugin.getUniqueID());
                 }
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
                         0f, 0f, 40f, 10f, new Color(140, 215, 255), new Color(140, 215, 255),
                         0.4f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                         TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
@@ -390,10 +393,13 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                             0.3f * opacityMult, TRAIL_DURATIONS_IN.get(specID), TRAIL_DURATIONS_MAIN.get(specID), TRAIL_DURATIONS_OUT.get(specID), TRAIL_BLEND_SRC.get(specID),
                             TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), TRAIL_SCROLL_SPEEDS.get(specID), sidewayVel, null);
 
+                    Vector2f glowOffsetPoint = new Vector2f((float) Math.cos(Math.toRadians(proj.getFacing())) * 40f, (float) Math.sin(Math.toRadians(proj.getFacing())) * 40f);
+                    Vector2f glowSpawnPosition = new Vector2f(glowOffsetPoint.x + proj.getLocation().x, glowOffsetPoint.y + proj.getLocation().y);
+
                     if (projectileTrailIDs4.get(proj) == null) {
                         projectileTrailIDs4.put(proj, MagicTrailPlugin.getUniqueID());
                     }
-                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs4.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs4.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
                             0f, 0f, 60f, 30f, new Color(140, 215, 255), new Color(140, 215, 255),
                             0.5f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                             TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);

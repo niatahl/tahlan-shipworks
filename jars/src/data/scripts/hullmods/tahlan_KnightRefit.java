@@ -40,16 +40,16 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
         switch (hullSize) {
             case FRIGATE:
-                stats.getArmorBonus().modifyFlat(id, 0f-ARMOR_MALUS_FRIGATE);
+                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_FRIGATE);
                 break;
             case DESTROYER:
-                stats.getArmorBonus().modifyFlat(id, 0f-ARMOR_MALUS_DESTROYER);
+                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_DESTROYER);
                 break;
             case CRUISER:
-                stats.getArmorBonus().modifyFlat(id, 0f-ARMOR_MALUS_CRUISER);
+                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_CRUISER);
                 break;
             case CAPITAL_SHIP:
-                stats.getArmorBonus().modifyFlat(id, 0f-ARMOR_MALUS_CAPITAL);
+                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_CAPITAL);
         }
 
         //stats.getMaxSpeed().modifyMult(id,HANDLING_MULT);

@@ -1,0 +1,37 @@
+{
+    "displayName": "Bomber",
+    "fluxCapacitors": 0,
+    "fluxVents": 24,
+    "hullId": "tahlan_Bungalow",
+    "hullMods": [],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Bungalow_bomber",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavyac",
+                "WS0002": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "railgun",
+                "WS0004": "railgun",
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing"
+    ]
+}

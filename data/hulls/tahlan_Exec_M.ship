@@ -14,6 +14,7 @@
     4
   ],
   "builtInMods": [
+	"terminator_core",
     "advancedoptics",
     "no_weapon_flux"
   ],
@@ -64,7 +65,7 @@
   ],
   "shieldRadius": 18.5,
   "spriteName": "graphics/tahlan/ships/tahlan_Exec_M.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

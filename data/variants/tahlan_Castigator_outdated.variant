@@ -1,0 +1,61 @@
+{
+    "displayName": "Outdated",
+    "fluxCapacitors": 3,
+    "fluxVents": 30,
+    "hullId": "tahlan_Castigator",
+    "hullMods": [
+        "dedicated_targeting_core",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Castigator_outdated",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0015": "tahlan_utpc",
+                "WS0016": "tahlan_utpc"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0013": "harpoonpod",
+                "WS0014": "harpoonpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "heavyac",
+                "WS0004": "heavyac",
+                "WS0012": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavymortar",
+                "WS0002": "heavymortar"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan"
+            }
+        }
+    ]
+}

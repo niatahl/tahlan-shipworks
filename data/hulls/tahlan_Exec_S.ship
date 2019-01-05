@@ -75,7 +75,7 @@
   ],
   "shieldRadius": 10.5,
   "spriteName": "graphics/tahlan/ships/tahlan_Exec_S.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

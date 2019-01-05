@@ -33,7 +33,7 @@
   ],
   "builtInMods": [
     "high_maintenance",
-	"tahlan_cooperative_protocols_yuki"
+    "tahlan_cooperative_protocols_yuki"
   ],
   "builtInWeapons": {
     "WS0009": "tahlan_garuda",
@@ -162,7 +162,7 @@
   "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 0,
+      "angle": 5,
       "arc": 90,
       "id": "WS0001",
       "locations": [
@@ -174,7 +174,7 @@
       "type": "ENERGY"
     },
     {
-      "angle": -0,
+      "angle": -5,
       "arc": 90,
       "id": "WS0002",
       "locations": [
@@ -235,7 +235,7 @@
     },
     {
       "angle": 0,
-      "arc": 5,
+      "arc": 10,
       "id": "WS0007",
       "locations": [
         33,
@@ -247,7 +247,7 @@
     },
     {
       "angle": -0,
-      "arc": 5,
+      "arc": 10,
       "id": "WS0008",
       "locations": [
         33,

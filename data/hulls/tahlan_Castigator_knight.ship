@@ -90,6 +90,7 @@
     11.5
   ],
   "builtInMods": [
+	"tahlan_advballistics",
     "tahlan_knightrefit"
   ],
   "builtInWeapons": {

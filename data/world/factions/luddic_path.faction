@@ -46,7 +46,9 @@
 	
 	"knownWeapons":{
 		#"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "LP_bp", "luddic_path"],
-		#"weapons":[],
+		"weapons":[
+			"tahlan_armiger",
+		],
 	},
 	"priorityWeapons":{
 		#"tags":[],

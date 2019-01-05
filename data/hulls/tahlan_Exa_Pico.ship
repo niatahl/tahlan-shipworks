@@ -68,7 +68,7 @@
         -27,
         19
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -79,7 +79,7 @@
         -27,
         -19
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -90,7 +90,7 @@
         -26,
         23
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -101,7 +101,7 @@
         -26,
         -23
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -112,7 +112,7 @@
         -25,
         27
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -123,7 +123,7 @@
         -25,
         -27
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -134,7 +134,7 @@
         -23,
         31
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -145,7 +145,7 @@
         -23,
         -31
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -156,7 +156,7 @@
         -25,
         14
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     },
     {
@@ -167,7 +167,7 @@
         -25,
         -14
       ],
-      "style": "HIGH_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 5
     }
   ],
@@ -181,7 +181,7 @@
   ],
   "shieldRadius": 53.5,
   "spriteName": "graphics/tahlan/ships/tahlan_Exa_Pico.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

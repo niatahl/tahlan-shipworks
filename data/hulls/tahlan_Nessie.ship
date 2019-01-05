@@ -1,0 +1,363 @@
+{
+  "bounds": [
+    -73,
+    -7,
+    -83.5,
+    -11,
+    -83.5,
+    -28,
+    -73.5,
+    -33.5,
+    -33,
+    -33,
+    -18,
+    -47.5,
+    -38,
+    -60,
+    -29,
+    -104.5,
+    -10.5,
+    -115,
+    2,
+    -105,
+    45,
+    -115,
+    65,
+    -98,
+    61.5,
+    -23,
+    48,
+    -20,
+    15,
+    -27.5,
+    5,
+    -16.5,
+    19.5,
+    -0,
+    5,
+    16.5,
+    15,
+    27.5,
+    48,
+    20,
+    61.5,
+    23,
+    65,
+    98,
+    45,
+    115,
+    2,
+    105,
+    -10.5,
+    115,
+    -29,
+    104.5,
+    -38,
+    60,
+    -18,
+    47.5,
+    -33,
+    33,
+    -73.5,
+    33.5,
+    -83.5,
+    28,
+    -83.5,
+    11,
+    -73,
+    7
+  ],
+  "builtInMods": [
+    "phasefield",
+    "delicate"
+  ],
+  "builtInWings": [],
+  "center": [
+    116,
+    85.5
+  ],
+  "collisionRadius": 160.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 46,
+      "location": [
+        -36.5,
+        75.5
+      ],
+      "style": "LOW_TECH",
+      "width": 24
+    },
+    {
+      "angle": -180,
+      "contrailSize": 100,
+      "length": 46,
+      "location": [
+        -36.5,
+        -75.5
+      ],
+      "style": "LOW_TECH",
+      "width": 24
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 19.5,
+      "location": [
+        -32.5,
+        97
+      ],
+      "style": "LOW_TECH",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 19.5,
+      "location": [
+        -32.5,
+        -97
+      ],
+      "style": "LOW_TECH",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 23,
+      "location": [
+        -84.5,
+        19
+      ],
+      "style": "LOW_TECH",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 23,
+      "location": [
+        -84.5,
+        -19
+      ],
+      "style": "LOW_TECH",
+      "width": 9
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 21,
+      "location": [
+        -84.5,
+        25
+      ],
+      "style": "LOW_TECH",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 21,
+      "location": [
+        -84.5,
+        -25
+      ],
+      "style": "LOW_TECH",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 21,
+      "location": [
+        -84.5,
+        12
+      ],
+      "style": "LOW_TECH",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 21,
+      "location": [
+        -84.5,
+        -12
+      ],
+      "style": "LOW_TECH",
+      "width": 7
+    }
+  ],
+  "height": 153,
+  "hullId": "tahlan_Nessie",
+  "hullName": "Nessie",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 142,
+  "spriteName": "graphics/tahlan/ships/tahlan_Nessie.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -12,
+      "arc": 83,
+      "id": "WS0001",
+      "locations": [
+        42.5,
+        32
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 12,
+      "arc": 83,
+      "id": "WS0002",
+      "locations": [
+        42.5,
+        -32
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 31,
+      "arc": 100,
+      "id": "WS0003",
+      "locations": [
+        42.5,
+        94
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -31,
+      "arc": 100,
+      "id": "WS0004",
+      "locations": [
+        42.5,
+        -94
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 119.5,
+      "arc": 100,
+      "id": "WS0005",
+      "locations": [
+        -10.5,
+        97
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -119.5,
+      "arc": 100,
+      "id": "WS0006",
+      "locations": [
+        -10.5,
+        -97
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 145.5,
+      "arc": 105,
+      "id": "WS0007",
+      "locations": [
+        -38,
+        10
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -145.5,
+      "arc": 105,
+      "id": "WS0008",
+      "locations": [
+        -38,
+        -10
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0009",
+      "locations": [
+        62.5,
+        81
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0010",
+      "locations": [
+        62.5,
+        -81
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0011",
+      "locations": [
+        62,
+        46
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0012",
+      "locations": [
+        62,
+        -46
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0013",
+      "locations": [
+        6.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BALLISTIC"
+    }
+  ],
+  "width": 232
+}
