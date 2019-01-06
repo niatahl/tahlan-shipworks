@@ -16,7 +16,7 @@
 	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
 					"range":15,
 					"explosionSpec":{"duration":0.1f,
-									 "radius":15,
+									 "radius":10,
 									 "coreRadius":5, # full damage within core radius - also equal to proximity fuse range
 									 "collisionClass":PROJECTILE_FF,
 									 "collisionClassByFighter":PROJECTILE_FIGHTER,

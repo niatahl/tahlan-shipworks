@@ -1,3 +1,7 @@
+0.2b
+
+- Addaed Atrapos
+
 0.2a
 
 - Added Nessie makeshift phase cruiser

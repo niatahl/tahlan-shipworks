@@ -1,0 +1,45 @@
+{
+  "animationType": "GLOW",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "phase_beam_loop",
+  "everyFrameEffect":"data.scripts.weapons.tahlan_AtraposMuzzleFlashScript",
+  "glowColor": [
+    255,
+    150,
+    50,
+    150
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_atrapos_hp_glow.png",
+  "hardpointOffsets": [
+    2.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_atrapos_hp_base.png",
+  "id": "tahlan_atrapos",
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "fringeColor":[255,100,0,255],
+  "coreColor":[255,190,140,220],
+  "hitGlowRadius": 40,
+  "textureScrollSpeed": 400,
+  "pixelsPerTexel":3,
+  "width":15,
+  #"textureType": ROUGH,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_atrapos_beam_core.png"
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_atrapos_turret_glow.png",
+  "turretOffsets": [
+    -2,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_atrapos_turret_base.png",
+  "type": "BALLISTIC"
+}

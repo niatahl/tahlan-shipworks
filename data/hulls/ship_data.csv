@@ -6,13 +6,13 @@ Vale,tahlan_Vale,Fast Cruiser,Unknown,tahlan_holyfuror,20,6000,500,9000,,500,100
 Ambrosia,tahlan_Ambrosia,Carrier,Unknown,recalldevice,20,8000,1000,4000,4000,200,130,3,40,20,10,10,10,1800,OMNI,,120,0.4,1,,,190,280,100,60,4,15,8,65000,4,12,420,0.25,20,20,CARRIER,rare_bp,0.2,0.4,2,3,410
 Alva,tahlan_Alva,Stealth Carrier,Unknown,displacer,30,12000,1300,14000,12500,800,260,6,35,20,15,8,8,3000,OMNI,,180,0.4,0.8,,,500,1400,300,300,18,20,8,300000,3,12,720,0.25,40,40,"CARRIER, COMBAT",,,0.4,2,4,500
 Kodai,tahlan_Kodai,Cruiser,Midline,maneuveringjets,14,8000,800,10000,10500,600,110,1,60,40,25,20,30,1100,FRONT,,160,0.4,0.8,,,170,300,300,120,3,33,8,46000,3,12,480,0.25,24,24,,rare_bp,,0.5,2,3,121212
-Exa Pico,tahlan_Exa_Pico,Drone Frigate,The Great Houses,displacer,10,4000,400,5000,,300,30,1,140,200,150,60,120,200,OMNI,,360,0.4,0.7,,,0,0,30,30,1,22,9,30000,5,20,300,0.25,15,15,,rare_bp,0.1,0.5,2,2,121245
-Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,8000,1500,14000,10500,600,150,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,64000,3,15,480,0.25,30,30,,rare_bp,0.5,0.5,2,3,401
+Exa Pico,tahlan_Exa_Pico,Drone Frigate,The Great Houses,displacer,10,4000,400,4000,,100,30,1,140,200,150,60,120,200,OMNI,,360,0.4,0.7,,,0,0,30,30,1,22,9,30000,5,20,300,0.25,15,15,,rare_bp,0.1,0.5,2,2,121245
+Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,8000,1500,14000,10500,600,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,64000,3,15,480,0.25,30,30,,rare_bp,0.5,0.5,2,3,401
 Castigator (GH),tahlan_Castigator_knight,Advanced Cruiser,Low Tech,tahlan_errantdrive,16,8000,1500,14000,10500,650,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,160,290,200,140,3,33,8,90000,3,15,540,0.25,35,35,,rare_bp,0.5,0.5,2,3,401
 Bento,tahlan_Bento,Combat Tanker,Low Tech,damper,6,3000,700,4000,1250,300,80,,80,40,30,30,40,400,OMNI,,90,0.5,1,,,10,20,15,220,1,240,8,10000,6,20,240,0.25,10,10,"TANKER, COMBAT",lowtech_bp,,0.5,2,4,209
 Castella,tahlan_Castella,Battlecarrier,Low Tech,burndrive,28,15000,1500,12000,12500,500,280,5,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,220000,3,12,720,0.25,40,40,"CARRIER, COMBAT",rare_bp,,0.4,2,4,507
 Castella (LP),tahlan_Castella_lp,Battleship,Low Tech,tahlan_stormdrive,28,15000,1500,14000,12500,500,280,2,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,500,1200,300,300,15,20,7,250000,3,12,720,0.25,40,40,,"rare_bp, luddic_path",0.6,0.6,2,4,507
-Nessie,tahlan_Nessie,Makeshift Phase Cruiser,Low Tech,emp,,5000,500,12000,,200,120,,50,30,15,12,10,1500,PHASE,phasecloak,,,,0.08,0.08,120,160,50,50,13,16,7,60000,5,25,360,0.25,24,24,,rare_bp,,0.8,3,5,4212
+Nessie,tahlan_Nessie,Makeshift Phase Cruiser,Low Tech,burndrive,,6000,700,14000,,200,120,,65,40,20,15,10,1500,PHASE,phasecloak,,,,0.06,0.06,120,160,50,50,13,16,7,60000,5,25,360,0.25,24,24,,rare_bp,,0.8,3,5,4212
 Bungalow,tahlan_Bungalow,Carrier,Low Tech,targetingfeed,15,8000,1000,5000,4000,200,110,4,40,20,10,10,10,2000,OMNI,,120,0.4,1.1,,,200,320,100,60,4,15,8,48000,4,15,420,0.25,20,20,CARRIER,lowtech_bp,,0.4,2,3,410
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

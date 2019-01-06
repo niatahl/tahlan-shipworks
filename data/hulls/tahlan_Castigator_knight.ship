@@ -113,7 +113,7 @@
         -89.5,
         35.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 22
     },
     {
@@ -124,7 +124,7 @@
         -89.5,
         -35.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 22
     },
     {
@@ -135,7 +135,7 @@
         -86.5,
         53.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 28
     },
     {
@@ -146,7 +146,7 @@
         -86.5,
         -53.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 28
     },
     {
@@ -157,7 +157,7 @@
         -40,
         85
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 12.588685
     },
     {
@@ -168,7 +168,7 @@
         -40,
         -85
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 12.588685
     },
     {
@@ -179,7 +179,7 @@
         66,
         60.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 10.407963
     },
     {
@@ -190,7 +190,7 @@
         66,
         -60.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_GH_ENGINE",
       "width": 10.407963
     }
   ],

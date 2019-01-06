@@ -31,6 +31,7 @@
 		#"tags":[],
 		#"fighters":[],
 	},
+	
 	"priorityFighters":{
 		#"tags":[],
 		#"fighters":[],
@@ -49,9 +50,7 @@
 	
 	"knownHullMods":{
 		#"tags":["base_bp", "pirates"],
-		"hullMods":[
-			"dara_repurposedbays",
-		],
+		#"hullMods":[],
 	},
 	
 }
