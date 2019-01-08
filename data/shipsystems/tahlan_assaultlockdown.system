@@ -1,0 +1,13 @@
+{
+	"id":"tahlan_assaultlockdown",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.shipsystems.scripts.tahlan_AssaultLockdownStats",
+	
+	"weaponGlowColor":[255,150,0,155],
+	"weaponTypes":[BALLISTIC],
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

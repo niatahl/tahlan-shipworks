@@ -1,0 +1,53 @@
+{
+    "displayName": "Kassadari",
+    "fluxCapacitors": 19,
+    "fluxVents": 50,
+    "hullId": "tahlan_legion_gh",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_legion_gh_knight",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "tahlan_styrix",
+                "WS 001": "tahlan_styrix"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 004": "tahlan_hekaton",
+                "WS 005": "tahlan_hekaton",
+                "WS 007": "tahlan_hekaton"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "tahlan_atrapos",
+                "WS 003": "tahlan_atrapos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 018": "tahlan_volkite",
+                "WS 019": "tahlan_volkite",
+                "WS 020": "tahlan_volkite",
+                "WS 021": "tahlan_volkite"
+            }
+        }
+    ],
+    "wings": [
+        "perdition_wing",
+        "perdition_wing",
+        "perdition_wing",
+        "perdition_wing"
+    ]
+}

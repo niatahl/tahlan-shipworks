@@ -1,0 +1,53 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "renderHints":["RENDER_ADDITIVE"],
+  "showDamageWhenDecorative":false,
+  "renderBelowAllWeapons":true,
+  "everyFrameEffect": "data.scripts.weapons.tahlan_KnightGlowScript",
+  "numFrames":2,
+  "frameRate":0,
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hitGlowRadius": 0,
+  "id": "tahlan_vendetta_gh_glow",
+  "pixelsPerTexel": 1,
+  "size": "LARGE",
+  "specClass": "beam",
+  "textureScrollSpeed": 64,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_vendetta_gh_glow_00.png",
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_vendetta_gh_glow_00.png",
+  "type": "DECORATIVE",
+  "width": 10
+}

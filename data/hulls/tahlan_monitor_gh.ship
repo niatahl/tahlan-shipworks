@@ -1,0 +1,228 @@
+{
+  "bounds": [
+    5,
+    54,
+    33,
+    0,
+    4,
+    -53,
+    -23,
+    -46,
+    -26,
+    -27,
+    -19,
+    -24,
+    -18,
+    0,
+    -19,
+    23,
+    -27,
+    25,
+    -24,
+    46
+  ],
+  "builtInMods": [
+	"tahlan_advballistics",
+    "tahlan_knightrefit"
+  ],
+  "builtInWeapons": {
+    "WS 003": "tahlan_volkite",
+    "WS 004": "tahlan_volkite",
+    "WS0001": "tahlan_monitor_gh_glow"
+  },
+  "builtInWings": [],
+  "center": [
+    55,
+    30
+  ],
+  "collisionRadius": 85,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 24,
+      "location": [
+        -27,
+        45
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 32,
+      "location": [
+        -29,
+        39
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 12
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 32,
+      "location": [
+        -29,
+        33
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 12
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 24,
+      "location": [
+        -28,
+        28
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 24,
+      "location": [
+        -28,
+        -27
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 32,
+      "location": [
+        -29,
+        -32
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 12
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 32,
+      "location": [
+        -29,
+        -38
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 12
+    },
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 24,
+      "location": [
+        -27,
+        -44
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 8
+    }
+  ],
+  "height": 70,
+  "hullId": "tahlan_monitor_gh",
+  "hullName": "Monitor (GH)",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    -1,
+    0
+  ],
+  "shieldRadius": 80,
+  "spriteName": "graphics/tahlan/ships/tahlan_monitor_gh.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 80,
+      "arc": 210,
+      "id": "WS 001",
+      "locations": [
+        3,
+        43
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -80,
+      "arc": 210,
+      "id": "WS 002",
+      "locations": [
+        3,
+        -43
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 20,
+      "arc": 90,
+      "id": "WS 003",
+      "locations": [
+        12,
+        21
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -20,
+      "arc": 90,
+      "id": "WS 004",
+      "locations": [
+        12,
+        -21
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 160,
+      "arc": 5,
+      "id": "WS 005",
+      "locations": [
+        -27,
+        17
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": 200,
+      "arc": 5,
+      "id": "WS 006",
+      "locations": [
+        -27,
+        -16
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 110
+}

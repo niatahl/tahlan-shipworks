@@ -1,0 +1,52 @@
+{
+    "displayName": "Kassadari",
+    "fluxCapacitors": 9,
+    "fluxVents": 30,
+    "hullId": "tahlan_dominator_gh",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_dominator_gh_knight",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 012": "tahlan_styrix",
+                "WS 013": "tahlan_styrix"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 014": "tahlan_hekaton",
+                "WS 015": "tahlan_hekaton",
+                "WS 016": "tahlan_hekaton"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 010": "tahlan_porph",
+                "WS 011": "tahlan_porph"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "tahlan_volkite",
+                "WS 002": "tahlan_volkite",
+                "WS 003": "tahlan_volkite",
+                "WS 004": "tahlan_volkite",
+                "WS 005": "tahlan_volkite",
+                "WS 006": "tahlan_volkite",
+                "WS 007": "tahlan_volkite",
+                "WS 008": "tahlan_volkite",
+                "WS 009": "tahlan_volkite"
+            }
+        }
+    ]
+}

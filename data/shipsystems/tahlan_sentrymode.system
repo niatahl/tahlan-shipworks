@@ -1,0 +1,18 @@
+{
+	"id":"tahlan_sentrymode",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.shipsystems.scripts.tahlan_SentryModeStats",
+	
+	"weaponGlowColor":[255,150,0,155],
+	"weaponTypes":[BALLISTIC,ENERGY],
+	
+	"shieldRingColor":[255,200,150,255],
+	"shieldInnerColor":[220,120,0,75],
+	"shieldThicknessMult":1,
+	"shieldFluctuationMult":0,
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}
