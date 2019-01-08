@@ -194,7 +194,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 0,
@@ -206,7 +206,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 0,
@@ -227,10 +227,10 @@
       "arc": 0,
       "id": "WS0003",
       "locations": [
-        0,
+        7,
         -0
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "size": "LARGE",
       "type": "DECORATIVE"
     }

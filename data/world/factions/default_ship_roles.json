@@ -6,10 +6,12 @@
 	"combatSmall":{
 		"tahlan_Korikaze_ion":10,
 		"tahlan_Exa_Pico_standard":10,
+		"tahlan_monitor_gh_knight":10,
 	},
 	"combatMedium":{
 		"tahlan_Bento_standard":10,
 		"tahlan_Vale_crusader":10,
+		"tahlan_enforcer_gh_knight":10,
 	},
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
@@ -19,10 +21,13 @@
 		"tahlan_Yukikaze_lancer":5,
 		"tahlan_Firemane_support":10,
 		"tahlan_Kodai_beamer":3,
-		"tahlan_Kodai_standard":7,		
+		"tahlan_Kodai_standard":7,	
+		"tahlan_dominator_gh_knight":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
+		"tahlan_vendetta_gh_knight":10,
+		"tahlan_onslaught_gh_knight":10,
 	},
 	
 	
@@ -48,6 +53,7 @@
 	"carrierLarge":{
 			"tahlan_Castella_standard":7,
 			"tahlan_Castella_elite":3,
+			"tahlan_legion_gh_knight":10,
 	},
 
 	# phase ships

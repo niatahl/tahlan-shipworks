@@ -7,9 +7,9 @@
     0
   ],
   "hardpointOffsets": [
-    12,
+    8,
     7.5,
-    12,
+    8,
     -7.5
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_launcher_m_hp_base.png",

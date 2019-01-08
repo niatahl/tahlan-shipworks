@@ -70,14 +70,14 @@ public class tahlan_AtraposMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a turret (or HIDDEN)
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_TURRET = new HashMap<>();
     static {
-        PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(0f, 0f));
+        PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(0f, -3f));
     }
 
     //The position the particles are spawned (or at least where their arc originates when using offsets) compared to their weapon's center [or shot offset, see
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a hardpoint
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_HARDPOINT = new HashMap<>();
     static {
-        PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(0f, 4.5f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(0f, 1.5f));
     }
 
     //Which kind of particle is spawned (valid values are "SMOOTH", "BRIGHT" and "SMOKE")
@@ -107,13 +107,13 @@ public class tahlan_AtraposMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MIN.put("default", 20f);
+        PARTICLE_VELOCITY_MIN.put("default", 30f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MAX.put("default", 60f);
+        PARTICLE_VELOCITY_MAX.put("default", 70f);
     }
 
     //The shortest duration a particle will last before completely fading away
@@ -143,7 +143,7 @@ public class tahlan_AtraposMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
     private static final Map<String, Float> PARTICLE_ARC = new HashMap<>();
     static {
-        PARTICLE_ARC.put("default", 30f);
+        PARTICLE_ARC.put("default", 20f);
     }
 
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.

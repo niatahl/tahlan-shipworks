@@ -370,7 +370,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                         projectileTrailIDs2.put(proj, MagicTrailPlugin.getUniqueID());
                     }
                     MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
-                            0f, 0f, 50f, 20f, new Color(255, 0, 0), new Color(255, 0, 0),
+                            0f, 0f, 50f, 20f, new Color(255, 54, 0), new Color(255, 54, 0),
                             0.3f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                             TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
                 }

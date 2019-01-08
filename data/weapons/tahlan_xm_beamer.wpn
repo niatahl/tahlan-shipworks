@@ -2,26 +2,11 @@
   "beamFireOnlyOnFullCharge": true,
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "coreColor": [
-    255,
-    230,
-    200,
-    200
-  ],
-  "everyFrameEffect": "data.scripts.weapons.tahlan_BeamOscillationScript",
+  #"everyFrameEffect": "data.scripts.weapons.tahlan_BeamOscillationScript",
   "fireSoundTwo": "tahlan_shiva_loop",
-  "fringeColor": [
-    255,
-    105,
-    5,
-    0
-  ],
-  "glowColor": [
-    255,
-    105,
-    5,
-    0
-  ],
+  "fringeColor":[255,100,0,225],
+  "coreColor":[255,190,140,220],
+  "glowColor": [255,150,50,250],
   "hardpointAngleOffsets": [
     0
   ],
@@ -32,13 +17,13 @@
   "hardpointSprite": "",
   "hitGlowRadius": 20,
   "id": "tahlan_xm_beamer",
-  "pixelsPerTexel": 4,
+  "pixelsPerTexel": 3,
   "size": "MEDIUM",
   "specClass": "beam",
-  "textureScrollSpeed": 200,
+  "textureScrollSpeed": 400,
   "textureType": [
-    "graphics/tahlan/fx/tahlan_shiva_beam_fringe.png",
-    "graphics/tahlan/fx/tahlan_shiva_beam_core.png"
+    "graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_atrapos_beam_core.png"
   ],
   "turretAngleOffsets": [
     0
@@ -50,5 +35,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_xm_beamer_base.png",
   "type": "ENERGY",
-  "width": 15
+  "width": 8
 }

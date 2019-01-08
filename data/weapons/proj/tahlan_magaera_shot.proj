@@ -4,6 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
+	"hitGlowRadius":15,
 	"length":50.0,
 	"width":3.0,
 	"fadeTime":0.15,
@@ -11,7 +12,6 @@
 	"fringeColor": [255,255,255,255],
 	#"glowColor": [255,140,80,55],
 	#"glowRadius":80,
-	"hitGlowRadius":50,	
 	"textureScrollSpeed":32.0,
 	"pixelsPerTexel":10.0,
 	"bulletSprite":"graphics/tahlan/missiles/tahlan_styrix_slug.png"

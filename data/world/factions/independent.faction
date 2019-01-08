@@ -6,7 +6,7 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"tahlan_knight_bp":0.2,
+			"tahlan_knights":0.2,
 		},
 		#"hulls":{},
 	},
@@ -16,7 +16,7 @@
 		#"hulls":[],
 	},
 	"knownShips":{
-		"tags":["tahlan_knight_bp"],
+		"tags":["tahlan_knights"],
 		"hulls":[
 			"tahlan_Castella",
 			"tahlan_Kodai",
@@ -29,7 +29,7 @@
 	},
 	
 	"knownFighters":{
-		#"tags":[],
+		"tags":["tahlan_knights"],
 		#"fighters":[],
 	},
 	"priorityFighters":{
@@ -38,7 +38,7 @@
 	},
 	
 	"knownWeapons":{
-		"tags":["tahlan_knight_bp"],
+		"tags":["tahlan_knights"],
 		"weapons":[
 			"tahlan_armiger",
 		],

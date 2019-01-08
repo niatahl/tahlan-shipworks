@@ -15,7 +15,6 @@
   ],
   "builtInMods": [
 	"terminator_core",
-    "advancedoptics",
     "no_weapon_flux"
   ],
   "builtInWeapons": {

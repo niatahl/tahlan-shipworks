@@ -7,7 +7,7 @@
 	"length":100.0,
 	"width":12,
 	"fadeTime":0.5,
-	"fringeColor":[255,100,100,255],
+	"fringeColor":[255,100,50,255],
 	"coreColor":[255,215,205,200],
 	"glowColor":[255,0,0,80],
 	"glowSize":50,
