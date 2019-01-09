@@ -22,12 +22,13 @@
     46
   ],
   "builtInMods": [
-	"tahlan_advballistics",
-    "tahlan_knightrefit"
+    "tahlan_advballistics",
+    "tahlan_knightrefit",
+	"fluxshunt"
   ],
   "builtInWeapons": {
-    "WS 003": "tahlan_volkite",
-    "WS 004": "tahlan_volkite",
+    "WS 001": "tahlan_dualvolkite",
+    "WS 002": "tahlan_dualvolkite",
     "WS0001": "tahlan_monitor_gh_glow"
   },
   "builtInWings": [],
@@ -149,7 +150,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "BUILT_IN"
     },
     {
       "angle": -80,
@@ -161,7 +162,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "BUILT_IN"
     },
     {
       "angle": 20,
@@ -173,7 +174,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "UNIVERSAL"
     },
     {
       "angle": -20,
@@ -185,7 +186,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "UNIVERSAL"
     },
     {
       "angle": 160,

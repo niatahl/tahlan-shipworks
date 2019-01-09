@@ -237,7 +237,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "COMPOSITE"
+      "type": "UNIVERSAL"
     },
     {
       "angle": -55,
@@ -249,7 +249,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "COMPOSITE"
+      "type": "UNIVERSAL"
     },
     {
       "angle": 20,

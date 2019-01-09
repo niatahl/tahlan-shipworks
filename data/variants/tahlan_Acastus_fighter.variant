@@ -1,0 +1,22 @@
+{
+  "displayName": "Fighter",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "tahlan_Acastus",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Acastus_fighter",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "tahlan_volkite_s",
+        "WS0002": "tahlan_volkite_s"
+      }
+    }
+  ],
+  "wings": []
+}

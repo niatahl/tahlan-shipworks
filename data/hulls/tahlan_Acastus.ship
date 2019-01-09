@@ -1,0 +1,97 @@
+{
+  "bounds": [
+    -3.5,
+    -10.5,
+    9,
+    -6.5,
+    9,
+    6.5,
+    -3.5,
+    10.5,
+    -11,
+    -0
+  ],
+  "builtInMods": [
+    "tahlan_knightrefit"
+  ],
+  "builtInWings": [],
+  "center": [
+    12.5,
+    11.5
+  ],
+  "collisionRadius": 20.5,
+  "engineSlots": [
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 15.5,
+      "location": [
+        -10.5,
+        0
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 9
+    },
+    {
+      "angle": 156,
+      "contrailSize": 4.455,
+      "length": 9.748783,
+      "location": [
+        -8.5,
+        9
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 4.454759
+    },
+    {
+      "angle": -156,
+      "contrailSize": 4.455,
+      "length": 9.748783,
+      "location": [
+        -8.5,
+        -9
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 4.454759
+    }
+  ],
+  "height": 23,
+  "hullId": "tahlan_Acastus",
+  "hullName": "Acastus",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 18,
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Acastus.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        2.5,
+        8
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "UNIVERSAL"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "WS0002",
+      "locations": [
+        2.5,
+        -8
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "UNIVERSAL"
+    }
+  ],
+  "width": 25
+}

@@ -1,0 +1,38 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "vulcan_cannon_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "",
+  "hardpointOffsets": [
+    0,0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_volkite_s",
+  "muzzleFlashSpec": {
+    "length": 20,
+    "particleColor": [255,220,180,155],
+    "particleCount": 10,
+    "particleDuration": 0.3,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 20
+  },
+  "projectileSpecId": "tahlan_volkite_shot",
+  "size": "SMALL",
+  "renderHints": ["RENDER_BARREL_BELOW"],
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "",
+  "turretOffsets": [
+    0,0
+  ],
+  "turretSprite": "",
+  "type": "BALLISTIC",
+  "visualRecoil": 4
+}

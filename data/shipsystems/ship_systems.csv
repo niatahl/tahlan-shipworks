@@ -1,6 +1,6 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,icon
 Assault Burn,tahlan_stormdrive,1,,,,,,,1,0.1,0.5,1,0.5,,,,,,,,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
 Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,15,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Errant Drive,tahlan_errantdrive,,,,0.05,,,,,,0.5,1,0.5,5,,,,TRUE,,,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
-Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,1,,1,,true,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,true,,,,,,TRUE,TRUE,,,graphics/icons/hullsys/fortress_shield.png
+Errant Drive,tahlan_errantdrive,,,,0.1,,,,,,0.5,1,0.5,5,,,,TRUE,,,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
+Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,1,,1,,TRUE,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,TRUE,,,,,,TRUE,TRUE,,,graphics/icons/hullsys/fortress_shield.png

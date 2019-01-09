@@ -1,3 +1,7 @@
+0.2d
+
+- Added Volkite battery
+
 0.2c
 
 - Added GH refit hulls

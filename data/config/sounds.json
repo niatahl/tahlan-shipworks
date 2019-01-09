@@ -45,5 +45,15 @@
 			{"file":"sounds/sfx_wpn_guns/mauler_fire_01_loud.ogg","pitch":1.0,"volume":0.95},
 			{"file":"sounds/sfx_wpn_guns/mauler_fire_01_loud.ogg","pitch":0.95,"volume":0.95},			
 		],
-	}
+	},
+	"tahlan_atrapos_fire":{
+		"sounds":[
+			{"file":"sounds/tahlan/weapons/tahlan_atrapos_fire.ogg","pitch":1.0,"volume":1.0},
+		],
+	},
+	"tahlan_atrapos_loop":{
+		"sounds":[
+			{"file":"sounds/tahlan/weapons/tahlan_atrapos_loop.ogg","pitch":1.0,"volume":1.0},
+		],
+	},
 }

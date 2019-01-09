@@ -43,7 +43,7 @@ public class tahlan_AtraposMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //How many particles are spawned each second the weapon is firing, on average
     private static final Map<String, Float> PARTICLES_PER_SECOND = new HashMap<>();
     static {
-        PARTICLES_PER_SECOND.put("default", 30f);
+        PARTICLES_PER_SECOND.put("default", 40f);
     }
 
     //Does the PARTICLES_PER_SECOND field get multiplied by the weapon's current chargeLevel?
@@ -89,43 +89,43 @@ public class tahlan_AtraposMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(255,200,100, 165));
+        PARTICLE_COLOR.put("default", new Color(255,200,100, 185));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 15f);
+        PARTICLE_SIZE_MIN.put("default", 10f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
-        PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("default", 15f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MIN.put("default", 30f);
+        PARTICLE_VELOCITY_MIN.put("default", 60f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MAX.put("default", 70f);
+        PARTICLE_VELOCITY_MAX.put("default", 120f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
-        PARTICLE_DURATION_MIN.put("default", 0.8f);
+        PARTICLE_DURATION_MIN.put("default", 0.6f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1f);
+        PARTICLE_DURATION_MAX.put("default", 0.8f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)

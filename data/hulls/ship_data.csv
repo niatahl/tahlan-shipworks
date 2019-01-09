@@ -17,7 +17,7 @@ Bungalow,tahlan_Bungalow,Carrier,Low Tech,targetingfeed,15,8000,1000,5000,4000,2
 Vendetta (GH),tahlan_vendetta_gh,Battleship,The Great Houses,tahlan_errantdrive,30,18000,1500,15000,13000,800,280,,45,18,15,8,5,3500,OMNI,,120,0.4,1,,,500,1200,300,300,15,20,7,350000,3,12,720,0.25,48,48,,,0.2,0.4,2,4,224422
 Legion (GH),tahlan_legion_gh,Battlecarrier,The Great Houses,tahlan_stormdrive,28,15000,1500,12000,12500,700,260,4,30,15,15,6,6,3500,FRONT,,180,0.4,1,,,700,1500,300,300,15,20,7,300000,3,12,720,0.25,40,40,"CARRIER, COMBAT","rare_bp, tahlan_knights",0.2,0.4,2,4,507
 Dominator (GH),tahlan_dominator_gh,Heavy Cruiser,The Great Houses,tahlan_assaultlockdown,15,11000,1500,10000,9000,600,190,,40,20,10,12,12,2250,FRONT,,150,0.5,1,,,200,300,150,150,5,30,8,56000,4,12,540,0.25,25,25,,"rare_bp, tahlan_knights",0.2,0.4,2,3,404
-Monitor (GH),tahlan_monitor_gh,Frigate,The Great Houses,tahlan_sentrymode,5,1500,175,4000,1500,150,30,,90,120,100,60,120,200,OMNI,,300,0.5,0.8,,,15,30,30,20,1,20,10,25000,8,10,360,0.25,6,6,,"rare_bp, tahlan_knights",0.2,0.5,2,2,214
+Monitor (GH),tahlan_monitor_gh,Frigate,The Great Houses,tahlan_sentrymode,5,1500,175,4000,1500,150,30,,90,120,100,60,120,200,OMNI,,360,0.5,0.8,,,15,30,30,20,1,20,10,25000,8,10,360,0.25,6,6,,"rare_bp, tahlan_knights",0.2,0.5,2,2,214
 Enforcer (GH),tahlan_enforcer_gh,Destroyer,The Great Houses,tahlan_errantdrive,10,5000,750,4000,3333,200,110,,60,40,20,30,20,500,OMNI,,150,0.4,1.2,,,60,100,90,90,3,30,9,19000,5,12,420,0.25,9,9,,"rare_bp, tahlan_knights",0.2,0.4,2,3,303
 Onslaught (GH),tahlan_onslaught_gh,Battleship,The Great Houses,tahlan_stormdrive,28,20000,1750,17000,15000,600,360,,25,10,10,4,4,3500,FRONT,,180,0.4,1,,,750,1500,300,400,15,27,7,250000,3,12,720,0.25,40,40,,tahlan_knights,0.2,0.4,2,4,500
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -26,4 +26,4 @@ Onslaught (GH),tahlan_onslaught_gh,Battleship,The Great Houses,tahlan_stormdrive
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Exec M,tahlan_Exec_M,Combat Drone,,,,300,50,1000,,100,0,,300,300,250,90,180,30,OMNI,,360,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,565656
 Exec S,tahlan_Exec_S,Assault Drone,,,,150,30,500,,100,0,,300,300,250,90,180,30,OMNI,,360,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,565656
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Acastus,tahlan_Acastus,Fighter,,,,200,50,500,,50,,,250,200,180,80,160,30,OMNI,,180,0,1,,,1,1,,,,,,,,,,,,,,,,0,,,454

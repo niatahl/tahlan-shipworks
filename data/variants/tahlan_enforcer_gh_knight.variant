@@ -1,43 +1,49 @@
 {
-    "displayName": "Kassadari",
-    "fluxCapacitors": 17,
-    "fluxVents": 20,
-    "hullId": "tahlan_enforcer_gh",
-    "hullMods": ["targetingunit"],
-    "permaMods": [],
-	"goalVariant": true,
-    "variantId": "tahlan_enforcer_gh_knight",
-    "weaponGroups": [
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 001": "tahlan_atrapos",
-                "WS 005": "tahlan_atrapos"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS 006": "hammer",
-                "WS 007": "hammer",
-                "WS 008": "hammer",
-                "WS 009": "hammer"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 002": "tahlan_magaera",
-                "WS 004": "tahlan_magaera"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS 003": "tahlan_porph"}
-        }
-    ]
+  "displayName": "Kassadari",
+  "fluxCapacitors": 17,
+  "fluxVents": 20,
+  "goalVariant": true,
+  "hullId": "tahlan_enforcer_gh",
+  "hullMods": [
+    "targetingunit"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_enforcer_gh_knight",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "tahlan_dualvolkite",
+        "WS 005": "tahlan_dualvolkite"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 006": "hammer",
+        "WS 007": "hammer",
+        "WS 008": "hammer",
+        "WS 009": "hammer"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "tahlan_magaera",
+        "WS 004": "tahlan_magaera"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 003": "tahlan_porph"
+      }
+    }
+  ],
+  "wings": []
 }

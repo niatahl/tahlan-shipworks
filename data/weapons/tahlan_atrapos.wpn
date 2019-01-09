@@ -1,7 +1,8 @@
 {
   "animationType": "GLOW",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "phase_beam_loop",
+  "fireSoundOne": "tahlan_atrapos_fire",
+  #"fireSoundTwo": "tahlan_atrapos_loop",
   "everyFrameEffect":"data.scripts.weapons.tahlan_AtraposMuzzleFlashScript",
   "glowColor": [
     255,
@@ -41,5 +42,5 @@
     0
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_atrapos_turret_base.png",
-  "type": "BALLISTIC"
+  "type": "ENERGY"
 }

@@ -90,7 +90,7 @@
     11.5
   ],
   "builtInMods": [
-	"tahlan_advballistics",
+    "tahlan_advballistics",
     "tahlan_knightrefit"
   ],
   "builtInWeapons": {
@@ -217,7 +217,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "HYBRID"
     },
     {
       "angle": 16.5,
@@ -229,7 +229,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "HYBRID"
     },
     {
       "angle": 31.5,

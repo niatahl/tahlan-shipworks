@@ -168,7 +168,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "HYBRID"
     },
     {
       "angle": 30,
@@ -216,7 +216,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "HYBRID"
     },
     {
       "angle": 0,
