@@ -12,6 +12,7 @@
 		"tahlan_Bento_standard":10,
 		"tahlan_Vale_crusader":10,
 		"tahlan_enforcer_gh_knight":10,
+		"tahlan_Firemane_lp_pather":10,
 	},
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
@@ -23,6 +24,7 @@
 		"tahlan_Kodai_beamer":3,
 		"tahlan_Kodai_standard":7,	
 		"tahlan_dominator_gh_knight":10,
+		"tahlan_Firemane_lp_pather":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,

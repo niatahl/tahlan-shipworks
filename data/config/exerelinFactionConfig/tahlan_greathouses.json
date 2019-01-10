@@ -7,7 +7,7 @@
     "ngcTooltip":"Start as a Knight-errant of Kassadar",
 
     "startShipsCombatLarge":[
-      ["tahlan_Castigator_knight_errant", "monitor_Escort"]
+      ["tahlan_Castigator_knight_errant", "tahlan_monitor_gh_knight"]
     ],
 	"startShipsSuper":[
 		["tahlan_Exa_Pico_standard"],

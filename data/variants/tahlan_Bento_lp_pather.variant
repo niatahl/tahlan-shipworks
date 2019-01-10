@@ -1,0 +1,43 @@
+{
+    "displayName": "Pather",
+    "fluxCapacitors": 20,
+    "fluxVents": 0,
+    "hullId": "tahlan_Bento_lp",
+    "hullMods": [],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Bento_lp_pather",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "hammer"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "hammer"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0006": "harpoonpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "harpoonpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavymg",
+                "WS0002": "heavymg",
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0005": "flak"
+            }
+        }
+    ]
+}

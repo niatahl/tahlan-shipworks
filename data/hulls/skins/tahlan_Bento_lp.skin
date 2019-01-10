@@ -1,0 +1,26 @@
+{
+	"baseHullId":"tahlan_Bento",
+	"skinHullId":"tahlan_Bento_lp",
+	"hullName":"Bento (LP)",
+	"descriptionId":"tahlan_Bento",  # optional
+	"descriptionPrefix":"Fanatics of the Luddic Path have made this ship their own, stripping out all unnecessary furnishing and transforming it into a haphazard vehicle of holy war.",
+	"tags":["LP_bp", "luddic_path"],
+	"tech":"Luddic Path",
+	"spriteName":"graphics/tahlan/ships/tahlan_Bento_lp.png",
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"removeBuiltInWeapons":[], 		# weapon slot ids
+	"systemId":"ammofeed",
+	"builtInMods":["ill_advised","safetyoverrides"],
+	"builtInWeapons":{
+    },
+	"weaponSlotChanges":{
+	   "WS0008":{
+		  "type": "MISSILE"
+	   },
+	   "WS0009":{
+		  "type": "MISSILE"
+	   },
+	},
+}

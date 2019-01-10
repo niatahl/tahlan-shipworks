@@ -1,7 +1,7 @@
 {
   "displayName": "Knight-Errant",
-  "fluxCapacitors": 3,
-  "fluxVents": 30,
+  "fluxCapacitors": 0,
+  "fluxVents": 27,
   "goalVariant": true,
   "hullId": "tahlan_Castigator_knight",
   "hullMods": [

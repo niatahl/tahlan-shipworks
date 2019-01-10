@@ -19,7 +19,7 @@ public class tahlan_SentryModeStats extends BaseShipSystemScript {
         stats.getEnergyWeaponRangeBonus().modifyFlat(id,RANGE_BONUS);
         stats.getShieldDamageTakenMult().modifyMult(id,SHIELD_DAMAGE_MULT);
 
-        stats.getEntity().getVelocity().scale(0.9f);
+        stats.getEntity().getVelocity().scale(HANDLING_MULT);
     }
 
 

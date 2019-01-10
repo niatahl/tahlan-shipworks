@@ -1,0 +1,43 @@
+{
+    "displayName": "Pather",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "hullId": "tahlan_Firemane_lp",
+    "hullMods": [
+        "heavyarmor",
+        "missleracks"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Firemane_lp_pather",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "hammerrack"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0006": "hammerrack"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "lightdualmg"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "lightdualmg"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "lightdualmg",
+                "WS0004": "lightdualmg"
+            }
+        }
+    ]
+}

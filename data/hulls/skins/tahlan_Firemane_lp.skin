@@ -1,0 +1,24 @@
+{
+	"baseHullId":"tahlan_Firemane",
+	"skinHullId":"tahlan_Firemane_lp",
+	"hullName":"Firemane (LP)",
+	"descriptionId":"tahlan_Firemane",  # optional
+	"descriptionPrefix":"Fanatics of the Luddic Path have made this ship their own, stripping out all unnecessary furnishing and transforming it into a haphazard vehicle of holy war.",
+	"tags":["LP_bp", "luddic_path"],
+	"tech":"Luddic Path",
+	"spriteName":"graphics/tahlan/ships/tahlan_Firemane_lp.png",
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"removeBuiltInWeapons":[], 		# weapon slot ids
+	"builtInMods":["ill_advised","safetyoverrides"],
+	"builtInWeapons":{},
+	"weaponSlotChanges":{
+	   "WS0005":{
+		  "type": "MISSILE"
+	   },
+	   "WS0006":{
+		  "type": "MISSILE"
+	   },
+	},
+}
