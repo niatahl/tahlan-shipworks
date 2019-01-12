@@ -177,7 +177,7 @@ public class tahlan_UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffe
 
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         //Don't run while paused, or without a weapon
-        if (weapon == null || amount <= 0f) {return;}
+        if (weapon == null || amount <= 0f) { return; }
 
         //Saves handy variables used later
         float chargeLevel = weapon.getChargeLevel();
@@ -193,6 +193,9 @@ public class tahlan_UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffe
         } else if (weapon.getCooldownRemaining() > 0) {
             sequenceState = "COOLDOWN";
         }
+
+        //DIRTY FIX FOR Unstable TPC : Cause for this being needed still unknown
+        if (weapon.getAmmo() <= 0) { sequenceState = "COOLDOWN"; }
 
         //Adjustment for burst beams, since they are a pain
         if (weapon.isBurstBeam() && sequenceState.contains("CHARGEDOWN")) {

@@ -36,12 +36,12 @@ public class tahlan_UnstableTPCScript implements EveryFrameWeaponEffectPlugin {
                 int splinterCount = MathUtils.getRandomNumberInRange(0,5);
                 for (int j = 0; j < splinterCount; j++) {
                     //Gets a random "offset velocity" for our projectile, so they can spread out slightly more tha with just an angle adjustment
-                    Vector2f randomVel = MathUtils.getRandomPointOnCircumference(null, MathUtils.getRandomNumberInRange(15f, 40f));
+                    Vector2f randomVel = MathUtils.getRandomPointOnCircumference(null, MathUtils.getRandomNumberInRange(15f, 35f));
                     randomVel.x += vel.x;
                     randomVel.y += vel.y;
 
                     //Gets a random angle to offset the projectile by
-                    float randomAngle = MathUtils.getRandomNumberInRange(-10f, 10f);
+                    float randomAngle = MathUtils.getRandomNumberInRange(-3f, 3f);
 
                     DamagingProjectileAPI newProj = (DamagingProjectileAPI) engine.spawnProjectile(proj.getSource(), proj.getWeapon(), weapon.getId() + "_splinter", loc, proj.getFacing()+randomAngle, randomVel);
                     registeredProjectiles.add(newProj);

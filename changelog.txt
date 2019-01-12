@@ -1,6 +1,7 @@
 0.2e
 Bugfixes:
 - Fixed a bug causing wierd velocity behaviour for Unstable TPC
+- Fixed a bug causing particles to spawn from the Unstable TPC when they shouldn't
 - Fixed a memory leak related to Unstable TPC
 
 0.2d
