@@ -1,3 +1,8 @@
+0.2e
+Bugfixes:
+- Fixed a bug causing wierd velocity behaviour for Unstable TPC
+- Fixed a memory leak related to Unstable TPC
+
 0.2d
 
 - Added Volkite battery
