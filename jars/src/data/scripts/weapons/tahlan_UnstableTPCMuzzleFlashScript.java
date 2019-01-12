@@ -171,6 +171,7 @@ public class tahlan_UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffe
     private boolean hasFiredThisCharge = false;
     private int currentBarrel = 0;
     private boolean shouldOffsetBarrelExtra = false;
+    private boolean hasFiredOnceWithoutAmmo = false;
 
     //Instantiator
     public tahlan_UnstableTPCMuzzleFlashScript() {}
@@ -183,7 +184,7 @@ public class tahlan_UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffe
         float chargeLevel = weapon.getChargeLevel();
         String sequenceState = "READY";
         if (chargeLevel > 0 && (!weapon.isBeam() || weapon.isFiring())) {
-            if (chargeLevel >= 1f) {
+            if (chargeLevel >= 1f && !hasFiredThisCharge) {
                 sequenceState = "FIRING";
             } else if (!hasFiredThisCharge) {
                 sequenceState = "CHARGEUP";
@@ -194,8 +195,17 @@ public class tahlan_UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffe
             sequenceState = "COOLDOWN";
         }
 
-        //DIRTY FIX FOR Unstable TPC : Cause for this being needed still unknown
-        if (weapon.getAmmo() <= 0) { sequenceState = "COOLDOWN"; }
+        //Mildly ugly fix, but prevents weapons from "firing" when out of ammo
+        if (weapon.getAmmo() >= 1 && hasFiredOnceWithoutAmmo) {
+            hasFiredOnceWithoutAmmo = false;
+        }
+        if (sequenceState.contains("FIRING") && weapon.getAmmo() <= 0) {
+            if (hasFiredOnceWithoutAmmo) {
+                sequenceState = "CHARGEUP";
+            } else {
+                hasFiredOnceWithoutAmmo = true;
+            }
+        }
 
         //Adjustment for burst beams, since they are a pain
         if (weapon.isBurstBeam() && sequenceState.contains("CHARGEDOWN")) {
@@ -263,8 +273,8 @@ public class tahlan_UnstableTPCMuzzleFlashScript implements EveryFrameWeaponEffe
             if (PARTICLE_ARC_FACING.keySet().contains(ID)) { particleArcFacing = PARTICLE_ARC_FACING.get(ID); }
             //---------------------------------------END OF DECLARATIONS-----------------------------------------
 
-            //First, spawn "on full firing" particles, since those ignore sequence state
-            if (chargeLevel >= 1f && !hasFiredThisCharge) {
+            //First, spawn "on full firing" particles
+            if (particleSpawnMoment.contains("FIRING") && sequenceState.contains("FIRING") && !hasFiredThisCharge) {
                 //Count spawned particles: only trigger if the spawned particles are more than 0
                 float particleCount = ON_SHOT_PARTICLE_COUNT.get("default");
                 if (ON_SHOT_PARTICLE_COUNT.keySet().contains(ID)) { particleCount = ON_SHOT_PARTICLE_COUNT.get(ID); }
