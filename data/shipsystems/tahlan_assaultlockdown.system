@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.shipsystems.scripts.tahlan_AssaultLockdownStats",
+	"statsScript":"data.scripts.shipsystems.tahlan_AssaultLockdownStats",
 	
 	"weaponGlowColor":[255,150,0,155],
 	"weaponTypes":[BALLISTIC],

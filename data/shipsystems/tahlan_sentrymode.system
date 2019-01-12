@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.shipsystems.scripts.tahlan_SentryModeStats",
+	"statsScript":"data.scripts.shipsystems.tahlan_SentryModeStats",
 	
 	"weaponGlowColor":[255,150,0,155],
 	"weaponTypes":[BALLISTIC,ENERGY],

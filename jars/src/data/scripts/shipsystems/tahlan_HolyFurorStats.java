@@ -1,4 +1,4 @@
-package data.shipsystems.scripts;
+package data.scripts.shipsystems;
 
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
