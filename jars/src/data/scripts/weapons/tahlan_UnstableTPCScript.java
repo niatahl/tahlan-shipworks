@@ -1,9 +1,6 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.DamagingProjectileAPI;
-import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.*;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
@@ -29,22 +26,38 @@ public class tahlan_UnstableTPCScript implements EveryFrameWeaponEffectPlugin {
         }
         muzzleFlashScript.advance(amount, engine, weapon);
 
-        for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 200f)) {
+        //Spawns the additional projectiles
+        for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 300f)) {
             if (proj.getWeapon() == weapon && !registeredProjectiles.contains(proj)) {
                 registeredProjectiles.add(proj);
 
                 Vector2f loc = proj.getLocation();
-                Vector2f vel = proj.getVelocity();
+                Vector2f vel = weapon.getShip().getVelocity();
                 int splinterCount = MathUtils.getRandomNumberInRange(0,5);
                 for (int j = 0; j < splinterCount; j++) {
-                    Vector2f randomVel = MathUtils.getRandomPointOnCircumference(null, MathUtils.getRandomNumberInRange(20f, 60f));
+                    //Gets a random "offset velocity" for our projectile, so they can spread out slightly more tha with just an angle adjustment
+                    Vector2f randomVel = MathUtils.getRandomPointOnCircumference(null, MathUtils.getRandomNumberInRange(15f, 40f));
                     randomVel.x += vel.x;
                     randomVel.y += vel.y;
 
-                    DamagingProjectileAPI newProj = (DamagingProjectileAPI) engine.spawnProjectile(proj.getSource(), proj.getWeapon(), weapon.getId() + "_splinter", loc, proj.getFacing(),randomVel);
+                    //Gets a random angle to offset the projectile by
+                    float randomAngle = MathUtils.getRandomNumberInRange(-10f, 10f);
+
+                    DamagingProjectileAPI newProj = (DamagingProjectileAPI) engine.spawnProjectile(proj.getSource(), proj.getWeapon(), weapon.getId() + "_splinter", loc, proj.getFacing()+randomAngle, randomVel);
                     registeredProjectiles.add(newProj);
                 }
             }
+        }
+
+        //Cleans our memory of all unloaded projectiles to avoid memory leaks
+        List<DamagingProjectileAPI> cleanList = new ArrayList<>();
+        for (DamagingProjectileAPI proj : registeredProjectiles) {
+            if (!engine.isEntityInPlay(proj)) {
+                cleanList.add(proj);
+            }
+        }
+        for (DamagingProjectileAPI proj : cleanList) {
+            registeredProjectiles.remove(proj);
         }
     }
 }
