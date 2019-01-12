@@ -56,4 +56,11 @@
 			{"file":"sounds/tahlan/weapons/tahlan_atrapos_loop.ogg","pitch":1.0,"volume":1.0},
 		],
 	},
+	"tahlan_volkite_flak":{
+		"sounds":[
+			{"file":"sounds/sfx_impacts/gun_hit_light_01.ogg","pitch":0.8,"volume":0.3},
+			{"file":"sounds/sfx_impacts/gun_hit_light_01.ogg","pitch":0.7,"volume":0.3},
+			{"file":"sounds/sfx_impacts/gun_hit_light_01.ogg","pitch":0.75,"volume":0.3},
+		],
+	},
 }

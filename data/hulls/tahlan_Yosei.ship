@@ -1,0 +1,176 @@
+{
+  "bounds": [
+    -43,
+    -13,
+    -39,
+    -26.5,
+    -26.5,
+    -32.5,
+    3.5,
+    -34.5,
+    7.5,
+    -24,
+    31.5,
+    -21,
+    43.5,
+    -11.5,
+    32.5,
+    -7,
+    32.5,
+    7,
+    43.5,
+    11.5,
+    31.5,
+    21,
+    7.5,
+    24,
+    3.5,
+    34.5,
+    -26.5,
+    32.5,
+    -39,
+    26.5,
+    -43,
+    13
+  ],
+  "builtInWings": [
+    "terminator_wing"
+  ],
+  "center": [
+    37,
+    45
+  ],
+  "collisionRadius": 82,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 21,
+      "location": [
+        -38,
+        25.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 21,
+      "location": [
+        -38,
+        -25.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 26,
+      "location": [
+        -43.5,
+        8
+      ],
+      "style": "HIGH_TECH",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 26,
+      "location": [
+        -43.5,
+        -8
+      ],
+      "style": "HIGH_TECH",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 37,
+      "location": [
+        -44,
+        -0
+      ],
+      "style": "HIGH_TECH",
+      "width": 14
+    }
+  ],
+  "height": 90,
+  "hullId": "tahlan_Yosei",
+  "hullName": "Yosei",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 77,
+  "spriteName": "graphics/tahlan/ships/tahlan_Yosei.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 30.5,
+      "arc": 101,
+      "id": "WS0001",
+      "locations": [
+        -3,
+        26
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -30.5,
+      "arc": 101,
+      "id": "WS0002",
+      "locations": [
+        -3,
+        -26
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0003",
+      "locations": [
+        29,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        11,
+        20.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        11,
+        -19.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 74
+}

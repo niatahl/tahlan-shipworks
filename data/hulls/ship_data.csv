@@ -14,6 +14,7 @@ Castella,tahlan_Castella,Battlecarrier,Low Tech,burndrive,28,15000,1500,12000,12
 Castella (LP),tahlan_Castella_lp,Battleship,Low Tech,tahlan_stormdrive,28,15000,1500,14000,12500,500,260,2,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,500,1200,300,300,15,20,7,250000,3,12,720,0.25,40,40,,"rare_bp, luddic_path",0.6,0.6,2,4,507
 Nessie,tahlan_Nessie,Makeshift Phase Cruiser,Low Tech,burndrive,,6000,700,14000,,200,120,,65,40,20,15,10,1500,PHASE,phasecloak,,,,0.06,0.06,120,160,50,50,13,16,7,60000,5,25,360,0.25,24,24,,rare_bp,,0.8,3,5,4212
 Bungalow,tahlan_Bungalow,Carrier,Low Tech,targetingfeed,15,8000,1000,5000,4000,200,110,4,40,20,10,10,10,2000,OMNI,,120,0.4,1.1,,,200,320,100,60,4,15,8,48000,4,15,420,0.25,20,20,CARRIER,lowtech_bp,,0.4,2,3,410
+Yosei,tahlan_Yosei,Frigate,High Tech,highenergyfocus,8,1400,200,3000,2813,250,55,1,170,200,175,90,270,200,OMNI,,120,0.2,0.8,,,15,25,30,20,1,20,11,38000,10,20,180,0.25,10,10,,rare_bp,0.75,0.5,2,2,206
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GH refits,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

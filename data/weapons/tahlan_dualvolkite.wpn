@@ -35,7 +35,7 @@
     "particleSizeRange": 10,
     "spread": 20
   },
-  "projectileSpecId": "tahlan_volkite_shot",
+  "projectileSpecId": "tahlan_dualvolkite_shot",
   "size": "MEDIUM",
   "renderHints": ["RENDER_BARREL_BELOW"],
   "specClass": "projectile",
