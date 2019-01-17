@@ -1,0 +1,377 @@
+{
+  "bounds": [
+    -175,
+    -15,
+    -186.5,
+    -20.5,
+    -120,
+    -30,
+    -108.5,
+    -37,
+    -97,
+    -38,
+    -87.5,
+    -29,
+    -41,
+    -30,
+    -40.5,
+    -61,
+    -58.5,
+    -61.5,
+    -41.5,
+    -109,
+    59.5,
+    -112,
+    148,
+    -104.5,
+    103,
+    -102,
+    112.5,
+    -98,
+    103.5,
+    -76,
+    107.5,
+    -62.5,
+    132,
+    -59,
+    136.5,
+    -33,
+    128.5,
+    -31.5,
+    128.5,
+    31.5,
+    136.5,
+    33,
+    132,
+    59,
+    107.5,
+    62.5,
+    103.5,
+    76,
+    112.5,
+    98,
+    103,
+    102,
+    148,
+    104.5,
+    59.5,
+    112,
+    -41.5,
+    109,
+    -58.5,
+    61.5,
+    -40.5,
+    61,
+    -41,
+    30,
+    -87.5,
+    29,
+    -97,
+    38,
+    -108.5,
+    37,
+    -120,
+    30,
+    -186.5,
+    20.5,
+    -175,
+    15
+  ],
+  "builtInWings": [],
+  "center": [
+    117,
+    188.5
+  ],
+  "collisionRadius": 217,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 19,
+      "length": 52,
+      "location": [
+        -47.5,
+        96
+      ],
+      "style": "MIDLINE",
+      "width": 19
+    },
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -47.5,
+        -96
+      ],
+      "style": "MIDLINE",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 15,
+      "length": 59.5,
+      "location": [
+        -57.5,
+        71.5
+      ],
+      "style": "MIDLINE",
+      "width": 15
+    },
+    {
+      "angle": -180,
+      "contrailSize": 15,
+      "length": 59.5,
+      "location": [
+        -57.5,
+        -71.5
+      ],
+      "style": "MIDLINE",
+      "width": 15
+    },
+    {
+      "angle": 180,
+      "contrailSize": 15,
+      "length": 56.5,
+      "location": [
+        -56.5,
+        82.5
+      ],
+      "style": "MIDLINE",
+      "width": 15
+    },
+    {
+      "angle": -180,
+      "contrailSize": 15,
+      "length": 56.5,
+      "location": [
+        -56.5,
+        -82.5
+      ],
+      "style": "MIDLINE",
+      "width": 15
+    }
+  ],
+  "height": 337,
+  "hullId": "tahlan_Ingress",
+  "hullName": "Ingress",
+  "hullSize": "CAPITAL_SHIP",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 203,
+  "spriteName": "graphics/tahlan/ships/tahlan_Ingress.png",
+  "style": "MIDLINE",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 17.5,
+      "arc": 100,
+      "id": "WS0001",
+      "locations": [
+        82,
+        44.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -17.5,
+      "arc": 100,
+      "id": "WS0002",
+      "locations": [
+        82,
+        -44.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 46,
+      "arc": 126,
+      "id": "WS0003",
+      "locations": [
+        49,
+        66.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -46,
+      "arc": 126,
+      "id": "WS0004",
+      "locations": [
+        49,
+        -66.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 97,
+      "id": "WS0005",
+      "locations": [
+        35.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 52.5,
+      "arc": 100,
+      "id": "WS0008",
+      "locations": [
+        97.5,
+        85
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -52.5,
+      "arc": 100,
+      "id": "WS0009",
+      "locations": [
+        97.5,
+        -85
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 16.5,
+      "arc": 100,
+      "id": "WS0006",
+      "locations": [
+        126.5,
+        50
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -16.5,
+      "arc": 100,
+      "id": "WS0007",
+      "locations": [
+        126.5,
+        -50
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 124,
+      "arc": 135,
+      "id": "WS0010",
+      "locations": [
+        -105.5,
+        27.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -124,
+      "arc": 135,
+      "id": "WS0011",
+      "locations": [
+        -105.5,
+        -27.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 180,
+      "arc": 206,
+      "id": "WS0012",
+      "locations": [
+        -116,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -16.5,
+        55,
+        -17.5,
+        45,
+        -16.5,
+        34.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        -15.5,
+        -32.5,
+        -18.5,
+        -43.5,
+        -16.5,
+        -52.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        98.5,
+        25.5,
+        98.5,
+        15.5,
+        98.5,
+        6
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 4",
+      "locations": [
+        98.5,
+        -4,
+        98.5,
+        -13.5,
+        98.5,
+        -22.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 234
+}
