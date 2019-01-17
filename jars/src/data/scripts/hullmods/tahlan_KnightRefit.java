@@ -29,7 +29,6 @@ public class tahlan_KnightRefit extends BaseHullMod {
     private static final Color OVERDRIVE_GLOW_COLOR = new Color(255, 120, 16);
     private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 50);
     private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 100);
-    private static final String OVERDRIVE_ID = "tahlan_KnightRefitOverdriveID";
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -72,7 +71,24 @@ public class tahlan_KnightRefit extends BaseHullMod {
         //The Great Houses are actually timelords
         boolean player = ship == Global.getCombatEngine().getPlayerShip();
         String id = "tahlan_KnightRefitID";
-        if (ship.getHitpoints() > ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE) {
+        if (ship.getHitpoints() <= ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE || ship.getVariant().getHullMods().contains("tahlan_forcedoverdrive")) {
+
+            if (player) {
+                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT);
+                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / OVERDRIVE_TIME_MULT);
+            } else {
+                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT);
+                Global.getCombatEngine().getTimeMult().unmodify(id);
+            }
+
+            EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
+            ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
+
+            ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
+            ship.setJitter(id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
+            ship.setJitterUnder(id, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
+
+        } else {
 
             if (player) {
                 ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT);
@@ -81,28 +97,6 @@ public class tahlan_KnightRefit extends BaseHullMod {
                 ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT);
                 Global.getCombatEngine().getTimeMult().unmodify(id);
             }
-
-            //emergency overdrive feature
-        } else {
-
-            //ship.getMutableStats().getBallisticRoFMult().modifyMult(OVERDRIVE_ID,OVERDRIVE_ROF_MULT);
-            //ship.getMutableStats().getBallisticWeaponFluxCostMod().modifyMult(OVERDRIVE_ID,OVERDRIVE_FLUX_MULT);
-            //ship.getMutableStats().getCRLossPerSecondPercent().modifyMult(OVERDRIVE_ID,OVERDRIVE_CR_MULT);
-
-            if (player) {
-                ship.getMutableStats().getTimeMult().modifyMult(OVERDRIVE_ID, OVERDRIVE_TIME_MULT);
-                Global.getCombatEngine().getTimeMult().modifyMult(OVERDRIVE_ID, 1f / OVERDRIVE_TIME_MULT);
-            } else {
-                ship.getMutableStats().getTimeMult().modifyMult(OVERDRIVE_ID, OVERDRIVE_TIME_MULT);
-                Global.getCombatEngine().getTimeMult().unmodify(OVERDRIVE_ID);
-            }
-
-            EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
-            ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
-
-            ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
-            ship.setJitter(OVERDRIVE_ID, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
-            ship.setJitterUnder(OVERDRIVE_ID, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
 
         }
 

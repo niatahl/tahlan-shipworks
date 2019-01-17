@@ -27,7 +27,7 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         float currentBrightness = ship.getFluxTracker().getFluxLevel() *  0.8f;
 
         //If we are in overdrive, we glow even more
-        if (ship.getHitpoints() <= ship.getMaxHitpoints()*TRIGGER_PERCENTAGE) {
+        if (ship.getHitpoints() <= ship.getMaxHitpoints()*TRIGGER_PERCENTAGE || ship.getVariant().hasHullMod("tahlan_forcedoverdrive")) {
             currentBrightness = 1f;
         }
 

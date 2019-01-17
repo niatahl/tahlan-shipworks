@@ -27,8 +27,8 @@
     "cloudRadius": 10,
     "particleColor": [
       255,
-      215,
-      125,
+      225,
+      185,
       255
     ],
     "particleSizeMin": 20,

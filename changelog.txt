@@ -1,4 +1,20 @@
+0.3
+
+- Initial public release version
+
+
+0.2g
+
+- Added Ingress-class battlecarrier
+
+0.2f
+
+- byebye Firemane
+- byebye Ambrosia
+- they both just didn't really work, I'll have to admit
+
 0.2e
+
 Bugfixes:
 - Fixed a bug causing wierd velocity behaviour for Unstable TPC
 - Fixed a bug causing particles to spawn from the Unstable TPC when they shouldn't

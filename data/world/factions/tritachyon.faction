@@ -12,6 +12,7 @@
 			"tahlan_Korikaze":0.4,
 			"tahlan_Vale":0.1,
 			"tahlan_Exa_Pico":0.1,
+			"tahlan_Yosei":0.8,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -28,6 +29,7 @@
 			"tahlan_Korikaze",
 			"tahlan_Vale",
 			"tahlan_Exa_Pico",
+			"tahlan_Yosei",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
