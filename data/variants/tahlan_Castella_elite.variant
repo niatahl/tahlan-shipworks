@@ -1,61 +1,64 @@
 {
-    "displayName": "Elite",
-    "fluxCapacitors": 6,
-    "fluxVents": 50,
-    "hullId": "tahlan_Castella",
-    "hullMods": ["missleracks"],
-    "permaMods": [],
-	"goalVariant": true,
-    "variantId": "tahlan_Castella_elite",
-    "weaponGroups": [
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0007": "shredder",
-                "WS0008": "shredder"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0003": "squall",
-                "WS0004": "squall"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0001": "hveldriver",
-                "WS0002": "hveldriver"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0005": "dualflak",
-                "WS0006": "dualflak",
-                "WS0009": "vulcan",
-                "WS0010": "vulcan",
-                "WS0011": "vulcan",
-                "WS0012": "vulcan",
-                "WS0013": "vulcan",
-                "WS0014": "vulcan",
-                "WS0015": "vulcan",
-                "WS0016": "vulcan",
-                "WS0017": "vulcan",
-                "WS0018": "vulcan"
-            }
-        }
-    ],
-    "wings": [
-        "hoplon_wing",
-        "hoplon_wing",
-        "hoplon_wing",
-        "hoplon_wing",
-        "broadsword_wing"
-    ]
+  "displayName": "Elite",
+  "fluxCapacitors": 0,
+  "fluxVents": 46,
+  "goalVariant": true,
+  "hullId": "tahlan_Castella",
+  "hullMods": [
+    "missleracks"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Castella_elite",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "shredder",
+        "WS0008": "shredder"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "squall",
+        "WS0004": "squall"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "hveldriver",
+        "WS0002": "hveldriver"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "dualflak",
+        "WS0006": "dualflak",
+        "WS0009": "vulcan",
+        "WS0010": "vulcan",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan",
+        "WS0013": "vulcan",
+        "WS0014": "vulcan",
+        "WS0015": "vulcan",
+        "WS0016": "vulcan",
+        "WS0017": "vulcan",
+        "WS0018": "vulcan"
+      }
+    }
+  ],
+  "wings": [
+    "hoplon_wing",
+    "hoplon_wing",
+    "hoplon_wing",
+    "hoplon_wing",
+    "broadsword_wing"
+  ]
 }

@@ -41,8 +41,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         for (HullModSpecAPI hullModSpecAPI : Global.getSettings().getAllHullModSpecs()) {
             if (hullModSpecAPI.hasTag("shields") && !SHIELD_HULLMODS.contains(hullModSpecAPI.getId())) {
                 SHIELD_HULLMODS.add(hullModSpecAPI.getId());
-            } else if (hullModSpecAPI.getId().contains("shieldbypass") && !SHIELD_HULLMODS.contains(hullModSpecAPI.getId())) {
-                SHIELD_HULLMODS.add("shieldbypass"); //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
+            } else if (hullModSpecAPI.getId().contains("swp_shieldbypass") && !SHIELD_HULLMODS.contains(hullModSpecAPI.getId())) {
+                SHIELD_HULLMODS.add("swp_shieldbypass"); //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
             }
         }
 

@@ -1,7 +1,7 @@
 {
   "displayName": "Standard",
   "fluxCapacitors": 0,
-  "fluxVents": 0,
+  "fluxVents": 19,
   "goalVariant": true,
   "hullId": "tahlan_Bento",
   "hullMods": [],

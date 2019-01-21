@@ -17,6 +17,7 @@
 		#"tags":[],
 		"hulls":[
 			"tahlan_Kodai",
+			"tahlan_Ingress",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

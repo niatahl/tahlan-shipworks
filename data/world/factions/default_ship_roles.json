@@ -8,11 +8,15 @@
 		"tahlan_Exa_Pico_standard":10,
 		"tahlan_monitor_gh_knight":10,
 		"tahlan_Yosei_standard":10,
+		"tahlan_Skola_standard":10,
 	},
 	"combatMedium":{
 		"tahlan_Bento_standard":10,
 		"tahlan_Vale_crusader":10,
 		"tahlan_enforcer_gh_knight":10,
+		"tahlan_Haelequin_support":3,
+		"tahlan_Haelequin_overdriven":2,
+		"tahlan_Haelequin_standard":5,
 	},
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
@@ -53,6 +57,7 @@
 			"tahlan_Castella_standard":7,
 			"tahlan_Castella_elite":3,
 			"tahlan_legion_gh_knight":10,
+			"tahlan_Ingress_standard":10,
 	},
 
 	# phase ships

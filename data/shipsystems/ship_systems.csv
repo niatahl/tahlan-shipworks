@@ -4,3 +4,4 @@ Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,10,,,,,,,,,,,graphics/icons/hull
 Errant Drive,tahlan_errantdrive,,,,0.1,,,,,,0.5,1,0.5,5,,,,TRUE,,,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
 Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,2,,2,5,TRUE,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,TRUE,,,,,,TRUE,TRUE,,,graphics/icons/hullsys/fortress_shield.png
+Navigation Feed,tahlan_navigationfeed,,0.25,,,,,,,,0.5,,0.5,,TRUE,,,TRUE,,,,,,,graphics/icons/hullsys/targeting_feed.png

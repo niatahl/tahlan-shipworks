@@ -1,0 +1,36 @@
+{
+  "animationType": "NONE",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_SmartBoltScript",
+  "fireSoundTwo": "tachyon_lance_emp_impact",
+  "glowColor": [
+    155,
+    55,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "",
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_prismcoil",
+  "projectileSpecId": "tahlan_prismcoil_dummy",
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "",
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "",
+  "type": "ENERGY"
+}

@@ -1,3 +1,29 @@
+0.3.2a
+Bugfixes:
+- Fixed issues with BPs for Skola and Haelequin
+- Fixed compatibility of Forced Overdrive and Shield Bypass
+
+
+0.3.2
+Additions:
+- Added Haelequin Destroyer
+- Added Skola Frigate
+- Added new Navigation Feed ship system
+
+Changes:
+- Ingress now uses Navigation Feed ship system
+- Bungelow now uses Burn Drive
+
+Bugfixes:
+- Added more missing descriptions
+
+
+0.3.1
+
+- Various small bugfixes
+- Added missing descriptions
+
+
 0.3
 
 - Initial public release version

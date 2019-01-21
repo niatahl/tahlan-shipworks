@@ -1,30 +1,30 @@
 {
-  "displayName": "Ion",
-  "fluxCapacitors": 5,
+  "displayName": "Standard",
+  "fluxCapacitors": 4,
   "fluxVents": 10,
   "goalVariant": true,
-  "hullId": "tahlan_Korikaze",
+  "hullId": "tahlan_Skola",
   "hullMods": [
-    "targetingunit",
-    "magazines"
+    "hardenedshieldemitter"
   ],
   "permaMods": [],
   "quality": 0,
-  "variantId": "tahlan_Korikaze_ion",
+  "variantId": "tahlan_Skola_standard",
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "ionpulser"
+        "WS0003": "tahlan_prismcoil",
+        "WS0004": "tahlan_prismcoil"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "ioncannon",
-        "WS0003": "ioncannon"
+        "WS0001": "irpulse",
+        "WS0002": "irpulse"
       }
     }
   ],

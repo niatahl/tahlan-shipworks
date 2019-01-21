@@ -1,11 +1,11 @@
 {
-    "masterVersionFile":"https://bitbucket.org/niatahl/sylphon/downloads/tahlan.version",
+    "masterVersionFile":"https://bitbucket.org/niatahl/tahlan-shipworks/downloads/tahlan.version",
     "modName":"Tahlan Shipworks",
-    "modThreadId":"",
+    "modThreadId":"14935",
     "modVersion":
     {
         "major":0,
         "minor":3,
-        "patch":"0"
+        "patch":"2a"
     },
 }
