@@ -1,0 +1,33 @@
+{
+  "availableCacheBlueprints": {
+    "hullSpecIds": [
+		"tahlan_Vale",
+		"tahlan_Kodai",
+		"tahlan_Exa_Pico",
+		"tahlan_Castigator",
+		"tahlan_Bento",
+		"tahlan_Castella",
+		"tahlan_Castella_lp",
+		"tahlan_Nessie",
+		"tahlan_Bungalow",
+		"tahlan_Yosei",
+		"tahlan_Ingress",
+		"tahlan_Skola",
+		"tahlan_Haelequin",		
+    ],
+    "weaponSpecIds": [
+		"tahlan_shiva",
+		"tahlan_porph",
+		"tahlan_styrix",
+		"tahlan_magaera",
+		"tahlan_atrapos",
+		"tahlan_armiger",
+		"tahlan_hekaton",
+		"tahlan_volkite",
+		"tahlan_dualvolkite",
+    ],
+    "fighterWingIds": [
+		"tahlan_Acastus_fighter_wing",
+    ]
+  }
+}

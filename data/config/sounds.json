@@ -27,9 +27,9 @@
     },
 	"tahlan_magaera_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.05,"volume":1.2},
-			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.0,"volume":1.2},
-			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.95,"volume":1.2},
+           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":3.05,"volume":1.2},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":3.0,"volume":1.2},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":3.95,"volume":1.2},
         ],
     },
 	"tahlan_porph_fire":{

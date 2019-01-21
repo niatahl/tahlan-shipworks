@@ -7,15 +7,15 @@
     0
   ],
   "hardpointOffsets": [
-    8,
-    7.5,
-    8,
-    -7.5
+    -0.5,
+    4,
+    -0.5,
+    -3
   ],
-  "hardpointSprite": "graphics/tahlan/weapons/tahlan_launcher_m_hp_base.png",
-  "id": "tahlan_hekaton",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_launcher_s_hp_base.png",
+  "id": "tahlan_hekaton_rack",
   "projectileSpecId": "tahlan_hekaton_torp",
-  "size": "MEDIUM",
+  "size": "SMALL",
   "renderHints":[RENDER_LOADED_MISSILES],
   "smokeSpec": {
     "blowbackDuration": 2,
@@ -41,11 +41,11 @@
     0
   ],
   "turretOffsets": [
-    2.5,
-    7.5,
-    2.5,
-    -7.5
+    -1,
+    4,
+    -1,
+    -3
   ],
-  "turretSprite": "graphics/tahlan/weapons/tahlan_launcher_m_turret_base.png",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_launcher_s_turret_base.png",
   "type": "MISSILE"
 }

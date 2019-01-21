@@ -3,19 +3,15 @@
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "harpoon_fire",
   "hardpointAngleOffsets": [
-    0,
     0
   ],
   "hardpointOffsets": [
-    8,
-    7.5,
-    8,
-    -7.5
+    0,0
   ],
-  "hardpointSprite": "graphics/tahlan/weapons/tahlan_launcher_m_hp_base.png",
-  "id": "tahlan_hekaton",
+  "hardpointSprite": "",
+  "id": "tahlan_hekaton_fighter",
   "projectileSpecId": "tahlan_hekaton_torp",
-  "size": "MEDIUM",
+  "size": "SMALL",
   "renderHints":[RENDER_LOADED_MISSILES],
   "smokeSpec": {
     "blowbackDuration": 2,
@@ -37,15 +33,11 @@
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
-    0,
     0
   ],
   "turretOffsets": [
-    2.5,
-    7.5,
-    2.5,
-    -7.5
+    0,0
   ],
-  "turretSprite": "graphics/tahlan/weapons/tahlan_launcher_m_turret_base.png",
+  "turretSprite": "",
   "type": "MISSILE"
 }

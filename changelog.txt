@@ -1,3 +1,15 @@
+0.3.2b
+Additions:
+- Added Vesperon support
+- Added Caliver torpedo bomber
+
+Changes:
+- Renamed Great Houses blueprint package
+
+Balancing:
+- Nerfed the Yukikaze some
+
+
 0.3.2a
 Bugfixes:
 - Fixed issues with BPs for Skola and Haelequin

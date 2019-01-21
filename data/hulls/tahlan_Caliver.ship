@@ -1,0 +1,92 @@
+{
+  "bounds": [
+    0.5,
+    -13,
+    12.5,
+    -12.5,
+    7,
+    -0,
+    12.5,
+    12.5,
+    0.5,
+    13,
+    -16,
+    -0
+  ],
+  "builtInMods": [
+    "tahlan_knightrefit",
+    "no_weapon_flux"
+  ],
+  "builtInWeapons": {
+    "WS0002": "tahlan_caliver_cover"
+  },
+  "builtInWings": [],
+  "center": [
+    15.5,
+    18
+  ],
+  "collisionRadius": 28,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 5,
+      "length": 15.5,
+      "location": [
+        -1.5,
+        10
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5
+    },
+    {
+      "angle": -180,
+      "contrailSize": 5,
+      "length": 15.5,
+      "location": [
+        -1.5,
+        -10
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5
+    }
+  ],
+  "height": 32,
+  "hullId": "tahlan_Caliver",
+  "hullName": "Caliver",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 25.5,
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Caliver.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        -0.5,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0002",
+      "locations": [
+        -2,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 31
+}
