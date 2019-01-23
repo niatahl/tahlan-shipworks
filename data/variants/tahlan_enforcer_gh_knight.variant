@@ -1,6 +1,6 @@
 {
   "displayName": "Kassadari",
-  "fluxCapacitors": 15,
+  "fluxCapacitors": 4,
   "fluxVents": 20,
   "goalVariant": true,
   "hullId": "tahlan_enforcer_gh",
@@ -16,18 +16,17 @@
       "mode": "LINKED",
       "weapons": {
         "WS 001": "tahlan_dualvolkite",
-        "WS 005": "tahlan_dualvolkite"
+        "WS 005": "tahlan_dualvolkite",
+        "WS 006": "tahlan_hekaton_rack",
+        "WS 007": "tahlan_hekaton_rack",
+        "WS 008": "tahlan_hekaton_rack",
+        "WS 009": "tahlan_hekaton_rack"
       }
     },
     {
       "autofire": false,
       "mode": "ALTERNATING",
-      "weapons": {
-        "WS 006": "hammer",
-        "WS 007": "hammer",
-        "WS 008": "hammer",
-        "WS 009": "hammer"
-      }
+      "weapons": {}
     },
     {
       "autofire": true,

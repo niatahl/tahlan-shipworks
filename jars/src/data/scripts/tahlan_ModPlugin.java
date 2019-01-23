@@ -21,7 +21,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         if (!hasLazyLib) {
             throw new RuntimeException("Tahlan Shipworks requires LazyLib by LazyWizard");
         }
-        boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
+        boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
         if (!hasMagicLib) {
             throw new RuntimeException("Tahlan Shipworks requires MagicLib!");
         }

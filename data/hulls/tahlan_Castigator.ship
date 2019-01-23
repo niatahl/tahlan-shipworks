@@ -91,8 +91,7 @@
   ],
   "builtInWeapons": {
     "WS0015": "tahlan_utpc",
-    "WS0016": "tahlan_utpc",
-    "WS0021": "tahlan_castigator_knight_glow"
+    "WS0016": "tahlan_utpc"
   },
   "builtInWings": [],
   "center": [

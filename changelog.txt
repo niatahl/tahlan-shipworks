@@ -1,7 +1,16 @@
+0.3.2c
+Changes:
+- Fixed Prism Coil stats to properly act as charge-based
+
+Bugfixes:
+- Added missing Prism Coil description
+- Fixed missing PD tag on Prism Coil
+
 0.3.2b
 Additions:
 - Added Vesperon support
 - Added Caliver torpedo bomber
+- Added small mount Hekaton torpedo rack
 
 Changes:
 - Renamed Great Houses blueprint package

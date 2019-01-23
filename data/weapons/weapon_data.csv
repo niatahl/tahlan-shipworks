@@ -6,7 +6,7 @@ Magaera,tahlan_magaera,3,0.2,4000,900,,50,50,15,15,14,,,,KINETIC,55,,0,0.5,,,,,,
 Atrapos Lance,tahlan_atrapos,3,0.2,2000,900,500,,,0,20,12,,,,HIGH_EXPLOSIVE,,700,0.1,0.5,0.4,1.4,,,,,4000,,,,,,"he14, beam10, rare_bp, tahlan_knight_bp, tahlan_knights",,The Great Houses,,Anti Armor,,,,,,,,,
 Armiger Battery,tahlan_armiger,3,,5000,1000,,400,,50,15,26,,,,HIGH_EXPLOSIVE,480,,0.1,3,3,0.3,,5,1,2,,1200,,,400,,"he10, rare_bp",,Low Tech,,Anti Armor,,,,,,,,,
 Hekaton-class Torpedo Launcher,tahlan_hekaton,0,0.2,2000,1200,,1000,500,30,10,10,12,,,HIGH_EXPLOSIVE,0,,0,6,2,0.2,0,0,0,0,,600,100,3,350,STRIKE,"strike16, rocket12, tahlan_knight_bp, rare_bp, tahlan_knights",,The Great Houses,,Torpedo,Fast,None,,,Deals an additional %s energy damage on impact,200,Can spawn up to %s arcs dealing %s energy and %s EMP damage and can pierce shields at high target flux levels,3 | 200 | 200,TRUE
-Hekaton-class Torpedo,tahlan_hekaton_rack,0,0.2,600,1200,,1000,500,30,15,6,2,,,HIGH_EXPLOSIVE,0,,0,1,2,0.2,0,0,0,0,,600,100,3,350,STRIKE,"strike6, rocket2, tahlan_knight_bp, rare_bp, tahlan_knights",,The Great Houses,,Torpedo,Fast,None,,,Deals an additional %s energy damage on impact,200,Can spawn up to %s arcs dealing %s energy and %s EMP damage and can pierce shields at high target flux levels,3 | 200 | 200,TRUE
+Hekaton-class Torpedo,tahlan_hekaton_rack,0,0.2,600,1200,,1000,500,30,15,3,2,,,HIGH_EXPLOSIVE,0,,0,1,2,0.2,0,0,0,0,,600,100,3,350,STRIKE,"strike6, rocket2, tahlan_knight_bp, rare_bp, tahlan_knights",,The Great Houses,,Torpedo,Fast,None,,,Deals an additional %s energy damage on impact,200,Can spawn up to %s arcs dealing %s energy and %s EMP damage and can pierce shields at high target flux levels,3 | 200 | 200,TRUE
 Volkite,tahlan_volkite,3,0.2,500,300,,40,,,120,6,30,5,10,FRAGMENTATION,20,,0,0.1,,,4,16,4,6,,800,,,20,PD,"pd10, rare_bp, tahlan_knight_bp, tahlan_knights",,The Great Houses,,Point Defense,,,,,,,,,
 Volkite Battery,tahlan_dualvolkite,3,0.2,1500,350,,40,,,120,12,60,10,20,FRAGMENTATION,20,,0,0.1,,,4,16,4,6,,800,,,20,PD,"pd10, rare_bp, tahlan_knight_bp, tahlan_knights",,The Great Houses,,Point Defense,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -16,7 +16,7 @@ Vector Ray,tahlan_vector_ray,1,,200,400,150,,,20,100,4,,,,ENERGY,,150,0,0.25,,,,
 Providence Edge,tahlan_providence_edge,1,,5000,1000,1000,,,50,5,20,,,,ENERGY,,1000,0.1,0.1,,,,,,,5000,,,,,SYSTEM,"beam20, LR",,Unknown,,Strike,,,,,,,,,
 Unstable Thermal Pulse Cannon,tahlan_utpc,0,,100000,700,,250,,0,0,,3,0.3,3,ENERGY,300,,0,0.1,999999,0.3,0,5,1,2,,1000,,,,"SYSTEM,SHOW_IN_CODEX",,,,,Assault,,,,,"Can spawn up to %s splinter projectiles per shot, dealing %s energy and EMP damage each",5 | 50,,,
 Mining Lance,tahlan_mininglance,1,,1500,600,1500,,,0,20,10,,,,ENERGY,,2000,0.25,0.5,1,5,0,,,,3200,,,,,SYSTEM,"energy14, beam10",,,,General,,,,,,,,,
-Prism Coil,tahlan_prismcoil,3,,9999,400,,40,40,0,50,0,40,5,20,ENERGY,40,,0.1,0.1,,,,,,,,5000,,,100,"SYSTEM, PD_ALSO",,,,,General,,,,,Fires electric arcs that can chain to additional targets on overkill,,,,
+Prism Coil,tahlan_prismcoil,3,,9999,400,,50,50,0,50,0,40,2,20,ENERGY,50,,0.1,0.1,,,,,,,,5000,,,100,"SYSTEM, PD, PD_ALSO",,,,,General,,,,,Fires electric arcs that can chain to additional targets on overkill,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighters,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Volkite S-HE,tahlan_volkite_s,3,0.2,500,350,,20,,,120,0,,,,HIGH_EXPLOSIVE,,,0,0.5,3,0.1,2,6,2,4,,1400,,,20,"PD, ANTI_FTR, SYSTEM",pd10,,The Great Houses,,Point Defense,,,,,,,,,
