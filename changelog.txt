@@ -5,6 +5,7 @@ Changes:
 Bugfixes:
 - Added missing Prism Coil description
 - Fixed missing PD tag on Prism Coil
+- Fixed broken MagicLib check on game load
 
 0.3.2b
 Additions:
