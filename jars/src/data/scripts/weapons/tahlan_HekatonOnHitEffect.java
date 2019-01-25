@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
 
-    private static final float BONUS_DAMAGE = 200f;
+    private static final float BONUS_DAMAGE = 400f;
     private static final Color COLOR1 = new Color(71, 191, 255);
     private static final Color COLOR2 = new Color(236, 248, 255);
 

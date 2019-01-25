@@ -1,6 +1,6 @@
 {
   "displayName": "Kassadari",
-  "fluxCapacitors": 4,
+  "fluxCapacitors": 8,
   "fluxVents": 20,
   "goalVariant": true,
   "hullId": "tahlan_enforcer_gh",
