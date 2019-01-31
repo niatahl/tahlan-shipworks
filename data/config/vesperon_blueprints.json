@@ -13,7 +13,8 @@
 		"tahlan_Yosei",
 		"tahlan_Ingress",
 		"tahlan_Skola",
-		"tahlan_Haelequin",		
+		"tahlan_Haelequin",
+		"tahlan_Renki"
     ],
     "weaponSpecIds": [
 		"tahlan_shiva",
@@ -25,6 +26,7 @@
 		"tahlan_hekaton",
 		"tahlan_volkite",
 		"tahlan_dualvolkite",
+		"tahlan_astrix",
     ],
     "fighterWingIds": [
 		"tahlan_Acastus_fighter_wing",

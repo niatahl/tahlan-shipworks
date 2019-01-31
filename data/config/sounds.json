@@ -1,4 +1,15 @@
 {
+	"music":{
+		"tahlan_kassadari_theme":[
+			{"file":"tahlan_kassadari_theme.ogg","source":"sounds/tahlan/music/","volume":0.5},
+		],
+		
+	},
+	
+	"tahlan_kassadari_theme":[
+			{"file":"sounds/tahlan/music/tahlan_kassadari_theme.ogg","pitch":1,"volume":0.5},
+		],
+	
 	"tahlan_shiva_loop":{
         "sounds":[
 			{"file":"sounds/tahlan/weapons/tahlan_shiva_loop.ogg","pitch":2,"volume":0.9},

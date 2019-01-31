@@ -20,7 +20,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
     private static final Color AFTERIMAGE_COLOR = new Color(255, 63, 0, 60);
     private static final float AFTERIMAGE_THRESHOLD = 0.4f;
     public static final float DAMAGE_MULT = 2f;
-    public static final float MAX_TIME_MULT = 10f;
+    public static final float MAX_TIME_MULT = 20f;
     private static final float RIPPLE_SIZE = 1000f;
     private static final float RIPPLE_INTENSITY = 40f;
 

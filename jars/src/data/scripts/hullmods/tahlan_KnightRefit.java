@@ -30,6 +30,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
     private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 50);
     private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 100);
 
+    private static boolean RunOnce = false;
+
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
