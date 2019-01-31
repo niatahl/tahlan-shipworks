@@ -1,3 +1,26 @@
+0.3.3
+Additions:
+- Added Izanami prototype cruiser
+- Added Renki missile support frigate
+- Added Gallant small kinetic railgun
+- Added Castella Pirate variant
+- Added Numeon antimatter cannon
+
+Changes:
+- Errant Drive now moves at fixed speed along current motion vector instead of boosting mobility
+- Ingress' Navigation Feed is now an upfront cost cooldown-based system like targeting feed
+- Changed Nessie's system to ammofeed
+- Bungalow now has a Cramped Hangars hullmod, increasing fighter refit times
+
+Balancing:
+- Increased Kodai's OP from 110 to 120
+- Increased range of mining lance from 600 to 700
+- Lowered Yukikaze dissipation from 800 to 750
+- Lowered Exa Pico armor from 400 to 200
+- Lowered Nessie's flux cap from 12000 to 10000
+- Buffed Nessie's mobility stats
+
+
 0.3.2d
 Bugfixes:
 - Various Hekaton fixes

@@ -9,6 +9,8 @@
 		"tahlan_monitor_gh_knight":10,
 		"tahlan_Yosei_standard":10,
 		"tahlan_Skola_standard":10,
+		"tahlan_Renki_standard":7,
+		"tahlan_Renki_strike":3,
 	},
 	"combatMedium":{
 		"tahlan_Bento_standard":10,
@@ -27,11 +29,13 @@
 		"tahlan_Kodai_beamer":3,
 		"tahlan_Kodai_standard":7,	
 		"tahlan_dominator_gh_knight":10,
+		"tahlan_Izanami_prototype":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
 		"tahlan_vendetta_gh_knight":10,
 		"tahlan_onslaught_gh_knight":10,
+		"tahlan_Castella_pirates_standard":10,
 	},
 	
 	

@@ -1,0 +1,31 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 2,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "tahlan_Renki",
+  "hullMods": [
+    "missleracks"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Renki_standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sabotpod"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "irpulse",
+        "WS0003": "irpulse"
+      }
+    }
+  ],
+  "wings": []
+}

@@ -10,10 +10,10 @@
 		["tahlan_Kodai_standard", "tahlan_Bento_standard", "centurion_Starting"],
 	],
     "startShipsCombatLarge":[
-      ["tahlan_Castigator_knight_errant", "tahlan_monitor_gh_knight"],
+		["tahlan_Castigator_knight_errant", "tahlan_monitor_gh_knight"],
     ],
 	"startShipsSuper":[
-		["tahlan_Exa_Pico_standard"],
+		["tahlan_Izanami_prototype"],
 		["tahlan_Vale_crusader"],
 	],
 }

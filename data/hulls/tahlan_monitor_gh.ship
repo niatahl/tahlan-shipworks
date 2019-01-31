@@ -24,7 +24,8 @@
   "builtInMods": [
     "tahlan_advballistics",
     "tahlan_knightrefit",
-	"fluxshunt"
+	"fluxshunt",
+	"tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS 001": "tahlan_dualvolkite",

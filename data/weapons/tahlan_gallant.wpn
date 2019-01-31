@@ -1,0 +1,39 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_gallant_fire",
+  "glowColor": [255,140,80,155],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_gallant_hp_glow.png",
+  "hardpointOffsets": [
+    4.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_gallant_hp_base.png",
+  "id": "tahlan_gallant",
+  "muzzleFlashSpec": {
+    "length": 60,
+    "particleColor": [255,220,180,155],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 10
+  },
+  "projectileSpecId": "tahlan_gallant_shot",
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_gallant_turet_glow.png",
+  "turretOffsets": [
+    2,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_gallant_turet_base.png",
+  "type": "BALLISTIC"
+}

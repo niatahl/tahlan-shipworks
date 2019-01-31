@@ -1,7 +1,7 @@
 {
   "displayName": "Standard",
   "fluxCapacitors": 0,
-  "fluxVents": 39,
+  "fluxVents": 19,
   "goalVariant": true,
   "hullId": "tahlan_Castella_lp",
   "hullMods": [
@@ -16,6 +16,8 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
+        "WS0003": "mark9",
+        "WS0004": "mark9",
         "WS0019": "hammerrack",
         "WS0020": "hammerrack"
       }
@@ -23,10 +25,7 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS0003": "multineedler",
-        "WS0004": "multineedler"
-      }
+      "weapons": {}
     },
     {
       "autofire": true,

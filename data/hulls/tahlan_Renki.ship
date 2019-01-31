@@ -1,0 +1,130 @@
+{
+  "bounds": [
+    -53.5,
+    -8,
+    -15.5,
+    -18,
+    -13,
+    -25,
+    19,
+    -40,
+    45,
+    -16.5,
+    45,
+    16.5,
+    19,
+    40,
+    -13,
+    25,
+    -15.5,
+    18,
+    -53.5,
+    8
+  ],
+  "builtInMods": [
+    "delicate"
+  ],
+  "builtInWings": [],
+  "center": [
+    40,
+    57.5
+  ],
+  "collisionRadius": 85.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 25,
+      "location": [
+        -15.5,
+        21
+      ],
+      "style": "HIGH_TECH",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 25,
+      "location": [
+        -15.5,
+        -21
+      ],
+      "style": "HIGH_TECH",
+      "width": 9
+    },
+    {
+      "angle": 171.5,
+      "contrailSize": 6.086559,
+      "length": 13.756396,
+      "location": [
+        -5.5,
+        28.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 6.086559
+    },
+    {
+      "angle": -171.5,
+      "contrailSize": 6.086559,
+      "length": 13.756396,
+      "location": [
+        -5.5,
+        -28.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 6.086559
+    }
+  ],
+  "height": 115,
+  "hullId": "tahlan_Renki",
+  "hullName": "Renki",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 77.5,
+  "spriteName": "graphics/tahlan/ships/tahlan_Renki.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0001",
+      "locations": [
+        35.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 45,
+      "arc": 110,
+      "id": "WS0002",
+      "locations": [
+        22.5,
+        17
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -45,
+      "arc": 110,
+      "id": "WS0003",
+      "locations": [
+        22.5,
+        -17
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    }
+  ],
+  "width": 80
+}

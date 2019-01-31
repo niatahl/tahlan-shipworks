@@ -1,38 +1,38 @@
 WTF format:False
-Treshold state:True
+Treshold state:False
 Treshold value:50
 Normal from Height:False
-Normal from Diffuse:True
+Normal from Diffuse:False
 Combine Normals:False
 Combine Int:1
 Combine A Int:1
 Combine B Int:1
 Combine Z bias:1
-Generate profile:True
+Generate profile:False
 Normal Intensity:1
 Normal small:90
 Normal medium:4
 Normal large:2
 Normal medium radius:6
 Normal large radius:12
-Normal Dif small:40.25974
-Normal Dif medium:25.32467
-Normal Dif large:22.07792
+Normal Dif small:7
+Normal Dif medium:4
+Normal Dif large:2
 Normal Dif bBias:0.5
 Normal Dif bStr:4
 Normal Dif medium radius:6
-Normal Dif large radius:12.57792
+Normal Dif large radius:12
 Shape sel H med gauss:True
 Shape sel H med linear:False
 Shape sel H med flat:False
 Shape sel H large gauss:True
 Shape sel H large linear:False
 Shape sel H large flat:False
-Shape sel D med gauss:False
-Shape sel D med linear:True
+Shape sel D med gauss:True
+Shape sel D med linear:False
 Shape sel D med flat:False
-Shape sel D large gauss:False
-Shape sel D large linear:True
+Shape sel D large gauss:True
+Shape sel D large linear:False
 Shape sel D large flat:False
 Invert Xa:False
 Invert Ya:False
@@ -49,8 +49,3 @@ Roughtness Brightness:0
 Roughtness Contrast:1
 Roughtness Clamp:0
 Curvature from Normal:False
-&
--3,93_Smooth
-99,29_Smooth
-151,29_Smooth
-253,93_Smooth

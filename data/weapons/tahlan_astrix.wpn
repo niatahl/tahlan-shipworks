@@ -1,0 +1,46 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_astrix_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_astrix_hp_recoil.png",
+  "hardpointOffsets": [
+    17.5,
+    5,
+    17.5,
+    -5
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_astrix_hp_base.png",
+  "id": "tahlan_astrix",
+  "muzzleFlashSpec":{"length":34.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":10.0,
+					   "particleSizeMin":18.0,
+					   "particleSizeRange":24.0,
+					   "particleDuration":0.12,
+					   "particleCount":12,
+					   "particleColor":[255,185,215,215]},
+  "projectileSpecId": "tahlan_astrix_shot",
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_astrix_turret_recoil.png",
+  "turretOffsets": [
+    15,
+    5,
+    15,
+    -5
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_astrix_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 6
+}

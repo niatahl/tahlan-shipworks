@@ -6,7 +6,7 @@
     0,
     0
   ],
-  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_volkite_hp_glow.png",
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_volkite_hp_recoil.png",
   "hardpointOffsets": [
     15,
     2.5,

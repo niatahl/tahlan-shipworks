@@ -1,0 +1,68 @@
+{
+  "animationType": "SMOKE",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "harpoon_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    8,
+    -8,
+    7,
+    -4,
+    6,
+    0,
+    5,
+    4,
+    4,
+    8
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_nuboko_l.png",
+  "id": "tahlan_nuboko_l",
+  "projectileSpecId": "tahlan_nuboko_msl",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "smokeSpec": {
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackParticleCount": 3,
+    "blowbackSpread": 10,
+    "cloudDuration": 1,
+    "cloudParticleCount": 3,
+    "cloudRadius": 10,
+    "particleColor": [
+      205,
+      190,
+      165,
+      255
+    ],
+    "particleSizeMin": 5,
+    "particleSizeRange": 5
+  },
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "turretOffsets": [
+    2.5,
+    -8,
+    1.5,
+    -4,
+    0.5,
+    0,
+    -0.5,
+    4,
+    -1.5,
+    8
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_nuboko_l.png",
+  "type": "MISSILE"
+}

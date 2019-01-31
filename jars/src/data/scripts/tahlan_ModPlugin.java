@@ -11,7 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class tahlan_ModPlugin extends BaseModPlugin {
-
+    static private boolean graphicsLibAvailable = false;
+    static public boolean isGraphicsLibAvailable () {
+        return graphicsLibAvailable;
+    }
     //All hullmods related to shields, saved in a convenient list
     public static List<String> SHIELD_HULLMODS = new ArrayList<String>();
 
@@ -32,9 +35,12 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
         boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
         if (hasGraphicsLib) {
+            graphicsLibAvailable = true;
             ShaderLib.init();
             LightData.readLightDataCSV("data/lights/tahlan_lights.csv");
             TextureData.readTextureDataCSV("data/lights/tahlan_texture.csv");
+        } else {
+            graphicsLibAvailable = false;
         }
 
         //Adds shield hullmods

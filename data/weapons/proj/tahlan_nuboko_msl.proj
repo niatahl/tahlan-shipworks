@@ -1,0 +1,37 @@
+{
+	"id":"tahlan_nuboko_msl",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+	"sprite":"graphics/tahlan/missiles/tahlan_nuboko_msl.png",
+	"size":[9,22],	
+	"center":[4.5,22],
+	"collisionRadius":7,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,125,80,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":10, # purely visual
+	"engineSpec":{"turnAcc":800,
+				  "turnRate":400,
+				  "acc":3000,
+				  "dec":500},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-15, 0],
+				    #"style":"MISSILE_MIDLINE",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[255,160,50,255],
+						"contrailDuration":1.5,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":2,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":2, # min segment length, in pixels
+						"contrailMaxSpeedMult":0.5f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":0f, # how far away from engine it starts
+						"contrailColor":[200,190,180,30],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":4,
+				    "length":15.0,
+				    "angle":180.0}
+				    ]
+}

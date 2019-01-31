@@ -48,6 +48,14 @@ public class tahlan_SmartBoltScript implements EveryFrameWeaponEffectPlugin {
                     return;
                 }
             }
+            //Cleanup to avoid memory leak
+            List<DamagingProjectileAPI> cleanUpList = new ArrayList<>();
+            for (DamagingProjectileAPI proj : registeredLightningProjectiles) {
+                if (!engine.isEntityInPlay(proj)) { cleanUpList.add(proj); }
+            }
+            for (DamagingProjectileAPI proj : cleanUpList) {
+                registeredLightningProjectiles.remove(proj);
+            }
             return;
         }
 

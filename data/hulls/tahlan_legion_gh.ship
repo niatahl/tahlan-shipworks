@@ -67,7 +67,8 @@
   ],
   "builtInMods": [
     "tahlan_advballistics",
-    "tahlan_knightrefit"
+    "tahlan_knightrefit",
+	"tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS0001": "tahlan_legion_gh_glow"

@@ -1,0 +1,32 @@
+{
+	"baseHullId":"tahlan_Castella",
+	"skinHullId":"tahlan_Castella_pirates",
+	"hullName":"Castella (P)",
+	"descriptionId":"tahlan_Castella",
+	"descriptionPrefix":"This ship has been heavily modified - and poorly maintained - by its pirate crew.",
+	"tags":["rare_bp"],
+	"tech":"Pirate",
+	"baseValueMult":.9,
+	"spriteName":"graphics/tahlan/ships/tahlan_Castella_p.png",
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"removeBuiltInWeapons":[], 		# weapon slot ids
+	"builtInMods":["unstable_injector"],
+	"builtInWeapons":{
+    },
+	"weaponSlotChanges":{
+	   "WS0003":{
+		  "type": "BALLISTIC"
+	   },
+	   "WS0004":{
+		  "type": "BALLISTIC"
+	   },
+	   "WS0001":{
+		  "type": "MISSILE"
+	   },
+	   "WS0002":{
+		  "type": "MISSILE"
+	   },
+	},
+}

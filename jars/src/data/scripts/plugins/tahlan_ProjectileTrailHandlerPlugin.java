@@ -31,7 +31,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_SPRITES.put("tahlan_armiger_shot", "trail_fuzzy");
         TRAIL_SPRITES.put("tahlan_styrix_shot", "trail_smooth");
         TRAIL_SPRITES.put("tahlan_magaera_shot", "trail_smooth");
+        TRAIL_SPRITES.put("tahlan_gallant_shot", "trail_smooth");
         TRAIL_SPRITES.put("tahlan_hekaton_torp", "trail_fuzzy");
+        TRAIL_SPRITES.put("tahlan_astrix_shot", "trail_zappy");
     }
 
     //A map for known projectiles and their IDs: should be cleared in init
@@ -56,7 +58,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_DURATIONS_IN.put("tahlan_armiger_shot", 0.05f);
         TRAIL_DURATIONS_IN.put("tahlan_styrix_shot", 0.05f);
         TRAIL_DURATIONS_IN.put("tahlan_magaera_shot", 0.05f);
+        TRAIL_DURATIONS_IN.put("tahlan_gallant_shot", 0.05f);
         TRAIL_DURATIONS_IN.put("tahlan_hekaton_torp", 0f);
+        TRAIL_DURATIONS_IN.put("tahlan_astrix_shot", 0.03f);
     }
 
     private static final Map<String, Float> TRAIL_DURATIONS_MAIN = new HashMap<String, Float>();
@@ -68,7 +72,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_DURATIONS_MAIN.put("tahlan_armiger_shot", 0f);
         TRAIL_DURATIONS_MAIN.put("tahlan_styrix_shot", 0.5f);
         TRAIL_DURATIONS_MAIN.put("tahlan_magaera_shot", 0.2f);
+        TRAIL_DURATIONS_MAIN.put("tahlan_gallant_shot", 0.2f);
         TRAIL_DURATIONS_MAIN.put("tahlan_hekaton_torp", 0.2f);
+        TRAIL_DURATIONS_MAIN.put("tahlan_astrix_shot", 0f);
     }
 
     private static final Map<String, Float> TRAIL_DURATIONS_OUT = new HashMap<String, Float>();
@@ -80,7 +86,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_DURATIONS_OUT.put("tahlan_armiger_shot", 0.6f);
         TRAIL_DURATIONS_OUT.put("tahlan_styrix_shot", 1.5f);
         TRAIL_DURATIONS_OUT.put("tahlan_magaera_shot", 1f);
+        TRAIL_DURATIONS_OUT.put("tahlan_gallant_shot", 1f);
         TRAIL_DURATIONS_OUT.put("tahlan_hekaton_torp", 1f);
+        TRAIL_DURATIONS_OUT.put("tahlan_astrix_shot", 0.2f);
     }
 
     private static final Map<String, Float> START_SIZES = new HashMap<String, Float>();
@@ -92,7 +100,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         START_SIZES.put("tahlan_armiger_shot", 8f);
         START_SIZES.put("tahlan_styrix_shot", 4f);
         START_SIZES.put("tahlan_magaera_shot", 4f);
+        START_SIZES.put("tahlan_gallant_shot", 4f);
         START_SIZES.put("tahlan_hekaton_torp", 10f);
+        START_SIZES.put("tahlan_astrix_shot", 15f);
     }
 
     private static final Map<String, Float> END_SIZES = new HashMap<String, Float>();
@@ -104,7 +114,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         END_SIZES.put("tahlan_armiger_shot", 15f);
         END_SIZES.put("tahlan_styrix_shot", 2f);
         END_SIZES.put("tahlan_magaera_shot", 2f);
+        END_SIZES.put("tahlan_gallant_shot", 2f);
         END_SIZES.put("tahlan_hekaton_torp", 20f);
+        END_SIZES.put("tahlan_astrix_shot", 6f);
     }
 
     private static final Map<String, Color> TRAIL_START_COLORS = new HashMap<String, Color>();
@@ -116,7 +128,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_START_COLORS.put("tahlan_armiger_shot", new Color(160, 140, 100));
         TRAIL_START_COLORS.put("tahlan_styrix_shot", new Color(255, 255, 255));
         TRAIL_START_COLORS.put("tahlan_magaera_shot", new Color(255, 255, 255));
+        TRAIL_START_COLORS.put("tahlan_gallant_shot", new Color(255, 255, 255));
         TRAIL_START_COLORS.put("tahlan_hekaton_torp", new Color(255, 125, 65));
+        TRAIL_START_COLORS.put("tahlan_astrix_shot", new Color(70,170,255));
     }
 
     private static final Map<String, Color> TRAIL_END_COLORS = new HashMap<String, Color>();
@@ -128,7 +142,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_END_COLORS.put("tahlan_armiger_shot", new Color(160, 140, 100));
         TRAIL_END_COLORS.put("tahlan_styrix_shot", new Color(0, 0, 255));
         TRAIL_END_COLORS.put("tahlan_magaera_shot", new Color(0, 0, 255));
+        TRAIL_END_COLORS.put("tahlan_gallant_shot", new Color(0, 0, 255));
         TRAIL_END_COLORS.put("tahlan_hekaton_torp", new Color(150, 150, 150));
+        TRAIL_END_COLORS.put("tahlan_astrix_shot", new Color(90,180,255));
     }
 
     private static final Map<String, Float> TRAIL_OPACITIES = new HashMap<String, Float>();
@@ -140,7 +156,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_OPACITIES.put("tahlan_armiger_shot", 0.3f);
         TRAIL_OPACITIES.put("tahlan_styrix_shot", 0.5f);
         TRAIL_OPACITIES.put("tahlan_magaera_shot", 0.3f);
+        TRAIL_OPACITIES.put("tahlan_gallant_shot", 0.3f);
         TRAIL_OPACITIES.put("tahlan_hekaton_torp", 0.2f);
+        TRAIL_OPACITIES.put("tahlan_astrix_shot", 0.6f);
     }
 
     private static final Map<String, Integer> TRAIL_BLEND_SRC = new HashMap<String, Integer>();
@@ -152,7 +170,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_BLEND_SRC.put("tahlan_armiger_shot", GL_SRC_ALPHA);
         TRAIL_BLEND_SRC.put("tahlan_styrix_shot", GL_SRC_ALPHA);
         TRAIL_BLEND_SRC.put("tahlan_magaera_shot", GL_SRC_ALPHA);
+        TRAIL_BLEND_SRC.put("tahlan_gallant_shot", GL_SRC_ALPHA);
         TRAIL_BLEND_SRC.put("tahlan_hekaton_torp", GL_SRC_ALPHA);
+        TRAIL_BLEND_SRC.put("tahlan_astrix_shot", GL_SRC_ALPHA);
     }
 
     private static final Map<String, Integer> TRAIL_BLEND_DEST = new HashMap<String, Integer>();
@@ -164,7 +184,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_BLEND_DEST.put("tahlan_armiger_shot", GL_ONE);
         TRAIL_BLEND_DEST.put("tahlan_styrix_shot", GL_ONE);
         TRAIL_BLEND_DEST.put("tahlan_magaera_shot", GL_ONE);
+        TRAIL_BLEND_DEST.put("tahlan_gallant_shot", GL_ONE);
         TRAIL_BLEND_DEST.put("tahlan_hekaton_torp", GL_ONE);
+        TRAIL_BLEND_DEST.put("tahlan_astrix_shot", GL_ONE);
     }
 
     private static final Map<String, Float> TRAIL_LOOP_LENGTHS = new HashMap<String, Float>();
@@ -176,7 +198,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_LOOP_LENGTHS.put("tahlan_armiger_shot", 300f);
         TRAIL_LOOP_LENGTHS.put("tahlan_styrix_shot", 300f);
         TRAIL_LOOP_LENGTHS.put("tahlan_magaera_shot", 300f);
+        TRAIL_LOOP_LENGTHS.put("tahlan_gallant_shot", 300f);
         TRAIL_LOOP_LENGTHS.put("tahlan_hekaton_torp", 300f);
+        TRAIL_LOOP_LENGTHS.put("tahlan_astrix_shot", 200f);
     }
 
     private static final Map<String, Float> TRAIL_SCROLL_SPEEDS = new HashMap<String, Float>();
@@ -188,7 +212,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_SCROLL_SPEEDS.put("tahlan_armiger_shot", 500f);
         TRAIL_SCROLL_SPEEDS.put("tahlan_styrix_shot", 500f);
         TRAIL_SCROLL_SPEEDS.put("tahlan_magaera_shot", 500f);
+        TRAIL_SCROLL_SPEEDS.put("tahlan_gallant_shot", 500f);
         TRAIL_SCROLL_SPEEDS.put("tahlan_hekaton_torp", 500f);
+        TRAIL_SCROLL_SPEEDS.put("tahlan_astrix_shot", 1000f);
     }
 
     private static final Map<String, Float> TRAIL_SPAWN_OFFSETS = new HashMap<>();
@@ -200,7 +226,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         TRAIL_SPAWN_OFFSETS.put("tahlan_armiger_shot", 0f);
         TRAIL_SPAWN_OFFSETS.put("tahlan_styrix_shot", 20f);
         TRAIL_SPAWN_OFFSETS.put("tahlan_magaera_shot", 15f);
+        TRAIL_SPAWN_OFFSETS.put("tahlan_gallant_shot", 15f);
         TRAIL_SPAWN_OFFSETS.put("tahlan_hekaton_torp", 10f);
+        TRAIL_SPAWN_OFFSETS.put("tahlan_astrix_shot", 20f);
     }
 
     //NEW: compensates for lateral movement of a projectile. Should generally be 0f in most cases, due to some oddities
@@ -214,7 +242,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         LATERAL_COMPENSATION_MULT.put("tahlan_armiger_shot", 1f);
         LATERAL_COMPENSATION_MULT.put("tahlan_styrix_shot", 1f);
         LATERAL_COMPENSATION_MULT.put("tahlan_magaera_shot", 1f);
+        LATERAL_COMPENSATION_MULT.put("tahlan_gallant_shot", 1f);
         LATERAL_COMPENSATION_MULT.put("tahlan_hekaton_torp", 0f);
+        LATERAL_COMPENSATION_MULT.put("tahlan_astrix_shot", 1f);
     }
 
     //NEW: whether a shot's trail loses opacity as the projectile fades out. Should generally be true, but may need to
@@ -229,7 +259,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         FADE_OUT_FADES_TRAIL.put("tahlan_armiger_shot", true);
         FADE_OUT_FADES_TRAIL.put("tahlan_styrix_shot", true);
         FADE_OUT_FADES_TRAIL.put("tahlan_magaera_shot", true);
+        FADE_OUT_FADES_TRAIL.put("tahlan_gallant_shot", true);
         FADE_OUT_FADES_TRAIL.put("tahlan_hekaton_torp", true);
+        FADE_OUT_FADES_TRAIL.put("tahlan_astrix_shot", true);
     }
 
     //NEW: whether a shot should have its direction adjusted to face the same way as its velocity vector, thus
@@ -244,7 +276,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_armiger_shot", false);
         PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_styrix_shot", false);
         PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_magaera_shot", false);
+        PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_gallant_shot", false);
         PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_hekaton_torp", false);
+        PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_astrix_shot", false);
     }
 
     @Override
@@ -334,6 +368,27 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                     projectileTrailIDs3.put(proj, MagicTrailPlugin.getUniqueID());
                 }
                 MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                        0f, 0f, 40f, 10f, new Color(140, 215, 255), new Color(140, 215, 255),
+                        0.4f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
+                        TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
+
+
+            } else if (specID.contains("tahlan_gallant_shot")) {
+                if (projectileTrailIDs.get(proj) == null) {
+                    projectileTrailIDs.put(proj, MagicTrailPlugin.getUniqueID());
+                }
+                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs.get(proj), spriteToUse, spawnPosition, 20f, MathUtils.getRandomNumberInRange(0f, 105f), proj.getFacing() - 180f,
+                        0f, MathUtils.getRandomNumberInRange(-330f, 330f), START_SIZES.get(specID), END_SIZES.get(specID), TRAIL_START_COLORS.get(specID), TRAIL_END_COLORS.get(specID),
+                        TRAIL_OPACITIES.get(specID) * opacityMult, TRAIL_DURATIONS_IN.get(specID), TRAIL_DURATIONS_MAIN.get(specID), TRAIL_DURATIONS_OUT.get(specID), TRAIL_BLEND_SRC.get(specID),
+                        TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), TRAIL_SCROLL_SPEEDS.get(specID), sidewayVel, null);
+
+                Vector2f glowOffsetPoint = new Vector2f((float) Math.cos(Math.toRadians(proj.getFacing())) * 20f, (float) Math.sin(Math.toRadians(proj.getFacing())) * 20f);
+                Vector2f glowSpawnPosition = new Vector2f(glowOffsetPoint.x + proj.getLocation().x, glowOffsetPoint.y + proj.getLocation().y);
+
+                if (projectileTrailIDs2.get(proj) == null) {
+                    projectileTrailIDs2.put(proj, MagicTrailPlugin.getUniqueID());
+                }
+                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
                         0f, 0f, 40f, 10f, new Color(140, 215, 255), new Color(140, 215, 255),
                         0.4f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                         TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);

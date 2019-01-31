@@ -1,47 +1,56 @@
 {
-    "displayName": "Beamer",
-    "fluxCapacitors": 5,
-    "fluxVents": 19,
-    "hullId": "tahlan_Kodai",
-    "hullMods": [
-        "targetingunit",
-        "advancedoptics"
-    ],
-    "permaMods": [],
-	"goalVariant": true,
-    "variantId": "tahlan_Kodai_beamer",
-    "weaponGroups": [
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0009": "tahlan_mininglance"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0001": "gravitonbeam"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0004": "gravitonbeam"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0003": "gravitonbeam"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0002": "gravitonbeam",
-                "WS0005": "lrpdlaser",
-                "WS0006": "lrpdlaser",
-                "WS0007": "lrpdlaser",
-                "WS0008": "lrpdlaser"
-            }
-        }
-    ],
-    "wings": []
+  "displayName": "Beamer",
+  "fluxCapacitors": 4,
+  "fluxVents": 30,
+  "goalVariant": true,
+  "hullId": "tahlan_Kodai",
+  "hullMods": [
+    "targetingunit",
+    "advancedoptics"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Kodai_beamer",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "tahlan_mininglance"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "gravitonbeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "gravitonbeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "gravitonbeam"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "gravitonbeam",
+        "WS0005": "lrpdlaser",
+        "WS0006": "lrpdlaser",
+        "WS0007": "lrpdlaser",
+        "WS0008": "lrpdlaser"
+      }
+    }
+  ],
+  "wings": []
 }
