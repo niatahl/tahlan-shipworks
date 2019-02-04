@@ -113,9 +113,10 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
 
-        stats.getShieldDamageTakenMult().modifyMult(id,DAMAGE_MULT);
-        stats.getArmorDamageTakenMult().modifyMult(id,DAMAGE_MULT);
-        stats.getHullDamageTakenMult().modifyMult(id,DAMAGE_MULT);
+        float ActualDamageMult = (float)Math.pow(DAMAGE_MULT, effectLevel);
+        stats.getShieldDamageTakenMult().modifyMult(id,ActualDamageMult);
+        stats.getArmorDamageTakenMult().modifyMult(id,ActualDamageMult);
+        stats.getHullDamageTakenMult().modifyMult(id,ActualDamageMult);
 
         //For Afterimages
         if (!Global.getCombatEngine().isPaused()) {

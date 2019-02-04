@@ -1,3 +1,13 @@
+0.3.3a
+Changes:
+- Changed Acastus to interceptor and made its custom Vokite frag damage again
+
+Balancing:
+- Increased Magaera and Gallant shot speeds
+- Increased Porphyrion shot speed, narrowed burst and increased dps some
+- Greatly increased Atropos lance cycling speed to make it more of a sustained fire weapon
+
+
 0.3.3
 Additions:
 - Added Izanami prototype cruiser

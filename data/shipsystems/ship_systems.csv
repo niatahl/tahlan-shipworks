@@ -6,5 +6,5 @@ Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,2,,2,5,TRUE,,,,,,,,,,graphics/i
 Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,TRUE,,,,,,TRUE,TRUE,,,graphics/icons/hullsys/fortress_shield.png
 Navigation Feed,tahlan_navigationfeed,,,,,,0.3,,,,0.5,20,0.5,10,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Periodic Breaker,tahlan_periodicbreaker,,,,,,0.40,,,,3,6,1,18,,,TRUE,TRUE,,,,,TRUE,TRUE,graphics/icons/hullsys/temporal_shell.png
-Chrono Rupture,tahlan_temporaldrift,,,,,,0.1,,,,0.2,0.2,3,5,,,,TRUE,,,,,TRUE,TRUE,graphics/icons/hullsys/temporal_shell.png
+Chrono Rupture,tahlan_temporaldrift,,,,,,0.1,,,,0.2,0.2,3,5,,,,TRUE,,,,,,TRUE,graphics/icons/hullsys/temporal_shell.png
 Active ECCM,tahlan_activeeccm,,0.2,,,,,,,,0.5,,0.5,,TRUE,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png

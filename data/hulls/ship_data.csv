@@ -20,13 +20,13 @@ Izanami,tahlan_Izanami,Cruiser,The Great Houses,tahlan_temporaldrift,25,7000,900
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GH refits,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Castigator (GH),tahlan_Castigator_knight,Advanced Cruiser,The Great Houses,tahlan_errantdrive,16,8000,1500,14000,10500,650,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,160,290,200,140,3,33,8,90000,3,15,540,0.25,35,35,,tahlan_knights,0.1,0.8,2,3,401
-Vendetta (GH),tahlan_vendetta_gh,Battleship,The Great Houses,tahlan_errantdrive,30,18000,1500,15000,13000,800,280,,45,18,15,8,5,3500,OMNI,,120,0.4,1,,,500,1200,300,300,15,20,7,350000,3,12,720,0.25,52,52,,tahlan_knights,0.1,0.8,2,4,224422
-Legion (GH),tahlan_legion_gh,Battlecarrier,The Great Houses,tahlan_stormdrive,28,15000,1500,12000,12500,700,260,4,30,15,15,6,6,3500,FRONT,,180,0.4,1,,,700,1500,300,300,15,20,7,300000,3,12,720,0.25,45,45,"CARRIER, COMBAT",tahlan_knights,0.1,0.8,2,4,507
-Dominator (GH),tahlan_dominator_gh,Heavy Cruiser,The Great Houses,tahlan_assaultlockdown,15,11000,1500,10000,9000,600,190,,40,20,10,12,12,2250,FRONT,,150,0.5,1,,,200,300,150,150,5,30,8,56000,4,12,540,0.25,28,28,,tahlan_knights,0.1,0.8,2,3,404
-Monitor (GH),tahlan_monitor_gh,Frigate,The Great Houses,tahlan_sentrymode,5,1500,175,4000,1500,150,30,,90,120,100,60,120,200,OMNI,,360,0.5,0.8,,,15,30,30,20,1,20,10,25000,8,10,360,0.25,8,8,,tahlan_knights,0.1,0.8,2,2,214
-Enforcer (GH),tahlan_enforcer_gh,Destroyer,The Great Houses,tahlan_errantdrive,10,5000,750,4000,3333,200,110,,60,40,20,30,20,500,OMNI,,150,0.4,1.2,,,60,100,90,90,3,30,9,19000,5,12,420,0.25,12,12,,tahlan_knights,0.1,0.8,2,3,303
-Onslaught (GH),tahlan_onslaught_gh,Battleship,The Great Houses,tahlan_stormdrive,28,20000,1750,17000,15000,600,360,,25,10,10,4,4,3500,FRONT,,180,0.4,1,,,750,1500,300,400,15,27,7,250000,3,12,720,0.25,45,45,,tahlan_knights,0.1,0.8,2,4,500
+Castigator (GH),tahlan_Castigator_knight,Advanced Cruiser,The Great Houses,tahlan_errantdrive,16,8000,1500,14000,10500,650,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,160,290,200,140,3,33,8,300000,3,15,540,0.25,35,35,,tahlan_knights,0.1,0.8,2,3,401
+Vendetta (GH),tahlan_vendetta_gh,Battleship,The Great Houses,tahlan_errantdrive,30,18000,1500,15000,13000,800,280,,45,18,15,8,5,3500,OMNI,,120,0.4,1,,,500,1200,300,300,15,20,7,700000,3,12,720,0.25,52,52,,tahlan_knights,0.1,0.8,2,4,224422
+Legion (GH),tahlan_legion_gh,Battlecarrier,The Great Houses,tahlan_stormdrive,28,15000,1500,12000,12500,700,260,4,30,15,15,6,6,3500,FRONT,,180,0.4,1,,,700,1500,300,300,15,20,7,700000,3,12,720,0.25,45,45,"CARRIER, COMBAT",tahlan_knights,0.1,0.8,2,4,507
+Dominator (GH),tahlan_dominator_gh,Heavy Cruiser,The Great Houses,tahlan_assaultlockdown,15,11000,1500,10000,9000,600,190,,40,20,10,12,12,2250,FRONT,,150,0.5,1,,,200,300,150,150,5,30,8,250000,4,12,540,0.25,28,28,,tahlan_knights,0.1,0.8,2,3,404
+Monitor (GH),tahlan_monitor_gh,Frigate,The Great Houses,tahlan_sentrymode,5,1500,175,4000,1500,150,30,,90,120,100,60,120,200,OMNI,,360,0.5,0.8,,,15,30,30,20,1,20,10,500000,8,10,360,0.25,8,8,,tahlan_knights,0.1,0.8,2,2,214
+Enforcer (GH),tahlan_enforcer_gh,Destroyer,The Great Houses,tahlan_errantdrive,10,5000,750,4000,3333,200,110,,60,40,20,30,20,500,OMNI,,150,0.4,1.2,,,60,100,90,90,3,30,9,100000,5,12,420,0.25,12,12,,tahlan_knights,0.1,0.8,2,3,303
+Onslaught (GH),tahlan_onslaught_gh,Battleship,The Great Houses,tahlan_stormdrive,28,20000,1750,17000,15000,600,360,,25,10,10,4,4,3500,FRONT,,180,0.4,1,,,750,1500,300,400,15,27,7,800000,3,12,720,0.25,45,45,,tahlan_knights,0.1,0.8,2,4,500
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighters,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

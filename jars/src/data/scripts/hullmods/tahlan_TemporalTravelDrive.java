@@ -16,8 +16,8 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class tahlan_TemporalTravelDrive extends BaseHullMod {
 
-    public static final float TIME_MULT_PLAYER = 20.0f;
-    public static final float TIME_MULT_AI = 20.0f;
+    public static final float TIME_MULT_PLAYER = 5.0f;
+    public static final float TIME_MULT_AI = 5.0f;
 
     public static final Color JITTER_COLOR = new Color(255, 106, 32,55);
     public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0,155);
@@ -88,19 +88,6 @@ public class tahlan_TemporalTravelDrive extends BaseHullMod {
                     );
                     tempCounter++;
                 }
-                //visual effect
-                Global.getCombatEngine().spawnExplosion(
-                        //where
-                        ship.getLocation(),
-                        //speed
-                        (Vector2f) new Vector2f(0,0),
-                        //color
-                        JITTER_COLOR,
-                        //size
-                        (MathUtils.getRandomNumberInRange(75f,100f) / 80f) * ELECTRIC_SIZE,
-                        //duration
-                        1.0f
-                );
             }
         } else { //If we aren't using the travel drive, reset the values of everything
             ship.getMutableStats().getTimeMult().unmodify("tahlan_TemporalTravelDriveDebugID");
