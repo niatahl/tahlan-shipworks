@@ -1,0 +1,15 @@
+{
+	"id":"tahlan_disparax_shot",
+	"specClass":"projectile",
+	"spawnType":"PLASMA",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	#"width":45.0,
+	"width":60.0,
+	"fadeTime":0.5,
+	#"hitGlowRadius":38,
+	"fringeColor":[255, 120, 30,255],
+	"coreColor":[255,175,50,255],
+	#"fringeColor":[255,0,0,255],
+	#"coreColor":[255,100,255,255],	
+}

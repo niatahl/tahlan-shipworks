@@ -1,0 +1,432 @@
+{
+  "bounds": [
+    -31.5,
+    11,
+    -16,
+    23,
+    -28.5,
+    25,
+    -23,
+    30,
+    -23,
+    40,
+    -33.5,
+    58,
+    -44,
+    63.5,
+    -27.5,
+    76,
+    -1.5,
+    78.5,
+    14.5,
+    54.5,
+    38.5,
+    26,
+    48.5,
+    22.5,
+    52,
+    12,
+    38.5,
+    -0,
+    52,
+    -12,
+    48.5,
+    -22.5,
+    38.5,
+    -26,
+    14.5,
+    -54.5,
+    -1.5,
+    -78.5,
+    -27.5,
+    -76,
+    -44,
+    -63.5,
+    -33.5,
+    -58,
+    -23,
+    -40,
+    -23,
+    -30,
+    -28.5,
+    -25,
+    -16,
+    -23,
+    -31.5,
+    -11,
+    -53.5,
+    -0
+  ],
+  "builtInWeapons": {
+    "WS0005": "tahlan_disparax_proto"
+  },
+  "builtInWings": [],
+  "center": [
+    81,
+    54.5
+  ],
+  "collisionRadius": 101.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -22.5,
+        32.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -22.5,
+        -32.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21.5,
+        34.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21.5,
+        -34.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21,
+        36.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21,
+        -36.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21,
+        38.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21,
+        -38.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21,
+        40.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21,
+        -40.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21.5,
+        42.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -21.5,
+        -42.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -22.5,
+        44.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -22.5,
+        -44.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -24,
+        46.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -24,
+        -46.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -25.5,
+        48.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -25.5,
+        -48.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -27,
+        50.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -27,
+        -50.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -28.5,
+        52.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -28.5,
+        -52.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -30.5,
+        54.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -30.5,
+        -54.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": 180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -32.5,
+        56.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    },
+    {
+      "angle": -180,
+      "contrailSize": 3,
+      "length": 1,
+      "location": [
+        -32.5,
+        -56.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3
+    }
+  ],
+  "height": 109,
+  "hullId": "tahlan_Nameless",
+  "hullName": "Namless",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 93,
+  "spriteName": "graphics/tahlan/ships/tahlan_Nameless.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 104,
+      "id": "WS0001",
+      "locations": [
+        -7.5,
+        12
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 104,
+      "id": "WS0002",
+      "locations": [
+        -7.5,
+        -12
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 45,
+      "arc": 117,
+      "id": "WS0003",
+      "locations": [
+        -7.5,
+        58
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -45,
+      "arc": 117,
+      "id": "WS0004",
+      "locations": [
+        -7.5,
+        -58
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0005",
+      "locations": [
+        29,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    }
+  ],
+  "width": 162
+}

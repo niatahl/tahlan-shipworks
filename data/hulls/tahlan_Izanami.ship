@@ -94,7 +94,7 @@
     {
       "angle": 171,
       "contrailSize": 16.790703,
-      "length": 1.329693,
+      "length": 1,
       "location": [
         -56,
         65
@@ -105,7 +105,7 @@
     {
       "angle": -171,
       "contrailSize": 16.790703,
-      "length": 1.329693,
+      "length": 1,
       "location": [
         -56,
         -65
@@ -160,7 +160,7 @@
     {
       "angle": 168,
       "contrailSize": 16.836422,
-      "length": 1.278175,
+      "length": 1,
       "location": [
         -60,
         49
@@ -171,7 +171,7 @@
     {
       "angle": -168,
       "contrailSize": 16.836422,
-      "length": 1.278175,
+      "length": 1,
       "location": [
         -60,
         -49
@@ -182,7 +182,7 @@
     {
       "angle": 171,
       "contrailSize": 16.790703,
-      "length": 1.329693,
+      "length": 1,
       "location": [
         -58,
         57
@@ -193,7 +193,7 @@
     {
       "angle": -171,
       "contrailSize": 16.790703,
-      "length": 1.329693,
+      "length": 1,
       "location": [
         -58,
         -57

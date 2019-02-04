@@ -1,0 +1,49 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_astrix_fire",
+  "glowColor": [
+    255,
+    205,
+    0,
+    155
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_disparax_hp_glow.png",
+  "hardpointOffsets": [
+    7.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_disparax_hp_base.png",
+  "id": "tahlan_disparax",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "particleColor": [
+      255,
+      205,
+      0,
+      155
+    ],
+    "particleCount": 10,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 20
+  },
+  "projectileSpecId": "tahlan_disparax_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_disparax_turret_glow.png",
+  "turretOffsets": [
+    1,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_disparax_turret_base.png",
+  "type": "ENERGY"
+}
