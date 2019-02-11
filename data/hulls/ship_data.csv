@@ -6,7 +6,7 @@ Vale,tahlan_Vale,Crusader,The Great Houses,tahlan_holyfuror,20,6000,500,9000,,50
 Kodai,tahlan_Kodai,Cruiser,Midline,maneuveringjets,14,8000,800,10000,10500,600,120,1,60,40,25,20,30,1100,FRONT,,160,0.4,0.8,,,170,300,300,120,3,33,8,46000,3,12,480,0.25,24,24,,rare_bp,,0.5,2,3,121212
 Exa Pico,tahlan_Exa_Pico,Drone Frigate,The Great Houses,tahlan_errantdrive,10,4000,200,4000,,100,30,1,140,200,150,60,120,200,OMNI,,360,0.4,0.7,,,0,0,30,30,1,22,9,50000,5,20,300,0.25,15,15,,,0.1,0.5,2,2,121245
 Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,8000,1500,14000,10500,600,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,64000,3,15,480,0.25,30,30,,rare_bp,0.5,0.5,2,3,401
-Bento,tahlan_Bento,Combat Tanker,Low Tech,damper,6,3000,700,8000,1250,200,80,,80,40,30,30,40,400,OMNI,,90,0.5,1,,,10,20,15,220,1,240,8,15000,6,20,240,0.25,10,10,"TANKER, COMBAT",lowtech_bp,,0.5,2,4,209
+Bento,tahlan_Bento,Combat Tanker,Low Tech,damper,6,3000,500,8000,1250,150,80,,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,15,200,1,240,8,15000,6,20,240,0.25,10,10,"TANKER, COMBAT",lowtech_bp,,0.5,2,4,209
 Castella,tahlan_Castella,Battlecarrier,Low Tech,burndrive,28,15000,1500,12000,12500,500,280,5,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,220000,3,12,720,0.25,40,40,"CARRIER, COMBAT",rare_bp,,0.4,2,4,507
 Castella (LP),tahlan_Castella_lp,Battleship,Luddic Path,tahlan_stormdrive,28,15000,1500,14000,12500,500,260,2,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,500,1200,300,300,15,20,7,250000,3,12,720,0.25,40,40,,"rare_bp, luddic_path",0.6,0.6,2,4,507
 Nessie,tahlan_Nessie,Makeshift Phase Cruiser,Low Tech,ammofeed,,6000,700,10000,,300,120,,70,40,20,20,20,1500,PHASE,phasecloak,,,,0.06,0.06,120,160,50,50,13,16,7,32000,5,25,360,0.25,24,24,,rare_bp,,0.8,3,5,4212
@@ -16,8 +16,8 @@ Ingress,tahlan_Ingress,Battlecarrier,Midline,tahlan_navigationfeed,28,14000,1000
 Skola,tahlan_Skola,Frigate,High Tech,displacer,8,1200,200,2600,,200,30,,180,200,160,80,200,200,OMNI,,120,0.4,0.8,,,10,20,25,20,1,20,9,12000,5,15,240,0.25,6,6,,hightech_bp,,0.4,2,3,46
 Renki,tahlan_Renki,Missile Frigate,High Tech,tahlan_activeeccm,8,1100,250,2400,,150,40,,150,170,120,70,150,220,OMNI,,120,0.4,1,,,15,25,30,25,1,20,9,15000,5,15,240,0.25,7,7,,hightech_bp,,0.4,2,3,46
 Haelequin,tahlan_Haelequin,Fast Destroyer,High Tech,temporalshell,12,2800,500,5000,,400,80,,100,120,100,65,160,500,OMNI,,120,0.4,0.8,,,40,80,110,50,4,25,9,25000,5,15,300,0.25,20,20,,rare_bp,,0.4,2,3,54
-Izanami,tahlan_Izanami,Cruiser,The Great Houses,tahlan_temporaldrift,25,7000,900,12000,,600,140,,110,130,100,60,70,1200,OMNI,,100,0.4,1,,,100,140,150,100,3,30,9,60000,5,20,480,0.25,30,30,,tahlan_knights,0.1,0.6,2,3,112
-Nameless,tahlan_Nameless,Experimental Destroyer,High Tech,tahlan_temporaldrift,12,3500,500,5000,,500,60,,120,150,100,70,160,500,OMNI,,120,0.4,0.7,,,40,80,110,50,4,25,9,40000,5,15,360,0.25,25,25,,rare_bp,,0.4,2,3,54
+Izanami,tahlan_Izanami,Cruiser,The Great Houses,tahlan_temporaldrift,25,7000,900,12000,,600,140,,110,130,100,60,70,1200,OMNI,,100,0.4,1,,,100,140,150,100,3,30,9,60000,5,20,480,0.25,30,30,HIDE_IN_CODEX,tahlan_knights,0.1,0.6,2,3,112
+Nameless,tahlan_Nameless,Experimental Destroyer,Unknown,tahlan_temporaldrift,12,3500,500,5000,,500,60,2,120,150,100,70,160,500,OMNI,,120,0.4,0.7,,,0,0,110,50,4,25,9,40000,5,15,360,0.25,25,25,"HIDE_IN_CODEX, UNBOARDABLE",,,0.4,2,3,54
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GH refits,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -34,4 +34,6 @@ Onslaught (GH),tahlan_onslaught_gh,Battleship,The Great Houses,tahlan_stormdrive
 Exec M,tahlan_Exec_M,Combat Drone,,,,300,50,1000,,100,0,,300,300,250,90,180,30,OMNI,,360,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,565656
 Exec S,tahlan_Exec_S,Assault Drone,,,,150,30,500,,100,0,,300,300,250,90,180,30,OMNI,,360,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,565656
 Caliver,tahlan_Caliver,Bomber,The Great Houses,,,250,10,200,,50,0,,170,350,250,90,180,10,OMNI,,160,0,1,,,1,1,,,,,,,,,,,,,,,,0,,,112
-Acastus,tahlan_Acastus,Fighter,The Great Houses,,,200,50,500,,50,,,250,200,180,80,160,30,OMNI,,180,0,1,,,1,1,,,,,,,,,,,,,,,,0,,,454
+Acastus,tahlan_Acastus,Fighter,The Great Houses,,,200,50,500,,50,,,250,200,180,80,160,30,OMNI,,180,0,1,,,2,2,,,,,,,,,,,,,,,,0,,,454
+Fragmenta,tahlan_Fragmenta,Drone,Unknown,,,150,20,100,,10,,,400,500,500,100,200,10,NONE,,90,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,,,0,,,454
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,83 @@
+{
+  "bounds": [
+    -2,
+    -4.5,
+    -12.5,
+    -8.5,
+    0.5,
+    -12,
+    14,
+    -0,
+    0.5,
+    12,
+    -12.5,
+    8.5,
+    -2,
+    4.5,
+    -15.5,
+    -0
+  ],
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "builtInWeapons": {
+    "WS0001": "tahlan_dirge_lance"
+  },
+  "builtInWings": [],
+  "center": [
+    13.5,
+    17
+  ],
+  "collisionRadius": 24.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 4,
+      "length": 3,
+      "location": [
+        -3,
+        4
+      ],
+      "style": "TAHLAN_NL_ENGINE",
+      "width": 4
+    },
+    {
+      "angle": -180,
+      "contrailSize": 4,
+      "length": 3,
+      "location": [
+        -3,
+        -4
+      ],
+      "style": "TAHLAN_NL_ENGINE",
+      "width": 4
+    }
+  ],
+  "height": 34,
+  "hullId": "tahlan_Fragmenta",
+  "hullName": "Fragmenta",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 21.5,
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Fragmenta.png",
+  "style": "TAHLAN_NL_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0001",
+      "locations": [
+        2,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    }
+  ],
+  "width": 27
+}

@@ -21,6 +21,10 @@ import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
 public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlugin {
 
+    //Sort of a performance-sanity option; projectile trails only spawn when this much *actual* engine time has passed (at least).
+    //  Still only spawns trails at most once per frame, but helps when high time-mult is in play
+    private static final float MINIMUM_ENGINE_TIME_WAIT = 1f/180f;
+
     //A map of all the trail sprites used (note that all the sprites must be under TSW_fx): ensure this one has the same keys as the other maps
     private static final Map<String, String> TRAIL_SPRITES = new HashMap<String, String>();
 
@@ -298,6 +302,9 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         PROJECTILE_ANGLE_ADJUSTMENT.put("tahlan_disparax_shot", false);
     }
 
+    //Don't touch: this is for tracking our spawn delay at high time mults
+    float timer = 0f;
+
     @Override
     public void init(CombatEngineAPI engine) {
         //Reinitialize the lists
@@ -313,6 +320,14 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
             return;
         }
         CombatEngineAPI engine = Global.getCombatEngine();
+
+        //Only run once our timer is finished
+        if (timer < MINIMUM_ENGINE_TIME_WAIT) {
+            timer += amount;
+            return;
+        } else {
+            timer = 0f;
+        }
 
         //Runs once on each projectile that matches one of the IDs specified in our maps
         for (DamagingProjectileAPI proj : engine.getProjectiles()) {

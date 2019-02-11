@@ -60,7 +60,13 @@
   "builtInWeapons": {
     "WS0005": "tahlan_disparax_proto"
   },
-  "builtInWings": [],
+  "builtInMods": [
+	"tahlan_noname"
+  ],
+  "builtInWings": [
+    "tahlan_Fragmenta_drone_wing",
+    "tahlan_Fragmenta_drone_wing"
+  ],
   "center": [
     81,
     54.5
@@ -75,7 +81,7 @@
         -22.5,
         32.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -86,7 +92,7 @@
         -22.5,
         -32.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -97,7 +103,7 @@
         -21.5,
         34.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -108,7 +114,7 @@
         -21.5,
         -34.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -119,7 +125,7 @@
         -21,
         36.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -130,7 +136,7 @@
         -21,
         -36.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -141,7 +147,7 @@
         -21,
         38.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -152,7 +158,7 @@
         -21,
         -38.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -163,7 +169,7 @@
         -21,
         40.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -174,7 +180,7 @@
         -21,
         -40.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -185,7 +191,7 @@
         -21.5,
         42.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -196,7 +202,7 @@
         -21.5,
         -42.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -207,7 +213,7 @@
         -22.5,
         44.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -218,7 +224,7 @@
         -22.5,
         -44.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -229,7 +235,7 @@
         -24,
         46.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -240,7 +246,7 @@
         -24,
         -46.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -251,7 +257,7 @@
         -25.5,
         48.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -262,7 +268,7 @@
         -25.5,
         -48.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -273,7 +279,7 @@
         -27,
         50.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -284,7 +290,7 @@
         -27,
         -50.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -295,7 +301,7 @@
         -28.5,
         52.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -306,7 +312,7 @@
         -28.5,
         -52.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -317,7 +323,7 @@
         -30.5,
         54.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -328,7 +334,7 @@
         -30.5,
         -54.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -339,7 +345,7 @@
         -32.5,
         56.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     },
     {
@@ -350,7 +356,7 @@
         -32.5,
         -56.5
       ],
-      "style": "TAHLAN_GH_ENGINE",
+      "style": "TAHLAN_NL_ENGINE",
       "width": 3
     }
   ],
@@ -364,7 +370,7 @@
   ],
   "shieldRadius": 93,
   "spriteName": "graphics/tahlan/ships/tahlan_Nameless.png",
-  "style": "TAHLAN_GH_TECH",
+  "style": "TAHLAN_NL_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {

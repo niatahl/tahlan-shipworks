@@ -16,19 +16,19 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_disparax_proto_glow.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_atrapos_hp_glow.png",
   "hardpointOffsets": [
-    10.5,
+    0,
     0
   ],
-  "hardpointSprite": "graphics/tahlan/weapons/tahlan_disparax_proto.png",
-  "id": "tahlan_disparax_proto",
-  "size": "LARGE",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_atrapos_hp_base.png",
+  "id": "tahlan_dirge_lance",
+  "size": "SMALL",
   "specClass": "beam",
   "hitGlowRadius": 40,
-  "textureScrollSpeed": 800,
+  "textureScrollSpeed": 400,
   "pixelsPerTexel":3,
-  "width":40,
+  "width":8,
   #"textureType": ROUGH,
   "textureType": [
     "graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png",
@@ -37,11 +37,11 @@
   "turretAngleOffsets": [
     0
   ],
-  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_disparax_proto_glow.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_atrapos_turret_glow.png",
   "turretOffsets": [
-    1,
+    0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/tahlan_disparax_proto.png",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_atrapos_turret_base.png",
   "type": "ENERGY"
 }
