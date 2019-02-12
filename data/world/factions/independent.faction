@@ -18,6 +18,7 @@
 	"knownShips":{
 		"tags":["tahlan_knights"],
 		"hulls":[
+			"tahlan_vendetta_gh", #not included in the BP package, since it only loads with certain mods
 			"tahlan_Castella",
 			"tahlan_Kodai",
 			"tahlan_Ingress",

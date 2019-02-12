@@ -56,6 +56,7 @@
 			"gryphon",
 			"eagle",
 			"valkyrie",
+			"tahlan_vendetta_gh", #not included in the BP package, since it only loads with certain mods
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
