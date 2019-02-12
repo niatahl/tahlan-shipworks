@@ -2,6 +2,7 @@ package data.scripts;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
@@ -51,7 +52,18 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 SHIELD_HULLMODS.add("swp_shieldbypass"); //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
             }
         }
-
     }
 
+
+    //New game stuff
+    @Override
+    public void onNewGame() {
+        //Prevents Vendetta (GH) from appearing in fleets unless DaRa is installed
+        if (!Global.getSettings().getModManager().isModEnabled("DisassembleReassemble")) {
+            Global.getSector().getFaction(Factions.INDEPENDENT).removeKnownShip("tahlan_vendetta_gh");
+            if (Global.getSector().getFaction("tahlan_greathouses") != null) {
+                Global.getSector().getFaction("tahlan_greathouses").removeKnownShip("tahlan_vendetta_gh");
+            }
+        }
+    }
 }
