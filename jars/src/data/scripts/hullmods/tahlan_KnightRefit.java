@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
+import org.lazywizard.lazylib.MathUtils;
 
 import java.awt.*;
 import java.util.EnumSet;
@@ -30,7 +31,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
     private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 50);
     private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 100);
 
-    private static boolean RunOnce = false;
+    private float CalibrationMult = 1f;
+    private boolean RunOnce = false;
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -60,6 +62,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLIES_MULT);
 
+
     }
 
     @Override
@@ -70,16 +73,23 @@ public class tahlan_KnightRefit extends BaseHullMod {
             return;
         }
 
+        if (!RunOnce) {
+            if (ship.getVariant().getHullMods().contains("tahlan_uncalibrated_tcg")) {
+                CalibrationMult = MathUtils.getRandomNumberInRange(0.5f,1f);
+            }
+            RunOnce=true;
+        }
+
         //The Great Houses are actually timelords
         boolean player = ship == Global.getCombatEngine().getPlayerShip();
         String id = "tahlan_KnightRefitID";
         if (ship.getHitpoints() <= ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE || ship.getVariant().getHullMods().contains("tahlan_forcedoverdrive")) {
 
             if (player) {
-                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT);
-                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / OVERDRIVE_TIME_MULT);
+                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT * CalibrationMult);
+                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / OVERDRIVE_TIME_MULT * CalibrationMult);
             } else {
-                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT);
+                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT * CalibrationMult);
                 Global.getCombatEngine().getTimeMult().unmodify(id);
             }
 
@@ -90,13 +100,18 @@ public class tahlan_KnightRefit extends BaseHullMod {
             ship.setJitter(id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
             ship.setJitterUnder(id, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
 
+            if (player) {
+                Global.getCombatEngine().maintainStatusForPlayerShip(id,"graphics/icons/hullsys/temporal_shell.png","Temporal Overdrive", "Timeflow at 130%", false);
+            }
+
         } else {
 
             if (player) {
-                ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT);
-                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / TIME_MULT);
+                ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT * CalibrationMult);
+                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / TIME_MULT * CalibrationMult);
+                Global.getCombatEngine().maintainStatusForPlayerShip(id,"graphics/icons/hullsys/temporal_shell.png","Temporal Field", "Timeflow at 110%", false);
             } else {
-                ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT);
+                ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT * CalibrationMult);
                 Global.getCombatEngine().getTimeMult().unmodify(id);
             }
 

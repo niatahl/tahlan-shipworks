@@ -20,15 +20,16 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
     private static final Color AFTERIMAGE_COLOR = new Color(255, 63, 0, 60);
     private static final float AFTERIMAGE_THRESHOLD = 0.4f;
     public static final float DAMAGE_MULT = 2f;
+    public static final float DPS_MULT = 0.5f;
     public static final float MAX_TIME_MULT = 20f;
     private static final float RIPPLE_SIZE = 1000f;
     private static final float RIPPLE_INTENSITY = 40f;
 
-    public static final Color JITTER_COLOR = new Color(255, 106, 32,55);
-    public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0,155);
+    public static final Color JITTER_COLOR = new Color(255, 106, 32, 55);
+    public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0, 155);
 
     public static final float ELECTRIC_SIZE = 80.0f;
-    public static final float ELECTRIC_SIZE_SCHIAVONA = 300.0f;
+    public static final float ELECTRIC_SIZE_IZANAMI = 300.0f;
 
     public boolean HAS_FIRED_LIGHTNING = false;
     private static final Vector2f ZERO = new Vector2f();
@@ -51,14 +52,14 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         if (!runOnce) {
             runOnce = true;
             Vector2f loc = ship.getLocation();
-            if (tahlan_ModPlugin.isGraphicsLibAvailable()) {
-                RippleDistortion ripple = new RippleDistortion(loc, ZERO);
-                ripple.setSize(RIPPLE_SIZE);
-                ripple.setIntensity(RIPPLE_INTENSITY);
-                ripple.setFrameRate(120f);
-                DistortionShader.addDistortion(ripple);
-            }
             if (player) {
+                if (tahlan_ModPlugin.isGraphicsLibAvailable()) {
+                    RippleDistortion ripple = new RippleDistortion(loc, ZERO);
+                    ripple.setSize(RIPPLE_SIZE);
+                    ripple.setIntensity(RIPPLE_INTENSITY);
+                    ripple.setFrameRate(120f);
+                    DistortionShader.addDistortion(ripple);
+                }
                 Global.getSoundPlayer().playSound("tahlan_zawarudo", 1f, 1f, loc, ship.getVelocity());
             }
         }
@@ -66,7 +67,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         //Fires lightning at full charge, once
         float actualElectricSize = ELECTRIC_SIZE;
         if (ship.getHullSpec().getHullId().contains("tahlan_Izanami")) {
-            actualElectricSize = ELECTRIC_SIZE_SCHIAVONA;
+            actualElectricSize = ELECTRIC_SIZE_IZANAMI;
         }
         if (effectLevel >= 0.8f) {
             if (!HAS_FIRED_LIGHTNING) {
@@ -74,7 +75,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
                 /*Lightning based code...*/
                 float tempCounter = 0;
                 while (tempCounter <= (6.0f / ELECTRIC_SIZE) * actualElectricSize) {
-                    Global.getCombatEngine().spawnEmpArc(ship,new Vector2f(ship.getLocation().x + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize), ship.getLocation().y + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize)), null, ship,
+                    Global.getCombatEngine().spawnEmpArc(ship, new Vector2f(ship.getLocation().x + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize), ship.getLocation().y + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize)), null, ship,
                             DamageType.ENERGY, //Damage type
                             0f, //Damage
                             0f, //Emp
@@ -105,7 +106,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         }
 
         //time acceleration
-        float TimeMult = (float)Math.pow(MAX_TIME_MULT, effectLevel);
+        float TimeMult = (float) Math.pow(MAX_TIME_MULT, effectLevel);
         stats.getTimeMult().modifyMult(id, TimeMult);
         if (player) {
             Global.getCombatEngine().getTimeMult().modifyMult(id, (1f / TimeMult));
@@ -113,10 +114,17 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
 
-        float ActualDamageMult = (float)Math.pow(DAMAGE_MULT, effectLevel);
-        stats.getShieldDamageTakenMult().modifyMult(id,ActualDamageMult);
-        stats.getArmorDamageTakenMult().modifyMult(id,ActualDamageMult);
-        stats.getHullDamageTakenMult().modifyMult(id,ActualDamageMult);
+        //damage taken debuff
+        float ActualDamageMult = (float) Math.pow(DAMAGE_MULT, effectLevel);
+        stats.getShieldDamageTakenMult().modifyMult(id, ActualDamageMult);
+        stats.getArmorDamageTakenMult().modifyMult(id, ActualDamageMult);
+
+        //dps debuff
+        float ActualDPSMult = (float) Math.pow(DPS_MULT, effectLevel);
+        stats.getEnergyRoFMult().modifyMult(id, ActualDPSMult);
+        stats.getBallisticRoFMult().modifyMult(id, ActualDPSMult);
+        stats.getBeamWeaponDamageMult().modifyMult(id, ActualDPSMult);
+
 
         //For Afterimages
         if (!Global.getCombatEngine().isPaused()) {

@@ -1,12 +1,11 @@
 {
   "displayName": "Kassadari",
   "fluxCapacitors": 0,
-  "fluxVents": 31,
+  "fluxVents": 46,
   "goalVariant": true,
   "hullId": "tahlan_vendetta_gh",
   "hullMods": [
-    "targetingunit",
-    "armoredweapons"
+    "targetingunit"
   ],
   "permaMods": [],
   "quality": 0,

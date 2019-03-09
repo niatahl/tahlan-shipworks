@@ -41,5 +41,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_disparax_turret_base.png",
   "type": "ENERGY",
-  "width": 40
+  "width": 30
 }

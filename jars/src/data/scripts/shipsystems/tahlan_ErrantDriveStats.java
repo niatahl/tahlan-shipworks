@@ -5,10 +5,13 @@ import java.awt.Color;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 
 public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
@@ -16,6 +19,16 @@ public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
     private static final Color AFTERIMAGE_COLOR = new Color(255, 63, 0, 100);
     private static final float AFTERIMAGE_THRESHOLD = 0.2f;
     public static final float MAX_TIME_MULT = 2f;
+
+    public static final float ELECTRIC_SIZE = 80.0f;
+    public static final float ELECTRIC_SIZE_DESTROYER = 100.0f;
+    public static final float ELECTRIC_SIZE_CRUISER = 200.0f;
+    public static final float ELECTRIC_SIZE_CAPITAL = 300.0f;
+
+    public boolean HAS_FIRED_LIGHTNING = false;
+
+    public static final Color JITTER_COLOR = new Color(255, 106, 32, 55);
+    public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0, 155);
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         ShipAPI ship = null;
@@ -30,18 +43,18 @@ public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
             return;
         }
 
-
-            float TimeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel;
-            stats.getTimeMult().modifyMult(id, TimeMult);
-            if (player) {
-                Global.getCombatEngine().getTimeMult().modifyMult(id, (1f / TimeMult));
-            } else {
-                Global.getCombatEngine().getTimeMult().unmodify(id);
-            }
+        float TimeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel;
+        stats.getTimeMult().modifyMult(id, TimeMult);
+        if (player) {
+            Global.getCombatEngine().getTimeMult().modifyMult(id, (1f / TimeMult));
+        } else {
+            Global.getCombatEngine().getTimeMult().unmodify(id);
+        }
 
             float driftamount = engine.getElapsedInLastFrame();
 
         if (state == State.IN) {
+            /*
             float speed = ship.getVelocity().length();
             if (speed <= 0.1f) {
                 ship.getVelocity().set(VectorUtils.getDirectionalVector(ship.getLocation(), ship.getVelocity()));
@@ -50,8 +63,22 @@ public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
                 ship.getVelocity().normalise();
                 ship.getVelocity().scale(speed + driftamount * 3600f);
             }
+            */
+
+
+
+            ship.getMutableStats().getAcceleration().modifyFlat(id,5000f);
+            ship.getMutableStats().getDeceleration().modifyFlat(id, 5000f);
+
         } else if (state == State.ACTIVE) {
+
+            stats.getAcceleration().unmodify(id);
+            stats.getDeceleration().unmodify(id);
+
             float speed = ship.getVelocity().length();
+            if (speed <= 0.1f) {
+                ship.getVelocity().set(VectorUtils.getDirectionalVector(ship.getLocation(), ship.getVelocity()));
+            }
             if (speed < 900f) {
                 ship.getVelocity().normalise();
                 ship.getVelocity().scale(speed + driftamount * 3600f);
@@ -62,6 +89,41 @@ public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
                 ship.getVelocity().normalise();
                 ship.getVelocity().scale(speed - driftamount * 3600f);
             }
+        }
+
+
+        //Fires lightning at full charge, once
+        float actualElectricSize = ELECTRIC_SIZE;
+        if (ship.getHullSpec().getHullId().contains("tahlan_enforcer_gh")) {
+            actualElectricSize = ELECTRIC_SIZE_DESTROYER;
+        }
+        if (ship.getHullSpec().getHullId().contains("tahlan_Castigator_knight")) {
+            actualElectricSize = ELECTRIC_SIZE_CRUISER;
+        }
+        if (ship.getHullSpec().getHullId().contains("tahlan_vendetta_gh")) {
+            actualElectricSize = ELECTRIC_SIZE_CAPITAL;
+        }
+        if (effectLevel >= 0.9f) {
+            if (!HAS_FIRED_LIGHTNING) {
+                HAS_FIRED_LIGHTNING = true;
+                /*Lightning based code...*/
+                float tempCounter = 0;
+                while (tempCounter <= (6.0f / ELECTRIC_SIZE) * actualElectricSize) {
+                    Global.getCombatEngine().spawnEmpArc(ship, new Vector2f(ship.getLocation().x + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize), ship.getLocation().y + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize)), null, ship,
+                            DamageType.ENERGY, //Damage type
+                            0f, //Damage
+                            0f, //Emp
+                            100000f, //Max range
+                            "tachyon_lance_emp_impact",
+                            (10f / ELECTRIC_SIZE) * actualElectricSize, // thickness
+                            JITTER_COLOR, //Central color
+                            JITTER_UNDER_COLOR //Fringe Color
+                    );
+                    tempCounter++;
+                }
+            }
+        } else {
+            HAS_FIRED_LIGHTNING = false;
         }
 
 
@@ -120,9 +182,8 @@ public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
 
         //stats.getMaxTurnRate().unmodify(id);
         //stats.getTurnAcceleration().unmodify(id);
-        //stats.getMaxSpeed().unmodify(id);
-        //stats.getAcceleration().unmodify(id);
-        //stats.getDeceleration().unmodify(id);
+        stats.getAcceleration().unmodify(id);
+        stats.getDeceleration().unmodify(id);
         stats.getEmpDamageTakenMult().unmodify(id);
         stats.getHullDamageTakenMult().unmodify(id);
         stats.getArmorDamageTakenMult().unmodify(id);

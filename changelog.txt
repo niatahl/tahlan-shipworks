@@ -1,3 +1,47 @@
+0.3.4
+Additions:
+- Added Defiance-class missile cruiser
+
+Changes:
+- Forced Overdrive now directly negates the armor debuff from Kassadari Engineering
+- Changed Errant Drive to feel more controlled
+- Added Hegemony start with Castigator
+
+Balance: 
+- Increased Mining Lance range from 700 to 800
+
+
+0.3.3d
+Changes:
+- Changed Monitor (GH) ship system to Stronghold Shield
+- Changed Dominator (GH) ship system to Cavalry Charge
+- Changed Legion (GH) default loadout to use Caliver bombers instead of Perditions
+
+Balancing:
+- Increased OP cost of Hekaton-class torpedos to 2,4,14 OP for single, rack and launcher respectively (from 1,2,10)
+- Lowered Yukikaze flux capacity from 14000 to 12000
+- Lowered Castella armor to 1200
+- Lowered Castella OP to 240
+- Lowered Castella flux cap to 11000
+- Prism Coil max charges reduced from 40 to 30
+
+
+0.3.3c
+Changes:
+- Disabled music player for now due to technical issues
+- Tweaked Izanami ship system visuals
+
+
+0.3.3b
+Additions:
+- Added Nameless drone destroyer
+- Added Timeless drone mothership
+- (Properly) added Disparax plasma emitter
+
+Changes:
+- Partially renamed most weapons to be more descriptive
+
+
 0.3.3a
 Additions:
 - Added a fancy thing

@@ -8,7 +8,9 @@
 		"tags":{
 			"tahlan_knights":0.1,
 		},
-		#"hulls":{},
+		"hulls":{
+			"tahlan_vendetta_gh":0.1,
+		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
@@ -22,6 +24,7 @@
 			"tahlan_Castella",
 			"tahlan_Kodai",
 			"tahlan_Ingress",
+			"tahlan_Defiance",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

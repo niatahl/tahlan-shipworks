@@ -1,7 +1,7 @@
 {
 	"id":"tahlan_errantdrive",
-	"type":"STAT_MOD",
-	"aiType":"TEMPORAL_SHELL",
+	"type":"ENGINE_MOD",
+	"aiType":"MANEUVERING_JETS",
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_ErrantDriveStats",
 	

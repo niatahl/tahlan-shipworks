@@ -1,11 +1,12 @@
 {
   "displayName": "Kassadari",
-  "fluxCapacitors": 8,
+  "fluxCapacitors": 3,
   "fluxVents": 20,
   "goalVariant": true,
   "hullId": "tahlan_enforcer_gh",
   "hullMods": [
-    "targetingunit"
+    "targetingunit",
+	"hardenedshieldemitter"
   ],
   "permaMods": [],
   "quality": 0,

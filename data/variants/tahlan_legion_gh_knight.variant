@@ -1,7 +1,7 @@
 {
     "displayName": "Kassadari",
-    "fluxCapacitors": 15,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 37,
     "hullId": "tahlan_legion_gh",
     "hullMods": ["targetingunit"],
     "permaMods": [],
@@ -45,9 +45,9 @@
         }
     ],
     "wings": [
-        "perdition_wing",
-        "perdition_wing",
-        "perdition_wing",
-        "perdition_wing"
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing"
     ]
 }

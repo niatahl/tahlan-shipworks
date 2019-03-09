@@ -1,7 +1,7 @@
 {
 	"plugins":{
 		"tahlan_ProjectileTrailHandlerPlugin":"data.scripts.plugins.tahlan_ProjectileTrailHandlerPlugin",
-		"tahlan_MusicPlayerPlugin":"data.scripts.plugins.tahlan_MusicPlayerPlugin",
+		#"tahlan_MusicPlayerPlugin":"data.scripts.plugins.tahlan_MusicPlayerPlugin",
 		#"tahlan_ProjectileFX":"data.scripts.plugins.tahlan_ProjectileFX",
 		},  
 	"designTypeColors":{
@@ -9,12 +9,12 @@
             "The Great Houses":[160,150,140,255],
     },
 	"graphics":{
-		"tahlan_fx":{
-			"trail_clean":"graphics/tahlan/fx/trails_clean.png",
-			"trail_fuzzy":"graphics/tahlan/fx/trails_fuzzy.png",
-			"trail_smooth":"graphics/tahlan/fx/trails_smooth.png",
-			"trail_zappy":"graphics/tahlan/fx/trails_zappy.png",
-			"trail_contrail":"graphics/tahlan/fx/trails_contrail.png",
+		"fx":{
+			"tahlan_trail_clean":"graphics/tahlan/fx/trails_clean.png",
+			"tahlan_trail_fuzzy":"graphics/tahlan/fx/trails_fuzzy.png",
+			"tahlan_trail_smooth":"graphics/tahlan/fx/trails_smooth.png",
+			"tahlan_trail_zappy":"graphics/tahlan/fx/trails_zappy.png",
+			"tahlan_trail_contrail":"graphics/tahlan/fx/trails_contrail.png",
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",
@@ -29,6 +29,7 @@
 		"blueprint_packages":{
 			"tahlan_kaze_package":"graphics/tahlan/icons/cargo/tahlan_package_kaze.png",
 			"tahlan_knight_package":"graphics/tahlan/icons/cargo/tahlan_package_knight.png",
+			"tahlan_knight_all_package":"graphics/tahlan/icons/cargo/tahlan_package_knight.png",
 		},
 	}
 }

@@ -29,16 +29,16 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
     private static final Map<String, String> TRAIL_SPRITES = new HashMap<String, String>();
 
     static {
-        TRAIL_SPRITES.put("tahlan_utpc_shot", "trail_zappy");
-        TRAIL_SPRITES.put("tahlan_utpc_shot_splinter", "trail_zappy");
-        TRAIL_SPRITES.put("tahlan_porph_shot", "trail_zappy");
-        TRAIL_SPRITES.put("tahlan_armiger_shot", "trail_fuzzy");
-        TRAIL_SPRITES.put("tahlan_styrix_shot", "trail_smooth");
-        TRAIL_SPRITES.put("tahlan_magaera_shot", "trail_smooth");
-        TRAIL_SPRITES.put("tahlan_gallant_shot", "trail_smooth");
-        TRAIL_SPRITES.put("tahlan_hekaton_torp", "trail_fuzzy");
-        TRAIL_SPRITES.put("tahlan_astrix_shot", "trail_zappy");
-        TRAIL_SPRITES.put("tahlan_disparax_shot", "trail_zappy");
+        TRAIL_SPRITES.put("tahlan_utpc_shot", "tahlan_trail_zappy");
+        TRAIL_SPRITES.put("tahlan_utpc_shot_splinter", "tahlan_trail_zappy");
+        TRAIL_SPRITES.put("tahlan_porph_shot", "tahlan_trail_zappy");
+        TRAIL_SPRITES.put("tahlan_armiger_shot", "tahlan_trail_fuzzy");
+        TRAIL_SPRITES.put("tahlan_styrix_shot", "tahlan_trail_smooth");
+        TRAIL_SPRITES.put("tahlan_magaera_shot", "tahlan_trail_smooth");
+        TRAIL_SPRITES.put("tahlan_gallant_shot", "tahlan_trail_smooth");
+        TRAIL_SPRITES.put("tahlan_hekaton_torp", "tahlan_trail_fuzzy");
+        TRAIL_SPRITES.put("tahlan_astrix_shot", "tahlan_trail_zappy");
+        TRAIL_SPRITES.put("tahlan_disparax_shot", "tahlan_trail_zappy");
     }
 
     //A map for known projectiles and their IDs: should be cleared in init
@@ -322,8 +322,8 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
         CombatEngineAPI engine = Global.getCombatEngine();
 
         //Only run once our timer is finished
+        timer += amount;
         if (timer < MINIMUM_ENGINE_TIME_WAIT) {
-            timer += amount;
             return;
         } else {
             timer = 0f;
@@ -342,7 +342,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
 
             //-------------------------------------------For visual effects---------------------------------------------
             String specID = proj.getProjectileSpecId();
-            SpriteAPI spriteToUse = Global.getSettings().getSprite("tahlan_fx", TRAIL_SPRITES.get(specID));
+            SpriteAPI spriteToUse = Global.getSettings().getSprite("fx", TRAIL_SPRITES.get(specID));
             Vector2f projVel = new Vector2f(proj.getVelocity());
 
             //If we use angle adjustment, do that here
@@ -399,7 +399,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                 if (projectileTrailIDs3.get(proj) == null) {
                     projectileTrailIDs3.put(proj, MagicTrailPlugin.getUniqueID());
                 }
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("fx", "tahlan_trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
                         0f, 0f, 40f, 10f, new Color(140, 215, 255), new Color(140, 215, 255),
                         0.4f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                         TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
@@ -420,7 +420,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                 if (projectileTrailIDs2.get(proj) == null) {
                     projectileTrailIDs2.put(proj, MagicTrailPlugin.getUniqueID());
                 }
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), Global.getSettings().getSprite("fx", "tahlan_trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
                         0f, 0f, 40f, 10f, new Color(140, 215, 255), new Color(140, 215, 255),
                         0.4f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                         TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
@@ -456,7 +456,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                     if (projectileTrailIDs2.get(proj) == null) {
                         projectileTrailIDs2.put(proj, MagicTrailPlugin.getUniqueID());
                     }
-                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), Global.getSettings().getSprite("fx", "tahlan_trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
                             0f, 0f, 50f, 20f, new Color(255, 54, 0), new Color(255, 54, 0),
                             0.3f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                             TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
@@ -486,7 +486,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                     if (projectileTrailIDs4.get(proj) == null) {
                         projectileTrailIDs4.put(proj, MagicTrailPlugin.getUniqueID());
                     }
-                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs4.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs4.get(proj), Global.getSettings().getSprite("fx", "tahlan_trail_smooth"), glowSpawnPosition, 0f, 0f, proj.getFacing() - 180f,
                             0f, 0f, 60f, 30f, new Color(140, 215, 255), new Color(140, 215, 255),
                             0.5f * opacityMult, 0f, 0.05f, 0.15f, TRAIL_BLEND_SRC.get(specID),
                             TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);
@@ -504,7 +504,7 @@ public class tahlan_ProjectileTrailHandlerPlugin extends BaseEveryFrameCombatPlu
                     if (projectileTrailIDs3.get(proj) == null) {
                         projectileTrailIDs3.put(proj, MagicTrailPlugin.getUniqueID());
                     }
-                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("tahlan_fx", "trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
+                    MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), Global.getSettings().getSprite("fx", "tahlan_trail_smooth"), spawnPosition, 0f, 0f, proj.getFacing() - 180f,
                             0f, 0f, 40f, 10f, new Color(255, 48, 0), new Color(223, 43, 22),
                             0.4f * opacityMult, 0f, 0.1f, 0.2f, TRAIL_BLEND_SRC.get(specID),
                             TRAIL_BLEND_DEST.get(specID), TRAIL_LOOP_LENGTHS.get(specID), 0f, sidewayVel, null);

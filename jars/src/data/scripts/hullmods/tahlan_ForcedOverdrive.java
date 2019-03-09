@@ -6,14 +6,28 @@ import com.fs.starfarer.api.combat.ShieldAPI.ShieldType;
 import com.fs.starfarer.api.combat.ShipAPI;
 import data.scripts.tahlan_ModPlugin;
 
+import static data.scripts.hullmods.tahlan_KnightRefit.*;
+
 
 public class tahlan_ForcedOverdrive extends BaseHullMod {
 
-    public static final float ARMOR_BONUS = 200f;
-
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getArmorBonus().modifyFlat(id,ARMOR_BONUS);
+
+        switch (hullSize) {
+            case FRIGATE:
+                stats.getArmorBonus().modifyFlat(id, ARMOR_MALUS_FRIGATE);
+                break;
+            case DESTROYER:
+                stats.getArmorBonus().modifyFlat(id, ARMOR_MALUS_DESTROYER);
+                break;
+            case CRUISER:
+                stats.getArmorBonus().modifyFlat(id, ARMOR_MALUS_CRUISER);
+                break;
+            case CAPITAL_SHIP:
+                stats.getArmorBonus().modifyFlat(id, ARMOR_MALUS_CAPITAL);
+        }
+
         stats.getShieldDamageTakenMult().modifyMult(id, 0f);
         stats.getShieldUpkeepMult().modifyMult(id, 0f);
     }
@@ -61,6 +75,7 @@ public class tahlan_ForcedOverdrive extends BaseHullMod {
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
         if (index == 0) return "permanent Overdrive activation";
+        if (index == 1) return "negate the Kassadari Engineering armor reduction";
         return null;
     }
 }

@@ -1,0 +1,25 @@
+{
+    # variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
+	},
+    # multiplier for how often hulls show up in the faction's fleets
+    "hullFrequency":{
+        "hulls":{
+            "tahlan_Nameless":0.2,
+			"tahlan_Timeless":0.2
+        },
+    },
+
+    "knownShips":{
+        "hulls":[
+            "tahlan_Nameless",
+			"tahlan_Timeless"
+        ],
+    },
+
+    "knownWeapons":{
+        "weapons":[
+            "tahlan_disparax"
+        ],
+    },
+},

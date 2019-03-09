@@ -1,10 +1,12 @@
 {
   "displayName": "Kassadari",
-  "fluxCapacitors": 2,
+  "fluxCapacitors": 6,
   "fluxVents": 10,
   "goalVariant": true,
   "hullId": "tahlan_monitor_gh",
-  "hullMods": [],
+  "hullMods": [
+	"hardenedshieldemitter"
+  ],
   "permaMods": [],
   "quality": 0,
   "variantId": "tahlan_monitor_gh_knight",

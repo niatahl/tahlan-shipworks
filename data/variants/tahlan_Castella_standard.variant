@@ -1,11 +1,10 @@
 {
   "displayName": "Standard",
   "fluxCapacitors": 0,
-  "fluxVents": 35,
+  "fluxVents": 20,
   "goalVariant": true,
   "hullId": "tahlan_Castella",
   "hullMods": [
-    "targetingunit",
     "expanded_deck_crew"
   ],
   "permaMods": [],

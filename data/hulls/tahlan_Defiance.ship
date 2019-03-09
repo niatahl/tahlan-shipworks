@@ -1,0 +1,262 @@
+{
+  "bounds": [
+    70.5,
+    -0,
+    130,
+    1.5,
+    133.5,
+    10,
+    114,
+    18.5,
+    112.5,
+    31.5,
+    -7,
+    65,
+    -29.5,
+    63,
+    -29,
+    80.5,
+    -38,
+    80.5,
+    -50,
+    61,
+    -54.5,
+    63.5,
+    -120.5,
+    42.5,
+    -121,
+    31.5,
+    -134,
+    30,
+    -134,
+    16,
+    -120.5,
+    11.5,
+    -134,
+    7.5,
+    -134.5,
+    -9,
+    -121.5,
+    -14.5,
+    -134,
+    -19,
+    -134,
+    -33,
+    -111.5,
+    -36.5,
+    -118,
+    -48.5,
+    -106,
+    -47,
+    -82,
+    -68.5,
+    -68,
+    -67.5,
+    -64.5,
+    -67,
+    -33.5,
+    -80.5,
+    -23,
+    -76.5,
+    -25,
+    -69.5,
+    -30,
+    -64,
+    -12,
+    -63.5,
+    -10.5,
+    -48.5,
+    7,
+    -38.5,
+    34,
+    -38.5,
+    39,
+    -35.5,
+    57,
+    -36.5,
+    62,
+    -32,
+    82,
+    -31.5,
+    80.5,
+    -14.5,
+    70.5,
+    -12.5
+  ],
+  "builtInWings": [],
+  "center": [
+    82.5,
+    135
+  ],
+  "collisionRadius": 198.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 21,
+      "length": 42,
+      "location": [
+        -134.5,
+        22.5
+      ],
+      "style": "LOW_TECH",
+      "width": 21
+    },
+    {
+      "angle": 180,
+      "contrailSize": 21,
+      "length": 42,
+      "location": [
+        -134.5,
+        -25.5
+      ],
+      "style": "LOW_TECH",
+      "width": 21
+    },
+    {
+      "angle": 180,
+      "contrailSize": 29,
+      "length": 57.5,
+      "location": [
+        -134.5,
+        -1.5
+      ],
+      "style": "LOW_TECH",
+      "width": 29
+    }
+  ],
+  "height": 270,
+  "hullId": "tahlan_Defiance",
+  "hullName": "Defiance",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 177,
+  "spriteName": "graphics/tahlan/ships/tahlan_Defiance.png",
+  "style": "MIDLINE",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 11.5,
+      "arc": 90,
+      "id": "WS0001",
+      "locations": [
+        5,
+        40.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 68.5,
+      "arc": 196,
+      "id": "WS0002",
+      "locations": [
+        -55,
+        41.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0003",
+      "locations": [
+        113,
+        24.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0004",
+      "locations": [
+        76,
+        -22.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0005",
+      "locations": [
+        -12,
+        -56.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 30.5,
+      "arc": 140,
+      "id": "WS0006",
+      "locations": [
+        45,
+        31.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -50,
+      "arc": 140,
+      "id": "WS0007",
+      "locations": [
+        -1,
+        -32.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -148.5,
+      "arc": 140,
+      "id": "WS0008",
+      "locations": [
+        -76,
+        -56.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0009",
+      "locations": [
+        -24,
+        -73.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0010",
+      "locations": [
+        -23,
+        71.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    }
+  ],
+  "width": 165
+}

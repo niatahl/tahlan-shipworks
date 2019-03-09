@@ -1,0 +1,55 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 32,
+  "fluxVents": 50,
+  "goalVariant": true,
+  "hullId": "tahlan_Timeless",
+  "hullMods": [
+    "hardenedshieldemitter",
+    "pointdefenseai",
+    "targetingunit",
+    "advancedshieldemitter",
+    "turretgyros"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Timeless_standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0016": "pulselaser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001t": "tahlan_disparax",
+        "WS0002": "tahlan_disparax"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "taclaser",
+        "WS0003": "taclaser",
+        "WS0004": "taclaser",
+        "WS0005": "taclaser",
+        "WS0006": "taclaser",
+        "WS0007": "taclaser",
+        "WS0008": "taclaser",
+        "WS0009": "taclaser",
+        "WS0010": "taclaser",
+        "WS0011": "taclaser",
+        "WS0012": "taclaser",
+        "WS0013": "taclaser",
+        "WS0014": "taclaser",
+        "WS0015": "taclaser"
+      }
+    }
+  ],
+  "wings": []
+}

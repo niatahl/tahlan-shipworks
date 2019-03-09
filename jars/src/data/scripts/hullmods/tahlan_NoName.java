@@ -16,11 +16,9 @@ public class tahlan_NoName extends BaseHullMod {
 
     public static final float SUPPLIES_MULT = 1.5f;
 
-    public static final float TIME_MULT = 1.1f;
+    public static final float TIME_MULT = 1.2f;
     private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 102);
     private static final float AFTERIMAGE_THRESHOLD = 0.1f;
-
-    private static boolean RunOnce = false;
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {

@@ -16,4 +16,8 @@
 		["tahlan_Izanami_prototype"],
 		["tahlan_Vale_crusader"],
 	],
+	
+	"startSpecialItems":[
+        [["tahlan_knight_package",""]],
+    ],
 }

@@ -1,11 +1,10 @@
 {
   "displayName": "Standard",
   "fluxCapacitors": 0,
-  "fluxVents": 19,
+  "fluxVents": 15,
   "goalVariant": true,
   "hullId": "tahlan_Castella_lp",
   "hullMods": [
-    "armoredweapons",
     "heavyarmor"
   ],
   "permaMods": [],

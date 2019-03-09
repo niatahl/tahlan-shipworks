@@ -28,7 +28,7 @@
   "hitGlowRadius": 40,
   "textureScrollSpeed": 800,
   "pixelsPerTexel":3,
-  "width":40,
+  "width":30,
   #"textureType": ROUGH,
   "textureType": [
     "graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png",

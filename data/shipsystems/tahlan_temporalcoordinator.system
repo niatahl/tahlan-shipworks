@@ -1,0 +1,34 @@
+{
+	"id":"tahlan_temporalcoordinator",
+	"type":"STAT_MOD",
+	"aiType":"TEMPORAL_SHELL",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_TemporalCoordinatorStats",
+	
+	"jitterUnderColor":[141, 255, 28,55],
+	"jitterUnderCopies":20,
+	"jitterUnderMinRange":2,
+	"jitterUnderRange":8,
+	"jitterUnderRangeRadiusFraction":0,
+	
+	"jitterColor":[141, 255, 28,35],
+	"jitterCopies":2,
+	"jitterMinRange":0,
+	"jitterRange":5,
+	"jitterRangeRadiusFraction":0,
+	
+	"useSound":"system_targeting_feed",
+	#"loopSound":"system_targeting_feed_loop",
+	"deactivateSound":"gun_out_of_ammo",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"activeSpeedIncrease":100,
+		"burstMovementPotential":500,
+		"averageSpeedIncrease":100,
+	}
+}
+
+
+
+

@@ -1,5 +1,6 @@
 package data.scripts.weapons;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
@@ -18,6 +19,10 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
+        if (Global.getCombatEngine().isPaused()) {
+            return;
+        }
+
         ShipAPI ship = weapon.getShip();
         if (ship == null) {
             return;

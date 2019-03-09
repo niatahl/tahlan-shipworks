@@ -1,12 +1,11 @@
 {
   "displayName": "Kassadari",
   "fluxCapacitors": 0,
-  "fluxVents": 45,
+  "fluxVents": 44,
   "goalVariant": true,
   "hullId": "tahlan_onslaught_gh",
   "hullMods": [
     "targetingunit",
-    "fluxbreakers",
     "heavyarmor"
   ],
   "permaMods": [],

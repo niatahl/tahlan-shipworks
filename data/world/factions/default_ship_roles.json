@@ -30,6 +30,9 @@
 		"tahlan_Kodai_standard":7,	
 		"tahlan_dominator_gh_knight":10,
 		"tahlan_Izanami_prototype":10,
+		"tahlan_Defiance_strike":4,
+		"tahlan_Defiance_elite":3,
+		"tahlan_Defiance_overdriven":3,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
@@ -52,6 +55,7 @@
 
 	# carriers
 	"carrierSmall":{
+			"tahlan_Nameless_standard":10,
 	},
 	"carrierMedium":{
 			"tahlan_Bungalow_bomber":7,
@@ -62,6 +66,7 @@
 			"tahlan_Castella_elite":3,
 			"tahlan_legion_gh_knight":10,
 			"tahlan_Ingress_standard":10,
+			"tahlan_Timeless_standard":10,
 	},
 
 	# phase ships

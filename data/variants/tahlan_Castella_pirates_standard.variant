@@ -1,7 +1,7 @@
 {
     "displayName": "Pirate",
-    "fluxCapacitors": 17,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 27,
     "goalVariant": true,
     "hullId": "tahlan_Castella_pirates",
     "hullMods": [

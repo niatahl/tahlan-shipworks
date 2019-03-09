@@ -66,9 +66,9 @@
 	},
 	"tahlan_astrix_fire":{
 		"sounds":[
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.50,"volume":0.85},		
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.55,"volume":0.85},		
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.60,"volume":0.85},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.50,"volume":0.7},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.55,"volume":0.7},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.60,"volume":0.7},		
 		],
 	},
 	"tahlan_atrapos_fire":{

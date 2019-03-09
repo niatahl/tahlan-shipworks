@@ -1,0 +1,50 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 12,
+    "fluxVents": 0,
+    "hullId": "tahlan_Defiance",
+  "goalVariant": true,
+    "hullMods": ["safetyoverrides"],
+    "permaMods": [],
+    "variantId": "tahlan_Defiance_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "annihilatorpod",
+                "WS0005": "annihilatorpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "hammer",
+                "WS0010": "hammer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "heavymortar"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavymg",
+                "WS0003": "heavymg"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan"
+            }
+        }
+    ]
+}

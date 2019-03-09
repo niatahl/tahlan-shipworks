@@ -44,6 +44,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             graphicsLibAvailable = false;
         }
 
+
         //Adds shield hullmods
         for (HullModSpecAPI hullModSpecAPI : Global.getSettings().getAllHullModSpecs()) {
             if (hullModSpecAPI.hasTag("shields") && !SHIELD_HULLMODS.contains(hullModSpecAPI.getId())) {

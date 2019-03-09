@@ -1,6 +1,6 @@
 {
   "displayName": "Prototype",
-  "fluxCapacitors": 15,
+  "fluxCapacitors": 19,
   "fluxVents": 30,
   "goalVariant": true,
   "hullId": "tahlan_Izanami",
@@ -15,8 +15,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "tahlan_porph",
-        "WS0002": "tahlan_porph"
+        "WS0001": "tahlan_atrapos",
+        "WS0002": "tahlan_atrapos"
       }
     },
     {
