@@ -1,6 +1,8 @@
 package data.scripts.hullmods;
 
 import java.awt.Color;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
@@ -11,6 +13,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -24,7 +27,8 @@ public class tahlan_TemporalTravelDrive extends BaseHullMod {
 
     public static final float ELECTRIC_SIZE = 250.0f;
 
-    public boolean hasFiredLightning = false;
+    //We use a map since the hullmod instance is shared
+    public Map<ShipAPI, Boolean> hasFiredLightning = new WeakHashMap<>();
 
     //Activates a pseudo-hacked periodic breaker while the ship is using its travel drive
     @Override
@@ -71,8 +75,8 @@ public class tahlan_TemporalTravelDrive extends BaseHullMod {
             }
 
             //Fires lightning once upon activation
-            if (effectLevel >= 0.8f && !hasFiredLightning) {
-                hasFiredLightning = true;
+            if (effectLevel >= 0.8f && (hasFiredLightning.get(ship) == null || !hasFiredLightning.get(ship))) {
+                hasFiredLightning.put(ship, true);
                 /*Lightning based code...*/
                 float tempCounter = 0;
                 while (tempCounter <= (6.0f / 80f) * ELECTRIC_SIZE) {
@@ -93,7 +97,7 @@ public class tahlan_TemporalTravelDrive extends BaseHullMod {
             ship.getMutableStats().getTimeMult().unmodify("tahlan_TemporalTravelDriveDebugID");
             Global.getCombatEngine().getTimeMult().unmodify("tahlan_TemporalTravelDriveDebugID");
 
-            hasFiredLightning = false;
+            hasFiredLightning.put(ship, false);
         }
     }
 
