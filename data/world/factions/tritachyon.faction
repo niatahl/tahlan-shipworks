@@ -18,13 +18,13 @@
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
-		"tags":[],
+		#"tags":[],
 		"hulls":[
 			"tahlan_Kodai",
 		],
 	},
 	"knownShips":{
-		"tags":[],
+		#"tags":[],
 		"hulls":[
 			"tahlan_Yukikaze",
 			"tahlan_Korikaze",

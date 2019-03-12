@@ -16,15 +16,15 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class tahlan_TemporalTravelDrive extends BaseHullMod {
 
-    public static final float TIME_MULT_PLAYER = 2.0f;
-    public static final float TIME_MULT_AI = 2.0f;
+    private static final float TIME_MULT_PLAYER = 2.0f;
+    private static final float TIME_MULT_AI = 2.0f;
 
-    public static final Color JITTER_COLOR = new Color(255, 106, 32,55);
-    public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0,155);
+    private static final Color JITTER_COLOR = new Color(255, 106, 32,55);
+    private static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0,155);
 
-    public static final float ELECTRIC_SIZE = 250.0f;
+    private static final float ELECTRIC_SIZE = 250.0f;
 
-    public boolean hasFiredLightning = false;
+    private boolean hasFiredLightning = false;
 
     //Activates a pseudo-hacked periodic breaker while the ship is using its travel drive
     @Override

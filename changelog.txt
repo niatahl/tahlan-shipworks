@@ -10,6 +10,9 @@ Changes:
 Balance: 
 - Increased Mining Lance range from 700 to 800
 
+Bugfixes:
+- Fixed some linux crap
+
 
 0.3.3d
 Changes:
