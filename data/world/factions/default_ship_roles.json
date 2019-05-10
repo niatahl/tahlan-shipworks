@@ -93,6 +93,7 @@
 	},
 	"tankerMedium":{
 		"tahlan_Bento_standard":10,
+		"tahlan_Bento_lp_pather":10,
 	},
 	"tankerLarge":{
 	},

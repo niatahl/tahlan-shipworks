@@ -1,6 +1,6 @@
 {
 	"plugins":{
-		"tahlan_ProjectileTrailHandlerPlugin":"data.scripts.plugins.tahlan_ProjectileTrailHandlerPlugin",
+		#"tahlan_ProjectileTrailHandlerPlugin":"data.scripts.plugins.tahlan_ProjectileTrailHandlerPlugin",
 		#"tahlan_MusicPlayerPlugin":"data.scripts.plugins.tahlan_MusicPlayerPlugin",
 		#"tahlan_ProjectileFX":"data.scripts.plugins.tahlan_ProjectileFX",
 		},  

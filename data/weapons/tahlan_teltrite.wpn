@@ -1,0 +1,41 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_teltrite_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_treltite_hp_recoil.png",
+  "hardpointOffsets": [
+    9.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_treltite_hp_base.png",
+  "id": "tahlan_teltrite",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [255,220,180,155],
+    "particleCount": 10,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 15
+  },
+  "projectileSpecId": "tahlan_teltrite_shot",
+  "size": "SMALL",
+  "renderHints": ["RENDER_BARREL_BELOW"],
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_treltite_turret_recoil.png",
+  "turretOffsets": [
+    7.5,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_treltite_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 3
+}

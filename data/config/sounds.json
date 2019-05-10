@@ -43,6 +43,13 @@
 			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":1.45,"volume":1.0},
         ],
     },
+	"tahlan_teltrite_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":2.55,"volume":1.0},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":2.5,"volume":1.0},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":2.45,"volume":1.0},
+        ],
+    },
 	"tahlan_magaera_fire":{
         "sounds":[
            	{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":1.05,"volume":1.0},
@@ -66,9 +73,9 @@
 	},
 	"tahlan_astrix_fire":{
 		"sounds":[
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.50,"volume":0.7},		
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.55,"volume":0.7},		
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.60,"volume":0.7},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.50,"volume":0.6},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.55,"volume":0.6},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.60,"volume":0.6},		
 		],
 	},
 	"tahlan_atrapos_fire":{

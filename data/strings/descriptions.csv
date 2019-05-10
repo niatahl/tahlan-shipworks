@@ -30,7 +30,8 @@ Few of these ships were ever produced as its blueprints are likely lost to time 
 
 While outwardly only a light cruiser, the advanced temporal technology of the Izanami makes it punch far above its weight class, capable of taking on any other cruiser in the sector. Any captain capable of efficiently making use of its ability to almost stop time for a short duration will find the ship capable of unleashing terrifying barrages and dodging almost any kind of incoming fire. This power comes at a cost however, as the high-powered temporal field puts heavy strain on the ship's spaceframe, making it more susceptible to damage while active. Careless use of the system is a surefire way to an early grave.",,,
 tahlan_Renki,SHIP,"A dedicated missile and support frigate, equipped with an active ECCM system that can provide ECCM benefits for nearby allies while active. Especially popular with missile-heavy fleets, the Renki is a workhorse frigate, that can also pack a punch by itself.",,,
-,,,,,
+tahlan_Timeless,SHIP,An unusual drone ship of unknown design and origins.,,,
+tahlan_Nameless,SHIP,An unusual drone ship of unknown design and origins.,,,
 ,,,,,
 #fighters,,,,,
 tahlan_Acastus,SHIP,"A fast interceptor designed around a slightly modified volkite cannon. Quite effective against swarms of fighers and missiles, but lacks any punch against larger targets.",,,
@@ -102,6 +103,7 @@ tahlan_atrapos,WEAPON,"An unusual variant of magnetic accelerator cannon, firing
 tahlan_armiger,WEAPON,"Reliable and effective, the Armiger is a medium-caliber cannon that prioritizes projectile velocity and range over sheer firepower, making for a weapon that pairs well with high-velocity kinetic armaments.",,,
 tahlan_prismcoil,WEAPON,"An integrated arc-discharge weapon, rapidly discharging bolts of energy to any enemies within its targeting cone. Effective against all targets, it can also function as a point-defense weapon.",,,
 tahlan_astrix,WEAPON,"Designed as a brute-force weapon, the Numeon fires plasma shells with an antimatter core, equally destructive to all kinds of targets. Due to the vastly lower amount of antimatter per blast, it does not suffer from ammunition concerns like most antimatter-weaponry, but will still greatly stress most flux grids.",,,
+tahlan_teltrite,WEAPON,"Designed to supplement Volkite-type PD weapons against harder targets, this micro-railgun fires hypervelocity kinetic slugs to intercept incoming missiles and strikecraft. Being particularly effective against shielded fighters, it truly shines when paired with Volkite-class PD solutions as intended.",,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,
@@ -116,3 +118,4 @@ tahlan_temporaldrift,SHIP_SYSTEM,Almost stops time for a moment then quickly ret
 tahlan_activeeccm,SHIP_SYSTEM,Provides ECCM benefits to self and allies within 1000su while active. Generates soft flux while in use.,Support,Provides ECCM benefits to self and allies within 1000su while active. Generates soft flux while in use.,
 tahlan_strongholdshield,SHIP_SYSTEM,"Reduces damage taken by shield by 90%, unfolds it instantly and increases its arc. Also slightly boosts dissipation.",Defense,"Reduces damage taken by shield by 90%, unfolds it instantly and increases its arc. Also slightly boosts dissipation.",
 tahlan_cavalrycharge,SHIP_SYSTEM,"Charges forward while weapons fire 50% faster and armor and hull damage are halved, but with limited maneuverability.",Assault,"Charges forward while weapons fire 50% faster and armor and hull damage are halved, but with limited maneuverability.",
+tahlan_temporalcoordinator,SHIP_SYSTEM,Accelerates timeflow of ship and its fighters simulataneously.,General,Accelerates timeflow of ship and its fighters simulataneously.,

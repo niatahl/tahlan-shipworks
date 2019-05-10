@@ -1,6 +1,7 @@
 0.3.4
 Additions:
 - Added Defiance-class missile cruiser
+- Added Teltrite impactor gun
 
 Changes:
 - Forced Overdrive now directly negates the armor debuff from Kassadari Engineering
@@ -9,9 +10,14 @@ Changes:
 
 Balance: 
 - Increased Mining Lance range from 700 to 800
+- Lowered flux per shot of Volkite-type weapons to 15
+- Lowered Yosei top speed from 160 to 140
+- Lowered Bento max burn from 8 to 7
+- Added civilian-grade hull to Bento
 
 Bugfixes:
 - Fixed some linux crap
+- Fixed missing default ship roles entry for Bento (LP)
 
 
 0.3.3d

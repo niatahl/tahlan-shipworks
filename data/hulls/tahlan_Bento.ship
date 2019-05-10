@@ -28,9 +28,9 @@
     -0
   ],
   "builtInMods": [
-    "armoredweapons"
+    "armoredweapons",
+    "civgrade"
   ],
-  "builtInWeapons": {},
   "builtInWings": [],
   "center": [
     69,

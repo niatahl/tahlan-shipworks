@@ -23,7 +23,7 @@
 	"jitterRange":5,
 	"jitterRangeRadiusFraction":0,
 	
-	"weaponGlowColor":[255,150,0,155],
+	"weaponGlowColor":[255,150,0,55],
 	"weaponTypes":[BALLISTIC],
 	
 	"flameoutOnImpactChance":0,

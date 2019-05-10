@@ -36,5 +36,6 @@
     0
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_styrix_turret_base.png",
+	"passThroughMissiles":true,
   "type": "BALLISTIC"
 }

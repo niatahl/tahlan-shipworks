@@ -1,0 +1,18 @@
+{
+	"id":"tahlan_teltrite_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"hitGlowRadius":15,
+	"length":150.0,
+	"width":5.0,
+	"fadeTime":0.15,
+	"coreColor":[255,255,255,200],
+	"fringeColor": [255,255,255,150],
+	#"glowColor": [255,140,80,55],
+	#"glowRadius":80,
+	"textureScrollSpeed":32.0,
+	"pixelsPerTexel":10.0,
+	"bulletSprite":"graphics/tahlan/missiles/tahlan_styrix_slug.png"
+}

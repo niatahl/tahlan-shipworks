@@ -1,0 +1,315 @@
+{
+  "bounds": [
+    -29,
+    -6,
+    -40.5,
+    -6.5,
+    -35.5,
+    -22,
+    -23.5,
+    -25.5,
+    -23.5,
+    -34.5,
+    -14.5,
+    -41.5,
+    -4.5,
+    -82,
+    6,
+    -100.5,
+    27.5,
+    -94.5,
+    34.5,
+    -85.5,
+    32.5,
+    -72,
+    24.5,
+    -60.5,
+    25.5,
+    -48,
+    21.5,
+    -44,
+    22.5,
+    -20,
+    39.5,
+    -14,
+    22,
+    -9.5,
+    29.5,
+    -0,
+    22,
+    9.5,
+    39.5,
+    14,
+    22.5,
+    20,
+    21.5,
+    44,
+    25.5,
+    48,
+    24.5,
+    60.5,
+    32.5,
+    72,
+    34.5,
+    85.5,
+    27.5,
+    94.5,
+    6,
+    100.5,
+    -4.5,
+    82,
+    -14.5,
+    41.5,
+    -23.5,
+    34.5,
+    -23.5,
+    25.5,
+    -35.5,
+    22,
+    -40.5,
+    6.5,
+    -29,
+    6
+  ],
+  "builtInWings": [],
+  "center": [
+    101,
+    42
+  ],
+  "collisionRadius": 117,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 36,
+      "location": [
+        -25,
+        30.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 14
+    },
+    {
+      "angle": -180,
+      "contrailSize": 14,
+      "length": 36,
+      "location": [
+        -25,
+        -30.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 14
+    },
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 11.5,
+      "location": [
+        -8,
+        78
+      ],
+      "style": "HIGH_TECH",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 11.5,
+      "location": [
+        -8,
+        -78
+      ],
+      "style": "HIGH_TECH",
+      "width": 9
+    },
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 13.5,
+      "location": [
+        -11,
+        68.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 13.5,
+      "location": [
+        -11,
+        -68.5
+      ],
+      "style": "HIGH_TECH",
+      "width": 9
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 15,
+      "location": [
+        -11,
+        62
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 15,
+      "location": [
+        -11,
+        -62
+      ],
+      "style": "HIGH_TECH",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 6,
+      "length": 16,
+      "location": [
+        -31,
+        3
+      ],
+      "style": "HIGH_TECH",
+      "width": 6
+    },
+    {
+      "angle": -180,
+      "contrailSize": 6,
+      "length": 16,
+      "location": [
+        -31,
+        -3
+      ],
+      "style": "HIGH_TECH",
+      "width": 6
+    }
+  ],
+  "height": 84,
+  "hullId": "tahlan_Torii",
+  "hullName": "Torii",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    8,
+    -0
+  ],
+  "shieldRadius": 105,
+  "spriteName": "graphics/tahlan/ships/tahlan_Torii.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 90,
+      "id": "WS0001",
+      "locations": [
+        10,
+        57
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 90,
+      "id": "WS0002",
+      "locations": [
+        10,
+        -57
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 90,
+      "id": "WS0003",
+      "locations": [
+        35,
+        77
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 90,
+      "id": "WS0004",
+      "locations": [
+        35,
+        -77
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -80.5,
+      "arc": 115,
+      "id": "WS0005",
+      "locations": [
+        15,
+        -87
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 80.5,
+      "arc": 115,
+      "id": "WS0006",
+      "locations": [
+        15,
+        87
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS0007",
+      "locations": [
+        8,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0008",
+      "locations": [
+        21,
+        29
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0009",
+      "locations": [
+        21,
+        -29
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    }
+  ],
+  "width": 202
+}
