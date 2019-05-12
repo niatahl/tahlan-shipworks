@@ -19,6 +19,7 @@
 		"tahlan_Haelequin_support":3,
 		"tahlan_Haelequin_overdriven":2,
 		"tahlan_Haelequin_standard":5,
+		"tahlan_Torii_standard":10,
 	},
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
@@ -33,6 +34,7 @@
 		"tahlan_Defiance_strike":4,
 		"tahlan_Defiance_elite":3,
 		"tahlan_Defiance_overdriven":3,
+		"tahlan_Eagle_P_raider":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,

@@ -1,0 +1,48 @@
+{
+    "displayName": "Raider",
+    "fluxCapacitors": 12,
+    "fluxVents": 30,
+    "hullId": "tahlan_Eagle_P",
+    "hullMods": [
+        "missleracks",
+        "dedicated_targeting_core"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_Eagle_P_raider",
+	"goalVariant": true,
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "annihilatorpod",
+                "WS0004": "annihilatorpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0007": "harpoon",
+                "WS0008": "harpoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "heavyac",
+                "WS0006": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "miningblaster",
+                "WS0002": "miningblaster"
+            }
+        }
+    ],
+    "wings": ["piranha_wing"]
+}

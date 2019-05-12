@@ -32,6 +32,18 @@ While outwardly only a light cruiser, the advanced temporal technology of the Iz
 tahlan_Renki,SHIP,"A dedicated missile and support frigate, equipped with an active ECCM system that can provide ECCM benefits for nearby allies while active. Especially popular with missile-heavy fleets, the Renki is a workhorse frigate, that can also pack a punch by itself.",,,
 tahlan_Timeless,SHIP,An unusual drone ship of unknown design and origins.,,,
 tahlan_Nameless,SHIP,An unusual drone ship of unknown design and origins.,,,
+tahlan_Defiance,SHIP,"Designed after the collapse using parts of existing ship designs, the Defiance was meant to be a cheaper alternative to the Gryphon for a decent missile cruiser. While the resulting ship doesn't quite achieve the same level of missile firepower, it makes up for it with more ballistic mounts.",,,
+tahlan_Torii,SHIP,"A small destroyer designed purely for the purpose of pointing as many guns at the enemy as possible on a lightweight platform. It may achieve this goal quite well, but the extremely wide profile makes the ship quite fragile and easy to hit.",,,
+tahlan_Eagle_P,SHIP,"This Eagle has been enthusiastically ""upgraded"" by a merry band of pirates with larger weapons mounts and a fighter bay. Concerns about the lack of point defense mounts have been happily ignored since ""the fighters can deal with that crap"".
+
+Eagle-class cruisers are often found at the core of military fleets headed for battle. It is not hard to see why: A strong overall profile, with a robust engine, the Eagle's deadly weapons package is a threat to all enemies.
+
+The Eagle can deliver a strong tactical punch to enemy formations. Its numerous turret and hardpoint emplacements make it very dangerous to smaller foes. Decent armor and a strong shield emitter let it hold space while outnumbered, or even when faced with the rare larger ship. 
+
+These strengths are somewhat countered by strike craft - an Eagle captain must always watch their scopes for an approaching strike squadron, since their ship will be easily crippled by multiple hits from modern strike weapons. 
+
+The embodiment of the sleek and powerful space cruiser from the time of the Domain, the Eagle-class ships are a beautiful reminder of the technological and aesthetic achievements of humanity's past. ",,,
+,,,,,
 ,,,,,
 #fighters,,,,,
 tahlan_Acastus,SHIP,"A fast interceptor designed around a slightly modified volkite cannon. Quite effective against swarms of fighers and missiles, but lacks any punch against larger targets.",,,
@@ -119,3 +131,4 @@ tahlan_activeeccm,SHIP_SYSTEM,Provides ECCM benefits to self and allies within 1
 tahlan_strongholdshield,SHIP_SYSTEM,"Reduces damage taken by shield by 90%, unfolds it instantly and increases its arc. Also slightly boosts dissipation.",Defense,"Reduces damage taken by shield by 90%, unfolds it instantly and increases its arc. Also slightly boosts dissipation.",
 tahlan_cavalrycharge,SHIP_SYSTEM,"Charges forward while weapons fire 50% faster and armor and hull damage are halved, but with limited maneuverability.",Assault,"Charges forward while weapons fire 50% faster and armor and hull damage are halved, but with limited maneuverability.",
 tahlan_temporalcoordinator,SHIP_SYSTEM,Accelerates timeflow of ship and its fighters simulataneously.,General,Accelerates timeflow of ship and its fighters simulataneously.,
+tahlan_raiderjets,SHIP_SYSTEM,Grants a massive boost to maneuverability that decays over time.,Mobility,Grants a massive boost to maneuverability that decays over time.,

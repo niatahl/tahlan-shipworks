@@ -7,8 +7,9 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		#"tags":{},
-		#"hulls":{
-		#},
+		"hulls":{
+			"tahlan_Eagle_P":0.5,
+		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
@@ -19,7 +20,8 @@
 		#"tags":[],
 		"hulls":[
 			"tahlan_Nessie",
-			"tahlan_Castella_pirates"
+			"tahlan_Castella_pirates",
+			"tahlan_Eagle_P",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

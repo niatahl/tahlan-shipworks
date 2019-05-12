@@ -2,11 +2,14 @@
 Additions:
 - Added Defiance-class missile cruiser
 - Added Teltrite impactor gun
+- Added Torii Hunter Killer
+- Added Eagle (P)
 
 Changes:
 - Forced Overdrive now directly negates the armor debuff from Kassadari Engineering
 - Changed Errant Drive to feel more controlled
 - Added Hegemony start with Castigator
+- Added various 0.9.1a functionality
 
 Balance: 
 - Increased Mining Lance range from 700 to 800
@@ -14,6 +17,7 @@ Balance:
 - Lowered Yosei top speed from 160 to 140
 - Lowered Bento max burn from 8 to 7
 - Added civilian-grade hull to Bento
+- Adjusted ship prices in accordance with 0.9.1a values
 
 Bugfixes:
 - Fixed some linux crap

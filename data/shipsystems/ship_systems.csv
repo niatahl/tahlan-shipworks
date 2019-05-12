@@ -10,4 +10,5 @@ Periodic Breaker,tahlan_periodicbreaker,,,,,,0.40,,,,3,6,1,18,,,TRUE,TRUE,,,,,TR
 Chrono Rupture,tahlan_temporaldrift,,,,,,0.1,,,,0.2,0.2,5,3,,,,TRUE,,,,,,TRUE,graphics/icons/hullsys/temporal_shell.png
 Stronghold Shield,tahlan_strongholdshield,,,0.025,,,,,,,1.5,,1.5,0,TRUE,,,TRUE,TRUE,,,,,,graphics/icons/hullsys/fortress_shield.png
 Cavalry Charge,tahlan_cavalrycharge,1,,,,,,,,,2,3,1,10,,,,,,,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
+Raider Jets,tahlan_raiderjets,,,,,,,,,,1,2,4,5,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Active ECCM,tahlan_activeeccm,,,,,,0.2,,,,0.5,10,0.5,2,TRUE,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png

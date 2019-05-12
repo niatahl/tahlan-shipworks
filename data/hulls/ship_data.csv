@@ -16,11 +16,12 @@ Ingress,tahlan_Ingress,Battlecarrier,Midline,tahlan_navigationfeed,28,14000,1000
 Skola,tahlan_Skola,Frigate,High Tech,displacer,8,1200,200,2600,,200,30,,180,200,160,80,200,200,OMNI,,120,0.4,0.8,,,10,20,25,20,1,20,9,16000,5,15,240,0.25,6,6,,hightech_bp,,0.4,2,3,46
 Renki,tahlan_Renki,Missile Frigate,High Tech,tahlan_activeeccm,8,1100,250,2400,,150,40,,150,170,120,70,150,220,OMNI,,120,0.4,1,,,15,25,30,25,1,20,9,15000,5,15,240,0.25,7,7,,hightech_bp,,0.4,2,3,46
 Haelequin,tahlan_Haelequin,Fast Destroyer,High Tech,temporalshell,12,2800,500,5000,,400,80,,100,120,100,65,160,500,OMNI,,120,0.4,0.8,,,40,80,110,50,4,25,9,35000,5,15,300,0.25,20,20,,rare_bp,,0.4,2,3,54
-Torii,tahlan_Torii,Hunter Killer,High Tech,highenergyfocus,10,1500,400,5000,,450,75,,110,140,110,80,180,450,FRONT,,120,0.4,0.9,,,30,70,90,40,4,27,9,30000,5,15,300,0.25,12,12,,rare_bp,,0.4,2,3,445
+Torii,tahlan_Torii,Hunter Killer,High Tech,highenergyfocus,10,1500,400,5000,,450,75,,110,140,110,80,180,450,FRONT,,120,0.4,0.9,,,30,70,90,40,4,27,9,30000,5,15,300,0.25,12,12,,hightech_bp,,0.4,2,3,445
 Izanami,tahlan_Izanami,Cruiser,The Great Houses,tahlan_temporaldrift,25,7000,900,12000,,600,140,,110,130,100,60,70,1200,OMNI,,100,0.4,1,,,100,140,150,100,3,30,9,200000,5,20,480,0.25,30,30,HIDE_IN_CODEX,tahlan_knights,0.1,0.6,2,3,112
 Nameless,tahlan_Nameless,Drone Destroyer,Unknown,tahlan_temporalcoordinator,12,3500,500,5000,,500,60,2,100,120,100,70,160,500,OMNI,,120,0.3,0.7,,,0,0,110,50,4,25,9,100000,5,15,420,0.25,25,25,"HIDE_IN_CODEX, UNBOARDABLE",,0.1,0.4,2,3,54
 Timeless,tahlan_Timeless,Drone Mothership,Unknown,tahlan_temporalcoordinator,25,14000,1500,20000,25000,1000,300,6,40,50,40,15,15,2000,OMNI,,120,0.3,0.7,,,0,0,300,300,8,45,9,700000,4,20,720,0.25,50,50,"HIDE_IN_CODEX, UNBOARDABLE",,0.1,0.6,2,4,59434
 Defiance,tahlan_Defiance,Missile Cruiser,Midline,forgevats,14,8000,900,7000,4000,400,120,,70,70,40,20,25,1400,FRONT,,270,0.5,0.8,,,160,280,110,100,3,27,8,120000,3,12,480,0.25,20,20,,rare_bp,,0.5,2,3,556664
+Eagle (P),tahlan_Eagle_P,Cruiser,Pirate,tahlan_raiderjets,15,8000,900,10000,10500,450,155,1,50,30,20,15,20,1200,FRONT,,270,0.4,0.8,,,150,250,150,100,3,33,8,140000,3,12,480,0.25,22,22,WEAPONS_FRONT_TO_BACK,rare_bp,,0.5,2,3,40111
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GH refits,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
