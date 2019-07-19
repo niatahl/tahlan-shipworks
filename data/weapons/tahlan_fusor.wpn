@@ -1,0 +1,43 @@
+{
+  "animationType": "GLOW",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect":"data.scripts.weapons.tahlan_FusorSoundScript",
+  #"fireSoundTwo": "tahlan_fusor_fire",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    16,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_fusor_hp_base.png",
+  "id": "tahlan_fusor",
+  "muzzleFlashSpec": {
+    "length": 80,
+    "particleColor": [255,100,50,255],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 20,
+    "particleSizeRange": 20,
+    "spread": 10
+  },
+  "projectileSpecId": "tahlan_fusor_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    13,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_fusor_turret_base.png",
+  "type": "BALLISTIC"
+}

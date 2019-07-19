@@ -1,0 +1,117 @@
+{
+  "bounds": [
+    -20.5,
+    -30,
+    36.5,
+    -4.5,
+    45,
+    10,
+    9,
+    19.5,
+    3,
+    31,
+    -36.5,
+    23,
+    -36,
+    12.5,
+    -46,
+    10,
+    -45.5,
+    -9
+  ],
+  "builtInWings": ["mining_drone_wing"],
+  "builtInMods": [
+    "unstable_injector"
+  ],
+  "center": [
+    31.5,
+    46.5
+  ],
+  "collisionRadius": 77,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 53.5,
+      "location": [
+        -46.5,
+        0.5
+      ],
+      "style": "LOW_TECH",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 36,
+      "location": [
+        -46.5,
+        6.5
+      ],
+      "style": "LOW_TECH",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 36,
+      "location": [
+        -46.5,
+        -6.5
+      ],
+      "style": "LOW_TECH",
+      "width": 8
+    }
+  ],
+  "height": 93,
+  "hullId": "tahlan_Tempest_P",
+  "hullName": "Tempest (P)",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 67.5,
+  "spriteName": "graphics/tahlan/ships/tahlan_Tempest_P.png",
+  "style": "HIGH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 60,
+      "arc": 235,
+      "id": "WS0001",
+      "locations": [
+        -1.5,
+        20.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0002",
+      "locations": [
+        3.5,
+        -14.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -55,
+      "arc": 180,
+      "id": "WS0003",
+      "locations": [
+        -20.5,
+        -15.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "COMPOSITE"
+    }
+  ],
+  "width": 63
+}

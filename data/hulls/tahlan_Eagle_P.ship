@@ -74,135 +74,135 @@
   "engineSlots": [
     {
       "angle": 180,
-      "contrailSize": 17,
-      "length": 48.5,
+      "contrailSize": 15,
+      "length": 54.5,
       "location": [
         -109,
         19.5
       ],
       "style": "MIDLINE",
-      "width": 17
+      "width": 15
     },
     {
       "angle": -180,
-      "contrailSize": 17,
-      "length": 48.5,
+      "contrailSize": 15,
+      "length": 54.5,
       "location": [
         -109,
         -19.5
       ],
       "style": "MIDLINE",
-      "width": 17
+      "width": 15
     },
     {
       "angle": 180,
-      "contrailSize": 15,
-      "length": 39,
+      "contrailSize": 12,
+      "length": 53,
       "location": [
         -107.5,
         30.5
       ],
       "style": "MIDLINE",
-      "width": 15
+      "width": 12
     },
     {
       "angle": -180,
-      "contrailSize": 15,
-      "length": 39,
+      "contrailSize": 12,
+      "length": 53,
       "location": [
         -107.5,
         -30.5
       ],
       "style": "MIDLINE",
-      "width": 15
+      "width": 12
     },
     {
       "angle": 180,
-      "contrailSize": 13,
-      "length": 29.5,
+      "contrailSize": 12,
+      "length": 50,
       "location": [
         -105.5,
         41
       ],
       "style": "MIDLINE",
-      "width": 13
+      "width": 12
     },
     {
       "angle": -180,
-      "contrailSize": 13,
-      "length": 29.5,
+      "contrailSize": 12,
+      "length": 50,
       "location": [
         -105.5,
         -41
       ],
       "style": "MIDLINE",
-      "width": 13
+      "width": 12
     },
     {
-      "angle": 166.5,
+      "angle": 164,
       "contrailSize": 128,
-      "length": 29.5,
+      "length": 38.329994,
       "location": [
         -70.5,
         54.5
       ],
       "style": "MIDLINE",
-      "width": 13
+      "width": 13.388283
     },
     {
-      "angle": -166.5,
+      "angle": -164,
       "contrailSize": 128,
-      "length": 29.5,
+      "length": 38.329994,
       "location": [
         -70.5,
         -54.5
       ],
       "style": "MIDLINE",
-      "width": 13
+      "width": 13.388283
     },
     {
-      "angle": 157.5,
+      "angle": 151.5,
       "contrailSize": 128,
-      "length": 23.947243,
+      "length": 29.602606,
       "location": [
         -66.5,
         62
       ],
       "style": "MIDLINE",
-      "width": 13.715611
+      "width": 12.277732
     },
     {
-      "angle": -157.5,
+      "angle": -151.5,
       "contrailSize": 128,
-      "length": 23.947243,
+      "length": 29.602606,
       "location": [
         -66.5,
         -62
       ],
       "style": "MIDLINE",
-      "width": 13.715611
+      "width": 12.277732
     },
     {
-      "angle": 155.5,
+      "angle": 146.5,
       "contrailSize": 128,
-      "length": 16.143488,
+      "length": 19.536514,
       "location": [
         -62,
         70
       ],
       "style": "MIDLINE",
-      "width": 10.561779
+      "width": 10.114277
     },
     {
-      "angle": -155.5,
+      "angle": -146.5,
       "contrailSize": 128,
-      "length": 16.143488,
+      "length": 19.536514,
       "location": [
         -62,
         -70
       ],
       "style": "MIDLINE",
-      "width": 10.561779
+      "width": 10.114277
     },
     {
       "angle": 145,
@@ -236,7 +236,7 @@
     0
   ],
   "shieldRadius": 134.5,
-  "spriteName": "graphics/tahlan/ships/Eagle_P.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_Eagle_P.png",
   "style": "MIDLINE",
   "viewOffset": 0,
   "weaponSlots": [

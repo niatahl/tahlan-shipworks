@@ -1,0 +1,28 @@
+{
+    "displayName": "Raider",
+    "fluxCapacitors": 9,
+    "fluxVents": 10,
+    "hullId": "tahlan_Tempest_P",
+    "hullMods": ["hardenedshieldemitter"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Tempest_P_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "phasebeam"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "heavyac"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "lightdualmg"}
+        }
+    ],
+    "wings": []
+}

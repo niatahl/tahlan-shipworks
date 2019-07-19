@@ -49,6 +49,8 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		api.addToFleet(FleetSide.ENEMY, "tahlan_Nameless_standard", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.ENEMY, "tahlan_Nameless_standard", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.ENEMY, "tahlan_Nameless_standard", FleetMemberType.SHIP, false);
+		api.addToFleet(FleetSide.ENEMY, "tahlan_Nameless_standard", FleetMemberType.SHIP, false);
+		api.addToFleet(FleetSide.ENEMY, "tahlan_Nameless_standard", FleetMemberType.SHIP, false);
 
 		
 		

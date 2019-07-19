@@ -1,0 +1,21 @@
+{
+	"id":"tahlan_fusor_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"onHitEffect":"data.scripts.weapons.tahlan_FusorOnHitEffect",
+	"hitGlowRadius":20,
+	"length":100.0,
+	"width":30,
+	"fadeTime":0.1,
+	"fringeColor":[0,180,255,255],
+	"coreColor":[255,215,205,150],
+	#"glowColor":[0,180,255,40],
+	#"glowRadius":50,
+	#"textureType":"ROUGH",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	#"textureType":["graphics/tahlan/fx/tahlan_shiva_beam_fringe.png","graphics/tahlan/fx/tahlan_shiva_beam_core.png"],
+	"textureType": ["graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png","graphics/tahlan/fx/tahlan_atrapos_beam_core.png"],
+	"textureScrollSpeed":-200,
+	"pixelsPerTexel":5.0
+}

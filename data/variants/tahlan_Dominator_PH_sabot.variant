@@ -1,0 +1,45 @@
+{
+    "displayName": "Sabot",
+    "fluxCapacitors": 30,
+    "fluxVents": 7,
+    "hullId": "tahlan_Dominator_PH",
+    "hullMods": [
+        "missleracks",
+        "auxiliarythrusters"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_Dominator_PH_sabot",
+	"goalVariant": true,
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hellbore",
+                "WS0002": "hellbore"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabot",
+                "WS0004": "sabot",
+                "WS0005": "sabot",
+                "WS0006": "sabot",
+                "WS0007": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan"
+            }
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 2,
+    "fluxVents": 6,
+    "hullId": "tahlan_Tempest_P",
+    "hullMods": [
+        "safetyoverrides",
+        "magazines"
+    ],
+	"goalVariant":true,
+    "permaMods": [],
+    "variantId": "tahlan_Tempest_P_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "pulselaser"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "tahlan_fusor"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "sabot"}
+        }
+    ],
+    "wings": []
+}

@@ -1,7 +1,7 @@
 {
     "displayName": "Kassadari",
     "fluxCapacitors": 0,
-    "fluxVents": 37,
+    "fluxVents": 13,
     "hullId": "tahlan_legion_gh",
     "hullMods": ["targetingunit"],
     "permaMods": [],

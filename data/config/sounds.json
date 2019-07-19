@@ -6,10 +6,52 @@
 		
 	},
 	
+	"tahlan_disparax_fire":
+	[
+		{"file":"sounds/sfx_wpn_energy/mining_blaster_fire_01.ogg","pitch":0.3,"volume":0.8},
+	],
+	
+	"tahlan_relparax_fire":
+	[
+		{"file":"sounds/sfx_wpn_energy/mining_blaster_fire_01.ogg","pitch":0.7,"volume":0.7},
+	],
+	
+	"tahlan_nenparax_loop":
+	[
+		{"file":"sounds/sfx_wpn_energy/laser_loop.ogg","pitch":2.5,"volume":0.15},
+	],	
+	
 	"tahlan_kassadari_theme":[
 			{"file":"sounds/tahlan/music/tahlan_kassadari_theme.ogg","pitch":1,"volume":0.5},
 		],
 	
+
+	"tahlan_fusor_loop":{
+		"sounds":[
+			{"file":"sounds/sfx_engines/engine_02_midtek_00_fighter.ogg","pitch":1.5,"volume":1.1},
+		],
+	},
+	
+	"tahlan_eradicator_loop":{
+		"sounds":[
+			{"file":"sounds/tahlan/weapons/tahlan_atrapos_loop.ogg","pitch":0.5,"volume":1.1},
+		],
+	},
+	
+	"tahlan_eradicator_fire":{
+		"sounds":[
+			{"file":"sounds/tahlan/weapons/tahlan_atrapos_fire.ogg","pitch":0.6,"volume":1.0},
+		],
+	},
+	
+	"tahlan_fusor_fire":{
+		"sounds":[
+			{"file":"sounds/sfx_wpn_missiles/harpoon_fire_01.ogg","pitch":1.2,"volume":0.9},
+			{"file":"sounds/sfx_wpn_missiles/harpoon_fire_01.ogg","pitch":1.25,"volume":0.9},
+			{"file":"sounds/sfx_wpn_missiles/harpoon_fire_01.ogg","pitch":1.3,"volume":0.9},
+			{"file":"sounds/sfx_wpn_missiles/harpoon_fire_01.ogg","pitch":1.35,"volume":0.9},
+		],
+	},
 	"tahlan_shiva_loop":{
         "sounds":[
 			{"file":"sounds/tahlan/weapons/tahlan_shiva_loop.ogg","pitch":2,"volume":0.9},
@@ -97,7 +139,7 @@
 	},
 	"tahlan_zawarudo":{
 		"sounds":[
-			{"file":"sounds/tahlan/fx/tahlan_zawarudo.ogg","pitch":1.0,"volume":1.0},
+			{"file":"sounds/tahlan/fx/tahlan_zawarudo.ogg","pitch":1.0,"volume":0.6},
 		],
 	}
 }

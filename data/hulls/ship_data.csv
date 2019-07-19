@@ -2,11 +2,12 @@ name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating
 #ships,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Yukikaze,tahlan_Yukikaze,Cruiser,High Tech,displacer,20,7000,700,12000,17000,750,160,,100,80,50,50,70,1400,OMNI,,180,0.4,0.6,,,0,100,140,110,3,33,9,220000,3,12,420,0.25,35,35,HIDE_IN_CODEX,tahlan_kaze_bp,0.5,0.5,2,3,59423
 Korikaze,tahlan_Korikaze,Drone Frigate,High Tech,displacer,5,2000,300,2800,2500,200,45,,130,160,110,60,120,250,OMNI,,180,0.4,0.6,,,0,0,20,20,1,20,9,40000,5,10,240,0.25,8,8,HIDE_IN_CODEX,tahlan_kaze_bp,0.5,0.4,2,2,59429
-Vale,tahlan_Vale,Crusader,The Great Houses,tahlan_holyfuror,20,6000,500,9000,,500,100,,120,150,100,60,80,1200,OMNI,,360,0.3,0.7,,,0,0,100,60,1,35,9,50000,3,12,480,0.25,35,35,,,0.1,0.5,2,3,59423
+Vale,tahlan_Vale,Crusader,The Great Houses,tahlan_holyfuror,20,6000,500,9000,,500,100,,120,150,100,60,80,1200,OMNI,,360,0.3,0.7,,,30,60,100,60,1,35,9,50000,3,12,480,0.25,35,35,,,0.1,0.5,2,3,59423
 Kodai,tahlan_Kodai,Cruiser,Midline,maneuveringjets,14,8000,800,10000,10500,600,120,1,60,40,25,20,30,1100,FRONT,,160,0.4,0.8,,,170,300,300,120,3,33,8,110000,3,12,480,0.25,24,24,,rare_bp,,0.5,2,3,121212
-Exa Pico,tahlan_Exa_Pico,Drone Frigate,The Great Houses,tahlan_errantdrive,10,4000,200,4000,,100,30,1,140,200,150,60,120,200,OMNI,,360,0.4,0.7,,,0,0,30,30,1,22,9,60000,5,20,300,0.25,15,15,,,0.1,0.5,2,2,121245
+Exa Pico,tahlan_Exa_Pico,Drone Frigate,The Great Houses,tahlan_errantdrive,10,4000,200,4000,,100,30,1,140,200,150,60,120,200,OMNI,,360,0.4,0.7,,,0,0,30,30,1,22,9,60000,5,20,300,0.25,15,15,,"tahlan_knights, rare_bp",0.1,0.5,2,2,121245
 Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,8000,1500,14000,10500,600,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,rare_bp,0.5,0.5,2,3,401
-Bento,tahlan_Bento,Combat Tanker,Low Tech,damper,6,3000,500,8000,1250,150,80,,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,15,200,1,240,7,20000,6,20,240,0.25,10,10,"TANKER, COMBAT",lowtech_bp,,0.5,2,4,209
+Castigator (P),tahlan_Castigator_P,Assault Cruiser,Pirate,tahlan_raiderjets,16,8000,1300,14000,10500,600,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,rare_bp,0.4,0.5,2,3,401
+Bento,tahlan_Bento,Combat Tanker,Low Tech,reservewing,6,3000,500,8000,1250,150,70,1,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,30,250,1,240,9,15000,6,20,240,0.25,7,7,"TANKER, COMBAT",lowtech_bp,,0.5,2,4,209
 Castella,tahlan_Castella,Battlecarrier,Low Tech,burndrive,28,15000,1200,11000,12500,500,240,5,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,400000,3,12,720,0.25,40,40,"CARRIER, COMBAT",rare_bp,,0.4,2,4,507
 Castella (LP),tahlan_Castella_lp,Battleship,Luddic Path,tahlan_stormdrive,28,15000,1200,11000,12500,500,240,2,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,500,1200,300,300,15,20,7,400000,3,12,720,0.25,40,40,,"rare_bp, luddic_path",0.6,0.6,2,4,507
 Nessie,tahlan_Nessie,Makeshift Phase Cruiser,Low Tech,ammofeed,,6000,700,10000,,300,120,,70,50,20,20,20,1500,PHASE,phasecloak,,,,0.05,0.05,120,160,50,50,13,16,7,180000,5,25,360,0.25,24,24,,rare_bp,,0.8,3,5,4212
@@ -17,11 +18,14 @@ Skola,tahlan_Skola,Frigate,High Tech,displacer,8,1200,200,2600,,200,30,,180,200,
 Renki,tahlan_Renki,Missile Frigate,High Tech,tahlan_activeeccm,8,1100,250,2400,,150,40,,150,170,120,70,150,220,OMNI,,120,0.4,1,,,15,25,30,25,1,20,9,15000,5,15,240,0.25,7,7,,hightech_bp,,0.4,2,3,46
 Haelequin,tahlan_Haelequin,Fast Destroyer,High Tech,temporalshell,12,2800,500,5000,,400,80,,100,120,100,65,160,500,OMNI,,120,0.4,0.8,,,40,80,110,50,4,25,9,35000,5,15,300,0.25,20,20,,rare_bp,,0.4,2,3,54
 Torii,tahlan_Torii,Hunter Killer,High Tech,highenergyfocus,10,1500,400,5000,,450,75,,110,140,110,80,180,450,FRONT,,120,0.4,0.9,,,30,70,90,40,4,27,9,30000,5,15,300,0.25,12,12,,hightech_bp,,0.4,2,3,445
-Izanami,tahlan_Izanami,Cruiser,The Great Houses,tahlan_temporaldrift,25,7000,900,12000,,600,140,,110,130,100,60,70,1200,OMNI,,100,0.4,1,,,100,140,150,100,3,30,9,200000,5,20,480,0.25,30,30,HIDE_IN_CODEX,tahlan_knights,0.1,0.6,2,3,112
+Izanami,tahlan_Izanami,Cruiser,The Great Houses,tahlan_temporaldrift,25,7000,800,10000,,600,140,,110,130,100,60,70,1200,OMNI,,100,0.4,1,,,100,140,150,100,3,30,9,600000,5,20,360,0.25,30,30,HIDE_IN_CODEX,tahlan_knights,0.1,0.6,2,3,112
 Nameless,tahlan_Nameless,Drone Destroyer,Unknown,tahlan_temporalcoordinator,12,3500,500,5000,,500,60,2,100,120,100,70,160,500,OMNI,,120,0.3,0.7,,,0,0,110,50,4,25,9,100000,5,15,420,0.25,25,25,"HIDE_IN_CODEX, UNBOARDABLE",,0.1,0.4,2,3,54
 Timeless,tahlan_Timeless,Drone Mothership,Unknown,tahlan_temporalcoordinator,25,14000,1500,20000,25000,1000,300,6,40,50,40,15,15,2000,OMNI,,120,0.3,0.7,,,0,0,300,300,8,45,9,700000,4,20,720,0.25,50,50,"HIDE_IN_CODEX, UNBOARDABLE",,0.1,0.6,2,4,59434
+Timeless Prototype,tahlan_Timeless_retro,Drone Mothership,Unknown,tahlan_temporalcoordinator,25,14000,1000,18000,25000,1000,300,4,40,50,40,15,15,2000,OMNI,,120,0.3,0.7,,,400,600,300,300,8,45,9,1500000,4,20,720,0.25,50,50,HIDE_IN_CODEX,tahlan_lifeless_bp,0.1,0.6,2,4,59434
 Defiance,tahlan_Defiance,Missile Cruiser,Midline,forgevats,14,8000,900,7000,4000,400,120,,70,70,40,20,25,1400,FRONT,,270,0.5,0.8,,,160,280,110,100,3,27,8,120000,3,12,480,0.25,20,20,,rare_bp,,0.5,2,3,556664
-Eagle (P),tahlan_Eagle_P,Cruiser,Pirate,tahlan_raiderjets,15,8000,900,10000,10500,450,155,1,50,30,20,15,20,1200,FRONT,,270,0.4,0.8,,,150,250,150,100,3,33,8,140000,3,12,480,0.25,22,22,WEAPONS_FRONT_TO_BACK,rare_bp,,0.5,2,3,40111
+Eagle (P),tahlan_Eagle_P,Cruiser,Pirate,tahlan_raiderjets,15,8000,900,10000,10500,450,155,1,50,30,20,15,20,1200,FRONT,,270,0.4,0.8,,,150,250,150,100,3,33,8,140000,3,12,480,0.25,22,22,WEAPONS_FRONT_TO_BACK,rare_bp,0.75,0.5,2,3,40111
+Tempest (P),tahlan_Tempest_P,Frigate,Pirate,tahlan_weaponsoverdrive,8,1100,200,2500,2813,200,50,1,180,200,175,90,270,200,OMNI,,120,0.2,0.8,,,15,25,30,20,1,20,11,40000,10,20,180,0.25,8,8,,rare_bp,0.75,0.5,2,2,206
+Doominator,tahlan_Dominator_PH,Phase Cruiser,Pirate,tahlan_weaponsoverdrive,15,11000,1500,10000,9000,800,150,,30,20,10,12,12,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,540,0.25,30,30,"PHASE, HIDE_IN_CODEX",rare_bp,0.2,0.4,2,3,404
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #GH refits,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

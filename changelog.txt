@@ -1,9 +1,69 @@
+0.3.4e
+Changes:
+- Overhauled the Bento
+- Reworked Relparax a bit
+
+Balancing:
+- Reworked multiple GH weapons into high-powered but inefficient weapons
+
+0.3.4d
+Balancing:
+- Some major Izanami nerfing:
+	- Increased Chrono Rupture cooldown from 3 to 10 seconds
+	- Lowered ppt from 480 to 360
+	- Lowered  armour by 100
+	- Lowered flux capacity from 12000 to 10000
+	- Increased base value from 200000 to 600000
+- Lowered Castigator (P) armor from 1500 to 1300
+
+
+0.3.4c
+Additions:
+- Added Relparax medium blaster
+- Added Nenparax small beam
+- Added Eradicator Siege Laser
+- Added new secrets to find
+
+Changes:
+- Reworked Disparax
+- Vale now requires a crew
+- Overcharged Fusion Torch range increased from 400 to 450
+- Switched Castigator (P) built-in aux thrusters to augmented drive field to stick with the theme (plus it has funky maneuvering jets already)
+
+Balancing:
+- Caliver wing OP cost increased to 22
+
+
+0.3.4b
+Changes:
+- Multiple Doominator changes
+	- now uses custom Aftermarket Phase Coils hullmod
+	- large mounts changed to ballistic
+	- ship system changed to weapons overdrive
+- minor improvements to pirate variant sprites
+
+
+0.3.4a
+Additions:
+- Added Castigator (P)
+- Added Doominator
+
+Changes:
+- Redid Castella (P) paintjob
+
+Bugfixes:
+- Fixed some crashes
+
+
 0.3.4
 Additions:
 - Added Defiance-class missile cruiser
 - Added Teltrite impactor gun
 - Added Torii Hunter Killer
 - Added Eagle (P)
+- Added Overcharged Fusion Torch
+- Added Tempest (P)
+- Added Pendragon MIRV Catapult
 
 Changes:
 - Forced Overdrive now directly negates the armor debuff from Kassadari Engineering

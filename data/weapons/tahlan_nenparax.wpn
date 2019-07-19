@@ -1,0 +1,45 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "fireSoundOne":"laser_intro",
+  "fireSoundTwo":"tahlan_nenparax_loop",
+  "coreColor": [
+    126, 255, 255, 230
+  ],
+  "fringeColor": [
+    101, 255, 178, 255
+  ],
+  "glowColor": [
+    141, 255, 28, 150
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_nenparax_hp_glow.png",
+  "hardpointOffsets": [
+    4.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_nenparax_hp_base.png",
+  "hitGlowRadius": 0,
+  "id": "tahlan_nenparax",
+  "pixelsPerTexel": 1,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 1000,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_atrapos_beam_core.png"
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_nenparax_turret_glow.png",
+  "turretOffsets": [
+    2.5,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_nenparax_turret_base.png",
+  "type": "ENERGY",
+  "width": 5
+}

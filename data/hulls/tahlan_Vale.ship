@@ -237,7 +237,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "ENERGY"
     },
     {
       "angle": -0,
@@ -249,7 +249,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "ENERGY"
     },
     {
       "angle": 54,
@@ -285,7 +285,8 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "SYNERGY",
+	  "renderOrderMod": 100,
     },
     {
       "angle": -0,
@@ -297,7 +298,8 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "SYNERGY",
+	  "renderOrderMod": 100,
     },
     {
       "angle": 0,

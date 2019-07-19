@@ -7,8 +7,8 @@
 	
 	#"engineGlowColor":[255,175,125,255],
 	#"engineGlowContrailColor":[100,165,255,25],
-	"engineGlowLengthMult":1,
-	"engineGlowWidthMult":1,
+	"engineGlowLengthMult":1.5,
+	"engineGlowWidthMult":1.5,
 	"engineGlowGlowMult":1.5,
 	
 	"flameoutOnImpactChance":0,

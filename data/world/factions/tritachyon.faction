@@ -8,12 +8,12 @@
 		#"tags":{
 		#},
 		"hulls":{
-			"tahlan_Yukikaze":0.2,
-			"tahlan_Korikaze":0.4,
-			"tahlan_Vale":0.1,
-			"tahlan_Exa_Pico":0.1,
-			"tahlan_Yosei":0.8,
-			"tahlan_Haelequin":0.8,
+			"tahlan_Yukikaze":2,
+			"tahlan_Korikaze":4,
+			"tahlan_Vale":1,
+			"tahlan_Exa_Pico":1,
+			"tahlan_Yosei":8,
+			"tahlan_Haelequin":8,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -51,7 +51,9 @@
 	
 	"knownWeapons":{
 		#"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "tritachyon"],
-		#"weapons":[],
+		"weapons":[
+			"tahlan_pendragon",
+		],
 	},
 	"priorityWeapons":{
 		#"tags":[],

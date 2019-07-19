@@ -1,0 +1,45 @@
+{
+    "displayName": "Striker",
+    "fluxCapacitors": 0,
+    "fluxVents": 21,
+    "hullId": "tahlan_Dominator_PH",
+    "hullMods": [
+        "magazines",
+        "missleracks"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_Dominator_PH_striker",
+	"goalVariant": true,
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "multineedler",
+                "WS0002": "multineedler"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "atropos",
+                "WS0004": "atropos",
+                "WS0005": "atropos",
+                "WS0006": "atropos",
+                "WS0007": "typhoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan"
+            }
+        }
+    ]
+}

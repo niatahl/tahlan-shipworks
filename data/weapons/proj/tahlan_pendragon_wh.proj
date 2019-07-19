@@ -1,0 +1,40 @@
+{
+	"id":"tahlan_pendragon_wh",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+	"sprite":"graphics/tahlan/missiles/tahlan_pendragon_whd.png",
+	"size":[10,18],	
+	"center":[5,9],
+	"collisionRadius":10,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,125,80,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":50, # purely visual
+	"maxFlightTime":3.5,	
+	"engineSpec":{"turnAcc":400,
+				  "turnRate":250,
+				  "maxSpeed":250,
+				  "acc":3000,
+				  "dec":500},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-9, 0],
+				    #"style":"MISSILE_MIDLINE",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[155,200,250,255],
+						"glowSizeMult":1.5,
+						"contrailDuration":1.5,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":2,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":2, # min segment length, in pixels
+						"contrailMaxSpeedMult":0.5f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":0f, # how far away from engine it starts
+						"contrailColor":[200,190,180,30],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":4,
+				    "length":15.0,
+				    "angle":180.0}
+				    ]
+}

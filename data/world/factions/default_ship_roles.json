@@ -11,9 +11,10 @@
 		"tahlan_Skola_standard":10,
 		"tahlan_Renki_standard":7,
 		"tahlan_Renki_strike":3,
+		"tahlan_Tempest_P_standard":6,
+		"tahlan_Tempest_P_overdriven":4,
 	},
 	"combatMedium":{
-		"tahlan_Bento_standard":10,
 		"tahlan_Vale_crusader":10,
 		"tahlan_enforcer_gh_knight":10,
 		"tahlan_Haelequin_support":3,
@@ -35,6 +36,9 @@
 		"tahlan_Defiance_elite":3,
 		"tahlan_Defiance_overdriven":3,
 		"tahlan_Eagle_P_raider":10,
+		"tahlan_Castigator_P_raider":5,
+		"tahlan_Castigator_P_lancer":3,
+		"tahlan_Castigator_P_overdriven":2,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
@@ -69,6 +73,7 @@
 			"tahlan_legion_gh_knight":10,
 			"tahlan_Ingress_standard":10,
 			"tahlan_Timeless_standard":10,
+			"tahlan_Timeless_retro_standard":10,
 	},
 
 	# phase ships
@@ -79,6 +84,9 @@
 	"phaseLarge":{
 		"tahlan_Nessie_close":7,
 		"tahlan_Nessie_elite":3,
+		"tahlan_Dominator_PH_overdriven":2,
+		"tahlan_Dominator_PH_striker":4,
+		"tahlan_Dominator_PH_sabot":4,
 	},
 	"phaseCapital":{
 	},
@@ -95,7 +103,6 @@
 	},
 	"tankerMedium":{
 		"tahlan_Bento_standard":10,
-		"tahlan_Bento_lp_pather":10,
 	},
 	"tankerLarge":{
 	},

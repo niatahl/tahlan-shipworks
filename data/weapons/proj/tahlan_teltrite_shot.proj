@@ -14,5 +14,21 @@
 	#"glowRadius":80,
 	"textureScrollSpeed":32.0,
 	"pixelsPerTexel":10.0,
-	"bulletSprite":"graphics/tahlan/missiles/tahlan_styrix_slug.png"
+	"bulletSprite":"graphics/tahlan/missiles/tahlan_styrix_slug.png",
+	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+					"shotRangeVariance":0,
+					"range":0,
+					"vsMissileRange":5,
+					"explosionSpec":{"duration":0.1f,
+									 "radius":10,
+									 "coreRadius":5, # full damage within core radius - also equal to proximity fuse range
+									 "collisionClass":PROJECTILE_FF,
+									 "collisionClassByFighter":PROJECTILE_FIGHTER,
+									 "particleSizeMin":3.0,
+									 "particleSizeRange":5.0,
+									 "particleDuration":0.1,
+									 "particleCount":3,
+									 "particleColor":[200,185,160,205],
+									 "sound":"tahlan_volkite_flak"},
+					}
 }

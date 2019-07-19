@@ -1,0 +1,23 @@
+{
+	"id":"tahlan_relparax_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"onHitEffect":"data.scripts.weapons.tahlan_RelparaxOnHitEffect",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":80.0,
+	"width":15,
+	"fadeTime":0.1,
+	"fringeColor":[121,255,228,150],
+	"coreColor":[225,255,225,150],
+    "glowColor":[141,255,28,50],
+	"glowRadius":50,
+	"hitGlowRadius":50,	
+	"passThroughMissiles":true,
+	#"textureType":"WEAVE",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	"textureType": [
+    "graphics/tahlan/fx/tahlan_parax_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_parax_beam_core.png"],
+	"textureScrollSpeed":64,
+	"pixelsPerTexel":1.0,
+}

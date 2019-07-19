@@ -1,45 +1,51 @@
 {
-  "collisionClass": "RAY",
-  "collisionClassByFighter": "RAY_FIGHTER",
-  "coreColor": [
-    226, 255, 155, 230
-  ],
-  "fringeColor": [
-    141, 255, 28, 255
-  ],
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_disparax_fire",
   "glowColor": [
-    141, 255, 28, 150
+    141,
+    255,
+    28,
+    255
   ],
-  #"everyFrameEffect": "data.scripts.weapons.tahlan_DisparaxOscillationScript",
-  "fireSoundOne": "tahlan_atrapos_fire",
   "hardpointAngleOffsets": [
     0
   ],
   "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_disparax_hp_glow.png",
   "hardpointOffsets": [
-    7.5,
+    6.5,
     0
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_disparax_hp_base.png",
-  "hitGlowRadius": 40,
   "id": "tahlan_disparax",
-  "pixelsPerTexel": 3,
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 50,
+    "particleColor": [
+      141,
+      255,
+      28,
+      255
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 15,
+    "particleSizeRange": 20,
+    "spread": 5
+  },
+  "projectileSpecId": "tahlan_disparax_shot",
   "size": "LARGE",
-  "specClass": "beam",
-  "textureScrollSpeed": 800,
-  "textureType": [
-    "graphics/tahlan/fx/tahlan_atrapos_beam_fringe.png",
-    "graphics/tahlan/fx/tahlan_atrapos_beam_core.png"
-  ],
+  "specClass": "projectile",
+  "textureType": ROUGH,
   "turretAngleOffsets": [
     0
   ],
   "turretGlowSprite": "graphics/tahlan/weapons/tahlan_disparax_turret_glow.png",
   "turretOffsets": [
-    3,
+    2,
     0
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_disparax_turret_base.png",
-  "type": "ENERGY",
-  "width": 30
+  "type": "ENERGY"
 }

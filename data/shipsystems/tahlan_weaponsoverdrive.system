@@ -1,0 +1,13 @@
+{
+	"id":"tahlan_weaponsoverdrive",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_WeaponsOverdriveStats",
+	
+	"weaponGlowColor":[255,150,0,155],
+	"weaponTypes":[BALLISTIC,ENERGY],
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

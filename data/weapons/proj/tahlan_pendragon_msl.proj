@@ -1,0 +1,79 @@
+{
+	"id":"tahlan_pendragon_msl",
+	"specClass":"missile",
+	"missileType":"MIRV",
+	"sprite":"graphics/tahlan/missiles/tahlan_pendragon_msl.png",
+	#"onHitEffect":"data.scripts.weapons.tahlan_HekatonOnHitEffect",
+	"size":[12,30],	
+	"center":[6,15],
+	"collisionRadius":30,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,125,80,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":230, # purely visual
+	"explosionSpec":{"duration":0.1f, # not visual
+					 "radius":80,
+					 "coreRadius":50, # full damage within core radius
+					 "collisionClass":HITS_SHIPS_AND_ASTEROIDS,
+					 "collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
+					 "particleSizeMin":5.0,
+					 "particleSizeRange":3.0,
+					 "particleDuration":0.6,
+					 "particleCount":150,
+					 "particleColor":[255,145,65,205]},
+	"flameoutTime":3, # total time from flameout to full fadeout
+	"armingTime":0,
+	"noEngineGlowTime":0.5, # time spent without the engine glow being rendered
+	"fadeTime":0.5, # fadeout duration					 
+	"engineSpec":{"turnAcc":200,
+				  "turnRate":100,
+				  "acc":750,
+				  "dec":300},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-15, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[155,200,250,225],
+						"glowSizeMult":2,
+						"contrailDuration":2,
+						"contrailWidthMult":1.2,
+						"contrailWidthAddedFractionAtEnd":3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":5, # min segment length, in pixels
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0f,
+						"contrailSpawnDistMult":.5, # how far away from engine it starts
+						"contrailColor":[200,190,180,50],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":10.0,
+				    "length":30.0,
+				    "angle":180.0}],
+	"behaviorSpec":{"behavior":"MIRV",
+					"splitRange":800,
+					"minTimeToSplit":0.25,
+					"canSplitEarly":true,
+					"splitSound":"hurricane_mirv_fire",
+					"numShots":10,
+					"damage":100,
+					"impact":10,
+					"emp":0,
+					"damageType":HIGH_EXPLOSIVE,
+					"hitpoints":50,
+					"arc":180,
+					"arcOffset":0,
+					"evenSpread":true,
+					"spreadSpeed":500,
+					"spreadSpeedRange":50,
+					"projectileSpec":"tahlan_pendragon_wh",
+					"smokeSpec":{"particleSizeMin":16.0,
+								 "particleSizeRange":20.0,
+								 "cloudParticleCount":16,
+								 "cloudDuration":2.0,
+								 "cloudRadius":32.0,
+								 "blowbackParticleCount":0,
+								 "blowbackDuration":0.0,
+								 "blowbackLength":0.0,
+								 "blowbackSpread":0.0,
+								 "particleColor":[0,0,0,0]}
+					}		
+}

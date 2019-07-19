@@ -1,0 +1,56 @@
+{
+    "displayName": "Hiveship",
+    "fluxCapacitors": 27,
+    "fluxVents": 50,
+    "hullId": "tahlan_Timeless_retro",
+	"goalVariant": true,
+    "hullMods": [
+        "pointdefenseai",
+        "targetingunit",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_Timeless_retro_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001t": "tahlan_disparax",
+                "WS0002": "tahlan_disparax"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0016": "tahlan_relparax"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "tahlan_nenparax",
+                "WS0007": "tahlan_nenparax",
+                "WS0008": "tahlan_nenparax",
+                "WS0009": "tahlan_nenparax",
+                "WS0010": "tahlan_nenparax",
+                "WS0011": "tahlan_nenparax",
+                "WS0012": "tahlan_nenparax",
+                "WS0013": "tahlan_nenparax",
+                "WS0014": "tahlan_nenparax",
+                "WS0015": "tahlan_nenparax"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_nenparax",
+                "WS0003": "tahlan_nenparax",
+                "WS0004": "tahlan_nenparax",
+                "WS0005": "tahlan_nenparax"
+            }
+        }
+    ],
+    "wings": []
+}

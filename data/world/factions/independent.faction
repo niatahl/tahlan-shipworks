@@ -46,6 +46,7 @@
 		"tags":["tahlan_knights"],
 		"weapons":[
 			"tahlan_armiger",
+			"tahlan_pendragon",
 		],
 	},
 	"priorityWeapons":{

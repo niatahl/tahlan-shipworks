@@ -6,9 +6,9 @@ import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import data.scripts.tahlan_ModPlugin;
-import org.dark.shaders.distortion.DistortionShader;
-import org.dark.shaders.distortion.RippleDistortion;
+//import data.scripts.tahlan_ModPlugin;
+//import org.dark.shaders.distortion.DistortionShader;
+//import org.dark.shaders.distortion.RippleDistortion;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -53,13 +53,13 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
             runOnce = true;
             Vector2f loc = ship.getLocation();
             if (player) {
-                if (tahlan_ModPlugin.isGraphicsLibAvailable()) {
-                    RippleDistortion ripple = new RippleDistortion(loc, ZERO);
-                    ripple.setSize(RIPPLE_SIZE);
-                    ripple.setIntensity(RIPPLE_INTENSITY);
-                    ripple.setFrameRate(120f);
-                    DistortionShader.addDistortion(ripple);
-                }
+//                if (tahlan_ModPlugin.isGraphicsLibAvailable()) {
+//                    RippleDistortion ripple = new RippleDistortion(loc, ZERO);
+//                    ripple.setSize(RIPPLE_SIZE);
+//                    ripple.setIntensity(RIPPLE_INTENSITY);
+//                    ripple.setFrameRate(120f);
+//                    DistortionShader.addDistortion(ripple);
+//                }
                 Global.getSoundPlayer().playSound("tahlan_zawarudo", 1f, 1f, loc, ship.getVelocity());
             }
         }
