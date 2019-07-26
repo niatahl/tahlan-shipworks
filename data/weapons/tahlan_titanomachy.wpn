@@ -18,13 +18,13 @@
     0
   ],
   "muzzleFlashSpec":{
-					   "length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "length":40.0,   # only used if animationType = MUZZLE_FLASH
 					   "spread":10.0,
 					   "particleSizeMin":18.0,
 					   "particleSizeRange":24.0,
 					   "particleDuration":0.1,
 					   "particleCount":12,
-					   "particleColor":[255,170,0,215]
+					   "particleColor":[255,200,100,215]
 					},
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_base.png",
   "id": "tahlan_titanomachy",
