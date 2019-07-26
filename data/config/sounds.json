@@ -71,6 +71,13 @@
 			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.55,"volume":0.8},
         ],
     },
+	"tahlan_titanomachy_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.05,"volume":0.8},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.00,"volume":0.8},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.10,"volume":0.8},
+        ],
+    },
 	"tahlan_styrix_fire":{
         "sounds":[
            	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.05,"volume":1.3},

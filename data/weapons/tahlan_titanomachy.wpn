@@ -1,0 +1,51 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_titanomachy_fire",
+  "glowColor": [
+    255,
+    205,
+    155,
+    155
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_glow.png",
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_recoil.png",
+  "hardpointOffsets": [
+    12,
+    0
+  ],
+  "muzzleFlashSpec":{
+					   "length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":10.0,
+					   "particleSizeMin":18.0,
+					   "particleSizeRange":24.0,
+					   "particleDuration":0.1,
+					   "particleCount":12,
+					   "particleColor":[255,170,0,215]
+					},
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_base.png",
+  "id": "tahlan_titanomachy",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_titanomachy_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_titanomachy_turret_glow.png",
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_titanomachy_turret_recoil.png",
+  "turretOffsets": [
+    11.5,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_titanomachy_turret_base.png",
+  "type": "ENERGY",
+  "visualRecoil": 1
+}

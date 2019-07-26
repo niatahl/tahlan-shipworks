@@ -16,7 +16,7 @@
     255,
     0,
     0,
-    255
+    205
   ],
   "glowColor": [
     255,
@@ -55,5 +55,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_eradicator_turret_base.png",
   "type": "ENERGY",
-  "width": 24
+  "width": 18
 }

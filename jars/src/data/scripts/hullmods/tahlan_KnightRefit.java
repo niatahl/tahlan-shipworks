@@ -28,8 +28,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
     private static final Color OVERDRIVE_ENGINE_COLOR = new Color(255, 44, 0);
     private static final Color OVERDRIVE_GLOW_COLOR = new Color(255, 120, 16);
-    private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 50);
-    private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 100);
+    private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 20);
+    private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 80);
 
     private float CalibrationMult = 1f;
     private boolean RunOnce = false;

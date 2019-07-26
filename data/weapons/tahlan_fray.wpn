@@ -1,0 +1,45 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "hellbore_fire",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_FrayMuzzleFlashScript",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_fray_recoil.png",
+  "hardpointOffsets": [
+    71.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_fray_base.png",
+  "id": "tahlan_fray",
+  "muzzleFlashSpec":{"length":75.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":15.0,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":35.0,
+					   "particleDuration":0.75,
+					   "particleCount":50,
+					   "particleColor":[255,120,50,245]},
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_fray_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_fray_recoil.png",
+  "turretOffsets": [
+    38,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_fray_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 15
+}

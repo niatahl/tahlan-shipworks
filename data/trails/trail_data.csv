@@ -19,4 +19,8 @@ tahlan_gallant_trail_glow,tahlan_gallant_shot,tahlan_trail_smooth,10,0,0.05,0.15
 tahlan_hekaton_trail_one,tahlan_hekaton_torp,tahlan_trail_fuzzy,10,0,0.2,1.2,10,20,"[255,125,65]","[150,150,150]",0.2,300,500,10,0,0,TRUE,FALSE,TRUE,20,40,0.3,0,0,200,true,false
 tahlan_hekaton_trail_two,tahlan_hekaton_torp,tahlan_trail_fuzzy,10,0,0.2,1.2,10,20,"[255,125,65]","[150,150,150]",0.2,300,500,10,0,0,TRUE,FALSE,TRUE,20,40,0.3,0,0,200,true,false
 tahlan_astrix_trail,tahlan_astrix_shot,tahlan_trail_zappy,10,0.03,0,0.2,15,6,"[70,170,255]","[90,180,255]",0.6,200,1000,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_fray_trail_1,tahlan_fray_shot,tahlan_trail_fuzzy,10,0,0,0.4,12,5,"[255,120,30]","[224,175,135]",0.8,300,500,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_fray_trail_2,tahlan_fray_shot,tahlan_trail_contrail,10,0,0,0.8,28,40,"[100,90,80]","[100,90,80]",0.4,300,800,0,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_titanomachy_trail_1,tahlan_titanomachy_shot,tahlan_trail_zappy,10,0.05,0,0.35,12,2,"[255,255,255]","[255,255,255]",0.9,300,500,30,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_titanomachy_trail_2,tahlan_titanomachy_shot,tahlan_trail_zappy,10,0.05,0,0.4,25,4,"[255,170,0]","[255,170,0]",0.7,300,500,30,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_disparax_trail,tahlan_disparax_shot,tahlan_trail_zappy,10,0.05,0,0.6,25,15,"[141,255,28]","[141,255,28]",0.3,300,500,30,10,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false

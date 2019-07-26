@@ -1,10 +1,11 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 0,
-  "fluxVents": 19,
+  "fluxCapacitors": 16,
+  "fluxVents": 20,
   "goalVariant": true,
   "hullId": "tahlan_Bento",
   "hullMods": [],
+  "modules": [],
   "permaMods": [],
   "quality": 0,
   "variantId": "tahlan_Bento_standard",
@@ -13,31 +14,16 @@
       "autofire": false,
       "mode": "ALTERNATING",
       "weapons": {
-        "WS0006": "sabotpod",
-        "WS0007": "sabotpod"
+        "WS0008": "harpoon",
+        "WS0009": "harpoon"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "heavymortar",
-        "WS0002": "heavymortar"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0008": "lightdualac",
-        "WS0009": "lightdualac"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0005": "shredder"
+        "WS0001": "lightdualac",
+        "WS0002": "lightdualac"
       }
     },
     {
@@ -45,8 +31,20 @@
       "mode": "LINKED",
       "weapons": {
         "WS0003": "vulcan",
-        "WS0004": "vulcan"
+        "WS0004": "vulcan",
+        "WS0006": "vulcan",
+        "WS0007": "vulcan"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
     }
   ],
   "wings": []

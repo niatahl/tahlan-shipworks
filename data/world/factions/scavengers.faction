@@ -6,7 +6,7 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"tahlan_knights":0.05,
+			"tahlan_knights":0.1,
 		},
 		#"hulls":{},
 	},

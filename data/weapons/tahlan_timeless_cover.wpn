@@ -30,6 +30,7 @@
   "hitGlowRadius": 0,
   "id": "tahlan_timeless_cover",
   "showDamageWhenDecorative": True,
+  "renderAboveAllWeapons": 1,
   "pixelsPerTexel": 1,
   "size": "LARGE",
   "specClass": "beam",

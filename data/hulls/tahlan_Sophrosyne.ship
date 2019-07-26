@@ -1,0 +1,374 @@
+{
+  "bounds": [
+    -65,
+    -20.5,
+    -85,
+    -56,
+    -37.5,
+    -104,
+    -21.5,
+    -86,
+    -9,
+    -89,
+    18.5,
+    -70.5,
+    57.5,
+    -76,
+    84.5,
+    -48,
+    51,
+    -15.5,
+    51,
+    15.5,
+    84.5,
+    48,
+    57.5,
+    76,
+    18.5,
+    70.5,
+    -9,
+    89,
+    -21.5,
+    86,
+    -37.5,
+    104,
+    -85,
+    56,
+    -65,
+    20.5,
+    -85.5,
+    -0
+  ],
+  "builtInMods": [
+    "tahlan_knightrefit",
+    "tahlan_temporaltraveldrive"
+  ],
+  "builtInWeapons": {
+    "WS0012": "tahlan_sophrosyne_cover",
+    "WS0013": "tahlan_sophrosyne_halo"
+  },
+  "builtInWings": [
+    "tahlan_Exec_M_drone_wing",
+    "tahlan_Exec_M_drone_wing"
+  ],
+  "center": [
+    108,
+    88.5
+  ],
+  "collisionRadius": 151.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 21,
+      "length": 63,
+      "location": [
+        -77.5,
+        30.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 21
+    },
+    {
+      "angle": -180,
+      "contrailSize": 21,
+      "length": 63,
+      "location": [
+        -77.5,
+        -30.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 21
+    },
+    {
+      "angle": 180,
+      "contrailSize": 16,
+      "length": 68,
+      "location": [
+        -85.5,
+        48
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 16
+    },
+    {
+      "angle": -180,
+      "contrailSize": 16,
+      "length": 68,
+      "location": [
+        -85.5,
+        -48
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 16
+    },
+    {
+      "angle": 139,
+      "contrailSize": 128,
+      "length": 66.520676,
+      "location": [
+        27,
+        81.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7.00001
+    },
+    {
+      "angle": -139,
+      "contrailSize": 128,
+      "length": 66.520676,
+      "location": [
+        27,
+        -81.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7.00001
+    },
+    {
+      "angle": 124.5,
+      "contrailSize": 128,
+      "length": 50.859253,
+      "location": [
+        34,
+        87
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5.598656
+    },
+    {
+      "angle": -124.5,
+      "contrailSize": 128,
+      "length": 50.859253,
+      "location": [
+        34,
+        -87
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5.598656
+    },
+    {
+      "angle": 115,
+      "contrailSize": 128,
+      "length": 36.951092,
+      "location": [
+        43.5,
+        89.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5.335463
+    },
+    {
+      "angle": -115,
+      "contrailSize": 128,
+      "length": 36.951092,
+      "location": [
+        43.5,
+        -89.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5.335463
+    }
+  ],
+  "height": 177,
+  "hullId": "tahlan_Sophrosyne",
+  "hullName": "Sophrosyne",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 130,
+  "spriteName": "graphics/tahlan/ships/tahlan_Sophrosyne.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0001",
+      "locations": [
+        63.5,
+        32
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0002",
+      "locations": [
+        63.5,
+        -32
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": 23.5,
+      "arc": 94,
+      "id": "WS0003",
+      "locations": [
+        -9.5,
+        53
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -23.5,
+      "arc": 94,
+      "id": "WS0004",
+      "locations": [
+        -9.5,
+        -53
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 15,
+      "id": "WS0005",
+      "locations": [
+        73.5,
+        68
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 15,
+      "id": "WS0006",
+      "locations": [
+        73.5,
+        -68
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 45,
+      "arc": 5,
+      "id": "WS0007",
+      "locations": [
+        -6,
+        82.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -45,
+      "arc": 5,
+      "id": "WS0008",
+      "locations": [
+        -6,
+        -82.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 143,
+      "arc": 126,
+      "id": "WS0009",
+      "locations": [
+        -54.5,
+        68
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -143,
+      "arc": 126,
+      "id": "WS0010",
+      "locations": [
+        -54.5,
+        -68
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0011",
+      "locations": [
+        31.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "LARGE",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -24.5,
+        79.5,
+        -30.5,
+        78.5,
+        -38.5,
+        78.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        -24,
+        -80,
+        -31.5,
+        -78.5,
+        -39,
+        -78
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0012",
+      "locations": [
+        14.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0013",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 216
+}

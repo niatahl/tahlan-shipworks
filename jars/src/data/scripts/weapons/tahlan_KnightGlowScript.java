@@ -14,7 +14,7 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
     private static final float[] COLOR_NORMAL = {255f/255f, 140f/255f, 80f/255f};
     private static final float[] COLOR_OVERDRIVE = {255f/255f, 100f/255f, 40f/255f};
     private static final float[] COLOR_SYSTEM = {60f/255f, 255f/255f, 245f/255f};
-    private static final float MAX_JITTER_DISTANCE = 1.2f;
+    private static final float MAX_JITTER_DISTANCE = 0.8f;
     private static final float MAX_OPACITY = 1f;
     private static final float TRIGGER_PERCENTAGE = 0.3f;
     private boolean overdrive = false;
@@ -34,13 +34,19 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         float currentBrightness = ship.getFluxTracker().getFluxLevel() *  0.8f;
 
         //If we are in overdrive, we glow even more
-        if (ship.getHitpoints() <= ship.getMaxHitpoints()*TRIGGER_PERCENTAGE || ship.getVariant().hasHullMod("tahlan_forcedoverdrive") || ship.getSystem().isActive()) {
+        if (ship.getHitpoints() <= ship.getMaxHitpoints()*TRIGGER_PERCENTAGE || ship.getVariant().hasHullMod("tahlan_forcedoverdrive")) {
             currentBrightness = 1f;
+        } else if (ship.getSystem().isActive()){
+            currentBrightness = Math.max(currentBrightness, ship.getSystem().getEffectLevel());
         }
 
         //A piece should never have glowing lights
-        if (ship.isPiece()) {
-            currentBrightness = 0f;
+        if ( ship.isPiece()) {
+            return;
+        }
+
+        //Glows off in refit screen
+        if (ship.getOriginalOwner() == -1) {
             return;
         }
 

@@ -41,7 +41,7 @@
 		],
 	},
 	"knownShips":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_gh_bp"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_gh_bp", "tahlan_knights"],
 		"hulls":[
 			"doom",
 			"harbinger",
@@ -61,11 +61,11 @@
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
 	"priorityShips":{
-		"tags":["tahlan_gh_bp"],
+		"tags":["tahlan_gh_bp", "tahlan_knights"],
 		"hulls":[],
 	},
 	"knownFighters":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_gh_bp"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_gh_bp", "tahlan_knights"],
 		"fighters":[
 			"xyphos_wing",
 			"thunder_wing",
@@ -79,7 +79,7 @@
 		],
 	},
 	"knownWeapons":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "tahlan_gh_bp"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "tahlan_gh_bp", "tahlan_knights"],
 		"weapons":[
 			"lightneedler",
 			"railgun",
@@ -109,12 +109,12 @@
 		],
 	},
 	"priorityWeapons":{
-		"tags":["tahlan_gh_bp"],
+		"tags":["tahlan_gh_bp", "tahlan_knights"],
 		"weapons":[
 		],
 	},
 	"knownHullMods":{
-		"tags":["base_bp", "sindrian_diktat", "lions_guard"],
+		"tags":["base_bp", "sindrian_diktat", "lions_guard", "tahlan_knights"],
 		"hullMods":[
 			"advancedshieldemitter", # accelerated
 			"advancedoptics",

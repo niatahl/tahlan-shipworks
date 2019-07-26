@@ -1,0 +1,360 @@
+{
+  "bounds": [
+    -143.5,
+    -11.5,
+    -93,
+    -30,
+    -89,
+    -60,
+    -92,
+    -74,
+    -42.5,
+    -83.5,
+    -25.5,
+    -111,
+    18.5,
+    -103,
+    39,
+    -64,
+    91.5,
+    -62.5,
+    145.5,
+    -43.5,
+    137,
+    -29,
+    105,
+    -26.5,
+    105,
+    26.5,
+    137,
+    29,
+    145.5,
+    43.5,
+    91.5,
+    62.5,
+    39,
+    64,
+    18.5,
+    103,
+    -25.5,
+    111,
+    -42.5,
+    83.5,
+    -92,
+    74,
+    -89,
+    60,
+    -93,
+    30,
+    -143.5,
+    11.5
+  ],
+  "center": [
+    116,
+    146.5
+  ],
+  "collisionRadius": 200.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 22,
+      "length": 74,
+      "location": [
+        -94.5,
+        35.5
+      ],
+      "style": "LOW_TECH",
+      "width": 22
+    },
+    {
+      "angle": -180,
+      "contrailSize": 22,
+      "length": 74,
+      "location": [
+        -94.5,
+        -35.5
+      ],
+      "style": "LOW_TECH",
+      "width": 22
+    },
+    {
+      "angle": 180,
+      "contrailSize": 28,
+      "length": 59.5,
+      "location": [
+        -91.5,
+        53.5
+      ],
+      "style": "LOW_TECH",
+      "width": 28
+    },
+    {
+      "angle": -180,
+      "contrailSize": 28,
+      "length": 59.5,
+      "location": [
+        -91.5,
+        -53.5
+      ],
+      "style": "LOW_TECH",
+      "width": 28
+    },
+    {
+      "angle": 162.5,
+      "contrailSize": 128,
+      "length": 46.547085,
+      "location": [
+        -45,
+        85
+      ],
+      "style": "LOW_TECH",
+      "width": 12.588685
+    },
+    {
+      "angle": -162.5,
+      "contrailSize": 128,
+      "length": 46.547085,
+      "location": [
+        -45,
+        -85
+      ],
+      "style": "LOW_TECH",
+      "width": 12.588685
+    }
+  ],
+  "height": 292,
+  "hullId": "tahlan_Castigator_commie",
+  "hullName": "Castigator (RG)",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 178,
+  "spriteName": "graphics/tahlan/ships/tahlan_Carrigator_cc.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -16.5,
+      "arc": 97,
+      "id": "WS0001",
+      "locations": [
+        27.5,
+        -29
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 16.5,
+      "arc": 97,
+      "id": "WS0002",
+      "locations": [
+        27.5,
+        29
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 31.5,
+      "arc": 108,
+      "id": "WS0003",
+      "locations": [
+        -7,
+        35.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -31.5,
+      "arc": 108,
+      "id": "WS0004",
+      "locations": [
+        -7,
+        -35.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 149.5,
+      "arc": 94,
+      "id": "WS0007",
+      "locations": [
+        -43,
+        17
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -149.5,
+      "arc": 94,
+      "id": "WS0008",
+      "locations": [
+        -43,
+        -17
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 128.5,
+      "arc": 127,
+      "id": "WS0009",
+      "locations": [
+        -36,
+        73
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -128.5,
+      "arc": 127,
+      "id": "WS0010",
+      "locations": [
+        -36,
+        -73
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 180,
+      "arc": 215,
+      "id": "WS0011",
+      "locations": [
+        -104.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0012",
+      "locations": [
+        117,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "COMPOSITE"
+    },
+    {
+      "angle": -52,
+      "arc": 127,
+      "id": "WS0013",
+      "locations": [
+        -3.5,
+        -101
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 52,
+      "arc": 127,
+      "id": "WS0014",
+      "locations": [
+        -3.5,
+        101
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0021",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -15,
+        83,
+        -8,
+        75,
+        0.5,
+        66.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        -16.5,
+        -83,
+        -8,
+        -75,
+        1,
+        -66
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        69,
+        -28.5,
+        62.5,
+        -20.5,
+        58,
+        -12
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 4",
+      "locations": [
+        58.5,
+        13,
+        63,
+        21.5,
+        68,
+        28
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 232
+}

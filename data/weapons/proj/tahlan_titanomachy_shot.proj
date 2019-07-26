@@ -1,0 +1,20 @@
+{
+	"id":"tahlan_titanomachy_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":50.0,
+	"width":15,
+	"fadeTime":0.5,
+	"fringeColor":[255,170,0,205],
+	"coreColor":[255,235,205,200],
+	"glowColor":[255,170,0,50],
+	"glowRadius":50,
+	"textureType": [
+    "graphics/tahlan/fx/tahlan_shiva_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_shiva_beam_core.png"
+    ],
+	"textureScrollSpeed":64,
+	"pixelsPerTexel":5.0,
+}
