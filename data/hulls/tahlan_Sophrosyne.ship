@@ -48,8 +48,8 @@
     "WS0013": "tahlan_sophrosyne_halo"
   },
   "builtInWings": [
-    "tahlan_Exec_M_drone_wing",
-    "tahlan_Exec_M_drone_wing"
+    "tahlan_Dikaiosyne_drone_wing",
+    "tahlan_Dikaiosyne_drone_wing"
   ],
   "center": [
     108,

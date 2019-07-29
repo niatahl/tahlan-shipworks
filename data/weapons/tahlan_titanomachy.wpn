@@ -1,12 +1,26 @@
 {
-  "animationType": "GLOW_AND_FLASH",
-  "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "tahlan_titanomachy_fire",
+  "beamEffect": "data.scripts.weapons.tahlan_TitanomachyBeamEffect",
+  "beamFireOnlyOnFullCharge": true,
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    245,
+    255
+  ],
+  "fireSoundTwo": "tahlan_titanomachy_loop",
+  "fringeColor": [
+    255,
+    160,
+    0,
+    205
+  ],
   "glowColor": [
     255,
-    205,
-    155,
-    155
+    160,
+    0,
+    50
   ],
   "hardpointAngleOffsets": [
     0
@@ -14,38 +28,34 @@
   "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_glow.png",
   "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_recoil.png",
   "hardpointOffsets": [
-    12,
+    13,
     0
   ],
-  "muzzleFlashSpec":{
-					   "length":40.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":10.0,
-					   "particleSizeMin":18.0,
-					   "particleSizeRange":24.0,
-					   "particleDuration":0.1,
-					   "particleCount":12,
-					   "particleColor":[255,200,100,215]
-					},
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_base.png",
+  "hitGlowRadius": 0,
   "id": "tahlan_titanomachy",
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "tahlan_titanomachy_shot",
+  "pixelsPerTexel": 4,
   "renderAboveAllWeapons": 0,
   "size": "LARGE",
-  "specClass": "projectile",
-  "textureType": ROUGH,
+  "specClass": "beam",
+  "textureScrollSpeed": 300,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_titanomachy_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_shiva_beam_core.png"
+  ],
   "turretAngleOffsets": [
     0
   ],
   "turretGlowSprite": "graphics/tahlan/weapons/tahlan_titanomachy_turret_glow.png",
   "turretGunSprite": "graphics/tahlan/weapons/tahlan_titanomachy_turret_recoil.png",
   "turretOffsets": [
-    11.5,
+    12.5,
     0
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_titanomachy_turret_base.png",
   "type": "ENERGY",
-  "visualRecoil": 1
+  "width": 25
 }

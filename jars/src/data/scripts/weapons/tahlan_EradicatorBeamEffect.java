@@ -7,7 +7,7 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 
-	private IntervalUtil fireInterval = new IntervalUtil(0.1f, 0.15f);
+	private IntervalUtil fireInterval = new IntervalUtil(0.2f, 0.3f);
 	private boolean wasZero = true;
 	
 	public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {

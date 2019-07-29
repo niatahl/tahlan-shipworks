@@ -1,0 +1,52 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 0,
+    "fluxVents": 27,
+    "hullId": "tahlan_Castigator_commie",
+    "hullMods": ["targetingunit"],
+	"goalVariant": true,
+    "permaMods": [],
+    "variantId": "tahlan_Castigator_commie_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "hveldriver",
+                "WS0004": "hveldriver"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "typhoon"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "railgun",
+                "WS0002": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing"
+    ]
+}

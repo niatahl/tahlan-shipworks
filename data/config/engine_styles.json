@@ -56,6 +56,18 @@
 		"contrailColor":[50,50,50,50],
 		"contrailCampaignColor":[255,60,40,240],
 		"type":"SMOKE"
+	},
+	
+	"TAHLAN_NC_ENGINE":{
+		"engineColor":[255,80,150,240],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":3,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.6,
+		"contrailAngularVelocityMult":0.6,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[255,80,50,240],
+		"type":"SMOKE"
 	}
 }
 

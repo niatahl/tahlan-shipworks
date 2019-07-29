@@ -254,7 +254,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "COMPOSITE"
     },
     {
       "angle": -21,
@@ -266,7 +266,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "COMPOSITE"
     },
     {
       "angle": -135,
@@ -278,7 +278,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "DECORATIVE"
     },
     {
       "angle": 135,
@@ -290,7 +290,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "DECORATIVE"
     },
     {
       "angle": -135,
@@ -302,7 +302,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "BALLISTIC"
     },
     {
       "angle": 135,
@@ -314,7 +314,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "BALLISTIC"
     },
     {
       "angle": 106,

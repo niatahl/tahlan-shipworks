@@ -24,10 +24,10 @@
 	"armingTime":0,
 	"noEngineGlowTime":0.5, # time spent without the engine glow being rendered
 	"fadeTime":0.5, # fadeout duration					 
-	"engineSpec":{"turnAcc":200,
-				  "turnRate":100,
+	"engineSpec":{"turnAcc":50,
+				  "turnRate":50,
 				  "acc":750,
-				  "dec":300},
+				  "dec":100},
 	"engineSlots":[{"id":"ES1",
 					"loc":[-15, 0],
 				    "style":"CUSTOM",
@@ -62,7 +62,7 @@
 					"arc":180,
 					"arcOffset":0,
 					"evenSpread":true,
-					"spreadSpeed":500,
+					"spreadSpeed":300,
 					"spreadSpeedRange":50,
 					"projectileSpec":"tahlan_pendragon_wh",
 					"smokeSpec":{"particleSizeMin":16.0,

@@ -144,6 +144,7 @@ tahlan_eradicator,WEAPON,"An icon of pirate hubris, the Eradicator is a heavily 
 tahlan_fray,WEAPON,"Based on the hellbore, this upscaled heavy cannon is fully integrated into the ship's hell, outfitted with numerous recoil stabilizers to prevent it from ripping the ship apart when firing. Despite the major upscaling, its actual performance isn't that much superior to a standard hellbore, but the psychological impact of such a massive weapon pointing at a lightly-armored freighter is exceedingly useful in piracy actions.",,,
 tahlan_pendragon,WEAPON,"Designed for long-range engagements, the Pendragon is a unique MIRV launcher that utilizes a fast but barely maneuverable carrier missile to deliver a swarm of agile micromissiles into effective range.",,,
 tahlan_efreet,WEAPON,"A rare Kassadari post-collapse design, the Efreet is a modified version of the mjolnir cannon that aims to fix some of the weapon's shortcomings. While the design proves more efficient and longer-ranged than the original, it had to sacrifice some of the raw power that made the original so legendary amongst spacers.",,,
+tahlan_titanomachy,WEAPON,"Going back to an antiquated design, this unique beam weapon uses a synthetic crystal as focus for a powerful sustained directed energy beam. While powerful in and of itself, the weapon can operate at an increased powerlevel when the mounting ship's flux grid is under heavy load, presumably due to the unique properties of its focus crystal.",,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,

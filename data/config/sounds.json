@@ -16,6 +16,11 @@
 		{"file":"sounds/sfx_wpn_energy/mining_blaster_fire_01.ogg","pitch":0.7,"volume":0.7},
 	],
 	
+	"tahlan_titanomachy_loop":
+	[
+		{"file":"sounds/sfx_wpn_energy/phase_beam_loop_loud.ogg","pitch":2,"volume":0.8},
+	],	
+	
 	"tahlan_nenparax_loop":
 	[
 		{"file":"sounds/sfx_wpn_energy/laser_loop.ogg","pitch":2.5,"volume":0.15},

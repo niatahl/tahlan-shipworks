@@ -184,8 +184,8 @@
         18
       ],
       "mount": "HARDPOINT",
-      "size": "SMALL",
-      "type": "SYNERGY"
+      "size": "MEDIUM",
+      "type": "MISSILE"
     },
     {
       "angle": 0,
@@ -197,7 +197,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "ENERGY"
+      "type": "SYNERGY"
     },
     {
       "angle": 0,
@@ -208,12 +208,12 @@
         -18
       ],
       "mount": "HARDPOINT",
-      "size": "SMALL",
-      "type": "SYNERGY"
+      "size": "MEDIUM",
+      "type": "MISSILE"
     },
     {
       "angle": 30,
-      "arc": 180,
+      "arc": 101,
       "id": "WS 003",
       "locations": [
         37,
@@ -225,7 +225,7 @@
     },
     {
       "angle": -30,
-      "arc": 180,
+      "arc": 101,
       "id": "WS 004",
       "locations": [
         37,
@@ -284,7 +284,7 @@
       "type": "ENERGY"
     },
     {
-      "angle": 0,
+      "angle": -0,
       "arc": 4,
       "id": "WS 009",
       "locations": [
@@ -293,7 +293,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "ENERGY"
     },
     {
       "angle": 0,
@@ -305,7 +305,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "ENERGY"
     },
     {
       "angle": 0,

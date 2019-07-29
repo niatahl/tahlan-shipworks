@@ -1,0 +1,52 @@
+{
+    "displayName": "Prophet",
+    "fluxCapacitors": 5,
+    "fluxVents": 30,
+    "hullId": "tahlan_Sophrosyne",
+    "hullMods": ["targetingunit"],
+	"goalVariant": true,
+    "permaMods": [],
+    "variantId": "tahlan_Sophrosyne_prophet",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0011": "tahlan_titanomachy"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "tahlan_hekaton",
+                "WS0002": "tahlan_hekaton"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0007": "swarmer",
+                "WS0008": "swarmer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_magaera",
+                "WS0004": "tahlan_magaera",
+                "WS0005": "ioncannon",
+                "WS0006": "ioncannon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser"
+            }
+        }
+    ],
+    "wings": []
+}

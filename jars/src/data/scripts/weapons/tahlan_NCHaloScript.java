@@ -1,17 +1,20 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-public class tahlan_SophHaloScript implements EveryFrameWeaponEffectPlugin {
-    private static final float[] COLOR_NORMAL = {255f / 255f, 200f / 255f, 150f / 255f};
-    private static final float[] COLOR_OVERDRIVE = {255f / 255f, 100f / 255f, 40f / 255f};
+public class tahlan_NCHaloScript implements EveryFrameWeaponEffectPlugin {
+    private static final float[] COLOR_NORMAL = {160f / 255f, 220f / 255f, 255f / 255f};
+    private static final float[] COLOR_OVERDRIVE = {255f / 255f, 120f / 255f, 160f / 255f};
     private static final float MAX_JITTER_DISTANCE = 0.2f;
-    private static final float MAX_OPACITY = 1f;
+    private static final float MAX_OPACITY = 0.9f;
     private static final float TRIGGER_PERCENTAGE = 0.3f;
 
     @Override

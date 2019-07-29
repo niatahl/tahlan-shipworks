@@ -76,7 +76,6 @@
   "builtInMods": [
     "repair_gantry"
   ],
-  "builtInWings": [],
   "center": [
     107,
     195
@@ -254,7 +253,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "DECORATIVE"
     },
     {
       "angle": 135,
@@ -266,7 +265,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "DECORATIVE"
     },
     {
       "angle": -135,

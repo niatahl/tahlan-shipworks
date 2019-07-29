@@ -9,7 +9,7 @@
   ],
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_SophHaloScript",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_NCHaloScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [
@@ -32,7 +32,7 @@
     0
   ],
   "hitGlowRadius": 0,
-  "id": "tahlan_sophrosyne_halo",
+  "id": "tahlan_castigator_nc_halo",
   "renderAboveAllWeapons": true,
   "pixelsPerTexel": 1,
   "size": "LARGE",
@@ -46,8 +46,8 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Sophrosyne_halo_00.png",
-  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_Sophrosyne_halo_00.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Castigator_nc_halo_00.png",
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_Castigator_nc_halo_00.png",
   "type": "DECORATIVE",
   "width": 10
 }
