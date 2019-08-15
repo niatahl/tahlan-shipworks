@@ -23,15 +23,11 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public void onApplicationLoad() {
         boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
         if (!hasLazyLib) {
-            throw new RuntimeException("Tahlan Shipworks requires LazyLib by LazyWizard");
+            throw new RuntimeException("Tahlan Shipworks requires LazyLib by LazyWizard"  + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
         }
         boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
         if (!hasMagicLib) {
-            throw new RuntimeException("Tahlan Shipworks requires MagicLib!");
-        }
-        boolean hasSSFX = Global.getSettings().getModManager().isModEnabled("xxx_ss_FX_mod");
-        if (hasSSFX) {
-            throw new RuntimeException("Tahlan Shipworks is not compatible with Starsector FX");
+            throw new RuntimeException("Tahlan Shipworks requires MagicLib!"  + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718");
         }
 
         boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");

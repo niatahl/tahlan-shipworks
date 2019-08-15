@@ -1,0 +1,80 @@
+{
+    "displayName": "Barrage",
+    "fluxCapacitors": 27,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith",
+    "hullMods": [
+        "targetingunit",
+        "fluxdistributor",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_DunScaith_barrage",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "pilum",
+                "WS0023": "pilum",
+                "WS0029": "pilum",
+                "WS0030": "pilum"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0018": "pilum",
+                "WS0019": "pilum"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "tahlan_armiger",
+                "WS0021": "tahlan_armiger"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0024": "gauss",
+                "WS0025": "gauss"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "vulcan",
+                "WS0002": "vulcan",
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0026": "dualflak",
+                "WS0027": "dualflak",
+                "WS0028": "dualflak"
+            }
+        }
+    ],
+    "wings": [
+        "perdition_wing",
+        "perdition_wing"
+    ]
+}

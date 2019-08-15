@@ -6,6 +6,26 @@
 		
 	},
 	
+	"tahlan_efreet_fire":
+	[
+		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.6,"volume":0.95},
+	],
+	
+	"tahlan_virtue_loop":
+	[
+		{"file":"sounds/tahlan/fx/tahlan_virtue_loop.ogg","pitch":0.8,"volume":1.1},
+	],
+	
+	"tahlan_virtue_system_charge":
+	[
+		{"file":"sounds/tahlan/fx/tahlan_virtue_system_charge.ogg","pitch":0.8,"volume":1.1},
+	],
+	
+	"tahlan_virtue_system_loop":
+	[
+		{"file":"sounds/tahlan/fx/tahlan_virtue_system_loop.ogg","pitch":0.6,"volume":0.8},
+	],
+	
 	"tahlan_disparax_fire":
 	[
 		{"file":"sounds/sfx_wpn_energy/mining_blaster_fire_01.ogg","pitch":0.3,"volume":0.8},
@@ -16,9 +36,19 @@
 		{"file":"sounds/sfx_wpn_energy/mining_blaster_fire_01.ogg","pitch":0.7,"volume":0.7},
 	],
 	
+#	"tahlan_titanomachy_loop":
+#	[
+#		{"file":"sounds/sfx_wpn_energy/phase_beam_loop_loud.ogg","pitch":2,"volume":0.8},
+#	],
+	
 	"tahlan_titanomachy_loop":
 	[
-		{"file":"sounds/sfx_wpn_energy/phase_beam_loop_loud.ogg","pitch":2,"volume":0.8},
+		{"file":"sounds/tahlan/weapons/tahlan_titanomachy_loop.ogg","pitch":1.2,"volume":1},
+	],	
+	
+	"tahlan_titanomachy_fire":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_titanomachy_fire.ogg","pitch":1.2,"volume":1},
 	],	
 	
 	"tahlan_nenparax_loop":
@@ -74,13 +104,6 @@
            	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.5,"volume":0.8},
 			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.45,"volume":0.8},
 			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.55,"volume":0.8},
-        ],
-    },
-	"tahlan_titanomachy_fire":{
-        "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.05,"volume":0.8},
-			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.00,"volume":0.8},
-			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":2.10,"volume":0.8},
         ],
     },
 	"tahlan_styrix_fire":{

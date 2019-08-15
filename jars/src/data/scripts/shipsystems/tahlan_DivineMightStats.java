@@ -5,11 +5,12 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 
 public class tahlan_DivineMightStats extends BaseShipSystemScript {
 
-    public static final float DAMAGE_BONUS_PERCENT = 2f;
-    public static final float DISSIPATION_MULT = 2f;
+    public static final float DAMAGE_BONUS_PERCENT = 1.5f;
+    public static final float DISSIPATION_MULT = 1.5f;
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
@@ -21,8 +22,14 @@ public class tahlan_DivineMightStats extends BaseShipSystemScript {
 
         stats.getFluxDissipation().modifyMult(id,DISSIPATION_MULT);
 
-        stats.getMaxSpeed().modifyFlat(id, 200f);
-        stats.getAcceleration().modifyFlat(id, 400f);
+        if (state == ShipSystemStatsScript.State.OUT) {
+            stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
+        } else {
+            stats.getMaxSpeed().modifyFlat(id, 200f);
+            stats.getAcceleration().modifyFlat(id, 400f);
+            stats.getTurnAcceleration().modifyMult(id, 2f);
+            stats.getMaxTurnRate().modifyMult(id, 2f);
+        }
 
     }
 

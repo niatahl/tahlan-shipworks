@@ -11,18 +11,18 @@
   "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_dual_volkite_hp_recoil.png",
   "hardpointOffsets": [
     21.5,
-    10,
+    9.5,
     21.5,
-    -4,
+    -4.5,
     21.5,
-    5,
+    4.5,
     21.5,
-    -9
+    -9.5
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_dual_volkite_hp_base.png",
   "id": "tahlan_dualvolkite",
   "muzzleFlashSpec": {
-    "length": 30,
+    "length": 20,
     "particleColor": [
       255,
       220,
@@ -30,14 +30,20 @@
       155
     ],
     "particleCount": 10,
-    "particleDuration": 0.5,
-    "particleSizeMin": 10,
+    "particleDuration": 0.3,
+    "particleSizeMin": 5,
     "particleSizeRange": 10,
     "spread": 20
   },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
   "projectileSpecId": "tahlan_dualvolkite_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
   "size": "MEDIUM",
-  "renderHints": ["RENDER_BARREL_BELOW"],
   "specClass": "projectile",
   "textureType": ROUGH,
   "turretAngleOffsets": [
@@ -49,15 +55,15 @@
   "turretGunSprite": "graphics/tahlan/weapons/tahlan_dual_volkite_turret_recoil.png",
   "turretOffsets": [
     19,
-    10,
+    9.5,
     19,
-    -4,
+    -4.5,
     19,
-    5,
+    4.5,
     19,
-    -9
+    -9.5
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_dual_volkite_turret_base.png",
   "type": "BALLISTIC",
-  "visualRecoil": 4
+  "visualRecoil": 2
 }

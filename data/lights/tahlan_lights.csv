@@ -5,6 +5,7 @@ id,type,size,intensity,fadeout,color,offset,hit size,hit intensity,hit fadeout,h
 tahlan_utpc_shot,projectile,100,0.7,0.25,"[255,20,20]",,150,0.5,0.5,"[255,20,20]",50,0.5,0.4,"[255,20,20]",,1,TRUE
 tahlan_utpc_shot_splinter,projectile,50,0.3,0.2,"[255,20,20]",,70,0.2,0.25,"[255,20,20]",25,0.2,0.2,"[255,20,20]",,1,TRUE
 tahlan_armiger_shot,projectile,80,0.6,0.3,"[255,205,85]",,110,0.4,0.2,"[255,205,85]",40,0.5,0.4,"[255,205,85]",,1,TRUE
+tahlan_efreet_shot,projectile,80,0.6,0.3,"[255,245,235]",,110,0.4,0.2,"[255,245,235]",40,0.5,0.4,"[255,245,235]",,1,TRUE
 tahlan_styrix_shot,projectile,120,0.6,0.3,"[140,215,255]",,110,0.4,0.2,"[140,215,255]",80,0.6,0.3,"[223,43,22]",,1,TRUE
 tahlan_magaera_shot,projectile,100,0.2,0.3,"[140,215,255]",,80,0.4,0.2,"[140,215,255]",50,0.3,0.2,"[223,43,22]",,1,TRUE
 tahlan_gallant_shot,projectile,100,0.2,0.3,"[140,215,255]",,80,0.4,0.2,"[140,215,255]",50,0.3,0.2,"[223,43,22]",,1,TRUE

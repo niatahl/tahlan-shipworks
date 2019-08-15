@@ -1,7 +1,8 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "mjolnir_fire",
+  "fireSoundTwo": "tahlan_efreet_fire",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_EfreetMuzzleFlashScript",
   "hardpointAngleOffsets": [
     0,
     0,
@@ -20,17 +21,17 @@
   "turretUnderSprite":"graphics/weapons/mjolnir_turret_under.png",
   "hardpointUnderSprite":"graphics/weapons/mjolnir_hardpoint_under.png",
   "id": "tahlan_efreet",
-  "muzzleFlashSpec":{"length":50.0,   # only used if animationType = MUZZLE_FLASH
+  "muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
 					   "spread":10.0,
 					   "particleSizeMin":18.0,
 					   "particleSizeRange":24.0,
-					   "particleDuration":0.12,
-					   "particleCount":20,
+					   "particleDuration":0.5,
+					   "particleCount":15,
 					   "particleColor":[255,185,215,215]},
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
-  "projectileSpecId": "tahlan_astrix_shot",
+  "projectileSpecId": "tahlan_efreet_shot",
   "renderAboveAllWeapons": 0,
   "size": "LARGE",
   "specClass": "projectile",

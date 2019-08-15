@@ -154,7 +154,7 @@
     0
   ],
   "shieldRadius": 170,
-  "spriteName": "graphics/tahlan/ships/tahlan_dominator_gh.png",
+  "spriteName": "graphics/tahlan/ships/gh/tahlan_dominator_gh.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

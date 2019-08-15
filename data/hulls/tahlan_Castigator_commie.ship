@@ -53,6 +53,9 @@
     116,
     146.5
   ],
+  "builtInMods":[
+	"tahlan_crampedhangars"
+  ],
   "collisionRadius": 200.5,
   "engineSlots": [
     {
@@ -131,7 +134,7 @@
     -0
   ],
   "shieldRadius": 178,
-  "spriteName": "graphics/tahlan/ships/tahlan_Carrigator_cc.png",
+  "spriteName": "graphics/tahlan/ships/oddities/tahlan_Carrigator_cc.png",
   "style": "LOW_TECH",
   "viewOffset": 0,
   "weaponSlots": [

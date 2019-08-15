@@ -204,7 +204,7 @@
     -0
   ],
   "shieldRadius": 178,
-  "spriteName": "graphics/tahlan/ships/tahlan_Castigator_knight.png",
+  "spriteName": "graphics/tahlan/ships/gh/tahlan_Castigator_knight.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

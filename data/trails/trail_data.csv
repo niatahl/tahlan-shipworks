@@ -7,6 +7,7 @@ tahlan_fusor_trail,tahlan_fusor_shot,tahlan_trail_fuzzy,20,0.05,0,0.2,40,100,"[0
 #tahlan_fusor_trail_glow,tahlan_fusor_shot,tahlan_trail_fuzzy,20,0.05,0,0.1,70,50,"[0,180,255]","[0,180,255]",0.2,300,500,30,10,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_porph_trail_glow,tahlan_porph_shot,tahlan_trail_zappy,10,0,0.05,0.15,40,10,"[255,45,0]","[255,45,0]",0.4,300,500,30,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_armiger_trail,tahlan_armiger_shot,tahlan_trail_fuzzy,10,0.05,0,0.6,8,15,"[255,175,65]","[160,140,100]",0.3,300,500,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_efreet_trail,tahlan_efreet_shot,tahlan_trail_fuzzy,10,0.05,0,1,10,5,"[225,245,255]","[150,200,255]",0.3,300,500,0,0,1,TRUE,FALSE,TRUE,0,20,0.2,0,0,50,true,false
 tahlan_styrix_trail_core,tahlan_styrix_shot,tahlan_trail_smooth,10,0.05,0.5,1.5,4,2,"[255,255,255]","[0,0,255]",0.5,300,500,20,0,1,TRUE,FALSE,TRUE,10,30,0.2,0,0,100,true,false
 tahlan_styrix_trail_glow,tahlan_styrix_shot,tahlan_trail_smooth,10,0,0.05,0.15,60,30,"[140,215,255]","[140,215,255]",0.5,300,500,40,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_styrix_trail_smoke1,tahlan_styrix_shot,tahlan_trail_smooth,10,0.05,0.5,1.5,4,2,"[255,255,255]","[0,0,255]",0.3,300,500,20,0,1,TRUE,FALSE,TRUE,20,60,0.4,0,0,200,true,false

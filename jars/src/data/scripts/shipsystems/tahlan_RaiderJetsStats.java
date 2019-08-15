@@ -7,13 +7,14 @@ public class tahlan_RaiderJetsStats extends BaseShipSystemScript {
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
+
         stats.getMaxSpeed().modifyFlat(id, 100f * effectLevel);
         stats.getAcceleration().modifyPercent(id, 400f * effectLevel);
         stats.getDeceleration().modifyPercent(id, 400f * effectLevel);
-        stats.getTurnAcceleration().modifyFlat(id, 30f * effectLevel);
-        stats.getTurnAcceleration().modifyPercent(id, 200f * effectLevel);
-        stats.getMaxTurnRate().modifyFlat(id, 15f);
-        stats.getMaxTurnRate().modifyPercent(id, 100f);
+        stats.getTurnAcceleration().modifyMult(id, 3f * effectLevel);
+        stats.getMaxTurnRate().modifyMult(id, 2f * effectLevel);
+
+
 
     }
 

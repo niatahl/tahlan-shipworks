@@ -60,12 +60,11 @@
   "builtInMods": [
     "tahlan_advballistics",
     "tahlan_knightrefit",
-	"tahlan_temporaltraveldrive"
+    "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS0022": "tahlan_vendetta_gh_glow"
   },
-  "builtInWings": [],
   "center": [
     110,
     203
@@ -170,6 +169,72 @@
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 12
+    },
+    {
+      "angle": 148,
+      "contrailSize": 128,
+      "length": 53.476211,
+      "location": [
+        38,
+        105
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 14.532019
+    },
+    {
+      "angle": -148,
+      "contrailSize": 128,
+      "length": 53.476211,
+      "location": [
+        38,
+        -105
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 14.532019
+    },
+    {
+      "angle": 140.5,
+      "contrailSize": 128,
+      "length": 30.380329,
+      "location": [
+        170,
+        75
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 10.823225
+    },
+    {
+      "angle": -140.5,
+      "contrailSize": 128,
+      "length": 30.380329,
+      "location": [
+        170,
+        -75
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 10.823225
+    },
+    {
+      "angle": 160,
+      "contrailSize": 128,
+      "length": 72.494514,
+      "location": [
+        30,
+        100.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 15.335688
+    },
+    {
+      "angle": -160,
+      "contrailSize": 128,
+      "length": 72.494514,
+      "location": [
+        30,
+        -100.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 15.335688
     }
   ],
   "height": 429,
@@ -181,7 +246,7 @@
     -0
   ],
   "shieldRadius": 261,
-  "spriteName": "graphics/tahlan/ships/tahlan_vendetta_gh.png",
+  "spriteName": "graphics/tahlan/ships/gh/tahlan_vendetta_gh.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

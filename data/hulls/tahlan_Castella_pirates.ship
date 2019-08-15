@@ -216,7 +216,7 @@
     -0
   ],
   "shieldRadius": 242,
-  "spriteName": "graphics/tahlan/ships/tahlan_Castella_p.png",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_Castella_p.png",
   "style": "LOW_TECH",
   "viewOffset": 0,
   "weaponSlots": [

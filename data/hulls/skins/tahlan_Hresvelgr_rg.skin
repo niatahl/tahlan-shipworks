@@ -1,0 +1,19 @@
+{
+    "baseHullId":"tahlan_Hresvelgr",
+    "skinHullId":"tahlan_Hresvelgr_rg",
+    "hullName":"Hresvelgr (RG)",
+    "descriptionId":"tahlan_Hresvelgr",
+    "descriptionPrefix":"Being too complex a design to effectively strip down, the Red Guard has settled on repainting the hull of the vessel in the fleet's colors.",
+    "tags":["revolutionary"],
+    "tech":"Red Guards",
+	#"ordnancePoints":170,
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Hresvelgr_rg.png",
+    "baseValueMult":1,
+    "removeWeaponSlots":[],         # ids
+    "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[],         # hullmod ids
+    "removeBuiltInWeapons":[],      # weapon slot ids
+    #"builtInMods":["vayra_red_army"],
+    "builtInWeapons":{
+    },
+}

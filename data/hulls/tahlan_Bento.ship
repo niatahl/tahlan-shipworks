@@ -27,10 +27,12 @@
     -82,
     -0
   ],
-  "builtInWings": ["mining_drone_wing"],
   "builtInMods": [
     "armoredweapons",
     "civgrade"
+  ],
+  "builtInWings": [
+    "mining_drone_wing"
   ],
   "center": [
     69,
@@ -130,7 +132,7 @@
         11.5,
         41
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "size": "SMALL",
       "type": "BALLISTIC"
     },
@@ -142,7 +144,7 @@
         11.5,
         -41
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "size": "SMALL",
       "type": "BALLISTIC"
     },

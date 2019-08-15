@@ -1,0 +1,18 @@
+{
+	"id":"tahlan_efreet_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":120.0,
+	"width":8.0,
+	"fadeTime":0.15,
+	"coreColor":[255,255,255,255],
+	"fringeColor": [225,245,255,255],
+	#"glowColor": [255,140,80,55],
+	#"glowRadius":80,
+	"hitGlowRadius":50,	
+	"textureScrollSpeed":32.0,
+	"pixelsPerTexel":10.0,
+	"bulletSprite":"graphics/tahlan/missiles/tahlan_styrix_slug.png"
+}

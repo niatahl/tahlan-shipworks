@@ -19,6 +19,7 @@
 			"tahlan_Kodai",
 			"tahlan_Ingress",
 			"tahlan_Defiance",
+			"tahlan_Castella"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -40,7 +41,7 @@
 		#"tags":[],
 		"weapons":[
 			"tahlan_armiger",
-			"tahlan_fray"
+			"tahlan_efreet"
 		],
 	},
 	"priorityWeapons":{

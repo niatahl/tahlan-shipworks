@@ -39,12 +39,17 @@
 		"tahlan_Castigator_P_raider":5,
 		"tahlan_Castigator_P_lancer":3,
 		"tahlan_Castigator_P_overdriven":2,
+		"tahlan_Sophrosyne_prophet":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
 		"tahlan_vendetta_gh_knight":10,
 		"tahlan_onslaught_gh_knight":10,
 		"tahlan_Castella_pirates_standard":10,
+		"tahlan_DunScaith_standard":5,
+		"tahlan_DunScaith_barrage":3,
+		"tahlan_DunScaith_elite":2,
+		"tahlan_DunScaith_gh_crusader":10,
 	},
 	
 	
@@ -66,6 +71,7 @@
 	"carrierMedium":{
 			"tahlan_Bungalow_bomber":7,
 			"tahlan_Bungalow_elite":3,
+			"tahlan_Castigator_commie_standard":10,
 	},
 	"carrierLarge":{
 			"tahlan_Castella_standard":7,

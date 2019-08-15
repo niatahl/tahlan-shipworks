@@ -6,7 +6,9 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		#"tags":{},
-		#"hulls":{},
+		"hulls":{
+			"tahlan_Hresvelgr":0.5,
+		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
@@ -19,6 +21,7 @@
 			"tahlan_Kodai",
 			"tahlan_Ingress",
 			"tahlan_Defiance",
+			"tahlan_Hresvelgr"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -40,7 +43,7 @@
 		#"tags":[],
 		"weapons":[
 			"tahlan_armiger",
-			"tahlan_fray"
+			"tahlan_efreet"
 		],
 	},
 	"priorityWeapons":{

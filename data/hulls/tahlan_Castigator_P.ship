@@ -93,7 +93,6 @@
     "augmentedengines",
     "unstable_injector"
   ],
-  "builtInWings": [],
   "center": [
     116,
     144
@@ -242,7 +241,7 @@
     -0
   ],
   "shieldRadius": 178,
-  "spriteName": "graphics/tahlan/ships/tahlan_Castigator_P.png",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_Castigator_P.png",
   "style": "LOW_TECH",
   "viewOffset": 0,
   "weaponSlots": [
@@ -251,7 +250,7 @@
       "arc": 97,
       "id": "WS0001",
       "locations": [
-        30,
+        31,
         -29
       ],
       "mount": "TURRET",
@@ -263,7 +262,7 @@
       "arc": 97,
       "id": "WS0002",
       "locations": [
-        30,
+        31,
         29
       ],
       "mount": "TURRET",

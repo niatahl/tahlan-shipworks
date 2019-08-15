@@ -1,0 +1,77 @@
+{
+    "displayName": "Crusader",
+    "fluxCapacitors": 19,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith_gh",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_DunScaith_gh_crusader",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0026": "hurricane",
+                "WS0027": "hurricane"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0018": "tahlan_dualvolkite",
+                "WS0019": "tahlan_dualvolkite",
+                "WS0022": "tahlan_pendragon",
+                "WS0023": "tahlan_pendragon",
+                "WS0029": "tahlan_pendragon",
+                "WS0030": "tahlan_pendragon"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0028": "tahlan_dualvolkite"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "tahlan_armiger",
+                "WS0021": "tahlan_armiger",
+                "WS0024": "tahlan_efreet",
+                "WS0025": "tahlan_efreet"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_volkite",
+                "WS0002": "tahlan_volkite",
+                "WS0003": "tahlan_volkite",
+                "WS0004": "tahlan_volkite",
+                "WS0005": "tahlan_volkite",
+                "WS0006": "tahlan_volkite",
+                "WS0007": "tahlan_volkite",
+                "WS0008": "tahlan_volkite",
+                "WS0009": "tahlan_volkite",
+                "WS0010": "tahlan_volkite",
+                "WS0011": "tahlan_volkite",
+                "WS0012": "tahlan_volkite",
+                "WS0013": "tahlan_volkite",
+                "WS0014": "tahlan_volkite",
+                "WS0015": "tahlan_volkite",
+                "WS0016": "tahlan_volkite",
+                "WS0017": "tahlan_volkite"
+            }
+        }
+    ],
+    "wings": [
+        "tahlan_Acastus_fighter_wing",
+        "tahlan_Acastus_fighter_wing"
+    ]
+}

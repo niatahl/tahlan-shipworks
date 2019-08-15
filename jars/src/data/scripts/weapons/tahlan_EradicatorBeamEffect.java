@@ -24,16 +24,18 @@ public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 				//piercedShield = true;
 				
 				if (!hitShield) {
+
 					Vector2f dir = Vector2f.sub(beam.getTo(), beam.getFrom(), new Vector2f());
 					if (dir.lengthSquared() > 0) dir.normalise();
 					dir.scale(50f);
 					Vector2f point = Vector2f.sub(beam.getTo(), dir, new Vector2f());
+
 					float dam = beam.getWeapon().getDamage().getDamage() * 0.1f;
 					engine.spawnEmpArc(beam.getSource(), point, beam.getDamageTarget(), beam.getDamageTarget(),
 							DamageType.ENERGY,
 							dam,
 							0f,
-							200f,
+							10000f,
 							"tachyon_lance_emp_impact",
 							beam.getWidth(),
 							beam.getFringeColor(),

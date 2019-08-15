@@ -104,14 +104,13 @@
   "builtInMods": [
     "tahlan_advballistics",
     "tahlan_knightrefit",
-	"tahlan_temporaltraveldrive"
+    "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
-    "WS 016": "tpc",
-    "WS 017": "tpc",
+    "WS 016": "tahlan_utpc_l",
+    "WS 017": "tahlan_utpc_l",
     "WS0001": "tahlan_onslaught_gh_glow"
   },
-  "builtInWings": [],
   "center": [
     144,
     140
@@ -120,14 +119,14 @@
   "engineSlots": [
     {
       "angle": 160,
-      "contrailSize": 64,
-      "length": 64,
+      "contrailSize": 18.91827,
+      "length": 82.192001,
       "location": [
         -82,
         70
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 20
+      "width": 18.91827
     },
     {
       "angle": 180,
@@ -183,6 +182,72 @@
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 30
+    },
+    {
+      "angle": 160,
+      "contrailSize": 64,
+      "length": 64,
+      "location": [
+        -74.5,
+        79.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 20
+    },
+    {
+      "angle": -160,
+      "contrailSize": 64,
+      "length": 64,
+      "location": [
+        -74.5,
+        -79.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 20
+    },
+    {
+      "angle": 180,
+      "contrailSize": 18,
+      "length": 83,
+      "location": [
+        -103,
+        27
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 18
+    },
+    {
+      "angle": -180,
+      "contrailSize": 18,
+      "length": 83,
+      "location": [
+        -103,
+        -27
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 18
+    },
+    {
+      "angle": 156.5,
+      "contrailSize": 18.838806,
+      "length": 72.067848,
+      "location": [
+        69,
+        117
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 18.838806
+    },
+    {
+      "angle": -156.5,
+      "contrailSize": 18.838806,
+      "length": 72.067848,
+      "location": [
+        69,
+        -117
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 18.838806
     }
   ],
   "height": 384,
@@ -194,7 +259,7 @@
     0
   ],
   "shieldRadius": 240,
-  "spriteName": "graphics/tahlan/ships/tahlan_onslaught_gh.png",
+  "spriteName": "graphics/tahlan/ships/gh/tahlan_onslaught_gh.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 200,
   "weaponSlots": [

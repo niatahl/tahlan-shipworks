@@ -1,3 +1,21 @@
+0.4.6
+Additions:
+- Titanomachy beam weapon
+- Efreet barrage cannon
+- Dun Scaith class pirate dreadnought
+- Hresvelgr fleet carrier
+- Some content for Vayra's sector:
+	- a number of special bounties featuring unique ships
+	- Unique Castigator derivate that may spawn with the space communists
+
+Changes:
+- Overhauled all Castella sprites and adjusted all 3 variants
+- Overhauled Ingress sprite	
+	
+Balancing:
+- Buffed damage and flight time of Pendragon submunitions
+
+
 0.4.5
 Changes:
 - Castella (P) has been majorly redesigned
@@ -10,6 +28,7 @@ Changes:
 
 Balancing:
 - Reworked multiple GH weapons into high-powered but inefficient weapons
+
 
 0.3.4d
 Balancing:

@@ -249,7 +249,7 @@
     0
   ],
   "shieldRadius": 148,
-  "spriteName": "graphics/tahlan/ships/tahlan_Dominator_PH.png",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_Dominator_PH.png",
   "style": "LOW_TECH",
   "viewOffset": 0,
   "weaponSlots": [

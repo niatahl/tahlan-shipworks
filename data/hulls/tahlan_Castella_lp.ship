@@ -469,7 +469,7 @@
         123.5,
         -0
       ],
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "size": "LARGE",
       "type": "MISSILE"
     }

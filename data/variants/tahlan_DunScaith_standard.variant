@@ -1,0 +1,80 @@
+{
+    "displayName": "Raider",
+    "fluxCapacitors": 20,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith",
+    "hullMods": [
+        "heavyarmor",
+        "dedicated_targeting_core",
+        "unstable_injector"
+    ],
+	"goalVariant": true,
+    "permaMods": [],
+    "variantId": "tahlan_DunScaith_standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0029": "salamanderpod",
+                "WS0030": "salamanderpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "sabotpod",
+                "WS0023": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "hellbore",
+                "WS0021": "hellbore",
+                "WS0024": "mark9",
+                "WS0025": "mark9"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0026": "devastator",
+                "WS0027": "devastator",
+                "WS0028": "devastator"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "vulcan",
+                "WS0002": "vulcan",
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "dualflak",
+                "WS0019": "dualflak"
+            }
+        }
+    ],
+    "wings": [
+        "piranha_wing",
+        "piranha_wing"
+    ]
+}

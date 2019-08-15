@@ -90,7 +90,9 @@
     11.5
   ],
   "builtInMods": [
-    "tahlan_knightrefit"
+    "tahlan_knightrefit",
+    "tahlan_temporaltraveldrive",
+    "tahlan_advballistics"
   ],
   "builtInWeapons": {
     "WS0021": "tahlan_castigator_nc_halo"
@@ -276,6 +278,28 @@
       ],
       "style": "TAHLAN_NC_ENGINE",
       "width": 15
+    },
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 47.5,
+      "location": [
+        -84,
+        61.5
+      ],
+      "style": "TAHLAN_NC_ENGINE",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 47.5,
+      "location": [
+        -84,
+        -61.5
+      ],
+      "style": "TAHLAN_NC_ENGINE",
+      "width": 9
     }
   ],
   "height": 292,
@@ -288,7 +312,7 @@
   ],
   "shieldRadius": 178,
   "spriteName": "graphics/tahlan/ships/oddities/tahlan_Castigator_nc.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {
@@ -296,24 +320,24 @@
       "arc": 97,
       "id": "WS0001",
       "locations": [
-        30,
+        31,
         -29
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 20.5,
       "arc": 97,
       "id": "WS0002",
       "locations": [
-        30,
+        31,
         29
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 31.5,
@@ -349,7 +373,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": -11.5,
@@ -361,7 +385,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 135,
@@ -373,7 +397,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": -135,
@@ -385,7 +409,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 68.5,
@@ -397,7 +421,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": -68.5,
@@ -409,7 +433,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 180,
@@ -421,7 +445,7 @@
       ],
       "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 0,
@@ -433,11 +457,11 @@
       ],
       "mount": "HARDPOINT",
       "size": "LARGE",
-      "type": "HYBRID"
+      "type": "UNIVERSAL"
     },
     {
-      "angle": 0,
-      "arc": 5,
+      "angle": -0,
+      "arc": 8,
       "id": "WS0013",
       "locations": [
         -15,
@@ -445,11 +469,11 @@
       ],
       "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "COMPOSITE"
     },
     {
-      "angle": -0,
-      "arc": 5,
+      "angle": 0,
+      "arc": 8,
       "id": "WS0014",
       "locations": [
         -15,
@@ -457,7 +481,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "COMPOSITE"
     },
     {
       "angle": 0,

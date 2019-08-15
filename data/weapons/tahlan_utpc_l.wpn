@@ -1,0 +1,51 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_UnstableTPCScript",
+  "fireSoundTwo": "thermal_pulse_cannon_fire",
+  "glowColor": [
+    255,
+    100,
+    100,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_utpc_glow.png",
+  "hardpointOffsets": [
+    15,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_utpc_l",
+  "interruptibleBurst": true,
+  "muzzleFlashSpec": {
+    "length": 50,
+    "particleColor": [
+      255,
+      80,
+      40,
+      255
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 15,
+    "particleSizeRange": 20,
+    "spread": 5
+  },
+  "projectileSpecId": "tahlan_utpc_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    25,
+    0
+  ],
+  "turretSprite": "graphics/weapons/onslaught_thermal_turret_base.png",
+  "type": "ENERGY"
+}

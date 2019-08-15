@@ -9,18 +9,18 @@
   "coreColor": [
     255,
     255,
-    255,
+    245,
     255
   ],
   "fringeColor": [
     255,
-    0,
+    30,
     0,
     205
   ],
   "glowColor": [
     255,
-    0,
+    30,
     0,
     200
   ],
@@ -41,7 +41,7 @@
   "textureScrollSpeed": 512,
   #"textureType": SMOOTH,
   "textureType": [
-    "graphics/tahlan/fx/tahlan_eradicator_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_titanomachy_beam_fringe.png",
     "graphics/tahlan/fx/tahlan_shiva_beam_core.png"
   ],
   "fringeScrollSpeedMult":-1,
@@ -55,5 +55,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_eradicator_turret_base.png",
   "type": "ENERGY",
-  "width": 18
+  "width": 22
 }

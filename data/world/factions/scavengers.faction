@@ -7,6 +7,7 @@
 	"hullFrequency":{
 		"tags":{
 			"tahlan_knights":0.1,
+			"tahlan_Hresvelgr":0.5,
 		},
 		#"hulls":{},
 	},
@@ -21,6 +22,7 @@
 			"tahlan_Castella",
 			"tahlan_Kodai",
 			"tahlan_Nessie",
+			"tahlan_Hresvelgr",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
