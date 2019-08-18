@@ -216,7 +216,7 @@
         20
       ],
       "mount": "TURRET",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY"
     },
     {
@@ -228,7 +228,7 @@
         -20
       ],
       "mount": "TURRET",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY"
     },
     {
@@ -240,7 +240,7 @@
         68
       ],
       "mount": "TURRET",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY"
     },
     {
@@ -252,7 +252,7 @@
         -68
       ],
       "mount": "TURRET",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY"
     },
     {

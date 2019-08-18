@@ -1,0 +1,79 @@
+{
+    "displayName": "Kassadari",
+    "fluxCapacitors": 4,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith_gh",
+    "hullMods": [
+        "targetingunit",
+        "missleracks"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_DunScaith_gh_boss",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0029": "tahlan_pendragon",
+                "WS0030": "tahlan_pendragon"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0026": "locust",
+                "WS0027": "locust"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "tahlan_hekaton",
+                "WS0023": "tahlan_hekaton"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "tahlan_styrix",
+                "WS0021": "tahlan_styrix",
+                "WS0024": "tahlan_armiger",
+                "WS0025": "tahlan_armiger"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_volkite",
+                "WS0002": "tahlan_volkite",
+                "WS0003": "tahlan_volkite",
+                "WS0004": "tahlan_volkite",
+                "WS0005": "tahlan_volkite",
+                "WS0006": "tahlan_volkite",
+                "WS0007": "tahlan_teltrite",
+                "WS0008": "tahlan_teltrite",
+                "WS0009": "tahlan_teltrite",
+                "WS0010": "tahlan_teltrite",
+                "WS0011": "tahlan_teltrite",
+                "WS0012": "tahlan_teltrite",
+                "WS0013": "tahlan_teltrite",
+                "WS0014": "tahlan_teltrite",
+                "WS0015": "tahlan_teltrite",
+                "WS0016": "tahlan_teltrite",
+                "WS0017": "tahlan_teltrite",
+                "WS0018": "tahlan_dualvolkite",
+                "WS0019": "tahlan_dualvolkite",
+                "WS0028": "devastator"
+            }
+        }
+    ],
+    "wings": [
+        "tahlan_Acastus_fighter_wing",
+        "tahlan_Acastus_fighter_wing"
+    ]
+}

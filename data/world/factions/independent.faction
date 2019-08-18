@@ -10,6 +10,7 @@
 		},
 		"hulls":{
 			"tahlan_vendetta_gh":0.1,
+			"tahlan_Glint":0.5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -25,6 +26,7 @@
 			"tahlan_Kodai",
 			"tahlan_Ingress",
 			"tahlan_Defiance",
+			"tahlan_Glint",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

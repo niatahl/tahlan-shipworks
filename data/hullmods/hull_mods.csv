@@ -24,5 +24,8 @@ The high complexity of this technology increases monthly maintenance cost by %s.
 Aftermarket Phase Coils,tahlan_aftermarketphasecoils,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AftermarketPhasecoils,"This ship is equipped with a set of salvaged phase coils and able to project a low-intensity phase field at all times, negating its sensor profile entirely. 
 
 As the ship wasn't designed for phase coils however, strong interference with its targeting systems severely limits the range of its weapons past %s and maintenance costs are %s.",Reduces sensor profile and limits range.,graphics/hullmods/phase_field.png
+Specialized Energy Mounts,tahlan_heavyenergy,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyEnergy,"Equipped with specialized energy mounts, the OP cost of large energy weapons is reduced by %s.
+
+Furthermore, a modified flux grid allows for the overcharging of projectile-based energy weapons, increasing their damage by %s. This comes at the cost of a %s reduced rate of fire for all kinds of energy weapons.",Boosts energy weapon damage at cost of firerate.,
 ,,,,,,,,,,,,,,,,,,
 MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_MusicBox,(Hidden) Plays theme music in combat.,(Hidden) Plays theme music in combat.,graphics/tahlan/hullmods/tahlan_knightrefit.png

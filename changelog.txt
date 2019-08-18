@@ -1,12 +1,18 @@
+0.4.6a
+Bugfixing:
+- Fixed Sophrosyne-related crash
+
+
 0.4.6
 Additions:
 - Titanomachy beam weapon
 - Efreet barrage cannon
 - Dun Scaith class pirate dreadnought
 - Hresvelgr fleet carrier
+- Glint fast cruiser
 - Some content for Vayra's sector:
 	- a number of special bounties featuring unique ships
-	- Unique Castigator derivate that may spawn with the space communists
+	- some ships for colony factions
 
 Changes:
 - Overhauled all Castella sprites and adjusted all 3 variants

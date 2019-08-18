@@ -206,7 +206,7 @@
     0
   ],
   "shieldRadius": 254.5,
-  "spriteName": "graphics/tahlan/ships/oddities/tahlan_Hresvelgr.png",
+  "spriteName": "graphics/tahlan/ships/oddities/tahlan_Hresvelgr_X.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

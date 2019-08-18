@@ -40,6 +40,9 @@
 		"tahlan_Castigator_P_lancer":3,
 		"tahlan_Castigator_P_overdriven":2,
 		"tahlan_Sophrosyne_prophet":10,
+		"tahlan_Glint_strike":5,
+		"tahlan_Glint_support":3,
+		"tahlan_Glint_overdriven":3,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
@@ -80,6 +83,14 @@
 			"tahlan_Ingress_standard":10,
 			"tahlan_Timeless_standard":10,
 			"tahlan_Timeless_retro_standard":10,
+			"tahlan_Hresvelgr_standard":5,
+			"tahlan_Hresvelgr_combat":3,
+			"tahlan_Hresvelgr_outdated":2,
+			"tahlan_Hresvelgr_p_barrage":3,
+			"tahlan_Hresvelgr_p_strike":3,
+			"tahlan_Hresvelgr_p_standard":4,
+			"tahlan_Hresvelgr_X_beamer":5,
+			"tahlan_Hresvelgr_X_missile":5,
 	},
 
 	# phase ships

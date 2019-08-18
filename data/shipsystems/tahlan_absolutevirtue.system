@@ -1,6 +1,6 @@
 {
 	"id":"tahlan_absolutevirtue",
-	"type":"STAT_MOD",
+	"type":"SHIELD_MOD",
 	"aiType":"FORTRESS_SHIELD",
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_AbsoluteVirtueStats",

@@ -1,0 +1,68 @@
+{
+    "displayName": "Outdated",
+    "fluxCapacitors": 8,
+    "fluxVents": 50,
+    "hullId": "tahlan_Hresvelgr",
+    "hullMods": ["expanded_deck_crew"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Hresvelgr_outdated",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "arbalest",
+                "WS0004": "arbalest",
+                "WS0005": "arbalest",
+                "WS0006": "arbalest"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "harpoonpod",
+                "WS0010": "harpoonpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0017": "railgun",
+                "WS0018": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "dualflak",
+                "WS0002": "dualflak"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing",
+        "piranha_wing"
+    ]
+}

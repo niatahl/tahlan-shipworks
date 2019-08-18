@@ -1,0 +1,53 @@
+{
+    "displayName": "Custom",
+    "fluxCapacitors": 15,
+    "fluxVents": 30,
+    "hullId": "tahlan_Castigator_NC",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Castigator_NC_custom",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "tahlan_titanomachy"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0013": "tahlan_pendragon",
+                "WS0014": "tahlan_pendragon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_magaera",
+                "WS0004": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_gallant",
+                "WS0002": "tahlan_gallant"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "tahlan_teltrite",
+                "WS0006": "tahlan_teltrite",
+                "WS0007": "tahlan_teltrite",
+                "WS0008": "tahlan_teltrite",
+                "WS0009": "tahlan_teltrite",
+                "WS0010": "tahlan_teltrite"
+            }
+        }
+    ]
+}

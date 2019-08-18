@@ -1,0 +1,31 @@
+{
+    "baseHullId":"tahlan_Glint",
+    "skinHullId":"tahlan_Glint_b",
+    "hullName":"Yari (B)",
+    "descriptionId":"tahlan_Glint",
+    "descriptionPrefix":"A custom variant of the Yari-class cruiser, commonly used by bounty hunters for its unrivaled ability to take out key targets swiftly.",
+    "tags":[],
+    #"tech":"High Tech",
+	"ordnancePoints":160,
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Glint_b.png",
+    "baseValueMult":1.2,
+    "removeWeaponSlots":[],         # ids
+    "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[],         # hullmod ids
+    "removeBuiltInWeapons":[],      # weapon slot ids
+    "builtInMods":[],
+    "weaponSlotChanges":{
+		"WS0001":{
+      		"type": "SYNERGY",
+    	},
+    	"WS0002":{
+      		"type": "SYNERGY",
+    	},
+		"WS0009":{
+      		"type": "ENERGY",
+    	},
+		"WS0010":{
+      		"type": "ENERGY",
+    	},
+    },
+}
