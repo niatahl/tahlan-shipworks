@@ -14,7 +14,7 @@ public class tahlan_DivineMightStats extends BaseShipSystemScript {
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
-        float bonusPercent = DAMAGE_BONUS_PERCENT * effectLevel;
+        float bonusPercent = 1f + (DAMAGE_BONUS_PERCENT - 1f) * effectLevel;
 
         stats.getEnergyWeaponDamageMult().modifyMult(id, bonusPercent);
         stats.getBallisticWeaponDamageMult().modifyMult(id, bonusPercent);

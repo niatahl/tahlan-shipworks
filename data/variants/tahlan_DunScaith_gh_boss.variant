@@ -1,6 +1,6 @@
 {
     "displayName": "Kassadari",
-    "fluxCapacitors": 4,
+    "fluxCapacitors": 0,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_gh",
     "hullMods": [
@@ -41,8 +41,8 @@
             "weapons": {
                 "WS0020": "tahlan_styrix",
                 "WS0021": "tahlan_styrix",
-                "WS0024": "tahlan_armiger",
-                "WS0025": "tahlan_armiger"
+                "WS0024": "tahlan_gardas",
+                "WS0025": "tahlan_gardas"
             }
         },
         {

@@ -1,6 +1,6 @@
 {
   "animationType": "GLOW_AND_FLASH",
-  "barrelMode": "ALTERNATING",
+  "barrelMode": "LINKED",
   "fireSoundTwo": "tahlan_magaera_fire",
   "glowColor": [255,140,80,155],
   "hardpointAngleOffsets": [

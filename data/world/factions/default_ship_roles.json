@@ -21,6 +21,13 @@
 		"tahlan_Haelequin_overdriven":2,
 		"tahlan_Haelequin_standard":5,
 		"tahlan_Torii_standard":10,
+		"tahlan_Bronco_overdriven":3,
+		"tahlan_Bronco_support":4,
+		"tahlan_Bronco_strike":4,
+		"tahlan_Bronco_p_sniper":3,
+		"tahlan_Bronco_p_overdriven":4,
+		"tahlan_Bronco_p_brawler":4,
+		"tahlan_Bento_lp_pather":10,
 	},
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
@@ -43,16 +50,22 @@
 		"tahlan_Glint_strike":5,
 		"tahlan_Glint_support":3,
 		"tahlan_Glint_overdriven":3,
+		"tahlan_Castigator_xiv_elite":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
 		"tahlan_vendetta_gh_knight":10,
-		"tahlan_onslaught_gh_knight":10,
+		"tahlan_onslaught_gh_knight":7,
+		"tahlan_onslaught_gh_overdriven":3,
 		"tahlan_Castella_pirates_standard":10,
 		"tahlan_DunScaith_standard":5,
 		"tahlan_DunScaith_barrage":3,
 		"tahlan_DunScaith_elite":2,
 		"tahlan_DunScaith_gh_crusader":10,
+		"tahlan_Nibelung_brawler":4,
+		"tahlan_Nibelung_elite":3,
+		"tahlan_Nibelung_support":4,
+		"tahlan_Nibelung_n_boss":10,
 	},
 	
 	
@@ -79,7 +92,8 @@
 	"carrierLarge":{
 			"tahlan_Castella_standard":7,
 			"tahlan_Castella_elite":3,
-			"tahlan_legion_gh_knight":10,
+			"tahlan_legion_gh_knight":5,
+			"tahlan_legion_gh_combat":5,
 			"tahlan_Ingress_standard":10,
 			"tahlan_Timeless_standard":10,
 			"tahlan_Timeless_retro_standard":10,
@@ -91,6 +105,9 @@
 			"tahlan_Hresvelgr_p_standard":4,
 			"tahlan_Hresvelgr_X_beamer":5,
 			"tahlan_Hresvelgr_X_missile":5,
+			"tahlan_Hresvelgr_rg_standard":5,
+			"tahlan_Hresvelgr_rg_combat":3,
+			"tahlan_Hresvelgr_rg_outdated":2,
 	},
 
 	# phase ships

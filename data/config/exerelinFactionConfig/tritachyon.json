@@ -2,7 +2,10 @@
 	"startShipsSolo":[
 		["tahlan_Yosei_standard"],
 	],
+	"startShipsCombatSmall":[
+		["tahlan_Haelequin_standard","tahlan_Skola_standard","tahlan_Renki_standard"],
+	],
 	"startShipsSuper":[
 		["tahlan_Yukikaze_lancer", "tahlan_Korikaze_ion", "tahlan_Korikaze_ion"],
-	];
+	],
 }

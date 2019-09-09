@@ -7,6 +7,7 @@
 	"hullFrequency":{
 		"tags":{
 			"tahlan_knights":0.1,
+			"tahlan_Niebelung":0.4,
 		},
 		"hulls":{
 			"tahlan_vendetta_gh":0.1,
@@ -27,6 +28,7 @@
 			"tahlan_Ingress",
 			"tahlan_Defiance",
 			"tahlan_Glint",
+			"tahlan_Nibelung",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

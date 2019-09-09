@@ -80,7 +80,8 @@
     242
   ],
   "builtInMods": [
-	"hbi"
+	"tahlan_lirefit",
+	"hbi",
   ],
   "collisionRadius": 292.5,
   "engineSlots": [

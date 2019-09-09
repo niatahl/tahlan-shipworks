@@ -1,0 +1,9 @@
+{	
+	"startShipsSuper":[
+	  ["tahlan_Glint_b_boss"]
+	],
+	
+	"startShipsGrandFleet":[
+	  ["tahlan_Nibelung_elite","tahlan_Bungalow_elite","tahlan_Bronco_support","tahlan_Bento_standard","lasher_Standard","lasher_Standard","buffalo_d_Standard","dram_Light"]
+	]
+}

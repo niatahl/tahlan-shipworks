@@ -1,0 +1,33 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 0,
+    "fluxVents": 16,
+    "hullId": "tahlan_Bronco_p",
+    "hullMods": ["safetyoverrides"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Bronco_p_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "chaingun"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "reaper",
+                "WS0005": "reaper"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavymg",
+                "WS0002": "heavymg"
+            }
+        }
+    ]
+}

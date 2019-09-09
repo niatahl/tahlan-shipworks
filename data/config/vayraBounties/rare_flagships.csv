@@ -1,0 +1,18 @@
+bounty,variant,factions,weight,source
+tahlan_rf_onslaught_gh,tahlan_onslaught_gh_knight,independent,0.1,purchase of
+tahlan_rf_legion_gh,tahlan_legion_gh_combat,hegemony,0.1,recent conversion of their flagship into
+tahlan_rf_castigator_gh,tahlan_castigator_knight_errant,sindrian_diktat,0.1,repossession of
+tahlan_rf_dominator_gh,tahlan_dominator_gh_knight,persean_league,0.1,cruising around in low orbit above Mayasura to show off like a snob in
+tahlan_rf_enforcer_gh,tahlan_enforcer_gh_knight,hegemony,0.1,crackdowns on pirate activity in
+tahlan_rf_monitor_gh,tahlan_monitor_gh_knight,independent,0.2,escaping planetary authorities in
+tahlan_rf_vendetta_gh,tahlan_vendetta_gh_knight,pirates,0.1,"a heinous raid on a high-end seller, stealing"
+,,,,
+# NOTES,,,,
+# bounty : line ID. Must be unique across all mods. I recommend a prefix,,,,
+# variant : ID of the ship variant to use. Will not be autofitted but will have Reinforced Bulkheads added to it for spice,,,,
+# factions : faction IDs the flagship will spawn for. Factions have to be regular bounty targets i.e. no knights_of_ludd rare flagships sorry (just set them to Luddic Church),,,,
+# weight : spawn chance of the flagship when a bounty for one of the allowed factions is selected to receive a rare flagship (default 15% chance),,,,
+# NOTE: spawn weight is further modified by the difference between the flagship's FP cost and the FP cost of the normal flagship the bounty would have had,,,,
+# i.e. if you put a 1000FP variant in here with a spawn weight of 200 it might be closer to 0.002 in practice (assuming there are other rare flagship options for that faction),,,,
+# also a null rare flagship at weight 1.0 is always added to the list to reduce incidence of extremely out-of-FP-band rare flagships,,,,
+# source : string that will show in the bounty intel panel. Be creative,,,,

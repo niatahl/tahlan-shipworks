@@ -1,7 +1,7 @@
 {
     "displayName": "Kassadari",
     "fluxCapacitors": 0,
-    "fluxVents": 13,
+    "fluxVents": 21,
     "hullId": "tahlan_legion_gh",
     "hullMods": ["targetingunit"],
     "permaMods": [],
@@ -20,28 +20,34 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS 004": "tahlan_hekaton",
-                "WS 005": "tahlan_hekaton",
-                "WS 007": "tahlan_hekaton"
+                "WS 004": "tahlan_pendragon",
+                "WS 005": "tahlan_pendragon",
+                "WS 007": "tahlan_pendragon"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS 002": "tahlan_atrapos",
-                "WS 003": "tahlan_atrapos"
+                "WS 002": "tahlan_porph",
+                "WS 003": "tahlan_porph"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS 018": "tahlan_volkite",
-                "WS 019": "tahlan_volkite",
-                "WS 020": "tahlan_volkite",
-                "WS 021": "tahlan_volkite"
+                "WS 014": "tahlan_teltrite",
+                "WS 015": "tahlan_teltrite",
+                "WS 018": "tahlan_teltrite",
+                "WS 020": "tahlan_teltrite",
+                "WS 021": "tahlan_teltrite"
             }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 019": "tahlan_volkite"}
         }
     ],
     "wings": [

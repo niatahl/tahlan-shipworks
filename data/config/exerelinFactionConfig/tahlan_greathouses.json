@@ -6,8 +6,8 @@
 	"spawnAsFactionId":"player",	# transfer to this faction at start (after new game time pass)
     "ngcTooltip":"Start as a Knight-errant of Kassadar",
 
-	"startShipsCombatMedium":[
-		["tahlan_Kodai_standard", "tahlan_Bento_standard", "centurion_Starting"],
+	"startShipsCombatSmall":[
+		["tahlan_enforcer_gh_knight", "tahlan_Exa_Pico_standard"],
 	],
     "startShipsCombatLarge":[
 		["tahlan_Castigator_knight_errant", "tahlan_monitor_gh_knight"],
@@ -16,7 +16,9 @@
 		["tahlan_Izanami_prototype"],
 		["tahlan_Vale_crusader"],
 	],
-	
+	"startShipsGrandFleet":[
+		["tahlan_legion_gh_combat", "tahlan_enforcer_gh_knight", "tahlan_monitor_gh_knight", "buffalo_standard"],
+	],	
 	"startSpecialItems":[
         [["tahlan_knight_package",""]],
     ],

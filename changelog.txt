@@ -1,9 +1,73 @@
-0.4.6a
+0.3.7b
+Changes:
+- Buffed the Edengate a bunch
+
+Bugfixes:
+- Fixed various small errors in some ship systems
+
+
+0.3.7a
+Changes:
+- Unified the hullmods of all Legio Infernalis ships
+
+Balancing:
+- Reduced DP of Hresvelgr variants to 45
+
+Bugfixes:
+- Fixed bug with Unique Nibelung bounty
+
+
+0.3.7
+Additions:
+- Bronco-class missile destroyer
+- Nibelung-class battleship
+- Some new Nex start options
+- Valacor heavy fighter
+- The return of the Bento (LP)
+
+Vayra's Sector stuff:
+- Boss-variant Niebelung with custom bounty
+- Added some rare flagship options
+
+Balancing:
+- Lowered Efreet DPS slightly
+- Lowered Efreet range from 1200 to 1100
+
+Fixes:
+- Fixed wrong scaling math on some ship systems
+
+
+0.3.6c
+Balancing:
+- Yari adjustments
+	- lowered top speed from 90 to 70
+	- lowered dissipation from 800 to 700
+	- Increased shield upkeep
+	- Lowered ppt from 480s to 420s
+	
+
+0.3.6b
+Additions:
+- Gardas Hyperrail Cannon
+
+Changes:
+- Reduced Doominator dissipation to 500
+- Increased Doominator flux cap to 12000
+
+Balancing:
+- Increased Styrix range to 1000
+- Lowered duration of Dun Scaith's system from 4s to 3s
+- Changed Hresvelgr ship system to Defensive Formation (reduces fighters' damage taken by 50% while active)
+- Removed ATC from Hresvelgr
+
+
+
+0.3.6a
 Bugfixing:
 - Fixed Sophrosyne-related crash
 
 
-0.4.6
+0.3.6
 Additions:
 - Titanomachy beam weapon
 - Efreet barrage cannon

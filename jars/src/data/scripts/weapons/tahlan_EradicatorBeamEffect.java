@@ -19,7 +19,6 @@ public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 			wasZero = beam.getDamage().getDpsDuration() <= 0;
 			fireInterval.advance(dur);
 			if (fireInterval.intervalElapsed()) {
-				ShipAPI ship = (ShipAPI) target;
 				boolean hitShield = target.getShield() != null && target.getShield().isWithinArc(beam.getTo());
 				//piercedShield = true;
 				

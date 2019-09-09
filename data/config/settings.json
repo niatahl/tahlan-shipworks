@@ -7,6 +7,7 @@
 	"designTypeColors":{
             "Unknown":[255,255,255,255],
             "The Great Houses":[160,150,140,255],
+			"Legio Infernalis":[255,0,0,255],
     },
 	"graphics":{
 		"fx":{

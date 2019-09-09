@@ -1,0 +1,71 @@
+{
+    "displayName": "Antiquity",
+    "fluxCapacitors": 10,
+    "fluxVents": 50,
+    "hullId": "tahlan_Nibelung_n",
+    "hullMods": [
+        "targetingunit",
+        "fluxbreakers",
+        "fluxdistributor"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Nibelung_n_boss",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0024": "tahlan_dragonslayer",
+                "WS0025": "tahlan_dragonslayer"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "harpoonpod",
+                "WS0023": "harpoonpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_fafnir",
+                "WS0002": "tahlan_fafnir",
+                "WS0003": "tahlan_fafnir"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "lightneedler",
+                "WS0013": "lightneedler",
+                "WS0014": "lightneedler",
+                "WS0015": "lightneedler",
+                "WS0016": "lightneedler",
+                "WS0017": "lightneedler",
+                "WS0018": "lightneedler",
+                "WS0019": "lightneedler",
+                "WS0020": "hveldriver",
+                "WS0021": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "vulcan",
+                "WS0005": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan"
+            }
+        }
+    ]
+}

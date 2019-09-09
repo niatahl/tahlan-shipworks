@@ -1,0 +1,70 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 26,
+    "fluxVents": 50,
+    "hullId": "tahlan_onslaught_gh",
+    "hullMods": [
+        "targetingunit",
+        "tahlan_forcedoverdrive",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_onslaught_gh_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 016": "tahlan_utpc_l",
+                "WS 017": "tahlan_utpc_l"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 021": "tahlan_pendragon",
+                "WS 022": "tahlan_pendragon",
+                "WS 023": "tahlan_pendragon",
+                "WS 024": "tahlan_pendragon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 018": "tahlan_armiger",
+                "WS 019": "tahlan_gardas",
+                "WS 020": "tahlan_armiger"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "tahlan_magaera",
+                "WS 003": "tahlan_magaera",
+                "WS 007": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "tahlan_teltrite",
+                "WS 004": "tahlan_teltrite",
+                "WS 005": "tahlan_teltrite",
+                "WS 006": "tahlan_teltrite",
+                "WS 008": "tahlan_teltrite",
+                "WS 009": "tahlan_teltrite",
+                "WS 010": "tahlan_dualvolkite",
+                "WS 011": "tahlan_dualvolkite",
+                "WS 012": "tahlan_dualvolkite",
+                "WS 013": "tahlan_dualvolkite",
+                "WS 014": "tahlan_teltrite",
+                "WS 015": "tahlan_teltrite"
+            }
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 package data.scripts.shipsystems;
 
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 
 public class tahlan_AssaultLockdownStats extends BaseShipSystemScript {
@@ -9,12 +10,13 @@ public class tahlan_AssaultLockdownStats extends BaseShipSystemScript {
     private static final float ROF_MULT = 1.25f;
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
-        stats.getMaxSpeed().modifyMult(id,HANDLING_MULT*effectLevel);
-        stats.getAcceleration().modifyMult(id,HANDLING_MULT*effectLevel);
-        stats.getDeceleration().modifyMult(id,HANDLING_MULT*effectLevel);
-        stats.getBallisticRoFMult().modifyMult(id,ROF_MULT*effectLevel);
 
-        stats.getEntity().getVelocity().scale(HANDLING_MULT*effectLevel);
+        stats.getMaxSpeed().modifyMult(id,HANDLING_MULT);
+        stats.getAcceleration().modifyMult(id,HANDLING_MULT);
+        stats.getDeceleration().modifyMult(id,HANDLING_MULT);
+        stats.getBallisticRoFMult().modifyMult(id,ROF_MULT);
+
+        stats.getEntity().getVelocity().scale(HANDLING_MULT);
     }
 
 

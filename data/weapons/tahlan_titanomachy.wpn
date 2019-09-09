@@ -42,6 +42,7 @@
   "size": "LARGE",
   "specClass": "beam",
   "textureScrollSpeed": 300,
+  "fringeScrollSpeedMult":1.5,
   "textureType": [
     "graphics/tahlan/fx/tahlan_titanomachy_beam_fringe.png",
     "graphics/tahlan/fx/tahlan_shiva_beam_core.png"

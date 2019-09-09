@@ -8,6 +8,7 @@
 		"tags":{
 			"tahlan_knights":0.1,
 			"tahlan_Hresvelgr":0.5,
+			"tahlan_Niebelung":0.5,
 		},
 		#"hulls":{},
 	},
@@ -23,6 +24,7 @@
 			"tahlan_Kodai",
 			"tahlan_Nessie",
 			"tahlan_Hresvelgr",
+			"tahlan_Nibelung"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

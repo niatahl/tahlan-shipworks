@@ -1,13 +1,15 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,icon
 Assault Burn,tahlan_stormdrive,1,,,,,,,,,0.5,1,0.5,5,,,,,,,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
-Impes Infernalis,tahlan_infernalcharge,1,,,,,,,,,0.5,4,0.5,15,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
+Impes Infernalis,tahlan_infernalcharge,1,,,,,,,,,0.5,3,0.5,15,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
 Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,10,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Divine Might,tahlan_divinemight,,,,,,,,3,0.075,0.5,1,0.5,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Divine Might,tahlan_divinemight,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Celestial Might,tahlan_divinemight_nc,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Absolute Virtue,tahlan_absolutevirtue,,,,,,,,,,0.5,3,0.5,12,,,,,TRUE,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Errant Drive,tahlan_errantdrive,,,,0.1,,,,,,0.5,0.5,0.1,7,,,,TRUE,,TRUE,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
 Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,2,,2,5,TRUE,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,TRUE,,,,,,TRUE,TRUE,,,graphics/icons/hullsys/fortress_shield.png
 Navigation Feed,tahlan_navigationfeed,,,,,,0.3,,,,0.5,20,0.5,10,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Defensive Formations,tahlan_defformation,,,,,,0.2,,,,0.5,10,0.5,5,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Temporal Coordinator,tahlan_temporalcoordinator,,,,,,0.1,,,,0.5,2,0.5,5,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Periodic Breaker,tahlan_periodicbreaker,,,,,,0.40,,,,3,6,1,18,,,TRUE,TRUE,,,,,TRUE,TRUE,graphics/icons/hullsys/temporal_shell.png
 Chrono Rupture,tahlan_temporaldrift,,,,,,0.1,,,,0.2,0.2,5,10,,,,TRUE,,,,,,TRUE,graphics/icons/hullsys/temporal_shell.png
@@ -17,4 +19,4 @@ Raider Jets,tahlan_raiderjets,,,,,,,,,,1,2,4,5,,,,,,,,,,,graphics/icons/hullsys/
 Weaponry Overdrive,tahlan_weaponsoverdrive,1,,,,,,,3,0.05,0.25,3,0.25,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Active ECCM,tahlan_activeeccm,,,,,,0.2,,,,0.5,10,0.5,2,TRUE,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Heavy Phase Cloak,tahlan_heavyphase,,,,,,,,,,0.5,,0.5,2,TRUE,,TRUE,TRUE,TRUE,,,,TRUE,,graphics/icons/hullsys/phase_cloak.png
-,,,,,,,,,,,,,,,,,,,,,,,,,
+Auxiliary Thrusters,tahlan_auxthrusters,,,,,,,,3,0.05,0.5,3,0.5,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png

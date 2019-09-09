@@ -26,8 +26,6 @@
     -92,
     -47,
     -84,
-    -60,
-    -21,
     -72,
     0,
     -48,
@@ -44,12 +42,11 @@
   "builtInMods": [
     "tahlan_advballistics",
     "tahlan_knightrefit",
-	"tahlan_temporaltraveldrive"
+    "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS0001": "tahlan_dominator_gh_glow"
   },
-  "builtInWings": [],
   "center": [
     110,
     79

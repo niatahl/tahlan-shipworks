@@ -6,6 +6,11 @@
 		
 	},
 	
+	"tahlan_gaebolg_fire":
+	[
+		{"file":"sounds/sfx_wpn_energy/tachyon_lance_fire_01.ogg","pitch":0.6,"volume":2.0},
+	],
+	
 	"tahlan_efreet_fire":
 	[
 		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.6,"volume":0.95},
@@ -106,6 +111,13 @@
 			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.55,"volume":0.8},
         ],
     },
+	"tahlan_valdes_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.7,"volume":0.8},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.65,"volume":0.8},
+			{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":0.75,"volume":0.8},
+        ],
+    },
 	"tahlan_styrix_fire":{
         "sounds":[
            	{"file":"sounds/tahlan/weapons/tahlan_garuda_fire.ogg","pitch":1.05,"volume":1.3},
@@ -139,6 +151,11 @@
            	{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":1.05,"volume":1.3},
 			{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":1.00,"volume":1.3},
 			{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":0.95,"volume":1.3},
+        ],
+    },
+	"tahlan_gardas_fire":{
+        "sounds":[
+           	{"file":"sounds/sfx_wpn_guns/mjolnir_fire_06.ogg","pitch":0.8,"volume":1.1}
         ],
     },
 	"tahlan_armiger_fire":{

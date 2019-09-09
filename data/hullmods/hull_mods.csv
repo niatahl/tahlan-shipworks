@@ -27,5 +27,9 @@ As the ship wasn't designed for phase coils however, strong interference with it
 Specialized Energy Mounts,tahlan_heavyenergy,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyEnergy,"Equipped with specialized energy mounts, the OP cost of large energy weapons is reduced by %s.
 
 Furthermore, a modified flux grid allows for the overcharging of projectile-based energy weapons, increasing their damage by %s. This comes at the cost of a %s reduced rate of fire for all kinds of energy weapons.",Boosts energy weapon damage at cost of firerate.,
+Infernalis Drives,tahlan_lirefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_LIRefit,"An unusually sophisticated drive modification for pirates, the Infernalis Drives increase top speed by %s/%s/%s/%s su based on hull size and raise the ship's burn level by %s. Additionally these drives have been equipped with improved emission shielding, reducing the ship's sensor profile by %s.  
+
+Similarly to the common Unstable Injector modification, however, this refit comes at the cost of a %s reduction in weapon range and %s longer fighter replacement time.",Improved drives,graphics/tahlan/hullmods/tahlan_lirefit.png
+,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_MusicBox,(Hidden) Plays theme music in combat.,(Hidden) Plays theme music in combat.,graphics/tahlan/hullmods/tahlan_knightrefit.png

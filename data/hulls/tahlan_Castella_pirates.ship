@@ -74,7 +74,7 @@
     19
   ],
   "builtInMods": [
-    "unstable_injector"
+    "tahlan_lirefit",
   ],
   "builtInWeapons": {
     "WS0019": "tahlan_fray"

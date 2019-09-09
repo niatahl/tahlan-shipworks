@@ -1,0 +1,196 @@
+{
+  "bounds": [
+    -85,
+    -13.5,
+    -54,
+    -26,
+    -53.5,
+    -57.5,
+    2.5,
+    -61,
+    22,
+    -38.5,
+    71,
+    -32.5,
+    89.5,
+    -9.5,
+    89.5,
+    9.5,
+    71,
+    32.5,
+    22,
+    38.5,
+    2.5,
+    61,
+    -53.5,
+    57.5,
+    -54,
+    26,
+    -85,
+    13.5
+  ],
+  "builtInMods": [
+    "tahlan_lirefit",
+    "missleracks"
+  ],
+  "center": [
+    65,
+    93
+  ],
+  "collisionRadius": 118,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 35.5,
+      "location": [
+        -59.5,
+        30.5
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 35.5,
+      "location": [
+        -59.5,
+        -30.5
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 9
+    },
+    {
+      "angle": 180,
+      "contrailSize": 13,
+      "length": 44.5,
+      "location": [
+        -60.5,
+        39
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 13
+    },
+    {
+      "angle": -180,
+      "contrailSize": 13,
+      "length": 44.5,
+      "location": [
+        -60.5,
+        -39
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 13
+    },
+    {
+      "angle": 180,
+      "contrailSize": 10,
+      "length": 37,
+      "location": [
+        -61,
+        48
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 10
+    },
+    {
+      "angle": -180,
+      "contrailSize": 10,
+      "length": 37,
+      "location": [
+        -61,
+        -48
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 10
+    }
+  ],
+  "height": 186,
+  "hullId": "tahlan_Bronco_p",
+  "hullName": "Bronco (PI)",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 115,
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_Bronco_p.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0001",
+      "locations": [
+        82,
+        19
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0002",
+      "locations": [
+        82,
+        -19
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 260,
+      "id": "WS0003",
+      "locations": [
+        55,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 49,
+      "arc": 128,
+      "id": "WS0004",
+      "locations": [
+        24,
+        32
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -49,
+      "arc": 128,
+      "id": "WS0005",
+      "locations": [
+        24,
+        -32
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 180,
+      "arc": 262,
+      "id": "WS0006",
+      "locations": [
+        -47,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    }
+  ],
+  "width": 130
+}

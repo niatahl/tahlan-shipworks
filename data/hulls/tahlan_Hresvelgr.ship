@@ -77,9 +77,7 @@
     -56.5,
     -22.5
   ],
-  "builtInMods": [
-    "advancedcore"
-  ],
+  "builtInMods": [],
   "center": [
     237,
     103.5

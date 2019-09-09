@@ -1,9 +1,9 @@
 {
     "displayName": "Standard",
     "fluxCapacitors": 0,
-    "fluxVents": 36,
+    "fluxVents": 11,
     "hullId": "tahlan_Hresvelgr",
-    "hullMods": ["expanded_deck_crew"],
+    "hullMods": ["targetingunit","expanded_deck_crew"],
     "permaMods": [],
 	"goalVariant": true,
     "variantId": "tahlan_Hresvelgr_standard",

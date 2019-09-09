@@ -1,9 +1,9 @@
 {
     "displayName": "Outdated",
-    "fluxCapacitors": 8,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 34,
     "hullId": "tahlan_Hresvelgr",
-    "hullMods": ["expanded_deck_crew"],
+    "hullMods": ["targetingunit","expanded_deck_crew"],
     "permaMods": [],
 	"goalVariant": true,
     "variantId": "tahlan_Hresvelgr_outdated",

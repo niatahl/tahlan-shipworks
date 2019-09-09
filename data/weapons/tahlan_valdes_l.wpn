@@ -1,0 +1,45 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_valdes_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_valdes_l",
+  "muzzleFlashSpec": {
+    "length": 10,
+    "particleColor": [
+      120,
+      205,
+      255,
+      150
+    ],
+    "particleCount": 10,
+    "particleDuration": 0.5,
+    "particleSizeMin": 5,
+    "particleSizeRange": 10,
+    "spread": 0
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_valdes_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    9.5,
+    2
+  ],
+  "turretSprite": "graphics/tahlan/weapons/ftr/tahlan_Valdes_l.png",
+  "type": "ENERGY"
+}

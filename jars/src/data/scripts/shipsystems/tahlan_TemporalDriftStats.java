@@ -6,9 +6,9 @@ import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-//import data.scripts.tahlan_ModPlugin;
-//import org.dark.shaders.distortion.DistortionShader;
-//import org.dark.shaders.distortion.RippleDistortion;
+import data.scripts.tahlan_ModPlugin;
+import org.dark.shaders.distortion.DistortionShader;
+import org.dark.shaders.distortion.RippleDistortion;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -106,7 +106,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         }
 
         //time acceleration
-        float TimeMult = (float) Math.pow(MAX_TIME_MULT, effectLevel);
+        float TimeMult = 1f + (float) Math.pow(MAX_TIME_MULT-1f, effectLevel);
         stats.getTimeMult().modifyMult(id, TimeMult);
         if (player) {
             Global.getCombatEngine().getTimeMult().modifyMult(id, (1f / TimeMult));
@@ -115,12 +115,12 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         }
 
         //damage taken debuff
-        float ActualDamageMult = (float) Math.pow(DAMAGE_MULT, effectLevel);
+        float ActualDamageMult = 1f + (float) Math.pow(DAMAGE_MULT-1f, effectLevel);
         stats.getShieldDamageTakenMult().modifyMult(id, ActualDamageMult);
         stats.getArmorDamageTakenMult().modifyMult(id, ActualDamageMult);
 
         //dps debuff
-        float ActualDPSMult = (float) Math.pow(DPS_MULT, effectLevel);
+        float ActualDPSMult = 1f + (float) Math.pow(DPS_MULT-1f, effectLevel);
         stats.getEnergyRoFMult().modifyMult(id, ActualDPSMult);
         stats.getBallisticRoFMult().modifyMult(id, ActualDPSMult);
         stats.getBeamWeaponDamageMult().modifyMult(id, ActualDPSMult);
@@ -174,6 +174,10 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         stats.getArmorDamageTakenMult().unmodify(id);
         stats.getShieldDamageTakenMult().unmodify(id);
         stats.getHullDamageTakenMult().unmodify(id);
+
+        stats.getEnergyRoFMult().unmodify(id);
+        stats.getBallisticRoFMult().unmodify(id);
+        stats.getBeamWeaponDamageMult().unmodify(id);
 
     }
 

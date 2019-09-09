@@ -1,0 +1,59 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_FafnirMuzzleFlashScript",
+  "fireSoundTwo": "tahlan_armiger_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_fafnir_hp_recoil.png",
+  "hardpointOffsets": [
+    51,
+    8.5,
+    51,
+    0,
+    51,
+    -8.5
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_fafnir_hp_base.png",
+  "id": "tahlan_fafnir",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [120,205,255,150],
+    "particleCount": 20,
+    "particleDuration": 0.7,
+    "particleSizeMin": 15,
+    "particleSizeRange": 25,
+    "spread": 10
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_fafnir_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0,
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_fafnir_turret_recoil.png",
+  "turretOffsets": [
+    44.5,
+    8.5,
+    44.5,
+    0,
+    44.5,
+    -8.5
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_fafnir_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 10
+}

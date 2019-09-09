@@ -2,6 +2,8 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.combat.entities.SimpleEntity;
 import org.lwjgl.util.Color;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -12,6 +14,11 @@ public class tahlan_TitanomachyBeamEffect implements BeamEffectPlugin {
 	private boolean wasZero = true;
 	
 	public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
+
+		if (engine.isPaused()) {
+			return;
+		}
+
 		CombatEntityAPI target = beam.getDamageTarget();
 		if (target instanceof ShipAPI && beam.getBrightness() >= 1f) {
 			float dur = beam.getDamage().getDpsDuration();
@@ -41,7 +48,10 @@ public class tahlan_TitanomachyBeamEffect implements BeamEffectPlugin {
 		if (beam.getBrightness() >= 1) {
 		    effectInterval.advance(engine.getElapsedInLastFrame());
 		    if (effectInterval.intervalElapsed()){
-		        engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getSource(), DamageType.FRAGMENTATION,
+		        Vector2f point = MathUtils.getRandomPointInCircle(beam.getFrom(),50f);
+		        engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
+                        new SimpleEntity(point),
+                        DamageType.FRAGMENTATION,
                         0f,
                         0f,
                         75f,

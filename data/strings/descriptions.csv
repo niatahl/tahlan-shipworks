@@ -93,6 +93,18 @@ Preceding the adoption of the Legion as mainstay battlecarrier, the Hresvelgr sa
 
 Not many of these ships were present in the Persean Sector at the time of the collapse, but they have come back into use by various navies due to their lower production requirements and ability to project large and reliable fighter screens that had proven invaluable during the AI wars.",,,
 tahlan_Glint,SHIP,"The Glint is what some would classify as a showpiece, supposedly designed as a weapons demonstration platform for executives. With a sleek hull and luxurious interior, it is more akin to a private yacht than a purpose-built warship. While originally not intended for general production, the design found some popularity with private security forces and independent fleets for both its design and impressive dual large energy mounts, which brought it on the general market.",,,
+tahlan_Bronco,SHIP,"Originally designed as a light freighter, the Bronco saw little commercial success in its intended configuration. Pirates however commonly repurposed the ship into a missile destroyer and thus inspired a proper redesign of the hull, replacing its cargo bays with large missile storage units linked to a pair of nose-mounted missile hardpoints. A singular medium ballistic mounts for self-defense was also added and outfitted with a state-of-the-art ammo feeder system to give it some additional punch when forced into close quarters combat.",,,
+tahlan_Bronco_p,SHIP,"In an ironic twist of fate, this Bronco has been refitted once again by pirates. Ever the clear thinkers, these pirates took note of the excellent ammo feeder system and thusly converted the nose missile hardpoints into another pair of ballistic mounts to take full advantage. Not wanting to let the large missile storage space go to waste, they also modified the intended forward point defense turret mounts to accept missiles instead and finished off the conversion with some souped-up thrusters as they are ever so popular with the unlawful masses.
+
+Originally designed as a light freighter, the Bronco saw little commercial success in its intended configuration. Pirates however commonly repurposed the ship into a missile destroyer and thus inspired a proper redesign of the hull, replacing its cargo bays with large missile storage units linked to a pair of nose-mounted missile hardpoints. A singular medium ballistic mounts for self-defense was also added and outfitted with a state-of-the-art ammo feeder system to give it some additional punch when forced into close quarters combat.",,,
+tahlan_Nibelung,SHIP,"An ancient design, the Nibelung-class battleship predates even the venerable Onslaught and harkens back to a different school of ship design. Built around a powerful broadside to be employed as part of a massive battle line, the Nibelung fell out of favor with a shift in Domain military doctrine.
+
+While the design predates the age of modular weaponry and shields, its turret-focused design proved well-suited for the adaption of modular weapon mounts and a number of major refits kept the ship relevant for a great many years in planetary defense or paramilitary forces.",,,
+tahlan_Nibelung_n,SHIP,"A true rarity in the current day and age, this particular Nibelung must be centuries old, still carrying its original integrated main battery cannons. Having been only partially refitted to allow for the installation of modular weaponry on the secondary weapon emplacements, the refit is clearly a custom job performed by an individual who prized the massive singularity warhead batteries.
+
+An ancient design, the Nibelung-class battleship predates even the venerable Onslaught and harkens back to a different school of ship design. Built around a powerful broadside to be employed as part of a massive battle line, the Nibelung fell out of favor with a shift in Domain military doctrine.
+
+While the design predates the age of modular weaponry and shields, its turret-focused design proved well-suited for the adaption of modular weapon mounts and a number of major refits kept the ship relevant for a great many years in planetary defense or paramilitary forces.",,,
 ,,,,,
 ,,,,,
 #fighters,,,,,
@@ -100,6 +112,7 @@ tahlan_Acastus,SHIP,"A fast interceptor designed around a slightly modified volk
 tahlan_Caliver,SHIP,"Designed for the sole purpose of delivering a single Hekaton-class torpedo within strike distance, the Caliver is a relatively simple design by Kassadari standards. Of course, calling a fighter with integrated temporal circuit grid simple might be seen as a bit of an understatement by some.",,,
 tahlan_Exec_M,SHIP,A highly advanced drone equipped with a multi-beam emitter capable of targeting multiple incoming threats at once.,,,
 tahlan_Dikaiosyne,SHIP,"A unique point-defense drone, presumably based on a Kassadari design. Features a multi-beam emitter and temporal circuits.",,,
+tahlan_Valacor,SHIP,"An unusual heavy fighter of Kassadri design, equipped with a pair of large underslung ion pulse weapons. Their sturdiness makes them excellent harrassers that can maintain pressure and severely impact a target's combat capability.",,,
 ,,,,,
 ,,,,,
 #Great House refits,,,,,
@@ -185,6 +198,15 @@ tahlan_tpc_s,WEAPON,"A bulky energy weapon from an early epoch, the TPC is built
 Designed before modular energy weapons were universally trusted by Domain naval architects, this weapon was coded into the Onslaught's blueprint because no other hull of the time was large enough or had reactors capable of generating the requisite power.
 
 This particular variant was later adapted to the Castigator chassis and while it possesses the same firepower as those used on an Onslaught, the more limited power supply of the smaller Castigator limits its charge capacity.",Assault,,
+tahlan_gardas,WEAPON,"Like many Kassadari weapons, the Gardas is a design never truly intended for mass production. A heavily overengineered railcannon firing an armor-piercing round with a temporal fragmentation warhead, this massive weapon is highly effective against armor and causality itself, but lacks the technological refinement of a mainline combat weapon.
+",,,
+tahlan_dragonslayer,WEAPON,An integrated torpedo tube for hammer-class torpedos. Equipped with an autoloader for extended engagements.,,,
+tahlan_fafnir,WEAPON,"A massive artillery cannon predating the era of modular weaponry, the Fafnir was designed specifically for the Nibelung-class and is an early ancestor of the Mjolnir. The weapon fires a long-range shell with a singularity warhead that is effective against all targets and the fully integrated nature of the weapon makes it more flux-efficient than the contemporary Mjolnir. Few of these weapons can still be found as the majority of remaining Nibelung-class battleships have since been refitted to accomodate modular weaponry, yet a few captains out there held on to these mighty weapons.",,,
+tahlan_nuboko_l,WEAPON,An integrated missile battery firing 5 agile multi-purpose missiles for use against most targets.,,,
+tahlan_nuboko_r,WEAPON,An integrated missile battery firing 5 agile multi-purpose missiles for use against most targets.,,,
+tahlan_volkite_s,WEAPON,Fighter-grade Volkite variant,,,
+tahlan_valdes_r,WEAPON,Hypercharged ion blaster mounted on the Valacor. The high rate of fire makes it an excellent suppression weapon.,,,
+,,,,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,
@@ -204,4 +226,7 @@ tahlan_raiderjets,SHIP_SYSTEM,Grants a massive boost to maneuverability that dec
 tahlan_weaponsoverdrive,SHIP_SYSTEM,Increases damage of all non-missile weapons by 50%.,Weapons,Increases damage of all non-missile weapons by 50%.,
 tahlan_absolutevirtue,SHIP_SYSTEM,"Doubles dissipation and allows dissipations of hard flux with active shields at half the normal rate, halves, shield damage taken, boosts mobility and accelerates timeflow by 20%. Prevents firing and shield deactivation while active.",,,
 tahlan_divinemight,SHIP_SYSTEM,"Grants a short boost to ballistic and energy weapon damage, dissipation and mobility.",,,
+tahlan_divinemight_nc,SHIP_SYSTEM,"Grants a short boost to ballistic and energy weapon damage, dissipation and mobility while accelerating timeflow by 200%.",,,
 tahlan_infernalcharge,SHIP_SYSTEM,"Diverts energy from shields to boost engine power and charge forward. Prevents turning, but integrated damper field reduces armor and hull damage taken to 1/3 while active.",,,
+tahlan_defformation,SHIP_SYSTEM,"Orders fighters to fly in defensive formations, effectively halving all their damage taken for the duration.",,,
+tahlan_auxthrusters,SHIP_SYSTEM,Engages auxiliary thrusters to massively boost turn rate and slightly improve top speed.,,,

@@ -2,4 +2,10 @@
 	"startShipsCombatLarge":[
       ["tahlan_Nessie_elite", "gremlin_d_pirates_Strike", "buffalo_pirates_Standard"]
     ],
+	"startShipsSuper":[
+	  ["tahlan_Dominator_PH_striker"]
+	],
+	"startShipsGrandFleet":[
+	  ["tahlan_DunScaith_barrage","tahlan_Castigator_P_raider","tahlan_Bronco_p_brawler","tahlan_Bronco_p_brawler","buffalo_pirates_Standard"]
+	],
 }

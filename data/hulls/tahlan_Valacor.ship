@@ -1,0 +1,122 @@
+{
+  "bounds": [
+    1,
+    -10,
+    9,
+    -0,
+    1,
+    10,
+    -14.5,
+    -0
+  ],
+  "builtInMods": [
+    "no_weapon_flux","tahlan_knightrefit"
+  ],
+  "builtInWeapons": {
+    "WS0001": "tahlan_valdes_r",
+    "WS0002": "tahlan_valdes_l",
+    "WS0003": "tahlan_valacor_cover"
+  },
+  "center": [
+    11,
+    16.5
+  ],
+  "collisionRadius": 25.5,
+  "engineSlots": [
+    {
+      "angle": 139.5,
+      "contrailSize": 3.612037,
+      "length": 2.643539,
+      "location": [
+        -7.5,
+        5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3.612037
+    },
+    {
+      "angle": -139.5,
+      "contrailSize": 3.612037,
+      "length": 2.643539,
+      "location": [
+        -7.5,
+        -5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3.612037
+    },
+    {
+      "angle": 153.5,
+      "contrailSize": 3.612037,
+      "length": 2.643539,
+      "location": [
+        -10.5,
+        3.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3.612037
+    },
+    {
+      "angle": -153.5,
+      "contrailSize": 3.612037,
+      "length": 2.643539,
+      "location": [
+        -10.5,
+        -3.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 3.612037
+    }
+  ],
+  "height": 27,
+  "hullId": "tahlan_Valacor",
+  "hullName": "Valacor",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 24.5,
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Valacor.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -0,
+      "arc": 55,
+      "id": "WS0001",
+      "locations": [
+        0,
+        -6
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 55,
+      "id": "WS0002",
+      "locations": [
+        0,
+        6
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "WS0003",
+      "locations": [
+        -3,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 22
+}

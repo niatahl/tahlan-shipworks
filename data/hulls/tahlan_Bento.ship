@@ -124,6 +124,18 @@
       "size": "SMALL",
       "type": "BALLISTIC"
     },
+	{
+      "angle": 180,
+      "arc": 143,
+      "id": "WS0005",
+      "locations": [
+        -55.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "DECORATIVE"
+    },
     {
       "angle": 90,
       "arc": 105,

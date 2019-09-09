@@ -1,0 +1,39 @@
+{
+  "beamFireOnlyOnFullCharge": true,
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "fireSoundTwo":"tahlan_gaebolg_fire",
+  "fringeColor":[85,25,215,255],
+  "coreColor":[255,255,255,255],
+  "glowColor":[165,100,255,235],
+  "beamEffect":"data.scripts.weapons.tahlan_GaeBolgScript",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    58.5,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "tahlan_gaebolg",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "pixelsPerTexel": 1,
+  "renderBelowAllWeapons":true,
+  "size": "LARGE",
+  "specClass": "beam",
+  "textureScrollSpeed": 256,
+  "textureType": MEDIUM,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    30,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_gaebolg_base.png",
+  "type": "ENERGY",
+  "width": 50
+}

@@ -62,7 +62,6 @@
     "WS0013": "tahlan_nuboko_l",
     "WS0014": "tahlan_nuboko_r"
   },
-  "builtInWings": [],
   "center": [
     104,
     92.5
@@ -225,7 +224,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": -30,
@@ -237,7 +236,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "ENERGY"
+      "type": "HYBRID"
     },
     {
       "angle": 30,

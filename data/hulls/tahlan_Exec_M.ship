@@ -1,20 +1,16 @@
 {
   "bounds": [
-    -9.5,
-    -4,
     0,
     -12,
-    9.5,
-    -4,
-    9.5,
-    4,
+    10.5,
+    -0,
     0,
     12,
-    -9.5,
-    4
+    -11,
+    -0
   ],
   "builtInMods": [
-	"terminator_core",
+    "terminator_core",
     "no_weapon_flux"
   ],
   "builtInWeapons": {
@@ -24,7 +20,6 @@
     "WS0004": "tahlan_xm_beamer",
     "WS0005": "tahlan_xm_beamer"
   },
-  "builtInWings": [],
   "center": [
     13,
     12

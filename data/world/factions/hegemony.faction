@@ -8,7 +8,8 @@
 	"hullFrequency":{
 		#"tags":{},
 		"hulls":{
-			"tahlan_Castigator":0.2,
+			"tahlan_Castigator":0.4,
+			"tahlan_Niebelung":0.5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -23,6 +24,7 @@
 			"tahlan_Castigator",	
 			"tahlan_Castella",
 			"tahlan_Hresvelgr",
+			"tahlan_Nibelung",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

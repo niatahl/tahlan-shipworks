@@ -1,0 +1,23 @@
+{
+  "displayName": "Hunter",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "tahlan_Valacor",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Valacor_hunter",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "tahlan_valdes_r",
+        "WS0002": "tahlan_valdes_l"
+      }
+    }
+  ],
+  "wings": []
+}
