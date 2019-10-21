@@ -61,6 +61,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
         //stats.getTurnAcceleration().modifyMult(id,HANDLING_MULT);
 
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLIES_MULT);
+        stats.getCRLossPerSecondPercent().modifyMult(id, 2f);
 
 
     }
@@ -75,9 +76,9 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
         if (!RunOnce) {
             if (ship.getVariant().getHullMods().contains("tahlan_uncalibrated_tcg")) {
-                CalibrationMult = MathUtils.getRandomNumberInRange(0.5f,1f);
+                CalibrationMult = MathUtils.getRandomNumberInRange(0.5f, 1f);
             }
-            RunOnce=true;
+            RunOnce = true;
         }
 
         //The Great Houses are actually timelords
@@ -93,15 +94,19 @@ public class tahlan_KnightRefit extends BaseHullMod {
                 Global.getCombatEngine().getTimeMult().unmodify(id);
             }
 
-            EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
-            ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
+            if (!(ship.getOriginalOwner() == -1)) {
 
-            ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
-            ship.setJitter(id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
-            ship.setJitterUnder(id, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
+                EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
+                ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
+
+                ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
+                ship.setJitter(id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
+                ship.setJitterUnder(id, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
+
+            }
 
             if (player) {
-                Global.getCombatEngine().maintainStatusForPlayerShip(id,"graphics/icons/hullsys/temporal_shell.png","Temporal Overdrive", "Timeflow at 130%", false);
+                Global.getCombatEngine().maintainStatusForPlayerShip(id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Overdrive", "Timeflow at 130%", false);
             }
 
         } else {
@@ -109,7 +114,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
             if (player) {
                 ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT * CalibrationMult);
                 Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / TIME_MULT * CalibrationMult);
-                Global.getCombatEngine().maintainStatusForPlayerShip(id,"graphics/icons/hullsys/temporal_shell.png","Temporal Field", "Timeflow at 110%", false);
+                Global.getCombatEngine().maintainStatusForPlayerShip(id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Field", "Timeflow at 110%", false);
             } else {
                 ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT * CalibrationMult);
                 Global.getCombatEngine().getTimeMult().unmodify(id);
@@ -150,8 +155,9 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
     public String getDescriptionParam(int index, HullSize hullSize) {
         if (index == 0) return "Temporal Circuit Grid";
-        if (index == 1) return "" + Math.round((TIME_MULT - 1f) * 100f) +"%";
-        if (index == 2) return "" + (int) ARMOR_MALUS_FRIGATE + "/" + (int) ARMOR_MALUS_DESTROYER + "/" + (int) ARMOR_MALUS_CRUISER + "/" + (int) ARMOR_MALUS_CAPITAL;
+        if (index == 1) return "" + Math.round((TIME_MULT - 1f) * 100f) + "%";
+        if (index == 2)
+            return "" + (int) ARMOR_MALUS_FRIGATE + "/" + (int) ARMOR_MALUS_DESTROYER + "/" + (int) ARMOR_MALUS_CRUISER + "/" + (int) ARMOR_MALUS_CAPITAL;
         if (index == 3) return "" + Math.round((SUPPLIES_MULT - 1f) * 100f) + "%";
         if (index == 4) return "" + Math.round(OVERDRIVE_TRIGGER_PERCENTAGE * 100f) + "%";
         if (index == 5) return "" + Math.round((OVERDRIVE_TIME_MULT - 1f) * 100f) + "%";

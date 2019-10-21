@@ -1,0 +1,51 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "LINKED",
+  "fireSoundTwo": "tahlan_anumis_fire",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_AnumisMuzzleFlashScript",
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_anumis_hp_recoil.png",
+  "hardpointOffsets": [
+    39,
+    -6,
+    39,
+    6
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_anumis_hp_base.png",
+  "id": "tahlan_anumis",
+  "muzzleFlashSpec":{"length":80.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":10.0,
+					   "particleSizeMin":20.0,
+					   "particleSizeRange":30.0,
+					   "particleDuration":0.5,
+					   "particleCount":12,
+					   "particleColor":[255,185,215,215]},
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_anumis_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "LARGE",
+  "specClass": "projectile",
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_anumis_turret_recoil.png",
+  "turretOffsets": [
+    33,
+    -6,
+    33,
+    6
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_anumis_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 8
+}

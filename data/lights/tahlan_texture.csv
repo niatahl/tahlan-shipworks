@@ -51,11 +51,7 @@ tahlan_Nibelung_n,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Nib
 tahlan_Bronco,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Bronco_Normal.png
 tahlan_Bronco_p,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Bronco_Normal.png
 ,,,,,
-tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_l_Normal.png
-tahlan_nibelung_cover_l,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_l_Normal.png
-tahlan_nibelung_n_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_l_Normal.png
-tahlan_nibelung_n_cover_l,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_l_Normal.png
-tahlan_nibelung_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_r_Normal.png
-tahlan_nibelung_cover_r,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_r_Normal.png
-tahlan_nibelung_n_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_r_Normal.png
-tahlan_nibelung_n_cover_r,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_r_Normal.png
+tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png
+tahlan_nibelung_cover_l,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png
+tahlan_nibelung_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_R_Normal.png
+tahlan_nibelung_cover_r,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_R_Normal.png

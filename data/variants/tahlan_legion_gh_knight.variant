@@ -1,11 +1,11 @@
 {
     "displayName": "Kassadari",
     "fluxCapacitors": 0,
-    "fluxVents": 21,
+    "fluxVents": 25,
     "hullId": "tahlan_legion_gh",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-	"goalVariant": true,
+    "goalVariant": true,
     "variantId": "tahlan_legion_gh_knight",
     "weaponGroups": [
         {
@@ -29,8 +29,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS 002": "tahlan_porph",
-                "WS 003": "tahlan_porph"
+                "WS 002": "tahlan_atrapos",
+                "WS 003": "tahlan_atrapos"
             }
         },
         {

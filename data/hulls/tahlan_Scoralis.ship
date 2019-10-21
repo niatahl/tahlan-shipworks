@@ -1,0 +1,197 @@
+{
+  "bounds": [
+    -16,
+    -10,
+    -0.5,
+    -26.5,
+    21.5,
+    -24,
+    3.5,
+    -0,
+    21.5,
+    24,
+    -0.5,
+    26.5,
+    -16,
+    10
+  ],
+  "builtInMods": [
+    "no_weapon_flux",
+    "tahlan_knightrefit",
+    "tahlan_afterburners"
+  ],
+  "center": [
+    29,
+    22.5
+  ],
+  "collisionRadius": 40.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 26.5,
+      "location": [
+        -16,
+        5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 26.5,
+      "location": [
+        -16,
+        -5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 5,
+      "length": 17,
+      "location": [
+        -4,
+        23
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5
+    },
+    {
+      "angle": -180,
+      "contrailSize": 5,
+      "length": 17,
+      "location": [
+        -4,
+        -23
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 5
+    }
+  ],
+  "height": 45,
+  "hullId": "tahlan_Scoralis",
+  "hullName": "Scoralis",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 37.5,
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Scoralis.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "MSL02",
+      "locations": [
+        5,
+        8.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "MSL03",
+      "locations": [
+        5,
+        -8.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "MSL01",
+      "locations": [
+        12,
+        16.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "MSL04",
+      "locations": [
+        12,
+        -16.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 220,
+      "id": "WS0005",
+      "locations": [
+        -12.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 135,
+      "arc": 0,
+      "id": "WS0003",
+      "locations": [
+        2,
+        18.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": -135,
+      "arc": 0,
+      "id": "WS0004",
+      "locations": [
+        2,
+        -18.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": 160.5,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        -1.5,
+        15
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": -160.5,
+      "arc": 0,
+      "id": "WS0002",
+      "locations": [
+        -1.5,
+        -15
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    }
+  ],
+  "width": 58
+}

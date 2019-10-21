@@ -1,0 +1,40 @@
+{
+    "baseHullId":"tahlan_Phoca",
+    "skinHullId":"tahlan_Phoca_r",
+    "hullName":"Phoca (R)",
+    "descriptionId":"tahlan_Phoca",
+    "descriptionPrefix":"This ship has received a number of non-standard modifications, seemingly for participation in belt races, if the rather fetching paintjob is anything to go by.",
+	"fleetPoints":14,
+	"ordnancePoints":150,
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Phoca_r.png",
+    "baseValueMult":1.5,
+    "removeWeaponSlots":[],         # ids
+    "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[],         # hullmod ids
+    "removeBuiltInWeapons":[],      # weapon slot ids
+    "builtInMods":["unstable_injector"],
+	"systemId":"tahlan_steamlight",
+    "weaponSlotChanges":{
+		"WS0005":{
+      		"type": "BALLISTIC",
+    	},
+		"WS0006":{
+      		"type": "BALLISTIC",
+    	},
+		"WS0007":{
+      		"type": "BALLISTIC",
+    	},
+		"WS0008":{
+      		"type": "BALLISTIC",
+    	},
+		"WS0009":{
+      		"type": "BALLISTIC",
+    	},
+		"WS0010":{
+      		"type": "BALLISTIC",
+    	},
+		"WS0011":{
+      		"type": "BALLISTIC",
+    	},
+    },
+}

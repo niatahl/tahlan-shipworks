@@ -40,7 +40,7 @@
 	
 	"aiHints":{
 		"activeSpeedIncrease":0,
-		"burstMovementPotential":400,
-		"averageSpeedIncrease":50,
+		"burstMovementPotential":600,
+		"averageSpeedIncrease":60,
 	}
 }

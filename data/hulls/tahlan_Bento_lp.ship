@@ -1,0 +1,203 @@
+{
+  "bounds": [
+    -67.5,
+    -23,
+    -47.5,
+    -23,
+    -47.5,
+    -41.5,
+    -21,
+    -63,
+    39,
+    -64.5,
+    64.5,
+    -39,
+    64.5,
+    39,
+    39,
+    64.5,
+    -21,
+    63,
+    -47.5,
+    41.5,
+    -47.5,
+    23,
+    -67.5,
+    23,
+    -82,
+    -0
+  ],
+  "builtInMods": [
+    "civgrade",
+    "safetyoverrides"
+  ],
+  "builtInWings": [
+    "mining_drone_wing"
+  ],
+  "center": [
+    69,
+    82.5
+  ],
+  "collisionRadius": 114,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 32,
+      "length": 50.5,
+      "location": [
+        -48.5,
+        33
+      ],
+      "style": "LOW_TECH",
+      "width": 32
+    },
+    {
+      "angle": -180,
+      "contrailSize": 32,
+      "length": 50.5,
+      "location": [
+        -48.5,
+        -33
+      ],
+      "style": "LOW_TECH",
+      "width": 32
+    }
+  ],
+  "height": 150,
+  "hullId": "tahlan_Bento_lp",
+  "hullName": "Bento (LP)",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 104.5,
+  "spriteName": "graphics/tahlan/ships/tahlan_Bento_lp.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 25,
+      "arc": 99,
+      "id": "WS0001",
+      "locations": [
+        36,
+        33.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -25,
+      "arc": 99,
+      "id": "WS0002",
+      "locations": [
+        36,
+        -33.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 144.5,
+      "arc": 96,
+      "id": "WS0003",
+      "locations": [
+        -19.5,
+        38
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -144.5,
+      "arc": 96,
+      "id": "WS0004",
+      "locations": [
+        -19.5,
+        -38
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 180,
+      "arc": 143,
+      "id": "WS0005",
+      "locations": [
+        -55.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 90,
+      "arc": 105,
+      "id": "WS0006",
+      "locations": [
+        11.5,
+        41
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -90,
+      "arc": 105,
+      "id": "WS0007",
+      "locations": [
+        11.5,
+        -41
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0008",
+      "locations": [
+        59.5,
+        10
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -0,
+      "arc": 5,
+      "id": "WS0009",
+      "locations": [
+        59.5,
+        -10
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -45.5,
+        4.5,
+        -45.5,
+        -3.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 138
+}

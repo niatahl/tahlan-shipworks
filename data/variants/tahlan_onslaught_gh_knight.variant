@@ -1,71 +1,69 @@
 {
-  "displayName": "Kassadari",
-  "fluxCapacitors": 0,
-  "fluxVents": 44,
-  "goalVariant": true,
-  "hullId": "tahlan_onslaught_gh",
-  "hullMods": [
-    "targetingunit",
-    "heavyarmor"
-  ],
-  "permaMods": [],
-  "quality": 0,
-  "variantId": "tahlan_onslaught_gh_knight",
-  "weaponGroups": [
-    {
-      "autofire": false,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 010": "tahlan_dualvolkite",
-        "WS 011": "tahlan_dualvolkite",
-        "WS 014": "tahlan_dualvolkite",
-        "WS 015": "tahlan_dualvolkite",
-        "WS 016": "tpc",
-        "WS 017": "tpc"
-      }
-    },
-    {
-      "autofire": false,
-      "mode": "ALTERNATING",
-      "weapons": {
-        "WS 021": "tahlan_hekaton",
-        "WS 022": "tahlan_hekaton",
-        "WS 023": "tahlan_hekaton",
-        "WS 024": "tahlan_hekaton"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 018": "tahlan_styrix",
-        "WS 019": "tahlan_styrix",
-        "WS 020": "tahlan_styrix"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 001": "tahlan_porph",
-        "WS 003": "tahlan_porph",
-        "WS 007": "tahlan_porph",
-        "WS 012": "tahlan_atrapos",
-        "WS 013": "tahlan_atrapos"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 002": "tahlan_volkite",
-        "WS 004": "tahlan_volkite",
-        "WS 005": "tahlan_volkite",
-        "WS 006": "tahlan_volkite",
-        "WS 008": "tahlan_volkite",
-        "WS 009": "tahlan_volkite"
-      }
-    }
-  ],
-  "wings": []
+    "displayName": "Kassadari",
+    "fluxCapacitors": 3,
+    "fluxVents": 50,
+    "hullId": "tahlan_onslaught_gh",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_onslaught_gh_knight",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 016": "tahlan_utpc_l",
+                "WS 017": "tahlan_utpc_l"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 021": "tahlan_hekaton",
+                "WS 022": "tahlan_hekaton",
+                "WS 023": "tahlan_hekaton",
+                "WS 024": "tahlan_hekaton"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 018": "tahlan_styrix",
+                "WS 019": "tahlan_styrix",
+                "WS 020": "tahlan_styrix"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "tahlan_astrix",
+                "WS 003": "tahlan_astrix",
+                "WS 007": "tahlan_astrix",
+                "WS 012": "tahlan_ronka",
+                "WS 013": "tahlan_ronka"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "tahlan_volkite",
+                "WS 004": "tahlan_volkite",
+                "WS 005": "tahlan_volkite",
+                "WS 006": "tahlan_volkite",
+                "WS 008": "tahlan_volkite",
+                "WS 009": "tahlan_volkite",
+                "WS 010": "tahlan_dualvolkite",
+                "WS 011": "tahlan_dualvolkite",
+                "WS 014": "tahlan_dualvolkite",
+                "WS 015": "tahlan_dualvolkite"
+            }
+        }
+    ]
 }

@@ -153,6 +153,13 @@
 			{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":0.95,"volume":1.3},
         ],
     },
+	"tahlan_ronka_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":0.65,"volume":1.0},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":0.6,"volume":1.0},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":0.55,"volume":1.0},
+        ],
+    },
 	"tahlan_gardas_fire":{
         "sounds":[
            	{"file":"sounds/sfx_wpn_guns/mjolnir_fire_06.ogg","pitch":0.8,"volume":1.1}
@@ -167,15 +174,29 @@
 	},
 	"tahlan_astrix_fire":{
 		"sounds":[
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.50,"volume":0.6},		
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.55,"volume":0.6},		
-			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":1.60,"volume":0.6},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":0.8,"volume":0.8},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":0.85,"volume":0.8},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":0.75,"volume":0.8},		
+		],
+	},
+	"tahlan_ramun_fire":{
+		"sounds":[
+			{"file":"sounds/sfx_wpn_guns/mauler_fire_01_loud.ogg","pitch":2.0,"volume":0.6},		
+			{"file":"sounds/sfx_wpn_guns/mauler_fire_01_loud.ogg","pitch":2.05,"volume":0.6},		
+			{"file":"sounds/sfx_wpn_guns/mauler_fire_01_loud.ogg","pitch":2.1,"volume":0.6},		
+		],
+	},
+	"tahlan_anumis_fire":{
+		"sounds":[
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":0.5,"volume":1.1},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":0.55,"volume":1.1},		
+			{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01.ogg","pitch":0.6,"volume":1.1},		
 		],
 	},
 	"tahlan_atrapos_fire":{
 		"sounds":[
-			{"file":"sounds/tahlan/weapons/tahlan_atrapos_fire.ogg","pitch":1.0,"volume":1.0},
-		],
+           	{"file":"sounds/sfx_wpn_guns/mjolnir_fire_06.ogg","pitch":0.9,"volume":1}
+        ],
 	},
 	"tahlan_atrapos_loop":{
 		"sounds":[

@@ -17,7 +17,7 @@
 		["tahlan_Vale_crusader"],
 	],
 	"startShipsGrandFleet":[
-		["tahlan_legion_gh_combat", "tahlan_enforcer_gh_knight", "tahlan_monitor_gh_knight", "buffalo_standard"],
+		["tahlan_legion_gh_combat", "tahlan_enforcer_gh_knight", "tahlan_monitor_gh_knight", "buffalo_Standard"],
 	],	
 	"startSpecialItems":[
         [["tahlan_knight_package",""]],

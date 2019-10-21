@@ -1,0 +1,45 @@
+{
+    "displayName": "Overdrive",
+    "fluxCapacitors": 3,
+    "fluxVents": 20,
+    "hullId": "tahlan_enforcer_gh",
+    "hullMods": [
+        "heavyarmor",
+        "tahlan_forcedoverdrive"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_enforcer_gh_overdrive",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "tahlan_magaera",
+                "WS 004": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 006": "tahlan_hekaton_rack",
+                "WS 007": "tahlan_hekaton_rack",
+                "WS 008": "tahlan_hekaton_rack",
+                "WS 009": "tahlan_hekaton_rack"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "tahlan_dualvolkite",
+                "WS 005": "tahlan_dualvolkite"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 003": "tahlan_ronka"}
+        }
+    ]
+}

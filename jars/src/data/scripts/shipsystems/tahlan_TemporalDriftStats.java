@@ -22,8 +22,6 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
     public static final float DAMAGE_MULT = 2f;
     public static final float DPS_MULT = 0.5f;
     public static final float MAX_TIME_MULT = 20f;
-    private static final float RIPPLE_SIZE = 1000f;
-    private static final float RIPPLE_INTENSITY = 40f;
 
     public static final Color JITTER_COLOR = new Color(255, 106, 32, 55);
     public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0, 155);
@@ -53,13 +51,6 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
             runOnce = true;
             Vector2f loc = ship.getLocation();
             if (player) {
-//                if (tahlan_ModPlugin.isGraphicsLibAvailable()) {
-//                    RippleDistortion ripple = new RippleDistortion(loc, ZERO);
-//                    ripple.setSize(RIPPLE_SIZE);
-//                    ripple.setIntensity(RIPPLE_INTENSITY);
-//                    ripple.setFrameRate(120f);
-//                    DistortionShader.addDistortion(ripple);
-//                }
                 Global.getSoundPlayer().playSound("tahlan_zawarudo", 1f, 1f, loc, ship.getVelocity());
             }
         }
@@ -106,7 +97,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         }
 
         //time acceleration
-        float TimeMult = 1f + (float) Math.pow(MAX_TIME_MULT-1f, effectLevel);
+        float TimeMult = 1f + (MAX_TIME_MULT-1f)*effectLevel;
         stats.getTimeMult().modifyMult(id, TimeMult);
         if (player) {
             Global.getCombatEngine().getTimeMult().modifyMult(id, (1f / TimeMult));
@@ -115,15 +106,15 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         }
 
         //damage taken debuff
-        float ActualDamageMult = 1f + (float) Math.pow(DAMAGE_MULT-1f, effectLevel);
+        float ActualDamageMult = 1f + (1f-DAMAGE_MULT)*effectLevel;
         stats.getShieldDamageTakenMult().modifyMult(id, ActualDamageMult);
         stats.getArmorDamageTakenMult().modifyMult(id, ActualDamageMult);
 
         //dps debuff
-        float ActualDPSMult = 1f + (float) Math.pow(DPS_MULT-1f, effectLevel);
-        stats.getEnergyRoFMult().modifyMult(id, ActualDPSMult);
+        float ActualDPSMult = 1f - DPS_MULT*effectLevel;
+        stats.getEnergyWeaponDamageMult().modifyMult(id, ActualDPSMult);
+        stats.getEnergyWeaponFluxCostMod().modifyMult(id, ActualDPSMult);
         stats.getBallisticRoFMult().modifyMult(id, ActualDPSMult);
-        stats.getBeamWeaponDamageMult().modifyMult(id, ActualDPSMult);
 
 
         //For Afterimages

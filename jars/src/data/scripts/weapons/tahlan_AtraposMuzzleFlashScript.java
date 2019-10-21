@@ -37,13 +37,13 @@ public class tahlan_AtraposMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 0);
+        ON_SHOT_PARTICLE_COUNT.put("default", 40);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
     private static final Map<String, Float> PARTICLES_PER_SECOND = new HashMap<>();
     static {
-        PARTICLES_PER_SECOND.put("default", 40f);
+        PARTICLES_PER_SECOND.put("default", 0f);
     }
 
     //Does the PARTICLES_PER_SECOND field get multiplied by the weapon's current chargeLevel?

@@ -99,7 +99,7 @@
         65
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 16.790703
+      "width": 10
     },
     {
       "angle": -171,
@@ -110,7 +110,7 @@
         -65
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 16.790703
+      "width": 10
     },
     {
       "angle": 180,
@@ -165,7 +165,7 @@
         49
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 16.836422
+      "width": 10
     },
     {
       "angle": -168,
@@ -176,7 +176,7 @@
         -49
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 16.836422
+      "width": 10
     },
     {
       "angle": 171,
@@ -187,7 +187,7 @@
         57
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 16.790703
+      "width": 10
     },
     {
       "angle": -171,
@@ -198,7 +198,7 @@
         -57
       ],
       "style": "TAHLAN_GH_ENGINE",
-      "width": 16.790703
+      "width": 10
     }
   ],
   "height": 206,

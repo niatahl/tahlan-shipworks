@@ -1,0 +1,49 @@
+{
+	"id":"tahlan_heraton_msl",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+	"sprite":"graphics/tahlan/missiles/tahlan_heraton_msl.png",
+	"onHitEffect":"data.scripts.weapons.tahlan_HekatonOnHitEffect",
+	"size":[15,23],	
+	"center":[7.5,11.5],
+	"collisionRadius":15,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,155,100,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":220, # purely visual
+	"explosionSpec":{"duration":0.1f, # not visual
+					 "radius":80,
+					 "coreRadius":50, # full damage within core radius
+					 "collisionClass":HITS_SHIPS_AND_ASTEROIDS,
+					 "collisionClassByFighter":HITS_SHIPS_AND_ASTEROIDS,
+					 "particleSizeMin":5.0,
+					 "particleSizeRange":3.0,
+					 "particleDuration":0.6,
+					 "particleCount":150,
+					 "particleColor":[255,145,65,205]},
+	"armingTime":0.5,
+	"engineSpec":{"turnAcc":500,
+				  "turnRate":100,
+				  "acc":1200,
+				  "dec":300},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-9, 0],
+				    #"style":"TORPEDO_ATROPOS",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[255,160,50,255],
+						"glowSizeMult":1.5,
+						"contrailDuration":2,
+						"contrailWidthMult":1.2,
+						"contrailWidthAddedFractionAtEnd":3,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":5, # min segment length, in pixels
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0f,
+						"contrailSpawnDistMult":.5, # how far away from engine it starts
+						"contrailColor":[200,190,180,50],
+						"type":"SMOKE" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":10.0,
+				    "length":30.0,
+				    "angle":180.0}]
+}

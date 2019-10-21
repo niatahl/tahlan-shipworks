@@ -75,13 +75,13 @@
     -237.5,
     11
   ],
+  "builtInMods": [
+    "tahlan_lirefit",
+    "hbi"
+  ],
   "center": [
     134,
     242
-  ],
-  "builtInMods": [
-	"tahlan_lirefit",
-	"hbi",
   ],
   "collisionRadius": 292.5,
   "engineSlots": [
@@ -530,8 +530,8 @@
       "type": "BALLISTIC"
     },
     {
-      "angle": -38.5,
-      "arc": 110,
+      "angle": -25,
+      "arc": 100,
       "id": "WS0024",
       "locations": [
         25,
@@ -543,7 +543,7 @@
     },
     {
       "angle": 25,
-      "arc": 90,
+      "arc": 100,
       "id": "WS0025",
       "locations": [
         25,

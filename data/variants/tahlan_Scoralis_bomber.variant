@@ -1,0 +1,32 @@
+{
+  "displayName": "Heavy Bomber",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "tahlan_Scoralis",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Scoralis_bomber",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "MSL01": "tahlan_heraton",
+        "MSL02": "tahlan_heraton",
+        "MSL03": "tahlan_heraton",
+        "MSL04": "tahlan_heraton"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "tahlan_volkite"
+      }
+    }
+  ],
+  "wings": []
+}

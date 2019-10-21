@@ -1,0 +1,20 @@
+{
+	"id":"tahlan_steamlight",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_SteamlightStats",
+	
+	"weaponGlowColor":[200,120,0,10],
+	"weaponTypes":[BALLISTIC],
+	
+	"useSound":"system_maneuvering_jets",
+	"loopSound":"system_maneuvering_jets_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":100,
+		"burstMovementPotential":100,
+		"averageSpeedIncrease":50,
+	}
+}

@@ -1,0 +1,53 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_ramun_fire",
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_ramun_hp_glow.png",
+  "hardpointOffsets": [
+    13.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_ramun_hp_base.png",
+  "id": "tahlan_ramun",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "particleColor": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "particleCount": 10,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 20
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_ramun_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_ramun_turret_glow.png",
+  "turretOffsets": [
+    10.5,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_ramun_turret_base.png",
+  "type": "BALLISTIC"
+}

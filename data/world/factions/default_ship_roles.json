@@ -16,7 +16,8 @@
 	},
 	"combatMedium":{
 		"tahlan_Vale_crusader":10,
-		"tahlan_enforcer_gh_knight":10,
+		"tahlan_enforcer_gh_knight":7,
+		"tahlan_enforcer_gh_overdrive":3,
 		"tahlan_Haelequin_support":3,
 		"tahlan_Haelequin_overdriven":2,
 		"tahlan_Haelequin_standard":5,
@@ -46,11 +47,13 @@
 		"tahlan_Castigator_P_raider":5,
 		"tahlan_Castigator_P_lancer":3,
 		"tahlan_Castigator_P_overdriven":2,
-		"tahlan_Sophrosyne_prophet":10,
 		"tahlan_Glint_strike":5,
 		"tahlan_Glint_support":3,
 		"tahlan_Glint_overdriven":3,
 		"tahlan_Castigator_xiv_elite":10,
+		"tahlan_Phoca_standard":4,
+		"tahlan_Phoca_elite":3,
+		"tahlan_Phoca_overdriven":3,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
@@ -61,11 +64,9 @@
 		"tahlan_DunScaith_standard":5,
 		"tahlan_DunScaith_barrage":3,
 		"tahlan_DunScaith_elite":2,
-		"tahlan_DunScaith_gh_crusader":10,
 		"tahlan_Nibelung_brawler":4,
 		"tahlan_Nibelung_elite":3,
 		"tahlan_Nibelung_support":4,
-		"tahlan_Nibelung_n_boss":10,
 	},
 	
 	

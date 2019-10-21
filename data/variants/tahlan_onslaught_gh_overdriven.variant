@@ -1,6 +1,6 @@
 {
     "displayName": "Overdriven",
-    "fluxCapacitors": 26,
+    "fluxCapacitors": 28,
     "fluxVents": 50,
     "hullId": "tahlan_onslaught_gh",
     "hullMods": [
@@ -9,7 +9,7 @@
         "heavyarmor"
     ],
     "permaMods": [],
-	"goalVariant": true,
+    "goalVariant": true,
     "variantId": "tahlan_onslaught_gh_overdriven",
     "weaponGroups": [
         {
@@ -34,9 +34,9 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS 018": "tahlan_armiger",
-                "WS 019": "tahlan_gardas",
-                "WS 020": "tahlan_armiger"
+                "WS 018": "tahlan_anumis",
+                "WS 019": "tahlan_anumis",
+                "WS 020": "tahlan_anumis"
             }
         },
         {

@@ -47,7 +47,6 @@ public class tahlan_NoName extends BaseHullMod {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
 
-
         ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").modifyFlat("tahlan_NNAfterimageTrackerNullerID", -1);
         ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").modifyFlat("tahlan_NNAfterimageTrackerID",
                 ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").getModifiedValue() + amount);

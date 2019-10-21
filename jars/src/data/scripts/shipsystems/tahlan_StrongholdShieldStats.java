@@ -11,19 +11,16 @@ public class tahlan_StrongholdShieldStats extends BaseShipSystemScript {
 
     private static final float SHIELD_MULT = 0.1f;
     private static final float DISSIPATON_MULT = 1.2f;
-    private static final float UNFOLD_MULT = 100f;
+    private static final float UNFOLD_MULT = 10f;
     private static final float ARC_BONUS = 360f;
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
         ShipAPI ship = null;
-        boolean player = false;
         CombatEngineAPI engine = Global.getCombatEngine();
 
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
-            player = ship == Global.getCombatEngine().getPlayerShip();
-            id = id + "_" + ship.getId();
         } else {
             return;
         }

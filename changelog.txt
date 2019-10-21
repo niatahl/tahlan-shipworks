@@ -1,3 +1,52 @@
+0.3.8a
+Changes:
+- Renamed Heraton-class torpedos on the Scoralis to "Rakaton" in order to avoid confusion with Hekatons
+
+Balancing:
+- Removed EMP damage from Magaera
+
+0.3.8
+Additions:
+- Added Scoralis heavy bomber
+- Added Ronka Blastcannon
+- Added Anumis superheavy cannon
+- Added Ramun siege microcannon
+- Added Phoca-class light cruiser
+
+Changes:
+- Adjusted Izanami's Chrono Rupture stats to compensate for the recent bugfix increasing its effectiveness
+- Nibelung now has a pair of unique hullmods
+
+Balancing:
+- Kassadari engineering now doubles CR decay after ppt (Delicate Machinery)
+- Reworked various weapons:
+ - Armiger now has 1100 range and slower projectiles to better match its kinetic counterpart, the Efreet
+ - Styrix changed to 900 range with high dps and decent efficiency. Added some recoil. Reduced OP cost from 30 to 28
+ - Magaera efficiency increased slightly at the cost of some EMP damage. Overall damage per shot increased, rate of fire reduced. Less spammy now.
+ - Gallant rate of fire reduced, damage per shot increased, efficiency buffed slightly. Similar change to Magaera
+ - Added recoil to both Magaera and Gallant
+ - Gardas per-shot damage increased to 900 to be more fitting for its high OP cost
+ - Teltrite efficiency nerfed to 1.0 and refire rate reduced to 1/s
+ - Numeon changed heavily into an HE weapon with the Hekaton's gimmick, parallel to the new Anumis
+ - Porphyrion changed to energy damage. Similar to old Numeon in role, but burst-fire
+ - Atrapos renamed to Gardion, changed to ballistic. Now a medium equivalent of the Gardas
+ - Increased burst delay and chargedown on medium Hekaton launcher
+ - Reduced projectile speeds on many weapons
+ - Reduced Prophyrion dps
+- Reduced Dun Scaith armor from 1600 to 1500
+- Reduced Doominator armor from 1500 to 1400
+- Reduced Nibelung flux capacity from 24000 to 22000
+- Reduced Nibelung armor from 1600 to 1500
+- Increased Nibelung dissipation from 700 to 800
+- Reduced Nibelung shield efficiency from 1.0 to 1.2
+- Increased Nibelung top speed from 40 to 45
+
+
+0.3.7c
+Bugfixing:
+- Izanami bugfix (hopefully)
+
+
 0.3.7b
 Changes:
 - Buffed the Edengate a bunch

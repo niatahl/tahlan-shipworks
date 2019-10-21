@@ -1,19 +1,19 @@
 {
-    "displayName": "Kassadari",
-    "fluxCapacitors": 0,
-    "fluxVents": 18,
+    "displayName": "Custom",
+    "fluxCapacitors": 20,
+    "fluxVents": 30,
     "hullId": "tahlan_dominator_gh",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-	"goalVariant": true,
+    "goalVariant": true,
     "variantId": "tahlan_dominator_gh_knight",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
             "weapons": {
-                "WS 012": "tahlan_styrix",
-                "WS 013": "tahlan_styrix"
+                "WS 012": "tahlan_anumis",
+                "WS 013": "tahlan_anumis"
             }
         },
         {
@@ -29,23 +29,21 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS 010": "tahlan_porph",
-                "WS 011": "tahlan_porph"
+                "WS 010": "tahlan_magaera",
+                "WS 011": "tahlan_magaera"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS 001": "tahlan_volkite",
-                "WS 002": "tahlan_volkite",
-                "WS 003": "tahlan_volkite",
-                "WS 004": "tahlan_volkite",
-                "WS 005": "tahlan_volkite",
-                "WS 006": "tahlan_volkite",
-                "WS 007": "tahlan_volkite",
-                "WS 008": "tahlan_volkite",
-                "WS 009": "tahlan_volkite"
+                "WS 001": "tahlan_teltrite",
+                "WS 003": "tahlan_teltrite",
+                "WS 004": "tahlan_teltrite",
+                "WS 005": "tahlan_teltrite",
+                "WS 007": "tahlan_teltrite",
+                "WS 008": "tahlan_teltrite",
+                "WS 009": "tahlan_teltrite"
             }
         }
     ]

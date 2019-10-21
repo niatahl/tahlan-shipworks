@@ -1,0 +1,49 @@
+{
+    "displayName": "Combat Racing",
+    "fluxCapacitors": 11,
+    "fluxVents": 30,
+    "hullId": "tahlan_Phoca_r",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "variantId": "tahlan_Phoca_r_boss",
+	"goalVariant": true,
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_astrix",
+                "WS0003": "tahlan_astrix"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0012": "tahlan_hekaton_rack",
+                "WS0013": "tahlan_hekaton_rack"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "tahlan_magaera",
+                "WS0004": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "tahlan_teltrite",
+                "WS0006": "tahlan_teltrite",
+                "WS0007": "tahlan_teltrite",
+                "WS0008": "tahlan_teltrite",
+                "WS0009": "tahlan_teltrite",
+                "WS0010": "tahlan_teltrite",
+                "WS0011": "tahlan_teltrite"
+            }
+        }
+    ]
+}

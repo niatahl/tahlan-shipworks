@@ -52,8 +52,8 @@
     20
   ],
   "builtInMods": [
-	"hbi",
-	"armoredweapons"
+	"tahlan_paralleltargeting",
+	"tahlan_broadsidemounts"	
   ],
   "builtInWeapons": {
     "WS0024": "tahlan_dragonslayer",

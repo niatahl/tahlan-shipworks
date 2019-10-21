@@ -1,6 +1,6 @@
 {
   "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "barrelMode": "LINKED",
   "fireSoundTwo": "tahlan_astrix_fire",
   "hardpointAngleOffsets": [
     0,
@@ -21,7 +21,7 @@
 					   "particleSizeRange":24.0,
 					   "particleDuration":0.12,
 					   "particleCount":12,
-					   "particleColor":[255,185,215,215]},
+					   "particleColor":[255,160,140,215]},
   "projectileSpecId": "tahlan_astrix_shot",
   "renderHints": [
     "RENDER_BARREL_BELOW"

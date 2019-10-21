@@ -1,36 +1,28 @@
 {
-  "displayName": "Kassadari",
-  "fluxCapacitors": 6,
-  "fluxVents": 10,
-  "goalVariant": true,
-  "hullId": "tahlan_monitor_gh",
-  "hullMods": [
-	"hardenedshieldemitter"
-  ],
-  "permaMods": [],
-  "quality": 0,
-  "variantId": "tahlan_monitor_gh_knight",
-  "weaponGroups": [
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 001": "tahlan_dualvolkite",
-        "WS 002": "tahlan_dualvolkite",
-        "WS 003": "taclaser",
-        "WS 004": "taclaser"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {}
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {}
-    }
-  ],
-  "wings": []
+    "displayName": "Kassadari",
+    "fluxCapacitors": 2,
+    "fluxVents": 10,
+    "hullId": "tahlan_monitor_gh",
+    "hullMods": ["hardenedshieldemitter"],
+    "permaMods": [],
+    "variantId": "tahlan_monitor_gh_knight",
+    "goalVariant": true,
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 003": "tahlan_gallant",
+                "WS 004": "tahlan_gallant"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "tahlan_dualvolkite",
+                "WS 002": "tahlan_dualvolkite"
+            }
+        }
+    ]
 }

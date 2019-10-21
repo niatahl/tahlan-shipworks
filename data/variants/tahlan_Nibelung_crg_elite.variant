@@ -1,0 +1,68 @@
+{
+    "displayName": "Elite",
+    "fluxCapacitors": 28,
+    "fluxVents": 50,
+    "hullId": "tahlan_Nibelung_crg",
+    "hullMods": [
+        "fluxdistributor",
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_Nibelung_crg_elite",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_armiger",
+                "WS0002": "tahlan_armiger",
+                "WS0003": "tahlan_armiger"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "typhoon",
+                "WS0023": "typhoon",
+                "WS0024": "tahlan_dragonslayer",
+                "WS0025": "tahlan_dragonslayer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "railgun",
+                "WS0013": "railgun",
+                "WS0014": "railgun",
+                "WS0015": "railgun",
+                "WS0016": "railgun",
+                "WS0017": "railgun",
+                "WS0018": "railgun",
+                "WS0019": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "hveldriver",
+                "WS0021": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "vulcan",
+                "WS0005": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan"
+            }
+        }
+    ]
+}

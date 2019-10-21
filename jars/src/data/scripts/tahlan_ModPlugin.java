@@ -29,6 +29,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         if (!hasMagicLib) {
             throw new RuntimeException("Tahlan Shipworks requires MagicLib!"  + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718");
         }
+        if (Global.getSettings().getModManager().isModEnabled("@_ss_rebal_@"))
+            throw new RuntimeException("Tahlan Shipworks is incompatible with Starsector Rebal. It breaks everything");
 
         boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
         if (hasGraphicsLib) {

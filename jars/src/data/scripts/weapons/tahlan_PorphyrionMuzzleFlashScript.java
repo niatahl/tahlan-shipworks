@@ -92,7 +92,7 @@ public class tahlan_PorphyrionMuzzleFlashScript implements EveryFrameWeaponEffec
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(255,200,120, 165));
+        PARTICLE_COLOR.put("default", new Color(255,200,120, 135));
     }
 
     //What's the smallest size the particles can have?
@@ -122,13 +122,13 @@ public class tahlan_PorphyrionMuzzleFlashScript implements EveryFrameWeaponEffec
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
-        PARTICLE_DURATION_MIN.put("default", 0.8f);
+        PARTICLE_DURATION_MIN.put("default", 0.2f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1f);
+        PARTICLE_DURATION_MAX.put("default", 0.3f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)

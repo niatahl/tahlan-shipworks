@@ -11,7 +11,7 @@
 	"fadeTime":0.5,
 	"fringeColor":[255,180,100,255],
 	"coreColor":[255,255,255,200],
-	"glowColor":[255,85,10,60],
+	"glowColor":[255,85,10,80],
 	"glowRadius":70,
 	#"textureType":"ROUGH",  # now also used for "BALLISTIC_AS_BEAM", if specified
 	#"textureType":["graphics/fx/emp_arcs.png","graphics/fx/emp_arcs.png"],

@@ -52,7 +52,8 @@
     20
   ],
   "builtInMods": [
-	"armoredweapons"
+	"tahlan_paralleltargeting",
+	"tahlan_broadsidemounts"
   ],
   "builtInWeapons": {
     "WS0001": "tahlan_fafnir",
@@ -64,8 +65,8 @@
     "WS0027": "tahlan_NLthruster",
     "WS0028": "tahlan_NLthruster",
     "WS0029": "tahlan_NLthruster",
-    "WS0030": "tahlan_nibelung_n_cover_l",
-    "WS0031": "tahlan_nibelung_n_cover_r"
+    "WS0030": "tahlan_nibelung_cover_l",
+    "WS0031": "tahlan_nibelung_cover_r"
   },
   "center": [
     85,

@@ -1,0 +1,18 @@
+{
+
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		"tags":{
+			"revolutionary":10,
+		},
+		"hulls":{
+			"tahlan_Castigator_commie":0.5,
+			"tahlan_Hresvelgr_rg":0.5,
+		},
+	},
+
+}
+
+
+
+

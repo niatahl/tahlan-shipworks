@@ -1,0 +1,57 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_ronka_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_rolka_hp_recoil.png",
+  "hardpointOffsets": [
+    17,
+    -9,
+    17,
+    9
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_rolka_hp_base.png",
+  "id": "tahlan_ronka",
+  "muzzleFlashSpec": {
+    "length": 70,
+    "particleColor": [
+      255,
+      220,
+      180,
+      155
+    ],
+    "particleCount": 30,
+    "particleDuration": 0.2,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 5
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_ronka_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_rolka_turret_recoil.png",
+  "turretOffsets": [
+    12,
+    -9,
+    12,
+    9
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_rolka_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 3
+}
