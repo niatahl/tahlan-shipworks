@@ -81,6 +81,11 @@
     -86,
     -11.5
   ],
+  "builtInMods": [
+    "advancedoptics",
+    "delicate",
+    "high_maintenance"
+  ],
   "builtInWeapons": {
     "WS0008": "tahlan_gaebolg",
     "WS0009": "tahlan_cuchulainn_glow"

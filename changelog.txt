@@ -1,17 +1,23 @@
 0.3.9
 Additions:
 - Added the Ristreza Kassadari Battlecruiser
+- Added Karion Seeker Battery 
 - Added the Lethia system, home of the Great Houses of Kassadar
 - Added a new mission featuring the last stand of the Izanagi
+
+Vayra's Sector Additions:
+- Properly added the Cuchulainn mobile weapons platform as HVB
+- Added HVB for Izanami
 
 Changes:
 - Renamed Heraton-class torpedos on the Scoralis to "Rakaton" in order to avoid confusion with Hekatons
 - Kassadari Engineering passive time acceleration will now be suspended while the ship system is enabled
+- Great Houses of Kassadar start options now spawn at Kassadar
 
 Balancing:
 - Removed EMP damage from Magaera
 
-Bugxies:
+Bugfixing:
 - Fixed various typos and other small tidbits I couldn't be bothered to document
 
 

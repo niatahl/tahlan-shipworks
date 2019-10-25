@@ -1,0 +1,52 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_karion_fire",
+  "hardpointAngleOffsets": [
+    30,
+    0,
+    -30
+  ],
+  "hardpointOffsets": [
+    20,
+    9.5,
+    22.5,
+    0,
+    20,
+    -9.5
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_karionbat_hp_base.png",
+  "id": "tahlan_karionbat",
+  "muzzleFlashSpec": {
+    "length": 15,
+    "particleColor": [100,205,255,150],
+    "particleCount": 10,
+    "particleDuration": 1.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 180
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_karion_msl",
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    30,
+    0,
+    -30
+  ],
+  "turretOffsets": [
+    12.5,
+    9.5,
+    15,
+    0,
+    12.5,
+    -9.5
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_karionbat_turret_base.png",
+  "type": "MISSILE"
+}

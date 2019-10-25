@@ -112,6 +112,7 @@ tahlan_Phoca,SHIP,"The Phoca is a light cruiser that heavily focuses on a powerf
 tahlan_Ristreza,SHIP,"A rare example of Kassadari pre-collapse ship design, the Ristreza dates back to the early development of the Great Houses' signature temporal circuit grid technology. Equipped with the first fully operational grid and a number of other prototype designs, she served as the testbed for numerous Kassadari technologies over her lifetime. The exact number of vessels of this type ever constructed remains a mystery, but it is known that they once formed the backbone of the Kassadari fleet prior to the adoption of their refit doctrine in the wake of the collapse.
 
 While originally intended as an experimental vessel, the Ristreza is a highly capable warship in her own right and was operated as such for a large portion of her service history.",,,
+tahlan_Cuchulainn,SHIP,"The Cuchulainn is an experimental craft built around a massively upscaled tachyon beam weapon. Originally intended as a potential siege weapon for engaging stations and orbital bombardment, the final prototype never produced the expected results and the project was abandoned. The remaining prototypes have since found their way into the hands of various collectors around the sector.",,,
 ,,,,,
 ,,,,,
 #fighters,,,,,
@@ -220,6 +221,8 @@ tahlan_anumis,WEAPON,"A pair of superheavy cannons in a twin mount, the Anumis f
 tahlan_ramun,WEAPON,"A light anti-armor weapon with extended range thanks to an advanced trajectory correction system. Sadly this system comes at the cost of projectile velocity, limiting the weapon's effectiveness against more nimble targets.",,,
 tahlan_gleipnir,WEAPON,"A massive spinal cannon that served as the prototype for the Gardas Hyperrail Cannon. Extremely devastating, but suffers from a high power demand, requiring the ship's assault mode to be active in order to fire.",,,
 tahlan_karion,WEAPON,An experimental weapon system unique to the Ristreza. Launches a seeking microdrone surrounded by an ionizing plasma field that acts similar to conventional missiles.,,,
+tahlan_gaebolg,WEAPON,"The core of the Cuchulainn is a massive tachyon beam projector with impressive output, but suffering from a difficult to maintain design.",,,
+tahlan_karionbat,WEAPON,An advanced suppression weapon firing drone-guided ionizing charges. Due to the small scale of the drones their ammo supply is virtually unlimited.,,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,

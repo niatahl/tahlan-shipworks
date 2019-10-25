@@ -4,11 +4,15 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.StarAge;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
+import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
@@ -28,9 +32,11 @@ public class tahlan_Lethia {
         PlanetAPI lethia_star = system.initStar("tahlan_lethia",
                 "star_yellow",
                 350f,
-                1000f);
+                600f);
 
         system.setLightColor(new Color(255,255,255));
+
+        addDerelict(system,lethia_star,"tahlan_DunScaith_barrage", ShipRecoverySpecial.ShipCondition.WRECKED, 500f, Math.random()>0.1);
 
         PlanetAPI lethia_1 = system.addPlanet("tahlan_lethia_p01",
                 lethia_star,
@@ -75,6 +81,7 @@ public class tahlan_Lethia {
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 3, Color.gray, 256f, 3650, 220f);
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, 3800, 370f);
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 2, Color.gray, 256f, 4050, 235f);
+        addDerelict(system,lethia_star,"tahlan_onslaught_gh_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 3900, Math.random()>0.05);
 
         PlanetAPI lethia_3 = system.addPlanet("tahlan_lethia_p03",
                 lethia_star,
@@ -145,7 +152,7 @@ public class tahlan_Lethia {
                                 Conditions.POPULATION_6,
                                 Conditions.HABITABLE,
                                 Conditions.FARMLAND_POOR,
-                                Conditions.ORE_SPARSE,
+                                Conditions.ORE_MODERATE,
                                 Conditions.RARE_ORE_SPARSE,
                                 Conditions.ORGANICS_TRACE,
                                 Conditions.COLD
@@ -186,7 +193,7 @@ public class tahlan_Lethia {
 
         // Some procgen can go out here.
         float radiusAfter = StarSystemGenerator.addOrbitingEntities(system, lethia_star, StarAge.AVERAGE,
-                2, 4, // min/max entities to add
+                3, 4, // min/max entities to add
                 7500, // radius to start adding at
                 5, // name offset - next planet will be <system name> <roman numeral of this parameter + 1>
                 true); // whether to use custom or system-name based names
@@ -200,21 +207,37 @@ public class tahlan_Lethia {
         lethiaGate.setCircularOrbit(lethia_star, MathUtils.getRandomNumberInRange(0f,360f),radiusAfter+1000, 520);
         lethiaGate.setCustomDescriptionId("tahlan_gate_lethia");
 
-        //debris field near Atanor
+        //debris fields around gate
         DebrisFieldTerrainPlugin.DebrisFieldParams params3 = new DebrisFieldTerrainPlugin.DebrisFieldParams(
-                400f,
-                2f,
+                600f,
+                1f,
                 10000000f,
                 10000000f);
         params3.source = DebrisFieldTerrainPlugin.DebrisFieldSource.BATTLE;
         params3.baseSalvageXP = 850;
         params3.glowColor = Color.white;
-        SectorEntityToken debrisLethiaGate = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
-        debrisLethiaGate.setSensorProfile(1500f);
-        debrisLethiaGate.setDiscoverable(true);
-        debrisLethiaGate.setCircularOrbit(lethiaGate,360*(float)Math.random(),100,250f);
-        debrisLethiaGate.setId("tahlan_lethia_debrisLethia2");
 
+        SectorEntityToken debrisLethiaGate1 = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
+        debrisLethiaGate1.setSensorProfile(1500f);
+        debrisLethiaGate1.setDiscoverable(true);
+        debrisLethiaGate1.setCircularOrbit(lethiaGate,360*(float)Math.random(),100,250f);
+        debrisLethiaGate1.setId("tahlan_lethia_debrisGate1");
+
+        SectorEntityToken debrisLethiaGate2 = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
+        debrisLethiaGate2.setSensorProfile(1500f);
+        debrisLethiaGate2.setDiscoverable(true);
+        debrisLethiaGate2.setCircularOrbit(lethiaGate,360*(float)Math.random(),150,300f);
+        debrisLethiaGate2.setId("tahlan_lethia_debrisGate2");
+
+        SectorEntityToken debrisLethiaGate3 = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
+        debrisLethiaGate3.setSensorProfile(1500f);
+        debrisLethiaGate3.setDiscoverable(true);
+        debrisLethiaGate3.setCircularOrbit(lethiaGate,360*(float)Math.random(),200,350f);
+        debrisLethiaGate3.setId("tahlan_lethia_debrisGate3");
+
+        //derelicts near gate
+        addDerelict(system, lethiaGate, "tahlan_Ristreza_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 500f, Math.random()>0.1);
+        addDerelict(system, lethiaGate, "tahlan_Vale_crusader", ShipRecoverySpecial.ShipCondition.AVERAGE, 240f, Math.random()>0.2);
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true);
@@ -289,5 +312,21 @@ public class tahlan_Lethia {
 
         //Finally, return the newly-generated market
         return newMarket;
+    }
+
+    //Shorthand for adding derelicts, thanks Tart
+    protected void addDerelict(StarSystemAPI system, SectorEntityToken focus, String variantId,
+                               ShipRecoverySpecial.ShipCondition condition, float orbitRadius, boolean recoverable) {
+        DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(new ShipRecoverySpecial.PerShipData(variantId, condition), false);
+        SectorEntityToken ship = BaseThemeGenerator.addSalvageEntity(system, Entities.WRECK, Factions.NEUTRAL, params);
+        ship.setDiscoverable(true);
+
+        float orbitDays = orbitRadius / (10f + (float) Math.random() * 5f);
+        ship.setCircularOrbit(focus, (float) Math.random() * 360f, orbitRadius, orbitDays);
+
+        if (recoverable) {
+            SalvageSpecialAssigner.ShipRecoverySpecialCreator creator = new SalvageSpecialAssigner.ShipRecoverySpecialCreator(null, 0, 0, false, null, null);
+            Misc.setSalvageSpecial(ship, creator.createSpecial(ship, null));
+        }
     }
 }
