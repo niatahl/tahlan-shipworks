@@ -1,0 +1,36 @@
+{
+	"id":"tahlan_karion_msl",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+	"sprite":"graphics/tahlan/missiles/tahlan_blank.png",
+	"onHitEffect":"data.scripts.weapons.tahlan_KarionOnHitEffect",
+	"size":[2,2],	
+	"center":[1,1],
+	"collisionRadius":10,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[0,105,255,205],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":70, # purely visual
+	"engineSpec":{"turnAcc":300,
+				  "turnRate":300,
+				  "acc":500,
+				  "dec":500},
+	"engineSlots":[{"id":"ES1",
+					"loc":[0, 0],
+				    #"style":"MISSILE_MIDLINE",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"PARTICLES", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[100,205,255,0],
+						"contrailParticleSizeMult":50.0,
+						"contrailParticleDuration":0.1,
+						"contrailParticleFinalSizeMult":1.5,		
+						"contrailMaxSpeedMult":0.33,
+						"contrailAngularVelocityMult":0.33,
+						"contrailColor":[100,205,255,155],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":1,
+				    "length":1,
+				    "angle":180.0},
+				    ]
+}

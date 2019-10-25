@@ -7,11 +7,11 @@
 	"hullFrequency":{
 		"tags":{
 			"tahlan_knights":0.1,
-			"tahlan_Niebelung":0.4,
 		},
 		"hulls":{
 			"tahlan_vendetta_gh":0.1,
 			"tahlan_Glint":0.5,
+			"tahlan_Nibelung":0.4,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction

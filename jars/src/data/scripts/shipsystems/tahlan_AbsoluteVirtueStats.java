@@ -24,7 +24,6 @@ public class tahlan_AbsoluteVirtueStats extends BaseShipSystemScript {
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
             player = ship == Global.getCombatEngine().getPlayerShip();
-            id = id + "_" + ship.getId();
         } else {
             return;
         }
@@ -67,7 +66,6 @@ public class tahlan_AbsoluteVirtueStats extends BaseShipSystemScript {
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
             player = ship == Global.getCombatEngine().getPlayerShip();
-            id = id + "_" + ship.getId();
         } else {
             return;
         }
@@ -78,6 +76,7 @@ public class tahlan_AbsoluteVirtueStats extends BaseShipSystemScript {
         stats.getMaxSpeed().unmodify(id);
         stats.getAcceleration().unmodify(id);
         stats.getShieldDamageTakenMult().unmodify(id);
+        stats.getShieldUnfoldRateMult().unmodify(id);
     }
 
     public StatusData getStatusData(int index, State state, float effectLevel) {

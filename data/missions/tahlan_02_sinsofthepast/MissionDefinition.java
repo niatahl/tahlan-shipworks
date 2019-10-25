@@ -1,4 +1,4 @@
-package data.missions.tahlan_sinsofthepast;
+package data.missions.tahlan_02_sinsofthepast;
 
 import java.util.List;
 

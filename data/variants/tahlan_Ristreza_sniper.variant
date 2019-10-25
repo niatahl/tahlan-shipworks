@@ -1,0 +1,67 @@
+{
+    "displayName": "Sniper",
+    "fluxCapacitors": 18,
+    "fluxVents": 50,
+    "hullId": "tahlan_Ristreza",
+    "hullMods": [
+        "targetingunit",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Ristreza_sniper",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0024": "tahlan_gleipnir"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0018": "tahlan_karion",
+                "WS0019": "tahlan_karion",
+                "WS0020": "tahlan_karion",
+                "WS0021": "tahlan_karion",
+                "WS0022": "tahlan_karion",
+                "WS0023": "tahlan_karion"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "tahlan_atrapos",
+                "WS0005": "tahlan_atrapos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_magaera",
+                "WS0002": "tahlan_magaera",
+                "WS0003": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "tahlan_volkite",
+                "WS0007": "tahlan_volkite",
+                "WS0008": "tahlan_volkite",
+                "WS0009": "tahlan_volkite",
+                "WS0010": "tahlan_volkite",
+                "WS0011": "tahlan_volkite",
+                "WS0012": "tahlan_volkite",
+                "WS0013": "tahlan_volkite",
+                "WS0014": "tahlan_volkite",
+                "WS0015": "tahlan_volkite",
+                "WS0016": "tahlan_volkite",
+                "WS0017": "tahlan_volkite"
+            }
+        }
+    ]
+}

@@ -109,6 +109,9 @@ An ancient design, the Nibelung-class battleship predates even the venerable Ons
 
 While the design predates the age of modular weaponry and shields, its turret-focused design proved well-suited for the adaption of modular weapon mounts and a number of major refits kept the ship relevant for a great many years in planetary defense or paramilitary forces.",,,
 tahlan_Phoca,SHIP,"The Phoca is a light cruiser that heavily focuses on a powerful ballistic broadside equipped with advanced ammo feeders. While fielding impressive firepower, the ship itself is quite fragile and relies on hit-and-run fly-by maneuvers to stay alive while dealing its damage.",,,
+tahlan_Ristreza,SHIP,"A rare example of Kassadari pre-collapse ship design, the Ristreza dates back to the early development of the Great Houses' signature temporal circuit grid technology. Equipped with the first fully operational grid and a number of other prototype designs, she served as the testbed for numerous Kassadari technologies over her lifetime. The exact number of vessels of this type ever constructed remains a mystery, but it is known that they once formed the backbone of the Kassadari fleet prior to the adoption of their refit doctrine in the wake of the collapse.
+
+While originally intended as an experimental vessel, the Ristreza is a highly capable warship in her own right and was operated as such for a large portion of her service history.",,,
 ,,,,,
 ,,,,,
 #fighters,,,,,
@@ -215,6 +218,8 @@ tahlan_heraton,WEAPON,"A modification of the Hekaton-class torpedo. The primary 
 tahlan_ronka,WEAPON,"A versatile twin cannon firing voidburst charges. Effective against most targets and capable of substituting as point-defense weapon, the Ronka is a true allrounder, but fails to excel at any particular role.",,,
 tahlan_anumis,WEAPON,"A pair of superheavy cannons in a twin mount, the Anumis fires accurate high-explosive rounds equipped with a miniaturized version of the Hekaton's signature secondary plasma burst warhead, granting it slightly improved performance against shields.",,,
 tahlan_ramun,WEAPON,"A light anti-armor weapon with extended range thanks to an advanced trajectory correction system. Sadly this system comes at the cost of projectile velocity, limiting the weapon's effectiveness against more nimble targets.",,,
+tahlan_gleipnir,WEAPON,"A massive spinal cannon that served as the prototype for the Gardas Hyperrail Cannon. Extremely devastating, but suffers from a high power demand, requiring the ship's assault mode to be active in order to fire.",,,
+tahlan_karion,WEAPON,An experimental weapon system unique to the Ristreza. Launches a seeking microdrone surrounded by an ionizing plasma field that acts similar to conventional missiles.,,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,
@@ -239,3 +244,12 @@ tahlan_infernalcharge,SHIP_SYSTEM,"Diverts energy from shields to boost engine p
 tahlan_defformation,SHIP_SYSTEM,"Orders fighters to fly in defensive formations, effectively halving all their damage taken for the duration.",Fighters,,
 tahlan_auxthrusters,SHIP_SYSTEM,Engages auxiliary thrusters to massively boost turn rate and slightly improve top speed.,Mobility,,
 tahlan_steamlight,SHIP_SYSTEM,"Grants a short but strong 2 second boost to top speed and ballistic weapon rate of fire, which then returns to normal values over 5 seconds.",Boost,,
+tahlan_assaultmode,SHIP_SYSTEM,"Engages the ship's assault mode. Charges up over 10 seconds, boosting ballistic weapon rate of fire and energy weapon damage by up to 50% at full charge. Remains at full charge for 5 seconds. Reduces all mobility by up to 50% due to diverted power.",Assault,,
+,,,,,
+,,,,,
+# Campaign,,,,,
+,,,,,
+tahlan_planet_kassadar,CUSTOM,"The last bastion of civilization in the Lethia system, Kassadar is a cold and unfriendly world to most of its inhabitants, but even from space you can see the few massive hive cities, that in their upper levels house the old nobility of the Great Houses. Warships bearing the orange stripes of the Kassadari navy orbit the planet, their temporal systems distorting space around them in an unwelcoming display of power.",,"From the moment you leave your ship, you find yourself surrounded by a strange atmosphere. Kassadari architecture stands proud around you, tall black spires reaching towards the sky, white marble covering the ground beneath your feet and royal guards in ornamental armor overlook the docks. Standing in stark contrast, the people around you have worn faces, bereft of hope. Kassadar is a planet that has stood on the edge for too many decades and even now its future remains unclear.",
+tahlan_planet_heridal,CUSTOM,"Evergreen jungles cover the entirety of Heridal, with the exception of large, now abandoned, agricultural zones that can be seen from orbit. It seems strange that such a world now lies abandoned, but the colony was still too early in its development when the collapse cut off the flow of much-needed supplies. With its untapped riches however, it is only a matter of time till the Kassadari will reclaim this world.",,,
+tahlan_planet_atanor,CUSTOM,"The molten hellscape of Atanor is no place for any human to live, but the planet's rich mineral deposits once fueled the Kassadari infrastructure. Now it lies abandoned, its mines patiently waiting for a time the Kassadari people may return.",,,
+tahlan_gate_lethia,CUSTOM,"Once the lifeline supplying the Lethia system with the materials needed to build and expand its three colonies, the gate has fallen inactive and plunged the system into chaos and despair.",,,

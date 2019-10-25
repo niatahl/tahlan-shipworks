@@ -41,21 +41,8 @@
 		],
 	},
 	"knownShips":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_gh_bp", "tahlan_knights"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_knight_bp", "tahlan_knights"],
 		"hulls":[
-			"doom",
-			"harbinger",
-			"afflictor",
-			"shade",
-			"atlas",
-			"kite_original",
-			"monitor",
-			"odyssey",
-			"prometheus",
-			"conquest",
-			"gryphon",
-			"eagle",
-			"valkyrie",
 			"tahlan_vendetta_gh", #not included in the BP package, since it only loads with certain mods
 		],
 	},
@@ -74,7 +61,7 @@
 		],
 	},
 	"priorityFighters":{
-		"tags":[],
+		"tags":["tahlan_knights"],
 		"fighters":[
 		],
 	},
@@ -109,7 +96,7 @@
 		],
 	},
 	"priorityWeapons":{
-		"tags":["tahlan_gh_bp", "tahlan_knights"],
+		"tags":["tahlan_knight_bp", "tahlan_knights"],
 		"weapons":[
 		],
 	},

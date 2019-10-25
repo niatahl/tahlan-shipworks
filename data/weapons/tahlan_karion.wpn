@@ -1,0 +1,36 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_karion_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_karion",
+  "projectileSpecId": "tahlan_karion_msl",
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "muzzleFlashSpec": {
+    "length": 15,
+    "particleColor": [100,205,255,150],
+    "particleCount": 10,
+    "particleDuration": 1.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 180
+  },
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "",
+  "type": "MISSILE"
+}

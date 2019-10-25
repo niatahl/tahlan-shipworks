@@ -11,7 +11,9 @@ Kassadari Engineering,tahlan_knightrefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullm
 
 Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s. Armor is reduced by %s based on hull size to make room for the exposed components of the system and monthly supply cost is increased by %s. Furthermore the delicate machinery causes CR to decrease at doubled rate after peak performance time has passed.
 
-In emergency situations the Temporal Circuit will enter overdrive mode. Activating automatically if hull integrity falls below %s, the time acceleration is boosted to %s.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
+In emergency situations the Temporal Circuit will enter overdrive mode. Activating automatically if hull integrity falls below %s, the time acceleration is boosted to %s.
+
+Due to high power needs, all these effects are %s.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
 Advanced Ballistic Interface,tahlan_advballistics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdvBallistics,Enhanced mounts reduce the ordnance point cost of ballistic weapons by %s.,Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
 Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_BroadsideMounts,"Weapon mounts specialized for broadside combat.
 Reduces the OP cost of large weapons by %s and increases the health of all weapon mounts by %s.",Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png

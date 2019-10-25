@@ -1,0 +1,24 @@
+{
+	"tahlan_station_skyward":{
+        "defaultName":"Skyward Station",
+        "defaultRadius":250,
+        "customDescriptionId":"tahlan_station_skyward",
+        "interactionImage":"graphics/illustrations/city_from_above.jpg",
+        "icon":"graphics/icons/station0.png",
+        "iconWidth":32,
+        "iconHeight":32,
+        "sprite":"graphics/stations/station_lowtech3.png",
+        "spriteWidth":240,
+        "spriteHeight":250,
+        "renderShadow":true,
+        "useLightColor":true,
+        "showInCampaign":true,
+        "showIconOnMap":true,
+        "showNameOnMap":true,
+        "scaleIconWithZoom":true,
+        "scaleNameWithZoom":false,
+        "tags":["station"],
+        "layers":[STATIONS],
+    },
+
+}

@@ -31,8 +31,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
     private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 20);
     private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 80);
 
-    private float CalibrationMult = 1f;
-    private boolean RunOnce = false;
+    private static final String ke_id = "tahlan_KnightRefitID";
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -43,16 +42,16 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
         switch (hullSize) {
             case FRIGATE:
-                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_FRIGATE);
+                stats.getArmorBonus().modifyFlat(ke_id, -ARMOR_MALUS_FRIGATE);
                 break;
             case DESTROYER:
-                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_DESTROYER);
+                stats.getArmorBonus().modifyFlat(ke_id, -ARMOR_MALUS_DESTROYER);
                 break;
             case CRUISER:
-                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_CRUISER);
+                stats.getArmorBonus().modifyFlat(ke_id, -ARMOR_MALUS_CRUISER);
                 break;
             case CAPITAL_SHIP:
-                stats.getArmorBonus().modifyFlat(id, -ARMOR_MALUS_CAPITAL);
+                stats.getArmorBonus().modifyFlat(ke_id, -ARMOR_MALUS_CAPITAL);
         }
 
         //stats.getMaxSpeed().modifyMult(id,HANDLING_MULT);
@@ -60,8 +59,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
         //stats.getDeceleration().modifyMult(id,HANDLING_MULT);
         //stats.getTurnAcceleration().modifyMult(id,HANDLING_MULT);
 
-        stats.getSuppliesPerMonth().modifyMult(id, SUPPLIES_MULT);
-        stats.getCRLossPerSecondPercent().modifyMult(id, 2f);
+        stats.getSuppliesPerMonth().modifyMult(ke_id, SUPPLIES_MULT);
+        stats.getCRLossPerSecondPercent().modifyMult(ke_id, 2f);
 
 
     }
@@ -74,75 +73,79 @@ public class tahlan_KnightRefit extends BaseHullMod {
             return;
         }
 
-        if (!RunOnce) {
-            if (ship.getVariant().getHullMods().contains("tahlan_uncalibrated_tcg")) {
-                CalibrationMult = MathUtils.getRandomNumberInRange(0.5f, 1f);
-            }
-            RunOnce = true;
-        }
-
         //The Great Houses are actually timelords
         boolean player = ship == Global.getCombatEngine().getPlayerShip();
-        String id = "tahlan_KnightRefitID";
-        if (ship.getHitpoints() <= ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE || ship.getVariant().getHullMods().contains("tahlan_forcedoverdrive")) {
 
-            if (player) {
-                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT * CalibrationMult);
-                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / OVERDRIVE_TIME_MULT * CalibrationMult);
+        if (ship.getSystem() != null) {
+            if (!ship.getSystem().isActive()) {
+                if (ship.getHitpoints() <= ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE || ship.getVariant().getHullMods().contains("tahlan_forcedoverdrive")) {
+
+                    if (player) {
+                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, OVERDRIVE_TIME_MULT);
+                        Global.getCombatEngine().getTimeMult().modifyMult(ke_id, 1f / OVERDRIVE_TIME_MULT);
+                    } else {
+                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, OVERDRIVE_TIME_MULT);
+                        Global.getCombatEngine().getTimeMult().unmodify(ke_id);
+                    }
+
+                    if (!(ship.getOriginalOwner() == -1)) {
+
+                        EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
+                        ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
+
+                        ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
+                        ship.setJitter(ke_id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
+                        ship.setJitterUnder(ke_id, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
+
+                    }
+
+                    if (player) {
+                        Global.getCombatEngine().maintainStatusForPlayerShip(ke_id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Overdrive", "Timeflow at 130%", false);
+                    }
+
+                } else {
+
+                    if (player) {
+                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, TIME_MULT);
+                        Global.getCombatEngine().getTimeMult().modifyMult(ke_id, 1f / TIME_MULT);
+                        Global.getCombatEngine().maintainStatusForPlayerShip(ke_id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Field", "Timeflow at 110%", false);
+                    } else {
+                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, TIME_MULT);
+                        Global.getCombatEngine().getTimeMult().unmodify(ke_id);
+                    }
+
+                }
+
+                ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerNullerID", -1);
+                ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerID",
+                        ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() + amount);
+                if (ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
+                    ship.addAfterimage(
+                            AFTERIMAGE_COLOR,
+                            0, //X-location
+                            0, //Y-location
+                            ship.getVelocity().getX() * (-1f), //X-velocity
+                            ship.getVelocity().getY() * (-1f), //Y-velocity
+                            3f, //Maximum jitter
+                            0.1f, //In duration
+                            0f, //Mid duration
+                            0.3f, //Out duration
+                            true, //Additive blend?
+                            false, //Combine with sprite color?
+                            false //Above ship?
+                    );
+                    ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerID",
+                            ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() - AFTERIMAGE_THRESHOLD);
+                }
+
             } else {
-                ship.getMutableStats().getTimeMult().modifyMult(id, OVERDRIVE_TIME_MULT * CalibrationMult);
-                Global.getCombatEngine().getTimeMult().unmodify(id);
+                ship.getMutableStats().getTimeMult().unmodify(ke_id);
+                Global.getCombatEngine().getTimeMult().unmodify(ke_id);
             }
-
-            if (!(ship.getOriginalOwner() == -1)) {
-
-                EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
-                ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
-
-                ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
-                ship.setJitter(id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
-                ship.setJitterUnder(id, OVERDRIVE_JITTER_UNDER_COLOR, 0.5f, 20, 10f);
-
-            }
-
-            if (player) {
-                Global.getCombatEngine().maintainStatusForPlayerShip(id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Overdrive", "Timeflow at 130%", false);
-            }
-
-        } else {
-
-            if (player) {
-                ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT * CalibrationMult);
-                Global.getCombatEngine().getTimeMult().modifyMult(id, 1f / TIME_MULT * CalibrationMult);
-                Global.getCombatEngine().maintainStatusForPlayerShip(id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Field", "Timeflow at 110%", false);
-            } else {
-                ship.getMutableStats().getTimeMult().modifyMult(id, TIME_MULT * CalibrationMult);
-                Global.getCombatEngine().getTimeMult().unmodify(id);
-            }
-
         }
 
-        ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerNullerID", -1);
-        ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerID",
-                ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() + amount);
-        if (ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
-            ship.addAfterimage(
-                    AFTERIMAGE_COLOR,
-                    0, //X-location
-                    0, //Y-location
-                    ship.getVelocity().getX() * (-1f), //X-velocity
-                    ship.getVelocity().getY() * (-1f), //Y-velocity
-                    3f, //Maximum jitter
-                    0.1f, //In duration
-                    0f, //Mid duration
-                    0.3f, //Out duration
-                    true, //Additive blend?
-                    false, //Combine with sprite color?
-                    false //Above ship?
-            );
-            ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerID",
-                    ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() - AFTERIMAGE_THRESHOLD);
-        }
+
+
 
     }
 
@@ -161,6 +164,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
         if (index == 3) return "" + Math.round((SUPPLIES_MULT - 1f) * 100f) + "%";
         if (index == 4) return "" + Math.round(OVERDRIVE_TRIGGER_PERCENTAGE * 100f) + "%";
         if (index == 5) return "" + Math.round((OVERDRIVE_TIME_MULT - 1f) * 100f) + "%";
+        if (index == 6) return "suspended while the ship system is active";
         return null;
     }
 }
