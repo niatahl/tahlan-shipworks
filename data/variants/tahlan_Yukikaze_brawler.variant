@@ -1,7 +1,7 @@
 {
   "displayName": "Brawler",
   "fluxCapacitors": 0,
-  "fluxVents": 16,
+  "fluxVents": 28,
   "goalVariant": true,
   "hullId": "tahlan_Yukikaze",
   "hullMods": [

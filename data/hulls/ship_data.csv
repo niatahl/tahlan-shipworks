@@ -40,12 +40,12 @@ Cuchulainn,tahlan_Cuchulainn,Weapons Platform,High Tech,displacer,20,7000,700,12
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Legio Infernalis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Castigator (PI),tahlan_Castigator_P,Assault Cruiser,Legio Infernalis,tahlan_raiderjets,16,8000,1300,14000,10500,600,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,5,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,rare_bp,0.4,0.5,2,3,401
-Dun Scaith,tahlan_DunScaith,Dreadnought,Legio Infernalis,tahlan_infernalcharge,35,22000,1500,20000,,900,370,2,20,10,10,4,4,4200,FRONT,,60,0.4,1,,,900,1800,500,600,20,30,7,800000,3,15,720,0.25,60,60,HIDE_IN_CODEX,no_bp_drop,0.05,0.4,3,5,666
-Castella (PI),tahlan_Castella_pirates,Battlecarrier,Legio Infernalis,tahlan_stormdrive,28,15000,1200,11000,12500,500,240,4,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,400000,3,12,720,0.25,40,40,"CARRIER, COMBAT, NO_AUTO_ESCORT",rare_bp,,0.4,2,4,507
-Doominator,tahlan_Dominator_PH,Phase Cruiser,Legio Infernalis,tahlan_weaponsoverdrive,15,11000,1400,12000,9000,500,150,,30,20,10,12,12,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,540,0.25,30,30,"PHASE, HIDE_IN_CODEX",rare_bp,0.2,0.4,2,3,404
-Hresvelgr (PI),tahlan_Hresvelgr_p,Fleetcarrier,Legio Infernalis,burndrive,28,14000,1200,11000,12500,400,260,6,35,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT",rare_bp,,0.4,2,4,507
-Bronco (PI),tahlan_Bronco_p,Destroyer,Legio Infernalis,ammofeed,10,4000,600,3500,3333,200,80,,70,50,20,30,20,500,OMNI,,120,0.4,1.1,,,50,90,120,80,3,28,9,35000,5,12,420,0.25,10,10,,pirate_bp,,0.5,2,3,1134
+Castigator (LI),tahlan_Castigator_P,Assault Cruiser,Legio Infernalis,tahlan_raiderjets,16,8000,1300,14000,10500,600,160,,60,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,5,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, tahlan_legio",0.4,0.5,2,3,401
+Dun Scaith,tahlan_DunScaith,Dreadnought,Legio Infernalis,tahlan_infernalcharge,35,22000,1500,20000,,900,370,2,20,10,10,4,4,4200,FRONT,,60,0.4,1,,,900,1800,500,600,20,30,7,800000,3,15,720,0.25,60,60,HIDE_IN_CODEX,"no_bp_drop, tahlan_legio",0.05,0.4,3,5,666
+Castella (LI),tahlan_Castella_pirates,Battlecarrier,Legio Infernalis,tahlan_stormdrive,28,15000,1200,11000,12500,500,240,4,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,400000,3,12,720,0.25,40,40,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, tahlan_legio",,0.4,2,4,507
+Doominator,tahlan_Dominator_PH,Phase Cruiser,Legio Infernalis,tahlan_weaponsoverdrive,15,11000,1400,12000,9000,500,150,,30,20,10,12,12,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,540,0.25,30,30,"PHASE, HIDE_IN_CODEX","rare_bp, tahlan_legio",0.2,0.4,2,3,404
+Hresvelgr (LI),tahlan_Hresvelgr_p,Fleetcarrier,Legio Infernalis,burndrive,28,14000,1200,11000,12500,400,260,6,35,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, tahlan_legio",,0.4,2,4,507
+Bronco (LI),tahlan_Bronco_p,Destroyer,Legio Infernalis,ammofeed,10,4000,600,3500,3333,200,80,,70,50,20,30,20,500,OMNI,,120,0.4,1.1,,,50,90,120,80,3,28,9,35000,5,12,420,0.25,10,10,,"pirate_bp, tahlan_legio",,0.5,2,3,1134
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Vayra nonsense,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

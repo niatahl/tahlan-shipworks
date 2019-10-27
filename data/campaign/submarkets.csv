@@ -1,0 +1,2 @@
+id,name,faction,desc,script,icon,order
+tahlan_kassadarmarket,Antique Seller,tahlan_greathouses,"Ship conversions using Kassadari tech are usually performed on order only, but if one knows where to ask, there is a market here for old and damaged hulls that are no longer suitable for service in the Kassadari fleet.",data.scripts.campaign.submarkets.tahlan_KassadarMarketPlugin,,800.05

@@ -1,0 +1,2 @@
+id,name,cost mult,build time,income,upkeep,downgrade,upgrade,tags,data,image,plugin,desc,order
+tahlan_CloningFacility,Cloning Facility,45,45,,3,,,farming,,graphics/tahlan/icons/industry/tahlan_CloningFacility.png,data.scripts.economy.industries.tahlan_CloningFacility,"An ancient cloning facility, hidden beneath the surface of Lucifron has been repurposed by the Legio to mass-produce food.",210

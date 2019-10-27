@@ -4,8 +4,11 @@ import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
+import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
+import data.scripts.world.tahlan_FactionRelationPlugin;
 import data.scripts.world.tahlan_Lethia;
+import data.scripts.world.tahlan_Rubicon;
 import exerelin.campaign.SectorManager;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
@@ -69,10 +72,18 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 Global.getSector().getFaction("tahlan_greathouses").removeKnownShip("tahlan_vendetta_gh");
             }
         }
+
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         if (!haveNexerelin || SectorManager.getCorvusMode()){
             new tahlan_Lethia().generate(sector);
+            new tahlan_Rubicon().generate(sector);
         }
+
+        //Legio Infernalis relations
+        tahlan_FactionRelationPlugin.initFactionRelationships(sector);
+
+        //Adding Legio to bounty system
+        SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");
     }
 }

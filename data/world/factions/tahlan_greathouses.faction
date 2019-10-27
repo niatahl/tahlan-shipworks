@@ -32,6 +32,8 @@
 		"hulls":{
 			"buffalo2":0, # just say no
 			"apogee":0, # too civilian.
+			"tahlan_Izanami":0, #The blueprints were lost
+			"tahlan_Ristreza":0.5, #Ancient ships that are no longer being built
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -138,8 +140,8 @@
 		"carriers":1,
 		"phaseShips":1,
 		
-		"officerQuality":5,
-		"shipQuality":5,
+		"officerQuality":3,
+		"shipQuality":3,
 		"numShips":1,
 		
 		"shipSize":4,

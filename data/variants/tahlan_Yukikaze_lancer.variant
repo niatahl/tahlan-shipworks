@@ -1,6 +1,6 @@
 {
   "displayName": "Lancer",
-  "fluxCapacitors": 0,
+  "fluxCapacitors": 12,
   "fluxVents": 30,
   "goalVariant": true,
   "hullId": "tahlan_Yukikaze",

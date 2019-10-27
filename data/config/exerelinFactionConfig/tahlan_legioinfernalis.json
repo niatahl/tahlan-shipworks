@@ -1,0 +1,38 @@
+{
+    "playableFaction":false,
+    "pirateFaction":true,
+    "corvusCompatible":true,
+    "noHomeworld":false,
+    "showIntelEvenIfDead":true,
+        
+    "rebelFleetSuffix":"Traitors",
+    
+    "difficultyString":"hard",
+    
+    "alignments":{
+        "ideological":0.5,
+		"militarist":1,
+		"corporate":-1,
+    },
+	
+	"maxRelationships":{ 
+		"default":-0.5, 
+		"hegemony":-1, 
+		"diableavionics":0.5,
+		"pirates":1,
+		"player":1,
+	},
+	
+    "diplomacyTraits":["neutralist", "selfrighteous"],
+	"morality":"evil",
+    
+    "freeMarket":true,
+    
+    "vengeanceFleetNames":["Enforcers", "Executors", "Crusaders"],
+    "vengeanceFleetNamesSingle":["an Enforcer fleet", "an Executor fleet", "a Crusade"],
+    
+    "defenceStations":[
+        {"ids":["orbitalstation", "battlestation", "starfortress"]},
+    ],
+    
+}

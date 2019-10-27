@@ -36,8 +36,6 @@ public class tahlan_Lethia {
 
         system.setLightColor(new Color(255,255,255));
 
-        addDerelict(system,lethia_star,"tahlan_DunScaith_barrage", ShipRecoverySpecial.ShipCondition.WRECKED, 500f, Math.random()>0.1);
-
         PlanetAPI lethia_1 = system.addPlanet("tahlan_lethia_p01",
                 lethia_star,
                 "Marandil",
@@ -146,41 +144,45 @@ public class tahlan_Lethia {
 
         MarketAPI lethia_5_market = addMarketplace("independent", lethia_5, null,
                 "Kassadar",
-                6,
+                7,
                 new ArrayList<>(
                         Arrays.asList(
-                                Conditions.POPULATION_6,
+                                Conditions.POPULATION_7,
                                 Conditions.HABITABLE,
                                 Conditions.FARMLAND_POOR,
                                 Conditions.ORE_MODERATE,
                                 Conditions.RARE_ORE_SPARSE,
                                 Conditions.ORGANICS_TRACE,
-                                Conditions.COLD
+                                Conditions.COLD,
+                                Conditions.LARGE_REFUGEE_POPULATION
                         )
                 ),
                 new ArrayList<>(
                         Arrays.asList(
                                 Submarkets.GENERIC_MILITARY,
                                 Submarkets.SUBMARKET_OPEN,
-                                Submarkets.SUBMARKET_BLACK,
-                                Submarkets.SUBMARKET_STORAGE
+                                Submarkets.SUBMARKET_STORAGE,
+                                "tahlan_kassadarmarket"
                         )
                 ),
                 new ArrayList<>(
                         Arrays.asList(
                                 Industries.POPULATION,
+                                Industries.MEGAPORT,
                                 Industries.LIGHTINDUSTRY,
-                                Industries.HEAVYINDUSTRY,
-                                Industries.MINING,
-                                Industries.REFINING,
+                                Industries.FARMING,
+                                Industries.WAYSTATION,
                                 Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
-                                Industries.MEGAPORT
+                                Industries.MILITARYBASE
                         )
                 ),
                 0.3f,
                 false,
                 true);
+
+        lethia_5_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
+
 
         SectorEntityToken stableLoc2 = system.addCustomEntity("tahlan_lethia_stableloc_2", "Stable Location", "stable_location", Factions.NEUTRAL);
         stableLoc2.setCircularOrbit(lethia_star, MathUtils.getRandomNumberInRange(0f,360f),8200, 520);
@@ -210,34 +212,34 @@ public class tahlan_Lethia {
         //debris fields around gate
         DebrisFieldTerrainPlugin.DebrisFieldParams params3 = new DebrisFieldTerrainPlugin.DebrisFieldParams(
                 600f,
-                1f,
+                0.8f,
                 10000000f,
                 10000000f);
         params3.source = DebrisFieldTerrainPlugin.DebrisFieldSource.BATTLE;
         params3.baseSalvageXP = 850;
         params3.glowColor = Color.white;
 
-        SectorEntityToken debrisLethiaGate1 = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
+        SectorEntityToken debrisLethiaGate1 = Misc.addDebrisField(system,params3,StarSystemGenerator.random);
         debrisLethiaGate1.setSensorProfile(1500f);
         debrisLethiaGate1.setDiscoverable(true);
         debrisLethiaGate1.setCircularOrbit(lethiaGate,360*(float)Math.random(),100,250f);
         debrisLethiaGate1.setId("tahlan_lethia_debrisGate1");
 
-        SectorEntityToken debrisLethiaGate2 = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
-        debrisLethiaGate2.setSensorProfile(1500f);
-        debrisLethiaGate2.setDiscoverable(true);
-        debrisLethiaGate2.setCircularOrbit(lethiaGate,360*(float)Math.random(),150,300f);
-        debrisLethiaGate2.setId("tahlan_lethia_debrisGate2");
-
-        SectorEntityToken debrisLethiaGate3 = Misc.addDebrisField(system,params1,StarSystemGenerator.random);
-        debrisLethiaGate3.setSensorProfile(1500f);
-        debrisLethiaGate3.setDiscoverable(true);
-        debrisLethiaGate3.setCircularOrbit(lethiaGate,360*(float)Math.random(),200,350f);
-        debrisLethiaGate3.setId("tahlan_lethia_debrisGate3");
-
         //derelicts near gate
         addDerelict(system, lethiaGate, "tahlan_Ristreza_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 500f, Math.random()>0.1);
         addDerelict(system, lethiaGate, "tahlan_Vale_crusader", ShipRecoverySpecial.ShipCondition.AVERAGE, 240f, Math.random()>0.2);
+
+        SectorEntityToken debrisLethiaRim = Misc.addDebrisField(system,params3,StarSystemGenerator.random);
+        debrisLethiaRim.setSensorProfile(1200f);
+        debrisLethiaRim.setDiscoverable(true);
+        debrisLethiaRim.setCircularOrbit(lethia_star,360*(float)Math.random(),radiusAfter+2200, 640);
+        debrisLethiaRim.setId("tahlan_lethia_debrisRim");
+
+        //remainders of the Sins of the Past mission
+        addDerelict(system,debrisLethiaRim,"tahlan_legion_gh_knight",ShipRecoverySpecial.ShipCondition.WRECKED, 200f, Math.random()>0.05);
+        addDerelict(system,debrisLethiaRim, "tahlan_Timeless_standard",ShipRecoverySpecial.ShipCondition.WRECKED, 240f, false);
+        addDerelict(system,debrisLethiaRim, "tahlan_Nameless_standard",ShipRecoverySpecial.ShipCondition.WRECKED, 300f, false);
+        addDerelict(system,debrisLethiaRim, "tahlan_Nameless_standard",ShipRecoverySpecial.ShipCondition.WRECKED, 320f, false);
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true);

@@ -1,0 +1,25 @@
+{
+	"parent":"pirates", # String, parent faction id
+	"homeworld":"tahlan_rubicon_p03", # OPTIONAL String, market id, default null
+	
+	"freePort":true, # OPTIONAL Boolean, default false
+	"specialTrack":"nanoforge", # OPTIONAL String, 'nanoforge' or 'synchrotron' or 'alphacore', default null
+	
+	"orbitalStation":"orbitalstation", # OPTIONAL String, base-level orbital station industry id, default low-tech
+	"battleStation":"battlestation", # OPTIONAL String, battlestation industry id, default low-tech
+	"starFortress":"starfortress", # OPTIONAL String, star fortress industry id, default low-tech
+	
+	# The following items affect PLANET SCORE, a float weight normally 2.0 minus hazard (e.g. 150% hazard = 0.5 score)
+		"planetAffinities":{
+			"farmland_bountiful":3, # String, market condition OR planet type id : Float, flat modifier to planet score
+			"farmland_rich":2,
+			"farmland_adequate":0.5,
+			"desert":3,
+			"tundra":2,
+			"US_crash":1,
+		},
+	# These mininums/maximums will be ignored if no planets meet the criteria
+		"minScore":0.5, # OPTIONAL Float, minimum planet score, default 0.5f
+		"minDist":0, # OPTIONAL Float, minimum distance in LY, default 0f
+		"maxDist":20, # OPTIONAL Float, maximum distance in LY, default very far
+}
