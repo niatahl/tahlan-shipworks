@@ -1,13 +1,21 @@
+0.3.9a
+Bugfixing:
+- Fixed Legio Infernalis being engaged in an eternal civil war with itself
+
+
 0.3.9
 Additions:
 - Added the Ristreza Kassadari Battlecruiser
 - Added Karion Seeker Battery 
 - Added the Lethia system, home of the Great Houses of Kassadar
 - Added a new mission featuring the last stand of the Izanagi
+- Added Legio Infernalis faction
+- Added Rubicon System
 
 Vayra's Sector Additions:
 - Properly added the Cuchulainn mobile weapons platform as HVB
 - Added HVB for Izanami
+- Added raider and colonization behaviour for Legio Infenalis
 
 Changes:
 - Renamed Heraton-class torpedos on the Scoralis to "Rakaton" in order to avoid confusion with Hekatons

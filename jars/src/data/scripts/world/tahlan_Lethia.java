@@ -79,7 +79,7 @@ public class tahlan_Lethia {
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 3, Color.gray, 256f, 3650, 220f);
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, 3800, 370f);
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 2, Color.gray, 256f, 4050, 235f);
-        addDerelict(system,lethia_star,"tahlan_onslaught_gh_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 3900, Math.random()>0.05);
+        addDerelict(system,lethia_star,"tahlan_onslaught_gh_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 3900, Math.random()<0.05);
 
         PlanetAPI lethia_3 = system.addPlanet("tahlan_lethia_p03",
                 lethia_star,
@@ -226,8 +226,8 @@ public class tahlan_Lethia {
         debrisLethiaGate1.setId("tahlan_lethia_debrisGate1");
 
         //derelicts near gate
-        addDerelict(system, lethiaGate, "tahlan_Ristreza_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 500f, Math.random()>0.1);
-        addDerelict(system, lethiaGate, "tahlan_Vale_crusader", ShipRecoverySpecial.ShipCondition.AVERAGE, 240f, Math.random()>0.2);
+        addDerelict(system, lethiaGate, "tahlan_Ristreza_knight", ShipRecoverySpecial.ShipCondition.BATTERED, 500f, Math.random()<0.1);
+        addDerelict(system, lethiaGate, "tahlan_Vale_crusader", ShipRecoverySpecial.ShipCondition.AVERAGE, 240f, Math.random()<0.2);
 
         SectorEntityToken debrisLethiaRim = Misc.addDebrisField(system,params3,StarSystemGenerator.random);
         debrisLethiaRim.setSensorProfile(1200f);
@@ -236,7 +236,7 @@ public class tahlan_Lethia {
         debrisLethiaRim.setId("tahlan_lethia_debrisRim");
 
         //remainders of the Sins of the Past mission
-        addDerelict(system,debrisLethiaRim,"tahlan_legion_gh_knight",ShipRecoverySpecial.ShipCondition.WRECKED, 200f, Math.random()>0.05);
+        addDerelict(system,debrisLethiaRim,"tahlan_legion_gh_knight",ShipRecoverySpecial.ShipCondition.WRECKED, 200f, Math.random()<0.1);
         addDerelict(system,debrisLethiaRim, "tahlan_Timeless_standard",ShipRecoverySpecial.ShipCondition.WRECKED, 240f, false);
         addDerelict(system,debrisLethiaRim, "tahlan_Nameless_standard",ShipRecoverySpecial.ShipCondition.WRECKED, 300f, false);
         addDerelict(system,debrisLethiaRim, "tahlan_Nameless_standard",ShipRecoverySpecial.ShipCondition.WRECKED, 320f, false);

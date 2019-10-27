@@ -71,7 +71,7 @@ public class tahlan_Rubicon  {
         PlanetAPI rubicon_star2 = system.addPlanet("tahlan_rubicon_heart", rubicon_star, "The Infernal Heart", "star_red_dwarf", 90f, 200f, 2100f, 300f);
         system.addCorona(rubicon_star2, 200f, 5f, 0.2f, 2f);
 
-        addDerelict(system,rubicon_star2,"tahlan_DunScaith_barrage", ShipRecoverySpecial.ShipCondition.WRECKED, 500f, Math.random()>0.1);
+        addDerelict(system,rubicon_star2,"tahlan_DunScaith_barrage", ShipRecoverySpecial.ShipCondition.WRECKED, 500f, Math.random()<0.1);
 
         system.addAsteroidBelt(rubicon_star, 1000, 3000, 1000, 120, 500, Terrain.ASTEROID_BELT,"");
         system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 1, Color.gray, 500f, 3000f, 250f);
@@ -221,7 +221,7 @@ public class tahlan_Rubicon  {
         debrisRubicon4.setId("tahlan_lethia_debrisRubicon4");
 
         //Jump point for Scorn
-        JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_rubicon_scorn_jump", "Scorn Jump Point");
+        JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_rubicon_lucifron_jump", "Lucifron Jump Point");
         jumpPoint1.setCircularOrbit( system.getEntityById("tahlan_rubicon_p03"), 290, 900, 120);
         jumpPoint1.setRelatedPlanet(rubicon_3);
         system.addEntity(jumpPoint1);
