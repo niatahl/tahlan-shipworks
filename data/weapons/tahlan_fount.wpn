@@ -1,0 +1,78 @@
+{
+  "animationType": "SMOKE",
+  "barrelMode": "DUAL",
+  "fireSoundTwo": "harpoon_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    19,
+    2.5,
+    19,
+    -2.5,
+    19,
+    6.5,
+    19,
+    -6.5,
+    15,
+    4.5,
+    15,
+    -4.5
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_fount_hp.png",
+  "id": "tahlan_fount",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_fountain_msl",
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "smokeSpec": {
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackParticleCount": 2,
+    "blowbackSpread": 10,
+    "cloudDuration": 1,
+    "cloudParticleCount": 2,
+    "cloudRadius": 10,
+    "particleColor": [
+      150,
+      150,
+      150,
+      100
+    ],
+    "particleSizeMin": 10,
+    "particleSizeRange": 15
+  },
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    -0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "turretOffsets": [
+    15,
+    2.5,
+    15,
+    -2.5,
+    15,
+    6.5,
+    15,
+    -6.5,
+    11,
+    4.5,
+    11,
+    -4.5
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_fount_turret.png",
+  "type": "MISSILE"
+}

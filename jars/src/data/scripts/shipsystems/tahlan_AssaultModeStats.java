@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class tahlan_AssaultModeStats extends BaseShipSystemScript {
 
-    private static final float WEAPON_BOOST = 0.5f;
+    private static final float WEAPON_BOOST = 1f;
     private static final float MOBILITY_MULT = 0.5f;
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -50,7 +50,7 @@ public class tahlan_AssaultModeStats extends BaseShipSystemScript {
         if (effectLevel >= 1f) {
             for (WeaponAPI weapon : ship.getAllWeapons()) {
                 if (weapon.getId().contains("tahlan_gleipnir")) {
-                    weapon.setAmmo(1);
+                    weapon.setAmmo(2);
                 }
             }
         } else {

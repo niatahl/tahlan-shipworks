@@ -3,7 +3,7 @@
     "pirateFaction":true,
     "corvusCompatible":true,
     "noHomeworld":false,
-    "showIntelEvenIfDead":true,
+    "showIntelEvenIfDead":false,
         
     "rebelFleetSuffix":"Traitors",
     
@@ -27,6 +27,9 @@
 	"morality":"evil",
     
     "freeMarket":true,
+	
+	"colonyExpeditionChance":0.5,		# 0 to disable colonization
+	"colonyTargetValuator":"exerelin.campaign.colony.IndustrialColonyTargetValuator",
     
     "vengeanceFleetNames":["Enforcers", "Executors", "Crusaders"],
     "vengeanceFleetNamesSingle":["an Enforcer fleet", "an Executor fleet", "a Crusade"],

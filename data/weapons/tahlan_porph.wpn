@@ -15,10 +15,10 @@
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_porphyrion_hp_base.png",
   "id": "tahlan_porph",
   "muzzleFlashSpec": {
-    "length": 60,
-    "particleColor": [255,200,120,155],
+    "length": 100,
+    "particleColor": [255,120,100,155],
     "particleCount": 15,
-    "particleDuration": 0.2,
+    "particleDuration": 0.5,
     "particleSizeMin": 15,
     "particleSizeRange": 25,
     "spread": 10

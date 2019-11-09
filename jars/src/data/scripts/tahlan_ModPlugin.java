@@ -2,10 +2,16 @@ package data.scripts;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.PluginPick;
+import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.combat.MissileAIPlugin;
+import com.fs.starfarer.api.combat.MissileAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
+import data.scripts.ai.tahlan_FountainAI;
 import data.scripts.world.tahlan_FactionRelationPlugin;
 import data.scripts.world.tahlan_Lethia;
 import data.scripts.world.tahlan_Rubicon;
@@ -24,6 +30,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     }
     //All hullmods related to shields, saved in a convenient list
     public static List<String> SHIELD_HULLMODS = new ArrayList<String>();
+
+    public static final String FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl";
 
     @Override
     public void onApplicationLoad() {
@@ -66,12 +74,12 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         SectorAPI sector = Global.getSector();
 
         //Prevents Vendetta (GH) from appearing in fleets unless DaRa is installed
-        if (!Global.getSettings().getModManager().isModEnabled("DisassembleReassemble")) {
+        /*if (!Global.getSettings().getModManager().isModEnabled("DisassembleReassemble")) {
             Global.getSector().getFaction(Factions.INDEPENDENT).removeKnownShip("tahlan_vendetta_gh");
             if (Global.getSector().getFaction("tahlan_greathouses") != null) {
                 Global.getSector().getFaction("tahlan_greathouses").removeKnownShip("tahlan_vendetta_gh");
             }
-        }
+        }*/
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
@@ -85,5 +93,15 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
         //Adding Legio to bounty system
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");
+    }
+
+    @Override
+    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
+        switch (missile.getProjectileSpecId()) {
+            case FOUNTAIN_MISSILE_ID:
+                return new PluginPick<MissileAIPlugin>(new tahlan_FountainAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
+            default:
+        }
+        return null;
     }
 }

@@ -1,12 +1,12 @@
 bounty,variant,factions,weight,source
-tahlan_rf_onslaught_gh,tahlan_onslaught_gh_knight,independent,0.1,purchase of
+tahlan_rf_onslaught_gh,tahlan_onslaught_gh_knight,pirates,0.1,illegitimate acquisition of
 tahlan_rf_legion_gh,tahlan_legion_gh_combat,hegemony,0.1,recent conversion of their flagship into
 tahlan_rf_castigator_gh,tahlan_Castigator_knight_errant,sindrian_diktat,0.1,repossession of
 tahlan_rf_dominator_gh,tahlan_dominator_gh_knight,persean_league,0.1,cruising around in low orbit above Mayasura to show off like a snob in
-tahlan_rf_enforcer_gh,tahlan_enforcer_gh_knight,hegemony,0.1,crackdowns on pirate activity in
-tahlan_rf_monitor_gh,tahlan_monitor_gh_knight,independent,0.2,escaping planetary authorities in
+tahlan_rf_enforcer_gh,tahlan_enforcer_gh_knight,hegemony,0.1,being a general nuisance commanding
+tahlan_rf_monitor_gh,tahlan_monitor_gh_knight,persean_league,0.2,escaping planetary authorities in
 tahlan_rf_vendetta_gh,tahlan_vendetta_gh_knight,pirates,0.1,"a heinous raid on a high-end seller, stealing"
-tahlan_rf_nibelung_crg,tahlan_Nibelung_crg_elite,independent,0.2,theft of a rare and valueable
+tahlan_rf_nibelung_crg,tahlan_Nibelung_crg_elite,hegemony,0.2,theft of a rare and valueable
 ,,,,
 # NOTES,,,,
 # bounty : line ID. Must be unique across all mods. I recommend a prefix,,,,

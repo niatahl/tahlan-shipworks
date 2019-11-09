@@ -66,14 +66,13 @@
     138
   ],
   "builtInMods": [
-    "tahlan_advballistics",
     "tahlan_knightrefit",
-	"tahlan_temporaltraveldrive"
+    "tahlan_advballistics",
+    "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS0001": "tahlan_legion_gh_glow"
   },
-  "builtInWings": [],
   "center": [
     150,
     149
@@ -214,7 +213,7 @@
       ],
       "mount": "TURRET",
       "size": "LARGE",
-      "type": "BALLISTIC"
+      "type": "COMPOSITE"
     },
     {
       "angle": -30,
@@ -226,7 +225,7 @@
       ],
       "mount": "TURRET",
       "size": "LARGE",
-      "type": "BALLISTIC"
+      "type": "COMPOSITE"
     },
     {
       "angle": 55,
@@ -238,7 +237,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "UNIVERSAL"
+      "type": "BALLISTIC"
     },
     {
       "angle": -55,
@@ -250,7 +249,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "UNIVERSAL"
+      "type": "BALLISTIC"
     },
     {
       "angle": 20,
@@ -262,7 +261,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "COMPOSITE"
+      "type": "BALLISTIC"
     },
     {
       "angle": 0,
@@ -274,7 +273,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "COMPOSITE"
+      "type": "UNIVERSAL"
     },
     {
       "angle": -20,
@@ -286,7 +285,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "COMPOSITE"
+      "type": "BALLISTIC"
     },
     {
       "angle": 90,

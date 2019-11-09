@@ -10,7 +10,6 @@
 		"hulls":{
 			"tahlan_Yukikaze":2,
 			"tahlan_Korikaze":4,
-			"tahlan_Vale":2,
 			"tahlan_Exa_Pico":2,
 			"tahlan_Yosei":8,
 			"tahlan_Haelequin":8,
@@ -29,7 +28,6 @@
 		"hulls":[
 			"tahlan_Yukikaze",
 			"tahlan_Korikaze",
-			"tahlan_Vale",
 			"tahlan_Exa_Pico",
 			"tahlan_Yosei",
 			"tahlan_Haelequin",

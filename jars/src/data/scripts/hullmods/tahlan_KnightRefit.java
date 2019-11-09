@@ -4,7 +4,12 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
+import com.fs.starfarer.api.graphics.SpriteAPI;
+import data.scripts.util.MagicRender;
+import org.lazywizard.lazylib.FastTrig;
+import org.lazywizard.lazylib.LazyLib;
 import org.lazywizard.lazylib.MathUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 import java.util.EnumSet;
@@ -23,14 +28,15 @@ public class tahlan_KnightRefit extends BaseHullMod {
     public static final float OVERDRIVE_TIME_MULT = 1.3f;
 
     public static final float TIME_MULT = 1.1f;
-    private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 102);
-    private static final float AFTERIMAGE_THRESHOLD = 0.1f;
+    private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 90);
+    private static final float AFTERIMAGE_THRESHOLD = 0.4f;
 
     private static final Color OVERDRIVE_ENGINE_COLOR = new Color(255, 44, 0);
     private static final Color OVERDRIVE_GLOW_COLOR = new Color(255, 120, 16);
     private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 20);
     private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 80);
 
+    private float fadeOut = 1f;
     private static final String ke_id = "tahlan_KnightRefitID";
 
     @Override
@@ -103,6 +109,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
                         Global.getCombatEngine().maintainStatusForPlayerShip(ke_id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Overdrive", "Timeflow at 130%", false);
                     }
 
+                    fadeOut  = 2f;
+
                 } else {
 
                     if (player) {
@@ -114,28 +122,41 @@ public class tahlan_KnightRefit extends BaseHullMod {
                         Global.getCombatEngine().getTimeMult().unmodify(ke_id);
                     }
 
+                    fadeOut = 1f;
+
                 }
 
                 ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerNullerID", -1);
                 ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerID",
                         ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() + amount);
                 if (ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
-                    ship.addAfterimage(
+
+                    // Sprite offset fuckery - Don't you love trigonometry?
+                    SpriteAPI sprite = ship.getSpriteAPI();
+                    float offsetX = sprite.getWidth()/2 - sprite.getCenterX();
+                    float offsetY = sprite.getHeight()/2 - sprite.getCenterY();
+
+                    float trueOffsetX = (float)FastTrig.cos(Math.toRadians(ship.getFacing()-90f))*offsetX - (float)FastTrig.sin(Math.toRadians(ship.getFacing()-90f))*offsetY;
+                    float trueOffsetY = (float)FastTrig.sin(Math.toRadians(ship.getFacing()-90f))*offsetX + (float)FastTrig.cos(Math.toRadians(ship.getFacing()-90f))*offsetY;
+
+                    MagicRender.battlespace(
+                            Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()),
+                            new Vector2f(ship.getLocation().getX()+trueOffsetX,ship.getLocation().getY()+trueOffsetY),
+                            new Vector2f(0, 0),
+                            new Vector2f(ship.getSpriteAPI().getWidth(), ship.getSpriteAPI().getHeight()),
+                            new Vector2f(0, 0),
+                            ship.getFacing()-90f,
+                            0f,
                             AFTERIMAGE_COLOR,
-                            0, //X-location
-                            0, //Y-location
-                            ship.getVelocity().getX() * (-1f), //X-velocity
-                            ship.getVelocity().getY() * (-1f), //Y-velocity
-                            3f, //Maximum jitter
-                            0.1f, //In duration
-                            0f, //Mid duration
-                            0.3f, //Out duration
-                            true, //Additive blend?
-                            false, //Combine with sprite color?
-                            false //Above ship?
-                    );
+                            true,
+                            0.1f,
+                            0.1f,
+                            fadeOut,
+                            CombatEngineLayers.BELOW_SHIPS_LAYER);
+
                     ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").modifyFlat("tahlan_KRAfterimageTrackerID",
                             ship.getMutableStats().getDynamic().getStat("tahlan_KRAfterimageTracker").getModifiedValue() - AFTERIMAGE_THRESHOLD);
+
                 }
 
             } else {

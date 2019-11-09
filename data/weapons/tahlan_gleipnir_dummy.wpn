@@ -1,0 +1,46 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_gleipnir_fire",
+  "glowColor": [255,140,80,155],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_gardas_hp_glow.png",
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_gardas_hp_base.png",
+  "hardpointUnderSprite": "graphics/tahlan/weapons/tahlan_gardas_hp_under.png",
+  "id": "tahlan_gleipnir_dummy",
+  "muzzleFlashSpec": {
+    "length": 120,
+    "particleColor": [255,200,120,155],
+    "particleCount": 50,
+    "particleDuration": 2,
+    "particleSizeMin": 15,
+    "particleSizeRange": 25,
+    "spread": 0
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_gleipnir_dummy_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_gardas_turret_glow.png",
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_gardas_turret_base.png",
+  "turretUnderSprite": "graphics/tahlan/weapons/tahlan_gardas_turret_under.png",
+  "type": "BALLISTIC"
+}

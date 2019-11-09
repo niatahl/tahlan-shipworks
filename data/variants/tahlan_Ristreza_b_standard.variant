@@ -1,0 +1,62 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 36,
+    "fluxVents": 50,
+    "hullId": "tahlan_Ristreza_b",
+    "hullMods": ["targetingunit","stabilizedshieldemitter"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Ristreza_b_standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "tahlan_fountainfall_l",
+                "WS0007": "tahlan_fountainfall_r"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0018": "tahlan_karion",
+                "WS0019": "tahlan_karion",
+                "WS0020": "tahlan_karion",
+                "WS0021": "tahlan_karion",
+                "WS0022": "tahlan_karion",
+                "WS0023": "tahlan_karion"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0024": "tahlan_gleipnir_s"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_magaera",
+                "WS0002": "tahlan_magaera",
+                "WS0003": "tahlan_magaera",
+                "WS0004": "tahlan_astrix",
+                "WS0005": "tahlan_astrix"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "tahlan_xs_beamer",
+                "WS0009": "tahlan_xs_beamer",
+                "WS0010": "tahlan_xs_beamer",
+                "WS0011": "tahlan_xs_beamer",
+                "WS0012": "tahlan_xs_beamer",
+                "WS0013": "tahlan_xs_beamer",
+                "WS0016": "tahlan_volkite",
+                "WS0017": "tahlan_volkite"
+            }
+        }
+    ]
+}

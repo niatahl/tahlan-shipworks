@@ -35,8 +35,8 @@ public class tahlan_CuchulainnGlowScript implements EveryFrameWeaponEffectPlugin
         //Brightness based on flux under normal conditions
         float currentBrightness = gaebolg.getChargeLevel();
 
-        //A piece should never have glowing lights
-        if ( ship.isPiece()) {
+        //No glows on wrecks
+        if ( ship.isPiece() || !ship.isAlive() ) {
             return;
         }
 

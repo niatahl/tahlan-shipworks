@@ -1,9 +1,9 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
 tahlan_Exec_M_drone_wing,tahlan_Exec_M_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,,2,SUPPORT,Drone,5,2000,,,,,,,,,,,,,223
 tahlan_Exec_S_drone_wing,tahlan_Exec_S_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,,3,SUPPORT,Drone,5,2000,,,,,,,,,,,,,224
-tahlan_Acastus_fighter_wing,tahlan_Acastus_fighter,"fighter5, fighter, mid, tahlan_knight_bp, tahlan_knights",2,0.2,3,10,V,4000,400,,3,INTERCEPTOR,Interceptor,6,10000,,,,,,,,,,,,,225
+tahlan_Acastus_fighter_wing,tahlan_Acastus_fighter,"fighter5, fighter, mid, tahlan_knight_bp, tahlan_knights",2,0.2,3,12,V,4000,400,,3,INTERCEPTOR,Interceptor,6,10000,,,,,,,,,,,,,225
 tahlan_Caliver_bomber_wing,tahlan_Caliver_bomber,"bomber5, bomber, mid, tahlan_knight_bp, tahlan_knights",3,0.2,5,22,V,4000,2000,600,3,BOMBER,Bomber,15,20000,,,,,,,,,,,,,226
 tahlan_Dikaiosyne_drone_wing,tahlan_Dikaiosyne_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,,2,SUPPORT,Drone,5,2000,,,,,,,,,,,,,223
-tahlan_Fragmenta_drone_wing,tahlan_Fragmenta_drone,"fighter5, fighter, high, no_drop, no_sell",0,,5,0,CLAW,4000,500,,4,FIGHTER,Drone,5,99999,,,,,,,,,,,,,227
+tahlan_Fragmenta_drone_wing,tahlan_Fragmenta_drone,"high, no_drop, no_sell",0,,5,0,CLAW,4000,500,,4,FIGHTER,Drone,5,99999,,,,,,,,,,,,,227
 tahlan_Scoralis_bomber_wing,tahlan_Scoralis_bomber,"bomber7, bomber, mid, tahlan_knight_bp, tahlan_knights",3,0.2,5,16,V,4000,2000,700,1,BOMBER,Heavy Bomber,18,25000,,,,,,,,,,,,,230
 tahlan_Valacor_hunter_wing,tahlan_Valacor_hunter,"fighter6, fighter, high, tahlan_knights, tahlan_knight_bp",3,0.2,5,14,V,4000,450,,2,FIGHTER,Hunter,10,15000,,,,,,,,,,,,,229

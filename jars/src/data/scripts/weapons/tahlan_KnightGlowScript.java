@@ -1,10 +1,9 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -18,6 +17,8 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
     private static final float MAX_OPACITY = 1f;
     private static final float TRIGGER_PERCENTAGE = 0.3f;
     private boolean overdrive = false;
+
+    private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 80);
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -40,8 +41,8 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
             currentBrightness = Math.max(currentBrightness, ship.getSystem().getEffectLevel());
         }
 
-        //A piece should never have glowing lights
-        if ( ship.isPiece()) {
+        //No glows on wrecks
+        if ( ship.isPiece() || !ship.isAlive() ) {
             return;
         }
 
@@ -65,11 +66,11 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
             colorToUse = new Color(COLOR_OVERDRIVE[0], COLOR_OVERDRIVE[1], COLOR_OVERDRIVE[2], currentBrightness*MAX_OPACITY);
         }
 
+
         //Change color again if system is active and set brightness to max
         if (ship.getSystem().isActive()) {
             colorToUse = new Color(COLOR_SYSTEM[0], COLOR_SYSTEM[1], COLOR_SYSTEM[2], currentBrightness*MAX_OPACITY);
         }
-
 
         //And finally actually apply the color
         weapon.getSprite().setColor(colorToUse);

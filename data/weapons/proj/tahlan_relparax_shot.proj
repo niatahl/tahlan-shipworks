@@ -16,8 +16,8 @@
 	"passThroughMissiles":true,
 	#"textureType":"WEAVE",  # now also used for "BALLISTIC_AS_BEAM", if specified
 	"textureType": [
-    "graphics/tahlan/fx/tahlan_parax_beam_fringe.png",
-    "graphics/tahlan/fx/tahlan_parax_beam_core.png"],
+		"graphics/tahlan/fx/tahlan_parax_beam_fringe.png",
+		"graphics/tahlan/fx/tahlan_parax_beam_core.png"],
 	"textureScrollSpeed":64,
 	"pixelsPerTexel":1.0,
 }

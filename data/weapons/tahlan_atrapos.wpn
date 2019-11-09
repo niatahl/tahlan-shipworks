@@ -1,7 +1,6 @@
 {
-  "animationType": "GLOW",
+  "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_AtraposMuzzleFlashScript",
   "fireSoundTwo": "tahlan_atrapos_fire",
   "glowColor": [
     255,
@@ -19,6 +18,15 @@
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_atrapos_hp_base.png",
   "id": "tahlan_atrapos",
+  "muzzleFlashSpec": {
+    "length": 50,
+    "particleColor": [255,200,120,155],
+    "particleCount": 40,
+    "particleDuration": 1,
+    "particleSizeMin": 15,
+    "particleSizeRange": 20,
+    "spread": 0
+  },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,

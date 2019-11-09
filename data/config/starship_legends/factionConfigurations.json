@@ -1,0 +1,459 @@
+{
+	"tahlan_legioinfernalis":{
+		# Any of the entries in this file may be ommited if you simply want to defer
+		#	to the default for that entry
+	
+	
+		# Prevents references to crew in the faction's fleets, sometimes substituting
+		#	"crew" with "AI persona"
+		"useCrewlessTraitNames":false,
+		
+		# Changes the short description prior to listing traits. Enter %s where the
+		#	commander's name should be, if you want it to apear at all
+		"descriptionOverride":"The ships of the %s hordes are known for having the following traits:",
+		
+		# Allows the fleets of this faction to have famous flagships, which the
+		# 	player may find out about from a bar event
+		"allowFamousFlagshipsInFleets":true,
+		
+		# If true, the bars at markets owned by your faction will sometimes have
+		#	patrons that offer information about the whereabouts of famous
+		#	flagships or derelicts
+		"allowFamousFlagshipBarEvent":true,
+		"allowFamousDerelictBarEvent":true,
+		
+		# Ships in this list may be chosen as a derelict for the derelict bar event
+		# Generally, only ships defined by your faction mod should be listed here
+		# Frequency should be based on balance issues and how plausible it is for
+		#	that ship to be a derelict. The power (FP) of the ship should not come in to
+		#	consideration, as that is adjustable by users in the options file
+		"derelictFrequency":{
+			"tahlan_Castigator_P":0.5,		
+			"tahlan_Castella_pirates":0.4,			
+			"tahlan_Hresvelgr_p":0.7,
+			"tahlan_Bronco_p":1
+		},
+		
+		# Ships in this list may be chosen as a derelict for the derelict bar event,
+		#	but only at markets owned by your faction
+		"exclusiveDerelictFrequency":{
+			
+			# This ship will only be available at your faction's markets
+			"tahlan_DunScaith":0.3,
+			"tahlan_Dominator_PH":0.3,
+			"tahlan_Castigator_P":0.2,	
+		
+		},
+		
+		# Edit the values in the lists below to change the probability of fleets from
+		#	this faction getting traits. Higher numbers make traits more likely.
+		#	To disable a trait, set its value to 0. Removing a trait from the list will
+		#	only revert it to the default value.
+		"goodTraitFrequency":{
+			"peak_cr_time":1,
+			"repair":1,
+			"malfunction":1,
+			"mount_durability":1,
+			"engine_durability":1,
+			"hull_integrity":1,
+			"armor_strength":1,
+			"emp_resistance":1,
+			"engine_power":1,
+			"maneuverability":1,
+			"damage":2,
+			"weapon_stability":1,
+			"turret_rotation":1,
+			"range":1,
+			"missile_guidance":1,
+			"missile_reload":1,
+			"fighter_damage":0.5,
+			"fighter_speed":0.5,
+			"fighter_durability":0.5,
+			"refit_time":0.5,
+			"overload_time":1,
+			"flux_capacity":1,
+			"flux_dissipation":1,
+			"vent_rate":1,
+			"shield_raise_rate":1,
+			"shield_stability":1,
+			"shield_strength":1,
+			"phase_cost":0,
+			"phase_cooldown":0,
+			"blockade_runner":0,
+		},
+		
+		"badTraitFrequency":{
+			"peak_cr_time":1,
+			"repair":1,
+			"malfunction":1,
+			"mount_durability":1,
+			"engine_durability":0.5,
+			"hull_integrity":1,
+			"armor_strength":1,
+			"emp_resistance":1,
+			"engine_power":1,
+			"maneuverability":0.5,
+			"damage":1,
+			"weapon_stability":1,
+			"turret_rotation":1,
+			"range":1,
+			"missile_guidance":1,
+			"missile_reload":1,
+			"fighter_damage":0.25,
+			"fighter_speed":0.25,
+			"fighter_durability":0.25,
+			"refit_time":0.25,
+			"overload_time":1,
+			"flux_capacity":1,
+			"flux_dissipation":1,
+			"vent_rate":1,
+			"shield_raise_rate":1,
+			"shield_stability":1,
+			"shield_strength":1,
+			"phase_cost":0,
+			"phase_cooldown":0,
+			"cursed":1, # Low chance to cause spontaneous weapon/engine malfunctions, even at peak PPT
+			"phase_mad":0, # Chance to cause weapon/engine malfunctions while phased
+		},
+		
+		# By defining a "forcedPreset", all fleets in the faction will have the traits you
+		#	specify, in the specified order. This list will override the frequency lists
+		#	above, until they run out of traits
+		"forcedPreset":{
+		
+			# The number of traits each fleet in the faction will have, unless the player
+			#	modifies the max traits possible, in which case it will be scaled proportionally
+			#	The default max number of traits is 8
+			"defaultNumberOfTraits":6,
+			
+			"goodTraits":[
+				# Put good traits here. The first traits listed will be chosen first. At
+				#	least defaultNumberOfTraits must be chosen if you want to prevent other
+				#	good traits from being chosen
+			],
+			
+			"badTraits":[
+				# Put bad traits here. The first traits listed will be chosen first. At
+				#	least half of defaultNumberOfTraits should be chosen if you want to prevent
+				#	other bad traits from being chosen
+			],
+			
+			# Move traits from below to the lists above. Feel free to delete the unused traits list later
+			"unusedTraitsThatAreOnlyHereForYourConvenience":[
+				"peak_cr_time",
+				"repair",
+				"malfunction",
+				"mount_durability",
+				"engine_durability",
+				"hull_integrity",
+				"armor_strength",
+				"emp_resistance",
+				"engine_power",
+				"maneuverability",
+				"damage",
+				"weapon_stability",
+				"turret_rotation",
+				"range",
+				"missile_guidance",
+				"missile_reload",
+				"fighter_damage",
+				"fighter_speed",
+				"fighter_durability",
+				"refit_time",
+				"overload_time",
+				"flux_capacity",
+				"flux_dissipation",
+				"vent_rate",
+				"shield_raise_rate",
+				"shield_stability",
+				"shield_strength",
+				"cursed",
+			],
+		},
+		
+		# This section allows you to define forced presets as above, but only for
+		#	commanders with specific names (like IBB commanders, for example)
+		"forcedCommanderPresets":{
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Commander Name":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+				],
+				"badTraits":[
+				],
+			},
+		},
+	},
+	
+	"independent":{
+		"derelictFrequency":{
+			"tahlan_Castigator_knight":0.05,
+			"tahlan_vendetta_gh":0.05,
+			"tahlan_legion_gh":0.05,
+			"tahlan_dominator_gh":0.05,
+			"tahlan_monitor_gh":0.05,
+			"tahlan_enforcer_gh":0.05,
+			"tahlan_onslaught_gh":0.05,
+			"tahlan_Vale":0.5,
+			"tahlan_Exa_Pico":0.2,
+		},
+		
+		# Ships in this list may be chosen as a derelict for the derelict bar event,
+		#	but only at markets owned by your faction
+		"exclusiveDerelictFrequency":{
+			"tahlan_Castigator_knight":0.05,
+			"tahlan_vendetta_gh":0.05,
+			"tahlan_legion_gh":0.05,
+			"tahlan_dominator_gh":0.05,
+			"tahlan_monitor_gh":0.05,
+			"tahlan_enforcer_gh":0.05,
+			"tahlan_onslaught_gh":0.05,
+			"tahlan_Ristreza":0.05,
+			"tahlan_Ristreza_b":0.05
+		},
+		
+		# This section allows you to define forced presets as above, but only for
+		#	commanders with specific names (like IBB commanders, for example)
+		"forcedCommanderPresets":{
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Lamitt the Virtuous":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"shield_raise_rate",
+					"shield_stability",
+					"shield_strength",
+					"flux_capacity",
+					"flux_dissipation",
+					"overload_time",
+				],
+				
+				"badTraits":[
+				],
+			},
+			
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Nia Tahl":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":8,
+				"goodTraits":[
+					"damage",
+					"engine_power",
+					"maneuverability",
+					"armor_strength",
+				],
+				
+				"badTraits":[
+				],
+			},
+			
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Zachariah kal Vund":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":10, #HAX
+				"goodTraits":[
+					"damage",
+					"engine_power",
+					"maneuverability",
+					"armor_strength",
+					"shield_raise_rate",
+					"shield_stability",
+					"shield_strength",
+					"flux_capacity",
+					"flux_dissipation",
+					"overload_time",
+				],
+				
+				"badTraits":[
+					"peak_cr_time",
+				],
+			},
+			
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Gladius Brax":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"damage", #He always brings the dakka
+					"engine_power", #and the speed
+				],
+				
+				"badTraits":[
+				],
+			},
+		},
+	},
+	
+	"pirates": {
+	
+		"derelictFrequency":{
+			"tahlan_Eagle_P":0.5,
+			"tahlan_Tempest_P":0.5,
+		},
+		
+		"forcedCommanderPresets":{
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Nyelbert the Virtuous":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"damage",
+					"engine_power",
+					"maneuverability",
+				],
+				
+				"badTraits":[
+				],
+			},
+			
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"James Punkhead":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"engine_power",
+					"maneuverability",
+				],
+				
+				"badTraits":[
+				],
+			},
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Boris the Bull":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"damage",
+				],
+				
+				"badTraits":[
+					"peak_cr_time",
+				],
+			},
+		
+		},
+	
+	},
+	
+	"remnant": {
+	
+		"forcedCommanderPresets":{
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"P-442":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":8,
+				"goodTraits":[
+					"fighter_damage",
+					"fighter_speed",
+					"fighter_durability",
+					"refit_time",
+				],
+				
+				"badTraits":[
+				],
+			},
+		},
+	
+	},
+	
+	"hegemony": {
+	
+		"forcedCommanderPresets":{
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Siegmund Dragonbane":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"armor_strength",
+					"maneuverability",
+					"turret_rotation",
+					"repair"
+				],
+				
+				"badTraits":[
+				],
+			},
+		
+		},
+	
+	},
+	
+	"tritachyon": {
+	
+		"forcedCommanderPresets":{
+		
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Adria Johnston":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"range",
+					"shield_strength",
+					"vent_rate",
+				],
+				
+				"badTraits":[
+				],
+			},
+			
+			# By defining "Commander Name" below, all fleets with commanders named 
+			#	"Commander Name" will have the specified traits
+			"Renda-Rae the Virtuous":{
+			
+				# Everything in this section may be defined in the same way as the
+				#	contents of the "forcedPreset" section. 
+				"defaultNumberOfTraits":6,
+				"goodTraits":[
+					"damage",
+					"shield_strength",
+					"refit_time",
+				],
+				
+				"badTraits":[
+				],
+			},
+		
+		},
+	
+	},
+}

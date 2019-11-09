@@ -64,8 +64,8 @@
     39
   ],
   "builtInMods": [
-    "tahlan_advballistics",
     "tahlan_knightrefit",
+    "tahlan_advballistics",
 	"tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {

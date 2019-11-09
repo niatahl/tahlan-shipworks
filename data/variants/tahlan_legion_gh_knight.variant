@@ -1,59 +1,64 @@
 {
-    "displayName": "Kassadari",
-    "fluxCapacitors": 0,
-    "fluxVents": 25,
-    "hullId": "tahlan_legion_gh",
-    "hullMods": ["targetingunit"],
-    "permaMods": [],
-    "goalVariant": true,
-    "variantId": "tahlan_legion_gh_knight",
-    "weaponGroups": [
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 000": "tahlan_styrix",
-                "WS 001": "tahlan_styrix"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS 004": "tahlan_pendragon",
-                "WS 005": "tahlan_pendragon",
-                "WS 007": "tahlan_pendragon"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 002": "tahlan_atrapos",
-                "WS 003": "tahlan_atrapos"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS 014": "tahlan_teltrite",
-                "WS 015": "tahlan_teltrite",
-                "WS 018": "tahlan_teltrite",
-                "WS 020": "tahlan_teltrite",
-                "WS 021": "tahlan_teltrite"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS 019": "tahlan_volkite"}
-        }
-    ],
-    "wings": [
-        "tahlan_Caliver_bomber_wing",
-        "tahlan_Caliver_bomber_wing",
-        "tahlan_Caliver_bomber_wing",
-        "tahlan_Caliver_bomber_wing"
-    ]
+  "displayName": "Kassadari",
+  "fluxCapacitors": 0,
+  "fluxVents": 25,
+  "goalVariant": true,
+  "hullId": "tahlan_legion_gh",
+  "hullMods": [
+    "targetingunit"
+  ],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_legion_gh_knight",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS 000": "tahlan_fountain",
+        "WS 001": "tahlan_fountain",
+        "WS 005": "tahlan_pendragon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 004": "tahlan_magaera",
+        "WS 007": "tahlan_magaera"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 002": "tahlan_ronka",
+        "WS 003": "tahlan_ronka"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 014": "tahlan_teltrite",
+        "WS 015": "tahlan_teltrite",
+        "WS 018": "tahlan_volkite",
+        "WS 019": "tahlan_volkite",
+        "WS 020": "tahlan_volkite",
+        "WS 021": "tahlan_volkite"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "wings": [
+    "tahlan_Caliver_bomber_wing",
+    "tahlan_Caliver_bomber_wing",
+    "tahlan_Scoralis_bomber_wing",
+    "tahlan_Valacor_hunter_wing"
+  ]
 }

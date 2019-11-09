@@ -1,9 +1,9 @@
 {
 	"id":"tahlan_styrix_shot",
 	"specClass":"projectile",
-	"spawnType":"BALLISTIC_AS_BEAM",
-	"collisionClass":"RAY",
-	"collisionClassByFighter":"RAY_FIGHTER",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"onHitEffect":"data.scripts.weapons.tahlan_StyrixOnHitEffect",
 	"length":70.0,
 	"width":6.0,

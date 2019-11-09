@@ -4,6 +4,7 @@
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "tahlan_gleipnir_fire",
   "glowColor": [255,140,80,155],
+  "everyFrameEffect":"data.scripts.weapons.tahlan_GleipnirScript",
   "hardpointAngleOffsets": [
     0
   ],
@@ -17,10 +18,10 @@
   "id": "tahlan_gleipnir",
   "muzzleFlashSpec": {
     "length": 100,
-    "particleColor": [255,200,120,155],
-    "particleCount": 40,
-    "particleDuration": 1,
-    "particleSizeMin": 20,
+    "particleColor": [255,220,180,155],
+    "particleCount": 50,
+    "particleDuration": 2,
+    "particleSizeMin": 15,
     "particleSizeRange": 25,
     "spread": 0
   },

@@ -2,13 +2,15 @@ package data.scripts.shipsystems;
 
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import data.scripts.tahlan_ModPlugin;
-import org.dark.shaders.distortion.DistortionShader;
-import org.dark.shaders.distortion.RippleDistortion;
+import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.util.MagicRender;
+import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -18,13 +20,13 @@ import java.awt.*;
 public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
 
     private static final Color AFTERIMAGE_COLOR = new Color(255, 63, 0, 60);
-    private static final float AFTERIMAGE_THRESHOLD = 0.4f;
+    private static final float AFTERIMAGE_THRESHOLD = 4f;
     public static final float DAMAGE_MULT = 2f;
     public static final float DPS_MULT = 0.5f;
     public static final float MAX_TIME_MULT = 20f;
 
     public static final Color JITTER_COLOR = new Color(255, 106, 32, 55);
-    public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0, 155);
+    public static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0, 125);
 
     public static final float ELECTRIC_SIZE = 80.0f;
     public static final float ELECTRIC_SIZE_IZANAMI = 300.0f;
@@ -32,6 +34,8 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
     public boolean HAS_FIRED_LIGHTNING = false;
     private static final Vector2f ZERO = new Vector2f();
     private boolean runOnce = false;
+
+    private IntervalUtil interval = new IntervalUtil(0.2f, 0.2f);
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -65,7 +69,7 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
                 HAS_FIRED_LIGHTNING = true;
                 /*Lightning based code...*/
                 float tempCounter = 0;
-                while (tempCounter <= (6.0f / ELECTRIC_SIZE) * actualElectricSize) {
+                while (tempCounter <= (5.0f / ELECTRIC_SIZE) * actualElectricSize) {
                     Global.getCombatEngine().spawnEmpArc(ship, new Vector2f(ship.getLocation().x + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize), ship.getLocation().y + MathUtils.getRandomNumberInRange(-actualElectricSize, actualElectricSize)), null, ship,
                             DamageType.ENERGY, //Damage type
                             0f, //Damage
@@ -78,19 +82,6 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
                     );
                     tempCounter++;
                 }
-                //visual effect
-                /*Global.getCombatEngine().spawnExplosion(
-                        //where
-                        ship.getLocation(),
-                        //speed
-                        (Vector2f) new Vector2f(0,0),
-                        //color
-                        JITTER_COLOR,
-                        //size
-                        (MathUtils.getRandomNumberInRange(75f,100f) / ELECTRIC_SIZE) * actualElectricSize,
-                        //duration
-                        1.0f
-                );*/
             }
         } else {
             HAS_FIRED_LIGHTNING = false;
@@ -120,27 +111,31 @@ public class tahlan_TemporalDriftStats extends BaseShipSystemScript {
         //For Afterimages
         if (!Global.getCombatEngine().isPaused()) {
 
-            float amount = Global.getCombatEngine().getElapsedInLastFrame() * ship.getMutableStats().getTimeMult().getModifiedValue();
-            ship.getMutableStats().getDynamic().getStat("tahlan_AfterimageTracker").modifyFlat("tahlan_AfterimageTrackerNullerID", -1);
-            ship.getMutableStats().getDynamic().getStat("tahlan_AfterimageTracker").modifyFlat("tahlan_AfterimageTrackerID",
-                    ship.getMutableStats().getDynamic().getStat("tahlan_AfterimageTracker").getModifiedValue() + amount);
-            if (ship.getMutableStats().getDynamic().getStat("tahlan_AfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
-                ship.addAfterimage(
+            interval.advance(Global.getCombatEngine().getElapsedInLastFrame());
+            if (interval.intervalElapsed()) {
+
+                // Sprite offset fuckery - Don't you love trigonometry?
+                SpriteAPI sprite = ship.getSpriteAPI();
+                float offsetX = sprite.getWidth()/2 - sprite.getCenterX();
+                float offsetY = sprite.getHeight()/2 - sprite.getCenterY();
+
+                float trueOffsetX = (float)FastTrig.cos(Math.toRadians(ship.getFacing()-90f))*offsetX - (float)FastTrig.sin(Math.toRadians(ship.getFacing()-90f))*offsetY;
+                float trueOffsetY = (float)FastTrig.sin(Math.toRadians(ship.getFacing()-90f))*offsetX + (float)FastTrig.cos(Math.toRadians(ship.getFacing()-90f))*offsetY;
+
+                MagicRender.battlespace(
+                        Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()),
+                        new Vector2f(ship.getLocation().getX()+trueOffsetX,ship.getLocation().getY()+trueOffsetY),
+                        new Vector2f(0, 0),
+                        new Vector2f(ship.getSpriteAPI().getWidth(), ship.getSpriteAPI().getHeight()),
+                        new Vector2f(0, 0),
+                        ship.getFacing()-90f,
+                        0f,
                         AFTERIMAGE_COLOR,
-                        0, //X-location
-                        0, //Y-location
-                        ship.getVelocity().getX() * (-1f), //X-velocity
-                        ship.getVelocity().getY() * (-1f), //Y-velocity
-                        2f, //Maximum jitter
-                        0.1f, //In duration
-                        0f, //Mid duration
-                        0.6f, //Out duration
-                        true, //Additive blend?
-                        true, //Combine with sprite color?
-                        false //Above ship?
-                );
-                ship.getMutableStats().getDynamic().getStat("tahlan_AfterimageTracker").modifyFlat("tahlan_AfterimageTrackerID",
-                        ship.getMutableStats().getDynamic().getStat("tahlan_AfterimageTracker").getModifiedValue() - AFTERIMAGE_THRESHOLD);
+                        true,
+                        0.1f,
+                        0.1f,
+                        1f,
+                        CombatEngineLayers.BELOW_SHIPS_LAYER);
             }
         }
 

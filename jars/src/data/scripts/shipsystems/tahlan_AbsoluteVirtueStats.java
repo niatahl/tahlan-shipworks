@@ -77,6 +77,7 @@ public class tahlan_AbsoluteVirtueStats extends BaseShipSystemScript {
         stats.getAcceleration().unmodify(id);
         stats.getShieldDamageTakenMult().unmodify(id);
         stats.getShieldUnfoldRateMult().unmodify(id);
+        stats.getHardFluxDissipationFraction().unmodify(id);
     }
 
     public StatusData getStatusData(int index, State state, float effectLevel) {

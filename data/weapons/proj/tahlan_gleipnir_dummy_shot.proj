@@ -1,0 +1,22 @@
+{
+	"id":"tahlan_gleipnir_dummy_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",	
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"onHitEffect":"data.scripts.weapons.tahlan_GleipnirOnHitEffect",	
+	"hitGlowRadius":70,
+	"length":120.0,
+	"width":10,
+	"fadeTime":0.5,
+	"fringeColor":[255,180,100,255],
+	"coreColor":[255,255,255,200],
+	"glowColor":[255,85,10,100],
+	"glowRadius":100,
+	#"textureType":"ROUGH",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	#"textureType":["graphics/fx/emp_arcs.png","graphics/fx/emp_arcs.png"],
+	"textureScrollSpeed":64,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/tahlan/missiles/tahlan_styrix_slug.png",	
+	"passThroughMissiles":true,
+}

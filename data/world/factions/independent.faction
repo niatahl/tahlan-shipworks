@@ -9,9 +9,10 @@
 			"tahlan_knights":0.1,
 		},
 		"hulls":{
-			"tahlan_vendetta_gh":0.1,
+			#"tahlan_vendetta_gh":0.1,
 			"tahlan_Glint":0.5,
 			"tahlan_Nibelung":0.4,
+			"tahlan_Vale":0.3,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -22,13 +23,14 @@
 	"knownShips":{
 		"tags":["tahlan_knights"],
 		"hulls":[
-			"tahlan_vendetta_gh", #not included in the BP package, since it only loads with certain mods
+			#"tahlan_vendetta_gh", #not included in the BP package, since it only loads with certain mods
 			"tahlan_Castella",
 			"tahlan_Kodai",
 			"tahlan_Ingress",
 			"tahlan_Defiance",
 			"tahlan_Glint",
 			"tahlan_Nibelung",
+			"tahlan_Vale",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

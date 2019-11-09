@@ -14,6 +14,8 @@
 	"tahlan_efreet_fire":
 	[
 		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.6,"volume":0.95},
+		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.64,"volume":0.95},
+		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.62,"volume":0.95},
 	],
 	
 	"tahlan_virtue_loop":
@@ -155,9 +157,12 @@
     },
 	"tahlan_porph_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":1.05,"volume":1.3},
-			{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":1.00,"volume":1.3},
-			{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":0.95,"volume":1.3},
+           	{"file":"sounds/sfx_wpn_guns/mjolnir_fire_01_loud.ogg","pitch":0.9,"volume":1.0},
+        ],
+    },
+	"tahlan_porph_impact":{
+        "sounds":[
+           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.8,"volume":1.0},
         ],
     },
 	"tahlan_ronka_fire":{
@@ -174,7 +179,7 @@
     },
 	"tahlan_gleipnir_fire":{
         "sounds":[
-           	{"file":"sounds/sfx_wpn_guns/mjolnir_fire_06.ogg","pitch":0.7,"volume":1.2}
+           	{"file":"sounds/sfx_wpn_guns/mjolnir_fire_06.ogg","pitch":0.5,"volume":1.5}
         ],
     },
 	"tahlan_armiger_fire":{

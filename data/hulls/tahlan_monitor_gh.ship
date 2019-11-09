@@ -22,8 +22,8 @@
     46
   ],
   "builtInMods": [
-    "tahlan_advballistics",
     "tahlan_knightrefit",
+    "tahlan_advballistics",
 	"fluxshunt",
 	"tahlan_temporaltraveldrive"
   ],

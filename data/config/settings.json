@@ -16,6 +16,10 @@
 			"tahlan_trail_smooth":"graphics/tahlan/fx/trails_smooth.png",
 			"tahlan_trail_zappy":"graphics/tahlan/fx/trails_zappy.png",
 			"tahlan_trail_contrail":"graphics/tahlan/fx/trails_contrail.png",
+			"tahlan_trail_helix":"graphics/tahlan/fx/trails_helix.png",
+			"tahlan_trail_dhelix":"graphics/tahlan/fx/trails_dhelix.png",
+			"tahlan_trail_rings":"graphics/tahlan/fx/trails_rings.png",
+			"tahlan_trail_flame":"graphics/tahlan/fx/trails_flame.png",
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",

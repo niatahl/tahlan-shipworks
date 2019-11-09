@@ -1,0 +1,532 @@
+{
+  "bounds": [
+    -183.5,
+    -6.5,
+    -163,
+    -12.5,
+    -163,
+    -31.5,
+    -153,
+    -42.5,
+    -136.5,
+    -45,
+    -136,
+    -56,
+    -113,
+    -60.5,
+    -131,
+    -70.5,
+    -131.5,
+    -79,
+    -94.5,
+    -63.5,
+    -91,
+    -66,
+    -116.5,
+    -87,
+    -117.5,
+    -94,
+    -72.5,
+    -70.5,
+    -43.5,
+    -70.5,
+    -13,
+    -40,
+    167,
+    -40,
+    184,
+    -31,
+    174,
+    -11,
+    174,
+    11,
+    184,
+    31,
+    167,
+    40,
+    -13,
+    40,
+    -43.5,
+    70.5,
+    -72.5,
+    70.5,
+    -117.5,
+    94,
+    -116.5,
+    87,
+    -91,
+    66,
+    -94.5,
+    63.5,
+    -131.5,
+    79,
+    -131,
+    70.5,
+    -113,
+    60.5,
+    -136,
+    56,
+    -136.5,
+    45,
+    -153,
+    42.5,
+    -163,
+    31.5,
+    -163,
+    12.5,
+    -183.5,
+    6.5
+  ],
+  "builtInMods": [
+    "tahlan_knightrefit",
+    "tahlan_temporaltraveldrive"
+  ],
+  "builtInWeapons": {
+    "WS0006": "tahlan_fountainfall_l",
+    "WS0007": "tahlan_fountainfall_r",
+    "WS0008": "tahlan_volkite",
+    "WS0009": "tahlan_volkite",
+    "WS0010": "tahlan_volkite",
+    "WS0011": "tahlan_volkite",
+    "WS0012": "tahlan_volkite",
+    "WS0013": "tahlan_volkite",
+    "WS0018": "tahlan_karion",
+    "WS0019": "tahlan_karion",
+    "WS0020": "tahlan_karion",
+    "WS0021": "tahlan_karion",
+    "WS0022": "tahlan_karion",
+    "WS0023": "tahlan_karion",
+    "WS0024": "tahlan_gleipnir_s",
+    "WS0025": "tahlan_ristreza_glow"
+  },
+  "center": [
+    95,
+    185.5
+  ],
+  "collisionRadius": 216,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 61,
+      "location": [
+        -164,
+        25.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 61,
+      "location": [
+        -164,
+        -25.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 52,
+      "location": [
+        -163.5,
+        30.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 52,
+      "location": [
+        -163.5,
+        -30.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 52,
+      "location": [
+        -163.5,
+        15
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 52,
+      "location": [
+        -163.5,
+        -15
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 38,
+      "location": [
+        -136.5,
+        52.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 38,
+      "location": [
+        -136.5,
+        -52.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 38,
+      "location": [
+        -136.5,
+        47.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 38,
+      "location": [
+        -136.5,
+        -47.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 61,
+      "location": [
+        -164,
+        20.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 61,
+      "location": [
+        -164,
+        -20.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    }
+  ],
+  "height": 371,
+  "hullId": "tahlan_Ristreza_b",
+  "hullName": "Ristreza (B)",
+  "hullSize": "CAPITAL_SHIP",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 204.5,
+  "spriteName": "graphics/tahlan/ships/oddities/tahlan_Ristreza_b.png",
+  "style": "TAHLAN_GH_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 270,
+      "id": "WS0001",
+      "locations": [
+        26.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 270,
+      "id": "WS0002",
+      "locations": [
+        66.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 270,
+      "id": "WS0003",
+      "locations": [
+        106.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 45,
+      "arc": 140,
+      "id": "WS0004",
+      "locations": [
+        -54.5,
+        50
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -45,
+      "arc": 140,
+      "id": "WS0005",
+      "locations": [
+        -54.5,
+        -50
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 80,
+      "arc": 160,
+      "id": "WS0008",
+      "locations": [
+        87,
+        25
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -80,
+      "arc": 160,
+      "id": "WS0009",
+      "locations": [
+        87,
+        -25
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 90,
+      "arc": 160,
+      "id": "WS0010",
+      "locations": [
+        67,
+        25
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -90,
+      "arc": 160,
+      "id": "WS0011",
+      "locations": [
+        67,
+        -25
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 100,
+      "arc": 160,
+      "id": "WS0012",
+      "locations": [
+        46,
+        25
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -100,
+      "arc": 160,
+      "id": "WS0013",
+      "locations": [
+        46,
+        -25
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -141.5,
+      "arc": 130,
+      "id": "WS0016",
+      "locations": [
+        -89.5,
+        -28
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 141.5,
+      "arc": 130,
+      "id": "WS0017",
+      "locations": [
+        -89.5,
+        28
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 45,
+      "arc": 0,
+      "id": "WS0020",
+      "locations": [
+        -35.5,
+        64
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -45,
+      "arc": 0,
+      "id": "WS0021",
+      "locations": [
+        -35.5,
+        -64
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 45,
+      "arc": 0,
+      "id": "WS0018",
+      "locations": [
+        -26.5,
+        55
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -45,
+      "arc": 0,
+      "id": "WS0019",
+      "locations": [
+        -26.5,
+        -55
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 45,
+      "arc": 0,
+      "id": "WS0022",
+      "locations": [
+        -17.5,
+        46
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -45,
+      "arc": 0,
+      "id": "WS0023",
+      "locations": [
+        -17.5,
+        -46
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0024",
+      "locations": [
+        171.5,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0025",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 90,
+      "arc": 0,
+      "id": "WS0006",
+      "locations": [
+        66.5,
+        35.5
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -90,
+      "arc": 0,
+      "id": "WS0007",
+      "locations": [
+        66.5,
+        -35.5
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    }
+  ],
+  "width": 190
+}

@@ -76,11 +76,16 @@
     11
   ],
   "builtInMods": [
-    "tahlan_advballistics",
+    "tahlan_advballistics"
   ],
   "builtInWeapons": {
-    "WS0031": "tahlan_DunScaith_gh_glow"
+    "WS0031": "tahlan_DunScaith_gh_glow",
+    "WS0032": "tahlan_flood"
   },
+  "builtInWings": [
+    "tahlan_Exec_M_drone_wing",
+    "tahlan_Exec_M_drone_wing"
+  ],
   "center": [
     134,
     242
@@ -596,12 +601,8 @@
       "arc": 360,
       "id": "LB 1",
       "locations": [
-        130,
-        16.5,
-        122,
-        10,
-        121.5,
-        3.5
+        -85.5,
+        0.5
       ],
       "mount": "HIDDEN",
       "size": "LARGE",
@@ -612,12 +613,8 @@
       "arc": 360,
       "id": "LB 2",
       "locations": [
-        121.5,
-        -2,
-        121,
-        -10,
-        128,
-        -14.5
+        -103,
+        0.5
       ],
       "mount": "HIDDEN",
       "size": "LARGE",
@@ -658,6 +655,18 @@
       "mount": "TURRET",
       "size": "LARGE",
       "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0032",
+      "locations": [
+        146,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BUILT_IN"
     }
   ],
   "width": 268

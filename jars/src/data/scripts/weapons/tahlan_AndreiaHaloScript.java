@@ -33,8 +33,8 @@ public class tahlan_AndreiaHaloScript implements EveryFrameWeaponEffectPlugin {
             currentBrightness = ship.getSystem().getEffectLevel();
         }
 
-        //A piece should never have glowing lights
-        if (ship.isPiece()) {
+        //No glows on wrecks
+        if ( ship.isPiece() || !ship.isAlive() ) {
             return;
         }
 

@@ -58,12 +58,14 @@
     -9
   ],
   "builtInMods": [
-    "tahlan_advballistics",
     "tahlan_knightrefit",
+    "tahlan_advballistics",
+	"tahlan_vundautoforge",
     "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
-    "WS0022": "tahlan_vendetta_gh_glow"
+    "WS0022": "tahlan_vendetta_gh_glow",
+    "WS0023": "tahlan_vundautoforge"
   },
   "center": [
     110,
@@ -272,7 +274,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "COMPOSITE"
     },
     {
       "angle": -43,
@@ -284,7 +286,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "COMPOSITE"
     },
     {
       "angle": -0,
@@ -332,7 +334,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "BALLISTIC"
     },
     {
       "angle": -45,
@@ -344,7 +346,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "BALLISTIC"
     },
     {
       "angle": 120,
@@ -530,6 +532,18 @@
       ],
       "mount": "TURRET",
       "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0023",
+      "locations": [
+        -20,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
       "type": "DECORATIVE"
     }
   ],

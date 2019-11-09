@@ -35,8 +35,8 @@ public class tahlan_HolyFurorStats extends BaseShipSystemScript {
 
         stats.getShieldDamageTakenMult().modifyMult(id, 1f - 0.5f * effectLevel);
 
-        stats.getMaxSpeed().modifyFlat(id, 100f);
-        stats.getAcceleration().modifyFlat(id, 200f);
+        stats.getMaxSpeed().modifyFlat(id, 50f);
+        stats.getAcceleration().modifyFlat(id, 100f);
 
         //time acceleration
         float TimeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel;

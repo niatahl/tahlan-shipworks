@@ -1,3 +1,78 @@
+0.3.9e
+Additions:
+- Added Hekaton Repeater large missile weapon
+
+Changes:
+- Revisited mount types of multiple GH refits
+- Vendetta GH system changed to Assault Burn
+- Onslaught GH system changed to Cavalry Charge
+- Added Vund-pattern Autoforge hullmod to Vendetta GH
+- Increased Assault Burn cooldown from 5s to 7s
+- Increased Cavalry Charge cooldown from 10s to 12s
+
+
+0.3.9d
+Additions:
+- Added Cascadia Missile Battlecruiser - Variant of Ristreza
+- Added Fount Swarmer Battery
+- Added Fountain Dual Swamer Battery
+- Added additional support for various other mods' features
+
+Changes:
+- Karion Seeker Battery:
+	- Reduced range to 1500
+	- Reduced burst size to 3
+	- Reduced chargedown to 5s
+	- Added ammo capacity of 12
+	- Added ammo regen of 0.3/s in stacks of 3
+- Reworked Porphyrion again
+	- Now a high-alpha cannon with some AoE
+
+0.3.9c
+Changes:
+- Assault Mode tweaks
+	- dps boost increased to 100%
+	- cooldown increased to 15s
+- Increased Ristreza DP from 45 to 50
+- Gleipnir reworked
+- Halved mobility bonus on Holy Furor system (Vale)
+- Various tweaks to various visual effects
+- Removed Kassadari Engineering from all fighters, buffed speed to compensate
+- Added ammofeed system to Acastus
+- Reduced shield hp on Acastus from 500 to 300
+- Increased OP cost of Acastus wing from 10 to 12
+
+
+0.3.9b
+Changes:
+
+- Adjusted some weapons further to reduce overlap with other modiverse weapons
+	- Numeon range increased to 900, refire delay increased to 2.2s (DPS reduced to 182)
+	- Anumis range increased to 1000, refire delay increased to 3.5s (DPS reduced to 229)
+	- Styrix range increased to 1000, refire delay increased to 1.2s (DPS reduced to 417)
+- Porphyrion chargedown increased to 1.5s
+- Chrono Rupture cooldown reduced from 12s to 8s
+- Fray Cannon damage increased from 1000 to 1200, Flux cost increased from 1000 to 1320
+- Reduced chargeup duration of Assault Mode system from 10s to 5s, increased cooldown from 10s to 12s
+- Increased Gleipnir HE damage from 1000 to 2000
+- Adjusted small mount arcs on Ristreza
+- Nerfed Karion Seeker Battery
+	- Lowered energy damage from 100 to 50 (also applies to Ristreza's Seekers)
+	- Lowered range from 2000su to 1500su
+	- Lowered burst size from 9 to 6
+	- Reduced speed from 500 to 400
+	- Reduced missile health from 250 to 200
+- Increased Armiger refire delay to 4.7s (DPS reduced to 255)
+
+- Reduced number of procgen entities in Lethia (applies to fresh saves only)
+
+
+Fixes:
+
+- Fixed some config issues with Nexerelin
+- Fixed Legio Infernalis not working in random sector (probably. I don't use random sector so cba to test it)
+
+
 0.3.9a
 Bugfixing:
 - Fixed Legio Infernalis being engaged in an eternal civil war with itself

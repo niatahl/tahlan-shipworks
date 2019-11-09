@@ -1,17 +1,17 @@
 {
     "displayName": "Kassadari",
-    "fluxCapacitors": 0,
+    "fluxCapacitors": 5,
     "fluxVents": 50,
     "hullId": "tahlan_vendetta_gh",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-    "goalVariant": true,
+	"goalVariant": true,
     "variantId": "tahlan_vendetta_gh_knight",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0001": "hurricane"}
+            "weapons": {"WS0001": "tahlan_fountain"}
         },
         {
             "autofire": false,
@@ -33,8 +33,6 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0002": "tahlan_ronka",
-                "WS0003": "tahlan_ronka",
                 "WS0008": "tahlan_atrapos",
                 "WS0009": "tahlan_atrapos"
             }
@@ -43,8 +41,10 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0010": "tahlan_dualvolkite",
-                "WS0011": "tahlan_dualvolkite",
+                "WS0002": "tahlan_ronka",
+                "WS0003": "tahlan_ronka",
+                "WS0010": "tahlan_ronka",
+                "WS0011": "tahlan_ronka",
                 "WS0012": "tahlan_volkite",
                 "WS0013": "tahlan_volkite",
                 "WS0014": "tahlan_volkite",

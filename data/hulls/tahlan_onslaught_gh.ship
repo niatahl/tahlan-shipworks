@@ -102,8 +102,8 @@
     65
   ],
   "builtInMods": [
-    "tahlan_advballistics",
     "tahlan_knightrefit",
+    "tahlan_advballistics",
     "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
@@ -405,7 +405,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "UNIVERSAL"
     },
     {
       "angle": -60,
@@ -417,7 +417,7 @@
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
+      "type": "UNIVERSAL"
     },
     {
       "angle": 170,

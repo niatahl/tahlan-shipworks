@@ -2,11 +2,16 @@ package data.scripts.hullmods;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
+import data.scripts.util.MagicRender;
+import org.lazywizard.lazylib.FastTrig;
+import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 import java.util.EnumSet;
@@ -18,7 +23,7 @@ public class tahlan_NoName extends BaseHullMod {
 
     public static final float TIME_MULT = 1.2f;
     private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 102);
-    private static final float AFTERIMAGE_THRESHOLD = 0.1f;
+    private static final float AFTERIMAGE_THRESHOLD = 0.4f;
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -51,20 +56,30 @@ public class tahlan_NoName extends BaseHullMod {
         ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").modifyFlat("tahlan_NNAfterimageTrackerID",
                 ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").getModifiedValue() + amount);
         if (ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").getModifiedValue() > AFTERIMAGE_THRESHOLD) {
-            ship.addAfterimage(
+
+            // Sprite offset fuckery - Don't you love trigonometry?
+            SpriteAPI sprite = ship.getSpriteAPI();
+            float offsetX = sprite.getWidth()/2 - sprite.getCenterX();
+            float offsetY = sprite.getHeight()/2 - sprite.getCenterY();
+
+            float trueOffsetX = (float)FastTrig.cos(Math.toRadians(ship.getFacing()-90f))*offsetX - (float)FastTrig.sin(Math.toRadians(ship.getFacing()-90f))*offsetY;
+            float trueOffsetY = (float)FastTrig.sin(Math.toRadians(ship.getFacing()-90f))*offsetX + (float)FastTrig.cos(Math.toRadians(ship.getFacing()-90f))*offsetY;
+
+            MagicRender.battlespace(
+                    Global.getSettings().getSprite(ship.getHullSpec().getSpriteName()),
+                    new Vector2f(ship.getLocation().getX()+trueOffsetX,ship.getLocation().getY()+trueOffsetY),
+                    new Vector2f(0, 0),
+                    new Vector2f(ship.getSpriteAPI().getWidth(), ship.getSpriteAPI().getHeight()),
+                    new Vector2f(0, 0),
+                    ship.getFacing()-90f,
+                    0f,
                     AFTERIMAGE_COLOR,
-                    0, //X-location
-                    0, //Y-location
-                    ship.getVelocity().getX() * (-1f), //X-velocity
-                    ship.getVelocity().getY() * (-1f), //Y-velocity
-                    3f, //Maximum jitter
-                    0.1f, //In duration
-                    0f, //Mid duration
-                    0.3f, //Out duration
-                    true, //Additive blend?
-                    false, //Combine with sprite color?
-                    false //Above ship?
-            );
+                    true,
+                    0.1f,
+                    0.1f,
+                    1f,
+                    CombatEngineLayers.BELOW_SHIPS_LAYER);
+
             ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").modifyFlat("tahlan_NNAfterimageTrackerID",
                     ship.getMutableStats().getDynamic().getStat("tahlan_NNAfterimageTracker").getModifiedValue() - AFTERIMAGE_THRESHOLD);
         }

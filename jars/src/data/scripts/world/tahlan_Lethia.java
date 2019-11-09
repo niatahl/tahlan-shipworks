@@ -36,6 +36,7 @@ public class tahlan_Lethia {
 
         system.setLightColor(new Color(255,255,255));
 
+        /*
         PlanetAPI lethia_1 = system.addPlanet("tahlan_lethia_p01",
                 lethia_star,
                 "Marandil",
@@ -46,6 +47,7 @@ public class tahlan_Lethia {
                 130);
 
         PlanetConditionGenerator.generateConditionsForPlanet(lethia_1, StarAge.AVERAGE);
+        */
 
         PlanetAPI lethia_2 = system.addPlanet("tahlan_lethia_p02",
                 lethia_star,
@@ -86,7 +88,7 @@ public class tahlan_Lethia {
                 "Akrom",
                 "barren",
                 360f*(float)Math.random(),
-                200,
+                140,
                 4500,
                 240);
 
@@ -195,8 +197,8 @@ public class tahlan_Lethia {
 
         // Some procgen can go out here.
         float radiusAfter = StarSystemGenerator.addOrbitingEntities(system, lethia_star, StarAge.AVERAGE,
-                3, 4, // min/max entities to add
-                7500, // radius to start adding at
+                1, 2, // min/max entities to add
+                8000, // radius to start adding at
                 5, // name offset - next planet will be <system name> <roman numeral of this parameter + 1>
                 true); // whether to use custom or system-name based names
 

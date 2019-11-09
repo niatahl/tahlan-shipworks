@@ -10,7 +10,7 @@
     -0
   ],
   "builtInMods": [
-    "no_weapon_flux","tahlan_knightrefit"
+    "no_weapon_flux"
   ],
   "builtInWeapons": {
     "WS0001": "tahlan_valdes_r",

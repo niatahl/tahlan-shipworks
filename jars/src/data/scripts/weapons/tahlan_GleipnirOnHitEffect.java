@@ -14,13 +14,13 @@ public class tahlan_GleipnirOnHitEffect implements OnHitEffectPlugin {
     //private static final float DAMAGE_MULT = 0.3f;
 
     //Variables for explosion visuals
-    private static final Color EXPLOSION_COLOR = new Color(255f / 255f, 205f / 255f, 155f / 255f, 130f / 255f);
+    private static final Color EXPLOSION_COLOR = new Color(255, 85, 10);
     private static final float EXPLOSION_SIZE = 150f;
     private static final float EXPLOSION_DURATION_MIN = 0.3f;
     private static final float EXPLOSION_DURATION_MAX = 0.7f;
 
     //Variables for the small particles generated with the explosion
-    private static final Color PARTICLE_COLOR = new Color(255f / 255f, 205f / 255f, 255f / 255f, 130f / 255f);
+    private static final Color PARTICLE_COLOR = new Color(255, 85, 10);
     private static final float PARTICLE_SIZE = 120f;
     private static final float PARTICLE_BRIGHTNESS = 90f;
 
@@ -28,9 +28,7 @@ public class tahlan_GleipnirOnHitEffect implements OnHitEffectPlugin {
 
         //MagicLensFlare.createSharpFlare(engine,projectile.getSource(),projectile.getLocation(),10,500,0,new Color(100,215,255),new Color(255,255,255));
 
-        if (shieldHit || target == null || !(target instanceof ShipAPI) ) {
-            return;
-        }
+        if (shieldHit || target == null || !(target instanceof ShipAPI) ) {           return;       }
 
         Global.getCombatEngine().applyDamage(target, point,  1000f, DamageType.FRAGMENTATION, 0, true, false, null, true);
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);

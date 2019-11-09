@@ -78,7 +78,8 @@
     6.5
   ],
   "builtInMods": [
-    "tahlan_knightrefit"
+    "tahlan_knightrefit",
+	"tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS0018": "tahlan_karion",
@@ -99,10 +100,10 @@
     {
       "angle": 180,
       "contrailSize": 7,
-      "length": 52,
+      "length": 61,
       "location": [
-        -164.5,
-        23
+        -164,
+        25.5
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -110,10 +111,10 @@
     {
       "angle": -180,
       "contrailSize": 7,
-      "length": 52,
+      "length": 61,
       "location": [
-        -164.5,
-        -23
+        -164,
+        -25.5
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -123,8 +124,8 @@
       "contrailSize": 7,
       "length": 52,
       "location": [
-        -164.5,
-        27.5
+        -163.5,
+        30.5
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -134,8 +135,8 @@
       "contrailSize": 7,
       "length": 52,
       "location": [
-        -164.5,
-        -27.5
+        -163.5,
+        -30.5
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -145,8 +146,8 @@
       "contrailSize": 7,
       "length": 52,
       "location": [
-        -164.5,
-        18.5
+        -163.5,
+        15
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -156,8 +157,8 @@
       "contrailSize": 7,
       "length": 52,
       "location": [
-        -164.5,
-        -18.5
+        -163.5,
+        -15
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -202,6 +203,28 @@
       "location": [
         -136.5,
         -47.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": 180,
+      "contrailSize": 7,
+      "length": 61,
+      "location": [
+        -164,
+        20.5
+      ],
+      "style": "TAHLAN_GH_ENGINE",
+      "width": 7
+    },
+    {
+      "angle": -180,
+      "contrailSize": 7,
+      "length": 61,
+      "location": [
+        -164,
+        -20.5
       ],
       "style": "TAHLAN_GH_ENGINE",
       "width": 7
@@ -258,7 +281,7 @@
     },
     {
       "angle": 45,
-      "arc": 180,
+      "arc": 140,
       "id": "WS0004",
       "locations": [
         -54.5,
@@ -270,7 +293,7 @@
     },
     {
       "angle": -45,
-      "arc": 180,
+      "arc": 140,
       "id": "WS0005",
       "locations": [
         -54.5,
@@ -305,7 +328,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 60,
+      "angle": 65,
       "arc": 130,
       "id": "WS0008",
       "locations": [
@@ -317,7 +340,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -60,
+      "angle": -65,
       "arc": 130,
       "id": "WS0009",
       "locations": [
@@ -329,7 +352,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 70,
+      "angle": 80,
       "arc": 130,
       "id": "WS0010",
       "locations": [
@@ -341,7 +364,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -70,
+      "angle": -80,
       "arc": 130,
       "id": "WS0011",
       "locations": [
@@ -353,7 +376,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 80,
+      "angle": 95,
       "arc": 130,
       "id": "WS0012",
       "locations": [
@@ -365,7 +388,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -80,
+      "angle": -95,
       "arc": 130,
       "id": "WS0013",
       "locations": [
@@ -377,7 +400,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 90,
+      "angle": 110,
       "arc": 130,
       "id": "WS0014",
       "locations": [
@@ -389,7 +412,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -90,
+      "angle": -110,
       "arc": 130,
       "id": "WS0015",
       "locations": [

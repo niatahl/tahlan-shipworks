@@ -115,4 +115,8 @@ public class tahlan_KassadarMarketPlugin extends BaseSubmarketPlugin {
         return "Sales only!";
     }
 
+    @Override
+    public boolean isParticipatesInEconomy() {
+        return false;
+    }
 }
