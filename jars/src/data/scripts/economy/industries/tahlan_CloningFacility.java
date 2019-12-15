@@ -17,9 +17,11 @@ public class tahlan_CloningFacility extends BaseIndustry {
 		demand(Commodities.HEAVY_MACHINERY, Math.max(3, size - 1));
 
 		supply(Commodities.FOOD, size-1);
+		supply(Commodities.ORGANS, size-2);
 
 		Pair<String, Integer> deficit = getMaxDeficit(Commodities.HEAVY_MACHINERY);
 		applyDeficitToProduction(1, deficit, Commodities.FOOD);
+		applyDeficitToProduction(2, deficit, Commodities.ORGANS);
 
 		if (!isFunctional()) {
 			supply.clear();

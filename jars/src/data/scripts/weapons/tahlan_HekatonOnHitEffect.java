@@ -9,6 +9,8 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
+import static com.fs.starfarer.api.util.Misc.ZERO;
+
 public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
 
     private static final float BONUS_DAMAGE = 400f;
@@ -17,8 +19,10 @@ public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
-        Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, null, true);
+        Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, projectile.getSource(), true);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 10, 600, 0, new Color(186, 240, 255), new Color(255, 255, 255));
+        engine.addSmoothParticle(point, ZERO, 600f, 0.5f, 0.1f, COLOR1);
+        engine.addHitParticle(point, ZERO, 300f, 0.5f, 0.25f, COLOR2);
 
         if (point != null) {
 

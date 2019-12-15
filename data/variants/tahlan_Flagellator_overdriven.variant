@@ -1,0 +1,42 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 5,
+    "fluxVents": 20,
+    "hullId": "tahlan_Flagellator",
+    "hullMods": ["safetyoverrides"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Flagellator_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "tahlan_diffusegraviton"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "chaingun",
+                "WS0002": "chaingun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "lightdualac",
+                "WS0004": "lightdualac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "lightdualmg",
+                "WS0006": "lightdualmg",
+                "WS0007": "lightdualmg"
+            }
+        }
+    ]
+}

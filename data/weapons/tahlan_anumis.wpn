@@ -16,13 +16,13 @@
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_anumis_hp_base.png",
   "id": "tahlan_anumis",
-  "muzzleFlashSpec":{"length":80.0,   # only used if animationType = MUZZLE_FLASH
+  "muzzleFlashSpec":{"length":40.0,   # only used if animationType = MUZZLE_FLASH
 					   "spread":10.0,
 					   "particleSizeMin":20.0,
 					   "particleSizeRange":30.0,
-					   "particleDuration":0.5,
+					   "particleDuration":0.2,
 					   "particleCount":12,
-					   "particleColor":[255,185,215,215]},
+					   "particleColor":[255,160,50,215]},
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,

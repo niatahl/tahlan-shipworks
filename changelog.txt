@@ -1,6 +1,108 @@
-0.3.9e
+0.3.11a
+Additions:
+- Added Flagellator assault destroyer
+- Added Flagellator (LI)
+
+Changes:
+- Legio Infernalis now has nex start options
+- Trill hullmod will now display its current effect during combat
+- Castigator (LI) large mount changed from hybrid to universal (this change is experimental, so don't get used to it yet)
+
+Fixes:
+- Fixed Legio Tyranny causing decivved Legio planets to make saves unable to load
+- Fixed Legio Tyranny granting its bonus even when a planet is no longer controlled by the Legio
+- Fixed some missing descriptions
+
+Others:
+- Added support for Commissioned Crews (For Legio. Great Houses still aren't a faction so stop asking)
+
+0.3.11
+Additions:
+- Balor Smartgun
+- Tethra Smartgun
+- Conand Autocannon
+- Goll Overcharge Cannon
+
+Changes:
+- Increased Cuchulainn dissipation from 600 to 700
+- Improved Gae Bolg's flux efficiency
+- Hresvelgr (LI) front hardpoints changed to ballistic
+- Hresvelgr (LI) system changed from burn drive to missile autoforge
+- Lowered Kodai DP from 24 to 22
+- Lowered Torii DP from 12 to 10
+- Lowered Trill DP from 12 to 9
+- Reduced Armiger projectile velocity from 1000 to 900
+- Increased Nibelung top speed from 45 to 50
+- Increased Castigator (LI) armor from 1300 to 1500 (same as base variant)
+- Slightly buffed Castigator (LI) and Edengate maneuverability
+- Reduced normal, legio and xiv Castigator variants DP from 30 to 28
+- Reduced Castigator (GH) DP from 35 to 30
+- Increased dissipation of normal, legio and xiv Castigator variants from 600 to 650
+- Buffed Scathach's mobility, changed system to Cavalry Charge
+
+
+
+
+0.3.10c
+Additions:
+- Added Lasher (LI)
+- Added unique Ristreza variant as HVB
+- Added Alteria large kinetic
+
+Changes:
+- Lowered Skola DP from 6 to 4
+- Lowered Yosei DP from 10 to 9
+- Removed AAF from Acastus again. Was a bit too silly.
+- Adjusted Ristreza turret arcs
+- Halved potency of Assault Mode buffs
+- Assault Mode cooldown reduced from 14s to 12s
+- Increased Scoralis' torpedo flight time to make them more reliable
+- Increased porphyrion projectile fadeout duration
+- Nessie buffs:
+	- Increased dissipation from 300 to 500
+	- Increased armor from 700 to 1000
+- Changed Styrix to 1200 range, 3-round-burst kinetic
+- Antique Seller tariff now scales with relationship level, down to 25% at cooperative
+
+Fixes:
+- Various small bugfixes
+
+
+0.3.10b
+Additions:
+- Added Higanbana-class battleship
+
+Changes:
+- Legio Infernalis can now produce their own drugs (requires new save to take effect)
+- Yukikaze nerfs:
+	- Increased shield upkeep and reduced shield base efficiency from 0.6 to 0.7
+	- Reduced top speed from 100 to 80
+	- Reduced dissipation from 750 to 700
+	- Reduced ppt from 420s to 360s
+	- Reduced DP from 35 to 30
+	- Reduced Garuda range from 2500 to 1500
+	- Increased chargedown from 2s to 5s
+
+Fixes:
+- Fixed issues with Stronghold Shield and Absolute Virtue systems not activating properly when shields are off
+
+
+0.3.10a
+Changes:
+- Valacor adjustments
+	- System changed from phase skimmer to decoy flare launcher
+	- Increased hull from 250 to 300
+- Bungalow ship system changed from burn drive to dodgy nav feed
+- Renki adjustments
+	- Ship system now grants 3% ECM rating while active
+	- Increased DP to 8
+
+
+0.3.10
 Additions:
 - Added Hekaton Repeater large missile weapon
+- Added Praxus Rotary Cannon
+- Added Trill-class experimental frigate
 
 Changes:
 - Revisited mount types of multiple GH refits
@@ -9,6 +111,8 @@ Changes:
 - Added Vund-pattern Autoforge hullmod to Vendetta GH
 - Increased Assault Burn cooldown from 5s to 7s
 - Increased Cavalry Charge cooldown from 10s to 12s
+- Increased damage of all Gleipnir shot variants to 1500 base
+- Tweaked various weapon visuals
 
 
 0.3.9d

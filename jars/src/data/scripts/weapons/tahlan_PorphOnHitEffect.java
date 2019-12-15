@@ -12,9 +12,9 @@ import static com.fs.starfarer.api.util.Misc.ZERO;
 
 public class tahlan_PorphOnHitEffect implements OnHitEffectPlugin {
 
-    private static final Color PARTICLE_COLOR = new Color(255, 16, 16, 150);
+    private static final Color PARTICLE_COLOR = new Color(255, 47, 21, 150);
     private static final Color BLAST_COLOR = new Color(255, 16, 16, 0);
-    private static final Color CORE_COLOR = new Color(255, 137, 45);
+    private static final Color CORE_COLOR = new Color(255, 160, 34);
     private static final Color FLASH_COLOR = new Color(255, 234, 212);
     private static final int NUM_PARTICLES = 30;
 

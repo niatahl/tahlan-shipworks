@@ -25,10 +25,12 @@ public class tahlan_StrongholdShieldStats extends BaseShipSystemScript {
             return;
         }
 
-        if (ship.getShield().isOff()){
-            ship.giveCommand(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK, null, 0);
-        }
 
+        if (ship.getShield() != null) {
+            if (ship.getShield().isOff()) {
+                ship.getShield().toggleOn();
+            }
+        }
 
         stats.getShieldDamageTakenMult().modifyMult(id,SHIELD_MULT);
         stats.getFluxDissipation().modifyMult(id,DISSIPATON_MULT);

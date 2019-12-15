@@ -1,0 +1,42 @@
+{
+    "displayName": "Missile",
+    "fluxCapacitors": 20,
+    "fluxVents": 20,
+    "hullId": "tahlan_Flagellator_pi",
+    "hullMods": ["missleracks"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Flagellator_pi_missile",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sabotpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "harpoonpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "tahlan_burstgoll"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "railgun",
+                "WS0004": "railgun",
+                "WS0006": "lightag",
+                "WS0007": "lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "vulcan"}
+        }
+    ]
+}

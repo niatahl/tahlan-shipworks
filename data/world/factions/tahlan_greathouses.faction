@@ -69,7 +69,7 @@
 		],
 	},
 	"knownWeapons":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "tahlan_gh_bp", "tahlan_knights"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "tahlan_knight_bp", "tahlan_knights"],
 		"weapons":[
 			"lightneedler",
 			"railgun",

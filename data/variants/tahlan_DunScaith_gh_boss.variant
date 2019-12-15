@@ -1,6 +1,6 @@
 {
     "displayName": "Kassadari",
-    "fluxCapacitors": 0,
+    "fluxCapacitors": 20,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_gh",
     "hullMods": [
@@ -16,15 +16,16 @@
             "mode": "ALTERNATING",
             "weapons": {
                 "WS0029": "tahlan_pendragon",
-                "WS0030": "tahlan_pendragon"
+                "WS0030": "tahlan_pendragon",
+                "WS0032": "tahlan_flood"
             }
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0026": "locust",
-                "WS0027": "locust"
+                "WS0026": "tahlan_fountain",
+                "WS0027": "tahlan_fountain"
             }
         },
         {
@@ -72,8 +73,5 @@
             }
         }
     ],
-    "wings": [
-        "tahlan_Acastus_fighter_wing",
-        "tahlan_Acastus_fighter_wing"
-    ]
+    "wings": []
 }

@@ -1,0 +1,43 @@
+{
+    "displayName": "Strike",
+    "fluxCapacitors": 18,
+    "fluxVents": 20,
+    "hullId": "tahlan_Flagellator_pi",
+    "hullMods": [
+        "missleracks",
+        "fluxbreakers"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Flagellator_pi_strike",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "tahlan_burstgoll"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "typhoon",
+                "WS0002": "typhoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "lightdualac",
+                "WS0004": "lightdualac",
+                "WS0006": "lightdualac",
+                "WS0007": "lightdualac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "vulcan"}
+        }
+    ]
+}

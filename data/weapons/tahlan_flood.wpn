@@ -243,7 +243,7 @@
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
   "projectileSpecId": "tahlan_fountain_msl",
-  "renderAboveAllWeapons": 0,
+  "renderBelowAllWeapons":true,
   "size": "LARGE",
   "smokeSpec": {
     "blowbackDuration": 2,

@@ -1,0 +1,42 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_praxus_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    31,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/praxus/tahlan_praxus_hp_00.png",
+  "id": "tahlan_praxus",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [110,207,255,150],
+    "particleCount": 10,
+    "particleDuration": 0.2,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 0
+  },
+  "numFrames":4,
+  "frameRate":40,
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_praxus_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    26,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/praxus/tahlan_praxus_turret_00.png",
+  "type": "BALLISTIC"
+}

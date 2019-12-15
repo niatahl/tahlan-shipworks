@@ -19,10 +19,6 @@ public class tahlan_AuxThrustersStats extends BaseShipSystemScript {
             stats.getMaxTurnRate().modifyFlat(id, 30f * effectLevel);
         }
 
-
-
-
-
     }
 
     public void unapply(MutableShipStatsAPI stats, String id) {

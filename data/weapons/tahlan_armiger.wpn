@@ -23,12 +23,12 @@
     "length": 25,
     "particleColor": [
       255,
-      205,
-      85,
+      155,
+      25,
       150
     ],
     "particleCount": 20,
-    "particleDuration": 0.7,
+    "particleDuration": 0.2,
     "particleSizeMin": 15,
     "particleSizeRange": 25,
     "spread": 10

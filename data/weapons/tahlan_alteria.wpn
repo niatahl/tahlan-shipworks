@@ -1,0 +1,65 @@
+{
+  "animationType": "GLOW_AND_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "tahlan_alteria_fire",
+  "glowColor": [
+    255,
+    140,
+    80,
+    155
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_alteria_hp_glow.png",
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_alteria_hp_recoil.png",
+  "hardpointOffsets": [
+    2,
+    9,
+    2,
+    -9
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_alteria_hp_base.png",
+  "id": "tahlan_alteria",
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "muzzleFlashSpec": {
+    "length": 60,
+    "particleColor": [
+      255,
+      220,
+      180,
+      155
+    ],
+    "particleCount": 30,
+    "particleDuration": 0.8,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 0
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_alteria_shot",
+  "renderAboveAllWeapons": 0,
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_alteria_turret_glow.png",
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_alteria_turret_recoil.png",
+  "turretOffsets": [
+    4.5,
+    9,
+    4.5,
+    -9
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_alteria_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 5
+}

@@ -1,0 +1,136 @@
+{
+  "bounds": [
+    -27.5,
+    -2.5,
+    -52,
+    -6,
+    -29,
+    -12.5,
+    -52.5,
+    -18,
+    -34,
+    -22.5,
+    -50,
+    -28.5,
+    19.5,
+    -31.5,
+    53.5,
+    -5.5,
+    23.5,
+    -9.5,
+    23.5,
+    9.5,
+    53.5,
+    5.5,
+    19.5,
+    31.5,
+    -50,
+    28.5,
+    -34,
+    22.5,
+    -52.5,
+    18,
+    -29,
+    12.5,
+    -52,
+    6,
+    -27.5,
+    2.5
+  ],
+  "builtInMods": [
+    "tahlan_fluxcatalyst"
+  ],
+  "builtInWeapons": {
+    "WS0002": "tahlan_Trill_glow"
+  },
+  "center": [
+    36,
+    55.5
+  ],
+  "collisionRadius": 77,
+  "engineSlots": [
+    {
+      "angle": 169.5,
+      "contrailSize": 4.001012,
+      "length": 16.643255,
+      "location": [
+        -22.5,
+        28.5
+      ],
+      "style": "TAHLAN_NL_ENGINE",
+      "width": 4.001012
+    },
+    {
+      "angle": -169.5,
+      "contrailSize": 4.001012,
+      "length": 16.643255,
+      "location": [
+        -22.5,
+        -28.5
+      ],
+      "style": "TAHLAN_NL_ENGINE",
+      "width": 4.001012
+    },
+    {
+      "angle": 177.5,
+      "contrailSize": 5.161324,
+      "length": 21.132681,
+      "location": [
+        -30.5,
+        24.5
+      ],
+      "style": "TAHLAN_NL_ENGINE",
+      "width": 5.161324
+    },
+    {
+      "angle": -177.5,
+      "contrailSize": 5.161324,
+      "length": 21.132681,
+      "location": [
+        -30.5,
+        -24.5
+      ],
+      "style": "TAHLAN_NL_ENGINE",
+      "width": 5.161324
+    }
+  ],
+  "height": 111,
+  "hullId": "tahlan_Trill",
+  "hullName": "Trill",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 71.5,
+  "spriteName": "graphics/tahlan/ships/tahlan_Trill.png",
+  "style": "TAHLAN_NL_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS0001",
+      "locations": [
+        4.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS0002",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 72
+}

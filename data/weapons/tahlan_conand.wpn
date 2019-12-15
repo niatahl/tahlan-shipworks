@@ -1,0 +1,69 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "LINKED",
+  "fireSoundTwo": "tahlan_conand_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_conand_hp_recoil.png",
+  "hardpointOffsets": [
+    24,
+    7,
+    24,
+    4,
+    24,
+    -4,
+    24,
+    -7
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_conand_hp_base.png",
+  "id": "tahlan_conand",
+  "muzzleFlashSpec": {
+    "length": 5,
+    "particleColor": [
+      255,
+      235,
+      205,
+      215
+    ],
+    "particleCount": 1,
+    "particleDuration": 0.1,
+    "particleSizeMin": 30,
+    "particleSizeRange": 10,
+    "spread": 0
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_conand_shot",
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_conand_turret_recoil.png",
+  "turretOffsets": [
+    21,
+    7,
+    21,
+    4,
+    21,
+    -4,
+    21,
+    -7
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_conand_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 4
+}

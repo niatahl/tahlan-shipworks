@@ -85,7 +85,7 @@
         33.5
       ],
       "mount": "TURRET",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "BALLISTIC"
     },
     {
@@ -97,7 +97,7 @@
         -33.5
       ],
       "mount": "TURRET",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "BALLISTIC"
     },
     {

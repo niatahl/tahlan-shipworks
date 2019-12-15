@@ -1,0 +1,14 @@
+{
+	"id":"tahlan_fluxoverdrive",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.tahlan_FluxOverdriveAI",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_FluxOverdriveStats",
+	
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

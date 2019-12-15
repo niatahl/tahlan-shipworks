@@ -1,0 +1,68 @@
+{
+    "displayName": "Gilded",
+    "fluxCapacitors": 7,
+    "fluxVents": 50,
+    "hullId": "tahlan_Ristreza_g",
+    "hullMods": [
+        "targetingunit",
+        "hardenedshieldemitter",
+        "frontemitter"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Ristreza_g_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0024": "tahlan_gigantomachy"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0018": "tahlan_karion",
+                "WS0019": "tahlan_karion",
+                "WS0020": "tahlan_karion",
+                "WS0021": "tahlan_karion",
+                "WS0022": "tahlan_karion",
+                "WS0023": "tahlan_karion"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "tahlan_astrix",
+                "WS0005": "tahlan_astrix"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_magaera",
+                "WS0002": "tahlan_magaera",
+                "WS0003": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "tahlan_teltrite",
+                "WS0007": "tahlan_teltrite",
+                "WS0008": "tahlan_teltrite",
+                "WS0009": "tahlan_teltrite",
+                "WS0010": "tahlan_teltrite",
+                "WS0011": "tahlan_teltrite",
+                "WS0012": "tahlan_teltrite",
+                "WS0013": "tahlan_teltrite",
+                "WS0014": "tahlan_teltrite",
+                "WS0015": "tahlan_teltrite",
+                "WS0016": "tahlan_teltrite",
+                "WS0017": "tahlan_teltrite"
+            }
+        }
+    ]
+}

@@ -1,68 +1,71 @@
 {
-    "displayName": "Strike",
-    "fluxCapacitors": 18,
-    "fluxVents": 43,
-    "hullId": "tahlan_Hresvelgr_p",
-    "hullMods": ["targetingunit"],
-    "permaMods": [],
-	"goalVariant": true,
-    "variantId": "tahlan_Hresvelgr_p_strike",
-    "weaponGroups": [
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0009": "sabotpod",
-                "WS0010": "sabotpod"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0003": "typhoon",
-                "WS0004": "typhoon",
-                "WS0005": "typhoon",
-                "WS0006": "typhoon"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0001": "heavyac",
-                "WS0002": "heavyac"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0017": "lightneedler",
-                "WS0018": "lightneedler"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0007": "vulcan",
-                "WS0008": "vulcan",
-                "WS0011": "vulcan",
-                "WS0012": "vulcan",
-                "WS0013": "vulcan",
-                "WS0014": "vulcan",
-                "WS0015": "vulcan",
-                "WS0016": "vulcan"
-            }
-        }
-    ],
-    "wings": [
-        "piranha_wing",
-        "piranha_wing",
-        "piranha_wing",
-        "piranha_wing",
-        "talon_wing",
-        "talon_wing"
-    ]
+  "displayName": "Strike",
+  "fluxCapacitors": 18,
+  "fluxVents": 43,
+  "goalVariant": true,
+  "hullId": "tahlan_Hresvelgr_p",
+  "hullMods": [
+    "targetingunit"
+  ],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Hresvelgr_p_strike",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "typhoon",
+        "WS0004": "typhoon",
+        "WS0005": "typhoon",
+        "WS0006": "typhoon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavyac",
+        "WS0002": "heavyac",
+        "WS0009": "heavyac",
+        "WS0010": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0017": "lightneedler",
+        "WS0018": "lightneedler"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "vulcan",
+        "WS0008": "vulcan",
+        "WS0011": "vulcan",
+        "WS0012": "vulcan",
+        "WS0013": "vulcan",
+        "WS0014": "vulcan",
+        "WS0015": "vulcan",
+        "WS0016": "vulcan"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "wings": [
+    "piranha_wing",
+    "piranha_wing",
+    "piranha_wing",
+    "piranha_wing",
+    "talon_wing",
+    "talon_wing"
+  ]
 }

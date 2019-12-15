@@ -22,12 +22,12 @@ public class tahlan_KnightRefit extends BaseHullMod {
     public static final float ARMOR_MALUS_CRUISER = 200f;
     public static final float ARMOR_MALUS_CAPITAL = 300f;
 
-    public static final float SUPPLIES_MULT = 1.5f;
+    public static final float SUPPLIES_MULT = 50f;
 
     public static final float OVERDRIVE_TRIGGER_PERCENTAGE = 0.3f;
-    public static final float OVERDRIVE_TIME_MULT = 1.3f;
+    public static final float OVERDRIVE_TIME_MULT = 30f;
 
-    public static final float TIME_MULT = 1.1f;
+    public static final float TIME_MULT = 10f;
     private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 90);
     private static final float AFTERIMAGE_THRESHOLD = 0.4f;
 
@@ -65,7 +65,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
         //stats.getDeceleration().modifyMult(id,HANDLING_MULT);
         //stats.getTurnAcceleration().modifyMult(id,HANDLING_MULT);
 
-        stats.getSuppliesPerMonth().modifyMult(ke_id, SUPPLIES_MULT);
+        stats.getSuppliesPerMonth().modifyPercent(ke_id, SUPPLIES_MULT);
         stats.getCRLossPerSecondPercent().modifyMult(ke_id, 2f);
 
 
@@ -82,22 +82,26 @@ public class tahlan_KnightRefit extends BaseHullMod {
         //The Great Houses are actually timelords
         boolean player = ship == Global.getCombatEngine().getPlayerShip();
 
+        if ( !ship.isAlive() || ship.isPiece() ) {
+            return;
+        }
+
         if (ship.getSystem() != null) {
             if (!ship.getSystem().isActive()) {
                 if (ship.getHitpoints() <= ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE || ship.getVariant().getHullMods().contains("tahlan_forcedoverdrive")) {
 
                     if (player) {
-                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, OVERDRIVE_TIME_MULT);
-                        Global.getCombatEngine().getTimeMult().modifyMult(ke_id, 1f / OVERDRIVE_TIME_MULT);
+                        ship.getMutableStats().getTimeMult().modifyPercent(ke_id, OVERDRIVE_TIME_MULT);
+                        Global.getCombatEngine().getTimeMult().modifyPercent(ke_id, 1f / OVERDRIVE_TIME_MULT);
                     } else {
-                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, OVERDRIVE_TIME_MULT);
+                        ship.getMutableStats().getTimeMult().modifyPercent(ke_id, OVERDRIVE_TIME_MULT);
                         Global.getCombatEngine().getTimeMult().unmodify(ke_id);
                     }
 
                     if (!(ship.getOriginalOwner() == -1)) {
 
-                        EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
-                        ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
+                        //EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
+                        //ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
 
                         ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
                         ship.setJitter(ke_id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);
@@ -114,11 +118,11 @@ public class tahlan_KnightRefit extends BaseHullMod {
                 } else {
 
                     if (player) {
-                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, TIME_MULT);
-                        Global.getCombatEngine().getTimeMult().modifyMult(ke_id, 1f / TIME_MULT);
+                        ship.getMutableStats().getTimeMult().modifyPercent(ke_id, TIME_MULT);
+                        Global.getCombatEngine().getTimeMult().modifyPercent(ke_id, 1f / TIME_MULT);
                         Global.getCombatEngine().maintainStatusForPlayerShip(ke_id, "graphics/icons/hullsys/temporal_shell.png", "Temporal Field", "Timeflow at 110%", false);
                     } else {
-                        ship.getMutableStats().getTimeMult().modifyMult(ke_id, TIME_MULT);
+                        ship.getMutableStats().getTimeMult().modifyPercent(ke_id, TIME_MULT);
                         Global.getCombatEngine().getTimeMult().unmodify(ke_id);
                     }
 
@@ -179,12 +183,12 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
     public String getDescriptionParam(int index, HullSize hullSize) {
         if (index == 0) return "Temporal Circuit Grid";
-        if (index == 1) return "" + Math.round((TIME_MULT - 1f) * 100f) + "%";
+        if (index == 1) return "" + (int)TIME_MULT + "%";
         if (index == 2)
             return "" + (int) ARMOR_MALUS_FRIGATE + "/" + (int) ARMOR_MALUS_DESTROYER + "/" + (int) ARMOR_MALUS_CRUISER + "/" + (int) ARMOR_MALUS_CAPITAL;
-        if (index == 3) return "" + Math.round((SUPPLIES_MULT - 1f) * 100f) + "%";
+        if (index == 3) return "" + (int)SUPPLIES_MULT + "%";
         if (index == 4) return "" + Math.round(OVERDRIVE_TRIGGER_PERCENTAGE * 100f) + "%";
-        if (index == 5) return "" + Math.round((OVERDRIVE_TIME_MULT - 1f) * 100f) + "%";
+        if (index == 5) return "" + (int)OVERDRIVE_TIME_MULT + "%";
         if (index == 6) return "suspended while the ship system is active";
         return null;
     }

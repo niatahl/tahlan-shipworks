@@ -11,8 +11,11 @@ import java.awt.*;
 
 public class tahlan_AssaultModeStats extends BaseShipSystemScript {
 
-    private static final float WEAPON_BOOST = 1f;
+    private static final float WEAPON_BOOST = 0.5f;
     private static final float MOBILITY_MULT = 0.5f;
+
+    //private float shieldArc;
+    //private boolean runOnce = true;
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
@@ -31,6 +34,13 @@ public class tahlan_AssaultModeStats extends BaseShipSystemScript {
             return;
         }
 
+        /*
+        if (runOnce) {
+            shieldArc = ship.getShield().getArc();
+            runOnce = false;
+        }
+        */
+
         //Showing the charge level
         MagicUI.drawSystemBar(ship, Color.CYAN, effectLevel,0);
 
@@ -44,18 +54,20 @@ public class tahlan_AssaultModeStats extends BaseShipSystemScript {
             stats.getDeceleration().modifyMult(id, 1f - MOBILITY_MULT*effectLevel);
             stats.getMaxTurnRate().modifyMult(id, 1f - MOBILITY_MULT*effectLevel);
             stats.getTurnAcceleration().modifyMult(id, 1f - MOBILITY_MULT*effectLevel);
+
+            //ship.getShield().setArc(shieldArc*(1f-0.5f*effectLevel));
         }
 
         //Finds all weapons that needs the system to be active, and activates them (sets their ammo to 1) if our system is fully charged
         if (effectLevel >= 1f) {
             for (WeaponAPI weapon : ship.getAllWeapons()) {
-                if (weapon.getId().contains("tahlan_gleipnir")) {
+                if (weapon.getSpec().hasTag("tahlan_AMWeapon")) {
                     weapon.setAmmo(2);
                 }
             }
         } else {
             for (WeaponAPI weapon : ship.getAllWeapons()) {
-                if (weapon.getId().contains("tahlan_gleipnir")) {
+                if (weapon.getSpec().hasTag("tahlan_AMWeapon")) {
                     weapon.setAmmo(0);
                 }
             }
@@ -84,12 +96,21 @@ public class tahlan_AssaultModeStats extends BaseShipSystemScript {
         stats.getMaxTurnRate().unmodify(id);
         stats.getTurnAcceleration().unmodify(id);
 
+        /*
+        if (!runOnce) {
+            ship.getShield().setArc(shieldArc);
+            runOnce = true;
+        }
+        */
+
         //Finds all weapons that needs the system to be active, and deactivates them (sets their ammo to 0)
         for (WeaponAPI weapon : ship.getAllWeapons()) {
-            if (weapon.getId().contains("tahlan_gleipnir")) {
+            if (weapon.getSpec().hasTag("tahlan_AMWeapon")) {
                 weapon.setAmmo(0);
             }
         }
+
+
 
     }
 }

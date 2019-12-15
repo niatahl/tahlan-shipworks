@@ -22,7 +22,6 @@ public class tahlan_TemporalCoordinatorStats extends BaseShipSystemScript {
         ShipAPI ship = null;
         boolean player = false;
 
-
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
             player = ship == Global.getCombatEngine().getPlayerShip();

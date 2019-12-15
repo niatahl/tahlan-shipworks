@@ -1,10 +1,9 @@
 {
     "displayName": "Striker",
     "fluxCapacitors": 0,
-    "fluxVents": 21,
+    "fluxVents": 28,
     "hullId": "tahlan_Dominator_PH",
     "hullMods": [
-        "magazines",
         "missleracks"
     ],
     "permaMods": [],

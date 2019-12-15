@@ -116,6 +116,18 @@
       "mount": "TURRET",
       "size": "MEDIUM",
       "type": "DECORATIVE"
+    },
+    {
+      "angle": 180,
+      "arc": 113,
+      "id": "WS0004",
+      "locations": [
+        -9.5,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "SYSTEM"
     }
   ],
   "width": 22

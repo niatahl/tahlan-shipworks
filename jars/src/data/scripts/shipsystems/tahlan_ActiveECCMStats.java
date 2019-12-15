@@ -34,6 +34,8 @@ public class tahlan_ActiveECCMStats extends BaseShipSystemScript {
             return;
         }
 
+        stats.getDynamic().getMod(Stats.ELECTRONIC_WARFARE_FLAT).modifyFlat(id, 3f);
+
         //Lets list our applicable targets first
 
         for (ShipAPI target : CombatUtils.getShipsWithinRange(ship.getLocation(), EFFECT_RANGE)) {
@@ -101,6 +103,8 @@ public class tahlan_ActiveECCMStats extends BaseShipSystemScript {
 
             target.setWeaponGlow(0f,GLOW_COLOR, WEAPON_TYPES);
         }
+
+        stats.getDynamic().getMod(Stats.ELECTRONIC_WARFARE_FLAT).unmodify(id);
     }
 
     @Override

@@ -15,6 +15,8 @@ public class tahlan_CuchulainnGlowScript implements EveryFrameWeaponEffectPlugin
     private static final float MAX_JITTER_DISTANCE = 0.8f;
     private static final float MAX_OPACITY = 1f;
 
+    private float currentBrightness = 0f;
+
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         if (Global.getCombatEngine().isPaused()) {
@@ -26,6 +28,11 @@ public class tahlan_CuchulainnGlowScript implements EveryFrameWeaponEffectPlugin
             return;
         }
 
+        //No glows on wrecks
+        if ( ship.isPiece() || !ship.isAlive() ) {
+            return;
+        }
+
         WeaponAPI gaebolg = null;
         for ( WeaponAPI shipweapon : ship.getAllWeapons() ) {
             if (shipweapon.getId().startsWith("tahlan_gaebolg"))
@@ -33,11 +40,8 @@ public class tahlan_CuchulainnGlowScript implements EveryFrameWeaponEffectPlugin
         }
 
         //Brightness based on flux under normal conditions
-        float currentBrightness = gaebolg.getChargeLevel();
-
-        //No glows on wrecks
-        if ( ship.isPiece() || !ship.isAlive() ) {
-            return;
+        if ( gaebolg != null ) {
+            currentBrightness = gaebolg.getChargeLevel();
         }
 
         //Glows off in refit screen

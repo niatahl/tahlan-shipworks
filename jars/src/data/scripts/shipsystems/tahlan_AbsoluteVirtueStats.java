@@ -28,18 +28,19 @@ public class tahlan_AbsoluteVirtueStats extends BaseShipSystemScript {
             return;
         }
 
+
         if (ship.getShield() != null) {
+
             //That shield is going up
-            if (ship.getShield().isOff()) {
-                ship.giveCommand(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK, null, 0);
+
+            if (ship.getShield().isOff()){
+                ship.getShield().toggleOn();
             }
 
-            //And it's staying like that
-            if (ship.getShield().isOn()) {
-                ship.blockCommandForOneFrame(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK);
-                ship.blockCommandForOneFrame(ShipCommand.VENT_FLUX);
-            }
         }
+
+        ship.blockCommandForOneFrame(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK);
+        ship.blockCommandForOneFrame(ShipCommand.VENT_FLUX);
 
         stats.getFluxDissipation().modifyMult(id, bonusPercent);
         stats.getHardFluxDissipationFraction().modifyFlat(id, (float) HARD_FLUX_DISSIPATION_PERCENT * 0.01f);

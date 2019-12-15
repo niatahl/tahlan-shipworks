@@ -3,7 +3,6 @@ package data.scripts.world;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
-import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
@@ -16,7 +15,6 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySp
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
-import com.fs.starfarer.campaign.econ.Market;
 import org.lazywizard.lazylib.MathUtils;
 
 import static data.scripts.world.tahlan_Lethia.addMarketplace;
@@ -28,7 +26,7 @@ import java.util.Arrays;
 public class tahlan_Rubicon  {
     public void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Rubicon");
-        system.getLocation().set(-24000, -4500);
+        system.getLocation().set(-28000, -4500);
         system.setBackgroundTextureFilename("graphics/tahlan/backgrounds/tahlan_rubicon.jpg");
 
         PlanetAPI rubicon_star = system.initStar("tahlan_rubicon_maw",
@@ -113,7 +111,7 @@ public class tahlan_Rubicon  {
                 new ArrayList<>(
                         Arrays.asList(
                                 Industries.POPULATION,
-                                Industries.SPACEPORT,
+                                Industries.MEGAPORT,
                                 Industries.MINING,
                                 Industries.BATTLESTATION,
                                 Industries.HEAVYBATTERIES,
@@ -127,6 +125,7 @@ public class tahlan_Rubicon  {
 
         rubicon_1_market.getIndustry(Industries.MILITARYBASE).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_1_market.getIndustry(Industries.BATTLESTATION).setAICoreId(Commodities.ALPHA_CORE);
+        rubicon_1_market.getIndustry(Industries.MEGAPORT).setAICoreId(Commodities.ALPHA_CORE);
 
         SectorEntityToken stableLoc1 = system.addCustomEntity("tahlan_rubicon_stableloc_1", "Stable Location", "stable_location", Factions.NEUTRAL);
         stableLoc1.setCircularOrbit(rubicon_star, MathUtils.getRandomNumberInRange(0f,360f),4200f, 520);
@@ -163,10 +162,10 @@ public class tahlan_Rubicon  {
 
         MarketAPI rubicon_3_market = addMarketplace("tahlan_legioinfernalis", rubicon_3, null,
                 "Lucifron",
-                6,
+                7,
                 new ArrayList<>(
                         Arrays.asList(
-                                Conditions.POPULATION_6,
+                                Conditions.POPULATION_7,
                                 Conditions.ORE_SPARSE,
                                 Conditions.RARE_ORE_SPARSE,
                                 Conditions.ORGANICS_COMMON,
@@ -188,12 +187,13 @@ public class tahlan_Rubicon  {
                 new ArrayList<>(
                         Arrays.asList(
                                 Industries.POPULATION,
-                                Industries.SPACEPORT,
+                                Industries.MEGAPORT,
                                 Industries.MINING,
                                 Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
                                 Industries.HIGHCOMMAND,
                                 Industries.PLANETARYSHIELD,
+                                Industries.LIGHTINDUSTRY,
                                 "tahlan_CloningFacility"
                         )
                 ),
@@ -201,7 +201,7 @@ public class tahlan_Rubicon  {
                 true,
                 true);
 
-        rubicon_3_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
+        rubicon_3_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.PRISTINE_NANOFORGE)));
         rubicon_3_market.getIndustry(Industries.HIGHCOMMAND).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_3_market.getIndustry(Industries.STARFORTRESS).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_3_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
@@ -241,7 +241,7 @@ public class tahlan_Rubicon  {
         rubicon_outpost.setCustomDescriptionId("tahlan_rubicon_outpost");
         MarketAPI rubicon_outpost_market = addMarketplace("tahlan_legioinfernalis", rubicon_outpost, null,
                 "Adramelech Fortress",
-                3,
+                5,
                 new ArrayList<>(
                         Arrays.asList(
                                 Conditions.POPULATION_3,

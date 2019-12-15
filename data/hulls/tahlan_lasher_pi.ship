@@ -1,0 +1,150 @@
+{
+  "bounds": [
+    -29.5,
+    -23,
+    10,
+    -44,
+    30,
+    -37,
+    11,
+    -34.5,
+    60,
+    -0,
+    11,
+    34.5,
+    30,
+    37,
+    10,
+    44,
+    -29.5,
+    23
+  ],
+  "center": [
+    44,
+    35
+  ],
+  "builtInMods":[
+	"tahlan_lirefit",
+  ],
+  "collisionRadius": 81.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 16,
+      "length": 64,
+      "location": [
+        -35,
+        -0
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 16
+    },
+    {
+      "angle": 180,
+      "contrailSize": 11,
+      "length": 35.5,
+      "location": [
+        -31,
+        21
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 11
+    },
+    {
+      "angle": -180,
+      "contrailSize": 11,
+      "length": 35.5,
+      "location": [
+        -31,
+        -21
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 11
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 31.5,
+      "location": [
+        -30,
+        14.5
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 8
+    },
+    {
+      "angle": -180,
+      "contrailSize": 8,
+      "length": 31.5,
+      "location": [
+        -30,
+        -14.5
+      ],
+      "style": "TAHLAN_PIRATE_ENGINE",
+      "width": 8
+    }
+  ],
+  "height": 100,
+  "hullId": "tahlan_lasher_pi",
+  "hullName": "Lasher (LI)",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    15,
+    0
+  ],
+  "shieldRadius": 66,
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_lasher_pi.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        26,
+        21
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": -0,
+      "arc": 0,
+      "id": "WS0002",
+      "locations": [
+        26,
+        -21
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 60,
+      "arc": 270,
+      "id": "WS0003",
+      "locations": [
+        3,
+        10
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 270,
+      "id": "WS0004",
+      "locations": [
+        36,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "BALLISTIC"
+    }
+  ],
+  "width": 88
+}

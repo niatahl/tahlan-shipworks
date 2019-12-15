@@ -1,38 +1,44 @@
 {
-    "displayName": "Pather",
-    "fluxCapacitors": 20,
-    "fluxVents": 20,
-    "hullId": "tahlan_Bento_lp",
-    "hullMods": [],
-    "permaMods": [],
-    "variantId": "tahlan_Bento_lp_pather",
-    "weaponGroups": [
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0002": "chaingun"}
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0008": "hammer",
-                "WS0009": "hammer"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0001": "heavymg"}
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0003": "lightmg",
-                "WS0004": "lightmg"
-            }
-        }
-    ],
-    "wings": []
+  "displayName": "Pather",
+  "fluxCapacitors": 20,
+  "fluxVents": 20,
+  "goalVariant": true,
+  "hullId": "tahlan_Bento_lp",
+  "hullMods": [],
+  "modules": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "tahlan_Bento_lp_pather",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "heavymg",
+        "WS0002": "chaingun"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0008": "hammer",
+        "WS0009": "hammer"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "lightmg",
+        "WS0004": "lightmg"
+      }
+    }
+  ],
+  "wings": []
 }

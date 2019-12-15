@@ -61,13 +61,8 @@
 			"falcon_p",
 			"atlas2",
 			"tahlan_Nessie",
-			"tahlan_Castella_pirates",
 			"tahlan_Eagle_P",
 			"tahlan_Tempest_P",
-			"tahlan_Castigator_P",
-			"tahlan_Dominator_PH",
-			"tahlan_DunScaith",
-			"tahlan_Hresvelgr_p",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -225,16 +220,16 @@
 		},
 	},
 	"custom":{
-		"offersCommissions":false,
+		"offersCommissions":true,
 		"engageWhenEvenStrength":true,
 		"exemptFromFoodShortages":true,
-		"willTradeWhenHostile":true,
+		"willTradeWhenHostile":false,
 		"ignoreTradeWithEnemiesForReputation":true,
 		"postsNoBounties":false,
-		"offerMissionsWhenHostile":true,
+		"offerMissionsWhenHostile":false,
 		"allowsTransponderOffTrade":true,
 		"patrolsHaveNoPatrolMemoryKey":true,
-		"pirateBehavior":true, # for fleet behavior
+		"pirateBehavior":false, # for fleet behavior
 		#"makesPirateBases":true,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
 		#"pirateBaseStationTypes":{

@@ -1,11 +1,14 @@
 {
-    "playableFaction":false,
-    "pirateFaction":true,
+    "playableFaction":true,
+    "pirateFaction":false,
     "corvusCompatible":true,
-    "noHomeworld":false,
     "showIntelEvenIfDead":false,
         
     "rebelFleetSuffix":"Traitors",
+	
+	"marketSpawnWeight":1,
+	
+	"invasionPointMult": 1.2,
     
     "difficultyString":"hard",
     
@@ -23,6 +26,10 @@
 		"player":1,
 	},
 	
+	"industrySeeds":[
+        {"id":"orbitalworks", "mult":0.1},
+    ],
+	
     "diplomacyTraits":["neutralist", "selfrighteous"],
 	"morality":"evil",
     
@@ -37,5 +44,18 @@
     "defenceStations":[
         {"ids":["orbitalstation", "battlestation", "starfortress"]},
     ],
+	
+	"startShipsCombatSmall":[
+		["tahlan_Eagle_P_raider"],
+	],
+    "startShipsCombatLarge":[
+		["tahlan_Castigator_P_raider", "tahlan_Bronco_p_sniper", "tahlan_lasher_pi_support"],
+    ],
+	"startShipsSuper":[
+	  ["tahlan_Dominator_PH_striker"]
+	],
+	"startShipsGrandFleet":[
+	  ["tahlan_DunScaith_barrage","tahlan_Castigator_P_raider","tahlan_Bronco_p_brawler","tahlan_Bronco_p_brawler","buffalo_pirates_Standard"]
+	],
     
 }

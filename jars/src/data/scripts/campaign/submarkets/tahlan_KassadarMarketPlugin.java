@@ -26,7 +26,16 @@ public class tahlan_KassadarMarketPlugin extends BaseSubmarketPlugin {
 
     @Override
     public float getTariff() {
-        return 0.4f;
+        switch (market.getFaction().getRelationshipLevel(Global.getSector().getFaction(Factions.PLAYER))) {
+            case COOPERATIVE:
+                return 0.25f;
+            case FRIENDLY:
+                return 0.5f;
+            case WELCOMING:
+                return 0.75f;
+            default:
+                return 1f;
+        }
     }
 
     @Override
@@ -66,6 +75,19 @@ public class tahlan_KassadarMarketPlugin extends BaseSubmarketPlugin {
 
             getCargo().getMothballedShips().clear();
 
+            float quality = 0.1f;
+            switch (market.getFaction().getRelationshipLevel(Global.getSector().getFaction(Factions.PLAYER))) {
+                case COOPERATIVE:
+                    quality = 0.3f;
+                    break;
+                case FRIENDLY:
+                    quality = 0.2f;
+                    break;
+                case WELCOMING:
+                    quality = 0.15f;
+                    break;
+            }
+
             FactionDoctrineAPI doctrineOverride = submarket.getFaction().getDoctrine().clone();
             doctrineOverride.setShipSize(2);
             addShips(submarket.getFaction().getId(),
@@ -75,12 +97,12 @@ public class tahlan_KassadarMarketPlugin extends BaseSubmarketPlugin {
                     0f, // transport
                     0f, // liner
                     0f, // utilityPts
-                    0.2f, // qualityOverride
+                    quality, // qualityOverride
                     0f, // qualityMod
                     ShipPickMode.PRIORITY_THEN_ALL,
                     doctrineOverride);
 
-            addWeapons(5, 10, 3,submarket.getFaction().getId());
+            addWeapons(5, 10, 5, submarket.getFaction().getId());
 
             pruneShips(0.5f);
         }
@@ -104,14 +126,12 @@ public class tahlan_KassadarMarketPlugin extends BaseSubmarketPlugin {
     }
 
     @Override
-    public String getIllegalTransferText(FleetMemberAPI member, TransferAction action)
-    {
+    public String getIllegalTransferText(FleetMemberAPI member, TransferAction action) {
         return "Sales only!";
     }
 
     @Override
-    public String getIllegalTransferText(CargoStackAPI stack, TransferAction action)
-    {
+    public String getIllegalTransferText(CargoStackAPI stack, TransferAction action) {
         return "Sales only!";
     }
 

@@ -31,6 +31,8 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     static {
         USED_IDS.add("FLASH_ID_1");
         USED_IDS.add("FLASH_ID_2");
+        USED_IDS.add("FLASH_ID_3");
+        USED_IDS.add("FLASH_ID_4");
     }
 
     //The amount of particles spawned immediately when the weapon reaches full charge level
@@ -38,8 +40,10 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 30);
-        ON_SHOT_PARTICLE_COUNT.put("default", 15);
+        ON_SHOT_PARTICLE_COUNT.put("default", 20);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_2", 10);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_3", 1);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_4", 1);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -86,31 +90,38 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
     static {
         PARTICLE_TYPE.put("default", "SMOKE");
+        PARTICLE_TYPE.put("FLASH_ID_3", "SMOOTH");
+        PARTICLE_TYPE.put("FLASH_ID_4", "BRIGHT");
     }
 
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(225,255,255, 165));
+        PARTICLE_COLOR.put("default", new Color(210,220,230, 165));
+        PARTICLE_COLOR.put("FLASH_ID_3", new Color(71, 191, 255));
+        PARTICLE_COLOR.put("FLASH_ID_4", new Color(236, 248, 255));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
         PARTICLE_SIZE_MIN.put("default", 10f);
+        PARTICLE_SIZE_MIN.put("FLASH_ID_3", 160f);
+        PARTICLE_SIZE_MIN.put("FLASH_ID_4", 100f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
         PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("FLASH_ID_3", 160f);
+        PARTICLE_SIZE_MAX.put("FLASH_ID_4", 100f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MIN.put("default", 30f);
-        PARTICLE_VELOCITY_MIN.put("FLASH_ID_2", 0f);
+        PARTICLE_VELOCITY_MIN.put("default", 0f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
@@ -118,30 +129,38 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     static {
         PARTICLE_VELOCITY_MAX.put("default", 70f);
         PARTICLE_VELOCITY_MAX.put("FLASH_ID_2", 20f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_ID_3", 0f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_ID_4", 0f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
         PARTICLE_DURATION_MIN.put("default", 1f);
+        PARTICLE_DURATION_MIN.put("FLASH_ID_3", 0.2f);
+        PARTICLE_DURATION_MIN.put("FLASH_ID_4", 0.1f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1.4f);
+        PARTICLE_DURATION_MAX.put("default", 2f);
+        PARTICLE_DURATION_MAX.put("FLASH_ID_3", 0.2f);
+        PARTICLE_DURATION_MAX.put("FLASH_ID_4", 0.1f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MIN = new HashMap<>();
     static {
-        PARTICLE_OFFSET_MIN.put("default", 5f);
+        PARTICLE_OFFSET_MIN.put("default", 0f);
     }
 
     //The furthest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MAX = new HashMap<>();
     static {
-        PARTICLE_OFFSET_MAX.put("default", 10f);
+        PARTICLE_OFFSET_MAX.put("default", 20f);
+        PARTICLE_OFFSET_MAX.put("FLASH_ID_3", 0f);
+        PARTICLE_OFFSET_MAX.put("FLASH_ID_4", 0f);
     }
 
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
@@ -149,6 +168,8 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     static {
         PARTICLE_ARC.put("default", 30f);
         PARTICLE_ARC.put("FLASH_ID_2", 360f);
+        PARTICLE_ARC.put("FLASH_ID_3", 0f);
+        PARTICLE_ARC.put("FLASH_ID_4", 0f);
     }
 
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.

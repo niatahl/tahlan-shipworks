@@ -1,0 +1,73 @@
+{
+    "displayName": "Flagship",
+    "fluxCapacitors": 35,
+    "fluxVents": 50,
+    "hullId": "tahlan_Higanbana",
+    "hullMods": [
+        "targetingunit",
+        "fluxbreakers",
+        "advancedshieldemitter",
+        "stabilizedshieldemitter"
+    ],
+	"goalVariant": true,
+    "permaMods": [],
+    "variantId": "tahlan_Higanbana_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_anumis",
+                "WS0002": "tahlan_anumis"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "tahlan_magaera",
+                "WS0007": "tahlan_magaera",
+                "WS0008": "tahlan_porph",
+                "WS0009": "tahlan_porph"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_porph",
+                "WS0004": "tahlan_magaera",
+                "WS0005": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "tahlan_teltrite",
+                "WS0012": "tahlan_teltrite",
+                "WS0013": "tahlan_teltrite",
+                "WS0014": "tahlan_teltrite",
+                "WS0015": "tahlan_teltrite",
+                "WS0016": "tahlan_teltrite",
+                "WS0017": "tahlan_teltrite",
+                "WS0018": "tahlan_volkite",
+                "WS0019": "tahlan_volkite",
+                "WS0020": "tahlan_volkite",
+                "WS0021": "tahlan_volkite",
+                "WS0022": "tahlan_volkite",
+                "WS0023": "tahlan_volkite",
+                "WS0024": "tahlan_teltrite",
+                "WS0025": "tahlan_teltrite",
+                "WS0026": "tahlan_teltrite",
+                "WS0027": "tahlan_teltrite",
+                "WS0028": "tahlan_teltrite"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0010": "tahlan_ronka"}
+        }
+    ]
+}

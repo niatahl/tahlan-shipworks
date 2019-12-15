@@ -29,8 +29,11 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     */
     private static final List<String> USED_IDS = new ArrayList<>();
     static {
-        USED_IDS.add("FLASH_ID_1");
-        USED_IDS.add("FLASH_ID_2");
+        USED_IDS.add("SMOKE_1");
+        USED_IDS.add("SMOKE_3");
+        USED_IDS.add("SMOKE_5");
+        USED_IDS.add("FLASH_CORE_1");
+        USED_IDS.add("FLASH_FRINGE_1");
     }
 
     //The amount of particles spawned immediately when the weapon reaches full charge level
@@ -38,7 +41,10 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 10);
+        ON_SHOT_PARTICLE_COUNT.put("default", 20);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 10);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -85,69 +91,94 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
     static {
         PARTICLE_TYPE.put("default", "SMOKE");
+        PARTICLE_TYPE.put("FLASH_FRINGE_1", "BRIGHT");
+        PARTICLE_TYPE.put("FLASH_CORE_1", "BRIGHT");
     }
 
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(255,255,220, 165));
+        PARTICLE_COLOR.put("default", new Color(140,130,120, 125));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 175, 65));
+        PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 234, 212));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 10f);
+        PARTICLE_SIZE_MIN.put("default", 5f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
         PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MIN.put("default", 30f);
-        PARTICLE_VELOCITY_MIN.put("FLASH_ID_2", 0f);
+        PARTICLE_VELOCITY_MIN.put("default", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_CORE_1", 0f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MAX.put("default", 70f);
-        PARTICLE_VELOCITY_MAX.put("FLASH_ID_2", 20f);
+        PARTICLE_VELOCITY_MAX.put("default", 40f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_CORE_1", 0f);
+        PARTICLE_VELOCITY_MAX.put("SMOKE_5", 5f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
-        PARTICLE_DURATION_MIN.put("default", 0.8f);
+        PARTICLE_DURATION_MIN.put("default", 1.5f);
+        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_1", 0.2f);
+        PARTICLE_DURATION_MIN.put("FLASH_CORE_1", 0.15f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1.2f);
+        PARTICLE_DURATION_MAX.put("default", 3f);
+        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_1", 0.2f);
+        PARTICLE_DURATION_MAX.put("FLASH_CORE_1", 0.15f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MIN = new HashMap<>();
     static {
-        PARTICLE_OFFSET_MIN.put("default", 5f);
+        PARTICLE_OFFSET_MIN.put("default", 0f);
+        PARTICLE_OFFSET_MIN.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_OFFSET_MIN.put("FLASH_CORE_1", 0f);
     }
 
     //The furthest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MAX = new HashMap<>();
     static {
-        PARTICLE_OFFSET_MAX.put("default", 10f);
+        PARTICLE_OFFSET_MAX.put("default", 50f);
+        PARTICLE_OFFSET_MAX.put("SMOKE_3", 60f);
+        PARTICLE_OFFSET_MAX.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_OFFSET_MAX.put("FLASH_CORE_1", 0f);
+        PARTICLE_OFFSET_MAX.put("SMOKE_5", 5f);
     }
 
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
     private static final Map<String, Float> PARTICLE_ARC = new HashMap<>();
     static {
-        PARTICLE_ARC.put("default", 30f);
-        PARTICLE_ARC.put("FLASH_ID_2", 360f);
+        PARTICLE_ARC.put("default", 10f);
+        PARTICLE_ARC.put("SMOKE_3", 5f);
+        PARTICLE_ARC.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_ARC.put("FLASH_CORE_1", 0f);
+        PARTICLE_ARC.put("SMOKE_5", 180f);
     }
 
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.

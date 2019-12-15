@@ -78,7 +78,7 @@
     -22.5
   ],
   "builtInMods": [
-	"tahlan_lirefit",
+    "tahlan_lirefit",
     "missleracks"
   ],
   "center": [
@@ -293,7 +293,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "BALLISTIC"
     },
     {
       "angle": -0,
@@ -305,7 +305,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "BALLISTIC"
     },
     {
       "angle": 9.5,

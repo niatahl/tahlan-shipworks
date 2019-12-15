@@ -36,15 +36,6 @@ public class tahlan_StormDriveStats extends BaseShipSystemScript {
 
 
     public float getActiveOverride(ShipAPI ship) {
-//		if (ship.getHullSize() == HullSize.FRIGATE) {
-//			return 1.25f;
-//		}
-//		if (ship.getHullSize() == HullSize.DESTROYER) {
-//			return 0.75f;
-//		}
-//		if (ship.getHullSize() == HullSize.CRUISER) {
-//			return 0.5f;
-//		}
         return -1;
     }
 

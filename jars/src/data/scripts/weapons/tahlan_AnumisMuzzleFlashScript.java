@@ -29,10 +29,16 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     */
     private static final List<String> USED_IDS = new ArrayList<>();
     static {
-        USED_IDS.add("FLASH_ID_1");
-        USED_IDS.add("FLASH_ID_2");
-        USED_IDS.add("FLASH_ID_3");
-        USED_IDS.add("FLASH_ID_4");
+        USED_IDS.add("SMOKE_1");
+        USED_IDS.add("SMOKE_2");
+        USED_IDS.add("SMOKE_3");
+        USED_IDS.add("SMOKE_4");
+        USED_IDS.add("SMOKE_5");
+        USED_IDS.add("SMOKE_6");
+        USED_IDS.add("FLASH_CORE_1");
+        USED_IDS.add("FLASH_CORE_2");
+        USED_IDS.add("FLASH_FRINGE_1");
+        USED_IDS.add("FLASH_FRINGE_2");
     }
 
     //The amount of particles spawned immediately when the weapon reaches full charge level
@@ -40,7 +46,13 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 10);
+        ON_SHOT_PARTICLE_COUNT.put("default", 20);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_2", 1);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_2", 1);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 10);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_6", 10);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -73,92 +85,146 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a turret (or HIDDEN)
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_TURRET = new HashMap<>();
     static {
-        PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(-6f, 25f));
-        PARTICLE_SPAWN_POINT_TURRET.put("FLASH_ID_2", new Vector2f(6f, 25f));
-        PARTICLE_SPAWN_POINT_TURRET.put("FLASH_ID_3", new Vector2f(-6f, 25f));
-        PARTICLE_SPAWN_POINT_TURRET.put("FLASH_ID_4", new Vector2f(6f, 25f));
+        PARTICLE_SPAWN_POINT_TURRET.put("default", new Vector2f(-6f, 30f));
+        PARTICLE_SPAWN_POINT_TURRET.put("SMOKE_2", new Vector2f(6f, 30f));
+        PARTICLE_SPAWN_POINT_TURRET.put("SMOKE_4", new Vector2f(6f, 30f));
+        PARTICLE_SPAWN_POINT_TURRET.put("FLASH_FRINGE_2", new Vector2f(6f, 30f));
+        PARTICLE_SPAWN_POINT_TURRET.put("FLASH_CORE_2", new Vector2f(6f, 30f));
+        PARTICLE_SPAWN_POINT_TURRET.put("SMOKE_6", new Vector2f(6f, 30f));
     }
 
     //The position the particles are spawned (or at least where their arc originates when using offsets) compared to their weapon's center [or shot offset, see
     //SPAWN_POINT_ANCHOR_ALTERNATION above], if the weapon is a hardpoint
     private static final Map<String, Vector2f> PARTICLE_SPAWN_POINT_HARDPOINT = new HashMap<>();
     static {
-        PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(-6f, 25f));
-        PARTICLE_SPAWN_POINT_HARDPOINT.put("FLASH_ID_2", new Vector2f(6f, 25f));
-        PARTICLE_SPAWN_POINT_HARDPOINT.put("FLASH_ID_3", new Vector2f(-6f, 25f));
-        PARTICLE_SPAWN_POINT_HARDPOINT.put("FLASH_ID_4", new Vector2f(6f, 25f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("default", new Vector2f(-6f, 35f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("SMOKE_2", new Vector2f(6f, 35f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("SMOKE_4", new Vector2f(6f, 35f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("FLASH_FRINGE_2", new Vector2f(6f, 35f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("FLASH_CORE_2", new Vector2f(6f, 35f));
+        PARTICLE_SPAWN_POINT_HARDPOINT.put("SMOKE_6", new Vector2f(6f, 35f));
     }
 
     //Which kind of particle is spawned (valid values are "SMOOTH", "BRIGHT" and "SMOKE")
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
     static {
         PARTICLE_TYPE.put("default", "SMOKE");
+        PARTICLE_TYPE.put("FLASH_FRINGE_1", "BRIGHT");
+        PARTICLE_TYPE.put("FLASH_FRINGE_2", "BRIGHT");
+        PARTICLE_TYPE.put("FLASH_CORE_1", "BRIGHT");
+        PARTICLE_TYPE.put("FLASH_CORE_2", "BRIGHT");
     }
 
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(200,200,200, 125));
+        PARTICLE_COLOR.put("default", new Color(140,130,120, 125));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("SMOKE_4", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 144, 68));
+        PARTICLE_COLOR.put("FLASH_FRINGE_2", new Color(255, 144, 68));
+        PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 244, 222));
+        PARTICLE_COLOR.put("FLASH_CORE_2", new Color(255, 244, 222));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 10f);
+        PARTICLE_SIZE_MIN.put("default", 5f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_2", 150f);
+        PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
+        PARTICLE_SIZE_MIN.put("FLASH_CORE_2", 70f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
         PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_2", 150f);
+        PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
+        PARTICLE_SIZE_MAX.put("FLASH_CORE_2", 70f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MIN.put("default", 30f);
-        PARTICLE_VELOCITY_MIN.put("FLASH_ID_3", 0f);
-        PARTICLE_VELOCITY_MIN.put("FLASH_ID_4", 0f);
+        PARTICLE_VELOCITY_MIN.put("default", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_FRINGE_2", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_CORE_1", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_CORE_2", 0f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MAX.put("default", 70f);
-        PARTICLE_VELOCITY_MAX.put("FLASH_ID_3", 20f);
-        PARTICLE_VELOCITY_MAX.put("FLASH_ID_4", 20f);
+        PARTICLE_VELOCITY_MAX.put("default", 40f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_2", 0f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_CORE_1", 0f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_CORE_2", 0f);
+        PARTICLE_VELOCITY_MAX.put("SMOKE_5", 5f);
+        PARTICLE_VELOCITY_MAX.put("SMOKE_6", 5f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
-        PARTICLE_DURATION_MIN.put("default", 1f);
+        PARTICLE_DURATION_MIN.put("default", 1.5f);
+        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_1", 0.2f);
+        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_2", 0.2f);
+        PARTICLE_DURATION_MIN.put("FLASH_CORE_1", 0.15f);
+        PARTICLE_DURATION_MIN.put("FLASH_CORE_2", 0.15f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1.5f);
+        PARTICLE_DURATION_MAX.put("default", 3f);
+        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_1", 0.2f);
+        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_2", 0.2f);
+        PARTICLE_DURATION_MAX.put("FLASH_CORE_1", 0.15f);
+        PARTICLE_DURATION_MAX.put("FLASH_CORE_2", 0.15f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MIN = new HashMap<>();
     static {
-        PARTICLE_OFFSET_MIN.put("default", 5f);
+        PARTICLE_OFFSET_MIN.put("default", 0f);
+        PARTICLE_OFFSET_MIN.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_OFFSET_MIN.put("FLASH_FRINGE_2", 0f);
+        PARTICLE_OFFSET_MIN.put("FLASH_CORE_1", 0f);
+        PARTICLE_OFFSET_MIN.put("FLASH_CORE_2", 0f);
     }
 
     //The furthest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
     private static final Map<String, Float> PARTICLE_OFFSET_MAX = new HashMap<>();
     static {
-        PARTICLE_OFFSET_MAX.put("default", 10f);
+        PARTICLE_OFFSET_MAX.put("default", 50f);
+        PARTICLE_OFFSET_MAX.put("SMOKE_3", 60f);
+        PARTICLE_OFFSET_MAX.put("SMOKE_4", 60f);
+        PARTICLE_OFFSET_MAX.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_OFFSET_MAX.put("FLASH_FRINGE_2", 0f);
+        PARTICLE_OFFSET_MAX.put("FLASH_CORE_1", 0f);
+        PARTICLE_OFFSET_MAX.put("FLASH_CORE_2", 0f);
+        PARTICLE_OFFSET_MAX.put("SMOKE_5", 5f);
+        PARTICLE_OFFSET_MAX.put("SMOKE_6", 5f);
     }
 
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
     private static final Map<String, Float> PARTICLE_ARC = new HashMap<>();
     static {
-        PARTICLE_ARC.put("default", 30f);
-        PARTICLE_ARC.put("FLASH_ID_3", 360f);
-        PARTICLE_ARC.put("FLASH_ID_4", 360f);
+        PARTICLE_ARC.put("default", 10f);
+        PARTICLE_ARC.put("SMOKE_3", 5f);
+        PARTICLE_ARC.put("SMOKE_4", 5f);
+        PARTICLE_ARC.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_ARC.put("FLASH_FRINGE_2", 0f);
+        PARTICLE_ARC.put("FLASH_CORE_1", 0f);
+        PARTICLE_ARC.put("FLASH_CORE_2", 0f);
+        PARTICLE_ARC.put("SMOKE_5", 180f);
+        PARTICLE_ARC.put("SMOKE_6", 180f);
     }
 
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.

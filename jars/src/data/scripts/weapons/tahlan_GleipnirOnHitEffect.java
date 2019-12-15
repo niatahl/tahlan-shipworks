@@ -2,11 +2,14 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
+
+import static com.fs.starfarer.api.util.Misc.ZERO;
 
 public class tahlan_GleipnirOnHitEffect implements OnHitEffectPlugin {
 
@@ -15,7 +18,7 @@ public class tahlan_GleipnirOnHitEffect implements OnHitEffectPlugin {
 
     //Variables for explosion visuals
     private static final Color EXPLOSION_COLOR = new Color(255, 85, 10);
-    private static final float EXPLOSION_SIZE = 150f;
+    private static final float EXPLOSION_SIZE = 200f;
     private static final float EXPLOSION_DURATION_MIN = 0.3f;
     private static final float EXPLOSION_DURATION_MAX = 0.7f;
 
@@ -24,17 +27,46 @@ public class tahlan_GleipnirOnHitEffect implements OnHitEffectPlugin {
     private static final float PARTICLE_SIZE = 120f;
     private static final float PARTICLE_BRIGHTNESS = 90f;
 
+    private static final Color FLASH_COLOR = new Color(255, 245, 209);
+    private static final int NUM_PARTICLES = 100;
+
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
 
         //MagicLensFlare.createSharpFlare(engine,projectile.getSource(),projectile.getLocation(),10,500,0,new Color(100,215,255),new Color(255,255,255));
 
-        if (shieldHit || target == null || !(target instanceof ShipAPI) ) {           return;       }
+        if ( (target instanceof MissileAPI) ) {
+            return;
+        }
 
-        Global.getCombatEngine().applyDamage(target, point,  1000f, DamageType.FRAGMENTATION, 0, true, false, null, true);
+        //Global.getCombatEngine().applyDamage(target, point,  1000f, DamageType.FRAGMENTATION, 0, true, false, null, true);
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);
+        DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
+                EXPLOSION_SIZE,
+                EXPLOSION_SIZE/2,
+                500f,
+                250f,
+                CollisionClass.PROJECTILE_FF,
+                CollisionClass.PROJECTILE_FIGHTER,
+                10f,
+                10f,
+                0f,
+                0,
+                PARTICLE_COLOR,
+                null);
+        blast.setDamageType(DamageType.FRAGMENTATION);
+        blast.setShowGraphic(false);
+        engine.spawnDamagingExplosion(blast,projectile.getSource(),point,false);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 12, 750, 0, EXPLOSION_COLOR, new Color(255, 255, 255));
 
-        Global.getCombatEngine().addHitParticle(point, new Vector2f(0f,0f), PARTICLE_SIZE, PARTICLE_BRIGHTNESS, MathUtils.getRandomNumberInRange(EXPLOSION_DURATION_MIN, EXPLOSION_DURATION_MAX), PARTICLE_COLOR);
+        engine.addSmoothParticle(point, ZERO, 200f, 0.5f, 0.1f, PARTICLE_COLOR);
+        engine.addHitParticle(point, ZERO, 300f, 0.3f, 0.05f, FLASH_COLOR);
+        for (int x = 0; x < NUM_PARTICLES; x++) {
+            engine.addHitParticle(point,
+                    MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 400f), (float) Math.random() * 360f),
+                    5f, 1f, MathUtils.getRandomNumberInRange(0.6f, 1f), PARTICLE_COLOR);
+        }
+
+        //Global.getCombatEngine().addHitParticle(point, new Vector2f(0f,0f), PARTICLE_SIZE, PARTICLE_BRIGHTNESS, MathUtils.getRandomNumberInRange(EXPLOSION_DURATION_MIN, EXPLOSION_DURATION_MAX), PARTICLE_COLOR);
 
         //Commented out, but plays a sound when exploding if un-commented
         //Global.getSoundPlayer().playSound("SRD_ArCielExplosion", 1f, 1f, point, new Vector2f(0f, 0f));

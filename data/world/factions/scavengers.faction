@@ -10,7 +10,9 @@
 			"tahlan_Hresvelgr":0.5,
 			"tahlan_Niebelung":0.5,
 		},
-		#"hulls":{},
+		"hulls":{
+			"tahlan_Ristreza_b":0,
+		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{

@@ -13,8 +13,8 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class tahlan_TemporalTravelDrive extends BaseHullMod {
 
-    private static final float TIME_MULT_PLAYER = 2.0f;
-    private static final float TIME_MULT_AI = 2.0f;
+    private static final float TIME_MULT_PLAYER = 1.2f;
+    private static final float TIME_MULT_AI = 1.2f;
 
     private static final Color JITTER_COLOR = new Color(255, 106, 32,55);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 54, 0,155);

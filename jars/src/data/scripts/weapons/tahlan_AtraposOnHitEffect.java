@@ -32,7 +32,7 @@ public class tahlan_AtraposOnHitEffect implements OnHitEffectPlugin {
             return;
         }
 
-        Global.getCombatEngine().applyDamage(target, point,  200f, DamageType.FRAGMENTATION, 0, true, false, null, true);
+        Global.getCombatEngine().applyDamage(target, point,  200f, DamageType.FRAGMENTATION, 0, true, false, projectile.getSource(), true);
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 10, 600, 0, EXPLOSION_COLOR, new Color(255, 255, 255));
 

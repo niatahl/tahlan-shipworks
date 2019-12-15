@@ -27,7 +27,7 @@ public class tahlan_GleipnirScript implements EveryFrameWeaponEffectPlugin {
             return;
         }
 
-        if (weapon.getCooldownRemaining() <= 0f && weapon.getChargeLevel() <= 0f) {
+        if (weapon.getCooldownRemaining() > 0f && weapon.getChargeLevel() < 1f) {
             shotCounter = 0;
         }
 

@@ -41,6 +41,10 @@ public class tahlan_NoName extends BaseHullMod {
             return;
         }
 
+        if ( !ship.isAlive() || ship.isPiece() ) {
+            return;
+        }
+
         //The Great Houses are actually timelords
         boolean player = ship == Global.getCombatEngine().getPlayerShip();
         String id = "tahlan_NoNameID";

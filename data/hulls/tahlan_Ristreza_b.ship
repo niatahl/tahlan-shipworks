@@ -240,7 +240,7 @@
   ],
   "height": 371,
   "hullId": "tahlan_Ristreza_b",
-  "hullName": "Ristreza (B)",
+  "hullName": "Casadia",
   "hullSize": "CAPITAL_SHIP",
   "shieldCenter": [
     0,
@@ -253,7 +253,7 @@
   "weaponSlots": [
     {
       "angle": 0,
-      "arc": 270,
+      "arc": 250,
       "id": "WS0001",
       "locations": [
         26.5,
@@ -265,7 +265,7 @@
     },
     {
       "angle": 0,
-      "arc": 270,
+      "arc": 250,
       "id": "WS0002",
       "locations": [
         66.5,
@@ -277,7 +277,7 @@
     },
     {
       "angle": 0,
-      "arc": 270,
+      "arc": 250,
       "id": "WS0003",
       "locations": [
         106.5,
@@ -288,7 +288,7 @@
       "type": "BALLISTIC"
     },
     {
-      "angle": 45,
+      "angle": 50,
       "arc": 140,
       "id": "WS0004",
       "locations": [
@@ -300,7 +300,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -45,
+      "angle": -50,
       "arc": 140,
       "id": "WS0005",
       "locations": [

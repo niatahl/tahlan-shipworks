@@ -6,11 +6,11 @@ import com.fs.starfarer.api.combat.ShipAPI;
 
 public class tahlan_CrampedHangars extends BaseHullMod {
 
-    public static final float FIGHTER_REFIT_MULT = 1.2f;
+    public static final float FIGHTER_REFIT_MULT = 25f;
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getFighterRefitTimeMult().modifyMult(id,FIGHTER_REFIT_MULT);
+        stats.getFighterRefitTimeMult().modifyPercent(id,FIGHTER_REFIT_MULT);
     }
 
     //Built-in only
@@ -21,7 +21,7 @@ public class tahlan_CrampedHangars extends BaseHullMod {
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if (index == 0) return "" + (int)((FIGHTER_REFIT_MULT - 1f)*100f) + "%";
+        if (index == 0) return "" + (int)FIGHTER_REFIT_MULT + "%";
         return null;
     }
 }

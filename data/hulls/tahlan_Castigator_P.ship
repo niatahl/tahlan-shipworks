@@ -66,7 +66,7 @@
     11.5
   ],
   "builtInMods": [
-    "tahlan_lirefit",
+    "tahlan_lirefit"
   ],
   "center": [
     116,
@@ -362,7 +362,7 @@
       ],
       "mount": "HARDPOINT",
       "size": "LARGE",
-      "type": "HYBRID"
+      "type": "UNIVERSAL"
     },
     {
       "angle": 0,

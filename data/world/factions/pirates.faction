@@ -16,7 +16,6 @@
 			"tahlan_Hresvelgr_p":0.5,
 			"tahlan_Nessie":0.4,
 			"tahlan_DunScaith":0.2,
-			"tahlan_Bronco_p":0.5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -25,7 +24,7 @@
 		#"hulls":[],
 	},
 	"knownShips":{
-		#"tags":[],
+		"tags":["tahlan_legio_bp"],
 		"hulls":[
 			"tahlan_Nessie",
 			"tahlan_Castella_pirates",

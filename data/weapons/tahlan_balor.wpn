@@ -1,0 +1,52 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_BalorWeaponScript",
+  "fireSoundTwo": "tahlan_balor_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_balor_hp_recoil.png",
+  "hardpointOffsets": [
+    25.5,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_balor_hp_base.png",
+  "id": "tahlan_balor",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "particleColor": [
+      255,
+      110,
+      50,
+      205
+    ],
+    "particleCount": 10,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 20
+  },
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "tahlan_balor_shot",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_balor_turret_recoil.png",
+  "turretOffsets": [
+    21.5,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_balor_turret_base.png",
+  "type": "BALLISTIC",
+  "visualRecoil": 10
+}

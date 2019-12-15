@@ -1,0 +1,19 @@
+{
+	"id":"tahlan_praxus_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"onHitEffect":"data.scripts.weapons.tahlan_PraxusOnHitEffect",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"hitGlowRadius":10,
+	"length":30.0,
+	"width":4.0,
+	"fadeTime":0.15,
+	"coreColor":[255,255,255,255],
+	"fringeColor": [215,235,255,225],
+	"glowColor": [110,207,255,20],
+	"glowRadius":30,
+	"textureScrollSpeed":32.0,
+	"pixelsPerTexel":10.0,
+	"bulletSprite":"graphics/missiles/shell_small.png"
+}

@@ -79,7 +79,7 @@
   ],
   "builtInMods": [
     "tahlan_knightrefit",
-	"tahlan_temporaltraveldrive"
+    "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
     "WS0018": "tahlan_karion",
@@ -245,7 +245,7 @@
   "weaponSlots": [
     {
       "angle": 0,
-      "arc": 270,
+      "arc": 250,
       "id": "WS0001",
       "locations": [
         26.5,
@@ -257,7 +257,7 @@
     },
     {
       "angle": 0,
-      "arc": 270,
+      "arc": 250,
       "id": "WS0002",
       "locations": [
         66.5,
@@ -269,7 +269,7 @@
     },
     {
       "angle": 0,
-      "arc": 270,
+      "arc": 250,
       "id": "WS0003",
       "locations": [
         106.5,
@@ -280,7 +280,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 45,
+      "angle": 50,
       "arc": 140,
       "id": "WS0004",
       "locations": [
@@ -292,7 +292,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -45,
+      "angle": -50,
       "arc": 140,
       "id": "WS0005",
       "locations": [
@@ -304,7 +304,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 50,
+      "angle": 60,
       "arc": 130,
       "id": "WS0006",
       "locations": [
@@ -316,7 +316,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -50,
+      "angle": -60,
       "arc": 130,
       "id": "WS0007",
       "locations": [
@@ -328,7 +328,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 65,
+      "angle": 70,
       "arc": 130,
       "id": "WS0008",
       "locations": [
@@ -340,7 +340,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -65,
+      "angle": -70,
       "arc": 130,
       "id": "WS0009",
       "locations": [
@@ -376,7 +376,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 95,
+      "angle": 90,
       "arc": 130,
       "id": "WS0012",
       "locations": [
@@ -388,7 +388,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -95,
+      "angle": -90,
       "arc": 130,
       "id": "WS0013",
       "locations": [
@@ -400,7 +400,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": 110,
+      "angle": 100,
       "arc": 130,
       "id": "WS0014",
       "locations": [
@@ -412,7 +412,7 @@
       "type": "HYBRID"
     },
     {
-      "angle": -110,
+      "angle": -100,
       "arc": 130,
       "id": "WS0015",
       "locations": [

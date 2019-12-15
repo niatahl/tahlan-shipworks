@@ -39,8 +39,8 @@
 	"outOfUsesSound":"engine_disabled",
 	
 	"aiHints":{
-		"activeSpeedIncrease":0,
-		"burstMovementPotential":600,
-		"averageSpeedIncrease":60,
+		"activeSpeedIncrease":400,
+		"burstMovementPotential":500,
+		"averageSpeedIncrease":200,
 	}
 }

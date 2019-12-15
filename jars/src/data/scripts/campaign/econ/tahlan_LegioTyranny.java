@@ -11,8 +11,15 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
     @Override
     public void apply(String id) {
         super.apply(id);
-        market.getStability().modifyFlat (id, STAB_BONUS, "Legio Tyranny");
+        if (market.getFaction() != null) {
+            if (market.getFaction().getId().contains("tahlan_legioinfernalis")) {
+                market.getStability().modifyFlat(id, STAB_BONUS, "Legio Tyranny");
+            } else {
+                market.getStability().unmodify(id);
+            }
+        }
     }
+
     @Override
     public void unapply(String id) {
         super.unapply(id);
@@ -27,7 +34,7 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
             return;
         }
 
-        tooltip.addPara("%s stability",
+        tooltip.addPara("%s stability while under Legio Infernalis control",
                 10f, Misc.getHighlightColor(),
                 "+" + (int) STAB_BONUS);
     }

@@ -26,7 +26,7 @@ public class tahlan_FusorOnHitEffect implements OnHitEffectPlugin {
         }
 
             Float critLevel = MathUtils.getRandomNumberInRange(0.2f, 1f);
-            Global.getCombatEngine().applyDamage(target, point, critLevel * 10f, DamageType.HIGH_EXPLOSIVE, 0, true, false, null, true);
+            Global.getCombatEngine().applyDamage(target, point, critLevel * 10f, DamageType.HIGH_EXPLOSIVE, 0, true, false, projectile.getSource(), true);
             Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, critLevel * EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);
     }
 }
