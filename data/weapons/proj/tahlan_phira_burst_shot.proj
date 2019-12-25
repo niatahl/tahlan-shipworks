@@ -1,0 +1,18 @@
+{
+	"id":"tahlan_phira_burst_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":80.0,
+	"hitGlowRadius":50,
+	"width":10,
+	"fadeTime":0.20,
+	"fringeColor":[255,160,50,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[255,160,50,50],
+	"glowRadius":50,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":1.0,
+	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png"
+}

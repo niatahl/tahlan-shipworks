@@ -30,6 +30,9 @@
 			"tahlan_cooperative_protocols_multi_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols_multi.png",
 			"tahlan_knightrefit_icon":"graphics/tahlan/icons/hullsys/tahlan_knightrefit.png",
 			"tahlan_lens_flare":"graphics/tahlan/fx/tahlan_lens_flare.png",
+			"tahlan_shockcannon_icon":"graphics/tahlan/hullmods/ammo_shockcannon_icon.png",
+			"tahlan_ammo_impactdriver_icon":"graphics/tahlan/hullmods/ammo_impactdriver_icon.png",
+			"tahlan_type3_icon":"graphics/tahlan/hullmods/ammo_type3_icon.png",
 		},
 		"blueprint_packages":{
 			"tahlan_kaze_package":"graphics/tahlan/icons/cargo/tahlan_package_kaze.png",
@@ -39,6 +42,7 @@
 		},
 		"portraits":{
 			"tahlan_portrait_nia":"graphics/tahlan/portraits/characters/tahlan_portrait_nia.png",
+			"tahlan_portrait_cat":"graphics/tahlan/portraits/characters/tahlan_portrait_cat.png",
 		}
 	}
 }

@@ -41,7 +41,7 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 20);
+        ON_SHOT_PARTICLE_COUNT.put("default", 15);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 10);

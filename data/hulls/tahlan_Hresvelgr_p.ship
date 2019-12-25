@@ -95,7 +95,7 @@
         -59.5,
         -65.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 20
     },
     {
@@ -106,7 +106,7 @@
         -59.5,
         65.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 20
     },
     {
@@ -117,7 +117,7 @@
         -54.5,
         -50.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 17
     },
     {
@@ -128,7 +128,7 @@
         -54.5,
         50.5
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 17
     },
     {
@@ -139,7 +139,7 @@
         -52,
         190
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 17
     },
     {
@@ -150,7 +150,7 @@
         -52,
         -190
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 17
     },
     {
@@ -161,7 +161,7 @@
         -53,
         181
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 10
     },
     {
@@ -172,7 +172,7 @@
         -53,
         -181
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 10
     },
     {
@@ -183,7 +183,7 @@
         -53.5,
         172
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 18
     },
     {
@@ -194,7 +194,7 @@
         -53.5,
         -172
       ],
-      "style": "LOW_TECH",
+      "style": "TAHLAN_PIRATE_ENGINE",
       "width": 18
     }
   ],

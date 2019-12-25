@@ -7,8 +7,8 @@
 	"gridUIColor":[255,0,0,75],
 	"brightUIColor":[231,98,103,255],
 	
-	"entityNamePrefix":"legio",
-	"personNamePrefix":"legio",
+	"entityNamePrefix":"Legio",
+	"personNamePrefix":"Legio",
 	"displayName":"Legio Infernalis",
 	"displayNameWithArticle":"the Legio Infernalis",
 	"displayNameIsOrAre":"is",

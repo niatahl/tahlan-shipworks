@@ -1,4 +1,24 @@
-0.3.11a
+0.3.12b
+Additions:
+- Added the Metafalica as a new Kassadari Battleship (the Sylphon one will be removed from that mod at some point)
+
+
+0.3.12a
+Additions:
+- Legio now have access to every blueprint the pirates know, including those learned via black market trade (and they actually have guns to put on a paragon)
+
+Changes:
+- Updated Legio Nex diplomacy traits
+- Reduced flux cost of Goll variants
+- Holy Furor cooldown increased from 10 to 15 seconds
+- Reduced Vale flux capacity from 9000 to 8000
+- Reduced Vale shield efficiency from 0.7 to 0.8
+
+Fixes:
+- Fixed some math in Trill system script
+
+
+0.3.12
 Additions:
 - Added Flagellator assault destroyer
 - Added Flagellator (LI)
@@ -7,6 +27,11 @@ Changes:
 - Legio Infernalis now has nex start options
 - Trill hullmod will now display its current effect during combat
 - Castigator (LI) large mount changed from hybrid to universal (this change is experimental, so don't get used to it yet)
+- Removed Kassadari Engineering from Monitor (GH) for the time being due to some vanilla AI issues. Will return once it's fixed. Replaced with built-in expanded magazines for now.
+- Downgraded Kassadar's Orbital Works to Heavy Industry and removed the nanoforge
+- Tempest (P) built-in drones have been changed to totally real legit terminator drones that are all like the ones on a normal Tempest I swear
+- GH ship DP rebalanced to be roughly 10% higher than their base versions
+- Scathach has regained Kassadari Engineering
 
 Fixes:
 - Fixed Legio Tyranny causing decivved Legio planets to make saves unable to load

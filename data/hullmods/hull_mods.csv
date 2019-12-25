@@ -13,7 +13,7 @@ Equipped with a highly advanced %s of unknown design, permanently accelerating t
 
 In emergency situations the Temporal Circuit will enter overdrive mode. Activating automatically if hull integrity falls below %s, the time acceleration is boosted to %s.
 
-Due to high power needs, all these effects are %s.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
+Due to high power needs, all these effects are %s and the delicate nature of the circuit grid can lead to a significant risk of malfunctions should the ship's safeties be removed via overrides.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
 Advanced Ballistic Interface,tahlan_advballistics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdvBallistics,Enhanced mounts reduce the ordnance point cost of ballistic weapons by %s.,Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
 Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_BroadsideMounts,"Weapon mounts specialized for broadside combat.
 Reduces the OP cost of large weapons by %s and increases the health of all weapon mounts by %s.",Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
@@ -42,6 +42,15 @@ Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hu
 
 Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
 Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing its damage by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
+,,,,,,,,,,,,,,,,,,
+Temporal Armor,tahlan_outcast_engineering,2,,,special,Special,9999,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_OutcastEngineering,"A rare ship constructed by the Great Houses.
+
+Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s.
+
+Unlike most Kassadari vessels, the Metafalica carries an experimental variant of this circuit grid, replacing the standard overdrive functionality with a unique defensive system that utilizes built-up flux. The ship's armor and hull takes up to %s less damage, and %s less EMP damage, based on the ship's flux. This bonus increases the higher the ship's flux gets, starting at %s and maxing out at %s.
+
+Monthly supply cost is increased by %s. Furthermore the delicate machinery causes CR to decrease at doubled rate after peak performance time has passed.",Increases speed when traveling in a straight line. Bonus armor damage reduction at high flux. Damages anything nearby when overloading.,graphics/tahlan/hullmods/tahlan_knightrefit.png
+Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
 ,,,,,,,,,,,,,,,,,,
 Legio Engineering,tahlan_chmlegio,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
 MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_MusicBox,(Hidden) Plays theme music in combat.,(Hidden) Plays theme music in combat.,graphics/tahlan/hullmods/tahlan_knightrefit.png

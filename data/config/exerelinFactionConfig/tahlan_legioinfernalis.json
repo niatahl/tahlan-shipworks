@@ -30,7 +30,7 @@
         {"id":"orbitalworks", "mult":0.1},
     ],
 	
-    "diplomacyTraits":["neutralist", "selfrighteous"],
+    "diplomacyTraits":["selfrighteous", "irredentist", "stalwart", "envious"],
 	"morality":"evil",
     
     "freeMarket":true,

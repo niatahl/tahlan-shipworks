@@ -43,12 +43,12 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
 
         //No glows on wrecks
         if ( ship.isPiece() || !ship.isAlive() ) {
-            return;
+            currentBrightness = 0f;
         }
 
         //Glows off in refit screen
         if (ship.getOriginalOwner() == -1) {
-            return;
+            currentBrightness = 0f;
         }
 
         //Switches to the proper sprite

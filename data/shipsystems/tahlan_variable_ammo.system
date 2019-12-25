@@ -1,0 +1,24 @@
+{
+	"id":"tahlan_variable_ammo",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"data.scripts.shipsystems.ai.tahlan_VariableAmmoAI",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_VariableAmmo",
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"SRD_ammo_switch",
+	#"loopSound":"system_temporalshell_loop",
+	#"deactivateSound":"system_temporalshell_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"activeSpeedIncrease":0,  # not right since it's ship-dependent, but hopefully close enough
+		"burstMovementPotential":0,
+		"averageSpeedMult":1.0,
+	}
+}
+
+
+
+

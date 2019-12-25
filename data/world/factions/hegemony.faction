@@ -8,7 +8,7 @@
 	"hullFrequency":{
 		#"tags":{},
 		"hulls":{
-			"tahlan_Castigator":0.4,
+			"tahlan_Castigator":0.6,
 			"tahlan_Niebelung":0.5,
 		},
 	},

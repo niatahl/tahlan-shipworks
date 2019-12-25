@@ -1,0 +1,20 @@
+{
+	"id":"tahlan_phira_shock_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"onHitEffect":"data.scripts.weapons.tahlan_PhiraOnHitEffect",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":40.0,
+	"width":12,
+	"fadeTime":0.2,
+	"fringeColor":[255,60,20,205],
+	"coreColor":[250,255,255,255],
+	"glowColor":[255,60,20,30],
+	"glowRadius":50,
+	"hitGlowRadius":50,	
+	"textureType":"SMOOTH",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	#"textureType":["graphics/sylphon/fx/beam_laser_fringe.png","graphics/sylphon/fx/FOB_strombel_beam_core.png"],
+	"textureScrollSpeed":-64,
+	"pixelsPerTexel":1.0,
+}

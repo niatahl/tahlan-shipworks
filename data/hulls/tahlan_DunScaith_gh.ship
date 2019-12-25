@@ -76,7 +76,9 @@
     11
   ],
   "builtInMods": [
-    "tahlan_advballistics"
+    "tahlan_knightrefit",
+    "tahlan_advballistics",
+    "tahlan_vundautoforge"
   ],
   "builtInWeapons": {
     "WS0031": "tahlan_DunScaith_gh_glow",
@@ -513,8 +515,8 @@
       "type": "MISSILE"
     },
     {
-      "angle": 20,
-      "arc": 100,
+      "angle": 28,
+      "arc": 130,
       "id": "WS0020",
       "locations": [
         90,
@@ -525,8 +527,8 @@
       "type": "HYBRID"
     },
     {
-      "angle": -20,
-      "arc": 100,
+      "angle": -28,
+      "arc": 130,
       "id": "WS0021",
       "locations": [
         90,
@@ -537,8 +539,8 @@
       "type": "HYBRID"
     },
     {
-      "angle": -38.5,
-      "arc": 110,
+      "angle": -43.5,
+      "arc": 130,
       "id": "WS0024",
       "locations": [
         25,
@@ -549,8 +551,8 @@
       "type": "HYBRID"
     },
     {
-      "angle": 25,
-      "arc": 90,
+      "angle": 43.5,
+      "arc": 130,
       "id": "WS0025",
       "locations": [
         25,
@@ -586,7 +588,7 @@
     },
     {
       "angle": 180,
-      "arc": 220,
+      "arc": 240,
       "id": "WS0028",
       "locations": [
         -140,

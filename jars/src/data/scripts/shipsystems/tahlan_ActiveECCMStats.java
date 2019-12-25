@@ -43,7 +43,7 @@ public class tahlan_ActiveECCMStats extends BaseShipSystemScript {
                 if (target.getVariant() == null || target.isPhased() || target.getVariant().getHullMods().contains("eccm")) {
                     continue;
                 }
-                if (target.getOwner() == ship.getOwner()) {
+                if (target.getOwner() == ship.getOwner() && !targetList.contains(target)) {
                     targetList.add(target);
                 }
             }

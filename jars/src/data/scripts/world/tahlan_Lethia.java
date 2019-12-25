@@ -176,14 +176,15 @@ public class tahlan_Lethia {
                                 Industries.WAYSTATION,
                                 Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
-                                Industries.MILITARYBASE
+                                Industries.MILITARYBASE,
+                                Industries.HEAVYINDUSTRY
                         )
                 ),
                 0.3f,
                 false,
                 true);
 
-        lethia_5_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
+        //lethia_5_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
 
 
         SectorEntityToken stableLoc2 = system.addCustomEntity("tahlan_lethia_stableloc_2", "Stable Location", "stable_location", Factions.NEUTRAL);

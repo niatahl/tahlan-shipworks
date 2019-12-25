@@ -51,7 +51,7 @@ The Eagle can deliver a strong tactical punch to enemy formations. Its numerous 
 These strengths are somewhat countered by strike craft - an Eagle captain must always watch their scopes for an approaching strike squadron, since their ship will be easily crippled by multiple hits from modern strike weapons. 
 
 The embodiment of the sleek and powerful space cruiser from the time of the Domain, the Eagle-class ships are a beautiful reminder of the technological and aesthetic achievements of humanity's past. ",,,
-tahlan_Tempest_P,SHIP,"Rarely found in the hands of pirates, the Tempest is popular with those who do manage to come into possession of one. This particular example has been ""enhanced"" in proper pirate fashion, enabling it to mount some ballistic weaponry and replacing its engine block with a bigger, albeit not necessarily better, one.
+tahlan_Tempest_P,SHIP,"Rarely found in the hands of pirates, the Tempest is popular with those who do manage to come into possession of one. This particular example has been ""enhanced"" in proper pirate fashion, enabling it to mount some ballistic weaponry and replacing its engine block with a bigger, albeit not necessarily better, one. Sadly the original Terminator drone autoforge was damaged beyond repair during aquisition and had to be replaced with a Pirate immitation of questionable quality.
 
 An asymmetric, advanced design from the late Expansion Epoch, the Tempest-class is the quintessential attack frigate - fast, deadly and difficult to destroy.",,,
 tahlan_Castigator_commie,SHIP,"An extremely unusual variant of the Castigator, this model has been converted into a dedicated carrier, replacing most of its weapon hardpoints with launch decks and hangar space. Surprisingly effective, but suffers from slower fighter maintenance due to the cramped nature of the improvised hangars.
@@ -149,6 +149,7 @@ tahlan_Exec_M,SHIP,A highly advanced drone equipped with a multi-beam emitter ca
 tahlan_Dikaiosyne,SHIP,"A unique point-defense drone, presumably based on a Kassadari design. Features a multi-beam emitter and temporal circuits.",,,
 tahlan_Valacor,SHIP,"An unusual heavy fighter of Kassadri design, equipped with a pair of large underslung ion pulse weapons. Their sturdiness makes them excellent harrassers that can maintain pressure and severely impact a target's combat capability.",,,
 tahlan_Scoralis,SHIP,"A superheavy bomber of Kassadari design, carrying a massive payload of 4 guided torpedos based on the Hekaton. Their high-explosive warhead has been downscaled to accomodate guidance systems. While the Scoralis carries some truly impressive firepower, the fighter itself is fairly slow and a large target, requiring escorts to reliably deliver its payload. To increase chances after survival, a set of afterburners kick in once the torpedo ordnance has been depleted, granting the bomber increased mobility for its return flight.",,,
+tahlan_turrmy,SHIP,"A poor immitation of the Tempest's signature Terminator drone, this haphazardly assembled drone may carry the same armament, but is sorely lacking the original's advanced AI core.",,,
 ,,,,,
 ,,,,,
 #Great House refits,,,,,
@@ -265,6 +266,7 @@ tahlan_tethra,WEAPON,"A medium-sized smartgun of the Legio Infernalis. Possessin
 tahlan_goll,WEAPON,"The Goll fires a spread of overcharge spikes that lack any real direct damage potential, but discharge a powerful electromagnetic pulse on impact.",,,
 tahlan_conand,WEAPON,"Firing small caliber kinetic rounds from 4 barrels simultaneously, the Conand is exceptionally efficient against shields, but lacks any kind of armor penetration ability.",,,
 tahlan_burstgoll,WEAPON,A burst-fire variant of the Goll designed to cripple most ships in a single burst in advance of boarding actions.,,,
+tahlan_flood,WEAPON,"A massive array of fountain-type micromissile tubes built into the Scathach's bow, capable of firing enough missiles to overwhelm all but the mightiest of PD arrays.",,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,

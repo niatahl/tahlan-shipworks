@@ -19,6 +19,7 @@
 	"startShipsSuper":[
 		["tahlan_Izanami_prototype"],
 		["tahlan_Vale_crusader"],
+		["tahlan_Metafalica_standard"],
 	],
 	"startShipsGrandFleet":[
 		["tahlan_legion_gh_combat", "tahlan_enforcer_gh_knight", "tahlan_monitor_gh_knight", "buffalo_Standard", "dram_Light"],

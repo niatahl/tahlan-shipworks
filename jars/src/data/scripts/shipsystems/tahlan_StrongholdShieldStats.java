@@ -16,6 +16,7 @@ public class tahlan_StrongholdShieldStats extends BaseShipSystemScript {
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
+        /*
         ShipAPI ship = null;
         CombatEngineAPI engine = Global.getCombatEngine();
 
@@ -30,7 +31,7 @@ public class tahlan_StrongholdShieldStats extends BaseShipSystemScript {
             if (ship.getShield().isOff()) {
                 ship.getShield().toggleOn();
             }
-        }
+        }*/
 
         stats.getShieldDamageTakenMult().modifyMult(id,SHIELD_MULT);
         stats.getFluxDissipation().modifyMult(id,DISSIPATON_MULT);

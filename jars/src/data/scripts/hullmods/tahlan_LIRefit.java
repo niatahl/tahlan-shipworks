@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
 public class tahlan_LIRefit extends BaseHullMod {
@@ -23,7 +24,8 @@ public class tahlan_LIRefit extends BaseHullMod {
 	private static final float PROFILE_MULT = 0.75f;
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-		stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
+
+	    stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
 		stats.getMaxBurnLevel().modifyFlat(id, BURN_LEVEL_BONUS);
 		stats.getSensorProfile().modifyMult(id, PROFILE_MULT);
 

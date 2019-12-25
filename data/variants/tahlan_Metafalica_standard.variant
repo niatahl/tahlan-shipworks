@@ -1,0 +1,63 @@
+{
+    "displayName": "Inquisitor",
+    "fluxCapacitors": 29,
+    "fluxVents": 50,
+    "hullId": "tahlan_Metafalica",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Metafalica_standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_phira_burst",
+                "WS0002": "tahlan_phira_burst"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "tahlan_phira_burst"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "tahlan_gallant",
+                "WS0008": "tahlan_gallant",
+                "WS0009": "tahlan_gallant",
+                "WS0020": "tahlan_gallant",
+                "WS0021": "tahlan_gallant"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0004": "tahlan_astrix"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "tahlan_teltrite",
+                "WS0007": "tahlan_teltrite",
+                "WS0010": "tahlan_volkite",
+                "WS0011": "tahlan_volkite",
+                "WS0012": "tahlan_volkite",
+                "WS0013": "tahlan_volkite",
+                "WS0014": "tahlan_volkite",
+                "WS0015": "tahlan_volkite",
+                "WS0016": "tahlan_volkite",
+                "WS0017": "tahlan_volkite",
+                "WS0018": "tahlan_teltrite",
+                "WS0019": "tahlan_teltrite"
+            }
+        }
+    ],
+    "wings": ["tahlan_Acastus_fighter_wing"]
+}

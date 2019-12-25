@@ -19,7 +19,7 @@
     -45.5,
     -9
   ],
-  "builtInWings": ["mining_drone_wing"],
+  "builtInWings": ["tahlan_turrmy_drone_wing"],
   "builtInMods": [
     "unstable_injector"
   ],

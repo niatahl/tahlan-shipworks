@@ -1,7 +1,7 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,icon
 Assault Burn,tahlan_stormdrive,1,,,,,,,,,0.5,1,0.5,7,,,,,,,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
 Impes Infernalis,tahlan_infernalcharge,1,,,,,,,,,0.5,3,0.5,15,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
-Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,10,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,15,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Divine Might,tahlan_divinemight,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Celestial Might,tahlan_divinemight_nc,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Absolute Virtue,tahlan_absolutevirtue,,,,,,,,,,0.5,3,0.5,12,,,,,TRUE,,,,,,graphics/icons/hullsys/high_energy_focus.png
@@ -25,3 +25,5 @@ Auxiliary Thrusters,tahlan_auxthrusters,,,,,,,,3,0.05,0.5,3,0.5,,,,,,,,,,,,graph
 Steamlight Booster,tahlan_steamlight,,,,,,,,,,1,2,5,10,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Assault Mode,tahlan_assaultmode,,,,,,,,,,5,5,1,12,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Flux Overdrive,tahlan_fluxoverdrive,,,,,,,,,,2,10,2,20,,,TRUE,,,,,,TRUE,,graphics/icons/hullsys/high_energy_focus.png
+Variable Ammo,tahlan_variable_ammo,,,0,,,,,3,0,0.15,,0,0.05,,,,,,,,,,,graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png
+,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,84 @@
+{
+  "bounds": [
+    -10,
+    -13,
+    10,
+    -9.5,
+    10,
+    9.5,
+    -10,
+    13
+  ],
+  "center": [
+    14,
+    11.5
+  ],
+  "builtInMods": [
+    "no_weapon_flux",
+	"pointdefenseai"
+  ],
+  "collisionRadius": 21.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 9,
+      "length": 14,
+      "location": [
+        -11.5,
+        7
+      ],
+      "style": "LOW_TECH",
+      "width": 9
+    },
+    {
+      "angle": -180,
+      "contrailSize": 9,
+      "length": 14,
+      "location": [
+        -11.5,
+        -7
+      ],
+      "style": "LOW_TECH",
+      "width": 9
+    }
+  ],
+  "height": 23,
+  "hullId": "tahlan_turrmy",
+  "hullName": "TuRRmeeNaYtor",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 20.5,
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_turrmy.png",
+  "style": "LOW_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        4.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 80,
+      "id": "WS0002",
+      "locations": [
+        -3.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    }
+  ],
+  "width": 28
+}

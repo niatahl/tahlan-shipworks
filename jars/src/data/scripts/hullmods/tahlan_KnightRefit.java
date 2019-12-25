@@ -36,6 +36,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
     private static final Color OVERDRIVE_JITTER_COLOR = new Color(255, 63, 0, 20);
     private static final Color OVERDRIVE_JITTER_UNDER_COLOR = new Color(255, 63, 0, 80);
 
+    private static final float SO_MALFUNCTION_PROB = 0.03f;
+
     private float fadeOut = 1f;
     private static final String ke_id = "tahlan_KnightRefitID";
 
@@ -68,7 +70,15 @@ public class tahlan_KnightRefit extends BaseHullMod {
         stats.getSuppliesPerMonth().modifyPercent(ke_id, SUPPLIES_MULT);
         stats.getCRLossPerSecondPercent().modifyMult(ke_id, 2f);
 
+    }
 
+    @Override
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+        if (ship.getVariant().hasHullMod("safetyoverrides")) {
+            ship.getMutableStats().getWeaponMalfunctionChance().modifyFlat(id, SO_MALFUNCTION_PROB);
+            ship.getMutableStats().getEngineMalfunctionChance().modifyFlat(id, SO_MALFUNCTION_PROB);
+            ship.getMutableStats().getCriticalMalfunctionChance().modifyFlat(id, SO_MALFUNCTION_PROB/2);
+        }
     }
 
     @Override

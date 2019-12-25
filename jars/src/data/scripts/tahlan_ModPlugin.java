@@ -15,6 +15,7 @@ import data.scripts.ai.tahlan_FountainAI;
 import data.scripts.world.tahlan_FactionRelationPlugin;
 import data.scripts.world.tahlan_Lethia;
 import data.scripts.world.tahlan_Rubicon;
+import data.scripts.campaign.tahlan_LegioStealingHomework;
 import exerelin.campaign.SectorManager;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
@@ -73,14 +74,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public void onNewGame() {
         SectorAPI sector = Global.getSector();
 
-        //Prevents Vendetta (GH) from appearing in fleets unless DaRa is installed
-        /*if (!Global.getSettings().getModManager().isModEnabled("DisassembleReassemble")) {
-            Global.getSector().getFaction(Factions.INDEPENDENT).removeKnownShip("tahlan_vendetta_gh");
-            if (Global.getSector().getFaction("tahlan_greathouses") != null) {
-                Global.getSector().getFaction("tahlan_greathouses").removeKnownShip("tahlan_vendetta_gh");
-            }
-        }*/
-
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
         if (!haveNexerelin || SectorManager.getCorvusMode()){
@@ -91,8 +84,17 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         //Legio Infernalis relations
         tahlan_FactionRelationPlugin.initFactionRelationships(sector);
 
+
+
         //Adding Legio to bounty system
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");
+    }
+
+    @Override
+    public void onGameLoad(boolean newGame) {
+        if (!Global.getSector().hasScript(tahlan_LegioStealingHomework.class)) {
+            Global.getSector().addScript(new tahlan_LegioStealingHomework());
+        }
     }
 
     @Override
