@@ -5,17 +5,20 @@
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_TemporalCoordinatorStats",
 	
-	"jitterUnderColor":[141, 255, 28,55],
-	"jitterUnderCopies":20,
+	"jitterUnderColor":[141, 255, 28,45],
+	"jitterUnderCopies":10,
 	"jitterUnderMinRange":2,
 	"jitterUnderRange":8,
 	"jitterUnderRangeRadiusFraction":0,
 	
-	"jitterColor":[141, 255, 28,35],
+	"jitterColor":[141, 255, 28,25],
 	"jitterCopies":2,
 	"jitterMinRange":0,
 	"jitterRange":5,
 	"jitterRangeRadiusFraction":0,
+	
+	"weaponGlowColor":[141,255,28,55],
+	"weaponTypes":[BALLISTIC,ENERGY],
 	
 	"useSound":"system_targeting_feed",
 	#"loopSound":"system_targeting_feed_loop",

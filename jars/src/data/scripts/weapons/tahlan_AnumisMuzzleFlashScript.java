@@ -46,13 +46,13 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 20);
+        ON_SHOT_PARTICLE_COUNT.put("default", 12);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_2", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_2", 1);
-        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 10);
-        ON_SHOT_PARTICLE_COUNT.put("SMOKE_6", 10);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 8);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_6", 8);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -118,9 +118,9 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(140,130,120, 125));
-        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
-        PARTICLE_COLOR.put("SMOKE_4", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("default", new Color(140,130,120, 185));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 185));
+        PARTICLE_COLOR.put("SMOKE_4", new Color(90,80,80, 185));
         PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 144, 68));
         PARTICLE_COLOR.put("FLASH_FRINGE_2", new Color(255, 144, 68));
         PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 244, 222));

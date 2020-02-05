@@ -16,6 +16,7 @@ public class tahlan_TemporalCoordinatorStats extends BaseShipSystemScript {
     private static final Color ENGINE_COLOR = new Color(141, 255, 28, 155);
     private static final Object KEY_JITTER = new Object();
     private static final float TIME_MULT = 1.5f;
+    private static final float DAMAGE_MULT = 1.5f;
 
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -35,6 +36,9 @@ public class tahlan_TemporalCoordinatorStats extends BaseShipSystemScript {
         } else {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
+
+        stats.getEnergyWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
+        stats.getBallisticWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
 
         if (effectLevel > 0) {
             float maxRangeBonus = 5f;
@@ -65,6 +69,8 @@ public class tahlan_TemporalCoordinatorStats extends BaseShipSystemScript {
 
         Global.getCombatEngine().getTimeMult().unmodify(id);
         stats.getTimeMult().unmodify(id);
+        stats.getBallisticWeaponDamageMult().unmodify(id);
+        stats.getEnergyWeaponDamageMult().unmodify(id);
 
         for (ShipAPI fighter : getFighters(ship)) {
             if (fighter.isHulk()) continue;

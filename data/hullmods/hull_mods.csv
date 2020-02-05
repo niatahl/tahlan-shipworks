@@ -13,11 +13,12 @@ Equipped with a highly advanced %s of unknown design, permanently accelerating t
 
 In emergency situations the Temporal Circuit will enter overdrive mode. Activating automatically if hull integrity falls below %s, the time acceleration is boosted to %s.
 
-Due to high power needs, all these effects are %s and the delicate nature of the circuit grid can lead to a significant risk of malfunctions should the ship's safeties be removed via overrides.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
+Due to high power needs, all these effects are %s and the delicate nature of the circuit grid can lead to a significant risk of malfunctions should the ship's safeties be removed via overrides. Additionally they are %s.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
 Advanced Ballistic Interface,tahlan_advballistics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdvBallistics,Enhanced mounts reduce the ordnance point cost of ballistic weapons by %s.,Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
-Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_BroadsideMounts,"Weapon mounts specialized for broadside combat.
-Reduces the OP cost of large weapons by %s and increases the health of all weapon mounts by %s.",Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
-Forced Overdrive,tahlan_forcedoverdrive,,0.5,,"shields, offensive",,10000,,,,5,7,10,16,data.scripts.hullmods.tahlan_ForcedOverdrive,"An unusual modification for Kassadari hulls and refits, redirecting power from the shields to the Temporal Conduit Grid, allowing for a %s. To at least partially counteract the loss of shields, the saved weight of a missing shield generator is used to instead mount additional armor plating %s.
+Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_BroadsideMounts,"The weapon mounts on this ship have been hardened to better withstand the stresses of broadside engagements.
+
+Weapon mount health is increased by %s and repairs are sped up by %s.",Hardens weapon mounts,graphics/hullmods/armored_weapon_emplacements.png
+Forced Overdrive,tahlan_forcedoverdrive,,0.5,,"shields, offensive",,10000,,,,4,8,14,20,data.scripts.hullmods.tahlan_ForcedOverdrive,"An unusual modification for Kassadari hulls and refits, redirecting power from the shields to the Temporal Conduit Grid, allowing for a %s. To at least partially counteract the loss of shields, the saved weight of a missing shield generator is used to instead mount additional armor plating %s.
 
 (Can only be applied to Kassadari ships)",Sacrifices shields for permanent overdrive activation.,graphics/tahlan/hullmods/tahlan_knightrefit.png
 Temporal Travel Drive,tahlan_temporaltraveldrive,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_TemporalTravelDrive,"As the Temporal Circuit Grid installed on Kassadari vessels requires a massive powerspike to be powered up at the start of battle, the system is linked to the ship's travel drives. Diverting energy from the drives upon entering combat, the grid is booted up in a supercharged state, catapulting the ship into battle under massively accelerated temporal flow.",Accelerates time while entering the battlefield.,graphics/tahlan/hullmods/tahlan_knightrefit.png
@@ -31,9 +32,9 @@ As the ship wasn't designed for phase coils however, strong interference with it
 Specialized Energy Mounts,tahlan_heavyenergy,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyEnergy,"Equipped with specialized energy mounts, the OP cost of large energy weapons is reduced by %s.
 
 Furthermore, a modified flux grid allows for the overcharging of projectile-based energy weapons, increasing their damage by %s. This comes at the cost of a %s reduced rate of fire for all kinds of energy weapons.",Boosts energy weapon damage at cost of firerate.,
-Infernalis Drives,tahlan_lirefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_LIRefit,"An unusually sophisticated drive modification for pirates, the Infernalis Drives increase top speed by %s/%s/%s/%s su based on hull size and raise the ship's burn level by %s. Additionally these drives have been equipped with improved emission shielding, reducing the ship's sensor profile by %s.  
+Infernalis Drives,tahlan_lirefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_LIRefit,"An unusually sophisticated drive modification for pirates, the Infernalis Drives increase top speed by %s/%s/%s/%s su based on hull size and raise the ship's burn level by %s. Additionally these drives have been equipped with improved emission shielding, reducing the ship's sensor profile by %s.
 
-Similarly to the common Unstable Injector modification, however, this refit comes at the cost of a %s reduction in weapon range and %s longer fighter replacement time.",Improved drives,graphics/tahlan/hullmods/tahlan_lirefit.png
+%s.",Improved drives,graphics/tahlan/hullmods/tahlan_lirefit.png
 Escape Afterburners,tahlan_afterburners,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Afterburners,Grants a boost to mobility once missile ordnance has been depleted,Grants a boost to mobility once missile ordnance has been depleted,
 Parallel Targeting Core,tahlan_paralleltargeting,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_ParallelTargetingUnit,"A specialized targeting core, optimized to equalize weapon ranges. Increases the range of non-missile weapons by %s for non-PD and %s for PD weapons up to a range of %s, after which its effect falls to %s effectiveness.
 
@@ -42,6 +43,14 @@ Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hu
 
 Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
 Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing its damage by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
+,,,,,,,,,,,,,,,,,,
+Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
+
+Regalias were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles %s and specialized microforcefields around all weapon mounts effectively improve their hp by %s.
+
+Due to their high complexity, Regalias are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, the Regalia requires a captain of at least %s or its flux stats, speed and autofire accuracy are reduced by %s.
+
+%s",Experimental Power Core,graphics/tahlan/hullmods/tahlan_silberherz.png
 ,,,,,,,,,,,,,,,,,,
 Temporal Armor,tahlan_outcast_engineering,2,,,special,Special,9999,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_OutcastEngineering,"A rare ship constructed by the Great Houses.
 
@@ -52,5 +61,5 @@ Unlike most Kassadari vessels, the Metafalica carries an experimental variant of
 Monthly supply cost is increased by %s. Furthermore the delicate machinery causes CR to decrease at doubled rate after peak performance time has passed.",Increases speed when traveling in a straight line. Bonus armor damage reduction at high flux. Damages anything nearby when overloading.,graphics/tahlan/hullmods/tahlan_knightrefit.png
 Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
 ,,,,,,,,,,,,,,,,,,
-Legio Engineering,tahlan_chmlegio,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
+Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
 MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_MusicBox,(Hidden) Plays theme music in combat.,(Hidden) Plays theme music in combat.,graphics/tahlan/hullmods/tahlan_knightrefit.png

@@ -1,7 +1,7 @@
 {
   "displayName": "Kassadari",
   "fluxCapacitors": 0,
-  "fluxVents": 25,
+  "fluxVents": 43,
   "goalVariant": true,
   "hullId": "tahlan_legion_gh",
   "hullMods": [

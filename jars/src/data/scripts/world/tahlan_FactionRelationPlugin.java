@@ -26,13 +26,18 @@ public class tahlan_FactionRelationPlugin implements SectorGeneratorPlugin {
         //Set hostile to everyone else
         for (FactionAPI other : Global.getSector().getAllFactions()) {
             if (!other.getId().contains("tahlan_legioinfernalis")) {
-                legio.setRelationship(other.getId(), -0.6f);
+                legio.setRelationship(other.getId(), -0.5f);
             }
         }
 
         //but not pirates and dabble
         legio.setRelationship("pirates",0.50f);
-        legio.setRelationship("diableavionics", 0.00f);
+        legio.setRelationship("diableavionics", 0.10f);
         legio.setRelationship("hegemony", -1f);
+        legio.setRelationship("persean_league", -0.6f);
+        legio.setRelationship("luddic_path", -1f);
+        legio.setRelationship("luddic_church", -1f);
+        legio.setRelationship("player", -0.6f);
+        legio.setRelationship("tritachyon", 0f);
     }
 }

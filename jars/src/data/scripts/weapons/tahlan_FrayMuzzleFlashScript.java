@@ -32,6 +32,8 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
         USED_IDS.add("FLASH_ID_1");
         USED_IDS.add("FLASH_ID_2");
         USED_IDS.add("FLASH_ID_3");
+        USED_IDS.add("FLASH_CORE_1");
+        USED_IDS.add("FLASH_FRINGE_1");
     }
 
     //The amount of particles spawned immediately when the weapon reaches full charge level
@@ -41,6 +43,8 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     static {
         ON_SHOT_PARTICLE_COUNT.put("default", 30);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_2", 15);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
+        ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -87,6 +91,8 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
     static {
         PARTICLE_TYPE.put("default", "SMOKE");
+        PARTICLE_TYPE.put("FLASH_FRINGE_1", "BRIGHT");
+        PARTICLE_TYPE.put("FLASH_CORE_1", "BRIGHT");
     }
 
     //What color does the particles have?
@@ -94,18 +100,24 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     static {
         PARTICLE_COLOR.put("default", new Color(225,215,205, 165));
         PARTICLE_COLOR.put("FLASH_ID_3", new Color(180,170,160, 165));
+        PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 125, 45));
+        PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 234, 212));
     }
 
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
         PARTICLE_SIZE_MIN.put("default", 10f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
         PARTICLE_SIZE_MAX.put("default", 25f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?
@@ -113,6 +125,8 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     static {
         PARTICLE_VELOCITY_MIN.put("default", 30f);
         PARTICLE_VELOCITY_MIN.put("FLASH_ID_2", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_CORE_1", 0f);
     }
 
     //What's the highest velocity a particle can spawn with (can be negative)?
@@ -120,18 +134,24 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     static {
         PARTICLE_VELOCITY_MAX.put("default", 70f);
         PARTICLE_VELOCITY_MAX.put("FLASH_ID_2", 20f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_CORE_1", 0f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
         PARTICLE_DURATION_MIN.put("default", 0.8f);
+        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_1", 0.2f);
+        PARTICLE_DURATION_MIN.put("FLASH_CORE_1", 0.15f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
         PARTICLE_DURATION_MAX.put("default", 1.2f);
+        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_1", 0.2f);
+        PARTICLE_DURATION_MAX.put("FLASH_CORE_1", 0.15f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)
@@ -145,6 +165,8 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     static {
         PARTICLE_OFFSET_MAX.put("default", 80f);
         PARTICLE_OFFSET_MAX.put("FLASH_ID_2", 10f);
+        PARTICLE_OFFSET_MAX.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_OFFSET_MAX.put("FLASH_CORE_1", 0f);
     }
 
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
@@ -152,6 +174,8 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     static {
         PARTICLE_ARC.put("default", 30f);
         PARTICLE_ARC.put("FLASH_ID_2", 360f);
+        PARTICLE_ARC.put("FLASH_FRINGE_1", 0f);
+        PARTICLE_ARC.put("FLASH_CORE_1", 0f);
     }
 
     //The offset of the "arc" the particles spawn in, compared to the weapon's forward facing.
@@ -191,7 +215,6 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
         if (chargeLevel > 0 && (!weapon.isBeam() || weapon.isFiring())) {
             if (chargeLevel >= 1f) {
                 sequenceState = "FIRING";
-                engine.spawnExplosion(weapon.getSpec().getHardpointFireOffsets().get(0), new Vector2f(0f, 0f),  new Color(245,225,105, 255), 500f, 2f);
             } else if (!hasFiredThisCharge) {
                 sequenceState = "CHARGEUP";
             } else {

@@ -113,10 +113,11 @@ public class tahlan_Rubicon  {
                                 Industries.POPULATION,
                                 Industries.MEGAPORT,
                                 Industries.MINING,
-                                Industries.BATTLESTATION,
+                                Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
                                 Industries.MILITARYBASE,
-                                Industries.REFINING
+                                Industries.REFINING,
+                                Industries.PLANETARYSHIELD
                         )
                 ),
                 0.3f,
@@ -124,8 +125,9 @@ public class tahlan_Rubicon  {
                 true);
 
         rubicon_1_market.getIndustry(Industries.MILITARYBASE).setAICoreId(Commodities.ALPHA_CORE);
-        rubicon_1_market.getIndustry(Industries.BATTLESTATION).setAICoreId(Commodities.ALPHA_CORE);
+        rubicon_1_market.getIndustry(Industries.STARFORTRESS).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_1_market.getIndustry(Industries.MEGAPORT).setAICoreId(Commodities.ALPHA_CORE);
+        rubicon_1_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
 
         SectorEntityToken stableLoc1 = system.addCustomEntity("tahlan_rubicon_stableloc_1", "Stable Location", "stable_location", Factions.NEUTRAL);
         stableLoc1.setCircularOrbit(rubicon_star, MathUtils.getRandomNumberInRange(0f,360f),4200f, 520);

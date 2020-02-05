@@ -1,0 +1,26 @@
+{
+    "baseHullId":"tahlan_stahlherz",
+    "skinHullId":"tahlan_stahlherz_b",
+    "hullName":"Silberblur Regalia Kfg.B",
+    "descriptionId":"tahlan_stahlherz",
+    "descriptionPrefix":"Alternate configuration B. Focused on ballistic weaponry.",
+    #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":[],
+	"systemId":"ammofeed",
+    "tech":"Experimental",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[], 		# hullmod ids
+    "removeBuiltInWeapons":[
+		"WEAPON_L",
+		"WEAPON_R",
+	],
+    #"builtInMods":[	],
+    "builtInWeapons":{
+        "WEAPON_L": "tahlan_stahlhagel_l",
+		"WEAPON_R": "tahlan_panzerfaust_r",
+    }
+}

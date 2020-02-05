@@ -122,13 +122,13 @@ public class tahlan_StyrixMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
-        PARTICLE_DURATION_MIN.put("default", 0.8f);
+        PARTICLE_DURATION_MIN.put("default", 0.3f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 1f);
+        PARTICLE_DURATION_MAX.put("default", 0.6f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)

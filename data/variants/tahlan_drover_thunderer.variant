@@ -1,0 +1,43 @@
+{
+    "displayName": "Thunderer",
+    "fluxCapacitors": 10,
+    "fluxVents": 0,
+    "goalVariant": true,
+    "hullId": "drover",
+    "hullMods": [
+        "expanded_deck_crew",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_drover_thunderer",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 002": "sabot",
+                "WS 005": "sabot"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 003": "harpoon",
+                "WS 004": "harpoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "tahlan_teltrite",
+                "WS 001": "tahlan_teltrite"
+            }
+        }
+    ],
+    "wings": [
+        "thunder_wing",
+        "thunder_wing"
+    ]
+}

@@ -18,12 +18,63 @@
 		"corporate":-1,
     },
 	
+	"startRelationships":{
+		"default": -0.5,
+		"hegemony": -1.00, 
+		"tritachyon": 0.0,
+		"pirates": 0.50, 
+		"independent": -0.50,
+		"luddic_church": -1.00,
+		"luddic_path": -1.00,
+		"sindrian_diktat": -0.10,
+		"remnant": -0.60,
+		"new_galactic_order": -0.50,
+		"interstellarimperium": -0.60,
+        "SCY": -0.10, 
+        "shadow_industry": -0.50,
+        "tiandong": 0.00,
+        "exigency": -0.50,
+        "ORA": -0.60,
+        "Coalition": -0.60,
+        "fringe_defence_syndicate": -0.50,
+        "fob": 0.00,
+        "diableavionics": 0.10,
+        "junk_pirates": 0.50,
+        "syndicate_asp": 0.50,
+        "sad": 0.00,
+        "dassault_mikoyan": -0.50,
+        "blade_breakers": -0.60,
+        "blackrock_driveyards": -0.20,
+        "crystanite": -0.50,
+        "vass_shipyards": 0.50,
+		"exlane": -0.50,
+		"sylphon": -0.50,
+		"mayasura": -0.60,
+		"persean_league": -0.60,
+		"yrxp": 0.00, #so anime, they just can't hate them
+		"aria": 0.00,
+	},
+	
 	"maxRelationships":{ 
-		"default":-0.5, 
-		"hegemony":-1, 
-		"diableavionics":0.5,
+		"default":0.1, 
+		"hegemony":-0.5, 
+		"diableavionics":1,
 		"pirates":1,
 		"player":1,
+		"junk_pirates":1,
+		"syndicate_asp":1,
+	},
+	
+	"diplomacyPositiveChance":{
+		"default": 0.5,
+		"diableavionics": 1.0,
+		"pirates":1.5,
+	},
+	
+	"diplomacyNegativeChance":{
+		"default": 1.5,
+		"diableavionics": 1.0,
+		"pirates": 0.5,
 	},
 	
 	"industrySeeds":[
@@ -55,7 +106,10 @@
 	  ["tahlan_Dominator_PH_striker"]
 	],
 	"startShipsGrandFleet":[
-	  ["tahlan_DunScaith_barrage","tahlan_Castigator_P_raider","tahlan_Bronco_p_brawler","tahlan_Bronco_p_brawler","buffalo_pirates_Standard"]
+	  ["tahlan_DunScaith_barrage","tahlan_Castigator_P_raider","tahlan_Flagellator_pi_missile","tahlan_Flagellator_pi_missile","tahlan_Bronco_p_brawler","tahlan_Bronco_p_brawler","buffalo_pirates_Standard"]
 	],
+	"startSpecialItems":[
+        [["tahlan_legio_full_package",""]],
+    ],
     
 }

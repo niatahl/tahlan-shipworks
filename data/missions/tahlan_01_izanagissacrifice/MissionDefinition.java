@@ -37,7 +37,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		api.addToFleet(FleetSide.PLAYER, "tahlan_monitor_gh_knight", FleetMemberType.SHIP, false);
 		
 		// Mark player flagship as essential
-		api.defeatOnShipLoss("KNV Anra Emmeris");
+		api.defeatOnShipLoss("KNV Izanagi");
 		
 		// Set up the enemy fleet
 

@@ -1,0 +1,294 @@
+{
+  "hullName": "Nightingale",
+  "hullId": "tahlan_Nightingale",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/tahlan_Nightingale.png",
+  "style": "HIGH_TECH",
+  "height": 133,
+  "width": 392,
+  "center": [196, 94],
+  "collisionRadius": 237,
+  "shieldCenter": [-14, -0],
+  "shieldRadius": 213.5,
+  "viewOffset": 0,
+  "builtInWings": [
+    "tahlan_Prim_drone_wing",
+    "tahlan_Prim_drone_wing",
+    "tahlan_Prim_drone_wing"
+  ],
+  "builtInWeapons": {
+    "WS0003": "tahlan_atropos_tube",
+    "WS0004": "tahlan_atropos_tube",
+    "WS0005": "tahlan_atropos_tube",
+    "WS0006": "tahlan_atropos_tube",
+    "WS0007": "tahlan_atropos_tube",
+    "WS0008": "tahlan_atropos_tube",
+    "WS0009": "tahlan_atropos_tube",
+    "WS0010": "tahlan_atropos_tube",
+    "WS0011": "tahlan_sol_dios"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": 16,
+      "locations": [-5, 45]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": -16,
+      "locations": [-5, -45]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [10.5, 78.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [10.5, -78.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [3.5, 91.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [3.5, -91.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-3.5, 104.5]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-3.5, -104.5]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-10.5, 117.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-10.5, -117.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-43.5, -0]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-44, 3.5]
+    },
+    {
+      "id": "LB 3",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-44, -3.5]
+    },
+    {
+      "id": "LB 4",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-44.5, 2]
+    },
+    {
+      "id": "LB 5",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-45, -2]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-29.5, 76],
+      "length": 25.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-29.5, -76],
+      "length": 25.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-29.5, 70],
+      "length": 25.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-29.5, -70],
+      "length": 25.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-38.5, 97],
+      "length": 25.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-38.5, -97],
+      "length": 25.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-38.5, 103],
+      "length": 25.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-38.5, -103],
+      "length": 25.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-47.5, 123],
+      "length": 25.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-47.5, -123],
+      "length": 25.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-47.5, 129],
+      "length": 25.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-47.5, -129],
+      "length": 25.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -43, -7,
+    -89.5, -13,
+    -43, -20,
+    -24.5, -30.5,
+    -24, -72.5,
+    -70, -193,
+    -41.5, -186.5,
+    10, -85,
+    37, -14,
+    37, 14,
+    10, 85,
+    -41.5, 186.5,
+    -70, 193,
+    -24, 72.5,
+    -24.5, 30.5,
+    -43, 20,
+    -89.5, 13,
+    -43, 7
+  ]
+}

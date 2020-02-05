@@ -34,7 +34,7 @@ public class tahlan_GleipnirOnHitEffect implements OnHitEffectPlugin {
 
         //MagicLensFlare.createSharpFlare(engine,projectile.getSource(),projectile.getLocation(),10,500,0,new Color(100,215,255),new Color(255,255,255));
 
-        if ( (target instanceof MissileAPI) ) {
+        if ( !(target instanceof ShipAPI) ) {
             return;
         }
 

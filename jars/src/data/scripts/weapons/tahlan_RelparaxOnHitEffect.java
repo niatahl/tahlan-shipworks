@@ -20,7 +20,7 @@ public class tahlan_RelparaxOnHitEffect implements OnHitEffectPlugin {
 
         if (point != null) {
 
-            if (target instanceof ShipAPI) {
+            if ((target instanceof ShipAPI) && projectile.didDamage()) {
                 ShipAPI ship = (ShipAPI) target;
 
                 float hitLevel = 0f;

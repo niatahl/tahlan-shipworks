@@ -1,7 +1,7 @@
 {
     "displayName": "Elite",
-    "fluxCapacitors": 25,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 12,
     "hullId": "tahlan_DunScaith",
     "hullMods": [
         "heavyarmor",

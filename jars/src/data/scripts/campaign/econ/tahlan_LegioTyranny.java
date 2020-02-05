@@ -1,6 +1,7 @@
 package data.scripts.campaign.econ;
 
 import com.fs.starfarer.api.impl.campaign.econ.BaseMarketConditionPlugin;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
@@ -14,8 +15,14 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
         if (market.getFaction() != null) {
             if (market.getFaction().getId().contains("tahlan_legioinfernalis")) {
                 market.getStability().modifyFlat(id, STAB_BONUS, "Legio Tyranny");
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id,2f, "Legio Tyranny");
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id,2f, "Legio Tyranny");
+                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id,3f, "Legio Tyranny");
             } else {
                 market.getStability().unmodify(id);
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodify(id);
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).unmodify(id);
+                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodify(id);
             }
         }
     }
@@ -24,6 +31,9 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
     public void unapply(String id) {
         super.unapply(id);
         market.getStability().unmodify(id);
+        market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodify(id);
+        market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).unmodify(id);
+        market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodify(id);
     }
 
     @Override
@@ -34,8 +44,10 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
             return;
         }
 
-        tooltip.addPara("%s stability while under Legio Infernalis control",
+        tooltip.addPara("%s stability",
                 10f, Misc.getHighlightColor(),
                 "+" + (int) STAB_BONUS);
+        tooltip.addPara("Increased fleet sizes and ground defenses", 10f);
+        tooltip.addPara("Only active while under %s control", 10f, Misc.getHighlightColor(),"Legio Infernalis");
     }
 }

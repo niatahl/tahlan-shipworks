@@ -1,0 +1,38 @@
+{
+	"id":"tahlan_schwalbe_msl",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+	"sprite":"graphics/tahlan/missiles/tahlan_fountain_msl.png",
+	"onHitEffect":"data.scripts.weapons.tahlan_FountainOnHitEffect",
+	"size":[8,18],	
+	"center":[4,9],
+	"collisionRadius":7,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,100,0,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":15, # purely visual
+	"engineSpec":{"turnAcc":600,
+				  "turnRate":500,
+				  "acc":8000,
+				  "dec":500},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-9, 0],
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[255,240,150,255],
+						"glowSizeMult":1.4,
+						"contrailDuration":1.5,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":2,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":2, # min segment length, in pixels
+						"contrailMaxSpeedMult":0f,
+						"contrailAngularVelocityMult":0f,
+						"contrailSpawnDistMult":0f, # how far away from engine it starts
+						"contrailColor":[160,150,140,40],
+						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":5,
+				    "length":15.0,
+				    "angle":180.0}
+				    ]
+}

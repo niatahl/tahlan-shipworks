@@ -1,7 +1,7 @@
 {
     "displayName": "Barrage",
-    "fluxCapacitors": 27,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 47,
     "hullId": "tahlan_DunScaith",
     "hullMods": [
         "targetingunit",

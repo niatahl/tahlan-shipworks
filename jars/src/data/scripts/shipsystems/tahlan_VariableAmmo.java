@@ -18,8 +18,8 @@ public class tahlan_VariableAmmo extends BaseShipSystemScript {
     @Override
     public boolean isUsable(ShipSystemAPI system, ShipAPI ship) {
         //Check if we are flagged to not fire
-        if (Global.getCombatEngine().getCustomData().get("SRD_VariableAmmoExtraCooldown" + ship.getId()) instanceof Float) {
-            if ((float)Global.getCombatEngine().getCustomData().get("SRD_VariableAmmoExtraCooldown" + ship.getId()) > 0f) {
+        if (Global.getCombatEngine().getCustomData().get("tahlan_VariableAmmoExtraCooldown" + ship.getId()) instanceof Float) {
+            if ((float)Global.getCombatEngine().getCustomData().get("tahlan_VariableAmmoExtraCooldown" + ship.getId()) > 0f) {
                 return false;
             }
         }
@@ -59,13 +59,13 @@ public class tahlan_VariableAmmo extends BaseShipSystemScript {
 
                 //Ensures weapons wait to fire until the ammo switching is complete
                 for (WeaponAPI weapon : ship.getAllWeapons()) {
-                    if (weapon.getCooldownRemaining() < cooldownSet && weapon.getId().contains("steelborn_z_35")) {
+                    if (weapon.getCooldownRemaining() < cooldownSet && weapon.getId().contains("tahlan_phira_burst")) {
                         weapon.setRemainingCooldownTo(cooldownSet);
                     }
                 }
 
                 //Used to "lock" ammo switching once a shell has been fired: store that we have swapped ammo since last time we fired
-                Global.getCombatEngine().getCustomData().put("SRD_VariableAmmoHasSwapped" + ship.getId(), true);
+                Global.getCombatEngine().getCustomData().put("tahlan_VariableAmmoHasSwapped" + ship.getId(), true);
             }
         }
     }

@@ -1,0 +1,39 @@
+{
+  "id": "tahlan_stahlhagel_r",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_praxus_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_stahlhagel_r_00.png",
+  "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_stahlhagel_r_00.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    51,
+    -4
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [110,207,255,150],
+    "particleCount": 10,
+    "particleDuration": 0.2,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 0
+  },  
+  "numFrames":4,
+  "frameRate":40,
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_praxus_fire"
+}

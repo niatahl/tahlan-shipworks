@@ -6,16 +6,12 @@
 	
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
-		#"tags":{},
+		"tags":{"tahlan_legio":0.3},
 		"hulls":{
 			"tahlan_Eagle_P":0.6,
 			"tahlan_Tempest_P":0.5,
-			"tahlan_Castigator_P":0.3,
 			"tahlan_Dominator_PH":0.1,
-			"tahlan_Castella_pirates":0.5,
-			"tahlan_Hresvelgr_p":0.5,
 			"tahlan_Nessie":0.4,
-			"tahlan_DunScaith":0.2,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -32,7 +28,6 @@
 			"tahlan_Tempest_P",
 			"tahlan_Castigator_P",
 			"tahlan_Dominator_PH",
-			"tahlan_DunScaith",
 			"tahlan_Hresvelgr_p",
 		],
 	},

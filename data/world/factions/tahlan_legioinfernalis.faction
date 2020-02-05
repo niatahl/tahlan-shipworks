@@ -45,6 +45,18 @@
 		},
 		"hulls":{
 			"tahlan_DunScaith":0.5,
+			
+			"SKR_clipper_d":0.1,
+            "SKR_poisonivy":0.1,
+            "SKR_cassowaryRH":0.1,
+            "SKR_guardian":0.05,
+            "SKR_guardian_atc":0.05,
+            "SKR_guardian_broadside":0.05,
+			
+			"SKR_foray_pirate":0.5,
+            "SKR_hightide_pirate":0.5,
+            "SKR_bonnethead_pirate":0.5,
+            "CIV_crane_pirate":0.5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction

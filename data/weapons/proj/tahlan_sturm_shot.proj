@@ -1,0 +1,25 @@
+{
+	"id":"tahlan_sturm_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	#"onHitEffect":"data.scripts.weapons.tahlan_PorphOnHitEffect",
+	#"spawnType":"BALLISTIC",
+	#"collisionClass":"PROJECTILE_FF",
+	#"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":100.0,
+	"hitGlowRadius":72,
+	"width":20.0,
+	"fadeTime":0.4,
+	"fringeColor":[107, 218, 255,255],
+	"coreColor":[179, 236, 255,205],
+	"glowColor":[107, 218, 255,50],
+	"glowRadius":60,
+	"pixelsPerTexel":5.0,
+	"textureType": [
+		"graphics/tahlan/fx/tahlan_flame_fringe.png",
+		"graphics/tahlan/fx/tahlan_flame_core.png"],
+	"textureScrollSpeed":-64,
+	#"bulletSprite":"graphics/missiles/shell_gauss_cannon.png"
+}

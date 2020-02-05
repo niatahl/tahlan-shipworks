@@ -1,7 +1,7 @@
 {
     "displayName": "Raider",
-    "fluxCapacitors": 20,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 40,
     "hullId": "tahlan_DunScaith",
     "hullMods": [
         "heavyarmor",

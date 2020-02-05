@@ -1,10 +1,7 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.DamagingProjectileAPI;
-import com.fs.starfarer.api.combat.OnHitEffectPlugin;
+import com.fs.starfarer.api.combat.*;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
@@ -30,8 +27,6 @@ public class tahlan_GleipnirKinOnHitEffect implements OnHitEffectPlugin {
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
 
         //MagicLensFlare.createSharpFlare(engine,projectile.getSource(),projectile.getLocation(),10,500,0,new Color(100,215,255),new Color(255,255,255));
-
-        //if (shieldHit || target == null || !(target instanceof ShipAPI) ) {           return;       }
 
         //Global.getCombatEngine().applyDamage(target, point,  1000f, DamageType.FRAGMENTATION, 0, true, false, null, true);
         //Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);

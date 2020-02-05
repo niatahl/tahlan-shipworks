@@ -46,13 +46,13 @@ public class tahlan_NumeonMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 10);
+        ON_SHOT_PARTICLE_COUNT.put("default", 8);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_2", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_2", 1);
-        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 7);
-        ON_SHOT_PARTICLE_COUNT.put("SMOKE_6", 7);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 5);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_6", 5);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -118,9 +118,9 @@ public class tahlan_NumeonMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(140,130,120, 125));
-        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
-        PARTICLE_COLOR.put("SMOKE_4", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("default", new Color(140,130,120, 185));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 185));
+        PARTICLE_COLOR.put("SMOKE_4", new Color(90,80,80, 185));
         PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 144, 68));
         PARTICLE_COLOR.put("FLASH_FRINGE_2", new Color(255, 144, 68));
         PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 244, 222));
@@ -131,20 +131,20 @@ public class tahlan_NumeonMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
         PARTICLE_SIZE_MIN.put("default", 5f);
-        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 120f);
-        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_2", 120f);
-        PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 60f);
-        PARTICLE_SIZE_MIN.put("FLASH_CORE_2", 60f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 100f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_2", 100f);
+        PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 50f);
+        PARTICLE_SIZE_MIN.put("FLASH_CORE_2", 50f);
     }
 
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
         PARTICLE_SIZE_MAX.put("default", 15f);
-        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 120f);
-        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_2", 120f);
-        PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 60f);
-        PARTICLE_SIZE_MAX.put("FLASH_CORE_2", 60f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 100f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_2", 100f);
+        PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 50f);
+        PARTICLE_SIZE_MAX.put("FLASH_CORE_2", 50f);
     }
 
     //What's the lowest velocity a particle can spawn with (can be negative)?

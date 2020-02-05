@@ -20,9 +20,12 @@ import exerelin.campaign.SectorManager;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
 import org.dark.shaders.util.TextureData;
+import data.scripts.campaign.siege.LegioSiegeManager;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static data.scripts.campaign.siege.LegioSiegeBaseIntel.log;
 
 public class tahlan_ModPlugin extends BaseModPlugin {
     static private boolean graphicsLibAvailable = false;
@@ -81,10 +84,14 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             new tahlan_Rubicon().generate(sector);
         }
 
-        //Legio Infernalis relations
-        tahlan_FactionRelationPlugin.initFactionRelationships(sector);
+        if (!haveNexerelin) {
+            //Legio Infernalis relations
+            tahlan_FactionRelationPlugin.initFactionRelationships(sector);
+        }
 
-
+        //Legio siege event
+        Global.getSector().addScript(new LegioSiegeManager());
+        log.info("added LegioSiegeManager");
 
         //Adding Legio to bounty system
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");

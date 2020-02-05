@@ -1,0 +1,21 @@
+{
+	"id":"tahlan_panzerfaust_shot",
+	"specClass":"projectile",
+	#"spawnType":"BALLISTIC_AS_BEAM",
+	#"collisionClass":"RAY",
+	#"collisionClassByFighter":"RAY_FIGHTER",	
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":90.0,
+	"hitGlowRadius":45,
+	"width":14.0,
+	"fadeTime":0.2,
+	"fringeColor":[255,175,65,255],
+	"coreColor":[255,240,225,255],
+	"glowColor":[255,175,70,70],
+	"glowRadius":35,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/shell_medium.png"
+}

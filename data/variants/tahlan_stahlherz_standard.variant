@@ -1,0 +1,37 @@
+{
+  "variantId": "tahlan_stahlherz_standard",
+  "hullId": "tahlan_stahlherz",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "ARM_L": "tahlan_sturmkanone_l"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {
+        "WS0003": "harpoon",
+        "WS0004": "harpoon"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vulcan"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

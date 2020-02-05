@@ -19,7 +19,9 @@ public class tahlan_NumeonOnHitEffect implements OnHitEffectPlugin {
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
 
-        Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, projectile.getSource(), true);
+        if (projectile.didDamage()) {
+            Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, projectile.getSource(), true);
+        }
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 5, 350, 0, new Color(186, 240, 255), new Color(255, 255, 255));
 

@@ -1,6 +1,47 @@
-0.3.12b
+0.3.14
+Additions:
+- Nightingale-class experimental dronecarrier
+- Sonnet-class frigate
+
+Changes:
+- Reduced health of all fountain-type missiles
+- Reduced speed of all fountain-type missiles
+- Updated some visuals
+- Ronka
+ - Efficiency reduced to 1.1f/damage
+ - Range reduced from 800 to 700
+- all Castella variants:
+ - Dissipation increased from 500 to 600 (to 650 for LI variant)
+ - Armor increased from 1200 to 1300
+- Infernalis Drives range malus removed. Now incompatible with Unstable Injector
+- Kassadari Engineering is now no longer active during venting and overload
+- Forced Overdrive
+	- Armor bonus halved
+	- OP costs slightly increased
+- Raider Jets duration lowered
+- Castigator variants
+	- Armor reduced from 1500 to 1250
+	- Reduced DP from 28 to 26
+- Fixed Lasher (LI) turret mounts being treated as hardpoints
+- Increased recoil on Efreet and changed something else but forgot what. DPS, probably
+- Fixed a bug with broadside mounts leading to infinite repair times
+- Increased Dun Scaith variants mass from 4200 to 6000
+- Updated HVBs for new features
+- Buffed the Timeless and Nameless. Find out the details for yourself
+- Buffed Eradicator ammo regen and refire rate slightly
+
+
+0.3.13
 Additions:
 - Added the Metafalica as a new Kassadari Battleship (the Sylphon one will be removed from that mod at some point)
+- Added support for HVB ships being obtainable from prism after being defeated (requires Nexerelin)
+- Added support for combat chatter boss lines 
+
+Changes:
+- Increased Aftermarket Phasecoils range threshold from 700su to 800su
+- Added bonuses to fleet size and ground defenses to Legio Tyranny condition
+- Adjusted industries on Rubicon planets (only affects new saves)
+- Buffed Flagellator stats across the board
 
 
 0.3.12a

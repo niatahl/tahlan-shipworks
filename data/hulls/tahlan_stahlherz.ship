@@ -1,0 +1,172 @@
+{
+  "hullName": "Stahlherz",
+  "hullId": "tahlan_stahlherz",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tahlan/ships/ma/tahlan_stahlherz.png",
+  "style": "MIDLINE",
+  "height": 93,
+  "width": 102,
+  "center": [51, 51],
+  "collisionRadius": 118.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 109,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_silberherz"
+  ],
+  "builtInWeapons": {
+    "ARM_L": "tahlan_stahlherz_arm_l",
+    "ARM_R": "tahlan_stahlherz_arm_r",
+    "SHOULDER_L": "tahlan_stahlherz_cover_l",
+    "SHOULDER_R": "tahlan_stahlherz_cover_r",
+    "WEAPON_L": "tahlan_sturmkanone_l",
+    "WEAPON_R": "tahlan_sturmkanone_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 104,
+      "angle": 15.5,
+      "locations": [13, 32],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 104,
+      "angle": -15.5,
+      "locations": [13, -32],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 242,
+      "angle": 180,
+      "locations": [-34, -0]
+    },
+    {
+      "id": "WEAPON_L",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 58,
+      "angle": 17.5,
+      "locations": [8, 43],
+      "renderOrderMod": -200
+    },
+    {
+      "id": "WEAPON_R",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 58,
+      "angle": -17.5,
+      "locations": [8, -43],
+      "renderOrderMod": -200
+    },
+    {
+      "id": "SHOULDER_L",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-4.5, 33.5]
+    },
+    {
+      "id": "SHOULDER_R",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-4.5, -33.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 242,
+      "angle": 0,
+      "locations": [15, -0]
+    },
+    {
+      "id": "ARM_L",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 17.5,
+      "locations": [8, 43],
+      "renderOrderMod": -100
+    },
+    {
+      "id": "ARM_R",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -17.5,
+      "locations": [8, -43],
+      "renderOrderMod": -100
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-40.5, 35.5],
+      "length": 28,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-40.5, -35.5],
+      "length": 28,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, 24],
+      "length": 37,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "MIDLINE"
+    },
+    {
+      "location": [-39.5, -24],
+      "length": 37,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "MIDLINE"
+    }
+  ],
+  "bounds": [
+    -37, -14.5,
+    -37.5, -36,
+    -26, -50,
+    -3.5, -45,
+    14, -50,
+    38.5, -18,
+    38.5, 18,
+    14, 50,
+    -3.5, 45,
+    -26, 50,
+    -38.5, 36.5,
+    -37, 14.5,
+    -49.5, -0
+  ]
+}

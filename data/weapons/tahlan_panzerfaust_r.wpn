@@ -1,0 +1,48 @@
+{
+  "id": "tahlan_panzerfaust_r",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_panzerfaust_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_ArmigerMuzzleFlashScript",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_panzerfaust_r_base.png",
+  "turretGunSprite": "graphics/tahlan/weapons/ma/tahlan_panzerfaust_r_recoil.png",
+  "hardpointSprite": "",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    59.5,
+    -4
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      255,
+      155,
+      25,
+      150
+    ],
+    "particleCount": 20,
+    "particleDuration": 0.2,
+    "particleSizeMin": 15,
+    "particleSizeRange": 25,
+    "spread": 10
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_armiger_fire",
+  "visualRecoil": 10
+}

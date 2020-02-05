@@ -70,6 +70,7 @@
   "builtInMods": [
     "tahlan_outcast_engineering",
     "tahlan_variable_ammo_loader",	
+	"tahlan_broadsidemounts",
     "tahlan_advballistics",
     "tahlan_temporaltraveldrive"
   ],

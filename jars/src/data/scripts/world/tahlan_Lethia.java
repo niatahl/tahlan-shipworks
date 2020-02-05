@@ -26,7 +26,21 @@ public class tahlan_Lethia {
 
     public void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Lethia");
-        system.getLocation().set(45000,30000);
+
+        switch (MathUtils.getRandomNumberInRange(1,4)) {
+            case 1:
+                system.getLocation().set(45000,30000);
+                break;
+            case 2:
+                system.getLocation().set(-46000,28000);
+                break;
+            case 3:
+                system.getLocation().set(-42000,-31000);
+                break;
+            case 4:
+                system.getLocation().set(41000,-27000);
+        }
+
         system.setBackgroundTextureFilename("graphics/tahlan/backgrounds/tahlan_lethia.jpg");
 
         PlanetAPI lethia_star = system.initStar("tahlan_lethia",
@@ -177,7 +191,7 @@ public class tahlan_Lethia {
                                 Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
                                 Industries.MILITARYBASE,
-                                Industries.HEAVYINDUSTRY
+                                Industries.ORBITALWORKS
                         )
                 ),
                 0.3f,

@@ -97,7 +97,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
         }
 
         if (ship.getSystem() != null) {
-            if (!ship.getSystem().isActive()) {
+            if (!ship.getSystem().isActive() && !ship.getFluxTracker().isOverloadedOrVenting()) {
                 if (ship.getHitpoints() <= ship.getMaxHitpoints() * OVERDRIVE_TRIGGER_PERCENTAGE || ship.getVariant().getHullMods().contains("tahlan_forcedoverdrive")) {
 
                     if (player) {
@@ -200,6 +200,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
         if (index == 4) return "" + Math.round(OVERDRIVE_TRIGGER_PERCENTAGE * 100f) + "%";
         if (index == 5) return "" + (int)OVERDRIVE_TIME_MULT + "%";
         if (index == 6) return "suspended while the ship system is active";
+        if (index == 7) return "inactive while venting flux or when overloaded";
         return null;
     }
 }

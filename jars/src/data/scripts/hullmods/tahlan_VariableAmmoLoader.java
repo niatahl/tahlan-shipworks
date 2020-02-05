@@ -19,11 +19,11 @@ import static com.fs.starfarer.api.util.Misc.ZERO;
 
 public class tahlan_VariableAmmoLoader extends BaseHullMod {
     //Cooldown each time we fire after switching shell type: only applies once per switching
-    public final float COOLDOWN_ON_LOCK = 4f;
+    public final float COOLDOWN_ON_LOCK = 3f;
     public final float COOLDOWN_ON_FIRE = 0.25f;
 
     public final String T1_WEAPON_NAME = "tahlan_phira_shock";
-    public final float T1_DAMAGE_BONUS = 0.1f;
+    public final float T1_DAMAGE_BONUS = 0.2f;
     public final Color T1_MUZZLE_COLOR = new Color(255, 180, 113);
 
     public final String T2_WEAPON_NAME = "tahlan_phira_impact";

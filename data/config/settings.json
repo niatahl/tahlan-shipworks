@@ -39,6 +39,9 @@
 			"tahlan_knight_package":"graphics/tahlan/icons/cargo/tahlan_package_knight.png",
 			"tahlan_knight_all_package":"graphics/tahlan/icons/cargo/tahlan_package_knight.png",
 			"tahlan_lifeless_package":"graphics/tahlan/icons/cargo/tahlan_package_lifeless.png",
+			"tahlan_legio_package":"graphics/tahlan/icons/cargo/tahlan_package_legio.png",
+			"tahlan_legio_full_package":"graphics/tahlan/icons/cargo/tahlan_package_legio.png",
+			"tahlan_rare_bp_package":"graphics/tahlan/icons/cargo/tahlan_package_rarebp.png",
 		},
 		"portraits":{
 			"tahlan_portrait_nia":"graphics/tahlan/portraits/characters/tahlan_portrait_nia.png",

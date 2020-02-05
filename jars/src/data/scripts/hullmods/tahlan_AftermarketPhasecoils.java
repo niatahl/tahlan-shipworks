@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 
 public class tahlan_AftermarketPhasecoils extends BaseHullMod {
 
-    private static final float RANGE_THRESHOLD = 700f;
+    private static final float RANGE_THRESHOLD = 800f;
     private static final float RANGE_MULT = 0.25f;
     private static final float MAINTENANCE_MULT = 2f;
 

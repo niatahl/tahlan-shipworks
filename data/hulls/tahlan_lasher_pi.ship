@@ -129,7 +129,7 @@
         3,
         10
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "size": "SMALL",
       "type": "BALLISTIC"
     },
@@ -141,7 +141,7 @@
         36,
         -0
       ],
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "size": "SMALL",
       "type": "BALLISTIC"
     }
