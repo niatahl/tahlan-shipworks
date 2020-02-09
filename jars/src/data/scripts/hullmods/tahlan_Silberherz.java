@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -68,7 +69,27 @@ public class tahlan_Silberherz extends BaseHullMod {
 
 	}
 
-	public boolean isApplicableToShip(ShipAPI ship) {
+    @Override
+    public void advanceInCampaign(FleetMemberAPI member, float amount) {
+
+	    boolean hasGantry = false;
+
+        for (FleetMemberAPI ship: member.getFleetData().getMembersListCopy()) {
+            if (ship.getVariant().hasHullMod("tahlan_regaliagantry")) {
+                hasGantry = true;
+            }
+        }
+
+        if (!hasGantry) {
+            member.getStats().getSuppliesPerMonth().modifyMult(SILBER_ID,3f);
+            member.getStats().getBaseCRRecoveryRatePercentPerDay().modifyMult(SILBER_ID,0.5f);
+        } else {
+            member.getStats().getSuppliesPerMonth().unmodify(SILBER_ID);
+            member.getStats().getBaseCRRecoveryRatePercentPerDay().unmodify(SILBER_ID);
+        }
+    }
+
+    public boolean isApplicableToShip(ShipAPI ship) {
 		return false;
 	}
 
@@ -77,7 +98,10 @@ public class tahlan_Silberherz extends BaseHullMod {
 		if (index == 1) return "" + (int)WEAPON_HP + "%";
 		if (index == 2) return "Level 10";
 		if (index == 3) return "" + (int)((1f-DEBUFF_FACTOR)*100f) + "%";
-		if (index == 4) return "Incompatible with Safety Overrides";
+		if (index == 4) return "tripled";
+		if (index == 5) return "doubled";
+		if (index == 6) return "Regalia Gantry";
+		if (index == 7) return "Incompatible with Safety Overrides";
 		return null;
 	}
 	

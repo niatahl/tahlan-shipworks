@@ -1,0 +1,126 @@
+{
+  "hullName": "Eisenflug",
+  "hullId": "tahlan_eisenflug",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/ma/tahlan_eisenflug_body.png",
+  "style": "TAHLAN_RR_TECH",
+  "height": 30,
+  "width": 42,
+  "center": [21, 15],
+  "collisionRadius": 26,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 24,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "builtInWeapons": {
+    "ARM_L": "tahlan_eisenflug_arm_l",
+    "ARM_R": "tahlan_eisenflug_arm_r",
+    "GUN_L": "tahlan_eisenflug_gun_l",
+    "GUN_R": "tahlan_eisenflug_gun_r",
+    "SHOULDER_L": "tahlan_eisenflug_shoulder_l",
+    "SHOULDER_R": "tahlan_eisenflug_shoulder_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "SHOULDER_L",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-3, 9],
+      "renderOrderMod": 50
+    },
+    {
+      "id": "SHOULDER_R",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-3, -9],
+      "renderOrderMod": 50
+    },
+    {
+      "id": "ARM_L",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": 20,
+      "locations": [-0.5, 10.5]
+    },
+    {
+      "id": "ARM_R",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 70,
+      "angle": -20,
+      "locations": [-0.5, -10.5]
+    },
+    {
+      "id": "GUN_L",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 20,
+      "locations": [-0.5, 10.5],
+      "renderOrderMod": -50
+    },
+    {
+      "id": "GUN_R",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": -20,
+      "locations": [-0.5, -10.5],
+      "renderOrderMod": -50
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-12, 5.5],
+      "length": 17,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-12, -5.5],
+      "length": 17,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-11, 5.5],
+      "length": 9,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-11, -5.5],
+      "length": 9,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "TAHLAN_RR_ENGINE_2"
+    }
+  ],
+  "bounds": [
+    -12, -8,
+    0, -13,
+    12, -0,
+    0, 13,
+    -12, 8
+  ]
+}

@@ -1,0 +1,10 @@
+{
+	"id":"tahlan_explosiverounds",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_ExplosiveRounds",
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

@@ -68,6 +68,32 @@
 		"contrailColor":[50,50,50,50],
 		"contrailCampaignColor":[255,140,60,240],
 		"type":"SMOKE"
-	}
+	},
+	
+	"TAHLAN_RR_ENGINE":{
+		"engineColor":[107,218,255,255],
+		"engineCampaignColor":[107,218,255,255],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":1,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0.5,
+		"contrailColor":[107,218,255,40],
+		"contrailCampaignColor":[107,218,255,75],
+		"type":"GLOW" # GLOW or SMOKE
+	},
+	
+	"TAHLAN_RR_ENGINE_2":{
+		"engineColor":[255,0,10,180],
+		"engineCampaignColor":[255,0,10,255],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":1,
+		"contrailParticleFinalSizeMult":1.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0.5,
+		"contrailColor":[255,255,255,0],
+		"contrailCampaignColor":[255,0,0,0],
+		"type":"SMOKE"
+	},
 }
 

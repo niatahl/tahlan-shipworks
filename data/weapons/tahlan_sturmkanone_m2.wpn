@@ -1,0 +1,38 @@
+{
+  "id": "tahlan_sturmkanone_m2",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_sturm_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_SturmMuzzleFlashScript",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_sturmkanone_m2_turret.png",
+  "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_sturmkanone_m2_hardpoint.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    14.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    14,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 60,
+    "particleColor": [107, 218, 255,155],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 15,
+    "particleSizeRange": 30,
+    "spread": 0
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_sturm_fire"
+}

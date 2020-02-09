@@ -57,6 +57,9 @@ tahlan_Higanbana,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Higa
 tahlan_Flagellator,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Flagellator_Normal.png
 tahlan_Flagellator_pi,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Flagellator_Normal.png
 tahlan_Metafalica,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Metafalica_Normal.png
+tahlan_Nightingale,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Nightingale_Normal.png
+tahlan_stahlherz,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_stahlherz_Normal.png
+tahlan_schneefall,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_schneefall_Normal.png
 ,,,,,
 ,,,,,
 tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png
@@ -65,4 +68,6 @@ tahlan_nibelung_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/t
 tahlan_nibelung_cover_r,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_R_Normal.png
 tahlan_fountainfall_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_fountainfall_l_Normal.png
 tahlan_fountainfall_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_fountainfall_r_Normal.png
+tahlan_stahlherz_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_stahlherz_shoulder_l_Normal.png
+tahlan_stahlherz_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_stahlherz_shoulder_r_Normal.png
 ,,,,,

@@ -1,7 +1,8 @@
 {
 	"id":"tahlan_stormdrive",
 	"type":"ENGINE_MOD",
-	"aiType":"BURN_DRIVE",
+	"aiType":"CUSTOM",
+    "aiScript":"data.scripts.shipsystems.ai.tahlan_StormDriveAI",
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_StormDriveStats",
 	

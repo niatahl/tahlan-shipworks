@@ -1,0 +1,15 @@
+{
+	"id":"tahlan_weaponstabilization",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_WeaponStabilizers",
+	
+	"weaponGlowColor":[255,0,20,155],
+	"weaponTypes":[BALLISTIC,ENERGY],
+	
+	"engineGlowLengthMult":0.6,
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

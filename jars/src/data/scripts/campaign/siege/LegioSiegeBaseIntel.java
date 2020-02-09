@@ -77,7 +77,7 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
     public static final float MAX_RAID_FP = 500f;
 
     public static final float BASE_STATION_LEVEL = 1f; // 1 = orbital
-    public static final float STATION_LEVEL_PER_CYCLE = 0.125f; // 2 = battlestation
+    public static final float STATION_LEVEL_PER_CYCLE = 0.25f; // 2 = battlestation
     public static final float MAX_STATION_LEVEL = 3f; // 3 = star fortress
 
     public static final float BASE_DURATION = 0f; // if 0 or lower, base will not despawn "naturally" - it must be killed

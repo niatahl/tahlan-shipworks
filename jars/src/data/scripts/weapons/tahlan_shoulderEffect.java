@@ -23,7 +23,7 @@ public class tahlan_shoulderEffect implements EveryFrameWeaponEffectPlugin{
             runOnce=true;
             ship=weapon.getShip();
             for(WeaponAPI w : weapon.getShip().getAllWeapons()){
-                if(w!=weapon && MathUtils.isWithinRange(w.getLocation(),weapon.getLocation(),5)){
+                if(w!=weapon && MathUtils.isWithinRange(w.getLocation(),weapon.getLocation(),2)){
                     reference=w;
                 }
             }

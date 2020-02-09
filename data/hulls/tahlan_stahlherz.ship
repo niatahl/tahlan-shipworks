@@ -3,7 +3,7 @@
   "hullId": "tahlan_stahlherz",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/tahlan/ships/ma/tahlan_stahlherz.png",
-  "style": "MIDLINE",
+  "style": "TAHLAN_RR_TECH",
   "height": 93,
   "width": 102,
   "center": [51, 51],
@@ -12,7 +12,8 @@
   "shieldRadius": 109,
   "viewOffset": 0,
   "builtInMods": [
-    "tahlan_silberherz"
+    "tahlan_silberherz",
+    "high_maintenance"
   ],
   "builtInWeapons": {
     "ARM_L": "tahlan_stahlherz_arm_l",
@@ -20,7 +21,8 @@
     "SHOULDER_L": "tahlan_stahlherz_cover_l",
     "SHOULDER_R": "tahlan_stahlherz_cover_r",
     "WEAPON_L": "tahlan_sturmkanone_l",
-    "WEAPON_R": "tahlan_sturmkanone_r"
+    "WEAPON_R": "tahlan_sturmkanone_r",
+    "WS0005": "tahlan_stahlherz_eyes"
   },
   "weaponSlots": [
     {
@@ -46,7 +48,7 @@
     {
       "id": "WS0001",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 242,
       "angle": 180,
@@ -57,8 +59,8 @@
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 58,
-      "angle": 17.5,
+      "arc": 60,
+      "angle": 14,
       "locations": [8, 43],
       "renderOrderMod": -200
     },
@@ -67,8 +69,8 @@
       "size": "MEDIUM",
       "type": "BUILT_IN",
       "mount": "TURRET",
-      "arc": 58,
-      "angle": -17.5,
+      "arc": 60,
+      "angle": -14,
       "locations": [8, -43],
       "renderOrderMod": -200
     },
@@ -93,7 +95,7 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "BALLISTIC",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 242,
       "angle": 0,
@@ -105,7 +107,7 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": 17.5,
+      "angle": 14,
       "locations": [8, 43],
       "renderOrderMod": -100
     },
@@ -115,43 +117,84 @@
       "type": "DECORATIVE",
       "mount": "TURRET",
       "arc": 90,
-      "angle": -17.5,
+      "angle": -14,
       "locations": [8, -43],
       "renderOrderMod": -100
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [32, -0]
     }
   ],
   "engineSlots": [
     {
       "location": [-40.5, 35.5],
-      "length": 28,
-      "width": 14,
+      "length": 44,
+      "width": 10,
       "angle": 180,
-      "contrailSize": 14,
-      "style": "MIDLINE"
+      "contrailSize": 10,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-40.5, -35.5],
-      "length": 28,
-      "width": 14,
+      "length": 44,
+      "width": 10,
       "angle": -180,
-      "contrailSize": 14,
-      "style": "MIDLINE"
+      "contrailSize": 10,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-39.5, 24],
-      "length": 37,
-      "width": 17,
+      "length": 62.5,
+      "width": 13,
       "angle": 180,
-      "contrailSize": 17,
-      "style": "MIDLINE"
+      "contrailSize": 13,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-39.5, -24],
-      "length": 37,
-      "width": 17,
+      "length": 62.5,
+      "width": 13,
       "angle": -180,
-      "contrailSize": 17,
-      "style": "MIDLINE"
+      "contrailSize": 13,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-40, 35.5],
+      "length": 17.5,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-40, -35.5],
+      "length": 17.5,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-38.5, 24],
+      "length": 30.5,
+      "width": 22,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-38.5, -24],
+      "length": 30.5,
+      "width": 22,
+      "angle": -180,
+      "contrailSize": 22,
+      "style": "TAHLAN_RR_ENGINE_2"
     }
   ],
   "bounds": [

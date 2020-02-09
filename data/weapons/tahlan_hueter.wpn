@@ -1,0 +1,38 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "id": "tahlan_hueter",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_hueter_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_HueterWeaponScript",
+  "type": "BALLISTIC",
+  "size": "SMALL",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_hueter_turret.png",
+  "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_hueter_hardpoint.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    7,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    7.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_hueter_fire",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [255,255,255,155],
+    "particleCount": 15,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 10
+  },
+}

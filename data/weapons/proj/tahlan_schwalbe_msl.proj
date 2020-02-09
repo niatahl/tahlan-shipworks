@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"sprite":"graphics/tahlan/missiles/tahlan_fountain_msl.png",
-	"onHitEffect":"data.scripts.weapons.tahlan_FountainOnHitEffect",
+	"onHitEffect":"data.scripts.weapons.tahlan_SchwalbeOnHitEffect",
 	"size":[8,18],	
 	"center":[4,9],
 	"collisionRadius":7,

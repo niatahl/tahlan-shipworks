@@ -17,6 +17,9 @@ public class tahlan_NibelungDecoScript implements EveryFrameWeaponEffectPlugin {
             case "tahlan_Nibelung_crg":
                 weapon.getAnimation().setFrame(2);
                 break;
+            case "tahlan_Nibelung_rg":
+                weapon.getAnimation().setFrame(3);
+                break;
         }
     }
 }

@@ -3,7 +3,7 @@
   "hullId": "tahlan_halbmond",
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/tahlan/ships/ma/tahlan_halbmond.png",
-  "style": "MIDLINE",
+  "style": "TAHLAN_RR_TECH",
   "height": 336,
   "width": 256,
   "center": [128, 168],
@@ -11,6 +11,11 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 228,
   "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_regaliagantry",
+    "repair_gantry",
+    "surveying_equipment"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -130,104 +135,304 @@
         2.5, -31,
         11, -40.5
       ]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": 70,
+      "locations": [91, 112]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": -70,
+      "locations": [91, -112]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": -129.5,
+      "locations": [-130, -86]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": 129.5,
+      "locations": [-130, 86]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": -89,
+      "locations": [-24.5, -112]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": 89,
+      "locations": [-24.5, 112]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": 24,
+      "locations": [164, 89.5]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 78,
+      "angle": -24,
+      "locations": [164, -89.5]
     }
   ],
   "engineSlots": [
     {
       "location": [-167.5, 39],
-      "length": 44.5,
-      "width": 17,
+      "length": 56.5,
+      "width": 11,
       "angle": 180,
-      "contrailSize": 17,
-      "style": "MIDLINE"
+      "contrailSize": 11,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-167.5, -39],
-      "length": 44.5,
-      "width": 17,
+      "length": 56.5,
+      "width": 11,
       "angle": -180,
-      "contrailSize": 17,
-      "style": "MIDLINE"
+      "contrailSize": 11,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-166.5, -53],
-      "length": 44.5,
-      "width": 17,
+      "length": 53,
+      "width": 12,
       "angle": -180,
-      "contrailSize": 17,
-      "style": "MIDLINE"
+      "contrailSize": 12,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-166.5, 53],
-      "length": 44.5,
-      "width": 17,
+      "length": 53,
+      "width": 12,
       "angle": 180,
-      "contrailSize": 17,
-      "style": "MIDLINE"
+      "contrailSize": 12,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-164.5, -63.5],
-      "length": 41,
-      "width": 12,
+      "length": 47.5,
+      "width": 9,
       "angle": -180,
-      "contrailSize": 12,
-      "style": "MIDLINE"
+      "contrailSize": 9,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-164.5, 63.5],
-      "length": 41,
-      "width": 12,
+      "length": 47.5,
+      "width": 9,
       "angle": 180,
-      "contrailSize": 12,
-      "style": "MIDLINE"
+      "contrailSize": 9,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-165.5, -72.5],
-      "length": 41,
-      "width": 12,
+      "length": 42.5,
+      "width": 7,
       "angle": -180,
-      "contrailSize": 12,
-      "style": "MIDLINE"
+      "contrailSize": 7,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-165.5, 72.5],
-      "length": 41,
-      "width": 12,
+      "length": 42.5,
+      "width": 7,
       "angle": 180,
-      "contrailSize": 12,
-      "style": "MIDLINE"
+      "contrailSize": 7,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-163.5, -80.5],
-      "length": 33,
-      "width": 11,
+      "length": 36,
+      "width": 8,
       "angle": -180,
-      "contrailSize": 11,
-      "style": "MIDLINE"
+      "contrailSize": 8,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [-163.5, 80.5],
-      "length": 33,
-      "width": 11,
+      "length": 36,
+      "width": 8,
       "angle": 180,
-      "contrailSize": 11,
-      "style": "MIDLINE"
+      "contrailSize": 8,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [14, 116],
-      "length": 33,
-      "width": 11,
+      "length": 42,
+      "width": 8,
       "angle": 180,
-      "contrailSize": 11,
-      "style": "MIDLINE"
+      "contrailSize": 8,
+      "style": "TAHLAN_RR_ENGINE"
     },
     {
       "location": [14, -116],
-      "length": 33,
+      "length": 42,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-163, 80.5],
+      "length": 15,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-163, -80.5],
+      "length": 15,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-165, -72.5],
+      "length": 17,
       "width": 11,
       "angle": -180,
       "contrailSize": 11,
-      "style": "MIDLINE"
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-165, 72.5],
+      "length": 17,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-164, -63.5],
+      "length": 19,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-164, 63.5],
+      "length": 19,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-166, -53],
+      "length": 25.5,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-166, 53],
+      "length": 25.5,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-167, -39],
+      "length": 24,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 20,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-167, 39],
+      "length": 24,
+      "width": 20,
+      "angle": -180,
+      "contrailSize": 20,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [15, 116],
+      "length": 22,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [15, -116],
+      "length": 22,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-158, 21.5],
+      "length": 34,
+      "width": 27,
+      "angle": -180,
+      "contrailSize": 27,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-158, -21.5],
+      "length": 34,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-158.5, 21.5],
+      "length": 70.5,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-158.5, -21.5],
+      "length": 70.5,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_RR_ENGINE"
     }
   ],
   "bounds": [

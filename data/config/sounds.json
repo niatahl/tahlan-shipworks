@@ -164,11 +164,20 @@
     },
 	"tahlan_praxus_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":4,"volume":0.8},
-			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":4.05,"volume":0.8},
-			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":4.1,"volume":0.8},
-			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":4.15,"volume":0.8},
-			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":4.2,"volume":0.8},
+           	{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":3,"volume":0.5},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":3.05,"volume":0.5},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":3.1,"volume":0.5},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":3.15,"volume":0.5},
+			{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":3.2,"volume":0.5},
+        ],
+    },
+	"tahlan_stahlhagel_fire":{
+        "sounds":[
+           	{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":0.6,"volume":1.0},
+           	{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_02.ogg","pitch":0.6,"volume":1.0},
+           	{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_03.ogg","pitch":0.6,"volume":1.0},
+           	{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_04.ogg","pitch":0.6,"volume":1.0},
+           	{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_05.ogg","pitch":0.6,"volume":1.0},
         ],
     },
 	"tahlan_magaera_fire":{
@@ -185,12 +194,18 @@
     },
 	"tahlan_sturm_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_porph_fire.ogg","pitch":1.0,"volume":1.2},
+           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.70,"volume":2.5},
+           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.75,"volume":2.5},
+           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.80,"volume":2.5},
         ],
     },
 	"tahlan_porph_impact":{
         "sounds":[
-           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":0.8,"volume":1.0},
+           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":1.8,"volume":0.8},
+           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":1.82,"volume":0.8},
+           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":1.84,"volume":0.8},
+           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":1.86,"volume":0.8},
+           	{"file":"sounds/sfx_impacts/explosion_missile_02.ogg","pitch":1.88,"volume":0.8},
         ],
     },
 	"tahlan_ronka_fire":{
@@ -205,6 +220,13 @@
            	{"file":"sounds/tahlan/weapons/tahlan_balor_fire.ogg","pitch":1,"volume":1.4},
 			{"file":"sounds/tahlan/weapons/tahlan_balor_fire.ogg","pitch":1.05,"volume":1.4},
 			{"file":"sounds/tahlan/weapons/tahlan_balor_fire.ogg","pitch":0.95,"volume":1.4},
+        ],
+    },
+	"tahlan_hueter_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_balor_fire.ogg","pitch":1.5,"volume":1.1},
+			{"file":"sounds/tahlan/weapons/tahlan_balor_fire.ogg","pitch":1.55,"volume":1.1},
+			{"file":"sounds/tahlan/weapons/tahlan_balor_fire.ogg","pitch":1.6,"volume":1.1},
         ],
     },
 	"tahlan_tethra_fire":{
@@ -304,7 +326,7 @@
     },
 	"tahlan_nadel_fire":{
 		"sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_purgatory_fire.ogg","pitch":1.50,"volume":1.0},
+           	{"file":"sounds/tahlan/weapons/tahlan_purgatory_fire.ogg","pitch":1.50,"volume":0.8},
         ],
 	},
 	"tahlan_ammo_switch":[

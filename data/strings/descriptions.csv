@@ -202,8 +202,20 @@ Presumably a precursor design to the modern Eagle, the Castigator was, for its t
 ,,,,,
 ,,,,,
 #Rosenritter,,,,,
-tahlan_stahlherz,SHIP,,,,
-tahlan_halbmond,SHIP,,,,
+tahlan_stahlherz,SHIP,"First introduced 127 years before the collapse, the Silberblut is one of the older Regalia still in use by the Rosenritter Orden. Powered by a first-generation Silberherz unit, it was the first Regalia equipped with a core of this type and as such spearheaded a new generation of Regalia designs. Utilizing the incredible energy capacity and computational power of its core opened up a new level of modularity, leading to the Silberblut Regalia coming in a wide variety of configurations with vastly differing capabilities and armaments.
+
+Like every Regalia featuring a Silberherz unit, the Silberblut relies on a direct neural interface for proper control of its complex systems. With only individuals of exceptional skill and mental fortitude capable of handling the stress of such a device, only few can actually bring out the true performance of this machine.
+
+While expensive to maintain, Regalias are exceptionally potent warmachines and Silberblut units are known for singlehandedly facing and taking down cruisers with relative ease. The unique nature of their constructions necessitates a Regalia maintenance vessel however, as without the specialized equipment maintenance becomes exceedingly difficult.",,,
+tahlan_halbmond,SHIP,"Introduced only half a decade prior to third generation Regalia, the Halbmond was designed in anticipation of the need for a vessel capable of servicing Silberherz-equipped Regalia on extended deployments. Being primarily a maintenance vessel, it is rather poorly equipped for combat, but carries enough weaponry to defend itself in emergency situations and can hold three squadrons of Jagdregalia within its massive hangar bay.
+
+The highly specialized equipment makes ships of this class basically essential to the efficient maintenance of Regalia units.
+
+Over the decades since their introduction, these ships have been repeatedly upgraded by the Rosenritter Orden and now often serve as mobile bases.",,,
+tahlan_eisenflug,SHIP,"The most common Jadgregalia and standard strikecraft of Rosenritter carriers. Based on the Eisenblut frame, it mounts a pair of high-velocity pulse lasers effective against most targets. Robust defenses ensure a survival rate uncommon amongst standard fightercraft and many a famous Graf's career has its beginnings in the pilot seat of an Eisenflug.",,,
+tahlan_schneefall,SHIP,"Following the success of the Silberblut Regalia and their successor models, Rosenritter doctrine became even more focused on Regalia-centric combat tactics. This new shift in doctrine called for a unique kind of capital to serve as an anchor and supporting unit for Regalia in combat and eventually gave birth to the Nachtgesang. To take advantage of the computational capabilities of the Silberherz, the Nachtgesang was outfitted with a massive sensor and scanner array at its core, capable of feeding combat data to nearby Regalia to boost their combat performance further.
+
+While primarily designed for its support role, the ship is by no means to be underestimated in combat. Light in gun mounts, it makes up for this with an impressive array of missile hardpoints and above average speed. Capable of taking on most capitals head to head, it can effectively hold the line while its allied Regalia tear through the enemy flanks.",,,
 ,,,,,
 ,,,,,
 # Weapons,,,,,
@@ -278,18 +290,21 @@ tahlan_phira_burst,WEAPON,"A heavy triple-barrel turret integral to the Metafali
 tahlan_amboss,WEAPON,"The result of scaling up an autocannon to excessive size and loading it with high-explosive ammunition. While limited by relatively short range, the sheer firepower and armor-breaking potential makes this weapon fairly effective.",,,
 ,,,,,
 ,,,,,
-# Regalia Weapons,,,,,
+# Rosenritter,,,,,
 ,,,,,
 tahlan_sturmkanone_r,WEAPON,"The Sturmkanone is a venerated design within Rosenritter circles and standard on many Regalia, being regarded as a knightly weapon and often chosen over more specialized armaments for this reason alone. Based on an old and simple plasma cannon design, the weapon has been refined over centuries and boasts excellent efficiency against all kinds of targets.",,,
 tahlan_sturmkanone_l,WEAPON,"The Sturmkanone is a venerated design within Rosenritter circles and standard on many Regalia, being regarded as a knightly weapon and often chosen over more specialized armaments for this reason alone. Based on an old and simple plasma cannon design, the weapon has been refined over centuries and boasts excellent efficiency against all kinds of targets.",,,
+tahlan_sturmkanone_m2,WEAPON,"An older, more compact model of the Sturmkanone for use on modular weapon mounts. While possessing the same firepower as the Mk.3, it is incapable of maintaining this output and suffers from significantly reduced range.",,,
 tahlan_stahlhagel_r,WEAPON,"A design as old as time, the Stahlhagel is a reliable rotary cannon that traces its roots back to the Elder Houses. Many variations of its basic designs have found use as anti-shield weaponry on Regalias going back to their first generation.",,,
 tahlan_stahlhagel_l,WEAPON,"A design as old as time, the Stahlhagel is a reliable rotary cannon that traces its roots back to the Elder Houses. Many variations of its basic designs have found use as anti-shield weaponry on Regalias going back to their first generation.",,,
+tahlan_stahlhagel_zwilling,WEAPON,"Combining two lower caliber Stahlhagel variants into a single turret, this Zwilling variant achieves an impressive rate of fire. While the individual projectiles are lighter and less accurate than on other variants of the weapon, it remains highly effective against shields. The weapon system's main disadvantage is its complex ammo feeder system which fails to keep up with the weapon's output without additional modifications.",,,
 tahlan_panzerfaust_r,WEAPON,"Few weapons are as simple yet effective as a heavy combat rifle. Loaded with heavy high-explosive rounds, the Panzerfaust performs true to its name, delivering a devastating punch to even the heaviest armor. While commonly mounted on Regalia that are expected to encounter heavy armor, excessive use of this weapon is sometimes frowned upon for its brutish nature.",,,
 tahlan_panzerfaust_l,WEAPON,"Few weapons are as simple yet effective as a heavy combat rifle. Loaded with heavy high-explosive rounds, the Panzerfaust performs true to its name, delivering a devastating punch to even the heaviest armor. While commonly mounted on Regalia that are expected to encounter heavy armor, excessive use of this weapon is sometimes frowned upon for its brutish nature.",,,
 tahlan_schwalbenflug_r,WEAPON,"While the primary weapon arms on Regalia are rarely used for missile weaponry, the Schwalbenflug is one of the few exceptions. Often mounted as a complementary weapon on range-focused Regalia, it allows for target saturation with a salvo of 15 MstRkt.21 ""Schwalbe"" with excellent flight characteristics.",,,
 tahlan_schwalbenflug_l,WEAPON,"While the primary weapon arms on Regalia are rarely used for missile weaponry, the Schwalbenflug is one of the few exceptions. Often mounted as a complementary weapon on range-focused Regalia, it allows for target saturation with a salvo of 15 MstRkt.21 ""Schwalbe"" with excellent flight characteristics.",,,
-tahlan_nadel_r,WEAPON,,,,
-tahlan_nadel_l,WEAPON,,,,
+tahlan_nadel_r,WEAPON,"Highly respected for its pinpoint accuracy, the Nadel is much beloved as an elegant weapon by Rosenritter Grafs who have the privilege of mounting one on their Regalia. The weapon fires a semi-armor-piercing sabot round that delivers high kinetic damage against shields and can wound even armored targets.",,,
+tahlan_nadel_l,WEAPON,"Highly respected for its pinpoint accuracy, the Nadel is much beloved as an elegant weapon by Rosenritter Grafs who have the privilege of mounting one on their Regalia. The weapon fires a semi-armor-piercing sabot round that delivers high kinetic damage against shields and can wound even armored targets.",,,
+tahlan_hueter,WEAPON,"Designed primarily for use on Regalia, the Hüter is a smart point-defense system that fires interceptor micromissiles. While rather ineffective against larger targets, the missiles are also too small to be tracked by enemy point-defense when used to supplement primary firepower.",,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,
@@ -318,7 +333,9 @@ tahlan_steamlight,SHIP_SYSTEM,"Grants a short but strong 2 second boost to top s
 tahlan_assaultmode,SHIP_SYSTEM,Engages the ship's assault mode. Increases ballistic and energy weapon DPS by 50% at cost of halved mobility. Takes 5s to reach full effectiveness and lasts an additional 5s at full power.,Assault,,
 tahlan_fluxoverdrive,SHIP_SYSTEM,"Redirects hard flux load from shields to boost ship systems. Boosts ballistic weapon rate of fire, energy weapon damage and all mobility by up to 50% and reduces all damage taken by up to 50%. Effect scales with current hard flux level, reaching maximum effectiveness at 90% hard flux. Disables shields while active.",Boost,,
 tahlan_royalcharge,SHIP_SYSTEM,"Activates damper fields, reducting all damage by 90%, and charges forward.",Movement,,
-tahlan_variable_ammo,SHIP_SYSTEM,"Switches firing mode of built-in weapons between Shock Cannon, Impact Driver and Type-3 Shells.",,,
+tahlan_variable_ammo,SHIP_SYSTEM,"Switches firing mode of built-in weapons between Shock Cannon, Impact Driver and Type-3 Shells.",Assault,,
+tahlan_weaponstabilization,SHIP_SYSTEM,Stabilizes weapons for increased lethality. Increases ballistic and energy damage by 50% and range and projectile velocity by 25%. Reduces top speed by 50%.,,,
+tahlan_explosiverounds,SHIP_SYSTEM,"Loads microfusion rounds into any equipped Stahlhagel-type cannons, which cause an additional explosion on impact dealing 50 energy damage in a 100su radius.",,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,

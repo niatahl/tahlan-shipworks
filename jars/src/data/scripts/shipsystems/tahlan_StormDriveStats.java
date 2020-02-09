@@ -8,11 +8,13 @@ import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 
 public class tahlan_StormDriveStats extends BaseShipSystemScript {
 
+    public static final float SPEED_BOOST = 500f;
+
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         if (state == ShipSystemStatsScript.State.OUT) {
             stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
         } else {
-            stats.getMaxSpeed().modifyFlat(id, 500f * effectLevel);
+            stats.getMaxSpeed().modifyFlat(id, SPEED_BOOST * effectLevel);
             stats.getAcceleration().modifyFlat(id, 1000f);
             stats.getEmpDamageTakenMult().modifyMult(id, 0.5f);
             stats.getArmorDamageTakenMult().modifyMult(id, 0.5f);

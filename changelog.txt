@@ -1,7 +1,9 @@
 0.3.14
 Additions:
 - Nightingale-class experimental dronecarrier
-- Sonnet-class frigate
+- Amboss Heavy Autocannon
+- Legio Infernalis system siege event
+- "Oh Ritter ihr in Rosenrot, erwachet"
 
 Changes:
 - Reduced health of all fountain-type missiles
@@ -11,8 +13,8 @@ Changes:
  - Efficiency reduced to 1.1f/damage
  - Range reduced from 800 to 700
 - all Castella variants:
- - Dissipation increased from 500 to 600 (to 650 for LI variant)
- - Armor increased from 1200 to 1300
+ - Dissipation increased from 500 to 600 (to 700 for LI variant)
+ - Armor increased from 1200 to 1400
 - Infernalis Drives range malus removed. Now incompatible with Unstable Injector
 - Kassadari Engineering is now no longer active during venting and overload
 - Forced Overdrive
@@ -29,6 +31,8 @@ Changes:
 - Updated HVBs for new features
 - Buffed the Timeless and Nameless. Find out the details for yourself
 - Buffed Eradicator ammo regen and refire rate slightly
+- Legio Infernalis should now be more resilient in Nex
+- Hresvelgr X shipsystem changed to fortress shield
 
 
 0.3.13

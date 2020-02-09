@@ -40,7 +40,7 @@ public class tahlan_VariableAmmoLoader extends BaseHullMod {
     public final float T3_SPLIT_SPEED_VARIATION = 0.1f;
     public final int T3_SPLIT_COUNT = 10;
     public final Color T3_MUZZLE_COLOR = new Color(255, 180, 113);
-    public final Color T3_SPLIT_COLOR = new Color(200,185,160);
+    public final Color T3_SPLIT_COLOR = new Color(232, 221, 204);
 
     //Hacky, but it works: register which projectiles don't need swapping, since they were fired when we were in "burst" mode (type-3 shells)
     private List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();

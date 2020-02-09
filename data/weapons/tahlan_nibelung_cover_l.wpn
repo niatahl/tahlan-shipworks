@@ -2,7 +2,7 @@
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "everyFrameEffect": "data.scripts.weapons.tahlan_NibelungDecoScript",
-  "numFrames":3,
+  "numFrames":5,
   "frameRate":0,
   "coreColor": [
     255,

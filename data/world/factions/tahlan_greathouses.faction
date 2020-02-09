@@ -32,6 +32,7 @@
 		"hulls":{
 			"buffalo2":0, # just say no
 			"apogee":0, # too civilian.
+			"gremlin":0, # phase ships fuck off
 			"tahlan_Izanami":0, #The blueprints were lost
 			"tahlan_Ristreza":0.5, #Ancient ships that are no longer being built
 			"tahlan_Ristreza_b":0.1, #Rare version of the ancient ship

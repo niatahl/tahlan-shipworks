@@ -1,0 +1,23 @@
+{
+  "variantId": "tahlan_eisenflug_regalia",
+  "hullId": "tahlan_eisenflug",
+  "displayName": "Jagdregalia",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "GUN_L": "tahlan_eisenflug_gun_l",
+        "GUN_R": "tahlan_eisenflug_gun_r"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

@@ -1,9 +1,10 @@
 {
     "playableFaction":true,
-    "pirateFaction":false,
+    "pirateFaction":true,
     "corvusCompatible":true,
     "showIntelEvenIfDead":false,
-        
+    "hostileToAll":1,    
+	
     "rebelFleetSuffix":"Traitors",
 	
 	"marketSpawnWeight":1,
@@ -22,13 +23,13 @@
 		"default": -0.5,
 		"hegemony": -1.00, 
 		"tritachyon": 0.0,
-		"pirates": 0.50, 
+		"pirates": 0.60, 
 		"independent": -0.50,
 		"luddic_church": -1.00,
 		"luddic_path": -1.00,
-		"sindrian_diktat": -0.10,
+		"sindrian_diktat": -0.60,
 		"remnant": -0.60,
-		"new_galactic_order": -0.50,
+		"new_galactic_order": -0.60,
 		"interstellarimperium": -0.60,
         "SCY": -0.10, 
         "shadow_industry": -0.50,
@@ -42,13 +43,13 @@
         "junk_pirates": 0.50,
         "syndicate_asp": 0.50,
         "sad": 0.00,
-        "dassault_mikoyan": -0.50,
+        "dassault_mikoyan": -0.60,
         "blade_breakers": -0.60,
         "blackrock_driveyards": -0.20,
         "crystanite": -0.50,
         "vass_shipyards": 0.50,
-		"exlane": -0.50,
-		"sylphon": -0.50,
+		"exlane": -0.60,
+		"sylphon": -0.60,
 		"mayasura": -0.60,
 		"persean_league": -0.60,
 		"yrxp": 0.00, #so anime, they just can't hate them
@@ -56,7 +57,7 @@
 	},
 	
 	"maxRelationships":{ 
-		"default":0.1, 
+		"default":0.5, 
 		"hegemony":-0.5, 
 		"diableavionics":1,
 		"pirates":1,

@@ -9,7 +9,7 @@
     "restoreToBaseHull":false,
     "addHints":[],
     "tags":[],
-	"systemId":"ammofeed",
+	"systemId":"tahlan_weaponstabilization",
     "tech":"Experimental",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
