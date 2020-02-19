@@ -45,7 +45,7 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
         LENGTH_DESCRIPTIONS.put(0, "will take a very long time");
         LENGTH_DESCRIPTIONS.put(1, "will take quite some time");
         LENGTH_DESCRIPTIONS.put(2, "will take some time");
-        LENGTH_DESCRIPTIONS.put(3, "will take a little time");
+        LENGTH_DESCRIPTIONS.put(3, "will take little time");
     }
 
     //All the weapons that can be unlocked, and how much time it takes to unlock them (in campaign-seconds; 5 seconds or so is a day)
@@ -55,8 +55,8 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
     static {
         BLUEPRINT_UNLOCKS.put(1825f, "tahlan_jagdregalia_package");
         BLUEPRINT_UNLOCKS.put(3650f, "tahlan_silberblut_package");
-        BLUEPRINT_UNLOCKS.put(5475f, "tahlan_halbmond_package");
-        BLUEPRINT_UNLOCKS.put(7300f, "tahlan_schneefall_package");
+        BLUEPRINT_UNLOCKS.put(5475f, "tahlan_schneefall_package");
+        BLUEPRINT_UNLOCKS.put(7300f, "tahlan_halbmond_package");
     }
     
     //The name to display for each blueprint package; should ideally match up with the actual weapon in the package
@@ -65,7 +65,7 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
         UNLOCK_NAMES.put("tahlan_jagdregalia_package", "Jagdregalia");
         UNLOCK_NAMES.put("tahlan_silberblut_package", "Silberblut Regalia");
         UNLOCK_NAMES.put("tahlan_halbmond_package", "Halbmond-class Carrier");
-        UNLOCK_NAMES.put("tahlan_schneefall_package", "Schneefall-class Battlecruiser");
+        UNLOCK_NAMES.put("tahlan_schneefall_package", "the Nachtgesang-class Battlecruiser");
     }
 
     //The counter for tracking how far we are along with our discoveries
@@ -214,8 +214,7 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
 
         //Spawns a message to tell the player all they need to know about the new acquiring
         Global.getSector().getCampaignUI().addMessage(
-                "The databanks of the recently recovered Halbmond class carrier are completely foreign to you and seem to be in bad shape, a preliminary analysis suggests you might still be able to piece together some useful data from what is left." +
-                        "The software running the Halbmond's computer cores is every bit as enigmatic as its hardware. With your current aptitude in Technology, decrypting it " +
+                "Initial examinations of the Halbmond-class carrier you recently recovered have revealed a well-encrypted but intact Rosenritter blueprint database stored on the ship's mainframe. Recovery is likely to be a complicated process, but the rewards should prove worth the wait. With your current aptitude in Technology, decrypting it " +
                         LENGTH_DESCRIPTIONS.get(currentTechAptitude) + ".",
                 Global.getSettings().getColor("standardTextColor"),
                 "Technology",LENGTH_DESCRIPTIONS.get(currentTechAptitude),
@@ -228,7 +227,7 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
     //Function for doing anything that needs to be done after getting the ship subsequent times
     private void getShipAgain () {
         Global.getSector().getCampaignUI().addMessage(
-                "Having re-accquired the Halbmond, you begin anew with working through its databanks, though at your current aptitude in Technology cracking the encryption " +
+                "Having re-accquired the Halbmond, your teams resume their decryption efforts, though at your current aptitude in Technology cracking the encryption " +
                         LENGTH_DESCRIPTIONS.get(currentTechAptitude) + ".",
                 Global.getSettings().getColor("standardTextColor"),
                 "Technology",LENGTH_DESCRIPTIONS.get(currentTechAptitude),
@@ -259,14 +258,14 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
         String nameToPrint = UNLOCK_NAMES.get(blueprintID);
         if (wasFinalBlueprint) {
             Global.getSector().getCampaignUI().addMessage(
-                    "You have succesfully recovered one last blueprint from the Halbmond's databanks and spliced it onto a hacked production chip. The data identifies it as the " + nameToPrint + ".",
+                    "Your decryption efforts have allowed you to retrieve the final segment of the Halbmond's database, a single blueprint for the " + nameToPrint + " itself.",
                     Global.getSettings().getColor("standardTextColor"),
-                    "one last",nameToPrint,
+                    "final",nameToPrint,
                     Global.getSettings().getColor("flatRedTextColor"),
                     Global.getSettings().getColor("yellowTextColor"));
         } else {
             Global.getSector().getCampaignUI().addMessage(
-                    "You have succesfully recovered what seems to be a blueprint from the Halbmond's databanks and downloaded it onto a hacked production chip. The data in question identifies the item as a " + nameToPrint + ". Analysis indicates there is still more data to be recovered, however...",
+                    "Your decryption efforts have progressed well and uncovered a part of the database containing the blueprints for " + nameToPrint + ". Analysis indicates there is still more data to be recovered, however...",
                     Global.getSettings().getColor("standardTextColor"),
                     nameToPrint,"still more blueprints to be recovered",
                     Global.getSettings().getColor("yellowTextColor"),

@@ -1,0 +1,22 @@
+{
+  "variantId": "tahlan_dorn_funnel",
+  "hullId": "tahlan_dorn",
+  "displayName": "Funnel",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "tahlan_glanzstrahl"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

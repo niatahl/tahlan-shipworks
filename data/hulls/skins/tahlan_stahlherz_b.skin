@@ -1,16 +1,16 @@
 {
     "baseHullId":"tahlan_stahlherz",
     "skinHullId":"tahlan_stahlherz_b",
-    "hullName":"Silberblur Regalia Kfg.B",
+    "hullName":"Silberblut Regalia Kfg.B",
     "descriptionId":"tahlan_stahlherz",
     "descriptionPrefix":"Alternate configuration B. Focused on ballistic weaponry.",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":[],
+    "tags":["tahlan_silberherz_bp"],
 	"systemId":"tahlan_explosiverounds",
-    "tech":"Experimental",
+    "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids
     "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
     "removeBuiltInMods":[], 		# hullmod ids

@@ -15,6 +15,7 @@
 			"tahlan_Haelequin":8,
 			"tahlan_Glint":8,
 			"tahlan_Trill":2,
+			"tahlan_Nightingale":2,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -33,7 +34,8 @@
 			"tahlan_Yosei",
 			"tahlan_Haelequin",
 			"tahlan_Glint",
-			"tahlan_Trill"
+			"tahlan_Trill",
+			"tahlan_Nightingale",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

@@ -9,6 +9,7 @@
 	"fadeTime":0.25,
 	"fringeColor":[116,242,167,255],
 	"coreColor":[255,255,255,200],
+	"hitGlowRadius":20,
 	"textureType":"SMOOTH",  # only needed for BEAM spawnType
 	#"textureType":["graphics/fx/emp_arcs.png","graphics/fx/emp_arcs.png"],
 	"textureScrollSpeed":-256.0,

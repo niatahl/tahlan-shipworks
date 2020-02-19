@@ -1,9 +1,70 @@
+0.3.14c
+Additions:
+- Added a configuration file named "tahlan_settings.ini" allowing users to disable various mod features:
+	- Lethia
+	- Legio Infernalis
+	- Legio Siege events 
+
+Changes:
+- Reduced number of patrol fleets spawned by Legio siege bases
+- Reduced the defense multiplier of Legio Tyranny from 3 to 2
+
+Fixes:
+- Dorn blueprint can no longer drop randomly
+- Dorn blueprint value set to something more reasonable
+- Fixed a crash related to Legio Siege events
+
+
+0.3.14b
+Additions:
+- Added Glanzwurf Regalia
+
+Changes:
+- Nerfed Gardas and Gardion
+	- Reduced per-shot damage
+	- Lowered efficiency
+	- Increased rate of fire
+- Adlerauge hullmod changed
+	- No longer increases damage
+	- Grants a flat 100su range buff now
+	- Also slightly buffs projectile velocities now
+- Weapon Stabilization range buff is now a flat 200su, percentage buffs/debuffs changed to 25%
+- Sturmkanone (all variants) projectile velocity reduced, efficiency dropped to 1.0
+- Halbmond changes:
+	- Added a 4th fighter bay
+	- OP increased slightly
+	- Improved shield stats
+	- System changed to targeting feed
+	- Large mount arcs improved slightly
+- Updated HVB fleets with more fun ships
+- Silberblut Regalia changes:
+	- Reduced armour by 100
+	- Reduced top speed by 10
+- Ristreza variants dissipation reduced by 100
+- Castigator variants:
+	- Reduced Dissipation by 50
+	- Reduced Armor by 50
+- Increased armor of Fragmenta drones from 20 to 50
+
+Fixes:
+- Fixed Legio Siege bases not despawning when defeated in combat
+
+
+
+0.3.14a
+Hotfixes:
+- Typos
+- Some blueprints missing from a certain BP package
+- More typos
+- other small stuff that doesn't really matter
+
+
 0.3.14
 Additions:
-- Nightingale-class experimental dronecarrier
+- Songbird-class experimental dronecarrier
 - Amboss Heavy Autocannon
 - Legio Infernalis system siege event
-- "Oh Ritter ihr in Rosenrot, erwachet"
+- Added new secrets
 
 Changes:
 - Reduced health of all fountain-type missiles

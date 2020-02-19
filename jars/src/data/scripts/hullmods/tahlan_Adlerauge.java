@@ -27,6 +27,8 @@ public class tahlan_Adlerauge extends BaseHullMod {
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>(1);
     private static final float EFFECT_RANGE = 2000f;
     private static final float AUTOAIM_BONUS = 50f;
+    private static final float RANGE_BOOST = 100f;
+    private static final float SPEED_BOOST = 20f;
 
     // sprite path - necessary if loaded here and not in settings.json
     public static final String SPRITE_PATH = "graphics/fx/shields256.png";
@@ -48,9 +50,9 @@ public class tahlan_Adlerauge extends BaseHullMod {
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
-	    stats.getMissileWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
-	    stats.getBallisticWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
-	    stats.getEnergyWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
+	    stats.getEnergyWeaponRangeBonus().modifyFlat(id, RANGE_BOOST);
+	    stats.getBallisticWeaponRangeBonus().modifyFlat(id, RANGE_BOOST);
+	    stats.getProjectileSpeedMult().modifyPercent(id, SPEED_BOOST);
         stats.getAutofireAimAccuracy().modifyFlat(id, AUTOAIM_BONUS * 0.01f);
 	}
 
@@ -129,19 +131,19 @@ public class tahlan_Adlerauge extends BaseHullMod {
         for (ShipAPI target : targetList) {
             if (MathUtils.getDistance(target.getLocation(), ship.getLocation()) <= EFFECT_RANGE) {
 
-                target.getMutableStats().getEnergyWeaponDamageMult().modifyMult(ADLER_ID,DAMAGE_MULT);
-                target.getMutableStats().getBallisticWeaponDamageMult().modifyMult(ADLER_ID,DAMAGE_MULT);
-                target.getMutableStats().getMissileWeaponDamageMult().modifyMult(ADLER_ID,DAMAGE_MULT);
+                target.getMutableStats().getEnergyWeaponRangeBonus().modifyFlat(ADLER_ID, RANGE_BOOST);
+                target.getMutableStats().getBallisticWeaponRangeBonus().modifyFlat(ADLER_ID, RANGE_BOOST);
                 target.getMutableStats().getAutofireAimAccuracy().modifyFlat(ADLER_ID, AUTOAIM_BONUS * 0.01f);
+                target.getMutableStats().getProjectileSpeedMult().modifyPercent(ADLER_ID, SPEED_BOOST);
 
-                target.setWeaponGlow(1f,COLOR, WEAPON_TYPES);
+                target.setWeaponGlow(0.7f,COLOR, WEAPON_TYPES);
 
             } else {
 
-                target.getMutableStats().getEnergyWeaponDamageMult().unmodify(ADLER_ID);
-                target.getMutableStats().getBallisticWeaponDamageMult().unmodify(ADLER_ID);
-                target.getMutableStats().getMissileWeaponDamageMult().unmodify(ADLER_ID);
+                target.getMutableStats().getEnergyWeaponRangeBonus().unmodify(ADLER_ID);
+                target.getMutableStats().getBallisticWeaponRangeBonus().unmodify(ADLER_ID);
                 target.getMutableStats().getAutofireAimAccuracy().unmodify(ADLER_ID);
+                target.getMutableStats().getProjectileSpeedMult().unmodify(ADLER_ID);
 
                 target.setWeaponGlow(0f,COLOR, WEAPON_TYPES);
                 purgeList.add(target);
@@ -165,8 +167,8 @@ public class tahlan_Adlerauge extends BaseHullMod {
 	}
 
 	public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "all weapon damage";
-		if (index == 1) return "" + (int)((DAMAGE_MULT-1f)*100f) + "%";
+        if (index == 0) return "" + (int)RANGE_BOOST + "su";
+		if (index == 1) return "" + (int)SPEED_BOOST + "%";
         if (index == 2) return "Silberherz-equipped";
 		if (index == 3) return "" + (int)EFFECT_RANGE + "su";
 

@@ -1,0 +1,43 @@
+{
+    "displayName": "Experimental",
+    "fluxCapacitors": 17,
+    "fluxVents": 30,
+    "hullId": "tahlan_Nightingale",
+    "hullMods": [
+        "targetingunit",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Nightingale_experimental",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "pulselaser",
+                "WS0002": "pulselaser"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "tahlan_atropos_tube",
+                "WS0004": "tahlan_atropos_tube",
+                "WS0005": "tahlan_atropos_tube",
+                "WS0006": "tahlan_atropos_tube",
+                "WS0007": "tahlan_atropos_tube",
+                "WS0008": "tahlan_atropos_tube",
+                "WS0009": "tahlan_atropos_tube",
+                "WS0010": "tahlan_atropos_tube"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0011": "tahlan_sol_dios"}
+        }
+    ],
+    "wings": []
+}

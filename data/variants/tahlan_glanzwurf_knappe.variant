@@ -1,0 +1,29 @@
+{
+    "displayName": "Knappe",
+    "fluxCapacitors": 4,
+    "fluxVents": 10,
+    "hullId": "tahlan_glanzwurf",
+    "hullMods": ["hardenedshieldemitter"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_glanzwurf_knappe",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WEAPON_L": "tahlan_glanzwurf_pulse_l",
+                "WEAPON_R": "tahlan_glanzwurf_pulse_r"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "TURRET_L": "tahlan_hueter",
+                "TURRET_R": "tahlan_hueter"
+            }
+        }
+    ],
+    "wings": []
+}

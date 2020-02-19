@@ -1,0 +1,154 @@
+{
+  "hullName": "Glanzwurf Regalia",
+  "hullId": "tahlan_glanzwurf",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/ma/tahlan_glanzwurf.png",
+  "style": "TAHLAN_RR_TECH",
+  "height": 46,
+  "width": 76,
+  "center": [38, 23],
+  "collisionRadius": 84,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 77.5,
+  "viewOffset": 0,
+  "builtInWings":[
+    "tahlan_dorn_funnel_wing",
+  ],
+  "builtInMods": [
+    "tahlan_silberherz_minor",
+    "high_maintenance"
+  ],
+  "builtInWeapons": {
+    "ARM_L": "tahlan_glanzwurf_arm_l",
+    "ARM_R": "tahlan_glanzwurf_arm_r",
+    "SHOULDER_L": "tahlan_glanzwurf_shoulder_l",
+    "SHOULDER_R": "tahlan_glanzwurf_shoulder_r",
+    "WEAPON_L": "tahlan_glanzwurf_pulse_l",
+    "WEAPON_R": "tahlan_glanzwurf_pulse_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "ARM_L",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0.5, 26]
+    },
+    {
+      "id": "ARM_R",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [0.5, -26]
+    },
+    {
+      "id": "SHOULDER_L",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [-2, 33],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "SHOULDER_R",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [-2, -33],
+      "renderOrderMod": 100
+    },
+    {
+      "id": "WEAPON_L",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 0,
+      "locations": [-2, 33],
+      "renderOrderMod": -100
+    },
+    {
+      "id": "WEAPON_R",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": -0,
+      "locations": [-2, -33],
+      "renderOrderMod": -100
+    },
+    {
+      "id": "TURRET_L",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 152,
+      "angle": 61,
+      "locations": [0, 14],
+      "renderOrderMod": 200
+    },
+    {
+      "id": "TURRET_R",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 152,
+      "angle": -61,
+      "locations": [0, -14],
+      "renderOrderMod": 200
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-22.5, 12],
+      "length": 42.5,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-22.5, -12],
+      "length": 42.5,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-22, -12],
+      "length": 19.5,
+      "width": 21,
+      "angle": -180,
+      "contrailSize": 21,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-22, 12],
+      "length": 19.5,
+      "width": 21,
+      "angle": 180,
+      "contrailSize": 21,
+      "style": "TAHLAN_RR_ENGINE_2"
+    }
+  ],
+  "bounds": [
+    -20.5, -4.5,
+    -21, -22,
+    3.5, -35.5,
+    19, -11,
+    19, 11,
+    3.5, 35.5,
+    -21, 22,
+    -20.5, 4.5,
+    -12.5, -0
+  ]
+}

@@ -131,6 +131,7 @@ public class LegioSiegeMissionStage4Construct extends ActionStage implements Fle
             }
 
             status = RaidStageStatus.SUCCESS;
+            raidIntel.sendOutcomeUpdate();
             constructBase(target);
 
             if (raidIntel.getOutcome() != null) {

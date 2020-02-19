@@ -43,6 +43,10 @@
 			"tahlan_legio_package":"graphics/tahlan/icons/cargo/tahlan_package_legio.png",
 			"tahlan_legio_full_package":"graphics/tahlan/icons/cargo/tahlan_package_legio.png",
 			"tahlan_rare_bp_package":"graphics/tahlan/icons/cargo/tahlan_package_rarebp.png",
+			"tahlan_jagdregalia_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
+			"tahlan_silberblut_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
+			"tahlan_halbmond_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
+			"tahlan_schneefall_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
 		},
 		"portraits":{
 			"tahlan_portrait_nia":"graphics/tahlan/portraits/characters/tahlan_portrait_nia.png",

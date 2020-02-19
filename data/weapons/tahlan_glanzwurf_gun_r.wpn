@@ -1,0 +1,37 @@
+{
+  "id": "tahlan_glanzwurf_gun_r",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_glanzwurf_gun_r.png",
+  "hardpointSprite": "",
+  "renderAboveAllWeapons": 0,
+  "glowColor":[116,242,167,255],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    58,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor":[116,242,167,205],
+  "coreColor":[107, 218, 255,250],
+  "width": 10,
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 1,
+  "fireSoundOne": "tahlan_glanz_fire",
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_glanz_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_titanomachy_beam_fringe.png"
+  ],
+}

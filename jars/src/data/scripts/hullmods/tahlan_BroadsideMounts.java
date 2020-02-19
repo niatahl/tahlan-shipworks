@@ -14,8 +14,8 @@ public class tahlan_BroadsideMounts extends BaseHullMod {
 
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
-		stats.getCombatEngineRepairTimeMult().modifyMult(id, 1f - REPAIR_BONUS);
-		stats.getCombatWeaponRepairTimeMult().modifyMult(id, 1f - REPAIR_BONUS);
+		stats.getCombatEngineRepairTimeMult().modifyMult(id, 1f - REPAIR_BONUS*0.01f);
+		stats.getCombatWeaponRepairTimeMult().modifyMult(id, 1f - REPAIR_BONUS*0.01f);
 		stats.getWeaponHealthBonus().modifyPercent(id, WEAPON_HEALTH_BONUS);
 		//stats.getBallisticWeaponFluxCostMod().modifyMult(id, BALLISTIC_FLUX_MULT);
 	}

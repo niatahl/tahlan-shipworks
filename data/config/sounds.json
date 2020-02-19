@@ -18,6 +18,18 @@
 		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.62,"volume":0.95},
 	],
 	
+	"tahlan_glanz_fire":{
+		"sounds":[
+			{"file":"sounds/tahlan/weapons/tahlan_atrapos_fire.ogg","pitch":1.0,"volume":1.0},
+		],
+	},
+	
+	"tahlan_dirge_fire":{
+		"sounds":[
+			{"file":"sounds/tahlan/weapons/tahlan_atrapos_fire.ogg","pitch":1.4,"volume":1.0},
+		],
+	},
+	
 	"tahlan_virtue_loop":
 	[
 		{"file":"sounds/tahlan/fx/tahlan_virtue_loop.ogg","pitch":0.8,"volume":1.1},
@@ -194,9 +206,13 @@
     },
 	"tahlan_sturm_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.70,"volume":2.5},
-           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.75,"volume":2.5},
-           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.80,"volume":2.5},
+           	#{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.70,"volume":2.5},
+           	#{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.75,"volume":2.5},
+           	#{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":0.80,"volume":2.5},
+			{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":1.00,"volume":0.9},
+			{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":1.03,"volume":0.9},
+           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":1.06,"volume":0.9},
+           	{"file":"sounds/tahlan/weapons/tahlan_sturm_fire.ogg","pitch":1.09,"volume":0.9},
         ],
     },
 	"tahlan_porph_impact":{

@@ -28,4 +28,5 @@ Assault Mode,tahlan_assaultmode,,,,,,,,,,5,5,1,12,,,,,,,,,,,graphics/icons/hulls
 Flux Overdrive,tahlan_fluxoverdrive,,,,,,,,,,2,10,2,20,,,TRUE,,,,,,TRUE,,graphics/icons/hullsys/high_energy_focus.png
 Variable Ammo,tahlan_variable_ammo,,,0,,,,,3,0,0.15,,0,0.05,,,,,,,,,,,graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png
 Weapon Stabilizers,tahlan_weaponstabilization,,,,,,,,,,0.5,7,0.5,14,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Microfusion Rounds,tahlan_explosiverounds,,,,,,,,3,0.05,0,3,0,0.5,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Microfusion Rounds,tahlan_explosiverounds,,,,,,,,3,0.05,0,5,0,0.5,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Plasma Rounds,tahlan_plasmarounds,,,,,,,,3,0.05,0,2,0,0.5,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png

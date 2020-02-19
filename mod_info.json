@@ -2,8 +2,8 @@
 	"id":"tahlan", # internal id
 	"name":"Tahlan Shipworks", # displayed to the player
 	"author":"Nia and Nicke",
-	"version":"0.3.14",
-	"description":"The Knights of Ni made a ship pack",
+	"version":"0.3.14c",
+	"description":"A ship pack that suffers from feature creep",
 	"gameVersion":"0.9.1a",
 	"jars":["jars/TahlanShipworks.jar"],
 	"modPlugin":"data.scripts.tahlan_ModPlugin"

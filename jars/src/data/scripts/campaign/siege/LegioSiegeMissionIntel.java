@@ -64,6 +64,9 @@ public class LegioSiegeMissionIntel extends RaidIntel implements RaidDelegate {
         this.from = from;
 
         float orgDur = 15f + 15f * (float) Math.random();
+        if (Global.getSettings().isDevMode()) {
+            orgDur = 1f;
+        }
         addStage(new LegioSiegeMissionStage1Organize(this, from, orgDur));
 
         SectorEntityToken gather = from.getPrimaryEntity();
@@ -89,6 +92,14 @@ public class LegioSiegeMissionIntel extends RaidIntel implements RaidDelegate {
         addStage(new LegioSiegeMissionStage5Defend(this, target));
 
         Global.getSector().getIntelManager().addIntel(this);
+    }
+
+    @Override
+    public String getCommMessageSound() {
+        if (isSendingUpdate()) {
+            return getSoundStandardUpdate();
+        }
+        return "ui_shutdown_industry";
     }
 
     @Override
@@ -235,6 +246,7 @@ public class LegioSiegeMissionIntel extends RaidIntel implements RaidDelegate {
     }
 
     public void sendOutcomeUpdate() {
+        outcome = LegioRaidSetupOutcome.BASE_ESTABLISHED;
         sendUpdateIfPlayerHasIntel(OUTCOME_UPDATE, false, true);
         log.info(String.format("Sending outcome update %s for raid setup at %s", outcome.name(), system.getNameWithLowercaseType()));
     }

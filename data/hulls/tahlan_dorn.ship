@@ -1,0 +1,48 @@
+{
+  "hullName": "Dorn",
+  "hullId": "tahlan_dorn",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/ma/tahlan_dorn.png",
+  "style": "TAHLAN_RR_TECH",
+  "height": 21,
+  "width": 12,
+  "center": [6, 10.5],
+  "collisionRadius": 16.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 14.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [7.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-9, -0],
+      "length": 21,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-8.5, -0],
+      "length": 10,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "TAHLAN_RR_ENGINE_2"
+    }
+  ],
+  "bounds": [
+    -6.5, -4,
+    9.5, -0,
+    -6.5, 4
+  ]
+}

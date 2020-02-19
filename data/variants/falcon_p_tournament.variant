@@ -1,0 +1,48 @@
+{
+    "displayName": "Tournament",
+    "fluxCapacitors": 15,
+    "fluxVents": 0,
+    "hullId": "falcon_p",
+    "hullMods": [
+        "eccm",
+        "missleracks",
+        "converted_hangar"
+    ],
+    "permaMods": [],
+    "variantId": "falcon_p_tournament",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 007": "sabotpod",
+                "WS 008": "sabotpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 001": "reaper",
+                "WS 002": "reaper"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 005": "harpoonpod",
+                "WS 006": "harpoonpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 009": "pdlaser",
+                "WS 010": "pdlaser"
+            }
+        }
+    ],
+    "wings": ["wasp_wing"]
+}

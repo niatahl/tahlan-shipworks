@@ -78,7 +78,8 @@ tahlan_Trill,SHIP,"The Trill was once a prototype vessel for a new type of flux 
 
 While the experiment was technically successful, attempts at upscaling the technology to more than a single small mount ran into too many major issue and funding was eventually cut. A few of the prototype vessels remain, strewn across the sector and sought after by many a collector.",,,
 tahlan_Flagellator,SHIP,"Built for speed and equipped with an early variant of graviton beam, the Flagellator is a dedicated hunter-killer designed to chase down and eliminate fast targets.",,,
-tahlan_Nightingale,SHIP,,,,
+tahlan_Nightingale,SHIP,"An offshoot of the AI fleet development program of Tri-Tachyon, the Songbird was designed as a highly resilient support ship. Armed to the teeth and carrying three wings of swarmer drones, it can be a nightmare for any fleet lacking in point-defense.",,,
+tahlan_Prim,SHIP,A small drone fighter equipped with swarmer SRMs. Weak on its own it relies on numbers to pose a threat.,,,
 ,,,,,
 ,,,,,
 #Legio Infernalis,,,,,
@@ -216,6 +217,10 @@ tahlan_eisenflug,SHIP,"The most common Jadgregalia and standard strikecraft of R
 tahlan_schneefall,SHIP,"Following the success of the Silberblut Regalia and their successor models, Rosenritter doctrine became even more focused on Regalia-centric combat tactics. This new shift in doctrine called for a unique kind of capital to serve as an anchor and supporting unit for Regalia in combat and eventually gave birth to the Nachtgesang. To take advantage of the computational capabilities of the Silberherz, the Nachtgesang was outfitted with a massive sensor and scanner array at its core, capable of feeding combat data to nearby Regalia to boost their combat performance further.
 
 While primarily designed for its support role, the ship is by no means to be underestimated in combat. Light in gun mounts, it makes up for this with an impressive array of missile hardpoints and above average speed. Capable of taking on most capitals head to head, it can effectively hold the line while its allied Regalia tear through the enemy flanks.",,,
+tahlan_glanzwurf,SHIP,"Developed after the Silberblut Regalia, the Glanzwurf was the first successful attempt of integrating the Silberherz in a smaller frame. While its performance characteristics are naturally lower than those of its big sister, it can hold its own in battle. Intended to act in a supportive role alongside Silberblut units, it was equipped with a wing of Dorn-class support funnels that allow it to provide point-defense support for allies.
+
+Generally seen as a stepping stone for aspiring Regalia pilots on their path to the title of Graf, the Glanzwurf is notorious for having an unusually high mortality rate as these pilots are often eager to prove their mettle and can succumb to overconfidence in their abilities. Grim as this may sound, it is seen as an effective filter for potential future Grafs.",,,
+tahlan_dorn,SHIP,"A remote-controlled drone weapon, the Dorn is controlled by Regalia pilots via their neural uplink. Armed with a weak but versatile burst beam, it primarily serves as point defense weapon, but can also provide fire support in close-range engagements.",,,
 ,,,,,
 ,,,,,
 # Weapons,,,,,
@@ -288,6 +293,7 @@ tahlan_burstgoll,WEAPON,A burst-fire variant of the Goll designed to cripple mos
 tahlan_flood,WEAPON,"A massive array of fountain-type micromissile tubes built into the Scathach's bow, capable of firing enough missiles to overwhelm all but the mightiest of PD arrays.",,,
 tahlan_phira_burst,WEAPON,"A heavy triple-barrel turret integral to the Metafalica. Linked to its variable ammo system, it can adapt to any situation.",,,
 tahlan_amboss,WEAPON,"The result of scaling up an autocannon to excessive size and loading it with high-explosive ammunition. While limited by relatively short range, the sheer firepower and armor-breaking potential makes this weapon fairly effective.",,,
+tahlan_sol_dios,WEAPON,"A massive omnidirectional beam emitter central to the Songbird's design. Functioning both as point-defense and anti-ship weapon, it gives the Songbird excellent flexibility in combat.",,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,
@@ -305,6 +311,10 @@ tahlan_schwalbenflug_l,WEAPON,"While the primary weapon arms on Regalia are rare
 tahlan_nadel_r,WEAPON,"Highly respected for its pinpoint accuracy, the Nadel is much beloved as an elegant weapon by Rosenritter Grafs who have the privilege of mounting one on their Regalia. The weapon fires a semi-armor-piercing sabot round that delivers high kinetic damage against shields and can wound even armored targets.",,,
 tahlan_nadel_l,WEAPON,"Highly respected for its pinpoint accuracy, the Nadel is much beloved as an elegant weapon by Rosenritter Grafs who have the privilege of mounting one on their Regalia. The weapon fires a semi-armor-piercing sabot round that delivers high kinetic damage against shields and can wound even armored targets.",,,
 tahlan_hueter,WEAPON,"Designed primarily for use on Regalia, the Hüter is a smart point-defense system that fires interceptor micromissiles. While rather ineffective against larger targets, the missiles are also too small to be tracked by enemy point-defense when used to supplement primary firepower.",,,
+tahlan_glanzwurf_pulse_l,WEAPON,"Developed specifically for the Glanzwurf Regalia, this advanced pulse blaster was based on the common pulse laser, but upgraded with a dual chamber system and auxiliary capacitor banks that allow it to switch to a powerful plasma blast mode similar to the Sturmkanone. While extremely powerful, this functionality is limited in its uses due to limited charge capacity.",,,
+tahlan_glanzwurf_pulse_r,WEAPON,"Developed specifically for the Glanzwurf Regalia, this advanced pulse blaster was based on the common pulse laser, but upgraded with a dual chamber system and auxiliary capacitor banks that allow it to switch to a powerful plasma blast mode similar to the Sturmkanone. While extremely powerful, this functionality is limited in its uses due to limited charge capacity.",,,
+,,,,,
+,,,,,
 ,,,,,
 ,,,,,
 # Ship Systems,,,,,
@@ -334,8 +344,9 @@ tahlan_assaultmode,SHIP_SYSTEM,Engages the ship's assault mode. Increases ballis
 tahlan_fluxoverdrive,SHIP_SYSTEM,"Redirects hard flux load from shields to boost ship systems. Boosts ballistic weapon rate of fire, energy weapon damage and all mobility by up to 50% and reduces all damage taken by up to 50%. Effect scales with current hard flux level, reaching maximum effectiveness at 90% hard flux. Disables shields while active.",Boost,,
 tahlan_royalcharge,SHIP_SYSTEM,"Activates damper fields, reducting all damage by 90%, and charges forward.",Movement,,
 tahlan_variable_ammo,SHIP_SYSTEM,"Switches firing mode of built-in weapons between Shock Cannon, Impact Driver and Type-3 Shells.",Assault,,
-tahlan_weaponstabilization,SHIP_SYSTEM,Stabilizes weapons for increased lethality. Increases ballistic and energy damage by 50% and range and projectile velocity by 25%. Reduces top speed by 50%.,,,
+tahlan_weaponstabilization,SHIP_SYSTEM,"Stabilizes weapons for increased lethality. Increases ballistic and energy damage by 25%, range by 200su and projectile velocity by 25%. Reduces top speed by 25%.",,,
 tahlan_explosiverounds,SHIP_SYSTEM,"Loads microfusion rounds into any equipped Stahlhagel-type cannons, which cause an additional explosion on impact dealing 50 energy damage in a 100su radius.",,,
+tahlan_plasmarounds,SHIP_SYSTEM,Switches the built-in arm-weapons to a high-energy plasma mode similar to a Sturmkanone for a short duration. Plasma projectiles do 300 energy damage and detonate for an additional 100 fragmentation aoe damage.,,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,

@@ -46,7 +46,8 @@
 		#"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "hegemony"],
 		"weapons":[
 			"tahlan_armiger",
-			"tahlan_efreet"
+			"tahlan_efreet",
+			"tahlan_amboss"
 		],
 	},
 	"priorityWeapons":{

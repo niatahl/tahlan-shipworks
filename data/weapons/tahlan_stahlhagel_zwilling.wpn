@@ -33,11 +33,11 @@
   "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
     "length": 30,
-    "particleColor": [110,207,255,150],
-    "particleCount": 20,
+    "particleColor": [160,247,255,120],
+    "particleCount": 15,
     "particleDuration": 0.2,
     "particleSizeMin": 10,
-    "particleSizeRange": 15,
+    "particleSizeRange": 10,
     "spread": 0
   },  
   "numFrames":4,

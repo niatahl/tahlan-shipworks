@@ -1,7 +1,7 @@
 {
   "animationType": "GLOW",
   "barrelMode": "ALTERNATING",
-  "fireSoundOne": "tahlan_atrapos_fire",
+  "fireSoundOne": "tahlan_dirge_fire",
   #"fireSoundTwo": "tahlan_atrapos_loop",
   "everyFrameEffect":"data.scripts.weapons.tahlan_DisparaxOscillationScript",
   "coreColor": [

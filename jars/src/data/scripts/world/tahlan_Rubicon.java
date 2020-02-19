@@ -25,6 +25,7 @@ import java.util.Arrays;
 
 public class tahlan_Rubicon  {
     public void generate(SectorAPI sector) {
+
         StarSystemAPI system = sector.createStarSystem("Rubicon");
         system.getLocation().set(-28000, -4500);
         system.setBackgroundTextureFilename("graphics/tahlan/backgrounds/tahlan_rubicon.jpg");

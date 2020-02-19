@@ -172,7 +172,9 @@ public class LegioSiegeManager implements EveryFrameScript {
         }
         
         StarSystemAPI target = targets.pick();
-        log.info("picked " + target.getNameWithLowercaseType() + " as target for siege fleet");
+        if (target!=null) {
+            log.info("picked " + target.getNameWithLowercaseType() + " as target for siege fleet");
+        }
         
         return target;
     }

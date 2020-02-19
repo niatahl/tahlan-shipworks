@@ -13,7 +13,6 @@
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_regaliagantry",
-    "repair_gantry",
     "surveying_equipment"
   ],
   "weaponSlots": [
@@ -23,7 +22,7 @@
       "type": "HYBRID",
       "mount": "TURRET",
       "arc": 146,
-      "angle": 70.5,
+      "angle": 62.5,
       "locations": [59, 85]
     },
     {
@@ -32,31 +31,31 @@
       "type": "HYBRID",
       "mount": "TURRET",
       "arc": 146,
-      "angle": -70.5,
+      "angle": -62.5,
       "locations": [59, -85]
     },
     {
       "id": "WS0003",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 129,
-      "angle": -112,
+      "angle": -97,
       "locations": [17, -88]
     },
     {
       "id": "WS0004",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 129,
-      "angle": 112,
+      "angle": 97,
       "locations": [17, 88]
     },
     {
       "id": "WS0005",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 110,
       "angle": 36.5,
@@ -65,7 +64,7 @@
     {
       "id": "WS0006",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 110,
       "angle": -36.5,
@@ -74,7 +73,7 @@
     {
       "id": "WS0007",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 146,
       "angle": -142,
@@ -83,7 +82,7 @@
     {
       "id": "WS0008",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "HYBRID",
       "mount": "TURRET",
       "arc": 146,
       "angle": 142,
@@ -106,7 +105,6 @@
       "arc": 360,
       "angle": 0,
       "locations": [
-        2.5, 18.5,
         3, 32,
         10, 41
       ]
@@ -119,7 +117,7 @@
       "arc": 360,
       "angle": 0,
       "locations": [
-        2, -6.5,
+        2, 19.5,
         1.5, 7
       ]
     },
@@ -131,9 +129,8 @@
       "arc": 360,
       "angle": 0,
       "locations": [
-        2.5, -18,
-        2.5, -31,
-        11, -40.5
+        2.5, -6.5,
+        2.5, -23
       ]
     },
     {
@@ -207,6 +204,18 @@
       "arc": 78,
       "angle": -24,
       "locations": [164, -89.5]
+    },
+    {
+      "id": "LB 4",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        4, -33,
+        11.5, -41.5
+      ]
     }
   ],
   "engineSlots": [

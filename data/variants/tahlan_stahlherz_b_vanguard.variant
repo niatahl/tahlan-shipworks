@@ -1,0 +1,41 @@
+{
+    "displayName": "Vanguard",
+    "fluxCapacitors": 2,
+    "fluxVents": 20,
+    "hullId": "tahlan_stahlherz_b",
+    "hullMods": [
+        "hardenedshieldemitter",
+        "targetingunit"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_stahlherz_b_vanguard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WEAPON_L": "tahlan_stahlhagel_l"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "harpoon",
+                "WS0004": "harpoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WEAPON_R": "tahlan_panzerfaust_r"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_hueter",
+                "WS0002": "tahlan_hueter"
+            }
+        }
+    ]
+}

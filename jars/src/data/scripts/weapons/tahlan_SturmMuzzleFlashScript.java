@@ -98,8 +98,8 @@ public class tahlan_SturmMuzzleFlashScript implements EveryFrameWeaponEffectPlug
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(230,230,255, 125));
-        PARTICLE_COLOR.put("SMOKE_3", new Color(200,210,220, 105));
+        PARTICLE_COLOR.put("default", new Color(235,245,255, 125));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(235,255,245, 105));
         PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(107, 218, 255));
         PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 224, 202));
     }

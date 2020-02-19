@@ -53,7 +53,14 @@ Due to their high complexity, Regalia are directly controlled by their captain v
 Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
 
 %s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz.png
-Audlerauge Array,tahlan_adlerauge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Adlerauge,"Built into the bow of the ship, this massive combat scanner can detect any weakpoints in enemy defenses to improve the effectiveness of the ship's weapons, effectively increasing all weapon damage by %s and improving autofire accuracy.
+Silberherz Subcore,tahlan_silberherz_minor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_SilberherzMinor,"The arcane technology of this warmachine is powered and controlled by a downscaled variant of the Silberherz, a hyperadvanced combined computing and power core.
+
+Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
+
+Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
+
+%s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz_minor.png
+Adlerauge Array,tahlan_adlerauge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Adlerauge,"Built into the bow of the ship, this massive combat scanner supplies improved targeting data, increasing the effective range of energy and ballistic weapons by %s, boosting projectile velocity by %s and improving autofire accuracy.
 
 The Adlerauge will also automatically link with any %s Regalia within a %s radius providing them with the same bonuses.",Buffs self and allies,graphics/tahlan/hullmods/tahlan_adlerauge.png
 Regalia Gantry,tahlan_regaliagantry,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_RegaliaGantry,This vessel is equipped with the necessary equipment for servicing and maintaining Regalia.,Regalia maintenance,graphics/tahlan/hullmods/tahlan_regaliagantry.png

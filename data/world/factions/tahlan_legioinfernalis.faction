@@ -46,6 +46,18 @@
 		"hulls":{
 			"tahlan_DunScaith":0.5,
 			
+			"paragon":2,
+			"astral":2,
+			"istl_jeannedarc":2,
+			"diableavionics_pandemonium":2,
+			"ii_caesar":2,
+			"ii_matriarch":2,
+			"ii_olympus":2,
+			"onslaught_GMHQ":3,
+			"vayra_prophet":2,
+			"MSS_Javanicus_B":2,
+			
+			
 			"SKR_clipper_d":0.1,
             "SKR_poisonivy":0.1,
             "SKR_cassowaryRH":0.1,
@@ -155,9 +167,9 @@
 		"carriers":1,
 		"phaseShips":1,
 		
-		"officerQuality":2,
-		"shipQuality":3,
-		"numShips":2,
+		"officerQuality":3,
+		"shipQuality":4,
+		"numShips":3,
 		
 		"shipSize":3,
 		

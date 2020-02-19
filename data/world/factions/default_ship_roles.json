@@ -17,6 +17,7 @@
 		"tahlan_lasher_pi_overdriven":3,
 		"tahlan_lasher_pi_support":3,
 		"tahlan_lasher_pi_elite":4,
+		"tahlan_glanzwurf_knappe":10,
 	},
 	"combatMedium":{
 		"tahlan_Vale_crusader":10,
@@ -38,6 +39,10 @@
 		"tahlan_Flagellator_pi_missile":3,
 		"tahlan_Flagellator_pi_overdriven":3,
 		"tahlan_Flagellator_pi_strike":4,
+		"tahlan_stahlherz_paladin":10,
+		"tahlan_stahlherz_b_vanguard":10,
+		"tahlan_stahlherz_c_longbowman":10,
+		
 	},
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
@@ -63,6 +68,7 @@
 		"tahlan_Phoca_standard":4,
 		"tahlan_Phoca_elite":3,
 		"tahlan_Phoca_overdriven":3,
+		"tahlan_Nightingale_experimental":10,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
@@ -81,6 +87,7 @@
 		"tahlan_Ristreza_overdriven":2,
 		"tahlan_Ristreza_b_standard":10,
 		"tahlan_Nibelung_crg_elite":10,
+		"tahlan_schneefall_lichtbringer":10,
 	},
 	
 	
@@ -123,6 +130,7 @@
 			"tahlan_Hresvelgr_rg_standard":5,
 			"tahlan_Hresvelgr_rg_combat":3,
 			"tahlan_Hresvelgr_rg_outdated":2,
+			"tahlan_halbmond_citadel":10,
 	},
 
 	# phase ships

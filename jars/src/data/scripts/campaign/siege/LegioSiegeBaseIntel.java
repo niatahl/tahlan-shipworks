@@ -95,20 +95,22 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
 
     public static final float BASE_LIGHT_PATROLS = 2f;
     public static final float LIGHT_PATROLS_PER_CYCLE = 1f;
-    public static final float MAX_LIGHT_PATROLS = 7f;
+    public static final float MAX_LIGHT_PATROLS = 5f;
 
-    public static final float BASE_MED_PATROLS = 2f;
+    public static final float BASE_MED_PATROLS = 1f;
     public static final float MED_PATROLS_PER_CYCLE = 0.334f;
-    public static final float MAX_MED_PATROLS = 5f;
+    public static final float MAX_MED_PATROLS = 3f;
 
-    public static final float BASE_HEAVY_PATROLS = 1f;
-    public static final float HEAVY_PATROLS_PER_CYCLE = 0.2f;
-    public static final float MAX_HEAVY_PATROLS = 3f;
+    public static final float BASE_HEAVY_PATROLS = 0f;
+    public static final float HEAVY_PATROLS_PER_CYCLE = 0.334f;
+    public static final float MAX_HEAVY_PATROLS = 2f;
 
     public static Object BOUNTY_EXPIRED_PARAM = new Object();
     public static Object DISCOVERED_PARAM = new Object();
 
     protected StarSystemAPI target = null;
+
+    protected CampaignFleetAPI addedListenerTo = null;
 
     public static class BaseBountyData {
 
@@ -140,11 +142,12 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
 
     public LegioSiegeBaseIntel(StarSystemAPI system) {
         this.system = system;
+        this.target = system;
 
         createStation();
 
         Global.getSector().getIntelManager().addIntel(this, true);
-        timestamp = null;
+        timestamp = Global.getSector().getClock().getTimestamp();
 
         Global.getSector().getListenerManager().addListener(this);
         Global.getSector().getEconomy().addUpdateListener(this);
@@ -218,8 +221,12 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
         MilitaryBase base = (MilitaryBase) market.getIndustry(Industries.MILITARYBASE);
         // try to force spawn patrols here?
 
+        Global.getSector().getIntelManager().addIntel(this);
+        Global.getSector().addScript(this);
+
         // force a check for bounty/raid
         monthlyInterval.forceIntervalElapsed();
+        advanceImpl(0f);
         advanceImpl(0f);
 
         log.info(String.format("Added legio siege base at [%s]", system.getName()));
@@ -371,8 +378,6 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
         return addedListenerTo;
     }
 
-    protected CampaignFleetAPI addedListenerTo = null;
-
     @Override
     protected void advanceImpl(float amount) {
         float days = Global.getSector().getClock().convertToDays(amount);
@@ -407,7 +412,7 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
         if (DebugFlags.RAID_DEBUG) {
             days *= 100f;
         }
-        
+
         elapsedDays += days;
         monthlyInterval.advance(days);
 
@@ -418,12 +423,12 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
                 endBounty();
             }
         }
-        
+
         if (BASE_DURATION > 0 && elapsedDays >= BASE_DURATION && !isEnding()) {
             endAfterDelay();
             return; // no switching targets while expired it's annoying
         }
-        
+
         if (monthlyInterval.intervalElapsed()) {
             monthsWithSameTarget++;
             raidTimeoutMonths--;
@@ -466,7 +471,6 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
     @Override
     protected void notifyEnding() {
         super.notifyEnding();
-        endBounty();
         log.info(String.format("Removing legio siege base at [%s]", system.getName()));
         Global.getSector().getListenerManager().removeListener(this);
         Global.getSector().getEconomy().removeMarket(market);

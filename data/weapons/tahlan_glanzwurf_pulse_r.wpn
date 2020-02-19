@@ -1,0 +1,38 @@
+{
+  "id": "tahlan_glanzwurf_pulse_r",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_glanz_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_GlanzMuzzleFlashScript",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_glanzwurf_pulse_r.png",
+  "hardpointSprite": "",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    35,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [255,255,255,155],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "spread": 10
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "pulse_laser_fire"
+}

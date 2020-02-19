@@ -1,0 +1,46 @@
+{
+    "displayName": "Citadel",
+    "fluxCapacitors": 4,
+    "fluxVents": 50,
+    "hullId": "tahlan_halbmond",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_halbmond_citadel",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "tachyonlance"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "gravitonbeam",
+                "WS0004": "gravitonbeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "guardian"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "tahlan_hueter",
+                "WS0006": "tahlan_hueter",
+                "WS0007": "tahlan_hueter",
+                "WS0008": "tahlan_hueter"
+            }
+        }
+    ],
+    "wings": [
+        "tahlan_eisenflug_regalia_wing",
+        "tahlan_eisenflug_regalia_wing",
+        "tahlan_eisenflug_regalia_wing",
+        "tahlan_eisenflug_regalia_wing"
+    ]
+}
