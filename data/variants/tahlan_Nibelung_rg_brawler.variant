@@ -1,0 +1,69 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 19,
+    "fluxVents": 50,
+    "hullId": "tahlan_Nibelung_rg",
+    "hullMods": [
+        "heavyarmor",
+        "unstable_injector"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_Nibelung_rg_brawler",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hellbore",
+                "WS0002": "hellbore",
+                "WS0003": "hellbore"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "sabotpod",
+                "WS0023": "sabotpod",
+                "WS0024": "tahlan_dragonslayer",
+                "WS0025": "tahlan_dragonslayer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "railgun",
+                "WS0013": "railgun",
+                "WS0014": "railgun",
+                "WS0015": "railgun",
+                "WS0016": "railgun",
+                "WS0017": "railgun",
+                "WS0018": "railgun",
+                "WS0019": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "heavyac",
+                "WS0021": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "vulcan",
+                "WS0005": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan"
+            }
+        }
+    ]
+}

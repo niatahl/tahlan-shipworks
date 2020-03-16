@@ -18,6 +18,7 @@
 		"tahlan_lasher_pi_support":3,
 		"tahlan_lasher_pi_elite":4,
 		"tahlan_glanzwurf_knappe":10,
+		"tahlan_glanzwurf_b_soldner":10,
 	},
 	"combatMedium":{
 		"tahlan_Vale_crusader":10,
@@ -42,6 +43,7 @@
 		"tahlan_stahlherz_paladin":10,
 		"tahlan_stahlherz_b_vanguard":10,
 		"tahlan_stahlherz_c_longbowman":10,
+		"tahlan_stahlherz_d_smiter":10,
 		
 	},
 	"combatLarge":{
@@ -88,6 +90,7 @@
 		"tahlan_Ristreza_b_standard":10,
 		"tahlan_Nibelung_crg_elite":10,
 		"tahlan_schneefall_lichtbringer":10,
+		"tahlan_Nibelung_rg_brawler":10,
 	},
 	
 	
@@ -127,9 +130,7 @@
 			"tahlan_Hresvelgr_p_standard":4,
 			"tahlan_Hresvelgr_X_beamer":5,
 			"tahlan_Hresvelgr_X_missile":5,
-			"tahlan_Hresvelgr_rg_standard":5,
-			"tahlan_Hresvelgr_rg_combat":3,
-			"tahlan_Hresvelgr_rg_outdated":2,
+			"tahlan_Hresvelgr_rg_combat":10,
 			"tahlan_halbmond_citadel":10,
 	},
 

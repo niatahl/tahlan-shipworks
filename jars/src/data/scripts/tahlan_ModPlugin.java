@@ -10,7 +10,9 @@ import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
-import data.scripts.ai.tahlan_FountainAI;
+import data.scripts.weapons.ai.tahlan_FountainAI;
+import data.scripts.weapons.ai.tahlan_KriegsmesserAI;
+import data.scripts.weapons.ai.tahlan_TwoStageMissileAI;
 import data.scripts.campaign.tahlan_regaliablueprintscript;
 import data.scripts.world.tahlan_FactionRelationPlugin;
 import data.scripts.world.tahlan_Lethia;
@@ -42,6 +44,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public static List<String> SHIELD_HULLMODS = new ArrayList<String>();
 
     public static final String FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl";
+    public static final String KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl";
+    public static final String DOLCH_MISSILE_ID = "tahlan_dolch_msl";
 
     private static final String SETTINGS_FILE = "tahlan_settings.ini";
 
@@ -104,10 +108,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             if (ENABLE_LEGIO) new tahlan_Rubicon().generate(sector);
         }
 
-        //Spawning hidden things
-        tahlan_HalbmondSpawnScript.spawnHalbmond(sector);
-        tahlan_DerelictsSpawnScript.spawnDerelicts(sector);
-
         //Legio things
         if (ENABLE_LEGIO) {
 
@@ -153,6 +153,13 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     }
 
     @Override
+    public void onNewGameAfterProcGen() {
+        //Spawning hidden things
+        tahlan_HalbmondSpawnScript.spawnHalbmond(Global.getSector());
+        tahlan_DerelictsSpawnScript.spawnDerelicts(Global.getSector());
+    }
+
+    @Override
     public void onGameLoad(boolean newGame) {
     }
 
@@ -161,6 +168,10 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         switch (missile.getProjectileSpecId()) {
             case FOUNTAIN_MISSILE_ID:
                 return new PluginPick<MissileAIPlugin>(new tahlan_FountainAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
+            case KRIEGSMESSER_MISSILE_ID:
+                return new PluginPick<MissileAIPlugin>(new tahlan_KriegsmesserAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
+            case DOLCH_MISSILE_ID:
+                return new PluginPick<MissileAIPlugin>(new tahlan_TwoStageMissileAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
             default:
         }
         return null;

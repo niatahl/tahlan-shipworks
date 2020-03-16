@@ -1,3 +1,77 @@
+0.3.15
+Additions:
+- Added hint for Traumtänzer location to the end of Halbmond blueprint extraction quest
+- Added Strahlblick medium burst beam
+- Added Strahlhammer large burst beam
+- Added Hagelsturm large ballistic weapon
+- Added Crusher Drive ship system
+	- Replaces Assault burn on Flagellator variants and Castella (LP)
+- Added the Pippa (Parallel Ionized Particle Pulse Array), a large energy weapon
+
+Changes:
+- Castella and Castella (LI) ship system changed to heavy damper field
+- Buffed Legio Smartguns: Better tracking, dps and projectile velocity
+- Weapon Stabilization
+	- Removed top speed reduction
+	- Increased projectile speed bonus from 25% to 50%
+	- Added 50% recoil reduction
+- Glanzwurf Regalia
+	- Removed High Maintenance
+	- Kfg.A: Weapon range reduced from 800 to 700
+	- Kfg.B: newly added support/escort variant
+- Silberblut Regalia
+	- Removed High Maintenance
+	- Kfg.C: Missile arm replaced with beam arm
+	- Kfg.D: new variant with missile and pulse blaster arm
+- Halbmond
+	- Added High Maintenance
+- Nachtgesang
+	- Top speed increased to 60
+- Traumtänzer
+	- Added High Maintenance
+	- Top speed increased to 60
+- Castigator Variants (Standard, GH, Legio)
+	- Armor increased from 1200 to 1300
+	- Shield efficiency reduced from 1.0 to 1.1
+	- Shield upkeep reduced from 0.4 to 0.3
+	- DP increased from 26 to 28
+	- Castigator LI large mount reverted to hybrid
+- Added Kassadari Claim condition to Atanor and Heridal in the Lethia system
+	- Reduces Accessibility by 50%
+	- Lowers growth rate based on market size
+- Conand efficiency reduced from 0.8 to 0.9
+- Timeless
+	- Removed damage boost from ship system
+	- Shield efficiency reduced to 0.8
+- Timeless Prototype
+	- Shielf efficiency reduced to 0.9
+	- PPT reduced to 600s
+- Nameless
+	- Shield efficiency reduced to 0.8
+- Songbird
+	- Increased health and armour of built-in drones
+	- Increased shield efficiency from 1.0 to 0.9
+- Nibelung
+	- Medium turret arcs adjusted to no longer have frontal convergence
+	- You can thank the people making silly frontal builds for that
+
+
+0.3.14d
+Additions:
+- Added Kriegsmesser Torpedo Launcher
+- Added Dolch MRM Launcher
+
+Changes:
+- Further tweaks to Legio Siege fleet sizes
+- Legio bases should now properly time out eventually
+
+Fixes:
+- Fixed Vund-pattern Autoforge being nonfunctional on some ships
+- Fixed Adlerauge Array not affecting Regalia with the Silberherz Subcore hullmod
+- Fixed hidden derelicts not always spawning properly
+- Fixed Traumtänzer being included in the Nachtgesang BP package
+
+
 0.3.14c
 Additions:
 - Added a configuration file named "tahlan_settings.ini" allowing users to disable various mod features:

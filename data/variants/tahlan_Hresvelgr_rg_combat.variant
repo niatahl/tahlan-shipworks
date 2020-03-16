@@ -1,7 +1,7 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 0,
-    "fluxVents": 34,
+    "fluxCapacitors": 7,
+    "fluxVents": 50,
     "hullId": "tahlan_Hresvelgr_rg",
     "hullMods": ["targetingunit"],
     "permaMods": [],
@@ -12,8 +12,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "heavymauler",
-                "WS0006": "heavymauler"
+                "WS0013": "hellbore",
+                "WS0014": "hellbore"
             }
         },
         {
@@ -28,10 +28,10 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "hveldriver",
-                "WS0002": "hveldriver",
-                "WS0004": "hveldriver",
-                "WS0005": "hveldriver"
+                "WS0003": "heavyac",
+                "WS0004": "heavyac",
+                "WS0005": "heavyac",
+                "WS0006": "heavyac"
             }
         },
         {
@@ -46,12 +46,12 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
+                "WS0001": "vulcan",
+                "WS0002": "vulcan",
                 "WS0007": "vulcan",
                 "WS0008": "vulcan",
                 "WS0011": "vulcan",
                 "WS0012": "vulcan",
-                "WS0013": "vulcan",
-                "WS0014": "vulcan",
                 "WS0015": "vulcan",
                 "WS0016": "vulcan"
             }
@@ -60,9 +60,9 @@
     "wings": [
         "gladius_wing",
         "gladius_wing",
-        "warthog_wing",
-        "warthog_wing",
-        "thunder_wing",
-        "thunder_wing"
+        "gladius_wing",
+        "gladius_wing",
+        "",
+        ""
     ]
 }

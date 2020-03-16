@@ -37,8 +37,8 @@ public class tahlan_TemporalCoordinatorStats extends BaseShipSystemScript {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
 
-        stats.getEnergyWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
-        stats.getBallisticWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
+        //stats.getEnergyWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
+        //stats.getBallisticWeaponDamageMult().modifyMult(id,DAMAGE_MULT);
 
         if (effectLevel > 0) {
             float maxRangeBonus = 5f;
@@ -69,8 +69,8 @@ public class tahlan_TemporalCoordinatorStats extends BaseShipSystemScript {
 
         Global.getCombatEngine().getTimeMult().unmodify(id);
         stats.getTimeMult().unmodify(id);
-        stats.getBallisticWeaponDamageMult().unmodify(id);
-        stats.getEnergyWeaponDamageMult().unmodify(id);
+        //stats.getBallisticWeaponDamageMult().unmodify(id);
+        //stats.getEnergyWeaponDamageMult().unmodify(id);
 
         for (ShipAPI fighter : getFighters(ship)) {
             if (fighter.isHulk()) continue;

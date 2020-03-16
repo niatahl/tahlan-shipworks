@@ -1,0 +1,66 @@
+{
+  "id": "tahlan_kriegsmesser",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_kriegsmesser_msl",
+  "type": "MISSILE",
+  "size": "LARGE",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_kriegsmesser_launcher_turret.png",
+  "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_kriegsmesser_launcher_hp.png",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    10,
+    10.5,
+    7,
+    3.5,
+    7,
+    -3.5,
+    10,
+    -10.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    -0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    16,
+    10.5,
+    13,
+    3.5,
+    13,
+    -3.5,
+    16,
+    -10.5
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 20,
+    "particleSizeRange": 20,
+    "cloudParticleCount": 3,
+    "cloudDuration": 1,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackSpread": 10,
+    "particleColor": [
+      205,
+      205,
+      215,
+      255
+    ]
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_kriegsmesser_fire"
+}

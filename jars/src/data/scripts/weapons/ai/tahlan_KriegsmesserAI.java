@@ -1,5 +1,5 @@
 //By Tartiflette, fast and highly customizable Missile AI.
-package data.scripts.ai;
+package data.scripts.weapons.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
@@ -17,7 +17,7 @@ import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-public class tahlan_FountainAI_v1 implements MissileAIPlugin, GuidedMissileAI {
+public class tahlan_KriegsmesserAI implements MissileAIPlugin, GuidedMissileAI {
 
     //////////////////////
     //     SETTINGS     //
@@ -31,7 +31,7 @@ public class tahlan_FountainAI_v1 implements MissileAIPlugin, GuidedMissileAI {
     private final float WAVE_TIME = 3f;
 
     //Max angle of the waving in degree (divided by 3 with ECCM). Set to a negative value to avoid all waving.
-    private final float WAVE_AMPLITUDE = 90;
+    private final float WAVE_AMPLITUDE = 60;
 
     //Damping of the turn speed when closing on the desired aim. The smaller the snappier.
     private final float DAMPING = 0.1f;
@@ -64,15 +64,15 @@ public class tahlan_FountainAI_v1 implements MissileAIPlugin, GuidedMissileAI {
      * The missile will pick the closest target of interest. Useful for custom MIRVs.
      *
      */
-    private final MagicTargeting.targetSeeking seeking = MagicTargeting.targetSeeking.FULL_RANDOM;
+    private final MagicTargeting.targetSeeking seeking = MagicTargeting.targetSeeking.NO_RANDOM;
 
     //Target class priorities
     //set to 0 to ignore that class
-    private final int fighters = 1;
-    private final int frigates = 3;
-    private final int destroyers = 4;
-    private final int cruisers = 5;
-    private final int capitals = 2;
+    private final int fighters = 0;
+    private final int frigates = 1;
+    private final int destroyers = 2;
+    private final int cruisers = 3;
+    private final int capitals = 4;
 
     //Arc to look for targets into
     //set to 360 or more to ignore
@@ -120,7 +120,7 @@ public class tahlan_FountainAI_v1 implements MissileAIPlugin, GuidedMissileAI {
     //  DATA COLLECTING //
     //////////////////////
 
-    public tahlan_FountainAI_v1(MissileAPI missile, ShipAPI launchingShip) {
+    public tahlan_KriegsmesserAI(MissileAPI missile, ShipAPI launchingShip) {
         this.MISSILE = missile;
         MAX_SPEED = missile.getMaxSpeed();
         if (missile.getSource().getVariant().getHullMods().contains("eccm")) {

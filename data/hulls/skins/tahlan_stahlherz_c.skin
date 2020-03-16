@@ -20,7 +20,7 @@
 	],
     #"builtInMods":[	],
     "builtInWeapons":{
-        "WEAPON_L": "tahlan_schwalbenflug_l",
+        "WEAPON_L": "tahlan_strahlfaust_l",
 		"WEAPON_R": "tahlan_nadel_r",
     }
 }

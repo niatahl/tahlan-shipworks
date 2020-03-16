@@ -43,8 +43,8 @@ public class tahlan_NCHaloScript implements EveryFrameWeaponEffectPlugin {
         }
 
         //A piece should never have glowing lights
-        if (ship.isPiece()) {
-            return;
+        if (ship.isPiece() || !ship.isAlive()) {
+            currentBrightness = 0;
         }
 
 

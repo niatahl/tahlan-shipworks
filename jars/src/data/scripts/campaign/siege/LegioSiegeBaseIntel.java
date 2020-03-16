@@ -74,13 +74,13 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
 
     public static final float BASE_RAID_FP = 100f;
     public static final float RAID_FP_PER_CYCLE = 50f;
-    public static final float MAX_RAID_FP = 500f;
+    public static final float MAX_RAID_FP = 400f;
 
     public static final float BASE_STATION_LEVEL = 1f; // 1 = orbital
-    public static final float STATION_LEVEL_PER_CYCLE = 0.25f; // 2 = battlestation
+    public static final float STATION_LEVEL_PER_CYCLE = 0.2f; // 2 = battlestation
     public static final float MAX_STATION_LEVEL = 3f; // 3 = star fortress
 
-    public static final float BASE_DURATION = 0f; // if 0 or lower, base will not despawn "naturally" - it must be killed
+    public static final float BASE_DURATION = 120f; // if 0 or lower, base will not despawn "naturally" - it must be killed
 
     public static final float BASE_BOUNTY_CREDITS = 200000f; // will be multiplied by level, 1 to 3
     public static final float BOUNTY_DAYS = 0f; // if 0 or lower, bounty will not expire *unless the base itself does* (and won't show duration)
@@ -89,7 +89,7 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
     public static final float BASE_PATROL_SHIPQUAL_BONUS = 0.5f;
     public static final float PATROL_SHIPQUAL_PER_CYCLE = 0.1f; // hardcoded max at 1.0f
 
-    public static final float BASE_PATROL_SIZE_MULT = 1f;
+    public static final float BASE_PATROL_SIZE_MULT = 0.5f;
     public static final float PATROL_SIZE_PER_CYCLE = 0.1f;
     public static final float MAX_PATROL_SIZE_MULT = 2f;
 
@@ -102,7 +102,7 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
     public static final float MAX_MED_PATROLS = 3f;
 
     public static final float BASE_HEAVY_PATROLS = 0f;
-    public static final float HEAVY_PATROLS_PER_CYCLE = 0.334f;
+    public static final float HEAVY_PATROLS_PER_CYCLE = 0.25f;
     public static final float MAX_HEAVY_PATROLS = 2f;
 
     public static Object BOUNTY_EXPIRED_PARAM = new Object();
@@ -167,7 +167,7 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
         market.addCondition(Conditions.OUTPOST);
         market.addCondition(Conditions.ORGANIZED_CRIME);
         market.addCondition(Conditions.STEALTH_MINEFIELDS);
-        market.addCondition("tahlan_legiotyranny");
+        //market.addCondition("tahlan_legiotyranny");
 
         market.addIndustry(Industries.POPULATION);
         market.addIndustry(Industries.SPACEPORT);
@@ -186,6 +186,8 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
             endImmediately();
             return;
         }
+
+        log.info("New Legio Siege market \""+ name + "\" ID: " + market.getId());
 
         LocationAPI hyperspace = Global.getSector().getHyperspace();
         entity = hyperspace.addCustomEntity(null, name, Entities.MAKESHIFT_STATION, LEGIO_ID);

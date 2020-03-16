@@ -34,7 +34,7 @@ public class tahlan_VariableAmmoAI implements ShipSystemAIScript {
                 setToAmmoType(3);
             }
             //Big target with shielding: use our kine- IMPACT DRIVER
-            else if (target.getShield() != null && target.getShield().isOn() && target.getShield().isWithinArc(ship.getLocation())) {
+            else if (target.getShield() != null && target.getShield().isOn() && target.getShield().isWithinArc(ship.getLocation()) && target.getFluxTracker().getFluxLevel() < 0.8f) {
                 setToAmmoType(2);
             }
             //Default: use shock cannons

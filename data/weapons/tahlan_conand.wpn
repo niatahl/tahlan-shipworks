@@ -65,5 +65,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_conand_turret_base.png",
   "type": "BALLISTIC",
-  "visualRecoil": 4
+  "visualRecoil": 6
 }

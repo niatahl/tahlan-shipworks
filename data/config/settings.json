@@ -51,6 +51,9 @@
 		"portraits":{
 			"tahlan_portrait_nia":"graphics/tahlan/portraits/characters/tahlan_portrait_nia.png",
 			"tahlan_portrait_cat":"graphics/tahlan/portraits/characters/tahlan_portrait_cat.png",
-		}
+		},
+		"tahlan_intel":{			
+			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png", # 20x20
+		},
 	}
 }

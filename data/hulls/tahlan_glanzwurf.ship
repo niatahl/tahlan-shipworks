@@ -15,8 +15,7 @@
     "tahlan_dorn_funnel_wing",
   ],
   "builtInMods": [
-    "tahlan_silberherz_minor",
-    "high_maintenance"
+    "tahlan_silberherz_minor"
   ],
   "builtInWeapons": {
     "ARM_L": "tahlan_glanzwurf_arm_l",

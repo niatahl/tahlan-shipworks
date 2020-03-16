@@ -1,15 +1,13 @@
 {
   "id": "tahlan_glanzwurf_gun_r",
-  "specClass": "beam",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_glanzflak_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_GlanzFlakMuzzleFlashScript",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "collisionClass": "RAY",
-  "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_glanzwurf_gun_r.png",
   "hardpointSprite": "",
   "renderAboveAllWeapons": 0,
-  "glowColor":[116,242,167,255],
-  "hitGlowRadius": 0,
   "turretOffsets": [
     58,
     0
@@ -24,14 +22,20 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "fringeColor":[116,242,167,205],
-  "coreColor":[107, 218, 255,250],
-  "width": 10,
-  "textureScrollSpeed": 256,
-  "pixelsPerTexel": 1,
-  "fireSoundOne": "tahlan_glanz_fire",
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 0,
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "particleDuration": 0.5,
+    "particleCount": 20,
+    "particleColor": [255,18,75,255]
+  },
   "textureType": [
     "graphics/tahlan/fx/tahlan_glanz_beam_fringe.png",
     "graphics/tahlan/fx/tahlan_titanomachy_beam_fringe.png"
   ],
+  "fireSoundOne": "tahlan_glanzflak_fire"
 }

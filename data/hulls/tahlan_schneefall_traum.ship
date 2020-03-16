@@ -14,8 +14,12 @@
   "builtInMods": [
     "tahlan_adlerauge",
     "tahlan_vundautoforge",
-    "eccm"
+    "eccm",
+    "high_maintenance"
   ],
+  "builtInWeapons": {
+    "WS0023": "tahlan_vundautoforge"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -200,7 +204,7 @@
     {
       "id": "WS0021",
       "size": "LARGE",
-      "type": "MISSILE",
+      "type": "UNIVERSAL",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -209,11 +213,20 @@
     {
       "id": "WS0022",
       "size": "LARGE",
-      "type": "MISSILE",
+      "type": "UNIVERSAL",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
       "locations": [-12.5, -82]
+    },
+    {
+      "id": "WS0023",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-24.5, -0]
     }
   ],
   "engineSlots": [

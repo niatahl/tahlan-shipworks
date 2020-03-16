@@ -46,7 +46,7 @@ public class tahlan_PraxusOnHitEffect implements OnHitEffectPlugin {
         engine.addHitParticle(point, ZERO, 70f, 0.3f, 0.05f, FLASH_COLOR);
         for (int x = 0; x < NUM_PARTICLES; x++) {
             engine.addHitParticle(point,
-                    MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(10f, 40f), (float) Math.random() * 360f),
+                    MathUtils.getPointOnCircumference(point, MathUtils.getRandomNumberInRange(10f, 40f), (float) Math.random() * 360f),
                     3f, 1f, MathUtils.getRandomNumberInRange(0.2f, 0.3f), PARTICLE_COLOR);
         }
         //Global.getSoundPlayer().playSound("tahlan_porph_impact",1f,1f,point,ZERO);

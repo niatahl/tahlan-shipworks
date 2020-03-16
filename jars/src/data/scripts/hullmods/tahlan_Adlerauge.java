@@ -23,8 +23,6 @@ import static org.lwjgl.opengl.GL11.glPopMatrix;
 public class tahlan_Adlerauge extends BaseHullMod {
 
     private static final String ADLER_ID = "Adlerauge_ID";
-    private static final float DAMAGE_MULT = 1.1f;
-    private static final Set<String> BLOCKED_HULLMODS = new HashSet<>(1);
     private static final float EFFECT_RANGE = 2000f;
     private static final float AUTOAIM_BONUS = 50f;
     private static final float RANGE_BOOST = 100f;
@@ -42,10 +40,6 @@ public class tahlan_Adlerauge extends BaseHullMod {
 
     private static final EnumSet<WeaponAPI.WeaponType> WEAPON_TYPES = EnumSet.of(WeaponAPI.WeaponType.MISSILE,WeaponAPI.WeaponType.BALLISTIC,WeaponAPI.WeaponType.ENERGY);
 
-    static {
-        BLOCKED_HULLMODS.add("safetyoverrides");
-    }
-
     private List<ShipAPI> targetList = new ArrayList<ShipAPI>();
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -57,17 +51,17 @@ public class tahlan_Adlerauge extends BaseHullMod {
 	}
 
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-        for (String tmp : BLOCKED_HULLMODS) {
-            if (ship.getVariant().getHullMods().contains(tmp)) {
-                ship.getVariant().removeMod(tmp);
-            }
-        }
+
     }
 
 	@Override
 	public void advanceInCombat(ShipAPI ship, float amount) {
 
         CombatEngineAPI engine = Global.getCombatEngine();
+
+        if (!ship.isAlive() || ship.isHulk() || ship.isPiece()) {
+            return;
+        }
 
         //Glows off in refit screen
         if (ship.getOriginalOwner() == -1) {
@@ -122,7 +116,8 @@ public class tahlan_Adlerauge extends BaseHullMod {
 
         for (ShipAPI target : CombatUtils.getShipsWithinRange(ship.getLocation(), EFFECT_RANGE)) {
             if (target.getOwner() == ship.getOwner()) {
-                if (target.getOwner() == ship.getOwner() && !targetList.contains(target) && target.getVariant().getHullMods().contains("tahlan_silberherz")) {
+                if (target.getOwner() == ship.getOwner() && !targetList.contains(target)
+                        && (target.getVariant().getHullMods().contains("tahlan_silberherz") || target.getVariant().getHullMods().contains("tahlan_silberherz_minor"))) {
                     targetList.add(target);
                 }
             }

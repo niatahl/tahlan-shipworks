@@ -36,7 +36,7 @@ public class tahlan_BalorProjectileScript extends BaseEveryFrameCombatPlugin {
 	//	- "DUMBCHASER_SWARM" : As DUMBCHASER, but targets a random point on the target instead of the center, determined at target acquisition
 	//	- "INTERCEPT" : Heads for an approximate intercept point of the target at all times. Becomes more accurate as distance to target decreases
 	//	- "INTERCEPT_SWARM" : As INTERCEPT, but targets a random point on the target instead of the center, determined at target acquisition
-	private static final String GUIDANCE_MODE_PRIMARY = "DUMBCHASER";
+	private static final String GUIDANCE_MODE_PRIMARY = "INTERCEPT";
 
 	//Sets behaviour when the original target is lost; if this is a target re-acquiring method, GUIDANCE_MODE_PRIMARY takes effect again with the new target.
 	//Note that if there is no target within TARGET_REACQUIRE_RANGE, "NONE" is the default behaviour for re-acquires until a target is found
@@ -75,7 +75,7 @@ public class tahlan_BalorProjectileScript extends BaseEveryFrameCombatPlugin {
 	private static final float TARGET_REACQUIRE_ANGLE = 90f;
 
 	//How fast the projectile is allowed to turn, in degrees/second
-	private static final float TURN_RATE = 8f;
+	private static final float TURN_RATE = 12f;
 
 	//If non-zero, the projectile will sway back-and-forth by this many degrees during its guidance (with a sway period determined by SWAY_PERIOD).
 	//High values, as one might expect, give very poor tracking. Also, high values will decrease effective range (as the projectiles travel further) so be careful

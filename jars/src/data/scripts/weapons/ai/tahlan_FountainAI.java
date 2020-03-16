@@ -1,4 +1,4 @@
-package data.scripts.ai;
+package data.scripts.weapons.ai;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CollisionClass;

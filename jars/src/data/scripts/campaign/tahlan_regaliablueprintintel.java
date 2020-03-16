@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static data.scripts.campaign.tahlan_DerelictsSpawnScript.TRAUM_LOCATION;
+
 public class tahlan_regaliablueprintintel extends BaseIntelPlugin {
 
     //List of all the event stages we can be at
@@ -111,7 +113,7 @@ public class tahlan_regaliablueprintintel extends BaseIntelPlugin {
         if (stage != QUEST_STAGE.END_OF_BLUEPRINTS) {
             info.addPara("Keep the %s in your fleet to continue decrypting its databanks", initPad, h, "Halbmond");
         } else {
-            info.addPara("You've succesfully recovered all intact data from the %s databanks", initPad, h, "Halbmond's");
+            info.addPara("You've succesfully recovered all intact data from the %s databanks. Furthermore you have found information that an object of interest might be hidden in the " + Global.getSector().getMemory().getString("$tahlan_traum_location") + " constellation", initPad, h, "Halbmond's", Global.getSector().getMemory().getString("$tahlan_traum_location"));
         }
 
         unindent(info);
@@ -152,7 +154,7 @@ public class tahlan_regaliablueprintintel extends BaseIntelPlugin {
     //Sets which icon the Intel screen should display. Can vary based on circumstances, but a single one often works just fine
     @Override
     public String getIcon() {
-        return Global.getSettings().getSpriteName("loa_intel", "loa_champ");
+        return Global.getSettings().getSpriteName("tahlan_intel", "tahlan_halbmond");
     }
 
     //This sets which "tags" the even has in the Intel screen. For example, giving it the Tags.INTEL_STORY tag makes it appear in the "Story" sub-category

@@ -117,7 +117,7 @@ public class tahlan_VariableAmmoLoader extends BaseHullMod {
                         newProj.getVelocity().x *= rand;
                         newProj.getVelocity().y *= rand;
                         //Splits up the damage
-                        newProj.setDamageAmount(projDamage / (float) T3_SPLIT_COUNT);
+                        newProj.setDamageAmount(projDamage / (float) T3_SPLIT_COUNT * 1.25f);
                         ProximityFuseAIAPI AI = (ProximityFuseAIAPI)(newProj.getAI());
                         AI.updateDamage();
                         //Removes the original projectile

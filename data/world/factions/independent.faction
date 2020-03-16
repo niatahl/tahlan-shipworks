@@ -34,6 +34,7 @@
 			"tahlan_Nibelung",
 			"tahlan_Vale",
 			"tahlan_Castigator",
+			"tahlan_Hresvelgr"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -56,7 +57,8 @@
 		"weapons":[
 			"tahlan_armiger",
 			"tahlan_efreet",
-			"tahlan_amboss"
+			"tahlan_amboss",
+			"tahlan_titanomachy"
 		],
 	},
 	"priorityWeapons":{

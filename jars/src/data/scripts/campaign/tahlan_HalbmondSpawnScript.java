@@ -36,8 +36,8 @@ public class tahlan_HalbmondSpawnScript {
     public static final List<String> BLACKLISTED_SYSTEMS = new ArrayList<>();
     static {
         BLACKLISTED_SYSTEMS.add("spookysecretsystem_omega");
-        BLACKLISTED_SYSTEMS.add("Rubicon");
-        BLACKLISTED_SYSTEMS.add("Gehenna");
+        BLACKLISTED_SYSTEMS.add("rubicon");
+        BLACKLISTED_SYSTEMS.add("gehenna");
     }
 
     //Systems with any of these tags can never get a teaser ship spawned in them
@@ -60,6 +60,7 @@ public class tahlan_HalbmondSpawnScript {
         WEIGHTS.put(LocationType.IN_ASTEROID_BELT, 5f);
         WEIGHTS.put(LocationType.IN_ASTEROID_FIELD, 5f);
         WEIGHTS.put(LocationType.STAR_ORBIT, 1f);
+        WEIGHTS.put(LocationType.NEAR_STAR, 1f);
     }
 
     // Functions
@@ -69,6 +70,7 @@ public class tahlan_HalbmondSpawnScript {
      * @param sector the sector to spawn the ships in
      */
     public static void spawnHalbmond(SectorAPI sector) {
+        //LOGGER.info("Running Halbmond spawn script");
         for (Pair<String, Integer> spawnData : SHIP_SPAWNS) {
             int numberOfSpawns = 0;
             while (numberOfSpawns < spawnData.two) {
@@ -79,6 +81,7 @@ public class tahlan_HalbmondSpawnScript {
                     system = getRandomSystemWithBlacklist(BLACKLISTED_SYSTEMS, BLACKLISTED_SYSTEM_TAGS, sector);
                     if (system == null) {
                         //We've somehow blacklisted every system in the sector: just don't spawn anything
+                        LOGGER.info("No Halbmond spawn found");
                         return;
                     }
 
@@ -89,7 +92,7 @@ public class tahlan_HalbmondSpawnScript {
 
                 //Now, simply spawn the ship in the spawn location
                 addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, true, null);
-                LOGGER.info("Spawned Halbmond in" + system.getId());
+                LOGGER.info("Spawned Halbmond in " + system.getId());
                 numberOfSpawns++;
             }
         }
@@ -119,12 +122,13 @@ public class tahlan_HalbmondSpawnScript {
                 }
             }
 
-            if (system.getStar() == null || !system.getStar().getTypeId().equals("black_hole") || !system.isProcgen()) {
+            if (system.getStar() == null || !system.getStar().getTypeId().equals("black_hole") || !Misc.getMarketsInLocation(system).isEmpty()) {
                 isValid = false;
             }
 
             if (isValid) {
                 validSystems.add(system);
+                //LOGGER.info("valid halbmond system:" + system.getId());
             }
         }
 

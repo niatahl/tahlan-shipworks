@@ -73,10 +73,10 @@ public class tahlan_HueterProjectileScript extends BaseEveryFrameCombatPlugin {
 
 	//The maximum angle a target can be re-acquired at, in degrees.
 	//90 means 90 degrees to either side, I.E. a hemisphere in front of the projectile. Values 180 and above turns off the limitation altogether
-	private static final float TARGET_REACQUIRE_ANGLE = 90f;
+	private static final float TARGET_REACQUIRE_ANGLE = 180f;
 
 	//How fast the projectile is allowed to turn, in degrees/second
-	private static final float TURN_RATE = 180f;
+	private static final float TURN_RATE = 360f;
 
 	//If non-zero, the projectile will sway back-and-forth by this many degrees during its guidance (with a sway period determined by SWAY_PERIOD).
 	//High values, as one might expect, give very poor tracking. Also, high values will decrease effective range (as the projectiles travel further) so be careful

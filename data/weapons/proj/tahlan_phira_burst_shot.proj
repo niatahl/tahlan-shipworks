@@ -14,5 +14,20 @@
 	"glowRadius":50,
 	"textureScrollSpeed":64.0,
 	"pixelsPerTexel":1.0,
-	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png"
+	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png",
+	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+					"shotRangeVariance":0.35,
+					"range":40,
+					"explosionSpec":{"duration":0.12f,
+									 "radius":80,
+									 "coreRadius":40, # full damage within core radius - also equal to proximity fuse range
+									 "collisionClass":PROJECTILE_FF,
+									 "collisionClassByFighter":PROJECTILE_FIGHTER,
+									 "particleSizeMin":3.0,
+									 "particleSizeRange":7.0,
+									 "particleDuration":0.9,
+									 "particleCount":30,
+									 "particleColor":[200,185,160,205],
+									 "sound":"devastator_explosion"},
+					}
 }

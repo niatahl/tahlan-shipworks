@@ -37,6 +37,11 @@ public class tahlan_DerelictsSpawnScript {
     static {
         SHIP_SPAWNS.add(new Pair<>("tahlan_Timeless_retro_standard", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_schneefall_traum_albtraum", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_paladin", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_b_vanguard", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_c_longbowman", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Nibelung_crg_elite", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 3));
     }
 
     //Systems that can never get a teaser ship spawned in them
@@ -64,7 +69,12 @@ public class tahlan_DerelictsSpawnScript {
         WEIGHTS.put(LocationType.IN_ASTEROID_BELT, 5f);
         WEIGHTS.put(LocationType.IN_ASTEROID_FIELD, 5f);
         WEIGHTS.put(LocationType.STAR_ORBIT, 1f);
+        WEIGHTS.put(LocationType.IN_SMALL_NEBULA, 3f);
+        WEIGHTS.put(LocationType.NEAR_STAR, 2f);
+        WEIGHTS.put(LocationType.JUMP_ORBIT, 2f);
     }
+
+    public static String TRAUM_LOCATION;
 
     // Functions
 
@@ -93,7 +103,11 @@ public class tahlan_DerelictsSpawnScript {
 
                 //Now, simply spawn the ship in the spawn location
                 addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, true, null);
-                LOGGER.info("Spawned Halbmond in" + system.getId());
+                if ( spawnData.one == "tahlan_schneefall_traum_albtraum" ) {
+                    Global.getSector().getMemory().set("$tahlan_traum_location",system.getConstellation().getName());
+                }
+
+                LOGGER.info("Spawned Derelict in " + system.getId());
                 numberOfSpawns++;
             }
         }
@@ -123,7 +137,7 @@ public class tahlan_DerelictsSpawnScript {
                 }
             }
 
-            if (system.getStar() == null || !system.isProcgen()) {
+            if (system.getStar() == null || !Misc.getMarketsInLocation(system).isEmpty() || system.getConstellation() == null) {
                 isValid = false;
             }
 

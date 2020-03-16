@@ -1,7 +1,7 @@
 {
     "displayName": "Lichtbringer",
-    "fluxCapacitors": 3,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 47,
     "hullId": "tahlan_schneefall",
     "hullMods": [
         "targetingunit",
@@ -24,12 +24,12 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0015": "harpoonpod",
-                "WS0016": "harpoonpod",
-                "WS0017": "harpoonpod",
-                "WS0018": "harpoonpod",
-                "WS0019": "harpoonpod",
-                "WS0020": "harpoonpod"
+                "WS0015": "tahlan_dolch",
+                "WS0016": "tahlan_dolch",
+                "WS0017": "tahlan_dolch",
+                "WS0018": "tahlan_dolch",
+                "WS0019": "tahlan_dolch",
+                "WS0020": "tahlan_dolch"
             }
         },
         {

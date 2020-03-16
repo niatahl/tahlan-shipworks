@@ -6,6 +6,7 @@
 	"displayName":"Great Houses",
 	"displayNameLong":"Great Houses of Kassadar",
 	"logo":"graphics/tahlan/factions/tahlan_greathouses.png",
+	"crest":"graphics/tahlan/factions/tahlan_greathouses_crest.png",
 	"displayNameWithArticle":"the Great Houses",
 	"displayNameLongWithArticle":"the Great Houses of Kassadar",
 	"shipNamePrefix":"KFV",

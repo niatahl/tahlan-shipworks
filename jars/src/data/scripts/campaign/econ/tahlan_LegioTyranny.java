@@ -15,8 +15,8 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
         if (market.getFaction() != null) {
             if (market.getFaction().getId().contains("tahlan_legioinfernalis")) {
                 market.getStability().modifyFlat(id, STAB_BONUS, "Legio Tyranny");
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id,2f, "Legio Tyranny");
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id,2f, "Legio Tyranny");
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id,1.5f, "Legio Tyranny");
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id,1.5f, "Legio Tyranny");
                 market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id,2f, "Legio Tyranny");
             } else {
                 market.getStability().unmodify(id);

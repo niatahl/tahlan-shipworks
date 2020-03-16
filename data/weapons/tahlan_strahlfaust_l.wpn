@@ -1,0 +1,56 @@
+{
+  "id": "tahlan_strahlfaust_l",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "beamEffect": "data.scripts.weapons.tahlan_EthniuBeamEffect",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_StrahlfaustMuzzleFlashScript",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_strahlfaust_l.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/ma/tahlan_strahlfaust_l_glow.png",
+  "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_strahlfaust_l.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/ma/tahlan_strahlfaust_l_glow.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    56,
+    103,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    33,
+    4
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    59,
+    4
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    18,
+    75,
+    255
+  ],
+  "coreColor": [
+    235,
+    245,
+    255,
+    215
+  ],
+  "width": 30,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_ppa_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_ppa_beam_core.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 1,
+  "fireSoundTwo": "tahlan_ethniu_loop"
+}

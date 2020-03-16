@@ -1,0 +1,66 @@
+{
+  "id": "tahlan_dolch",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_dolch_msl",
+  "type": "MISSILE",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_dolch_launcher_turret.png",
+  "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_dolch_launcher_hp.png",
+  "renderAboveAllWeapons": 0,
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "turretOffsets": [
+    5,
+    8,
+    5,
+    3,
+    5,
+    -3,
+    5,
+    -8
+  ],
+  "turretAngleOffsets": [
+    0,
+    -0,
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    6,
+    8,
+    6,
+    3,
+    6,
+    -3,
+    6,
+    -8
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "SMOKE",
+  "smokeSpec": {
+    "particleSizeMin": 10,
+    "particleSizeRange": 10,
+    "cloudParticleCount": 3,
+    "cloudDuration": 0.6,
+    "cloudRadius": 10,
+    "blowbackParticleCount": 3,
+    "blowbackDuration": 2,
+    "blowbackLength": 20,
+    "blowbackSpread": 10,
+    "particleColor": [
+      205,
+      205,
+      215,
+      205
+    ]
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_dolch_fire"
+}

@@ -8,7 +8,7 @@
 	"center":[4,9],
 	"collisionRadius":7,
 	"collisionClass":"MISSILE_NO_FF",
-	"explosionColor":[255,100,0,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionColor":[87,255,205,255],  # purely visual, will get a white additively blended core on top of this color
 	"explosionRadius":15, # purely visual
 	"engineSpec":{"turnAcc":600,
 				  "turnRate":500,
@@ -19,8 +19,9 @@
 				    "style":"CUSTOM",
 					"styleSpec":{
 						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
-						"engineColor":[255,240,150,255],
-						"glowSizeMult":1.8,
+						"engineColor":[87,157,255,255],
+						"glowSizeMult":1.5,
+						"glowAlternateColor":[255,240,150,255],
 						"contrailDuration":1.5,
 						"contrailWidthMult":2,
 						"contrailWidthAddedFractionAtEnd":2,  # can be negative. makes trail spread out/narrow at the end

@@ -12,8 +12,7 @@
   "shieldRadius": 109,
   "viewOffset": 0,
   "builtInMods": [
-    "tahlan_silberherz",
-    "high_maintenance"
+    "tahlan_silberherz"
   ],
   "builtInWeapons": {
     "ARM_L": "tahlan_stahlherz_arm_l",

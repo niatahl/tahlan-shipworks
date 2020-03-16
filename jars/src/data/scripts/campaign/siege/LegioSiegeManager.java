@@ -12,6 +12,8 @@ import com.fs.starfarer.api.util.WeightedRandomPicker;
 import java.util.List;
 import org.apache.log4j.Logger;
 
+import static data.scripts.tahlan_ModPlugin.ENABLE_SIEGE;
+
 public class LegioSiegeManager implements EveryFrameScript {
     
     public static Logger log = Global.getLogger(LegioSiegeManager.class);
@@ -22,13 +24,13 @@ public class LegioSiegeManager implements EveryFrameScript {
     
     // ENTERING DEV MODE WILL CAUSE 1 (ONE) LEGIO SIEGE EXPEDITION TO SPAWN INSTANTLY
     public static final float BASE_SPAWN_DAYS = 360f; // starting minimum value for spawn interval
-    public static final float MIN_SPAWN_DAYS = 75f; // minimum minimum value for spawn interval, will never spawn faster than this
+    public static final float MIN_SPAWN_DAYS = 180f; // minimum minimum value for spawn interval, will never spawn faster than this
     public static final float SPAWN_DAYS_PER_CYCLE = 30f; // minimum value for spawn interval will decrease by this much per cycle
     public static final float MAX_SPAWN_DAYS_MULT = 1.33f; // maximum value for spawn interval will be current minimum * this
 
-    public static final float BASE_FP = 150f; // base FP for siege fleet
-    public static final float FP_PER_CYCLE = 50f; // increase this much every cycle
-    public static final float MAX_FP = 600f; // cap out at this much
+    public static final float BASE_FP = 100f; // base FP for siege fleet
+    public static final float FP_PER_CYCLE = 33.34f; // increase this much every cycle
+    public static final float MAX_FP = 500f; // cap out at this much
 
     private IntervalUtil timer = null;
     private boolean devSpawn = false;
@@ -52,7 +54,7 @@ public class LegioSiegeManager implements EveryFrameScript {
         }
 
         // if legio is dead, do nothing
-        if (legio == null || !legio.isShowInIntelTab()) {
+        if (legio == null || !legio.isShowInIntelTab() || !ENABLE_SIEGE) {
             return;
         }
         boolean nonHiddenMarkets = false;
@@ -73,12 +75,14 @@ public class LegioSiegeManager implements EveryFrameScript {
         }
         
         timer.advance(days);
+        /* DEVMODE SPAWN - DISABLED BECAUSE MUPPETS WERE WHINING ABOUT IT
         if (Global.getSettings().isDevMode() && !devSpawn) {
             timer.forceIntervalElapsed();
             devSpawn = true;
         } else if (!Global.getSettings().isDevMode()) {
             devSpawn = false;
         }
+        */
         if (timer.intervalElapsed()) {
             log.info("timer expired, spawning siege fleet");
             spawnSiegeFleet(legio);

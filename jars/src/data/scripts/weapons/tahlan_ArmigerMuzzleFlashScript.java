@@ -108,7 +108,7 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
         PARTICLE_SIZE_MIN.put("default", 5f);
-        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 110f);
         PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
     }
 
@@ -116,7 +116,7 @@ public class tahlan_ArmigerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
         PARTICLE_SIZE_MAX.put("default", 20f);
-        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 150f);
+        PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 110f);
         PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
     }
 

@@ -74,6 +74,7 @@ public class tahlan_Lethia {
 
         PlanetConditionGenerator.generateConditionsForPlanet(lethia_2, StarAge.AVERAGE);
         lethia_2.setCustomDescriptionId("tahlan_planet_atanor");
+        lethia_2.getMarket().addCondition("tahlan_kassadariclaim");
 
         //debris field near Atanor
         DebrisFieldTerrainPlugin.DebrisFieldParams params1 = new DebrisFieldTerrainPlugin.DebrisFieldParams(
@@ -122,6 +123,7 @@ public class tahlan_Lethia {
 
         PlanetConditionGenerator.generateConditionsForPlanet(lethia_4, StarAge.AVERAGE);
         lethia_4.setCustomDescriptionId("tahlan_planet_heridal");
+        lethia_4.getMarket().addCondition("tahlan_kassadariclaim");
 
         //debris field near Heridal
         DebrisFieldTerrainPlugin.DebrisFieldParams params2 = new DebrisFieldTerrainPlugin.DebrisFieldParams(

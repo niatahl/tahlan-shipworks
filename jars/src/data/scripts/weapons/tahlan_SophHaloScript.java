@@ -35,8 +35,8 @@ public class tahlan_SophHaloScript implements EveryFrameWeaponEffectPlugin {
         }
 
         //No glows on wrecks
-        if ( ship.isPiece() || !ship.isAlive() ) {
-            return;
+        if ( ship.isHulk() || ship.isPiece() || !ship.isAlive() ) {
+            currentBrightness = 0;
         }
 
         //Glows off in refit screen

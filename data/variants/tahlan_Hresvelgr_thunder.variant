@@ -5,7 +5,6 @@
     "hullId": "tahlan_Hresvelgr",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_Hresvelgr_thunder",
     "weaponGroups": [
         {
@@ -58,11 +57,11 @@
         }
     ],
     "wings": [
-        "thunder_wing",
-        "thunder_wing",
-        "thunder_wing",
-        "thunder_wing",
-        "thunder_wing",
-        "thunder_wing"
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing",
+        "tahlan_Caliver_bomber_wing"
     ]
 }

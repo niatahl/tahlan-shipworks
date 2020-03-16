@@ -1,0 +1,26 @@
+{
+    "baseHullId":"tahlan_glanzwurf",
+    "skinHullId":"tahlan_glanzwurf_b",
+    "hullName":"Glanzflug Regalia Kfg.B",
+    "descriptionId":"tahlan_glanzwurf",
+    "descriptionPrefix":"Alternate configuration B. Focused on support and escort duty.",
+    #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
+    "baseValueMult":1,
+    "restoreToBaseHull":false,
+    "addHints":[],
+    "tags":["tahlan_jagd_bp"],
+	"systemId":"tahlan_weaponstabilization",
+    "tech":"Rosenritter",
+    "removeWeaponSlots":[], 		# ids
+    "removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[], 		# hullmod ids
+    "removeBuiltInWeapons":[
+		"WEAPON_L",
+		"WEAPON_R",
+	],
+    #"builtInMods":[	],
+    "builtInWeapons":{
+        "WEAPON_L": "tahlan_glanzwurf_gun_l",
+		"WEAPON_R": "tahlan_glanzwurf_gun_r",
+    }
+}

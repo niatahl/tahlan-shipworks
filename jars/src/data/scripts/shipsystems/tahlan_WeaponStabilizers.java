@@ -17,9 +17,14 @@ public class tahlan_WeaponStabilizers extends BaseShipSystemScript {
 
 		stats.getEnergyWeaponRangeBonus().modifyFlat(id, RANGE_BOOST);
 		stats.getBallisticWeaponRangeBonus().modifyFlat(id, RANGE_BOOST);
-		stats.getProjectileSpeedMult().modifyMult(id, 1.25f);
 
-		stats.getMaxSpeed().modifyMult(id,1f-DAMAGE_BONUS*effectLevel);
+		stats.getMaxRecoilMult().modifyMult(id, 0.5f);
+		stats.getRecoilDecayMult().modifyMult(id, 1.5f);
+		stats.getRecoilPerShotMult().modifyMult(id, 0.5f);
+
+		stats.getProjectileSpeedMult().modifyMult(id, 1.5f);
+
+		//stats.getMaxSpeed().modifyMult(id,1f-DAMAGE_BONUS*effectLevel);
 	}
 
 	public void unapply(MutableShipStatsAPI stats, String id) {
@@ -29,9 +34,14 @@ public class tahlan_WeaponStabilizers extends BaseShipSystemScript {
 
         stats.getEnergyWeaponRangeBonus().unmodify(id);
         stats.getBallisticWeaponRangeBonus().unmodify(id);
+
+        stats.getMaxRecoilMult().unmodify(id);
+        stats.getRecoilDecayMult().unmodify(id);
+        stats.getRecoilPerShotMult().unmodify(id);
+
         stats.getProjectileSpeedMult().unmodify(id);
 
-        stats.getMaxSpeed().unmodify(id);
+        //stats.getMaxSpeed().unmodify(id);
 	}
 	
 	public StatusData getStatusData(int index, State state, float effectLevel) {
@@ -41,7 +51,7 @@ public class tahlan_WeaponStabilizers extends BaseShipSystemScript {
 			return new StatusData("Non-missile weapon damage +" + (int) bonusPercent + "%", false);
 		}
 		if (index == 1) {
-			return new StatusData("Projectile speed +25%", false);
+			return new StatusData("Projectile speed and recoil improved", false);
 		}
         if (index == 2) {
             return new StatusData("Range +200su", false);

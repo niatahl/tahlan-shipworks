@@ -1,9 +1,9 @@
 {
     "displayName": "Citadel",
-    "fluxCapacitors": 4,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 30,
     "hullId": "tahlan_halbmond",
-    "hullMods": ["targetingunit"],
+    "hullMods": ["missleracks"],
     "permaMods": [],
 	"goalVariant": true,
     "variantId": "tahlan_halbmond_citadel",
@@ -11,20 +11,18 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0002": "tachyonlance"}
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
             "weapons": {
-                "WS0003": "gravitonbeam",
-                "WS0004": "gravitonbeam"
+                "WS0003": "tahlan_sturmkanone_m2",
+                "WS0004": "tahlan_sturmkanone_m2"
             }
         },
         {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0001": "guardian"}
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "tahlan_kriegsmesser",
+                "WS0002": "tahlan_kriegsmesser"
+            }
         },
         {
             "autofire": true,

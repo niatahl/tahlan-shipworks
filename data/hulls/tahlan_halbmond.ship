@@ -13,13 +13,14 @@
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_regaliagantry",
-    "surveying_equipment"
+    "surveying_equipment",
+    "high_maintenance"	
   ],
   "weaponSlots": [
     {
       "id": "WS0001",
       "size": "LARGE",
-      "type": "HYBRID",
+      "type": "SYNERGY",
       "mount": "TURRET",
       "arc": 146,
       "angle": 62.5,
@@ -28,7 +29,7 @@
     {
       "id": "WS0002",
       "size": "LARGE",
-      "type": "HYBRID",
+      "type": "SYNERGY",
       "mount": "TURRET",
       "arc": 146,
       "angle": -62.5,

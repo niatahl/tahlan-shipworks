@@ -2,7 +2,7 @@
   "id": "tahlan_glanzwurf_pulse_l",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_glanz_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_GlanzMuzzleFlashScript",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_LichtAmmoScript",
   "type": "ENERGY",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_glanzwurf_pulse_l.png",
