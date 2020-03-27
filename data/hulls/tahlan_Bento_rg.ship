@@ -1,0 +1,145 @@
+{
+  "hullName": "Bento (RG)",
+  "hullId": "tahlan_Bento_rg",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tahlan/ships/rg/tahlan_Bento_rg.png",
+  "style": "LOW_TECH",
+  "height": 150,
+  "width": 138,
+  "center": [69, 82.5],
+  "collisionRadius": 114,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 104.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_makeshiftmounts"
+  ],
+  "builtInWings": [
+    "mining_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 99,
+      "angle": 25,
+      "locations": [42.5, 32]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 99,
+      "angle": -25,
+      "locations": [42.5, -32]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 96,
+      "angle": 144.5,
+      "locations": [-19.5, 38]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 96,
+      "angle": -144.5,
+      "locations": [-19.5, -38]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 143,
+      "angle": 180,
+      "locations": [-55.5, -0]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 105,
+      "angle": 90,
+      "locations": [11.5, 41]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 105,
+      "angle": -90,
+      "locations": [11.5, -41]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [59.5, 10]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [59.5, -10]
+    },
+    {
+      "id": "WS0010",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [-7.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-48.5, 33],
+      "length": 50.5,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 32,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-48.5, -33],
+      "length": 50.5,
+      "width": 32,
+      "angle": -180,
+      "contrailSize": 32,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -67.5, -23,
+    -47.5, -23,
+    -47.5, -41.5,
+    -21, -63,
+    39, -64.5,
+    64.5, -39,
+    64.5, 39,
+    39, 64.5,
+    -21, 63,
+    -47.5, 41.5,
+    -47.5, 23,
+    -67.5, 23,
+    -82, -0
+  ]
+}

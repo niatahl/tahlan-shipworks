@@ -28,7 +28,7 @@ public class tahlan_GigantomachyBeamEffect implements BeamEffectPlugin {
             if (fireInterval.intervalElapsed()) {
                 engine.spawnEmpArc(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getDamageTarget(),
                         DamageType.ENERGY,
-                        200f,
+                        500f,
                         500f,
                         3000f,
                         "tachyon_lance_emp_impact",

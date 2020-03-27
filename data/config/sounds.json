@@ -6,6 +6,13 @@
 		
 	},
 	
+	
+	
+	"tahlan_rrskimmer_use":
+	[
+		{"file":"sounds/tahlan/systems/tahlan_rrskimmer.ogg","pitch":1.0,"volume":1.0},
+	],
+	
 	"tahlan_gaebolg_fire":
 	[
 		{"file":"sounds/sfx_wpn_energy/tachyon_lance_fire_01.ogg","pitch":0.6,"volume":2.0},
@@ -328,6 +335,16 @@
 	"tahlan_gleipnir_fire":{
         "sounds":[
            	{"file":"sounds/tahlan/weapons/tahlan_gleipnir_fire.ogg","pitch":0.8,"volume":1.5}
+        ],
+    },
+	"tahlan_cashmere_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":1.4,"volume":1.2}
+        ],
+    },
+	"tahlan_cashmere_impact":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_impact.ogg","pitch":1,"volume":0.6}
         ],
     },
 	"tahlan_armiger_fire":{

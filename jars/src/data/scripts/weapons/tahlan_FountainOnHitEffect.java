@@ -26,7 +26,7 @@ public class tahlan_FountainOnHitEffect implements OnHitEffectPlugin {
         engine.addHitParticle(point, ZERO, 100f, 0.5f, 0.25f, FLASH_COLOR);
         for (int x = 0; x < NUM_PARTICLES; x++) {
             engine.addHitParticle(point,
-                    MathUtils.getPointOnCircumference(point, MathUtils.getRandomNumberInRange(50f, 150f), (float) Math.random() * 360f),
+                    MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 150f), (float) Math.random() * 360f),
                     5f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR);
         }
 

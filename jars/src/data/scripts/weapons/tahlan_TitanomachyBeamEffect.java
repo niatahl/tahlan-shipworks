@@ -28,7 +28,7 @@ public class tahlan_TitanomachyBeamEffect implements BeamEffectPlugin {
 			fireInterval.advance(dur);
 			if (fireInterval.intervalElapsed()) {
 
-				if (beam.getWeapon().getShip().getFluxTracker().getFluxLevel() > 0.75f) {
+				if (beam.getWeapon().getShip().getFluxTracker().getFluxLevel() > 0.5f) {
 
 
 

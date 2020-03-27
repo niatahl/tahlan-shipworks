@@ -6,9 +6,12 @@
   "size": "LARGE",
   "everyFrameEffect": "data.scripts.weapons.tahlan_HagelsturmScript",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_turret_00.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_turret_glow.png",
   "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_hp_00.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_hp_glow.png",
   "renderAboveAllWeapons": 0,
   "separateRecoilForLinkedBarrels":"TRUE",
+  "glowColor": [255,56,103,255],
   "turretOffsets": [
     28,
     -8,
@@ -30,7 +33,7 @@
     0
   ],
   "barrelMode": "LINKED",
-  "animationType": "MUZZLE_FLASH",
+  "animationType": "GLOW_AND_FLASH",
   "numFrames": 4,
   "frameRate": 40,
   "muzzleFlashSpec": {

@@ -65,7 +65,7 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
         UNLOCK_NAMES.put("tahlan_jagdregalia_package", "Jagdregalia");
         UNLOCK_NAMES.put("tahlan_silberblut_package", "Silberblut Regalia");
         UNLOCK_NAMES.put("tahlan_halbmond_package", "Halbmond-class Carrier");
-        UNLOCK_NAMES.put("tahlan_schneefall_package", "the Nachtgesang-class Battlecruiser");
+        UNLOCK_NAMES.put("tahlan_schneefall_package", "Rosenritter combat ships");
     }
 
     //The counter for tracking how far we are along with our discoveries

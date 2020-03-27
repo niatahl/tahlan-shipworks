@@ -12,7 +12,14 @@
     "removeWeaponSlots":[],         # ids
     "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
     "removeBuiltInMods":[],         # hullmod ids
-    "removeBuiltInWeapons":[],      # weapon slot ids
+    "removeBuiltInWeapons":[
+		"WS0030",
+		"WS0031",
+	],
+    "builtInWeapons":{
+        "WS0030": "tahlan_nibelung_cover_l_crg",
+		"WS0031": "tahlan_nibelung_cover_r_crg",
+    },
     "builtInMods":[],
     "weaponSlotChanges":{
 		"WS0001":{

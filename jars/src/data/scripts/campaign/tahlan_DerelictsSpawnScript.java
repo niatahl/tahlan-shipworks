@@ -40,8 +40,11 @@ public class tahlan_DerelictsSpawnScript {
         SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_paladin", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_b_vanguard", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_c_longbowman", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Nibelung_crg_elite", 2));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 3));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_d_smiter", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Nibelung_crg_elite", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_phantom", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_phantom", 1));
     }
 
     //Systems that can never get a teaser ship spawned in them
@@ -102,10 +105,15 @@ public class tahlan_DerelictsSpawnScript {
                 }
 
                 //Now, simply spawn the ship in the spawn location
-                addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, true, null);
-                if ( spawnData.one == "tahlan_schneefall_traum_albtraum" ) {
+                boolean recoverable = Math.random()>0.5f;
+
+                if ( spawnData.one == "tahlan_schneefall_traum_albtraum"
+                        || spawnData.one == "tahlan_karma_phantom"
+                        || spawnData.one == "tahlan_samsara_phantom" ) {
                     Global.getSector().getMemory().set("$tahlan_traum_location",system.getConstellation().getName());
+                    recoverable = true;
                 }
+                addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, recoverable, null);
 
                 LOGGER.info("Spawned Derelict in " + system.getId());
                 numberOfSpawns++;

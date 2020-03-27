@@ -10,8 +10,8 @@ import org.lazywizard.lazylib.VectorUtils;
 public class tahlan_CrusherDriveStats extends BaseShipSystemScript {
 
     public static final float SPEED_BOOST = 200f;
-    public static final float MASS_MULT = 4f;
-    public static final float DAMAGE_MULT = 0.1f;
+    public static final float MASS_MULT = 3f;
+    public static final float DAMAGE_MULT = 0.25f;
     public static final float RANGE = 900f;
     public static final float ROF_MULT = 0.5f;
 

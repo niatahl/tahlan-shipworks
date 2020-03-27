@@ -1,0 +1,50 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 4,
+    "fluxVents": 30,
+    "hullId": "tahlan_mondlicht",
+    "hullMods": [
+        "targetingunit",
+        "magazines"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_mondlicht_standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "tahlan_ethniu"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_stahlhagel_zwilling",
+                "WS0002": "tahlan_stahlhagel_zwilling"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "pdlaser",
+                "WS0008": "pdlaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_hueter",
+                "WS0004": "tahlan_hueter",
+                "WS0005": "tahlan_hueter",
+                "WS0006": "tahlan_hueter"
+            }
+        }
+    ],
+    "wings": [
+        "tahlan_eisenflug_regalia_wing",
+        "tahlan_eisenflug_regalia_wing"
+    ]
+}

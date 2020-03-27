@@ -102,6 +102,8 @@ public class tahlan_KassadarMarketPlugin extends BaseSubmarketPlugin {
                     ShipPickMode.PRIORITY_THEN_ALL,
                     doctrineOverride);
 
+            pruneWeapons(0f);
+
             addWeapons(5, 10, 5, submarket.getFaction().getId());
 
             pruneShips(0.5f);

@@ -165,28 +165,28 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
         PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_2", 0f);
         PARTICLE_VELOCITY_MAX.put("FLASH_CORE_1", 0f);
         PARTICLE_VELOCITY_MAX.put("FLASH_CORE_2", 0f);
-        PARTICLE_VELOCITY_MAX.put("SMOKE_5", 5f);
-        PARTICLE_VELOCITY_MAX.put("SMOKE_6", 5f);
+        PARTICLE_VELOCITY_MAX.put("SMOKE_5", 20f);
+        PARTICLE_VELOCITY_MAX.put("SMOKE_6", 20f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
         PARTICLE_DURATION_MIN.put("default", 1.5f);
-        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_1", 0.2f);
-        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_2", 0.2f);
-        PARTICLE_DURATION_MIN.put("FLASH_CORE_1", 0.15f);
-        PARTICLE_DURATION_MIN.put("FLASH_CORE_2", 0.15f);
+        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_1", 0.1f);
+        PARTICLE_DURATION_MIN.put("FLASH_FRINGE_2", 0.1f);
+        PARTICLE_DURATION_MIN.put("FLASH_CORE_1", 0.05f);
+        PARTICLE_DURATION_MIN.put("FLASH_CORE_2", 0.05f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
         PARTICLE_DURATION_MAX.put("default", 3f);
-        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_1", 0.2f);
-        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_2", 0.2f);
-        PARTICLE_DURATION_MAX.put("FLASH_CORE_1", 0.15f);
-        PARTICLE_DURATION_MAX.put("FLASH_CORE_2", 0.15f);
+        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_1", 0.1f);
+        PARTICLE_DURATION_MAX.put("FLASH_FRINGE_2", 0.1f);
+        PARTICLE_DURATION_MAX.put("FLASH_CORE_1", 0.05f);
+        PARTICLE_DURATION_MAX.put("FLASH_CORE_2", 0.05f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)

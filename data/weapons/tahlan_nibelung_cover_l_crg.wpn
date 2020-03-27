@@ -1,0 +1,51 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  #"everyFrameEffect": "data.scripts.weapons.tahlan_NibelungDecoScript",
+  #"numFrames":5,
+  #"frameRate":0,
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_Nibelung_cover_L_02.png",
+  "hitGlowRadius": 0,
+  "id": "tahlan_nibelung_cover_l_crg",
+  "showDamageWhenDecorative": True,
+  "pixelsPerTexel": 1,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 64,
+  "textureType": ROUGH,  
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Nibelung_cover_L_02.png",
+  "type": "DECORATIVE",
+  "width": 10
+}

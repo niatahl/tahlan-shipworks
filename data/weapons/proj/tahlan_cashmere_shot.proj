@@ -1,0 +1,22 @@
+{
+	"id":"tahlan_cashmere_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"onHitEffect":"data.scripts.weapons.tahlan_CashmereOnHitEffect",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":100.0,
+	"width":50,
+	"fadeTime":0.5,
+	"fringeColor":[215,63,242,150],
+	"coreColor":[252,237,255,150],
+    "glowColor":[222,59,255,90],
+	"glowRadius":120,
+	"hitGlowRadius":140,	
+	"passThroughMissiles":true,
+	"textureType": [
+    "graphics/tahlan/fx/tahlan_cashmere_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_cashmere_beam_core.png"],
+	"textureScrollSpeed":32,
+	"pixelsPerTexel":1.0,
+}

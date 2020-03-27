@@ -1,16 +1,38 @@
+0.3.16
+Changes:
+- Silberherz Hullmod
+	- Reduced stat penalty for lack of level 10 officer to 15%
+	- Added shield efficiency to affected stats
+	- Added additional buffs for officers with Level 3 Gunnery Implants
+- Silberblut Regalia
+	- Reduced range of some arm weapons
+- Crusher Drive
+	- Reduced mass multiplier to reduce ramming damage somewhat
+	
+
+0.3.15a
+Crash hotfix
+
+
 0.3.15
 Additions:
 - Added hint for Traumtänzer location to the end of Halbmond blueprint extraction quest
 - Added Strahlblick medium burst beam
 - Added Strahlhammer large burst beam
 - Added Hagelsturm large ballistic weapon
+- Added Mondlicht cruiser
 - Added Crusher Drive ship system
 	- Replaces Assault burn on Flagellator variants and Castella (LP)
-- Added the Pippa (Parallel Ionized Particle Pulse Array), a large energy weapon
+- Added the Peppa (Parallel Energized Particle Pulse Array), a large energy weapon
 
 Changes:
+- Legio Siege feature now defaults to disabled as there seem to be some bugs still with stations not despawning when defeated
+- Lifeless ship spawns can now be enabled and disabled mid-campaign
 - Castella and Castella (LI) ship system changed to heavy damper field
 - Buffed Legio Smartguns: Better tracking, dps and projectile velocity
+- Legio Siege Bases no longer have the Legio Tyranny condition
+	- Should fix absurd siege fleet sizes
+- Legio Tyranny renamed to Legio Entrenchment
 - Weapon Stabilization
 	- Removed top speed reduction
 	- Increased projectile speed bonus from 25% to 50%
@@ -21,6 +43,7 @@ Changes:
 	- Kfg.B: newly added support/escort variant
 - Silberblut Regalia
 	- Removed High Maintenance
+	- Kfg.A: Ship system changed to R-type Phase Skimmer (shorter range, faster cycle rate, more charges)
 	- Kfg.C: Missile arm replaced with beam arm
 	- Kfg.D: new variant with missile and pulse blaster arm
 - Halbmond
@@ -30,12 +53,20 @@ Changes:
 - Traumtänzer
 	- Added High Maintenance
 	- Top speed increased to 60
+	- Large mounts changed to universal
+	- Added Artillery Interface hullmod
+	- Increased dissipation to 1100
+	- Reduced OP by 20
+	- DP increased from 50 to 60
+	- System changed to R-type Phase Skimmer
 - Castigator Variants (Standard, GH, Legio)
 	- Armor increased from 1200 to 1300
 	- Shield efficiency reduced from 1.0 to 1.1
 	- Shield upkeep reduced from 0.4 to 0.3
 	- DP increased from 26 to 28
 	- Castigator LI large mount reverted to hybrid
+- Hresvelgr (RG)
+	- Reworked into a battlecarrier conversion with two additional large mounts and 2 less bays
 - Added Kassadari Claim condition to Atanor and Heridal in the Lethia system
 	- Reduces Accessibility by 50%
 	- Lowers growth rate based on market size
@@ -43,9 +74,12 @@ Changes:
 - Timeless
 	- Removed damage boost from ship system
 	- Shield efficiency reduced to 0.8
+	- Reduced dissipation from 1400 to 1200
 - Timeless Prototype
 	- Shielf efficiency reduced to 0.9
 	- PPT reduced to 600s
+	- Reduced dissipation from 1200 to 1000
+	- Reduced overall moblity
 - Nameless
 	- Shield efficiency reduced to 0.8
 - Songbird
@@ -54,6 +88,13 @@ Changes:
 - Nibelung
 	- Medium turret arcs adjusted to no longer have frontal convergence
 	- You can thank the people making silly frontal builds for that
+- Seeded Derelicts are no longer guaranteed recoveries
+- Armiger
+	- Damage per shot reduced from 400 to 300
+	- Fire rate boosted to compensate
+- Anumis
+	- Damage per shot increased from 400 to 500
+	- Fire rate adjusted to compensate
 
 
 0.3.14d

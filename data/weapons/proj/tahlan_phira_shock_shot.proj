@@ -8,9 +8,9 @@
 	"length":80.0,
 	"width":16,
 	"fadeTime":0.2,
-	"fringeColor":[255,60,20,205],
+	"fringeColor":[255,130,30,205],
 	"coreColor":[250,255,255,255],
-	"glowColor":[255,60,20,60],
+	"glowColor":[255,130,30,60],
 	"glowRadius":70,
 	"hitGlowRadius":50,	
 	"textureType":"SMOOTH",  # now also used for "BALLISTIC_AS_BEAM", if specified

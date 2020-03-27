@@ -1,0 +1,32 @@
+{
+	"id":"tahlan_rrskimmer",
+	"type":"DISPLACER",
+	"aiType":"PHASE_DISPLACER",
+	
+	
+	"jitterColor":[255,97,128,135],
+	#"jitterColor":[255,100,255,150],
+	"jitterCopies":8,
+	"jitterRange":8,
+	"jitterRangeRadiusFraction":0.6,
+	
+	"weaponGlowColor":[100,165,255,100],
+	"weaponTypes":[ENERGY,BALLISTIC,MISSILE],
+	
+	#"engineGlowColor":[100,165,255,125],
+
+	"range":200,
+	"randomRange":0,
+	
+	"renderCopyDuringTeleport":true,
+	
+	"fadeActivationSoundOnChargedown":false,
+	"useSound":"tahlan_rrskimmer_use",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"activeSpeedIncrease":0,
+		"burstMovementPotential":200,
+		"averageSpeedIncrease":25,
+	}
+}

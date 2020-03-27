@@ -22,10 +22,18 @@ public class tahlan_HagelsturmScript implements EveryFrameWeaponEffectPlugin {
 
     private final IntervalUtil render = new IntervalUtil(0.05f, 0.05f);
 
+    private tahlan_HagelsturmMuzzleFlashScript muzzleFlashScript = null;
+
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
 
         render.advance(amount);
+
+        //Run our muzzle flash script, and get one if we don't already have one
+        if (muzzleFlashScript == null) {
+            muzzleFlashScript = new tahlan_HagelsturmMuzzleFlashScript();
+        }
+        muzzleFlashScript.advance(amount, engine, weapon);
 
         if (render.intervalElapsed()) {
             float duration = render.getIntervalDuration();

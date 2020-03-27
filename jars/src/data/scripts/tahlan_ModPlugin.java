@@ -149,7 +149,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             sector.getFaction("remnant").removeKnownWeapon("tahlan_nenparax");
         }
 
-
     }
 
     @Override
@@ -161,6 +160,20 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
     @Override
     public void onGameLoad(boolean newGame) {
+        SectorAPI sector = Global.getSector();
+        if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
+            sector.getFaction("remnant").removeKnownShip("tahlan_Timeless");
+            sector.getFaction("remnant").removeKnownShip("tahlan_Nameless");
+            sector.getFaction("remnant").removeKnownWeapon("tahlan_disparax");
+            sector.getFaction("remnant").removeKnownWeapon("tahlan_relparax");
+            sector.getFaction("remnant").removeKnownWeapon("tahlan_nenparax");
+        } else if (!sector.getFaction("remnant").knowsShip("tahlan_Timeless")){
+            sector.getFaction("remnant").addKnownShip("tahlan_Timeless",false);
+            sector.getFaction("remnant").addKnownShip("tahlan_Nameless",false);
+            sector.getFaction("remnant").addKnownWeapon("tahlan_disparax",false);
+            sector.getFaction("remnant").addKnownWeapon("tahlan_relparax", false);
+            sector.getFaction("remnant").addKnownWeapon("tahlan_nenparax", false);
+        }
     }
 
     @Override

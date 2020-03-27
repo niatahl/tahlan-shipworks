@@ -43,12 +43,18 @@ Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hu
 
 Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
 Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing its damage by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
+Lostech Engineering,tahlan_heavyconduits,,,,defensive,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyConduits,"The flux grid of this ship has been heavily reinforced and modified with advanced and unknown Domain lostech. Its exact specs are unknown, but through tests and extensive analysis you have been able to deduce most of the effects. Similar to common reinforced flux conduits, EMP damage taken is reduced by %s. Additionally the ship's flux dissipation rate while venting is boosted by %s.
+
+Due to the limited understanding of the technology, maintenance costs and CR degradation in combat after peak performance time are increased by %s.
+
+The extensive modifications are also incompatible with %s.","Reduces amount of EMP damage taken, improves venting.",graphics/tahlan/hullmods/tahlan_heavyconduits.png
+Makeshift Turret Mounts,tahlan_makeshiftmounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_MakeshiftMounts,"The turret mounts of this ship have been ""upgraded"" in a makeshift manner. Due to inferior engineering, weapons can only turn at %s speed and ballistic weapon rate of fire is reduced to %s of base.",Reduces weapon turnrate and rate of fire.,graphics/tahlan/hullmods/tahlan_makeshiftmounts.png
 ,,,,,,,,,,,,,,,,,,
 Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
 
 Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
-Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, the Regalia requires a captain of at least %s or its flux stats, speed and autofire accuracy are reduced by %s. 
+Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, the Regalia requires a captain of at least %s or its flux stats, shield efficiency, speed and autofire accuracy are reduced by %s. Additionally, pilots with %s benefit from a direct link, improving weapon range and active vent rate by %s.
 
 Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
 
@@ -64,6 +70,7 @@ Adlerauge Array,tahlan_adlerauge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahl
 
 The Adlerauge will also automatically link with any %s Regalia within a %s radius providing them with the same bonuses.",Buffs self and allies,graphics/tahlan/hullmods/tahlan_adlerauge.png
 Regalia Gantry,tahlan_regaliagantry,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_RegaliaGantry,This vessel is equipped with the necessary equipment for servicing and maintaining Regalia.,Regalia maintenance,graphics/tahlan/hullmods/tahlan_regaliagantry.png
+Artillery Interface,tahlan_traummounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_TraumMounts,Enhanced mounts reduce the ordnance point cost of large ballistic and energy weapons by %s.,Reduces OP cost of large ballistic and energy weapons.,graphics/hullmods/ballistics_integration.png
 ,,,,,,,,,,,,,,,,,,
 Temporal Armor,tahlan_outcast_engineering,2,,,special,Special,9999,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_OutcastEngineering,"A rare ship constructed by the Great Houses.
 

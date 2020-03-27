@@ -1,0 +1,37 @@
+{
+  "id": "tahlan_cashmere",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_cashmere_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_CashmereScript",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_cashmere_turret_base.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_cashmere_hp_base.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    15.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    18,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "glowColor":[222,59,255,90],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "muzzleFlashSpec":{"length":60.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":10.0,
+					   "particleSizeMin":15.0,
+					   "particleSizeRange":35.0,
+					   "particleDuration":0.75,
+					   "particleCount":50,
+					   "particleColor":[215,63,242,245]},
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_cashmere_fire"
+}

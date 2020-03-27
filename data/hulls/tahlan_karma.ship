@@ -1,0 +1,230 @@
+{
+  "hullName": "Karma",
+  "hullId": "tahlan_karma",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_karma.png",
+  "style": "HIGH_TECH",
+  "height": 211,
+  "width": 172,
+  "center": [86, 100],
+  "collisionRadius": 136,
+  "shieldCenter": [0.5, -0],
+  "shieldRadius": 129,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_heavyconduits"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 102,
+      "angle": 30.5,
+      "locations": [-40, 52]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 102,
+      "angle": -30.5,
+      "locations": [-40, -52]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [74, 55]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [74, -55]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 199,
+      "angle": 82,
+      "locations": [45, 54]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 199,
+      "angle": -82,
+      "locations": [45, -54]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 105,
+      "angle": -9.5,
+      "locations": [78, -30]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 105,
+      "angle": 9.5,
+      "locations": [78, 30]
+    },
+    {
+      "id": "WS0009",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [45, -0]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-68.5, -0]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-57, -0]
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-46.5, -0]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-36, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-98.5, 20],
+      "length": 52.5,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-98.5, -20],
+      "length": 52.5,
+      "width": 19,
+      "angle": -180,
+      "contrailSize": 19,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-84.5, 37.5],
+      "length": 41.5,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-84.5, -37.5],
+      "length": 41.5,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-83.5, 47],
+      "length": 37.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-83.5, -47],
+      "length": 37.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-81, 55],
+      "length": 37.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-81, -55],
+      "length": 37.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -81.5, -7.5,
+    -97.5, -10.5,
+    -97, -25,
+    -83.5, -32.5,
+    -79.5, -59,
+    -53, -83,
+    26.5, -60.5,
+    38, -73.5,
+    73, -65.5,
+    81.5, -47,
+    110, -29.5,
+    95, -15,
+    56, -14.5,
+    56, 14.5,
+    95, 15,
+    110, 29.5,
+    81.5, 47,
+    73, 65.5,
+    38, 73.5,
+    26.5, 60.5,
+    -53, 83,
+    -79.5, 59,
+    -83.5, 32.5,
+    -97, 25,
+    -97.5, 10.5,
+    -81.5, 7.5
+  ]
+}

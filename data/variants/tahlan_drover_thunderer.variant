@@ -2,7 +2,6 @@
     "displayName": "Thunderer",
     "fluxCapacitors": 10,
     "fluxVents": 0,
-    "goalVariant": true,
     "hullId": "drover",
     "hullMods": [
         "expanded_deck_crew",

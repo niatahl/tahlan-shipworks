@@ -14,8 +14,8 @@ import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
 public class tahlan_PhiraOnHitEffect implements OnHitEffectPlugin {
 
-    private static final Color COLOR1 = new Color(255,60,20);
-    private static final Color COLOR2 = new Color(255, 235, 235);
+    private static final Color COLOR1 = new Color(255,130,30);
+    private static final Color COLOR2 = new Color(255, 246, 234);
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit,
