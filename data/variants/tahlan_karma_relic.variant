@@ -1,0 +1,52 @@
+{
+    "displayName": "Relic",
+    "fluxCapacitors": 0,
+    "fluxVents": 17,
+    "hullId": "tahlan_karma",
+    "hullMods": [
+        "missleracks",
+        "targetingunit"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_karma_relic",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "ioncannon",
+                "WS0008": "ioncannon"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "harpoonpod",
+                "WS0004": "harpoonpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavyneedler",
+                "WS0002": "heavyneedler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "tahlan_silk"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan"
+            }
+        }
+    ]
+}

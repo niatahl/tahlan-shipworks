@@ -1,4 +1,7 @@
 0.3.16
+Additions:
+- New hidden things
+
 Changes:
 - Silberherz Hullmod
 	- Reduced stat penalty for lack of level 10 officer to 15%

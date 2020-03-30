@@ -10,16 +10,13 @@ import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
+import data.scripts.campaign.*;
 import data.scripts.weapons.ai.tahlan_FountainAI;
 import data.scripts.weapons.ai.tahlan_KriegsmesserAI;
 import data.scripts.weapons.ai.tahlan_TwoStageMissileAI;
-import data.scripts.campaign.tahlan_regaliablueprintscript;
 import data.scripts.world.tahlan_FactionRelationPlugin;
 import data.scripts.world.tahlan_Lethia;
 import data.scripts.world.tahlan_Rubicon;
-import data.scripts.campaign.tahlan_LegioStealingHomework;
-import data.scripts.campaign.tahlan_HalbmondSpawnScript;
-import data.scripts.campaign.tahlan_DerelictsSpawnScript;
 import exerelin.campaign.SectorManager;
 import org.apache.log4j.Level;
 import org.dark.shaders.light.LightData;
@@ -156,6 +153,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         //Spawning hidden things
         tahlan_HalbmondSpawnScript.spawnHalbmond(Global.getSector());
         tahlan_DerelictsSpawnScript.spawnDerelicts(Global.getSector());
+        tahlan_LostechSpawnScript.spawnLostech(Global.getSector());
     }
 
     @Override

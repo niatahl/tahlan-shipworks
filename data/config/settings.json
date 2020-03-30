@@ -21,6 +21,8 @@
 			"tahlan_trail_dhelix":"graphics/tahlan/fx/trails_dhelix.png",
 			"tahlan_trail_rings":"graphics/tahlan/fx/trails_rings.png",
 			"tahlan_trail_flame":"graphics/tahlan/fx/trails_flame.png",
+			"tahlan_trail_foggy":"graphics/tahlan/fx/trails_foggy.png",
+			"tahlan_cashmere_blast":"graphics/tahlan/fx/tahlan_cashmere_blastwave.png",
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",

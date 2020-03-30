@@ -1,0 +1,37 @@
+{
+    "displayName": "Relic",
+    "fluxCapacitors": 5,
+    "fluxVents": 30,
+    "hullId": "tahlan_samsara",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_samsara_relic",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_silk",
+                "WS0002": "tahlan_silk"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabotpod",
+                "WS0004": "sabotpod",
+                "WS0009": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "pdburst",
+                "WS0008": "pdburst"
+            }
+        }
+    ]
+}

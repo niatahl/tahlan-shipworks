@@ -1,0 +1,111 @@
+{
+  "hullName": "Yajurveda",
+  "hullId": "tahlan_yajurveda",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_yajurveda.png",
+  "style": "HIGH_TECH",
+  "height": 96,
+  "width": 100,
+  "center": [50, 48],
+  "collisionRadius": 74,
+  "shieldCenter": [-4, -0],
+  "shieldRadius": 66,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_heavyconduits"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 245,
+      "angle": -70.5,
+      "locations": [0, -35]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 245,
+      "angle": 70.5,
+      "locations": [0, 35]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [9, 19]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [9, -19]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-10, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-44.5, 15],
+      "length": 29,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-44.5, -15],
+      "length": 29,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-27.5, 31.5],
+      "length": 22.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-27.5, -31.5],
+      "length": 22.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -42, -19.5,
+    -0.5, -48.5,
+    17.5, -29,
+    9, -14,
+    29, -16.5,
+    46.5, -0,
+    29, 16.5,
+    9, 14,
+    17.5, 29,
+    -0.5, 48.5,
+    -42, 19.5
+  ]
+}

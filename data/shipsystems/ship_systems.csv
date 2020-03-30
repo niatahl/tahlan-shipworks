@@ -33,4 +33,6 @@ Plasma Rounds,tahlan_plasmarounds,,,,,,,,3,0.05,0,2,0,0.5,,,,,,,,,,,graphics/ico
 Heavy Damper Field,tahlan_heavydamper,1,,,,,,,2,0.05,0.25,2,0.25,0,,,,,TRUE,,,,TRUE,TRUE,graphics/icons/hullsys/damper_field.png
 Crusher Drive,tahlan_crusherdrive,1,,,,,,,,,0.5,4,0.5,10,,,,,,TRUE,TRUE,TRUE,TRUE,TRUE,graphics/icons/hullsys/burn_drive.png
 R-Type Phase Skimmer,tahlan_rrskimmer,,,,,,,,5,0.15,0.1,,0.1,0.1,,TRUE,,TRUE,,,,,,,graphics/icons/hullsys/displacer.png
+Spacial Shift,tahlan_shiftdrive,,,,,,,,5,0.15,0.1,0.4,0.1,,,,TRUE,,TRUE,,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
+Flux Blast,tahlan_fluxblast,,,,,,,,,,0.5,0.1,0.1,6,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,

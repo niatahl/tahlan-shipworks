@@ -9,9 +9,12 @@
     "variantId": "tahlan_Castigator_NC_custom",
     "weaponGroups": [
         {
-            "autofire": true,
+            "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0012": "tahlan_titanomachy"}
+            "weapons": {
+                "WS0015": "tahlan_utpc",
+                "WS0016": "tahlan_utpc"
+            }
         },
         {
             "autofire": false,
@@ -22,19 +25,20 @@
             }
         },
         {
-            "autofire": true,
+            "autofire": false,
             "mode": "LINKED",
             "weapons": {
                 "WS0003": "tahlan_magaera",
-                "WS0004": "tahlan_magaera"
+                "WS0004": "tahlan_magaera",
+                "WS0012": "tahlan_porph"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "tahlan_gallant",
-                "WS0002": "tahlan_gallant"
+                "WS0001": "tahlan_astrix",
+                "WS0002": "tahlan_astrix"
             }
         },
         {

@@ -83,3 +83,6 @@ Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,
 ,,,,,,,,,,,,,,,,,,
 Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
 MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_MusicBox,(Hidden) Plays theme music in combat.,(Hidden) Plays theme music in combat.,graphics/tahlan/hullmods/tahlan_knightrefit.png
+,,,,,,,,,,,,,,,,,,
+Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileVents,(Hidden) Venting spawns volatile emp arcs,(Hidden) Venting spawns volatile emp arcs,
+Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileDissipation,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,

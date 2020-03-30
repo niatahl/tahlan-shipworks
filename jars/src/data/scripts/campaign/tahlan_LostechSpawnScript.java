@@ -28,21 +28,19 @@ import java.util.Random;
 /**
  * Script to generate a whole bunch of teaser ships in random orbits throughout the sector
  */
-public class tahlan_DerelictsSpawnScript {
-    public static final Logger LOGGER = Global.getLogger(tahlan_DerelictsSpawnScript.class);
+public class tahlan_LostechSpawnScript {
+    public static final Logger LOGGER = Global.getLogger(tahlan_LostechSpawnScript.class);
     // --- Settings --- //
 
     //List of teaser ships to spawn and their count
     private static final List<Pair<String, Integer>> SHIP_SPAWNS = new ArrayList<>();
     static {
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Timeless_retro_standard", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_schneefall_traum_albtraum", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_paladin", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_b_vanguard", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_c_longbowman", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_d_smiter", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Nibelung_crg_elite", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_phantom", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_phantom", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_rigveda_relic", 2));
     }
 
     //Systems that can never get a teaser ship spawned in them
@@ -83,7 +81,7 @@ public class tahlan_DerelictsSpawnScript {
      * Spawns all the teaser ships into the sector: should be run once on sector generation
      * @param sector the sector to spawn the ships in
      */
-    public static void spawnDerelicts(SectorAPI sector) {
+    public static void spawnLostech(SectorAPI sector) {
         for (Pair<String, Integer> spawnData : SHIP_SPAWNS) {
             int numberOfSpawns = 0;
             while (numberOfSpawns < spawnData.two) {

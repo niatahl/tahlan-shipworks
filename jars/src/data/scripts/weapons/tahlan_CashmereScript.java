@@ -2,7 +2,9 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.plugins.MagicTrailPlugin;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
@@ -13,6 +15,10 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
+
+import static org.lwjgl.opengl.GL11.*;
 
 import static com.fs.starfarer.api.util.Misc.ZERO;
 
@@ -23,8 +29,15 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
     private static final Color FLASH_COLOR = new Color(255, 212, 215);
     private static final int NUM_PARTICLES = 30;
 
+    private final String CHARGE_SOUND_ID = "tahlan_virtue_loop";
+
     private boolean hasFiredThisCharge = false;
     private IntervalUtil effectInterval = new IntervalUtil(0.05f, 0.1f);
+
+    private List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
+
+    //A map for known projectiles and their IDs: should be cleared in init
+    private Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
 
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
 
@@ -59,6 +72,8 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
 
         //Chargeup visuals
         if (chargelevel > 0f && !hasFiredThisCharge) {
+            Global.getSoundPlayer().playLoop(CHARGE_SOUND_ID, weapon, (0.85f + weapon.getChargeLevel()*2f), (0.6f + (weapon.getChargeLevel() * 0.4f)), weapon.getLocation(), new Vector2f(0f, 0f));
+
             effectInterval.advance(engine.getElapsedInLastFrame());
             if (effectInterval.intervalElapsed()){
                 Vector2f arcPoint = MathUtils.getRandomPointInCircle(point,75f*chargelevel);
@@ -80,8 +95,8 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
         if (chargelevel >= 1f && !hasFiredThisCharge) {
             hasFiredThisCharge = true;
 
-            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), PARTICLE_COLOR, 120f, 0.5f);
-            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 60f, 0.5f);
+            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), PARTICLE_COLOR, 160f, 0.2f);
+            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 80f, 0.2f);
             engine.addSmoothParticle(point, ZERO, 200f, 0.7f, 0.1f, PARTICLE_COLOR);
             engine.addSmoothParticle(point, ZERO, 300f, 0.7f, 1f, GLOW_COLOR);
             engine.addHitParticle(point, ZERO, 400f, 1f, 0.05f, FLASH_COLOR);
@@ -91,6 +106,8 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
                         5f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR);
             }
         }
+
+
     }
 }
 

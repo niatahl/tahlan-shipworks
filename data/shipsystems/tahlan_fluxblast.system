@@ -1,0 +1,10 @@
+{
+	"id":"tahlan_fluxblast",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_FluxBlastStats",
+	
+	"useSound":"",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

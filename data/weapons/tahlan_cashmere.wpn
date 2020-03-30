@@ -5,8 +5,10 @@
   "everyFrameEffect": "data.scripts.weapons.tahlan_CashmereScript",
   "type": "ENERGY",
   "size": "LARGE",
-  "turretSprite": "graphics/tahlan/weapons/tahlan_cashmere_turret_base.png",
-  "hardpointSprite": "graphics/tahlan/weapons/tahlan_cashmere_hp_base.png",
+  "turretSprite": "graphics/tahlan/weapons/relics/tahlan_cashmere_turret_base.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/relics/tahlan_cashmere_turret_glow.png",
+  "hardpointSprite": "graphics/tahlan/weapons/relics/tahlan_cashmere_hp_base.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/relics/tahlan_cashmere_hp_glow.png",
   "renderAboveAllWeapons": 0,
   "turretOffsets": [
     15.5,

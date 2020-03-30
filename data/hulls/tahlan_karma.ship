@@ -12,7 +12,8 @@
   "shieldRadius": 129,
   "viewOffset": 0,
   "builtInMods": [
-    "tahlan_heavyconduits"
+    "tahlan_heavyconduits",
+	"tahlan_volatilevents"
   ],
   "weaponSlots": [
     {

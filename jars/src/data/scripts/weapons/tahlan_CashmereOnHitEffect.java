@@ -3,6 +3,7 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.AsteroidAPI;
 import com.fs.starfarer.api.combat.*;
+import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;
@@ -18,6 +19,8 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
     private static final Color EXPLOSION_COLOR = new Color(232, 176, 255, 10);
     private static final Color FLASH_GLOW_COLOR = new Color(240, 215, 241, 200);
     private static final Color GLOW_COLOR = new Color(223, 172, 255, 50);
+    private static final Color ARC_FRINGE_COLOR = new Color(185, 52, 255);
+    private static final Color ARC_CORE_COLOR = new Color(255, 212, 215);
     private static final String SOUND_ID = "tahlan_cashmere_impact";
     private static final Vector2f ZERO = new Vector2f();
 
@@ -28,6 +31,7 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
         if (projectile.didDamage() && !(target instanceof MissileAPI)) {
 
+            // Blast visuals
             float CoreExplosionRadius = 70f;
             float CoreExplosionDuration = 1f;
             float ExplosionRadius = 200f;
@@ -53,7 +57,53 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
 
             Global.getSoundPlayer().playSound(SOUND_ID, 1f, 1f, point, ZERO);
 
+            MagicRender.battlespace(
+                    Global.getSettings().getSprite("fx","tahlan_cashmere_blast"),
+                    point,
+                    new Vector2f(),
+                    new Vector2f(96,96),
+                    new Vector2f(480,480),
+                    //angle,
+                    360*(float)Math.random(),
+                    0,
+                    new Color(255, 95, 126,255),
+                    true,
+                    0,
+                    0.1f,
+                    0.2f
+            );
+            MagicRender.battlespace(
+                    Global.getSettings().getSprite("fx","tahlan_cashmere_blast"),
+                    point,
+                    new Vector2f(),
+                    new Vector2f(128,128),
+                    new Vector2f(240,240),
+                    //angle,
+                    360*(float)Math.random(),
+                    0,
+                    new Color(255,225,225,225),
+                    true,
+                    0.2f,
+                    0.0f,
+                    0.4f
+            );
+            MagicRender.battlespace(
+                    Global.getSettings().getSprite("fx","tahlan_cashmere_blast"),
+                    point,
+                    new Vector2f(),
+                    new Vector2f(196,196),
+                    new Vector2f(120,120),
+                    //angle,
+                    360*(float)Math.random(),
+                    0,
+                    new Color(116, 148, 255,200),
+                    true,
+                    0.4f,
+                    0.0f,
+                    0.8f
+            );
 
+            // Arcing stuff
             List<CombatEntityAPI> validTargets = new ArrayList<CombatEntityAPI>();
             for (CombatEntityAPI entityToTest : CombatUtils.getEntitiesWithinRange(point, 500)) {
                 if (entityToTest instanceof ShipAPI || entityToTest instanceof AsteroidAPI || entityToTest instanceof MissileAPI) {
@@ -86,8 +136,8 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
                         100000f, //Max range
                         "tachyon_lance_emp_impact", //Impact sound
                         15f, // thickness of the lightning bolt
-                        FLASH_GLOW_COLOR, //Central color
-                        projectile.getWeapon().getSpec().getGlowColor() //Fringe Color
+                        ARC_CORE_COLOR, //Central color
+                        ARC_FRINGE_COLOR //Fringe Color
                 );
             }
         }
