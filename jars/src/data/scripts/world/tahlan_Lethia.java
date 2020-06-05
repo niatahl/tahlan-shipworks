@@ -156,6 +156,7 @@ public class tahlan_Lethia {
                 260);
 
         lethia_5.setCustomDescriptionId("tahlan_planet_kassadar");
+        lethia_5.setInteractionImage("illustrations","tahlan_kassadar_illus");
         system.addRingBand(lethia_5, "misc", "rings_dust0", 256f, 1, Color.gray, 256f, 360, 400f);
         //SectorEntityToken lethia_5_station = system.addCustomEntity("tahlan_lethia_station", "Skyward Station", "tahlan_station_skyward", "independent");
         //lethia_5_station.setCircularOrbitPointingDown(lethia_5, 360*(float)Math.random(), 200, 50);
@@ -208,7 +209,7 @@ public class tahlan_Lethia {
 
         //Jump point for Kassadar
         JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_lethia_kassadar_jump", "Kassadar Jump Point");
-        jumpPoint1.setCircularOrbit( system.getEntityById("tahlan_lethia_p05"), 290, 900, 120);
+        jumpPoint1.setCircularOrbit( system.getEntityById("tahlan_lethia_p05"), 290, 1400, 120);
         jumpPoint1.setRelatedPlanet(lethia_5);
         system.addEntity(jumpPoint1);
 

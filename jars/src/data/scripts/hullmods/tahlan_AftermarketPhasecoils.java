@@ -4,6 +4,8 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_AftermarketPhasecoils extends BaseHullMod {
 
     private static final float RANGE_THRESHOLD = 800f;
@@ -20,8 +22,8 @@ public class tahlan_AftermarketPhasecoils extends BaseHullMod {
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if (index == 0) return "" + (int)RANGE_THRESHOLD + "su";
-        if (index == 1) return "doubled";
+        if (index == 0) return "" + (int)RANGE_THRESHOLD + txt("su");
+        if (index == 1) return txt("hmd_AftermPhCoils1");
         return null;
     }
 }

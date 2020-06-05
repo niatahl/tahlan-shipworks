@@ -31,8 +31,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "heavyneedler",
-                "WS0002": "heavyneedler"
+                "WS0001": "tahlan_taffeta",
+                "WS0002": "tahlan_taffeta"
             }
         },
         {

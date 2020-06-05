@@ -7,6 +7,8 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import org.lazywizard.lazylib.combat.CombatUtils;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_CooperativeProtocolsYuki extends BaseHullMod {
     //General hullmod stats
     public static final float AURA_RANGE = 2000f;
@@ -81,11 +83,11 @@ public class tahlan_CooperativeProtocolsYuki extends BaseHullMod {
     @Override
     public String getDescriptionParam(int index, HullSize hullSize, ShipAPI ship) {
         if (index == 0) return "" + (int)(AURA_RANGE);
-        if (index == 1) return "" + (int)(ECM_BONUS * 100f) + "%";
-        if (index == 2) return "" + (int)(AUTOFIRE_ACCURACY_BONUS * 100f) + "%";
-        if (index == 3) return "" + (int)(SPEED_BONUS_PERCENTAGE) + "%";
+        if (index == 1) return "" + (int)(ECM_BONUS * 100f) + txt("%");
+        if (index == 2) return "" + (int)(AUTOFIRE_ACCURACY_BONUS * 100f) + txt("%");
+        if (index == 3) return "" + (int)(SPEED_BONUS_PERCENTAGE) + txt("%");
         if (index == 4) return "" + MAX_NUMBER_OF_KORIS;
-        if (index == 5) return "" + (int)(BONUS_EFFECT_FOR_MAX_KORIS * 100f) + "%";
+        if (index == 5) return "" + (int)(BONUS_EFFECT_FOR_MAX_KORIS * 100f) + txt("%");
         return null;
     }
 }

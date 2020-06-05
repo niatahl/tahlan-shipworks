@@ -1,0 +1,54 @@
+{
+  "id": "tahlan_kupfer_strahl",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "SMALL",
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "beamEffect": "data.scripts.weapons.tahlan_EthniuBeamEffect",  
+  "everyFrameEffect": "data.scripts.weapons.tahlan_StrahlfaustMuzzleFlashScript",
+  "turretSprite": "graphics/tahlan/ships/ma/tahlan_kupferflug_arm_beam.png",
+  "hardpointSprite": "graphics/tahlan/ships/ma/tahlan_kupferflug_arm_beam.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    56,
+    103,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    3,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    10.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "fringeColor": [
+    255,
+    18,
+    75,
+    255
+  ],
+  "coreColor": [
+    235,
+    245,
+    255,
+    215
+  ],
+  "width": 20,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_ppa_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_ppa_beam_core.png"
+  ],
+  "textureScrollSpeed": 256,
+  "pixelsPerTexel": 1,
+  "fireSoundTwo": "tahlan_ethniu_loop"
+}

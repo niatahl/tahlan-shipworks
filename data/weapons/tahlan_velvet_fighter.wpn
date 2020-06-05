@@ -1,0 +1,37 @@
+{
+  "id": "tahlan_velvet_fighter",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_velvet_shot",
+  #"everyFrameEffect": "data.scripts.weapons.tahlan_VelvetScript",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/relics/tahlan_velvet_turret_base.png",
+  "hardpointSprite": "graphics/tahlan/weapons/relics/tahlan_velvet_hp_base.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    11,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    12.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "interruptibleBurst": true,
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":10.0,
+					   "particleSizeMin":10.0,
+					   "particleSizeRange":20.0,
+					   "particleDuration":0.25,
+					   "particleCount":20,
+					   "particleColor":[255,141,84,245]},
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_velvet_fire"
+}

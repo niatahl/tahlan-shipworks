@@ -36,11 +36,13 @@ public class tahlan_LostechSpawnScript {
     private static final List<Pair<String, Integer>> SHIP_SPAWNS = new ArrayList<>();
     static {
         SHIP_SPAWNS.add(new Pair<>("tahlan_karma_phantom", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 2));
         SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_phantom", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 2));
         SHIP_SPAWNS.add(new Pair<>("tahlan_rigveda_relic", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_yajurveda_relic", 4));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_nirvana_relic", 2));
     }
 
     //Systems that can never get a teaser ship spawned in them
@@ -109,7 +111,7 @@ public class tahlan_LostechSpawnScript {
                 }
                 addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, recoverable, null);
 
-                LOGGER.info("Spawned Derelict in " + system.getId());
+                LOGGER.info("Spawned LosTech Derelict in " + system.getId());
                 numberOfSpawns++;
             }
         }

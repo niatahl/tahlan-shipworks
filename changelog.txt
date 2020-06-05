@@ -1,6 +1,7 @@
 0.3.16
 Additions:
 - New hidden things
+- Darnus-class experimental frigate
 
 Changes:
 - Silberherz Hullmod
@@ -11,6 +12,27 @@ Changes:
 	- Reduced range of some arm weapons
 - Crusher Drive
 	- Reduced mass multiplier to reduce ramming damage somewhat
+	- Reduced damage resistance
+	- Increased cooldown from 10s to 15s
+- Exa Pico
+	- Reduced DP from 15 to 10
+- Sturmkanone Mk.3
+	- Removed EMP damage
+- Sturmkanone Mk.2
+	- Increased flux per shot from 300 to 360 (1.0 -> 1.2 efficiency)
+	- Removed EMP damage
+- Hagelsturm
+	- Reduced range to 800
+- Yosei
+	- DP reduced to 8
+- Renki
+	- Shipsystem changed to missile autoforge
+	- DP reduced to 8
+- Castella (P)
+	- Fray Cannon range increased from 1000 to 1200
+- Timeless/Nameless
+	- Shield changed to front shield with limited coverage
+	- Reduced dissipation
 	
 
 0.3.15a
@@ -108,6 +130,7 @@ Additions:
 Changes:
 - Further tweaks to Legio Siege fleet sizes
 - Legio bases should now properly time out eventually
+- Buffed Gigantomachy (Numistri built-in) damage
 
 Fixes:
 - Fixed Vund-pattern Autoforge being nonfunctional on some ships

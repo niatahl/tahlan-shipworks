@@ -7,6 +7,7 @@
 	"hullFrequency":{
 		"tags":{
 			"tahlan_knights":0.1,
+			"tahlan_lostech":0.1,
 			"tahlan_Hresvelgr":0.5,
 			"tahlan_Niebelung":0.5,
 		},
@@ -20,7 +21,7 @@
 		#"hulls":[],
 	},
 	"knownShips":{
-		"tags":["tahlan_knights"],
+		"tags":["tahlan_knights", "tahlan_lostech"],
 		"hulls":[
 			"tahlan_Castella",
 			"tahlan_Kodai",
@@ -45,7 +46,7 @@
 	},
 	
 	"knownWeapons":{
-		"tags":["tahlan_knights"],
+		"tags":["tahlan_knights", "tahlan_lostech"],
 		"weapons":[
 			"tahlan_armiger",
 		],

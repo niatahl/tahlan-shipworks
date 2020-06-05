@@ -49,6 +49,7 @@ public class tahlan_FusorSoundScript implements EveryFrameWeaponEffectPlugin
 
     //To cleanly run the muzzle flash script without messing with the sound script
     private tahlan_FusorMuzzleFlashScript muzzleFlashScript = null;
+    //private tahlan_FlamerScript flamerScript = null;
  
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon)
@@ -58,6 +59,13 @@ public class tahlan_FusorSoundScript implements EveryFrameWeaponEffectPlugin
             muzzleFlashScript = new tahlan_FusorMuzzleFlashScript();
         }
         muzzleFlashScript.advance(amount, engine, weapon);
+
+        /*
+        if (flamerScript == null) {
+            flamerScript = new tahlan_FlamerScript();
+        }
+        flamerScript.advance(amount,engine,weapon);
+        */
 
         boolean isThisWeaponFiring = false;
         if (weapon.getChargeLevel() > 0f)

@@ -1,6 +1,6 @@
 {
     "displayName": "Relic",
-    "fluxCapacitors": 3,
+    "fluxCapacitors": 1,
     "fluxVents": 30,
     "hullId": "tahlan_Castigator_relic",
     "hullMods": ["targetingunit"],
@@ -35,8 +35,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "hveldriver",
-                "WS0004": "hveldriver"
+                "WS0003": "tahlan_taffeta",
+                "WS0004": "tahlan_taffeta"
             }
         },
         {

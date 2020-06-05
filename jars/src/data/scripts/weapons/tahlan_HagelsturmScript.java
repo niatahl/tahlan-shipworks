@@ -51,22 +51,5 @@ public class tahlan_HagelsturmScript implements EveryFrameWeaponEffectPlugin {
             MagicFakeBeamPlugin.addBeam(duration, fadeDuration, BEAM_WIDTH, from, angle, length, BEAM_CORE, BEAM_FRINGE);
         }
 
-        ShipAPI ship = weapon.getShip();
-
-        if (ship.getSystem().getId().equals("tahlan_explosiverounds") && ship.getSystem().isActive()) {
-
-            for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 100f)) {
-                if (weapon == proj.getWeapon() && !registeredProjectiles.contains(proj)) {
-                    registeredProjectiles.add(proj);
-                    //Replace projectile with explosive version
-                    DamagingProjectileAPI newProj = (DamagingProjectileAPI) engine.spawnProjectile(ship, weapon, "tahlan_stahlhagel_dummy", proj.getLocation(), proj.getFacing(), ship.getVelocity());
-                    newProj.setDamageAmount(proj.getDamageAmount());
-                    Global.getCombatEngine().removeEntity(proj);
-                    registeredProjectiles.add(newProj);
-                }
-            }
-
-
-        }
     }
 }

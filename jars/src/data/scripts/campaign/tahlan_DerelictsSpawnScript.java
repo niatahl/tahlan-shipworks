@@ -70,9 +70,9 @@ public class tahlan_DerelictsSpawnScript {
         WEIGHTS.put(LocationType.IN_ASTEROID_BELT, 5f);
         WEIGHTS.put(LocationType.IN_ASTEROID_FIELD, 5f);
         WEIGHTS.put(LocationType.STAR_ORBIT, 1f);
-        WEIGHTS.put(LocationType.IN_SMALL_NEBULA, 3f);
+        WEIGHTS.put(LocationType.IN_SMALL_NEBULA, 4f);
         WEIGHTS.put(LocationType.NEAR_STAR, 2f);
-        WEIGHTS.put(LocationType.JUMP_ORBIT, 2f);
+        WEIGHTS.put(LocationType.JUMP_ORBIT, 1f);
     }
 
     public static String TRAUM_LOCATION;

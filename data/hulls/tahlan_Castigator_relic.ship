@@ -3,17 +3,18 @@
   "hullId": "tahlan_Castigator_relic",
   "hullSize": "CRUISER",
   "spriteName": "graphics/tahlan/ships/relics/tahlan_Castigator_relic.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_LOSTECH",
   "height": 292,
   "width": 212,
   "center": [106, 144],
-  "collisionRadius": 200.5,
+  "collisionRadius": 212.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 176.5,
+  "shieldRadius": 202,
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyconduits",
-	"tahlan_volatilevents"
+    "tahlan_volatilevents",
+    "tahlan_realityglitch"
   ],
   "weaponSlots": [
     {
@@ -191,7 +192,7 @@
   "engineSlots": [
     {
       "location": [-90.5, 41],
-      "length": 67.5,
+      "length": 112,
       "width": 27,
       "angle": 180,
       "contrailSize": 27,
@@ -199,7 +200,7 @@
     },
     {
       "location": [-90.5, -41],
-      "length": 67.5,
+      "length": 112,
       "width": 27,
       "angle": -180,
       "contrailSize": 27,
@@ -207,20 +208,52 @@
     },
     {
       "location": [-88, 56.5],
-      "length": 56.5,
-      "width": 22,
+      "length": 92.5,
+      "width": 23,
       "angle": 180,
-      "contrailSize": 22,
+      "contrailSize": 23,
       "style": "LOW_TECH"
     },
     {
       "location": [-88, -56.5],
-      "length": 56.5,
-      "width": 22,
+      "length": 92.5,
+      "width": 23,
       "angle": -180,
-      "contrailSize": 22,
+      "contrailSize": 23,
       "style": "LOW_TECH"
     },
+    {
+      "location": [-87.5, 56.5],
+      "length": 20.5,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-87.5, -56.5],
+      "length": 20.5,
+      "width": 30,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-90, 41],
+      "length": 20.5,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-90, -41],
+      "length": 20.5,
+      "width": 30,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "TAHLAN_RELIC_ENGINE"
+    }
   ],
   "bounds": [
     -141.5, -11.5,

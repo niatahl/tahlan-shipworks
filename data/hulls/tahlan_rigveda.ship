@@ -3,17 +3,18 @@
   "hullId": "tahlan_rigveda",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/tahlan/ships/relics/tahlan_rigveda.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_LOSTECH",
   "height": 148,
   "width": 188,
   "center": [94, 68.5],
-  "collisionRadius": 125.5,
+  "collisionRadius": 139.5,
   "shieldCenter": [0, -0],
-  "shieldRadius": 116,
+  "shieldRadius": 130,
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyconduits",
-	"tahlan_volatiledissipation"
+    "tahlan_volatiledissipation",
+    "tahlan_realityglitch"
   ],
   "weaponSlots": [
     {
@@ -188,6 +189,30 @@
       "angle": -180,
       "contrailSize": 6,
       "style": "HIGH_TECH"
+    },
+    {
+      "location": [-57.5, 24],
+      "length": 18,
+      "width": 25,
+      "angle": 180,
+      "contrailSize": 25,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-57.5, -24],
+      "length": 18,
+      "width": 25,
+      "angle": -180,
+      "contrailSize": 25,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-67, -0],
+      "length": 34.5,
+      "width": 50,
+      "angle": -180,
+      "contrailSize": 50,
+      "style": "TAHLAN_RELIC_ENGINE"
     }
   ],
   "bounds": [

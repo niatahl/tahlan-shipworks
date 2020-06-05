@@ -57,6 +57,12 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
             if (!Global.getSector().getFaction(LEGIO_ID).useWhenImportingShip(baseShip)) {
                 Global.getSector().getFaction(LEGIO_ID).addUseWhenImportingShip(baseShip);
             }
-        }        
+        }
+
+        for (String fighter : Global.getSector().getFaction(Factions.PIRATES).getKnownFighters()) {
+            if (!Global.getSector().getFaction(LEGIO_ID).knowsFighter(fighter)) {
+                Global.getSector().getFaction(LEGIO_ID).addKnownFighter(fighter, true);
+            }
+        }
     }
 }

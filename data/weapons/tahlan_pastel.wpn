@@ -1,0 +1,43 @@
+{
+  "id": "tahlan_pastel",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_pastel_shot",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_PastelScript",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_pastel_turret.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_pastel_hp.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    14.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    16,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "muzzleFlashSpec": {
+    "length": 30,
+    "spread": 10,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "particleDuration": 0.25,
+    "particleCount": 20,
+    "particleColor": [
+      107,
+      218,
+      255,
+      155
+    ]
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_pastel_fire"
+}

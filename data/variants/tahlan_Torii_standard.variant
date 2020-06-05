@@ -6,6 +6,7 @@
     "hullMods": ["hardenedshieldemitter"],
     "permaMods": [],
     "variantId": "tahlan_Torii_standard",
+	"goalVariant": true,
     "weaponGroups": [
         {
             "autofire": true,

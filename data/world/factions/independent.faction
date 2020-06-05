@@ -16,6 +16,8 @@
 			"tahlan_Ristreza_b":0,
 			"tahlan_Castigator":0.6,
 			"tahlan_Izanami":0.5,
+			"tahlan_Bento":0.5,
+			"tahlan_darnus":0.3,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -35,7 +37,8 @@
 			"tahlan_Nibelung",
 			"tahlan_Vale",
 			"tahlan_Castigator",
-			"tahlan_Hresvelgr"
+			"tahlan_Hresvelgr",
+			"tahlan_darnus"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

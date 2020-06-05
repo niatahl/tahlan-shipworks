@@ -10,6 +10,8 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_LIRefit extends BaseHullMod {
 
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>(1);
@@ -64,9 +66,9 @@ public class tahlan_LIRefit extends BaseHullMod {
 		if (index == 3) return "" + ((Float) mag.get(HullSize.CAPITAL_SHIP)).intValue();
 
 		if (index == 4) return "" + (int) BURN_LEVEL_BONUS;
-		if (index == 5) return "" + (int) Math.round((1f - PROFILE_MULT) * 100f) + "%";
+		if (index == 5) return "" + (int) Math.round((1f - PROFILE_MULT) * 100f) + txt("%");
 
-		if (index == 6) return "Incompatible with Unstable Injector";
+		if (index == 6) return txt("hmd_LIRefit1");
 
 		return null;
 	}

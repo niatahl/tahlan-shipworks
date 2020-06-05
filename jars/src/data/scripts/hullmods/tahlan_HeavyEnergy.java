@@ -6,6 +6,8 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_HeavyEnergy extends BaseHullMod {
 
 	public static final float COST_REDUCTION = 10;
@@ -25,8 +27,8 @@ public class tahlan_HeavyEnergy extends BaseHullMod {
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
 		if (index == 0) return "" + (int) COST_REDUCTION + "";
-		if (index == 1) return "" + (int) DAMAGE_PERCENT + "%";
-        if (index == 2) return "" + (int) ROF_PERCENT*-1 + "%";
+		if (index == 1) return "" + (int) DAMAGE_PERCENT + txt("%");
+        if (index == 2) return "" + (int) ROF_PERCENT*-1 + txt("%");
 		return null;
 	}
 

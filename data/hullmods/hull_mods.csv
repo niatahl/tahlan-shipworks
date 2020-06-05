@@ -43,12 +43,17 @@ Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hu
 
 Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
 Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing its damage by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
-Lostech Engineering,tahlan_heavyconduits,,,,defensive,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyConduits,"The flux grid of this ship has been heavily reinforced and modified with advanced and unknown Domain lostech. Its exact specs are unknown, but through tests and extensive analysis you have been able to deduce most of the effects. Similar to common reinforced flux conduits, EMP damage taken is reduced by %s. Additionally the ship's flux dissipation rate while venting is boosted by %s.
+Lostech Engineering,tahlan_heavyconduits,,,,defensive,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyConduits,"The flux grid of this ship has been heavily reinforced and modified with advanced and unknown Domain lostech. Its exact specs are unknown, but through tests and extensive analysis you have been able to deduce most of the effects. Similar to common reinforced flux conduits, EMP damage taken is reduced by %s. Additionally the ship's flux dissipation rate while venting is boosted by %s and a fully integrated autorepair system reduces weapon and engine repair times by %s.
+
+Detailed analysis indicates that the ship may possess other, as of yet undocumented, capabilities.
 
 Due to the limited understanding of the technology, maintenance costs and CR degradation in combat after peak performance time are increased by %s.
 
-The extensive modifications are also incompatible with %s.","Reduces amount of EMP damage taken, improves venting.",graphics/tahlan/hullmods/tahlan_heavyconduits.png
+The extensive modifications are also incompatible with %s and the non-standard shield generators are incompatible with regular %s.","Reduces amount of EMP damage taken, improves venting.",graphics/tahlan/hullmods/tahlan_heavyconduits.png
 Makeshift Turret Mounts,tahlan_makeshiftmounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_MakeshiftMounts,"The turret mounts of this ship have been ""upgraded"" in a makeshift manner. Due to inferior engineering, weapons can only turn at %s speed and ballistic weapon rate of fire is reduced to %s of base.",Reduces weapon turnrate and rate of fire.,graphics/tahlan/hullmods/tahlan_makeshiftmounts.png
+Bridgehead Design,tahlan_filamentspecs,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FilamentSpecs,"Instead of actual fighter bays, this ship instead projects a stable wormhole connected to an automated planetary aerospace facility which handles actual fighter operations. Due to the planetary facility's capacities, fighter replacement times and their decay from sustained losses are reduced by %s.
+
+Additionally the ship is propelled by a pair of Redshift Drive Units, increasing the zero flux speed boost by %s.",Improved fighter operations.,graphics/tahlan/hullmods/tahlan_filamentspecs.png
 ,,,,,,,,,,,,,,,,,,
 Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
 
@@ -86,3 +91,6 @@ MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_M
 ,,,,,,,,,,,,,,,,,,
 Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileVents,(Hidden) Venting spawns volatile emp arcs,(Hidden) Venting spawns volatile emp arcs,
 Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileDissipation,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,
+Vent Weapon Boost,tahlan_ventweaponboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VentWeaponBoost,(Hidden) Boosts weapon damage after venting,(Hidden) Boosts weapon damage after venting,
+Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_RealityGlitch,(Hidden) Randomly phases and repairs some armor,(Hidden) Randomly phases and repairs some armor,
+,,,,,,,,,,,,,,,,,,

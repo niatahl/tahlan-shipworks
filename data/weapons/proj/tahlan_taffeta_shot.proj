@@ -1,0 +1,19 @@
+{
+	"id":"tahlan_taffeta_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"onHitEffect":"data.scripts.weapons.tahlan_TaffetaOnHitEffect",
+	"length":70.0,
+	"width":12.0,
+	"fadeTime":0.15,
+	"coreColor":[255,255,255,255],
+	"fringeColor": [215,255,235,105],
+	#"glowColor": [255,140,80,55],
+	#"glowRadius":80,
+	"hitGlowRadius":30,	
+	"textureScrollSpeed":32.0,
+	"pixelsPerTexel":10.0,
+	"bulletSprite":"graphics/tahlan/missiles/tahlan_taffeta_slug.png"
+}

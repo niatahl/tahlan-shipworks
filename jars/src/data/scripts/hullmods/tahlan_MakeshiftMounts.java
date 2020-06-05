@@ -6,6 +6,8 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_MakeshiftMounts extends BaseHullMod {
 
 
@@ -15,8 +17,8 @@ public class tahlan_MakeshiftMounts extends BaseHullMod {
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "50%";
-		if (index == 1) return "75%";
+		if (index == 0) return txt("hmd_MkshftMounts1");
+		if (index == 1) return txt("hmd_MkshftMounts2");
 		return null;
 	}
 

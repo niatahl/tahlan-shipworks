@@ -17,8 +17,8 @@
     "tahlan_advballistics"
   ],
   "builtInWeapons": {
-    "WS0015": "tahlan_utpc",
-    "WS0016": "tahlan_utpc",
+    "WS0015": "tahlan_utpc_l",
+    "WS0016": "tahlan_utpc_l",
     "WS0021": "tahlan_castigator_nc_halo"
   },
   "weaponSlots": [

@@ -34,6 +34,22 @@
 		"type":"SMOKE" # GLOW or SMOKE
 	},
 	
+	"TAHLAN_RELIC_ENGINE":{
+		#"glowSprite":"graphics/fx/engineglow32.png", # not implemented
+		#"glowShape":"graphics/fx/engineflame32.png",
+		"engineColor":[100, 214, 98,155],
+		"engineCampaignColor":[100, 214, 98,155],
+		"contrailParticleSizeMult":0,
+		"contrailParticleDuration":0,
+		"contrailParticleFinalSizeMult":0,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0.5,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[63, 104, 29,75],
+		#"contrailCampaignColor":[120,50,50,50],
+		"type":"SMOKE" # GLOW or SMOKE
+	},
+	
 	"TAHLAN_PIRATE_ENGINE_B":{
 		"engineColor":[100,165,255,240],
 		"contrailParticleSizeMult":2,
@@ -94,6 +110,18 @@
 		"contrailColor":[255,255,255,0],
 		"contrailCampaignColor":[255,0,0,0],
 		"type":"SMOKE"
+	},
+	
+	"TAHLAN_RED_ENGINE":{
+		"engineColor":[255,50,50,225],
+		"contrailParticleSizeMult":8,
+		"contrailParticleDuration":2,
+		"contrailParticleFinalSizeMult":1,
+		"contrailMaxSpeedMult":0.5f,
+		"contrailAngularVelocityMult":0f,
+		"contrailColor":[255,100,100,0],
+		"glowAlternateColor":[255,0,0,225],
+		"type":"GLOW" # GLOW or SMOKE
 	},
 }
 

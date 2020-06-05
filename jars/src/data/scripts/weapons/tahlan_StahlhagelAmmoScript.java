@@ -18,6 +18,9 @@ public class tahlan_StahlhagelAmmoScript implements EveryFrameWeaponEffectPlugin
         }
 
         ShipAPI ship = weapon.getShip();
+        if (ship.getSystem() == null) {
+            return;
+        }
 
         if (ship.getSystem().getId().equals("tahlan_explosiverounds") && ship.getSystem().isActive()) {
 

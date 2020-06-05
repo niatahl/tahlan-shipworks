@@ -3,17 +3,18 @@
   "hullId": "tahlan_karma",
   "hullSize": "CRUISER",
   "spriteName": "graphics/tahlan/ships/relics/tahlan_karma.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_LOSTECH",
   "height": 211,
   "width": 172,
   "center": [86, 100],
-  "collisionRadius": 136,
+  "collisionRadius": 154,
   "shieldCenter": [0.5, -0],
-  "shieldRadius": 129,
+  "shieldRadius": 146.5,
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyconduits",
-	"tahlan_volatilevents"
+    "tahlan_volatilevents",
+    "tahlan_realityglitch"
   ],
   "weaponSlots": [
     {
@@ -137,18 +138,18 @@
   "engineSlots": [
     {
       "location": [-98.5, 20],
-      "length": 52.5,
-      "width": 19,
+      "length": 79.5,
+      "width": 21,
       "angle": 180,
-      "contrailSize": 19,
+      "contrailSize": 21,
       "style": "LOW_TECH"
     },
     {
       "location": [-98.5, -20],
-      "length": 52.5,
-      "width": 19,
+      "length": 79.5,
+      "width": 21,
       "angle": -180,
-      "contrailSize": 19,
+      "contrailSize": 21,
       "style": "LOW_TECH"
     },
     {
@@ -198,6 +199,22 @@
       "angle": -180,
       "contrailSize": 9,
       "style": "HIGH_TECH"
+    },
+    {
+      "location": [-98, 20],
+      "length": 19,
+      "width": 28,
+      "angle": 180,
+      "contrailSize": 28,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-98, -20],
+      "length": 19,
+      "width": 28,
+      "angle": -180,
+      "contrailSize": 28,
+      "style": "TAHLAN_RELIC_ENGINE"
     }
   ],
   "bounds": [

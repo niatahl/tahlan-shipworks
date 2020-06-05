@@ -3,17 +3,18 @@
   "hullId": "tahlan_samsara",
   "hullSize": "CRUISER",
   "spriteName": "graphics/tahlan/ships/relics/tahlan_samsara.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_LOSTECH",
   "height": 208,
   "width": 172,
   "center": [86, 101.5],
-  "collisionRadius": 139.5,
+  "collisionRadius": 152,
   "shieldCenter": [0, -0],
-  "shieldRadius": 127,
+  "shieldRadius": 146.5,
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyconduits",
-	"tahlan_volatilevents"
+    "tahlan_volatilevents",
+    "tahlan_realityglitch"
   ],
   "weaponSlots": [
     {
@@ -119,7 +120,7 @@
   "engineSlots": [
     {
       "location": [-100.5, 20],
-      "length": 52.5,
+      "length": 74.5,
       "width": 19,
       "angle": 180,
       "contrailSize": 19,
@@ -127,7 +128,7 @@
     },
     {
       "location": [-100.5, -20],
-      "length": 52.5,
+      "length": 74.5,
       "width": 19,
       "angle": -180,
       "contrailSize": 19,
@@ -180,6 +181,22 @@
       "angle": -180,
       "contrailSize": 9,
       "style": "HIGH_TECH"
+    },
+    {
+      "location": [-99.5, 20],
+      "length": 20.5,
+      "width": 28,
+      "angle": 180,
+      "contrailSize": 28,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-99.5, -20],
+      "length": 20.5,
+      "width": 28,
+      "angle": -180,
+      "contrailSize": 28,
+      "style": "TAHLAN_RELIC_ENGINE"
     }
   ],
   "bounds": [

@@ -134,7 +134,10 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [-43.5, -0]
+      "locations": [
+        -43.5, -0,
+        -42.5, -0
+      ]
     },
     {
       "id": "LB 2",
@@ -143,7 +146,10 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [-44, 3.5]
+      "locations": [
+        -44, 3.5,
+        -42, 4
+      ]
     },
     {
       "id": "LB 3",
@@ -152,7 +158,10 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [-44, -3.5]
+      "locations": [
+        -44, -3.5,
+        -42.5, -3.5
+      ]
     },
     {
       "id": "LB 4",
@@ -161,7 +170,10 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [-44.5, 2]
+      "locations": [
+        -44.5, 2,
+        -43, 2
+      ]
     },
     {
       "id": "LB 5",
@@ -170,7 +182,10 @@
       "mount": "HIDDEN",
       "arc": 360,
       "angle": 0,
-      "locations": [-45, -2]
+      "locations": [
+        -45, -2,
+        -43.5, -2
+      ]
     }
   ],
   "engineSlots": [

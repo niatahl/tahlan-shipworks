@@ -1,0 +1,111 @@
+{
+  "hullName": "Kupferflug Regalia",
+  "hullId": "tahlan_kupferflug",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/ma/tahlan_kupferflug_body.png",
+  "style": "TAHLAN_RR_TECH",
+  "height": 23,
+  "width": 30,
+  "center": [15, 11.5],
+  "collisionRadius": 27,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 25,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "builtInWeapons": {
+    "WS0001": "tahlan_kupferflug_shoulder_l",
+    "WS0002": "tahlan_kupferflug_shoulder_r",
+    "WS0003": "tahlan_kupfer_strahl",
+    "WS0004": "tahlan_kupfer_missile",
+    "WS0005": "tahlan_kupferflug_body"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 61,
+      "angle": 5.5,
+      "locations": [-1.5, 11]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 61,
+      "angle": -5.5,
+      "locations": [-1.5, -11]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 61,
+      "angle": 13,
+      "locations": [0, 13]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 61,
+      "angle": -13,
+      "locations": [0, -13]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-10, 4.5],
+      "length": 21.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-10, -4.5],
+      "length": 21.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_RR_ENGINE"
+    },
+    {
+      "location": [-9.5, 4.5],
+      "length": 9,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "TAHLAN_RR_ENGINE_2"
+    },
+    {
+      "location": [-9.5, -4.5],
+      "length": 9,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "TAHLAN_RR_ENGINE_2"
+    }
+  ],
+  "bounds": [
+    -6, -11,
+    8.5, -4.5,
+    8.5, 4.5,
+    -6, 11
+  ]
+}

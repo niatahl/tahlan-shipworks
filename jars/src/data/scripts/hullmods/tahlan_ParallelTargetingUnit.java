@@ -3,9 +3,12 @@ package data.scripts.hullmods;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import data.scripts.util.MagicIncompatibleHullmods;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import static data.scripts.utils.tahlan_txt.txt;
 
 public class tahlan_ParallelTargetingUnit extends BaseHullMod {
 
@@ -43,17 +46,18 @@ public class tahlan_ParallelTargetingUnit extends BaseHullMod {
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         for (String tmp : BLOCKED_HULLMODS) {
             if (ship.getVariant().getHullMods().contains(tmp)) {
-                ship.getVariant().removeMod(tmp);
+                //ship.getVariant().removeMod(tmp);
+                MagicIncompatibleHullmods.removeHullmodWithWarning(ship.getVariant(),tmp,"tahlan_paralleltargeting");
             }
         }
     }
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if (index == 0) return "" + (int) RANGE_BOOST + "%";
-        if (index == 1) return "" + (int) (RANGE_BOOST-PD_MINUS) + "%";
-        if (index == 2) return "" + (int) RANGE_CAP + "su";
-        if (index == 3) return "" + (int) (RANGE_MULT*100f) + "%";
+        if (index == 0) return "" + (int) RANGE_BOOST + txt("%");
+        if (index == 1) return "" + (int) (RANGE_BOOST-PD_MINUS) + txt("%");
+        if (index == 2) return "" + (int) RANGE_CAP + txt("su");
+        if (index == 3) return "" + (int) (RANGE_MULT*100f) + txt("%");
         return null;
     }
 }

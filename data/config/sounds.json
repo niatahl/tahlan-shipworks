@@ -15,7 +15,7 @@
 	
 	"tahlan_silk_fire":
 	[
-		{"file":"sounds/tahlan/weapons/tahlan_silk_fire.ogg","pitch":1.5,"volume":2.2},
+		{"file":"sounds/tahlan/weapons/tahlan_silk_fire.ogg","pitch":1.5,"volume":2.6},
 	],
 	
 	"tahlan_gaebolg_fire":
@@ -326,6 +326,12 @@
 		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.56,"volume":0.5},
 		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.58,"volume":0.5},
 	],
+	"tahlan_taffeta_fire":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_taffeta_fire.ogg","pitch":1.1,"volume":1.3},
+		{"file":"sounds/tahlan/weapons/tahlan_taffeta_fire.ogg","pitch":1.15,"volume":1.3},
+		{"file":"sounds/tahlan/weapons/tahlan_taffeta_fire.ogg","pitch":1.2,"volume":1.3},
+	],
 	"tahlan_goll_fire":
 	[
 		{"file":"sounds/sfx_wpn_guns/mauler_fire_01_loud.ogg","pitch":0.50,"volume":1.0},
@@ -349,11 +355,20 @@
     },
 	"tahlan_velvet_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.2,"volume":0.8},
-           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.21,"volume":0.8},
-           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.22,"volume":0.8},
-           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.23,"volume":0.8},
-           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.24,"volume":0.8}
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.2,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.21,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.22,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.23,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_cashmere_fire.ogg","pitch":2.24,"volume":0.6}
+        ],
+    },
+	"tahlan_pastel_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_pastel_fire.ogg","pitch":1.2,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_pastel_fire.ogg","pitch":1.21,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_pastel_fire.ogg","pitch":1.22,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_pastel_fire.ogg","pitch":1.23,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_pastel_fire.ogg","pitch":1.24,"volume":0.6}
         ],
     },
 	"tahlan_cashmere_impact":{

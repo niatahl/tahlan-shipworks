@@ -53,6 +53,8 @@ tahlan_fafnir_trail_glow,tahlan_fafnir_shot,tahlan_trail_zappy,10,0,0.05,0.15,30
 tahlan_fafnir_trail_core,tahlan_fafnir_shot,tahlan_trail_smooth,10,0.05,0.6,0.3,4,4,"[255,255,255]","[255,255,255]",0.8,300,-300,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_fafnir_trail_fringe,tahlan_fafnir_shot,tahlan_trail_zappy,10,0.05,0.6,0.3,12,12,"[120,205,255]","[120,205,255]",0.8,300,-300,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
+tahlan_taffeta_trail_core,tahlan_taffeta_shot,tahlan_trail_twin,10,0,0.2,1,8,8,"[215,255,235]","[0,0,255]",0.5,300,-300,10,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,50,true,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_phira_shock_trail_glow,tahlan_phira_shock_shot,tahlan_trail_fuzzy,10,0,0.05,0.15,30,10,"[255,130,30]","[255,130,30]",0.3,300,-300,30,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_phira_shock_trail_core,tahlan_phira_shock_shot,tahlan_trail_smooth,10,0.05,0.5,0.4,3,3,"[255,255,255]","[255,255,255]",1,300,-300,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_phira_shock_trail_fringe,tahlan_phira_shock_shot,tahlan_trail_smooth,10,0.05,0.5,0.5,10,10,"[255,130,30]","[255,130,30]",0.7,300,-300,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
@@ -145,5 +147,9 @@ tahlan_schwalbe_trail,tahlan_schwalbe_msl,tahlan_trail_zappy,10,0.05,0.5,0.8,8,4
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_disparax_trail,tahlan_disparax_shot,tahlan_trail_zappy,10,0.05,0,0.6,25,15,"[141,255,28]","[141,255,28]",0.3,300,500,30,10,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-tahlan_cashmere_trail,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.2,0.05,0.05,80,5,"[185,52,255]","[165,52,255]",0.7,200,1000,50,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
-tahlan_cashmere_trail2,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.2,0.05,0.1,120,15,"[150,59,255]","[150,59,255]",0.5,200,800,50,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_velvet_trail,tahlan_velvet_shot,tahlan_trail_foggy,10,0.1,0,0.02,50,5,"[255,168,38]","[255,148,18]",0.7,200,1000,25,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+tahlan_pastel_trail,tahlan_pastel_shot,tahlan_trail_foggy,10,0.1,0,0.02,50,5,"[57,255,255]","[57,205,205]",0.7,200,1000,25,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#tahlan_cashmere_trail,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.2,0.05,0.05,80,5,"[185,52,255]","[165,52,255]",0.7,200,1600,50,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+#tahlan_cashmere_trail2,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.2,0.07,0.1,120,15,"[150,59,255]","[150,59,255]",0.5,200,1200,50,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false

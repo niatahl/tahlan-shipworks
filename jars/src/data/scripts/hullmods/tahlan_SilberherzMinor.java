@@ -10,6 +10,8 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import java.util.HashSet;
 import java.util.Set;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_SilberherzMinor extends BaseHullMod {
 
     private static final String SILBER_ID = "Silberherz_minor_ID";
@@ -64,12 +66,12 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
 	}
 
 	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "" + (int)PD_PERCENT + "%";
-		if (index == 1) return "" + (int)WEAPON_HP + "%";
-		if (index == 2) return "tripled";
-		if (index == 3) return "doubled";
-		if (index == 4) return "Regalia Gantry";
-		if (index == 5) return "Incompatible with Safety Overrides";
+		if (index == 0) return "" + (int)PD_PERCENT + txt("%");
+		if (index == 1) return "" + (int)WEAPON_HP + txt("%");
+        if (index == 2) return txt("hmd_silberherz4");
+        if (index == 3) return txt("hmd_silberherz5");
+        if (index == 4) return txt("hmd_silberherz6");
+        if (index == 5) return txt("hmd_silberherz7");
 		return null;
 	}
 	

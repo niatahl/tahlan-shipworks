@@ -2,7 +2,7 @@
   "hullName": "Castella (LP)",
   "hullId": "tahlan_Castella_lp",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/tahlan/ships/tahlan_Castella_lp.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_Castella_ludd.png",
   "style": "LOW_TECH",
   "height": 390,
   "width": 214,
@@ -13,14 +13,16 @@
   "viewOffset": 0,
   "builtInMods": [
     "ill_advised",
-    "safetyoverrides",
-    "tahlan_crampedhangars"
+    "safetyoverrides"
   ],
+  "builtInWeapons": {
+    "WS0020": "tahlan_reloadinghammers"
+  },
   "weaponSlots": [
     {
       "id": "WS0003",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 120,
       "angle": 44,
@@ -29,7 +31,7 @@
     {
       "id": "WS0004",
       "size": "LARGE",
-      "type": "BALLISTIC",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 120,
       "angle": -44,
@@ -127,21 +129,21 @@
     },
     {
       "id": "WS0013",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 122,
-      "angle": 55,
-      "locations": [105, 57]
+      "angle": 43,
+      "locations": [105, 62]
     },
     {
       "id": "WS0014",
-      "size": "SMALL",
+      "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 122,
-      "angle": -55,
-      "locations": [105, -57]
+      "angle": -43,
+      "locations": [105, -62]
     },
     {
       "id": "WS0015",
@@ -219,7 +221,7 @@
     {
       "id": "WS0020",
       "size": "LARGE",
-      "type": "MISSILE",
+      "type": "BUILT_IN",
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
@@ -306,6 +308,22 @@
       "width": 11,
       "angle": -180,
       "contrailSize": 11,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-61.5, 85],
+      "length": 85,
+      "width": 31,
+      "angle": 180,
+      "contrailSize": 31,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-61.5, -85],
+      "length": 85,
+      "width": 31,
+      "angle": -180,
+      "contrailSize": 31,
       "style": "LOW_TECH"
     }
   ],

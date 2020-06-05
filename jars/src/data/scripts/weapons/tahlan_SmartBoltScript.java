@@ -128,7 +128,7 @@ public class tahlan_SmartBoltScript implements EveryFrameWeaponEffectPlugin {
                     0f, //Emp
                     100000f, //Max range
                     "tachyon_lance_emp_impact", //Impact sound
-                    MathUtils.getRandomNumberInRange(8f, 10f), // thickness of the lightning bolt
+                    MathUtils.getRandomNumberInRange(5f, 7f), // thickness of the lightning bolt
                     LIGHTNING_CORE_COLOR, //Central color
                     LIGHTNING_FRINGE_COLOR //Fringe Color
             );
@@ -189,7 +189,7 @@ public class tahlan_SmartBoltScript implements EveryFrameWeaponEffectPlugin {
                     damageThisShot * empFactor, //Emp
                     100000f, //Max range
                     "tachyon_lance_emp_impact", //Impact sound
-                    14f * (damageThisShot / weapon.getDamage().getDamage()), // thickness of the lightning bolt
+                    10f * (damageThisShot / weapon.getDamage().getDamage()), // thickness of the lightning bolt
                     LIGHTNING_CORE_COLOR, //Central color
                     LIGHTNING_FRINGE_COLOR //Fringe Color
             );

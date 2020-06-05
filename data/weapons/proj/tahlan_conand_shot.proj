@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"length":25.0,
+	"length":60.0,
 	"hitGlowRadius":20,
 	"width":2,
 	"fadeTime":0.2,

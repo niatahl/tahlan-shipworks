@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.fs.starfarer.api.util.Misc.ZERO;
+import static data.scripts.utils.tahlan_txt.txt;
 
 public class tahlan_VariableAmmoLoader extends BaseHullMod {
     //Cooldown each time we fire after switching shell type: only applies once per switching
@@ -60,11 +61,11 @@ public class tahlan_VariableAmmoLoader extends BaseHullMod {
 
         //Displays the correct tooltip for the player at all times
         if (ship == Global.getCombatEngine().getPlayerShip()) {
-            String textToPrint = "Type-3 Shells Ready";
+            String textToPrint = txt("hmd_Ammo1");
             if (ship.getSystem().getAmmo() == 1) {
-                textToPrint = "Shock Cannons Ready";
+                textToPrint = txt("hmd_Ammo2");
             } else if (ship.getSystem().getAmmo() == 2) {
-                textToPrint = "Impact Driver Ready";
+                textToPrint = txt("hmd_Ammo3");
             }
             Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_VariableAmmoTooltip", "graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png", "Variable Ammo", textToPrint, false);
 
@@ -76,8 +77,8 @@ public class tahlan_VariableAmmoLoader extends BaseHullMod {
                     //If we are on cooldown, display that as a tooltip...
                     int cooldownWholes = (int)(Math.floor(cooldownRemaining));
                     int cooldownParts = (int)(Math.floor(cooldownRemaining*10f)) - (int)(Math.floor(cooldownRemaining)*10);
-                    Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_VariableAmmoLockTooltip", "graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png", "Variable Ammo", "Locked for "
-                            + cooldownWholes + "." + cooldownParts + " more seconds", true);
+                    Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_VariableAmmoLockTooltip", "graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png", txt("hmd_Ammo4"), txt("hmd_Ammo5")
+                            + cooldownWholes + "." + cooldownParts + txt("hmd_Ammo6"), true);
 
                     //...and actually tick down our cooldown, too
                     cooldownRemaining -= amount;
@@ -251,23 +252,23 @@ public class tahlan_VariableAmmoLoader extends BaseHullMod {
 
         //Shock cannons
         TooltipMakerAPI text = tooltip.beginImageWithText("graphics/tahlan/hullmods/ammo_shockcannon_icon.png", 36);
-        text.addPara("Shock Cannons", 0, Color.ORANGE, "Shock Cannons");
-        text.addPara("Energy damage, deals bonus EMP damage against hull", 0, Color.CYAN, "Energy");
-        text.addPara(Math.round((T1_DAMAGE_BONUS*100f)) + " percent additional damage.", 0, Color.YELLOW, "" + Math.round((T1_DAMAGE_BONUS*100f)));
+        text.addPara(txt("hmd_Ammo7"), 0, Color.ORANGE, txt("hmd_Ammo7"));
+        text.addPara(txt("hmd_Ammo8"), 0, Color.CYAN, txt("hmd_Ammo9"));
+        text.addPara(Math.round((T1_DAMAGE_BONUS*100f)) + txt("hmd_Ammo10"), 0, Color.YELLOW, "" + Math.round((T1_DAMAGE_BONUS*100f)));
         tooltip.addImageWithText(pad);
 
         //Impact Drivers
         text = tooltip.beginImageWithText("graphics/tahlan/hullmods/ammo_impactdriver_icon.png", 36);
-        text.addPara("Impact Driver", 0, Color.ORANGE, "Impact Driver");
-        text.addPara("Kinetic Damage.", 0, Color.YELLOW, "Kinetic");
-        text.addPara(Math.round((T2_DAMAGE_BONUS*-100f)) + " percent reduced damage.", 0, Color.YELLOW, "" + Math.round((T2_DAMAGE_BONUS*-100f)));
+        text.addPara(txt("hmd_Ammo11"), 0, Color.ORANGE, txt("hmd_Ammo11"));
+        text.addPara(txt("hmd_Ammo12"), 0, Color.YELLOW, txt("hmd_Ammo13"));
+        text.addPara(Math.round((T2_DAMAGE_BONUS*-100f)) + txt("hmd_Ammo14"), 0, Color.YELLOW, "" + Math.round((T2_DAMAGE_BONUS*-100f)));
         tooltip.addImageWithText(pad);
 
         //Type-3 Shells
         text = tooltip.beginImageWithText("graphics/tahlan/hullmods/ammo_type3_icon.png", 36);
-        text.addPara("Type-3 Shells", 0, Color.ORANGE, "Type-3 Shells");
-        text.addPara("High-Explosive Damage." + "\n"
-                + "Splits into a cluster of AoE shells.", 0, Color.RED, "High-Explosive");
+        text.addPara(txt("hmd_Ammo15"), 0, Color.ORANGE, txt("hmd_Ammo15"));
+        text.addPara(txt("hmd_Ammo16") + "\n"
+                + txt("hmd_Ammo17"), 0, Color.RED, txt("hmd_Ammo18"));
         tooltip.addImageWithText(pad);
     }
 

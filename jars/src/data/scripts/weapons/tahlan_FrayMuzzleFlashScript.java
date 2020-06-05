@@ -107,7 +107,7 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 10f);
+        PARTICLE_SIZE_MIN.put("default", 5f);
         PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 150f);
         PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
     }
@@ -115,7 +115,7 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
-        PARTICLE_SIZE_MAX.put("default", 25f);
+        PARTICLE_SIZE_MAX.put("default", 20f);
         PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 150f);
         PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
     }
@@ -124,7 +124,7 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     private static final Map<String, Float> PARTICLE_VELOCITY_MIN = new HashMap<>();
     static {
         PARTICLE_VELOCITY_MIN.put("default", 30f);
-        PARTICLE_VELOCITY_MIN.put("FLASH_ID_2", 0f);
+        PARTICLE_VELOCITY_MIN.put("FLASH_ID_2", 10f);
         PARTICLE_VELOCITY_MIN.put("FLASH_FRINGE_1", 0f);
         PARTICLE_VELOCITY_MIN.put("FLASH_CORE_1", 0f);
     }
@@ -133,7 +133,7 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
         PARTICLE_VELOCITY_MAX.put("default", 70f);
-        PARTICLE_VELOCITY_MAX.put("FLASH_ID_2", 20f);
+        PARTICLE_VELOCITY_MAX.put("FLASH_ID_2", 50f);
         PARTICLE_VELOCITY_MAX.put("FLASH_FRINGE_1", 0f);
         PARTICLE_VELOCITY_MAX.put("FLASH_CORE_1", 0f);
     }
@@ -172,7 +172,7 @@ public class tahlan_FrayMuzzleFlashScript implements EveryFrameWeaponEffectPlugi
     //The width of the "arc" the particles spawn in; affects both offset and velocity. 360f = full circle, 0f = straight line
     private static final Map<String, Float> PARTICLE_ARC = new HashMap<>();
     static {
-        PARTICLE_ARC.put("default", 30f);
+        PARTICLE_ARC.put("default", 20f);
         PARTICLE_ARC.put("FLASH_ID_2", 360f);
         PARTICLE_ARC.put("FLASH_FRINGE_1", 0f);
         PARTICLE_ARC.put("FLASH_CORE_1", 0f);

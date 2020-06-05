@@ -19,6 +19,7 @@
 		"tahlan_lasher_pi_elite":4,
 		"tahlan_glanzwurf_knappe":10,
 		"tahlan_glanzwurf_b_soldner":10,
+		"tahlan_darnus_killer":10,
 	},
 	"combatMedium":{
 		"tahlan_Vale_crusader":10,
@@ -49,7 +50,6 @@
 	"combatLarge":{
 		"tahlan_Castigator_standard":5,
 		"tahlan_Castigator_outdated":5,
-		"tahlan_Castigator_knight_errant":5,
 		"tahlan_Yukikaze_brawler":5,
 		"tahlan_Yukikaze_lancer":5,
 		"tahlan_Kodai_beamer":3,
@@ -78,7 +78,6 @@
 		"tahlan_vendetta_gh_knight":10,
 		"tahlan_onslaught_gh_knight":7,
 		"tahlan_onslaught_gh_overdriven":3,
-		"tahlan_Castella_pirates_standard":10,
 		"tahlan_DunScaith_standard":5,
 		"tahlan_DunScaith_barrage":3,
 		"tahlan_DunScaith_elite":2,
@@ -113,7 +112,6 @@
 	"carrierMedium":{
 			"tahlan_Bungalow_bomber":7,
 			"tahlan_Bungalow_elite":3,
-			"tahlan_Castigator_commie_standard":10,
 	},
 	"carrierLarge":{
 			"tahlan_Castella_standard":7,
@@ -133,6 +131,8 @@
 			"tahlan_Hresvelgr_X_missile":5,
 			"tahlan_Hresvelgr_rg_combat":10,
 			"tahlan_halbmond_citadel":10,
+			"tahlan_Castella_pirates_standard":5,
+			"tahlan_Castella_pirates_artillery":5,
 	},
 
 	# phase ships

@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
+import static data.scripts.utils.tahlan_txt.txt;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL11.glPopAttrib;
 import static org.lwjgl.opengl.GL11.glPopMatrix;
@@ -162,10 +163,10 @@ public class tahlan_Adlerauge extends BaseHullMod {
 	}
 
 	public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "" + (int)RANGE_BOOST + "su";
-		if (index == 1) return "" + (int)SPEED_BOOST + "%";
-        if (index == 2) return "Silberherz-equipped";
-		if (index == 3) return "" + (int)EFFECT_RANGE + "su";
+        if (index == 0) return "" + (int)RANGE_BOOST + txt("su");
+		if (index == 1) return "" + (int)SPEED_BOOST + txt("%");
+        if (index == 2) return txt("hmd_adler1");
+		if (index == 3) return "" + (int)EFFECT_RANGE + txt("su");
 
 		return null;
 	}

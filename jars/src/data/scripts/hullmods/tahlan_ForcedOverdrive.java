@@ -7,6 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import data.scripts.tahlan_ModPlugin;
 
 import static data.scripts.hullmods.tahlan_KnightRefit.*;
+import static data.scripts.utils.tahlan_txt.txt;
 
 
 public class tahlan_ForcedOverdrive extends BaseHullMod {
@@ -75,8 +76,8 @@ public class tahlan_ForcedOverdrive extends BaseHullMod {
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if (index == 0) return "permanent Overdrive activation";
-        if (index == 1) return "negate the half of the Kassadari Engineering armor reduction";
+        if (index == 0) return txt("hmd_ForcedOverdrive1");
+        if (index == 1) return txt("hmd_ForcedOverdrive2");
         return null;
     }
 }

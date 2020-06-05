@@ -45,7 +45,7 @@ public class tahlan_VolatileVents extends BaseHullMod {
     public static Color LIGHTNING_CORE_COLOR = new Color(255, 219, 253, 202);
     public static Color LIGHTNING_FRINGE_COLOR = new Color(155, 19, 255, 176);
 
-    private IntervalUtil zapInterval = new IntervalUtil(0.08f, 0.14f);
+    private IntervalUtil zapInterval = new IntervalUtil(0.08f, 0.12f);
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
@@ -105,7 +105,7 @@ public class tahlan_VolatileVents extends BaseHullMod {
                             MathUtils.getRandomNumberInRange(0.8f, 1.2f) * actualLightningEMP, //Emp
                             100000f, //Max range
                             "tachyon_lance_emp_impact", //Impact sound
-                            15f, // thickness of the lightning bolt
+                            10f, // thickness of the lightning bolt
                             LIGHTNING_CORE_COLOR, //Central color
                             LIGHTNING_FRINGE_COLOR //Fringe Color
                     );

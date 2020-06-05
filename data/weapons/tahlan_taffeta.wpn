@@ -1,0 +1,47 @@
+{
+  "id": "tahlan_taffeta",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_taffeta_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_TaffetaScript",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_turret_base.png",  
+  "turretGlowSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_turret_glow.png",
+  "hardpointSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_hp_base.png",  
+  "hardpointGlowSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_hp_glow.png",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    25.5,
+    6.5,
+    25.5,
+    -6.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    24,
+    6.5,
+    24,
+    -6.5
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "glowColor":[222,59,255,90],
+  "barrelMode": "LINKED",
+  "animationType": "GLOW_AND_FLASH",
+  "muzzleFlashSpec": {
+    "length": 60,
+    "particleColor": [255,255,255,125],
+    "particleCount": 20,
+    "particleDuration": 0.5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 20,
+    "spread": 0
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_taffeta_fire"
+}

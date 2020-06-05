@@ -1,9 +1,9 @@
 {
     "playableFaction":true,
-    "pirateFaction":true,
+    "pirateFaction":false,
     "corvusCompatible":true,
     "showIntelEvenIfDead":false,
-    "hostileToAll":1,    
+    "hostileToAll":true,    
 	
     "rebelFleetSuffix":"Traitors",
 	
@@ -82,7 +82,7 @@
         {"id":"orbitalworks", "mult":0.1},
     ],
 	
-    "diplomacyTraits":["selfrighteous", "irredentist", "stalwart", "envious"],
+    "diplomacyTraits":["selfrighteous", "irredentist", "stalwart", "envious", "lowprofile"],
 	"morality":"evil",
     
     "freeMarket":true,

@@ -1,7 +1,7 @@
 {
     "baseHullId":"tahlan_glanzwurf",
     "skinHullId":"tahlan_glanzwurf_b",
-    "hullName":"Glanzflug Regalia Kfg.B",
+    "hullName":"Glanzwurf Regalia Kfg.B",
     "descriptionId":"tahlan_glanzwurf",
     "descriptionPrefix":"Alternate configuration B. Focused on support and escort duty.",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",

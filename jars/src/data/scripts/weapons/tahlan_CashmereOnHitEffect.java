@@ -25,7 +25,7 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
     private static final Vector2f ZERO = new Vector2f();
 
     private static final int NUM_PARTICLES = 50;
-    private static final int NUM_ARCS = 5;
+    private static final int NUM_ARCS = 10;
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
@@ -131,11 +131,11 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
                 CombatEntityAPI arcTarget = validTargets.get(MathUtils.getRandomNumberInRange(0, validTargets.size() - 1));
                 Global.getCombatEngine().spawnEmpArc(projectile.getSource(), point, projectile.getSource(), arcTarget,
                         DamageType.ENERGY, //Damage type
-                        MathUtils.getRandomNumberInRange(0.8f, 1.2f) * 100, //Damage
-                        MathUtils.getRandomNumberInRange(0.8f, 1.2f) * 100, //Emp
+                        MathUtils.getRandomNumberInRange(0.8f, 1.2f) * 50, //Damage
+                        MathUtils.getRandomNumberInRange(0.8f, 1.2f) * 50, //Emp
                         100000f, //Max range
                         "tachyon_lance_emp_impact", //Impact sound
-                        15f, // thickness of the lightning bolt
+                        10f, // thickness of the lightning bolt
                         ARC_CORE_COLOR, //Central color
                         ARC_FRINGE_COLOR //Fringe Color
                 );

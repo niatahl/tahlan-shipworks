@@ -1,7 +1,8 @@
 {
 	"id":"tahlan_fluxblast",
 	"type":"STAT_MOD",
-	"aiType":"WEAPON_BOOST",
+	"aiType":"CUSTOM",
+    "aiScript":"data.scripts.shipsystems.ai.tahlan_FluxBlastAI",
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_FluxBlastStats",
 	

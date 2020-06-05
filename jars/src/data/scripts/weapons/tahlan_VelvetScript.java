@@ -22,34 +22,34 @@ public class tahlan_VelvetScript implements EveryFrameWeaponEffectPlugin {
             //EXTRA FLUX
             time.advance(amount);
             if (time.intervalElapsed()) {
-                flux = Math.min(flux + time.getElapsed() / 2, 2f);
-                float fluxToVent = time.getElapsed() * weapon.getDerivedStats().getFluxPerSecond() / flux;
+                flux = Math.min(flux + time.getElapsed() * 0.1f, 0.5f);
+                float fluxToVent = time.getElapsed() * weapon.getDerivedStats().getFluxPerSecond() * flux;
                 weapon.getShip().getFluxTracker().setCurrFlux(weapon.getShip().getFluxTracker().getCurrFlux() - fluxToVent);
 
-                if (flux > 1) {
+                //Muzzle location calculation
+                Vector2f point = new Vector2f();
 
-                    //Muzzle location calculation
-                    Vector2f point = new Vector2f();
+                if (weapon.getSlot().isHardpoint()) {
+                    point.x = weapon.getSpec().getHardpointFireOffsets().get(0).x;
+                    point.y = weapon.getSpec().getHardpointFireOffsets().get(0).y;
+                } else if (weapon.getSlot().isTurret()) {
+                    point.x = weapon.getSpec().getTurretFireOffsets().get(0).x;
+                    point.y = weapon.getSpec().getTurretFireOffsets().get(0).y;
+                } else {
+                    point.x = weapon.getSpec().getHiddenFireOffsets().get(0).x;
+                    point.y = weapon.getSpec().getHiddenFireOffsets().get(0).y;
+                }
 
-                    if (weapon.getSlot().isHardpoint()) {
-                        point.x = weapon.getSpec().getHardpointFireOffsets().get(0).x;
-                        point.y = weapon.getSpec().getHardpointFireOffsets().get(0).y;
-                    } else if (weapon.getSlot().isTurret()) {
-                        point.x = weapon.getSpec().getTurretFireOffsets().get(0).x;
-                        point.y = weapon.getSpec().getTurretFireOffsets().get(0).y;
-                    } else {
-                        point.x = weapon.getSpec().getHiddenFireOffsets().get(0).x;
-                        point.y = weapon.getSpec().getHiddenFireOffsets().get(0).y;
-                    }
+                point = VectorUtils.rotate(point, weapon.getCurrAngle(), new Vector2f(0f, 0f));
+                point.x += weapon.getLocation().x;
+                point.y += weapon.getLocation().y;
 
-                    point = VectorUtils.rotate(point, weapon.getCurrAngle(), new Vector2f(0f, 0f));
-                    point.x += weapon.getLocation().x;
-                    point.y += weapon.getLocation().y;
+                if (flux > 0.25f) {
 
                     engine.spawnEmpArcPierceShields(weapon.getShip(), point, weapon.getShip(), weapon.getShip(),
-                            DamageType.ENERGY,
-                            0,
-                            fluxToVent / 2,
+                            DamageType.FRAGMENTATION,
+                            0f,
+                            fluxToVent,
                             200f,
                             null,
                             5f + 5f * flux,

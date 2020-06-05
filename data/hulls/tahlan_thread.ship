@@ -1,0 +1,43 @@
+{
+  "hullName": "thread",
+  "hullId": "tahlan_thread",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/oddities/tahlan_thread.png",
+  "style": "TAHLAN_FILAMENT_TECH",
+  "height": 26,
+  "width": 24,
+  "center": [12, 13],
+  "collisionRadius": 21,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 19.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [4, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-6.5, -0],
+      "length": 18,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -4, -9.5,
+    11, -0,
+    -4, 9.5
+  ]
+}

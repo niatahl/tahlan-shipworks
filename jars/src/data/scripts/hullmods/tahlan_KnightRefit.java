@@ -14,6 +14,8 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.EnumSet;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_KnightRefit extends BaseHullMod {
 
 
@@ -40,6 +42,9 @@ public class tahlan_KnightRefit extends BaseHullMod {
 
     private float fadeOut = 1f;
     private static final String ke_id = "tahlan_KnightRefitID";
+
+    private final String INNERLARGE = "graphics/tahlan/fx/tahlan_tempshield.png";
+    private final String OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -79,6 +84,7 @@ public class tahlan_KnightRefit extends BaseHullMod {
             ship.getMutableStats().getEngineMalfunctionChance().modifyFlat(id, SO_MALFUNCTION_PROB);
             ship.getMutableStats().getCriticalMalfunctionChance().modifyFlat(id, SO_MALFUNCTION_PROB/2);
         }
+        ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
     }
 
     @Override
@@ -95,6 +101,8 @@ public class tahlan_KnightRefit extends BaseHullMod {
         if ( !ship.isAlive() || ship.isPiece() ) {
             return;
         }
+
+        ship.setJitterShields(false);
 
         if (ship.getSystem() != null) {
             if (!ship.getSystem().isActive() && !ship.getFluxTracker().isOverloadedOrVenting()) {
@@ -192,15 +200,15 @@ public class tahlan_KnightRefit extends BaseHullMod {
     }
 
     public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "Temporal Circuit Grid";
-        if (index == 1) return "" + (int)TIME_MULT + "%";
+        if (index == 0) return txt("hmd_KassEng1");
+        if (index == 1) return "" + (int)TIME_MULT + txt("%");
         if (index == 2)
-            return "" + (int) ARMOR_MALUS_FRIGATE + "/" + (int) ARMOR_MALUS_DESTROYER + "/" + (int) ARMOR_MALUS_CRUISER + "/" + (int) ARMOR_MALUS_CAPITAL;
-        if (index == 3) return "" + (int)SUPPLIES_MULT + "%";
-        if (index == 4) return "" + Math.round(OVERDRIVE_TRIGGER_PERCENTAGE * 100f) + "%";
-        if (index == 5) return "" + (int)OVERDRIVE_TIME_MULT + "%";
-        if (index == 6) return "suspended while the ship system is active";
-        if (index == 7) return "inactive while venting flux or when overloaded";
+            return "" + (int) ARMOR_MALUS_FRIGATE + txt("/") + (int) ARMOR_MALUS_DESTROYER + txt("/") + (int) ARMOR_MALUS_CRUISER + txt("/") + (int) ARMOR_MALUS_CAPITAL;
+        if (index == 3) return "" + (int)SUPPLIES_MULT + txt("%");
+        if (index == 4) return "" + Math.round(OVERDRIVE_TRIGGER_PERCENTAGE * 100f) + txt("%");
+        if (index == 5) return "" + (int)OVERDRIVE_TIME_MULT + txt("%");
+        if (index == 6) return txt("hmd_KassEng2");
+        if (index == 7) return txt("hmd_KassEng3");
         return null;
     }
 }

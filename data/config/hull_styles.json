@@ -6,8 +6,8 @@
 		"fighterRepairFlickerColor":[255,160,70,255],
 		"fighterChipIconColor":[230,170,110,255],
 		"weaponDisabledExplosionColor":[150,0,255,255],
-		"shieldRingColor":[255,240,225,205],
-		"shieldInnerColor":[220,180,140,50],
+		"shieldRingColor":[255,230,225,125],
+		"shieldInnerColor":[220,180,140,80],
 		"fluxVentCoreColor":[255,150,50,120],
 		"fluxVentFringeColor":[255,200,155,255],
 		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
@@ -35,9 +35,9 @@
         "slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_hightech_large.png",
         "slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_large.png",
 		
-		"dHullOverlayLight":"graphics/damage/dmod_overlay_hightech_light.png",
-		"dHullOverlayMedium":"graphics/damage/dmod_overlay_hightech_medium.png",
-		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_hightech_heavy.png",
+		"dHullOverlayLight":"graphics/damage/dmod_overlay_midline_light.png",
+		"dHullOverlayMedium":"graphics/damage/dmod_overlay_midline_medium.png",
+		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_midline_heavy.png",
 	},
 	
 	"TAHLAN_RR_TECH":{
@@ -47,8 +47,8 @@
 		"fighterRepairFlickerColor":[107, 218, 255,255],
 		"fighterChipIconColor":[255,0,20,255],
 		"weaponDisabledExplosionColor":[150,0,255,255],
-		"shieldRingColor":[235,245,255,205],
-		"shieldInnerColor":[235,245,255,50],
+		"shieldRingColor":[235,245,255,255],
+		"shieldInnerColor":[235,245,255,30],
 		"fluxVentCoreColor":[255,0,0,120],
 		"fluxVentFringeColor":[255,255,255,205],
 		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
@@ -88,8 +88,8 @@
 		"fighterRepairFlickerColor":[141, 255, 28,255],
 		"fighterChipIconColor":[141, 255, 28,255],
 		"weaponDisabledExplosionColor":[141, 255, 28,255],
-		"shieldRingColor":[226, 255, 155,205],
-		"shieldInnerColor":[150, 214, 98,50],
+		"shieldRingColor":[226, 255, 155,155],
+		"shieldInnerColor":[150, 214, 98,30],
 		"fluxVentCoreColor":[226, 255, 155,120],
 		"fluxVentFringeColor":[141, 255, 28,255],
 		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
@@ -133,6 +133,85 @@
 		"shieldInnerColor":[179, 255, 117,50],
 		"fluxVentCoreColor":[156, 255, 207,120],
 		"fluxVentFringeColor":[179, 255, 117,255],
+		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
+		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
+		"empLoopSet":"emp_loop",						# id of entry in sounds.json
+		"fluxLoopSet":"flux_loop",						# id of entry in sounds.json
+		"ventFluxSet":"vent_flux",						# id of entry in sounds.json
+		"shieldBurnoutSet":"shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"explosion_ship",			# id of entry in sounds.json
+		"damageDecalSheet":"graphics/damage/damage_decal_sheet_base.png",
+		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
+
+		"dHullOverlaySmall":"graphics/damage/ship_damage_over3.png",
+		"dHullOverlayLarge":"graphics/damage/ship_damage_over3.png",
+		
+		"colorShiftCovers":true,
+        "coversColorShiftAmount":1,
+        "coversMatchShipBrightness":true,
+        "slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_hightech_small.png",
+        "slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_small.png",
+        "slotCoverMediumTurret":"graphics/weapons/covers/cover_turret_hightech_medium.png",
+        "slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_medium.png",
+        "slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_hightech_large.png",
+        "slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_large.png",
+		
+		"dHullOverlayLight":"graphics/damage/dmod_overlay_hightech_light.png",
+		"dHullOverlayMedium":"graphics/damage/dmod_overlay_hightech_medium.png",
+		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_hightech_heavy.png",
+	},
+	
+	"TAHLAN_LOSTECH":{
+		"hyperspaceJitterColor":[100,255,100,200],
+		"baseCampaignExplosionColor":[216,156,255,255],
+		"baseCombatExplosionColor":[216,156,255,255],
+		"fighterRepairFlickerColor":[100,165,255,255],
+		"fighterChipIconColor":[100,165,255,255],
+		"weaponDisabledExplosionColor":[100,165,255,255],
+		"shieldRingColor":[215,255,215,245],
+		"shieldInnerColor":[199,109,97,151],
+		"fluxVentCoreColor":[205,255,125,155],
+		"fluxVentFringeColor":[125,0,155,155],
+		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
+		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
+		"empLoopSet":"emp_loop",						# id of entry in sounds.json
+		"fluxLoopSet":"flux_loop",						# id of entry in sounds.json
+		"ventFluxSet":"vent_flux",						# id of entry in sounds.json
+		"shieldBurnoutSet":"shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"explosion_ship",			# id of entry in sounds.json
+		"damageDecalSheet":"graphics/damage/damage_decal_sheet_base.png",
+		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
+		
+		"colorShiftCovers":true,
+		"coversColorShiftAmount":1,  # 0 to 1
+		"coversMatchShipBrightness":true,
+		"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_lowtech_small.png",
+		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_lowtech_small.png",
+		"slotCoverMediumTurret":"graphics/weapons/covers/cover_turret_lowtech_medium.png",
+		"slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_lowtech_medium.png",
+		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_lowtech_large.png",
+		"slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_lowtech_large.png",
+
+		"dHullOverlayLight":"graphics/damage/dmod_overlay_lowtech_light.png",
+		"dHullOverlayMedium":"graphics/damage/dmod_overlay_lowtech_medium.png",
+		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_lowtech_heavy.png",
+	},
+	
+	"TAHLAN_FILAMENT_TECH":{
+		"hyperspaceJitterColor":[255,0,0,255],
+		"baseCampaignExplosionColor":[0,255,255,255],
+		"baseCombatExplosionColor":[0,255,255,255],
+		"fighterRepairFlickerColor":[0,200,255,255],
+		"fighterChipIconColor":[0,255,255,255],
+		"weaponDisabledExplosionColor":[0,205,255,255],
+		"shieldRingColor":[235,245,255,255],
+		"shieldInnerColor":[185,235,255,50],
+		"fluxVentCoreColor":[0,205,255,120],
+		"fluxVentFringeColor":[255,255,255,205],
 		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
 		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
 		"empLoopSet":"emp_loop",						# id of entry in sounds.json

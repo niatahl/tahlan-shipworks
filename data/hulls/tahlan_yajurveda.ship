@@ -3,16 +3,17 @@
   "hullId": "tahlan_yajurveda",
   "hullSize": "FRIGATE",
   "spriteName": "graphics/tahlan/ships/relics/tahlan_yajurveda.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_LOSTECH",
   "height": 96,
   "width": 100,
   "center": [50, 48],
-  "collisionRadius": 74,
+  "collisionRadius": 84,
   "shieldCenter": [-4, -0],
-  "shieldRadius": 66,
+  "shieldRadius": 73.5,
   "viewOffset": 0,
   "builtInMods": [
-    "tahlan_heavyconduits"
+    "tahlan_heavyconduits",
+    "tahlan_realityglitch"
   ],
   "weaponSlots": [
     {
@@ -93,6 +94,22 @@
       "angle": -180,
       "contrailSize": 9,
       "style": "HIGH_TECH"
+    },
+    {
+      "location": [-44, 15],
+      "length": 13,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-44, -15],
+      "length": 13,
+      "width": 27,
+      "angle": -180,
+      "contrailSize": 27,
+      "style": "TAHLAN_RELIC_ENGINE"
     }
   ],
   "bounds": [

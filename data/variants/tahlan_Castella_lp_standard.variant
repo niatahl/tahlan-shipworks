@@ -19,7 +19,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0020": "hammerrack"}
+            "weapons": {"WS0020": "tahlan_reloadinghammers"}
         },
         {
             "autofire": true,

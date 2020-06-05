@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static data.scripts.utils.tahlan_txt.txt;
 import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
 import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
@@ -36,11 +37,19 @@ public class tahlan_OutcastEngineering extends BaseHullMod {
     private float fadeOut = 1f;
     private static final String ke_id = "tahlan_KnightRefitID";
 
+    private final String INNERLARGE = "graphics/tahlan/fx/tahlan_tempshield.png";
+    private final String OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
+
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
         stats.getSuppliesPerMonth().modifyPercent(ke_id, SUPPLIES_MULT);
         stats.getCRLossPerSecondPercent().modifyMult(ke_id, 2f);
+    }
+
+    @Override
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+        ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
     }
 
     //Handles all in-combat effects
@@ -129,13 +138,13 @@ public class tahlan_OutcastEngineering extends BaseHullMod {
     //Adds the description strings
     @Override
     public String getDescriptionParam(int index, HullSize hullSize, ShipAPI ship) {
-        if (index == 0) return "Temporal Circuit Grid";
-        if (index == 1) return "" + (int)TIME_MULT + "%";
-        if (index == 2) return "" + (int)(MAX_DAMAGE_REDUCTION * 100f) + "%";
-        if (index == 3) return "" + (int)(MAX_EMP_REDUCTION * 100f) + "%";
-        if (index == 4) return "30%";
-        if (index == 5) return "90%";
-        if (index == 6) return "" + (int)SUPPLIES_MULT + "%";
+        if (index == 0) return txt("hmd_KassEng1");
+        if (index == 1) return "" + (int)TIME_MULT + txt("%");
+        if (index == 2) return "" + (int)(MAX_DAMAGE_REDUCTION * 100f) + txt("%");
+        if (index == 3) return "" + (int)(MAX_EMP_REDUCTION * 100f) + txt("%");
+        if (index == 4) return txt("hmd_Metaf1");
+        if (index == 5) return txt("hmd_Metaf2");
+        if (index == 6) return "" + (int)SUPPLIES_MULT + txt("%");
         return null;
     }
 }

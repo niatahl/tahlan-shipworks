@@ -4,6 +4,8 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.ShipAPI;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_FluxCatalyst extends BaseHullMod {
 
     private static final String id = "tahlan_FluxCatalystID";
@@ -32,7 +34,7 @@ public class tahlan_FluxCatalyst extends BaseHullMod {
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if ( index == 0 ) return "200%";
+        if ( index == 0 ) return txt("hmd_FluxCatalyst1");
         return null;
     }
 }

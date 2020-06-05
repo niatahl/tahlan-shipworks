@@ -1,0 +1,17 @@
+{
+	"id":"tahlan_secondwave",
+	"type":"STAT_MOD",
+	"aiType":"RESERVE_DEPLOYMENT",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_SecondWaveStats",
+	
+	"useSound":"system_recall_device",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+

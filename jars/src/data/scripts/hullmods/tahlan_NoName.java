@@ -16,6 +16,8 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.EnumSet;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_NoName extends BaseHullMod {
 
 
@@ -25,12 +27,20 @@ public class tahlan_NoName extends BaseHullMod {
     private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 102);
     private static final float AFTERIMAGE_THRESHOLD = 0.4f;
 
+    private final String INNERLARGE = "graphics/tahlan/fx/tahlan_tempshield.png";
+    private final String OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
+
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
         stats.getSuppliesPerMonth().modifyMult(id, SUPPLIES_MULT);
         stats.getDynamic().getStat(Stats.REPLACEMENT_RATE_DECREASE_MULT).modifyMult(id, 0f);
 
+    }
+
+    @Override
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+        ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
     }
 
     @Override
@@ -98,10 +108,10 @@ public class tahlan_NoName extends BaseHullMod {
     }
 
     public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "Temporal Circuit Grid";
-        if (index == 1) return "" + Math.round((TIME_MULT - 1f) * 100f) + "%";
-        if (index == 2) return "without replacement rate decreasing";
-        if (index == 3) return "" + Math.round((SUPPLIES_MULT - 1f) * 100f) + "%";
+        if (index == 0) return txt("hmd_KassEng1");
+        if (index == 1) return "" + Math.round((TIME_MULT - 1f) * 100f) + txt("%");
+        if (index == 2) return txt("hmd_NoName1");
+        if (index == 3) return "" + Math.round((SUPPLIES_MULT - 1f) * 100f) + txt("%");
         return null;
     }
 }

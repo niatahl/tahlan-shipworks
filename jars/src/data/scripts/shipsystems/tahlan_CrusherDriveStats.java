@@ -11,7 +11,7 @@ public class tahlan_CrusherDriveStats extends BaseShipSystemScript {
 
     public static final float SPEED_BOOST = 200f;
     public static final float MASS_MULT = 3f;
-    public static final float DAMAGE_MULT = 0.25f;
+    public static final float DAMAGE_MULT = 0.5f;
     public static final float RANGE = 900f;
     public static final float ROF_MULT = 0.5f;
 
@@ -30,7 +30,6 @@ public class tahlan_CrusherDriveStats extends BaseShipSystemScript {
 
         ShipAPI target = ship.getShipTarget();
         float turnrate = ship.getMaxTurnRate()*2;
-
 
         if (state == State.OUT) {
             stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down

@@ -100,7 +100,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        if (!haveNexerelin || SectorManager.getCorvusMode()){
+        if (!haveNexerelin || SectorManager.getManager().isCorvusMode()){
             if (ENABLE_LETHIA) new tahlan_Lethia().generate(sector);
             if (ENABLE_LEGIO) new tahlan_Rubicon().generate(sector);
         }

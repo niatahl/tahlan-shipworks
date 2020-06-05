@@ -1,0 +1,55 @@
+{
+  "hullName": "Sutra",
+  "hullId": "tahlan_sutra",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_sutra.png",
+  "style": "TAHLAN_LOSTECH",
+  "height": 32,
+  "width": 38,
+  "center": [19, 16],
+  "collisionRadius": 31,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 28,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_heavyconduits",
+	"no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-2, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-9, 4.5],
+      "length": 21.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-9, -4.5],
+      "length": 21.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -13, -16.5,
+    14.5, -13,
+    6, -0,
+    14.5, 13,
+    -13, 16.5,
+    -8.5, -0
+  ]
+}

@@ -24,8 +24,8 @@
   "renderBelowAllWeapons":true,
   "size": "LARGE",
   "specClass": "beam",
-  "textureScrollSpeed": 256,
-  "textureType": MEDIUM,
+  "textureScrollSpeed": 1028,
+  "textureType": LASER,
   "turretAngleOffsets": [
     0
   ],
@@ -35,5 +35,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_gaebolg_base.png",
   "type": "ENERGY",
-  "width": 50
+  "width": 30
 }
