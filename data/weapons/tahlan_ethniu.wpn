@@ -29,6 +29,13 @@
   "hardpointAngleOffsets": [
     0
   ],
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
   "fringeColor": [255, 18, 75,255],
   "coreColor": [
     235,

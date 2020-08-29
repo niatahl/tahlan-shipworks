@@ -1,19 +1,19 @@
 {
     "displayName": "Pather",
-    "fluxCapacitors": 13,
-    "fluxVents": 33,
-    "goalVariant": true,
+    "fluxCapacitors": 27,
+    "fluxVents": 50,
     "hullId": "tahlan_Castella_lp",
-    "hullMods": [],
+    "hullMods": ["armoredweapons"],
     "permaMods": [],
+	"goalVariant": true,
     "variantId": "tahlan_Castella_lp_standard",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "mark9",
-                "WS0004": "mark9"
+                "WS0003": "multineedler",
+                "WS0004": "multineedler"
             }
         },
         {
@@ -25,33 +25,33 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "heavymortar",
-                "WS0002": "heavymortar"
+                "WS0001": "chaingun",
+                "WS0002": "chaingun",
+                "WS0013": "chaingun",
+                "WS0014": "chaingun"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0007": "dualflak",
-                "WS0008": "dualflak",
+                "WS0007": "flak",
+                "WS0008": "flak",
                 "WS0009": "vulcan",
                 "WS0010": "vulcan",
-                "WS0011": "vulcan",
-                "WS0012": "vulcan",
-                "WS0013": "vulcan",
-                "WS0014": "vulcan",
-                "WS0015": "vulcan",
-                "WS0016": "vulcan",
                 "WS0017": "vulcan",
                 "WS0018": "vulcan"
             }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "lightdualmg",
+                "WS0012": "lightdualmg",
+                "WS0015": "lightdualmg",
+                "WS0016": "lightdualmg"
+            }
         }
-    ],
-    "wings": [
-        "perdition_wing",
-        "perdition_wing",
-        "perdition_wing",
-        "perdition_wing"
     ]
 }

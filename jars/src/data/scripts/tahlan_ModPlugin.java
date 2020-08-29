@@ -129,8 +129,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
         } else {
             sector.getFaction("tahlan_legioinfernalis").setShowInIntelTab(false);
-            if (haveNexerelin){
 
+            if (haveNexerelin){
+                sector.getFaction("tahlan_legioinfernalis").getMemoryWithoutUpdate().set("$nex_respawn_cooldown",true);
             }
         }
 

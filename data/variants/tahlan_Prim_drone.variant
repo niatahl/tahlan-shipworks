@@ -13,7 +13,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "swarmer_fighter"
+        "WS0001": "swarmer_fighter",
+        "WS0002": "vulcan"
       }
     }
   ],

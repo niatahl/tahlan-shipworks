@@ -37,7 +37,6 @@ Spatial Skimmer,tahlan_ltskimmer,,,,,,,,2,0.15,0.4,,0.4,0.2,,TRUE,,TRUE,,,,,,,gr
 Spatial Shift,tahlan_shiftdrive,,,,,,,,5,0.15,0.1,0.4,0.1,,,,TRUE,,TRUE,,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
 Spatial Jaunt,tahlan_jauntdrive,,,,,,,,3,0.25,0.1,0.6,0.1,,,,TRUE,,TRUE,TRUE,,,TRUE,TRUE,graphics/icons/hullsys/maneuvering_jets.png
 Flux Blast,tahlan_fluxblast,,,,,,,,,,0.5,0.1,0.1,10,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Reality Shell,tahlan_realityshell,,,,,,,,,,3,6,1,30,,,,,,,,,TRUE,TRUE,graphics/icons/hullsys/temporal_shell.png
+Reality Shell,tahlan_realityshell,,,,,,,,,,5,10,1,30,,,,,,,,,TRUE,TRUE,graphics/icons/hullsys/temporal_shell.png
 Inertialess Drive Mode,tahlan_inertialessdrive,,,,,,,,,,0.5,5,0.5,5,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Second Wave,tahlan_secondwave,,,,,,0.25,,,,0.5,,10,30,,,,,,,,,,,graphics/icons/hullsys/recall_device.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,

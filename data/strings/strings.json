@@ -29,6 +29,8 @@
 		hmd_silberherz5:"doubled",
 		hmd_silberherz6:"Regalia Gantry",
 		hmd_silberherz7:"Incompatible with Safety Overrides",
+		hmd_silberherz8:"Experienced Pilot",
+		hmd_silberherz9:"Regalia Performance enhanced",
 		hmd_Ammo1:"Type-3 Shells Ready",
 		hmd_Ammo2:"Shock Cannons Ready",
 		hmd_Ammo3:"Impact Driver Ready",
@@ -50,7 +52,18 @@
 		hmd_ventBoost1:"Vent Overcharger",
 		hmd_ventBoost2:"Weapon damage +",
 		hmd_VundForge1: "10%",
-		hmd_VundForge2:"per minute"
+		hmd_VundForge2:"per minute",
+		econ_claim1:"Kassadari Claim",
+		econ_claim2:"%s population growth (based on market size).",
+		access:"%s accessibility",
+		stab:"%s stability",
+		tyranny:"Legio Tyranny",
+		tyranny2:"Increased fleet sizes and ground defenses",
+		tyranny3:"Only active while under %s control",
+		tyranny4:"Legio Infernalis",
+		
+		
+		
 		
 	}
 }

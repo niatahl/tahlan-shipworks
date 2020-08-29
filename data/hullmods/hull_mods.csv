@@ -51,15 +51,12 @@ Due to the limited understanding of the technology, maintenance costs and CR deg
 
 The extensive modifications are also incompatible with %s and the non-standard shield generators are incompatible with regular %s.","Reduces amount of EMP damage taken, improves venting.",graphics/tahlan/hullmods/tahlan_heavyconduits.png
 Makeshift Turret Mounts,tahlan_makeshiftmounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_MakeshiftMounts,"The turret mounts of this ship have been ""upgraded"" in a makeshift manner. Due to inferior engineering, weapons can only turn at %s speed and ballistic weapon rate of fire is reduced to %s of base.",Reduces weapon turnrate and rate of fire.,graphics/tahlan/hullmods/tahlan_makeshiftmounts.png
-Bridgehead Design,tahlan_filamentspecs,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FilamentSpecs,"Instead of actual fighter bays, this ship instead projects a stable wormhole connected to an automated planetary aerospace facility which handles actual fighter operations. Due to the planetary facility's capacities, fighter replacement times and their decay from sustained losses are reduced by %s.
-
-Additionally the ship is propelled by a pair of Redshift Drive Units, increasing the zero flux speed boost by %s.",Improved fighter operations.,graphics/tahlan/hullmods/tahlan_filamentspecs.png
 ,,,,,,,,,,,,,,,,,,
 Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
 
 Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
-Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, the Regalia requires a captain of at least %s or its flux stats, shield efficiency, speed and autofire accuracy are reduced by %s. Additionally, pilots with %s benefit from a direct link, improving weapon range and active vent rate by %s.
+Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, an officer of at least level %s will be capable of bringing out the machine's full potential, increasing its general performance by about %s. Additionally, pilots with %s benefit from a direct link, improving weapon range and active vent rate by %s.
 
 Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
 
@@ -87,7 +84,6 @@ Monthly supply cost is increased by %s. Furthermore the delicate machinery cause
 Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
 ,,,,,,,,,,,,,,,,,,
 Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
-MusicBox,tahlan_musicbox,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_MusicBox,(Hidden) Plays theme music in combat.,(Hidden) Plays theme music in combat.,graphics/tahlan/hullmods/tahlan_knightrefit.png
 ,,,,,,,,,,,,,,,,,,
 Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileVents,(Hidden) Venting spawns volatile emp arcs,(Hidden) Venting spawns volatile emp arcs,
 Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileDissipation,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,

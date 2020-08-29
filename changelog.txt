@@ -1,3 +1,47 @@
+0.3.18
+Changes:
+- Eisenflug
+	- Lowered damage per shot of arm weapons from 75 to 60
+- Scathach
+	- DP increased from 60 to 80
+- Edengate
+	- DP increased from 35 to 40
+- Higanbana
+	- DP increased from 50 to 60
+- Nirvana
+	- Fixed passive vent effect bugs
+- Hresvelgr X
+	- DP increased from 45 to 55
+	
+
+0.3.17
+Additions:
+- New Rosenritter fighter
+
+Changes:
+- Castella (LP)
+	- Completely reworked
+	- New sprite
+	- Fighter bays removed
+	- upsized two forward smalls to mediums
+	- Increased speed and durability
+- Castella (LI)
+	- DP increased from 40 to 45
+- Castigator (all variants)
+	- DP increased from 28 to 30
+	- Shield upkeep increased from 0.3 to 0.4
+	- Top Speed reduced from 60 to 50
+- LosTech hulls
+	- Lowered armor values across the board
+	- Tweaked parameters of passive effects
+- Bento (LP)
+	- System changed to Crusher Drive
+
+	
+Fixes:
+- Various beams now properly pierce missiles and such
+
+
 0.3.16
 Additions:
 - New hidden things

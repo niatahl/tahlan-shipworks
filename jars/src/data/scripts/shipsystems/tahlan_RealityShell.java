@@ -27,7 +27,7 @@ public class tahlan_RealityShell extends BaseShipSystemScript {
     private static final float EMERGENCY_REVERT_OVERLOAD_TIME = 5f;
 
     //The maximum time mult for the system
-    private static final float MAX_TIME_MULT = 5f;
+    private static final float MAX_TIME_MULT = 2f;
 
     private static final Color FLICKER_COLOR = new Color(129, 110, 99, 101);
     private static final Color AFTERIMAGE_COLOR = new Color(118, 129, 97, 41);

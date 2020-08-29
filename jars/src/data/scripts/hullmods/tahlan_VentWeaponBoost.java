@@ -27,7 +27,7 @@ import static data.scripts.utils.tahlan_txt.txt;
 public class tahlan_VentWeaponBoost extends BaseHullMod {
 
     private static final float BOOST_DURATION = 5f;
-    private static final float BOOST_PER_SECOND = 0.25f;
+    private static final float BOOST_PER_SECOND = 0.2f;
 
     private static final Color GLOW_COLOR = new Color(202, 58, 255);
 
@@ -76,7 +76,7 @@ public class tahlan_VentWeaponBoost extends BaseHullMod {
             //Just stopped venting : apply the buff the first time and reset vent time
             if (data.timeSpentVenting > 0f) {
                 data.buffDurationRemaining = BOOST_DURATION;
-                data.currentBuffAmount = data.timeSpentVenting*BOOST_PER_SECOND;
+                data.currentBuffAmount = Math.min(data.timeSpentVenting*BOOST_PER_SECOND,2f);
                 data.timeSpentVenting = 0f;
             }
 
@@ -86,10 +86,10 @@ public class tahlan_VentWeaponBoost extends BaseHullMod {
                 ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(this.getClass().getName()+ship.getId(), 1f + (data.currentBuffAmount));
                 ship.getMutableStats().getBallisticWeaponDamageMult().modifyMult(this.getClass().getName()+ship.getId(), 1f + (data.currentBuffAmount));
                 //If we are the player ship, also display a tooltip showing our current bonus
-                if (ship == Global.getCombatEngine().getPlayerShip()) {
+                if (ship == Global.getCombatEngine().getPlayerShip() && data.currentBuffAmount > 0f) {
                     Global.getCombatEngine().maintainStatusForPlayerShip(this.getClass().getName() + "_TOOLTIP",
                             "graphics/icons/hullsys/high_energy_focus.png", txt("hmd_ventBoost1"),
-                            txt("hmd_ventBoost2") + (data.currentBuffAmount*100f) + txt("%"), false);
+                            txt("hmd_ventBoost2") + (int)(data.currentBuffAmount*100f) + txt("%"), false);
                 }
                 EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC,WeaponType.ENERGY);
                 ship.setWeaponGlow(0.5f+data.currentBuffAmount, GLOW_COLOR, WEAPON_TYPES);

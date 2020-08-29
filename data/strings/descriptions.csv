@@ -23,7 +23,9 @@ tahlan_Castella_lp,SHIP,"Fanatics of the Luddic Path have made this ship their o
 
 An outdated carrier design, the Castella had mostly been replaced by the Legion in fleets of the Domain, but found itself popular with smaller system defense forces or independent fleets. Salvagers in particular took a liking to the antiquated design.",,,
 tahlan_Nessie,SHIP,"What madness drove scavengers to create this abomination of a phase ship remains unknown, but the crude amalgamation of two Gremlins and a Lasher has somehow come out to be a functional design. Presumably meant to emulate the Doom, this makeshift design falls short of that goal in just about every way imaginable. Its makeshift construction renders it remarkably fragile and noticeably limits mobility potential. Truly, the only thing it has going for it is the rather surprising firepower it can muster.",,,
-tahlan_Bungalow,SHIP,"An early competitor of the Mora, the Bungalow's designers favoured the idea of maximizing fighter projection capability at the cost of durability. Unremarkable in its design, the ship is essentially little more than a flying hangar and relies on escorts to keep enemies at bay.",,,
+tahlan_Bungalow,SHIP,"An early competitor of the Mora, the Bungalow's designers favoured the idea of maximizing fighter projection capability at the cost of durability. Unremarkable in its design, the ship is essentially little more than a flying hangar and relies on escorts to keep enemies at bay.
+
+The ship has gained some recognition amongst mercenaries and privateers for its ability to provide good fighter support at a low price for smaller flotillas, though it can be argued that many a captain has severely overestimated the Bungalow's capabilities, attempting to take on opponents far above their capabilities. One particular tale that has found some fame is that of an aspiring pirate captain who sought to break through a Hegemony fleet with his trusty Bungalow leading the charge, allegedly trying to emulate the deeds of a famous space pirate from an old Earth videodrama, and finding his ship's fragile hull no match for Hegemony firepower.",,,
 tahlan_Ingress,SHIP,"Intended as a successor to the Legion, the Ingress never quite took off with its heavier focus on its fighter complement. Regardless, ships of this type still enjoy a decent popularity with smaller navies for their broad mission profile and overall flexibility.",,,
 tahlan_Yosei,SHIP,"A modification of the Tempest, the Yosei is a heavier frigate that sacrifices some mobility for additional firepower.",,,
 tahlan_Skola,SHIP,"Small and fast, the Skola is a fast attack frigate built around a pair of prism coils, high-powered arc weapons that can fry ships and missiles alike. While these weapons lack range, the Skola's high mobility is more than capable of compensating for this weakness.",,,
@@ -84,9 +86,6 @@ tahlan_Flagellator,SHIP,"Built for speed and equipped with an early variant of g
 tahlan_Nightingale,SHIP,"An offshoot of the AI fleet development program of Tri-Tachyon, the Songbird was designed as a highly resilient support ship. Armed to the teeth and carrying three wings of swarmer drones, it can be a nightmare for any fleet lacking in point-defense.",,,
 tahlan_Prim,SHIP,A small drone fighter equipped with swarmer SRMs. Weak on its own it relies on numbers to pose a threat.,,,
 tahlan_darnus,SHIP,"The origins of the Darnus are shrouded in mystery. Likely a prototype design given its unusual spatial jaunt drive, it possesses excellent combat capabilities.",,,
-tahlan_filament,SHIP,"Representing a wholly unique approach to carrier design, the Filament-class Bridgehead Battlecarrier carries what is essentially miniature gate to maintain a stable wormhole connection to a large-scale fighter maintenance and storage facility hidden at an unknown location within the sector. While the device is large in size, it ultimately occupies far less space than normal fighter bays would and the larger facility it is linked to facilitates superior fighter maintenance. The saved space has been used to equip the ship with heavy armaments and powerful shielding, making it capable of going toe-to-toe with battleships in direct combat.",,,
-tahlan_thread,SHIP,"The Fiber-class swarmer is a small and agile figher armed with a single high-velocity diffuse pulse laser that can pose a notable threat to most other fighter craft. While unsuitable for engaging larger targets by itself, it can effectively screen for bombers and distract enemy point-defense systems.",,,
-tahlan_fiber,SHIP,"Built for the sole purpose of bringing a maximum amount of devastation to hostile ships, the Fiber is a heavy bomber carrying a single Type-13 Magnetic Hyperpulse Mine, short ""Magmine"", with exceedingly high destructive potential. Featuring a large blast radius and dual timed proximity and impact fuses, this inertia-launched mine is capable of taking out most kinds of targets and crippling any which might survive an initial strike.",,,
 ,,,,,
 #LosTech,,,,,
 tahlan_karma,SHIP,"A seemingly jury-rigged design based on a Brilliant-class cruiser. While appearing like a crude modification at first sight, closer inspection has revealed the ship to be anything but. The complex remnant tech has been flawlessly integrated with the custom-built central hull section and shows a number of unusual modifications using what appears to be late domain-level hardware that current databases fail to identify.
@@ -403,13 +402,14 @@ tahlan_weaponstabilization,SHIP_SYSTEM,"Stabilizes weapons for increased lethali
 tahlan_explosiverounds,SHIP_SYSTEM,"Loads microfusion rounds into any equipped Stahlhagel-type cannons, which cause an additional explosion on impact dealing 50 energy damage in a 100su radius and can cause additional arcing EMP damage.",Assault,,
 tahlan_plasmarounds,SHIP_SYSTEM,Switches the built-in arm-weapons to a high-energy plasma mode similar to a Sturmkanone for a short duration. Plasma projectiles do 300 energy damage and detonate for an additional 100 fragmentation aoe damage.,Assault,,
 tahlan_heavydamper,SHIP_SYSTEM,Briefly activates an energy field that mitigates incoming damage at the cost of disabling weapons and shields. Shorter duration than smaller scale damper fields.,Defense,,
-tahlan_crusherdrive,SHIP_SYSTEM,Sends drives into overdrive to ram current ship target. Halves damage taken and weapon rate of fire while active.,Ramming,,
+tahlan_crusherdrive,SHIP_SYSTEM,Diverts all shield power to engines and structural integrity fields to ram current ship target. Halves damage taken and weapon rate of fire while active.,Ramming,,
 tahlan_rrskimmer,SHIP_SYSTEM,A custom variant of phase skimmer with improved cycle rate at cost of reduced range.,Movement,,
 tahlan_shiftdrive,SHIP_SYSTEM,Phases and dashes in the chosen direction.,Movement,,
 tahlan_jauntdrive,SHIP_SYSTEM,Phases and dashes in the chosen direction.,Movement,,
 tahlan_fluxblast,SHIP_SYSTEM,"Violently vents flux, causing damage to anything nearby.",Assault,,
 tahlan_realityshell,SHIP_SYSTEM,Accelerates timeflow then reverts to initial state on system shutdown.,Assault,,
-tahlan_secondwave,SHIP_SYSTEM,Replaces all lost fighters and launches additional fighters. All fighters gain increased speed for a short while after system activation.,Fighters,,
+tahlan_inertialessdrive,SHIP_SYSTEM,"Switches to an inertialess propulsion system, greatly improving mobility.",Mobility,,
+tahlan_ltskimmer,SHIP_SYSTEM,An enhanced phase skimmer variant boasting improved range.,Mobility,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,

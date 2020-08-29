@@ -17,10 +17,10 @@
 	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png",
 	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
 					"shotRangeVariance":0.35,
-					"range":20,
+					"range":30,
 					"explosionSpec":{"duration":0.12f,
-									 "radius":40,
-									 "coreRadius":20, # full damage within core radius - also equal to proximity fuse range
+									 "radius":60,
+									 "coreRadius":40, # full damage within core radius - also equal to proximity fuse range
 									 "collisionClass":PROJECTILE_FF,
 									 "collisionClassByFighter":PROJECTILE_FIGHTER,
 									 "particleSizeMin":3.0,

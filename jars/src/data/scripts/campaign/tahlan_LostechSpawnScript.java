@@ -40,8 +40,8 @@ public class tahlan_LostechSpawnScript {
         SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_phantom", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 2));
         SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 2));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_rigveda_relic", 2));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_yajurveda_relic", 4));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_rigveda_relic", 4));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_yajurveda_relic", 6));
         SHIP_SPAWNS.add(new Pair<>("tahlan_nirvana_relic", 2));
     }
 
@@ -103,13 +103,21 @@ public class tahlan_LostechSpawnScript {
                 }
 
                 //Now, simply spawn the ship in the spawn location
-                boolean recoverable = Math.random()>0.5f;
+                boolean recoverable = Math.random()>0.75f;
 
-                if ( spawnData.one == "tahlan_schneefall_traum_albtraum" ) {
-                    Global.getSector().getMemory().set("$tahlan_traum_location",system.getConstellation().getName());
-                    recoverable = true;
+                float condition = (float)Math.random();
+                ShipRecoverySpecial.ShipCondition shipCondition;
+                if (condition < 0.3) {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.WRECKED;
+                } else if (condition < 0.6) {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
+                } else if (condition < 0.9) {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.AVERAGE;
+                } else {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.GOOD;
                 }
-                addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, recoverable, null);
+
+                addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
 
                 LOGGER.info("Spawned LosTech Derelict in " + system.getId());
                 numberOfSpawns++;

@@ -12,6 +12,13 @@
   "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_strahlfaust_r.png",
   "hardpointGlowSprite": "graphics/tahlan/weapons/ma/tahlan_strahlfaust_r_glow.png",
   "renderAboveAllWeapons": 0,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
   "glowColor": [
     255,
     56,

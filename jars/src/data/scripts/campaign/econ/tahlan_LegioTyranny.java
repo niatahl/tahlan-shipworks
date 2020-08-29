@@ -5,6 +5,8 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
 
     public static final float STAB_BONUS = 5f;
@@ -14,10 +16,10 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
         super.apply(id);
         if (market.getFaction() != null) {
             if (market.getFaction().getId().contains("tahlan_legioinfernalis")) {
-                market.getStability().modifyFlat(id, STAB_BONUS, "Legio Tyranny");
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id,1.5f, "Legio Tyranny");
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id,1.5f, "Legio Tyranny");
-                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id,2f, "Legio Tyranny");
+                market.getStability().modifyFlat(id, STAB_BONUS, txt("tyranny"));
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id,1.5f, txt("tyranny"));
+                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id,1.5f, txt("tyranny"));
+                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id,2f, txt("tyranny"));
             } else {
                 market.getStability().unmodify(id);
                 market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodify(id);
@@ -44,10 +46,10 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
             return;
         }
 
-        tooltip.addPara("%s stability",
+        tooltip.addPara(txt("stab"),
                 10f, Misc.getHighlightColor(),
                 "+" + (int) STAB_BONUS);
-        tooltip.addPara("Increased fleet sizes and ground defenses", 10f);
-        tooltip.addPara("Only active while under %s control", 10f, Misc.getHighlightColor(),"Legio Infernalis");
+        tooltip.addPara(txt("tyranny2"), 10f);
+        tooltip.addPara(txt("tyranny3"), 10f, Misc.getHighlightColor(),txt("tyranny4"));
     }
 }

@@ -29,8 +29,8 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		
 		// Set up the player's fleet
 		api.addToFleet(FleetSide.PLAYER, "tahlan_legion_gh_knight", FleetMemberType.SHIP, "KNV Anra Emmeris", true);
-		api.addToFleet(FleetSide.PLAYER, "tahlan_Castigator_knight_errant", FleetMemberType.SHIP, false);
-		api.addToFleet(FleetSide.PLAYER, "tahlan_Castigator_knight_errant", FleetMemberType.SHIP, false);
+		api.addToFleet(FleetSide.PLAYER, "tahlan_dominator_gh_knight", FleetMemberType.SHIP, false);
+		api.addToFleet(FleetSide.PLAYER, "tahlan_dominator_gh_knight", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.PLAYER, "tahlan_enforcer_gh_knight", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.PLAYER, "tahlan_enforcer_gh_knight", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.PLAYER, "tahlan_monitor_gh_knight", FleetMemberType.SHIP, false);

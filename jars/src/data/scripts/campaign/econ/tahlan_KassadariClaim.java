@@ -9,6 +9,8 @@ import com.fs.starfarer.api.impl.campaign.population.PopulationComposition;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
+import static data.scripts.utils.tahlan_txt.txt;
+
 public class tahlan_KassadariClaim extends BaseMarketConditionPlugin implements MarketImmigrationModifier {
 
     public static float ACCESSIBILITY_BONUS = -50f;
@@ -16,7 +18,7 @@ public class tahlan_KassadariClaim extends BaseMarketConditionPlugin implements 
     @Override
     public void apply(String id) {
         super.apply(id);
-        market.getAccessibilityMod().modifyFlat(id, getAccessibilityBonus()/100, "Kassadari Claim");
+        market.getAccessibilityMod().modifyFlat(id, getAccessibilityBonus()/100, txt("econ_claim1"));
         market.addTransientImmigrationModifier(this);
     }
 
@@ -43,12 +45,12 @@ public class tahlan_KassadariClaim extends BaseMarketConditionPlugin implements 
     protected void createTooltipAfterDescription(TooltipMakerAPI tooltip, boolean expanded) {
         super.createTooltipAfterDescription(tooltip, expanded);
 
-        tooltip.addPara("%s accessibility",
+        tooltip.addPara(txt("access"),
                 10f, Misc.getHighlightColor(),
                 ""+(int)ACCESSIBILITY_BONUS+"%"
         );
         tooltip.addPara(
-                "%s population growth (based on market size).",
+                txt("econ_claim2"),
                 10f,
                 Misc.getHighlightColor(),
                 "" + (int) getThisImmigrationBonus()

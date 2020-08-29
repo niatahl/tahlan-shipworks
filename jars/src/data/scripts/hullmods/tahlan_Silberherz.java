@@ -9,9 +9,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import static data.scripts.utils.tahlan_txt.txt;
@@ -19,7 +17,7 @@ import static data.scripts.utils.tahlan_txt.txt;
 public class tahlan_Silberherz extends BaseHullMod {
 
     private static final String SILBER_ID = "Silberherz_ID";
-    private static final float DEBUFF_FACTOR = 0.85f;
+    private static final float BUFF_FACTOR = 1.2f;
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>(1);
 
     static {
@@ -53,17 +51,18 @@ public class tahlan_Silberherz extends BaseHullMod {
 	    if (ship.getCaptain() != null) {
             PersonAPI captain = ship.getCaptain();
 
-	        if (!(captain.getStats().getLevel() > 9)) {
 
-	            ship.getMutableStats().getFluxDissipation().modifyMult(SILBER_ID,DEBUFF_FACTOR);
-                ship.getMutableStats().getFluxCapacity().modifyMult(SILBER_ID,DEBUFF_FACTOR);
-	            ship.getMutableStats().getMaxSpeed().modifyMult(SILBER_ID,DEBUFF_FACTOR);
-	            ship.getMutableStats().getAcceleration().modifyMult(SILBER_ID,DEBUFF_FACTOR);
-	            ship.getMutableStats().getAutofireAimAccuracy().modifyMult(SILBER_ID,DEBUFF_FACTOR);
-	            ship.getMutableStats().getShieldDamageTakenMult().modifyMult(SILBER_ID,1/DEBUFF_FACTOR);
+	        if ((captain.getStats().getLevel() > 9)) {
+
+	            ship.getMutableStats().getFluxDissipation().modifyMult(SILBER_ID, BUFF_FACTOR);
+                ship.getMutableStats().getFluxCapacity().modifyMult(SILBER_ID, BUFF_FACTOR);
+	            ship.getMutableStats().getMaxSpeed().modifyMult(SILBER_ID, BUFF_FACTOR);
+	            ship.getMutableStats().getAcceleration().modifyMult(SILBER_ID, BUFF_FACTOR);
+	            ship.getMutableStats().getAutofireAimAccuracy().modifyMult(SILBER_ID, BUFF_FACTOR);
+	            ship.getMutableStats().getShieldDamageTakenMult().modifyMult(SILBER_ID,1/ BUFF_FACTOR);
 
                 if (player) {
-                    Global.getCombatEngine().maintainStatusForPlayerShip(SILBER_ID, "graphics/icons/hullsys/entropy_amplifier.png", "Inexperienced Captain", "Regaliy performance reduced", false);
+                    Global.getCombatEngine().maintainStatusForPlayerShip(SILBER_ID, "graphics/icons/hullsys/entropy_amplifier.png", txt("hmd_silberherz8"), txt("hmd_silberherz9"), false);
                 }
 
             } else {
@@ -117,7 +116,7 @@ public class tahlan_Silberherz extends BaseHullMod {
 		if (index == 0) return "" + (int)PD_PERCENT + txt("%");
 		if (index == 1) return "" + (int)WEAPON_HP + txt("%");
 		if (index == 2) return txt("hmd_silberherz1");
-		if (index == 3) return "" + (int)((1f-DEBUFF_FACTOR)*100f) + txt("%");
+		if (index == 3) return "" + (int)((BUFF_FACTOR-1f)*100f) + txt("%");
 		if (index == 4) return txt("hmd_silberherz2");
 		if (index == 5) return txt("hmd_silberherz3");
 		if (index == 6) return txt("hmd_silberherz4");

@@ -234,7 +234,8 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "SYNERGY",
+	  "renderOrderMod":100
     },
     {
       "angle": -0,
@@ -246,7 +247,8 @@
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "SYNERGY",
+	  "renderOrderMod":100
     },
     {
       "angle": 0,

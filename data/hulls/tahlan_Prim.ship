@@ -19,7 +19,16 @@
       "mount": "HIDDEN",
       "arc": 0,
       "angle": 0,
-      "locations": [6.5, -0]
+      "locations": [3.5, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HIDDEN",
+      "arc": 15,
+      "angle": 0,
+      "locations": [5.5, -0]
     }
   ],
   "engineSlots": [

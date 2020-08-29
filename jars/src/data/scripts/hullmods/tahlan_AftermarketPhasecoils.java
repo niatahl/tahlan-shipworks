@@ -21,6 +21,14 @@ public class tahlan_AftermarketPhasecoils extends BaseHullMod {
     }
 
     @Override
+    public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
+        if (ship.getVariant().getHullMods().contains("safetyoverrides")) {
+            ship.getMutableStats().getWeaponRangeThreshold().unmodify(id);
+            ship.getMutableStats().getWeaponRangeMultPastThreshold().unmodify(id);
+        }
+    }
+
+    @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
         if (index == 0) return "" + (int)RANGE_THRESHOLD + txt("su");
         if (index == 1) return txt("hmd_AftermPhCoils1");

@@ -32,6 +32,13 @@
     13,
     0
   ],
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_titanomachy_hp_base.png",
   "hitGlowRadius": 0,
   "id": "tahlan_titanomachy",

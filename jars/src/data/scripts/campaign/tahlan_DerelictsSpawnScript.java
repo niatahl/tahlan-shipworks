@@ -102,14 +102,26 @@ public class tahlan_DerelictsSpawnScript {
                     placeToSpawn = validPoints.pick();
                 }
 
+                float condition = (float)Math.random();
+                ShipRecoverySpecial.ShipCondition shipCondition;
+                if (condition < 0.25) {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.WRECKED;
+                } else if (condition < 0.5) {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
+                } else if (condition < 0.75) {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.AVERAGE;
+                } else {
+                    shipCondition = ShipRecoverySpecial.ShipCondition.GOOD;
+                }
+
                 //Now, simply spawn the ship in the spawn location
-                boolean recoverable = Math.random()>0.5f;
+                boolean recoverable = Math.random()>0.75f;
 
                 if ( spawnData.one == "tahlan_schneefall_traum_albtraum" ) {
                     Global.getSector().getMemory().set("$tahlan_traum_location",system.getConstellation().getName());
                     recoverable = true;
                 }
-                addDerelict(system, spawnData.one, placeToSpawn.orbit, ShipRecoverySpecial.ShipCondition.BATTERED, recoverable, null);
+                addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
 
                 LOGGER.info("Spawned Derelict in " + system.getId());
                 numberOfSpawns++;

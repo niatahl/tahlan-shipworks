@@ -1,11 +1,13 @@
 package data.scripts.hullmods;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Skills;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,6 +26,9 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
 	
 	private static final float PD_PERCENT = 50f;
 	private static final float WEAPON_HP = 50f;
+
+    private boolean runOnce =  false;
+    private String origPersonality = "steady";
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
@@ -38,6 +43,26 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
             if (ship.getVariant().getHullMods().contains(tmp)) {
                 ship.getVariant().removeMod(tmp);
             }
+        }
+    }
+
+    @Override
+    public void advanceInCombat(ShipAPI ship, float amount) {
+
+        if (ship.getCaptain() != null) {
+            PersonAPI captain = ship.getCaptain();
+
+            if (!runOnce) {
+                origPersonality = captain.getPersonalityAPI().getId();
+                runOnce = true;
+            }
+
+            if (ship.getFluxLevel() < 0.25f) {
+                captain.setPersonality("reckless");
+            } else {
+                captain.setPersonality(origPersonality);
+            }
+
         }
     }
 
@@ -59,6 +84,7 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
             member.getStats().getSuppliesPerMonth().unmodify(SILBER_ID);
             member.getStats().getBaseCRRecoveryRatePercentPerDay().unmodify(SILBER_ID);
         }
+
     }
 
     public boolean isApplicableToShip(ShipAPI ship) {

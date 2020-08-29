@@ -22,7 +22,7 @@
     {
       "id": "WS0003",
       "size": "LARGE",
-      "type": "COMPOSITE",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 120,
       "angle": 44,
@@ -31,7 +31,7 @@
     {
       "id": "WS0004",
       "size": "LARGE",
-      "type": "COMPOSITE",
+      "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 120,
       "angle": -44,
@@ -40,7 +40,7 @@
     {
       "id": "WS0001",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 94,
       "angle": 21,
@@ -49,7 +49,7 @@
     {
       "id": "WS0002",
       "size": "MEDIUM",
-      "type": "BALLISTIC",
+      "type": "COMPOSITE",
       "mount": "TURRET",
       "arc": 94,
       "angle": -21,

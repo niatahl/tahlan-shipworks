@@ -24,7 +24,7 @@ public class tahlan_RealityGlitch extends BaseHullMod {
 
     //Disappearance cooldown, minimum and maximum
     //  DOES NOT include the disappearance itself
-    private static final float MAX_DISAPPEAR_COOLDOWN = 20f;
+    private static final float MAX_DISAPPEAR_COOLDOWN = 30f;
     private static final float MIN_DISAPPEAR_COOLDOWN = 10f;
 
     //Time to disappear, minimum and maximum
@@ -173,8 +173,8 @@ public class tahlan_RealityGlitch extends BaseHullMod {
         int maxY = ship.getArmorGrid().getAbove() + ship.getArmorGrid().getBelow();
         float averageArmor = getTotalArmor(ship) / (float)(maxX*maxY);
 
-        if (averageArmor < ship.getArmorGrid().getMaxArmorInCell() * 0.5f) {
-            averageArmor = ship.getArmorGrid().getMaxArmorInCell() * 0.5f;
+        if (averageArmor < ship.getArmorGrid().getMaxArmorInCell() * 0.4f) {
+            averageArmor = ship.getArmorGrid().getMaxArmorInCell() * 0.4f;
         }
 
         //Then we check all armor grid pieces again to set them to the average

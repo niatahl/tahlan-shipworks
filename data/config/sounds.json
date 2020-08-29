@@ -1,13 +1,4 @@
-{
-	"music":{
-		"tahlan_kassadari_theme":[
-			{"file":"tahlan_kassadari_theme.ogg","source":"sounds/tahlan/music/","volume":0.5},
-		],
-		
-	},
-	
-	
-	
+{	
 	"tahlan_rrskimmer_use":
 	[
 		{"file":"sounds/tahlan/systems/tahlan_rrskimmer.ogg","pitch":1.0,"volume":1.0},
@@ -129,12 +120,7 @@
 	"tahlan_nenparax_loop":
 	[
 		{"file":"sounds/sfx_wpn_energy/laser_loop.ogg","pitch":2.5,"volume":0.15},
-	],	
-	
-	"tahlan_kassadari_theme":[
-			{"file":"sounds/tahlan/music/tahlan_kassadari_theme.ogg","pitch":1,"volume":0.5},
-		],
-	
+	],		
 
 	"tahlan_fusor_loop":{
 		"sounds":[

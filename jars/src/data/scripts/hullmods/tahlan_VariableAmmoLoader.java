@@ -39,7 +39,7 @@ public class tahlan_VariableAmmoLoader extends BaseHullMod {
     public final float T3_SPLIT_INACCURACY = 10f;
     public final float T3_PRIMARY_SPEED_VARIATION = 0.03f;
     public final float T3_SPLIT_SPEED_VARIATION = 0.1f;
-    public final int T3_SPLIT_COUNT = 10;
+    public final int T3_SPLIT_COUNT = 5;
     public final Color T3_MUZZLE_COLOR = new Color(255, 180, 113);
     public final Color T3_SPLIT_COLOR = new Color(232, 221, 204);
 

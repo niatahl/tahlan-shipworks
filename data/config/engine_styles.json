@@ -111,17 +111,5 @@
 		"contrailCampaignColor":[255,0,0,0],
 		"type":"SMOKE"
 	},
-	
-	"TAHLAN_RED_ENGINE":{
-		"engineColor":[255,50,50,225],
-		"contrailParticleSizeMult":8,
-		"contrailParticleDuration":2,
-		"contrailParticleFinalSizeMult":1,
-		"contrailMaxSpeedMult":0.5f,
-		"contrailAngularVelocityMult":0f,
-		"contrailColor":[255,100,100,0],
-		"glowAlternateColor":[255,0,0,225],
-		"type":"GLOW" # GLOW or SMOKE
-	},
 }
 
