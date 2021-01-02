@@ -42,11 +42,11 @@ public class tahlan_PraxusOnHitEffect implements OnHitEffectPlugin {
         blast.setShowGraphic(false);
         engine.spawnDamagingExplosion(blast,projectile.getSource(),point,false);
 
-        engine.addSmoothParticle(point, ZERO, 50f, 0.5f, 0.1f, PARTICLE_COLOR);
-        engine.addHitParticle(point, ZERO, 70f, 0.3f, 0.05f, FLASH_COLOR);
+        engine.addSmoothParticle(point, ZERO, 50f, 0.5f, 0.05f, PARTICLE_COLOR);
+        engine.addHitParticle(point, ZERO, 70f, 0.3f, 0.02f, FLASH_COLOR);
         for (int x = 0; x < NUM_PARTICLES; x++) {
             engine.addHitParticle(point,
-                    MathUtils.getPointOnCircumference(point, MathUtils.getRandomNumberInRange(10f, 40f), (float) Math.random() * 360f),
+                    MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(60f, 180f), (float) Math.random() * 360f),
                     3f, 1f, MathUtils.getRandomNumberInRange(0.2f, 0.3f), PARTICLE_COLOR);
         }
         //Global.getSoundPlayer().playSound("tahlan_porph_impact",1f,1f,point,ZERO);

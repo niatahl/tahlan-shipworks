@@ -31,6 +31,7 @@
   "size": "MEDIUM",
   "specClass": "projectile",
   "textureType": ROUGH,
+  "autocharge":true,
   "turretAngleOffsets": [
     0
   ],

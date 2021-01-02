@@ -1,0 +1,27 @@
+{
+    "baseHullId":"tahlan_blockhead",
+    "skinHullId":"tahlan_blockhead_lp",
+    "hullName":"Blockhead (LP)",
+    "descriptionId":"tahlan_blockhead",
+    "descriptionPrefix":"Fanatics of the Luddic Path have made this ship their own, stripping out all unnecessary furnishing and transforming it into a haphazard vehicle of holy war.",
+	#"fleetPoints":14,
+	#"ordnancePoints":150,
+    "spriteName":"graphics/tahlan/ships/tahlan_blockhead_lp.png",
+	"tags":["LP_bp"],
+	"tech":"Luddic Path",
+    "baseValueMult":1.5,
+    "removeWeaponSlots":[],         # ids
+    "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[],         # hullmod ids
+    "removeBuiltInWeapons":[],      # weapon slot ids
+    "builtInMods":["ill_advised","safetyoverrides"],
+	"systemId":"ammofeed",
+    "weaponSlotChanges":{
+		"WS0001":{
+      		"type": "COMPOSITE",
+    	},
+		"WS0004":{
+      		"type": "BALLISTIC",
+    	},
+    },
+}

@@ -111,5 +111,31 @@
 		"contrailCampaignColor":[255,0,0,0],
 		"type":"SMOKE"
 	},
+	
+	"TAHLAN_ADMECH_ENGINE":{
+		"engineColor":[97,218,255,165],
+		"engineCampaignColor":[107,218,255,205],
+		"contrailParticleSizeMult":2,
+		"contrailParticleDuration":3,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0.5,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[200,90,70,75],
+		"type":"SMOKE" # GLOW or SMOKE
+	},
+	
+	"TAHLAN_REDCONE_ENGINE":{
+		"engineColor":[255,70,0,225],
+		"contrailParticleSizeMult":8,
+		"contrailParticleDuration":2,
+		"contrailParticleFinalSizeMult":1,
+		"contrailMaxSpeedMult":0.5f,
+		"contrailAngularVelocityMult":0f,
+		"contrailColor":[255,100,100,0],
+		"glowAlternateColor":[255,0,0,50],
+		"glowSizeMult":0,
+		"type":"GLOW" # GLOW or SMOKE
+	},
 }
 

@@ -8,6 +8,7 @@
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_stahlhagel_r_00.png",
   "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_stahlhagel_r_00.png",
   "renderAboveAllWeapons": 0,
+  "autocharge":true,
   "turretOffsets": [
     51,
     -4

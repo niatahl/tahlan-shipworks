@@ -76,7 +76,7 @@ public class tahlan_HueterProjectileScript extends BaseEveryFrameCombatPlugin {
 	private static final float TARGET_REACQUIRE_ANGLE = 180f;
 
 	//How fast the projectile is allowed to turn, in degrees/second
-	private static final float TURN_RATE = 360f;
+	private static final float TURN_RATE = 450f;
 
 	//If non-zero, the projectile will sway back-and-forth by this many degrees during its guidance (with a sway period determined by SWAY_PERIOD).
 	//High values, as one might expect, give very poor tracking. Also, high values will decrease effective range (as the projectiles travel further) so be careful

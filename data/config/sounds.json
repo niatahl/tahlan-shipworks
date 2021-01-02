@@ -237,6 +237,22 @@
            	{"file":"sounds/tahlan/weapons/tahlan_stahl_fire.ogg","pitch":0.9,"volume":0.8},
         ],
     },
+	"tahlan_breaker_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_breaker_fire.ogg","pitch":0.8,"volume":0.8},
+           	{"file":"sounds/tahlan/weapons/tahlan_breaker_fire.ogg","pitch":0.81,"volume":0.8},
+           	{"file":"sounds/tahlan/weapons/tahlan_breaker_fire.ogg","pitch":0.82,"volume":0.8},
+           	{"file":"sounds/tahlan/weapons/tahlan_breaker_fire.ogg","pitch":0.83,"volume":0.8},
+           	{"file":"sounds/tahlan/weapons/tahlan_breaker_fire.ogg","pitch":0.84,"volume":0.8},
+        ],
+    },
+	"tahlan_aetnos_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.82,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.84,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.86,"volume":0.6},
+        ],
+    },
 	"tahlan_magaera_fire":{
         "sounds":[
            	{"file":"sounds/tahlan/weapons/tahlan_gallant_fire.ogg","pitch":1.05,"volume":1.1},

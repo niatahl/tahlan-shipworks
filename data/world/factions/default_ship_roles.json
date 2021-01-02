@@ -56,8 +56,7 @@
 		"tahlan_Kodai_standard":7,	
 		"tahlan_dominator_gh_knight":10,
 		"tahlan_Izanami_prototype":10,
-		"tahlan_Defiance_strike":4,
-		"tahlan_Defiance_elite":3,
+		"tahlan_Defiance_elite":7,
 		"tahlan_Defiance_overdriven":3,
 		"tahlan_Eagle_P_raider":10,
 		"tahlan_Castigator_P_raider":5,
@@ -72,6 +71,9 @@
 		"tahlan_Phoca_overdriven":3,
 		"tahlan_Nightingale_experimental":10,
 		"tahlan_mondlicht_standard":10,
+		"tahlan_blockhead_combat":4,
+		"tahlan_blockhead_overdriven":3,
+		"tahlan_blockhead_support":3,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
@@ -91,6 +93,9 @@
 		"tahlan_Nibelung_crg_elite":10,
 		"tahlan_schneefall_lichtbringer":10,
 		"tahlan_Nibelung_rg_brawler":10,
+		"tahlan_providence_assault":4,
+		"tahlan_providence_artillery":3,
+		"tahlan_providence_brawler":3,
 	},
 	
 	

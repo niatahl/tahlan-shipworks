@@ -18,6 +18,7 @@
 			"tahlan_Izanami":0.5,
 			"tahlan_Bento":0.5,
 			"tahlan_darnus":0.3,
+			"tahlan_providence":0.5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -38,7 +39,8 @@
 			"tahlan_Vale",
 			"tahlan_Castigator",
 			"tahlan_Hresvelgr",
-			"tahlan_darnus"
+			"tahlan_darnus",
+			"tahlan_providence",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -62,7 +64,8 @@
 			"tahlan_armiger",
 			"tahlan_efreet",
 			"tahlan_amboss",
-			"tahlan_titanomachy"
+			"tahlan_titanomachy",
+			"tahlan_breaker",
 		],
 	},
 	"priorityWeapons":{

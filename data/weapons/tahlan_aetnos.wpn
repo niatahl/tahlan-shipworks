@@ -1,0 +1,40 @@
+{
+  "id": "tahlan_aetnos",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_aetnos_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_AetnosMuzzleFlashScript",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_aetnos_turret_base.png",
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_aetnos_turret_recoil.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_aetnos_hp_base.png",
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_aetnos_hp_recoil.png",
+  "renderAboveAllWeapons": 0,
+  "visualRecoil": 6,
+  "turretOffsets": [
+    20.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    18.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "renderHints":[RENDER_BARREL_BELOW],
+  "muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":24,
+					   "particleSizeMin":12.0,
+					   "particleSizeRange":32.0,
+					   "particleDuration":0.13,
+					   "particleCount":25,
+					  "particleColor":[220,160,115,155]},
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_aetnos_fire"
+}

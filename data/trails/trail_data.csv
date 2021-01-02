@@ -38,8 +38,10 @@ tahlan_atrapos_trail_smoke,tahlan_atrapos_shot,tahlan_trail_contrail,10,0.05,0.5
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_fusor_trail,tahlan_fusor_shot,tahlan_trail_fuzzy,20,0.05,0,0.2,40,100,"[0,180,255]","[0,180,255]",0.4,300,-300,10,50,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,50,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-tahlan_armiger_trail,tahlan_armiger_shot,tahlan_trail_contrail,10,0.05,0.5,0.3,12,10,"[255,175,65]","[50,50,50]",0.3,300,-300,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false
-tahlan_armiger_trail_2,tahlan_armiger_shot,tahlan_trail_contrail,10,0.05,0.3,0.5,10,12,"[150,150,150]","[50,50,50]",0.4,300,-300,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false
+tahlan_armiger_trail,tahlan_armiger_shot,tahlan_trail_contrail,10,0.05,0.5,0.3,12,10,"[150,140,120]","[120,120,120]",0.2,300,-300,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false
+tahlan_armiger_trail_2,tahlan_armiger_shot,tahlan_trail_contrail,10,0.05,0.3,0.5,10,12,"[150,150,150]","[120,120,120]",0.3,300,-300,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+tahlan_breaker_trail,tahlan_breaker_shot,tahlan_trail_contrail,10,0.05,0.2,0.4,5,10,"[150,150,150]","[120,120,120]",0.3,300,-300,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_panzerfaust_trail,tahlan_panzerfaust_shot,tahlan_trail_contrail,10,0.05,0.2,0.2,18,12,"[255,175,65]","[255,0,150]",0.3,300,-300,20,10,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,80,true,false
 tahlan_panzerfaust_trail_2,tahlan_panzerfaust_shot,tahlan_trail_contrail,10,0.05,0.4,0.6,15,20,"[150,150,150]","[50,50,50]",0.4,300,-300,20,10,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,80,true,false

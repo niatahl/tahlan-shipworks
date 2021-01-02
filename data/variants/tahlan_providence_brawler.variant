@@ -1,0 +1,56 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 0,
+    "fluxVents": 44,
+    "hullId": "tahlan_providence",
+    "hullMods": [
+        "missleracks",
+        "heavyarmor",
+        "targetingunit"
+    ],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_providence_brawler",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "cyclone"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "sabotpod"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "multineedler"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "chaingun",
+                "WS0005": "heavymortar",
+                "WS0006": "heavymortar",
+                "WS0013": "lightag",
+                "WS0014": "lightag",
+                "WS0015": "lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0016": "vulcan"
+            }
+        }
+    ]
+}

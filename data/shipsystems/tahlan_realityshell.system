@@ -1,7 +1,7 @@
 {
 	"id":"tahlan_realityshell",
 	"type":"STAT_MOD",
-	"aiType":"TEMPORAL_SHELL",
+	"aiType":"WEAPON_BOOST",
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_RealityShell",
 	"runScriptWhileIdle":true,

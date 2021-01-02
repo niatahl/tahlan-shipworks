@@ -29,6 +29,9 @@ Trill,tahlan_Trill,Catalyst Frigate,High Tech,displacer,5,1200,300,2500,2500,150
 Flagellator,tahlan_Flagellator,Destroyer,Low Tech,tahlan_crusherdrive,10,4500,800,5000,3333,300,100,,90,100,60,40,40,450,FRONT,,90,0.4,1,,,50,90,70,70,3,28,9,35000,5,12,420,0.25,9,9,,lowtech_bp,,0.4,2,3,13464
 Songbird,tahlan_Nightingale,Cruiser,High Tech,fortressshield,20,4000,400,11000,17000,600,100,3,70,60,50,35,50,500,OMNI,,360,0.3,0.9,,,20,100,140,110,3,33,9,200000,3,12,420,0.25,28,28,HIDE_IN_CODEX,rare_bp,0.2,0.5,2,3,59423
 Darnus,tahlan_darnus,Frigate,Low Tech,tahlan_jauntdrive,8,1800,400,4000,2813,300,50,,120,180,175,120,270,200,FRONT,,270,0.3,0.9,,,15,25,25,20,1,20,10,60000,10,20,300,0.25,10,10,,rare_bp,0.75,0.5,2,2,206
+Providence,tahlan_providence,Battlecruiser,Low Tech,tahlan_fluxfeeder,25,12000,1600,16000,,600,270,,60,38,24,16,18,2800,FRONT,,270,0.5,1.1,,,500,900,320,500,12,38,8,380000,3,15,720,0.25,40,40,,rare_bp,0.8,0.5,2,5,2202
+Blockhead,tahlan_blockhead,Cruiser,Low Tech,damper,14,6000,1200,9000,2000,400,130,,40,25,15,18,15,1500,FRONT,,120,0.5,1.0,,,45,100,300,100,3,30,7,70000,3,20,480,0.25,22,22,,lowtech_bp,,0.6,2,3,411
+Throne,tahlan_throne,Cruiser,Low Tech,tahlan_fluxfeeder,15,7000,1400,12000,10500,400,140,,80,50,40,25,30,1200,FRONT,,270,0.5,1.1,,,160,220,180,120,3,33,8,120000,3,12,480,0.25,26,26,WEAPONS_FRONT_TO_BACK,rare_bp,0.5,0.5,2,3,401
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Relics,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

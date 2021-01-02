@@ -34,7 +34,7 @@ public class tahlan_FluxOverdriveStats extends BaseShipSystemScript {
         power = Math.min((ship.getHardFluxLevel()/0.90f),1f);
 
         stats.getBallisticRoFMult().modifyMult(id,1f+WEAPON_BOOST*power*effectLevel);
-        stats.getBallisticWeaponFluxCostMod().modifyMult(id,1f-WEAPON_BOOST*power*effectLevel);
+        stats.getBallisticWeaponFluxCostMod().modifyMult(id,1f/(1f+WEAPON_BOOST*power*effectLevel));
         stats.getEnergyWeaponDamageMult().modifyMult(id,1f+WEAPON_BOOST*power*effectLevel);
 
         stats.getMaxSpeed().modifyMult(id, 1f+MOBILITY_BOOST*power*effectLevel);

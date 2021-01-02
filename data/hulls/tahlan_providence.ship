@@ -1,0 +1,321 @@
+{
+  "hullName": "Providence",
+  "hullId": "tahlan_providence",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/tahlan/ships/tahlan_providence.png",
+  "style": "LOW_TECH",
+  "height": 393,
+  "width": 196,
+  "center": [98, 196.5],
+  "collisionRadius": 216.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 210.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 50.5,
+      "locations": [-13.5, 55]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 121,
+      "angle": -45,
+      "locations": [-4.5, -65]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 46,
+      "locations": [63.5, 42]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -40,
+      "locations": [134.5, -33]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -60,
+      "locations": [-37.5, -30]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": -130.5,
+      "locations": [-67.5, -30]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 98,
+      "angle": 30.5,
+      "locations": [159.5, 19]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 98,
+      "angle": -30.5,
+      "locations": [159.5, -19]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-60.5, 86]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [-60.5, -86]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -150.5,
+      "locations": [-181.5, -28]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 150.5,
+      "locations": [-181.5, 28]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 141,
+      "angle": 70,
+      "locations": [137.5, 40]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 141,
+      "angle": 80,
+      "locations": [117.5, 40]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 141,
+      "angle": 90,
+      "locations": [97.5, 40]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 141,
+      "angle": -81,
+      "locations": [67.5, -38]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-109, 73.5],
+      "length": 33,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-109, -73.5],
+      "length": 33,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-109, 65.5],
+      "length": 36,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-109, -65.5],
+      "length": 36,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-173, 10],
+      "length": 45,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-173, -10],
+      "length": 45,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-173, -0.5],
+      "length": 45,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-174.5, 10],
+      "length": 75,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-174.5, -10],
+      "length": 75,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-174.5, -0.5],
+      "length": 78,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-110.5, 65.5],
+      "length": 66,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-110.5, -65.5],
+      "length": 66,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-111, 73.5],
+      "length": 64,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-111, -73.5],
+      "length": 54,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    }
+  ],
+  "bounds": [
+    163, 10,
+    163, -10,
+    196.5, -12,
+    171, -15,
+    175, -23,
+    169.5, -32.5,
+    151, -37.5,
+    140, -47.5,
+    124.5, -48,
+    86.5, -56,
+    68.5, -58.5,
+    64.5, -54,
+    13, -55.5,
+    16, -72,
+    -3.5, -86.5,
+    -38.5, -61,
+    -45.5, -61.5,
+    -38.5, -84,
+    -60.5, -96.5,
+    -109, -75.5,
+    -110.5, -58.5,
+    -151.5, -57.5,
+    -192.5, -34.5,
+    -193, -22,
+    -173.5, -14.5,
+    -173, 14.5,
+    -193.5, 20.5,
+    -193, 35.5,
+    -152.5, 56.5,
+    -110, 60.5,
+    -109, 77,
+    -60, 97,
+    -38.5, 84,
+    -47, 64.5,
+    -42.5, 58.5,
+    -25.5, 81,
+    -0.5, 80,
+    17.5, 53.5,
+    67, 57.5,
+    88, 48,
+    144, 48.5,
+    152, 36.5,
+    170.5, 28.5,
+    174, 14,
+    196.5, 11.5
+  ]
+}

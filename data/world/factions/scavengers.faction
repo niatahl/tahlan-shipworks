@@ -9,7 +9,8 @@
 			"tahlan_knights":0.1,
 			"tahlan_lostech":0.1,
 			"tahlan_Hresvelgr":0.5,
-			"tahlan_Niebelung":0.5,
+			"tahlan_Nibelung":0.5,
+			"tahlan_providence":0.5,
 		},
 		"hulls":{
 			"tahlan_Ristreza_b":0,
@@ -27,7 +28,8 @@
 			"tahlan_Kodai",
 			"tahlan_Nessie",
 			"tahlan_Hresvelgr",
-			"tahlan_Nibelung"
+			"tahlan_Nibelung",
+			"tahlan_providence",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -49,6 +51,7 @@
 		"tags":["tahlan_knights", "tahlan_lostech"],
 		"weapons":[
 			"tahlan_armiger",
+			"tahlan_breaker",
 		],
 	},
 	"priorityWeapons":{

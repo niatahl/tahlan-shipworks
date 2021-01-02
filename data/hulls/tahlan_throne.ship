@@ -1,0 +1,287 @@
+{
+  "hullName": "Throne",
+  "hullId": "tahlan_throne",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/tahlan_throne.png",
+  "style": "LOW_TECH",
+  "height": 290,
+  "width": 204,
+  "center": [102, 145],
+  "collisionRadius": 177.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 168.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 88,
+      "angle": 22,
+      "locations": [82, 42]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 88,
+      "angle": -22,
+      "locations": [82, -42]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 129,
+      "angle": 36.5,
+      "locations": [12, 51]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 129,
+      "angle": -36.5,
+      "locations": [12, -51]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 126,
+      "angle": 35.5,
+      "locations": [108, 28]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 126,
+      "angle": -35.5,
+      "locations": [108, -28]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [-17, -89]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-17, 89]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 149,
+      "angle": -133.5,
+      "locations": [-114, -30]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 149,
+      "angle": 133.5,
+      "locations": [-114, 30]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 129,
+      "angle": 54.5,
+      "locations": [-26, 43]
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 129,
+      "angle": -54.5,
+      "locations": [-26, -43]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-99, 10],
+      "length": 40.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-99, -10],
+      "length": 40.5,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-99, -0],
+      "length": 40.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-66, 68.5],
+      "length": 29,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-66, -68.5],
+      "length": 29,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-66, 76.5],
+      "length": 29,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-66, -76.5],
+      "length": 29,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-100, 10],
+      "length": 72,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-100, -10],
+      "length": 72,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-100, -0],
+      "length": 72,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, 68.5],
+      "length": 63.5,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, -68.5],
+      "length": 63.5,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, 76.5],
+      "length": 63.5,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, -76.5],
+      "length": 63.5,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -99.5, -14.5,
+    -126.5, -22.5,
+    -124, -41,
+    -142, -43.5,
+    -119.5, -46.5,
+    -119.5, -52.5,
+    -105.5, -61.5,
+    -66, -62.5,
+    -64.5, -79.5,
+    -47, -86,
+    -25.5, -99.5,
+    -9.5, -99,
+    3, -91.5,
+    -2, -64,
+    27.5, -66,
+    87, -57,
+    100.5, -46,
+    118.5, -40.5,
+    120.5, -24.5,
+    140, -21.5,
+    115.5, -18,
+    108.5, -11.5,
+    40.5, -11,
+    33, -0,
+    40.5, 11,
+    108.5, 11.5,
+    115.5, 18,
+    140, 21.5,
+    120.5, 24.5,
+    118.5, 40.5,
+    100.5, 46,
+    87, 57,
+    27.5, 66,
+    -2, 64,
+    3, 91.5,
+    -9.5, 99,
+    -25.5, 99.5,
+    -47, 86,
+    -64.5, 79.5,
+    -66, 62.5,
+    -105.5, 61.5,
+    -119.5, 52.5,
+    -119.5, 46.5,
+    -142, 43.5,
+    -124, 41,
+    -126.5, 22.5,
+    -99.5, 14.5
+  ]
+}

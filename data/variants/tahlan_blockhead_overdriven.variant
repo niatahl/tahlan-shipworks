@@ -1,0 +1,39 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 0,
+    "fluxVents": 22,
+    "hullId": "tahlan_blockhead",
+    "hullMods": ["safetyoverrides"],
+    "permaMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_blockhead_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_amboss"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0008": "harpoon",
+                "WS0009": "harpoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0004": "typhoon"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "heavymg",
+                "WS0003": "heavymg",
+                "WS0007": "lightdualmg"
+            }
+        }
+    ]
+}

@@ -120,6 +120,7 @@ public class tahlan_DerelictsSpawnScript {
                 if ( spawnData.one == "tahlan_schneefall_traum_albtraum" ) {
                     Global.getSector().getMemory().set("$tahlan_traum_location",system.getConstellation().getName());
                     recoverable = true;
+                    shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
                 }
                 addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
 

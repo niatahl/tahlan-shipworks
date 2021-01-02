@@ -68,11 +68,9 @@ public class tahlan_DefFormationStats extends BaseShipSystemScript {
         for (ShipAPI fighter : getFighters(ship)) {
             if (fighter.isHulk()) continue;
             MutableShipStatsAPI fStats = fighter.getMutableStats();
-            fStats.getAcceleration().unmodify(id);
-            fStats.getTurnAcceleration().unmodify(id);
-            fStats.getDeceleration().unmodify(id);
-            fStats.getMaxTurnRate().unmodify(id);
-            fStats.getMaxSpeed().unmodify(id);
+            fStats.getShieldDamageTakenMult().unmodify(id);
+            fStats.getArmorDamageTakenMult().unmodify(id);
+            fStats.getHullDamageTakenMult().unmodify(id);
         }
 
     }

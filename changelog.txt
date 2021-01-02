@@ -1,5 +1,26 @@
-0.3.18
-Changes:
+0.3.19
+- Added Providence-class Battlecruiser
+- Added Blockhead-class Cruiser
+- Added Breaker Rotary Cannon
+- Added Aetnos Strike Cannon
+- Hüter
+	- Reduced refire delay to 0.25
+	- Reduced damage to 50 frag
+	- Reduced projectile velocity
+	- Tweaked homing properties slightly
+- Eradicator
+	- Now targets frigates
+- Nirvana
+	- Improved system AI
+- Armiger
+	- Increased recoil
+	- Lowered turn rate
+- Efreet
+	- Lowered turn rate
+- Titanomachy
+	- Lowered turn rate
+- Conand
+	- Efficiency reduced from 0.9 to 1.0
 - Eisenflug
 	- Lowered damage per shot of arm weapons from 75 to 60
 - Scathach

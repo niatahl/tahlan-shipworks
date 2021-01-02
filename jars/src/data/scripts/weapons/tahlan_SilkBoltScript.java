@@ -91,12 +91,11 @@ public class tahlan_SilkBoltScript implements EveryFrameWeaponEffectPlugin {
 
         //Wait one frame if we are changing our projectile this frame, and ensure our spawned projectiles loose their collision after one frame (+reduce projectile speed)
         if (!fireNextFrame) {
-            for (DamagingProjectileAPI proj : registeredLightningProjectiles) {
-            }
             for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 100f)) {
                 if (proj.getProjectileSpecId() == null) { continue; }
                 if (proj.getWeapon() == weapon && !registeredLightningProjectiles.contains(proj)) {
                     proj.setCollisionClass(CollisionClass.GAS_CLOUD); //GAS_CLOUD is essentially NONE, but most people don't ignore that class for targeting
+                    registeredLightningProjectiles.add(proj);
                     fireNextFrame = true;
                     return;
                 }

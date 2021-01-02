@@ -12,6 +12,7 @@
   "renderAboveAllWeapons": 0,
   "separateRecoilForLinkedBarrels":"TRUE",
   "glowColor": [255,56,103,255],
+  "autocharge":true,
   "turretOffsets": [
     28,
     -8,
