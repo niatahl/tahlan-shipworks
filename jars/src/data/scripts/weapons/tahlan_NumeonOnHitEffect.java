@@ -14,13 +14,12 @@ public class tahlan_NumeonOnHitEffect implements OnHitEffectPlugin {
     private static final float EXPLOSION_SIZE = 110f;
     private static final float EXPLOSION_DURATION = 0.5f;
 
-    private static final float BONUS_DAMAGE = 50f;
-
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
 
+        float bonusDamage = projectile.getDamageAmount()/4f;
         if (projectile.didDamage()) {
-            Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, projectile.getSource(), true);
+            Global.getCombatEngine().applyDamage(target, point, bonusDamage, DamageType.ENERGY, bonusDamage, false, false, projectile.getSource(), true);
         }
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 5, 350, 0, new Color(186, 240, 255), new Color(255, 255, 255));

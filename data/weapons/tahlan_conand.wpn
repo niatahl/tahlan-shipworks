@@ -1,7 +1,8 @@
 {
   "animationType": "MUZZLE_FLASH",
-  "barrelMode": "LINKED",
+  "barrelMode": "DUAL",
   "fireSoundTwo": "tahlan_conand_fire",
+  "separateRecoilForLinkedBarrels":"TRUE",
   "hardpointAngleOffsets": [
     0,
     0,

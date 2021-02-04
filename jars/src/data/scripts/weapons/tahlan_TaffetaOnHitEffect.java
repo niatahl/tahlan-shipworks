@@ -74,25 +74,6 @@ public class tahlan_TaffetaOnHitEffect implements OnHitEffectPlugin {
                     0.4f
             );
 
-            // Arcing stuff
-            List<CombatEntityAPI> validTargets = new ArrayList<CombatEntityAPI>();
-            for (CombatEntityAPI entityToTest : CombatUtils.getEntitiesWithinRange(point, 400)) {
-                if (entityToTest instanceof ShipAPI || entityToTest instanceof AsteroidAPI || entityToTest instanceof MissileAPI) {
-                    //Phased targets, and targets with no collision, are ignored
-                    if (entityToTest instanceof ShipAPI) {
-                        if (((ShipAPI) entityToTest).isPhased()) {
-                            continue;
-                        }
-                    }
-                    if (entityToTest.getCollisionClass().equals(CollisionClass.NONE)) {
-                        continue;
-                    }
-
-                    validTargets.add(entityToTest);
-                }
-            }
-
-
             Vector2f sPoint = new Vector2f(projectile.getLocation());
 
             if (!shieldHit) {

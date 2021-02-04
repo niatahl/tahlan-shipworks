@@ -1,5 +1,28 @@
-0.3.19
+0.4.1
+- Added Ryza-type Plasma Cannon
+- Added Mezoa-type Plasma Gun
+- Overhauled Metallican hulls
+- Added some additional Silberblut Regalia variants
+- Conand overhaul
+	- Now high velocity with some emp damage
+	- Updated sprite
+- Scoralis
+	- Lowered hp from 500 to 400
+	- Lowered shield hp from 500 to 400
+	- Lowered armor from 50 to 40
+	- Lowered energy bonus damage on torpedoes from 400 to 300
+- Breaker
+	- Fixed flux efficiency to intended 1.1
+- Skola
+	- Increased burn level from 9 to 11
+- Regalia
+	- Reduced the maintenance penalty of not having a gantry from 3x to 2x
+- Updated all scripted damage effects to properly scale with damage-increasing effects like skills or ship systems
+
+
+0.4
 - Added Providence-class Battlecruiser
+- Added Throne-class Cruiser
 - Added Blockhead-class Cruiser
 - Added Breaker Rotary Cannon
 - Added Aetnos Strike Cannon
@@ -12,6 +35,7 @@
 	- Now targets frigates
 - Nirvana
 	- Improved system AI
+	- Fixed passive vent effect bugs
 - Armiger
 	- Increased recoil
 	- Lowered turn rate
@@ -29,8 +53,8 @@
 	- DP increased from 35 to 40
 - Higanbana
 	- DP increased from 50 to 60
-- Nirvana
-	- Fixed passive vent effect bugs
+- Nibelung
+	- Increased armor from 1500 to 1600	
 - Hresvelgr X
 	- DP increased from 45 to 55
 	

@@ -32,10 +32,11 @@ public class tahlan_TitanomachyBeamEffect implements BeamEffectPlugin {
 
 
 
+					float bonusDamage = beam.getDamage().getDamage()/9f;
 					engine.spawnEmpArc(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getDamageTarget(),
 							DamageType.ENERGY,
-							50f,
-							250f,
+							bonusDamage,
+							bonusDamage*5f,
 							3000f,
 							"tachyon_lance_emp_impact",
 							beam.getWidth(),

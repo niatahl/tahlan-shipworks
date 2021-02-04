@@ -11,7 +11,6 @@ import java.awt.*;
 
 public class tahlan_RelparaxOnHitEffect implements OnHitEffectPlugin {
 
-    private static final float BONUS_DAMAGE = 100f;
     private static final Color COLOR1 = new Color(121,255,228);
     private static final Color COLOR2 = new Color(225,255,225);
 
@@ -23,6 +22,7 @@ public class tahlan_RelparaxOnHitEffect implements OnHitEffectPlugin {
             if ((target instanceof ShipAPI) && projectile.didDamage()) {
                 ShipAPI ship = (ShipAPI) target;
 
+                float bonusDamage = projectile.getEmpAmount();
                 float hitLevel = 0f;
                 int numHits = MathUtils.getRandomNumberInRange(0,2);
                 for (int x = 0; x < numHits; x++) {
@@ -33,7 +33,7 @@ public class tahlan_RelparaxOnHitEffect implements OnHitEffectPlugin {
                     if (!shieldHit || piercedShield) {
                         hitLevel += 0.25f;
                         engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
-                                DamageType.ENERGY, 0, BONUS_DAMAGE, 100000f, null, 5f, COLOR1, COLOR2);
+                                DamageType.ENERGY, 0, bonusDamage, 100000f, null, 5f, COLOR1, COLOR2);
                     }
                 }
 

@@ -11,6 +11,7 @@
 			"tahlan_Hresvelgr":0.5,
 			"tahlan_Nibelung":0.5,
 			"tahlan_providence":0.5,
+			"tahlan_throne":0.5,
 		},
 		"hulls":{
 			"tahlan_Ristreza_b":0,
@@ -30,6 +31,7 @@
 			"tahlan_Hresvelgr",
 			"tahlan_Nibelung",
 			"tahlan_providence",
+			"tahlan_throne",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -52,6 +54,8 @@
 		"weapons":[
 			"tahlan_armiger",
 			"tahlan_breaker",
+			"tahlan_ryza",
+			"tahlan_mezoa"
 		],
 	},
 	"priorityWeapons":{

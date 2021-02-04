@@ -124,7 +124,7 @@
   "engineSlots": [
     {
       "location": [-99, 10],
-      "length": 40.5,
+      "length": 50.5,
       "width": 17,
       "angle": 180,
       "contrailSize": 17,
@@ -132,7 +132,7 @@
     },
     {
       "location": [-99, -10],
-      "length": 40.5,
+      "length": 50.5,
       "width": 17,
       "angle": -180,
       "contrailSize": 17,
@@ -140,7 +140,7 @@
     },
     {
       "location": [-99, -0],
-      "length": 40.5,
+      "length": 56.5,
       "width": 17,
       "angle": 180,
       "contrailSize": 17,
@@ -148,39 +148,39 @@
     },
     {
       "location": [-66, 68.5],
-      "length": 29,
-      "width": 14,
+      "length": 35,
+      "width": 13,
       "angle": 180,
-      "contrailSize": 14,
+      "contrailSize": 13,
       "style": "LOW_TECH"
     },
     {
       "location": [-66, -68.5],
-      "length": 29,
-      "width": 14,
+      "length": 35,
+      "width": 13,
       "angle": -180,
-      "contrailSize": 14,
+      "contrailSize": 13,
       "style": "LOW_TECH"
     },
     {
       "location": [-66, 76.5],
-      "length": 29,
-      "width": 14,
+      "length": 30.5,
+      "width": 13,
       "angle": 180,
-      "contrailSize": 14,
+      "contrailSize": 13,
       "style": "LOW_TECH"
     },
     {
       "location": [-66, -76.5],
-      "length": 29,
-      "width": 14,
+      "length": 30.5,
+      "width": 13,
       "angle": -180,
-      "contrailSize": 14,
+      "contrailSize": 13,
       "style": "LOW_TECH"
     },
     {
       "location": [-100, 10],
-      "length": 72,
+      "length": 80,
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
@@ -188,7 +188,7 @@
     },
     {
       "location": [-100, -10],
-      "length": 72,
+      "length": 80,
       "width": 8,
       "angle": -180,
       "contrailSize": 8,
@@ -196,7 +196,7 @@
     },
     {
       "location": [-100, -0],
-      "length": 72,
+      "length": 85,
       "width": 8,
       "angle": 180,
       "contrailSize": 8,
@@ -204,7 +204,7 @@
     },
     {
       "location": [-67, 68.5],
-      "length": 63.5,
+      "length": 70.5,
       "width": 7,
       "angle": 180,
       "contrailSize": 7,
@@ -212,7 +212,7 @@
     },
     {
       "location": [-67, -68.5],
-      "length": 63.5,
+      "length": 70.5,
       "width": 7,
       "angle": -180,
       "contrailSize": 7,
@@ -220,7 +220,7 @@
     },
     {
       "location": [-67, 76.5],
-      "length": 63.5,
+      "length": 60,
       "width": 7,
       "angle": 180,
       "contrailSize": 7,
@@ -228,7 +228,7 @@
     },
     {
       "location": [-67, -76.5],
-      "length": 63.5,
+      "length": 60,
       "width": 7,
       "angle": -180,
       "contrailSize": 7,

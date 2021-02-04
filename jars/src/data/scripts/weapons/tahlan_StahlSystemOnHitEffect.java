@@ -27,11 +27,12 @@ public class tahlan_StahlSystemOnHitEffect implements OnHitEffectPlugin {
 
         //engine.spawnExplosion(point, ZERO, PARTICLE_COLOR, 60f, 0.1f);
 
+        float bonusDamage = projectile.getDamageAmount()*1.2f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
                 100f,
                 50f,
-                50f,
-                25f,
+                bonusDamage,
+                bonusDamage/2f,
                 CollisionClass.PROJECTILE_FF,
                 CollisionClass.PROJECTILE_FIGHTER,
                 10f,
@@ -63,10 +64,11 @@ public class tahlan_StahlSystemOnHitEffect implements OnHitEffectPlugin {
                     float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.5f;
                     pierceChance *= ship.getMutableStats().getDynamic().getValue(Stats.SHIELD_PIERCED_MULT);
 
+                    bonusDamage = projectile.getEmpAmount();
                     boolean piercedShield = shieldHit && (float) Math.random() < pierceChance;
                     if (!shieldHit || piercedShield) {
                         engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
-                                DamageType.ENERGY, 10, 100, 100000f, null, 20f, PARTICLE_COLOR, CORE_COLOR);
+                                DamageType.ENERGY, bonusDamage*0.1f, bonusDamage, 100000f, null, 20f, PARTICLE_COLOR, CORE_COLOR);
                     }
 
                     Global.getSoundPlayer().playSound("tachyon_lance_emp_impact", 1f, 1f, point, new Vector2f(0f, 0f));
@@ -74,8 +76,9 @@ public class tahlan_StahlSystemOnHitEffect implements OnHitEffectPlugin {
             }
         }
 
+        bonusDamage = projectile.getDamageAmount()*1.25f;
         if ( Math.random() > 0.9 ) {
-            engine.applyDamage(target, point, 100f, DamageType.FRAGMENTATION, 0f, false, false, projectile.getSource(),true);
+            engine.applyDamage(target, point, bonusDamage, DamageType.FRAGMENTATION, 0f, false, false, projectile.getSource(),true);
 
             engine.addSmoothParticle(point, ZERO, 25f, 1f, 0.1f, PARTICLE_COLOR);
             engine.addHitParticle(point, ZERO, 50f, 0.5f, 0.05f, FLASH_COLOR);

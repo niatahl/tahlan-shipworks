@@ -16,8 +16,6 @@ public class tahlan_AnumisOnHitEffect implements OnHitEffectPlugin {
     private static final float EXPLOSION_SIZE = 180f;
     private static final float EXPLOSION_DURATION = 0.7f;
 
-    private static final float BONUS_DAMAGE = 100f;
-
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
 
@@ -25,8 +23,10 @@ public class tahlan_AnumisOnHitEffect implements OnHitEffectPlugin {
             return;
         }
 
+        float bonusDamage = projectile.getDamageAmount()/5;
+
         if (projectile.didDamage()) {
-            Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, null, true);
+            Global.getCombatEngine().applyDamage(target, point, bonusDamage, DamageType.ENERGY, bonusDamage, false, false, null, true);
         }
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 8, 500, 0, new Color(186, 240, 255), new Color(255, 255, 255));

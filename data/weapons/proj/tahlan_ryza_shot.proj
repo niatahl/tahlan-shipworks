@@ -1,0 +1,23 @@
+{
+	"id":"tahlan_ryza_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"onHitEffect":"data.scripts.weapons.tahlan_RyzaOnHitEffect",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":80.0,
+	"width":20,
+	"fadeTime":0.5,
+	"coreColor":[255,255,255,255],
+	"fringeColor": [215,235,255,225],
+	"glowColor": [110,207,255,40],
+	"glowRadius":120,
+	"hitGlowRadius":100,	
+	"passThroughMissiles":true,
+	"textureType": [
+    "graphics/tahlan/fx/tahlan_cashmere_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_cashmere_beam_core.png"],
+	#"bulletSprite":"graphics/tahlan/missiles/tahlan_plasma_shot.png",
+	"textureScrollSpeed":32,
+	"pixelsPerTexel":1.0,
+}

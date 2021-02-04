@@ -28,6 +28,7 @@ public class tahlan_StahlOnHitEffect implements OnHitEffectPlugin {
             return;
         }
 
+        float bonusDamage = projectile.getDamageAmount()*1.25f;
         engine.applyDamage(target,point,100f,DamageType.FRAGMENTATION,0f,false,false,projectile.getSource(),true);
 
         engine.addSmoothParticle(point, ZERO, 25f, 1f, 0.1f, PARTICLE_COLOR);

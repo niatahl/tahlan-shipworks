@@ -3,16 +3,25 @@
     "skinHullId":"tahlan_throne_admech",
     "hullName":"Caestus Metallican",
     "descriptionId":"tahlan_throne",
-    "descriptionPrefix":"Painted in the colors of the Children of Mars, sanctified in the name of the machine god and enhanced with his holy technology.",
+    "descriptionPrefix":"Painted in the colors of the Children of Mars, sanctified in the name of the Machine God and enhanced with His holy technology.",
 	#"fleetPoints":28,
-	"ordnancePoints":150,
+	"addHints":["HIDE_IN_CODEX"],
+	"ordnancePoints":160,
     "spriteName":"graphics/tahlan/ships/oddities/tahlan_throne_admech.png",
     "baseValueMult":1.25,
     "removeWeaponSlots":[],         # ids
     "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
     "removeBuiltInMods":[],         # hullmod ids
     "removeBuiltInWeapons":[],      # weapon slot ids
-    "builtInMods":["armoredweapons","adaptiveshields"],
-	#"systemId":"tahlan_weaponsoverdrive",
+    "builtInMods":["tahlan_admechrefit","adaptiveshields"],
+	"systemId":"tahlan_machinespirit",
+	"weaponSlotChanges":{
+		"WS0003":{
+      		"type": "HYBRID",
+    	},
+    	"WS0004":{
+      		"type": "HYBRID",
+    	},
+    },
     
 }

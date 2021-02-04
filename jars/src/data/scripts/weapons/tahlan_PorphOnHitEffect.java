@@ -26,11 +26,12 @@ public class tahlan_PorphOnHitEffect implements OnHitEffectPlugin {
         engine.spawnExplosion(point, ZERO, PARTICLE_COLOR, 150f, 1f);
         engine.spawnExplosion(point, ZERO, CORE_COLOR, 75f, 1f);
 
+        float bonusDamage = projectile.getDamageAmount()/3f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
                 100f,
                 50f,
-                200f,
-                200f,
+                bonusDamage,
+                bonusDamage/2,
                 CollisionClass.PROJECTILE_FF,
                 CollisionClass.PROJECTILE_FIGHTER,
                 10f,

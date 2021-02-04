@@ -47,26 +47,6 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
     }
 
     @Override
-    public void advanceInCombat(ShipAPI ship, float amount) {
-
-        if (ship.getCaptain() != null) {
-            PersonAPI captain = ship.getCaptain();
-
-            if (!runOnce) {
-                origPersonality = captain.getPersonalityAPI().getId();
-                runOnce = true;
-            }
-
-            if (ship.getFluxLevel() < 0.25f) {
-                captain.setPersonality("reckless");
-            } else {
-                captain.setPersonality(origPersonality);
-            }
-
-        }
-    }
-
-    @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
 
 	    boolean hasGantry = false;
@@ -78,7 +58,7 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
         }
 
         if (!hasGantry) {
-            member.getStats().getSuppliesPerMonth().modifyMult(SILBER_ID,3f);
+            member.getStats().getSuppliesPerMonth().modifyMult(SILBER_ID,2f);
             member.getStats().getBaseCRRecoveryRatePercentPerDay().modifyMult(SILBER_ID,0.5f);
         } else {
             member.getStats().getSuppliesPerMonth().unmodify(SILBER_ID);

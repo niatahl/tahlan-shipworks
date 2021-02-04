@@ -10,6 +10,9 @@ tahlan_Castigator_xiv,SHIP,"When in trials with the Domain Navy, a number of Cas
 
 Presumably a precursor design to the modern Eagle, the Castigator was, for its time, an overengineered assault cruiser that never made it into large-scale production due to numerous issues. Not only was it overpriced, but the downscaled TPCs in its forward prongs suffered from reliability issues with their magnetic containment systems. These issues aside, however, the performance of the Castigator is without question impressive. Combining heavy armor, numerous weapon mounts and adequate maneuverability in a heavy cruiser package designed to fight at the frontlines of any battle. Charging into combat with its visually spectacular Assault Burn, the Castigator is an awe-inspiring sight to behold and an enemy most would prefer to avoid facing head-on.",,,
 tahlan_Bento,SHIP,"Lovingly called ""Lunchbox"" by many a captain for feeding their hungry ship drives, the Bento-class combat tanker is a sturdy little craft that can hold its own in battle. Often found in smaller flotillas that can't spare escorts for their logistics vessels or trade fleets that wish to be better defended against pirate attacks on long-haul routes, the Bento is a solid alternative to the ever-present Dram. While it obviously has to sacrifice fuel capacity, it is often a viable option to simply bring a second Bento.",,,
+tahlan_Bento_rg,SHIP,"Beneath the bright coat of Red Guards livery, this ship has been stripped down and rebuilt for maximum durability at minimal cost. Elaborate sensor arrays and failure-prone high-tech communication consoles have been pared away, leaving only those systems absolutely necessary to the vessel's function as a mercilessly efficient weapon of war. Most notably, however, this particular Bento-class hull had its large fuel tank removed and replaced by a jury-rigged large mount.
+
+Lovingly called ""Lunchbox"" by many a captain for feeding their hungry ship drives, the Bento-class combat tanker is a sturdy little craft that can hold its own in battle. Often found in smaller flotillas that can't spare escorts for their logistics vessels or trade fleets that wish to be better defended against pirate attacks on long-haul routes, the Bento is a solid alternative to the ever-present Dram. While it obviously has to sacrifice fuel capacity, it is often a viable option to simply bring a second Bento.",,,
 tahlan_Bento_lp,SHIP,"Fanatics of the Luddic Path have made this ship their own, stripping out all unnecessary furnishing and transforming it into a haphazard vehicle of holy war.
 
 Lovingly called ""Lunchbox"" by many a captain for feeding their hungry ship drives, the Bento-class combat tanker is a sturdy little craft that can hold its own in battle. Often found in smaller flotillas that can't spare escorts for their logistics vessels or trade fleets that wish to be better defended against pirate attacks on long-haul routes, the Bento is a solid alternative to the ever-present Dram. While it obviously has to sacrifice fuel capacity, it is often a viable option to simply bring a second Bento.",,,
@@ -333,7 +336,7 @@ tahlan_gigantomachy,WEAPON,"Based on the Titanomachy, this beam weapon has been 
 tahlan_balor,WEAPON,"A surprisingly sophisticated weapon for something designed by apparent pirates, the Balor is an advanced smart weapon firing self-propelled shells with limited tracking ability. Despite low shell velocity, these tracking capabilities make the weapon extremely accurate at long range.",,,
 tahlan_tethra,WEAPON,"A medium-sized smartgun of the Legio Infernalis. Possessing excellent range, accuracy and rate of fire, it is only held back by its low projectile velocity and subpar armor penetration capability.",,,
 tahlan_goll,WEAPON,"The Goll fires a spread of overcharge spikes that lack any real direct damage potential, but discharge a powerful electromagnetic pulse on impact.",,,
-tahlan_conand,WEAPON,"Firing small caliber kinetic rounds from 4 barrels simultaneously, the Conand is exceptionally efficient against shields, but lacks any kind of armor penetration ability.",,,
+tahlan_conand,WEAPON,"Firing small caliber high-velocity kinetic rounds from its 4 barrels, the Conand is exceptionally efficient against shields, but lacks any kind of armor penetration ability.",,,
 tahlan_burstgoll,WEAPON,A burst-fire variant of the Goll designed to cripple most ships in a single burst in advance of boarding actions.,,,
 tahlan_flood,WEAPON,"A massive array of fountain-type micromissile tubes built into the Scathach's bow, capable of firing enough missiles to overwhelm all but the mightiest of PD arrays.",,,
 tahlan_phira_burst,WEAPON,"A heavy triple-barrel turret integral to the Metafalica. Linked to its variable ammo system, it can adapt to any situation.",,,
@@ -350,6 +353,8 @@ tahlan_pastel,WEAPON,"An obscure offspring of the PEPPA, the Pastella Blaster ha
 tahlan_taffeta,WEAPON,"While its exact functionality is unknown, this weapon appears to be a generally fairly simple twin-barreled massdriver of sorts. The most unique aspect are the splinter slugs it fires, bursting violently into ionized shrapnel pieces.",,,
 tahlan_breaker,WEAPON,"The insane result of bundling three naval rifles into a rotary cannon, the Breaker can fire large caliber anti-armor shells at a terrifying rate. Practicality may be debated, but a rotary weapon of this scale is valuable for psychological impact alone.",,,
 tahlan_aetnos,WEAPON,"Heavy anti-armor shells, a massive propellant charge and horribly undersized recoil dampeneres are the three components that define the Aetnos. A single salvo from this weapon can cause remarkable damage to even heavily armored ships, if it can manage to hit, that is.",,,
+tahlan_ryza,WEAPON,"While technically an antiquated design, this particular type of plasma cannon has seen countless revisions over the ages. With high alpha damage and a solid output, it has managed to stay relevant for decades of technological progress.",,,
+tahlan_mezoa,WEAPON,"Old but reliable, this plasma weapon variant boasts excellent striking power for a weapon of its size.",,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,
@@ -424,6 +429,7 @@ tahlan_realityshell,SHIP_SYSTEM,Accelerates timeflow then reverts to initial sta
 tahlan_inertialessdrive,SHIP_SYSTEM,"Switches to an inertialess propulsion system, greatly improving mobility.",Mobility,,
 tahlan_ltskimmer,SHIP_SYSTEM,An enhanced phase skimmer variant boasting improved range.,Mobility,,
 tahlan_fluxfeeder,SHIP_SYSTEM,"Increases ballistic weapon rate of fire and reduces flux cost accordingly. Becomes more effective at higher ship flux at moment of activation, going from 50% rate of fire increase at 0 flux to 100% at 90% flux.",Assault,,
+tahlan_machinespirit,SHIP_SYSTEM,"Increases ballistic and energy weapon rate of fire and reduces flux cost accordingly. Becomes more effective at higher ship flux at moment of activation, going from 50% rate of fire increase at 0 flux to 100% at 90% flux.",Assault,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,

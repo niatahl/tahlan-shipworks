@@ -31,7 +31,7 @@ public class tahlan_FluxFeederStats extends BaseShipSystemScript {
         }
 
         if (runOnce) {
-            power = Math.min((ship.getHardFluxLevel() / 0.90f), 1f);
+            power = Math.min((ship.getFluxLevel() / 0.90f), 1f);
             runOnce = false;
         }
         float actualBoost = 1.5f+WEAPON_BOOST*power*effectLevel;
@@ -39,8 +39,7 @@ public class tahlan_FluxFeederStats extends BaseShipSystemScript {
         stats.getBallisticRoFMult().modifyMult(id,actualBoost);
         stats.getBallisticWeaponFluxCostMod().modifyMult(id,1f/actualBoost);
 
-
-        ship.setWeaponGlow(0.7f*effectLevel+0.5f*power*effectLevel, GLOW_COLOR, WEAPON_TYPES);
+        ship.setWeaponGlow(((0.7f+0.3f*power)*effectLevel), GLOW_COLOR, WEAPON_TYPES);
 
     }
 
@@ -56,7 +55,7 @@ public class tahlan_FluxFeederStats extends BaseShipSystemScript {
 
         stats.getBallisticRoFMult().unmodify(id);
         stats.getBallisticWeaponFluxCostMod().unmodify(id);
-        ship.setWeaponGlow(0f, GLOW_COLOR, WEAPON_TYPES);
+        //ship.setWeaponGlow(0f, GLOW_COLOR, WEAPON_TYPES);
         runOnce = true;
 
     }
@@ -64,7 +63,7 @@ public class tahlan_FluxFeederStats extends BaseShipSystemScript {
     @Override
     public StatusData getStatusData(int index, State state, float effectLevel) {
         if ( index == 0 ) {
-            return new StatusData(txt("sys_FluxFeeder") + (int)(0.5+WEAPON_BOOST*power*effectLevel*100f) + "%", false);
+            return new StatusData(txt("sys_FluxFeeder") + (int)((0.5+WEAPON_BOOST*power*effectLevel)*100f) + "%", false);
         }
         return null;
     }

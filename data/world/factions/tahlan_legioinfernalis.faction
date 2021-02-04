@@ -41,11 +41,9 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"tahlan_legio":1.5,
+			"tahlan_legio":2,
 		},
-		"hulls":{
-			"tahlan_DunScaith":0.5,
-			
+		"hulls":{			
 			"paragon":2,
 			"astral":2,
 			"istl_jeannedarc":2,
@@ -123,6 +121,8 @@
 			"squall",
 			"locust",
 			"tahlan_eradicator",
+			"tahlan_ryza",
+			"tahlan_mezoa"
 		],
 	},
 	"priorityWeapons":{

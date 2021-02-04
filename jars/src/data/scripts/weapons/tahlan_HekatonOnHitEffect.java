@@ -13,13 +13,15 @@ import static com.fs.starfarer.api.util.Misc.ZERO;
 
 public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
 
-    private static final float BONUS_DAMAGE = 400f;
     private static final Color COLOR1 = new Color(71, 191, 255);
     private static final Color COLOR2 = new Color(236, 248, 255);
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
-        Global.getCombatEngine().applyDamage(target, point, BONUS_DAMAGE, DamageType.ENERGY, BONUS_DAMAGE, false, false, projectile.getSource(), true);
+
+        float bonusDamage = projectile.getDamageAmount()*0.4f;
+
+        Global.getCombatEngine().applyDamage(target, point, bonusDamage, DamageType.ENERGY, bonusDamage, false, false, projectile.getSource(), true);
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 10, 600, 0, new Color(186, 240, 255), new Color(255, 255, 255));
         engine.addSmoothParticle(point, ZERO, 600f, 0.5f, 0.1f, COLOR1);
         engine.addHitParticle(point, ZERO, 300f, 0.5f, 0.25f, COLOR2);
@@ -30,6 +32,7 @@ public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
                 ShipAPI ship = (ShipAPI) target;
 
                 float hitLevel = 0f;
+
                 int numHits = MathUtils.getRandomNumberInRange(0,3);
                 for (int x = 0; x < numHits; x++) {
                     float pierceChance = ((ShipAPI) target).getHardFluxLevel() - 0.5f;
@@ -39,7 +42,7 @@ public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
                     if (!shieldHit || piercedShield) {
                         hitLevel += 0.25f;
                         engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
-                                DamageType.ENERGY, BONUS_DAMAGE, BONUS_DAMAGE, 100000f, null, 20f, COLOR1, COLOR2);
+                                DamageType.ENERGY, bonusDamage, bonusDamage, 100000f, null, 20f, COLOR1, COLOR2);
                     }
                 }
 

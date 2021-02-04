@@ -22,12 +22,12 @@ public class tahlan_KriegsmesserOnHitEffect implements OnHitEffectPlugin {
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
 
-
+        float bonusDamage = projectile.getDamageAmount()*0.1f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
                 140f,
                 70f,
-                100f,
-                50f,
+                bonusDamage,
+                bonusDamage/2f,
                 CollisionClass.PROJECTILE_FF,
                 CollisionClass.PROJECTILE_FIGHTER,
                 10f,

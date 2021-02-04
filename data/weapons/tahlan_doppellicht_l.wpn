@@ -5,7 +5,7 @@
   "type": "ENERGY",
   "size": "MEDIUM",
   "everyFrameEffect": "data.scripts.weapons.tahlan_LichtAmmoScript",
-  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_doppellicht_r.png",
+  "turretSprite": "graphics/tahlan/weapons/ma/tahlan_doppellicht_l.png",
   "hardpointSprite": "",
   "renderAboveAllWeapons": 0,
   "turretOffsets": [

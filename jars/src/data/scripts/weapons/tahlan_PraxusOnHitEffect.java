@@ -25,11 +25,12 @@ public class tahlan_PraxusOnHitEffect implements OnHitEffectPlugin {
 
         //engine.spawnExplosion(point, ZERO, PARTICLE_COLOR, 60f, 0.1f);
 
+        float bonusDamage = projectile.getDamageAmount()/2f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
                 50f,
                 25f,
-                20f,
-                10f,
+                bonusDamage,
+                bonusDamage/2f,
                 CollisionClass.PROJECTILE_FF,
                 CollisionClass.PROJECTILE_FIGHTER,
                 10f,

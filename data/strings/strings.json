@@ -25,7 +25,7 @@
 		hmd_silberherz1:"Level 10",
 		hmd_silberherz2:"Level 3 Gunnery Implants",
 		hmd_silberherz3:"10%",
-		hmd_silberherz4:"tripled",
+		hmd_silberherz4:"doubled",
 		hmd_silberherz5:"doubled",
 		hmd_silberherz6:"Regalia Gantry",
 		hmd_silberherz7:"Incompatible with Safety Overrides",
@@ -61,7 +61,8 @@
 		tyranny2:"Increased fleet sizes and ground defenses",
 		tyranny3:"Only active while under %s control",
 		tyranny4:"Legio Infernalis",
-		sys_FluxFeeder:"Weapons accelerated by ",
+		sys_FluxFeeder:"Ballistic weapons accelerated by ",
+		sys_MachineSpirit:"Weapons accelerated by ",
 		
 		
 		

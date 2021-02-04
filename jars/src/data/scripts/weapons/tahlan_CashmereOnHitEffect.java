@@ -127,18 +127,30 @@ public class tahlan_CashmereOnHitEffect implements OnHitEffectPlugin {
                     validTargets.add(new SimpleEntity(MathUtils.getRandomPointInCircle(point, 500)));
                 }
 
+                float bonusDamage = projectile.getDamageAmount()*0.025f;
+
                 //And finally, fire at a random valid target
                 CombatEntityAPI arcTarget = validTargets.get(MathUtils.getRandomNumberInRange(0, validTargets.size() - 1));
-                Global.getCombatEngine().spawnEmpArc(projectile.getSource(), point, projectile.getSource(), arcTarget,
-                        DamageType.ENERGY, //Damage type
-                        MathUtils.getRandomNumberInRange(0.8f, 1.2f) * 50, //Damage
-                        MathUtils.getRandomNumberInRange(0.8f, 1.2f) * 50, //Emp
-                        100000f, //Max range
-                        "tachyon_lance_emp_impact", //Impact sound
-                        10f, // thickness of the lightning bolt
-                        ARC_CORE_COLOR, //Central color
-                        ARC_FRINGE_COLOR //Fringe Color
-                );
+
+                if (arcTarget == target && shieldHit) {
+
+                    Global.getCombatEngine().applyDamage(target,point,MathUtils.getRandomNumberInRange(0.8f, 1.2f) * bonusDamage,DamageType.ENERGY,MathUtils.getRandomNumberInRange(0.8f, 1.2f) * bonusDamage,
+                            false,false,projectile.getSource());
+
+                } else {
+
+                    Global.getCombatEngine().spawnEmpArc(projectile.getSource(), point, projectile.getSource(), arcTarget,
+                            DamageType.ENERGY, //Damage type
+                            MathUtils.getRandomNumberInRange(0.8f, 1.2f) * bonusDamage, //Damage
+                            MathUtils.getRandomNumberInRange(0.8f, 1.2f) * bonusDamage, //Emp
+                            100000f, //Max range
+                            "tachyon_lance_emp_impact", //Impact sound
+                            10f, // thickness of the lightning bolt
+                            ARC_CORE_COLOR, //Central color
+                            ARC_FRINGE_COLOR //Fringe Color
+                    );
+
+                }
             }
         }
     }

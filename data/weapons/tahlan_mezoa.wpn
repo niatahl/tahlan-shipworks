@@ -1,0 +1,51 @@
+{
+  "id": "tahlan_mezoa",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_mezoa_shot",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_MezoaScript",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_mezoa_turret_base.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_mezoa_turret_glow.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_mezoa_hp_base.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_mezoa_hp_glow.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "turretOffsets": [
+    27.5,
+    0.5
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    27,
+    0.5
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "muzzleFlashSpec": {
+    "length": 60,
+    "spread": 0,
+    "particleSizeMin": 15,
+    "particleSizeRange": 35,
+    "particleDuration": 0.5,
+    "particleCount": 20,
+    "particleColor": [
+      107,
+      218,
+      255,
+      155
+    ]
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_mezoa_fire"
+}

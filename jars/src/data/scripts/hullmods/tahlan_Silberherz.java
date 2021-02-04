@@ -100,7 +100,7 @@ public class tahlan_Silberherz extends BaseHullMod {
         }
 
         if (!hasGantry) {
-            member.getStats().getSuppliesPerMonth().modifyMult(SILBER_ID,3f);
+            member.getStats().getSuppliesPerMonth().modifyMult(SILBER_ID,2f);
             member.getStats().getBaseCRRecoveryRatePercentPerDay().modifyMult(SILBER_ID,0.5f);
         } else {
             member.getStats().getSuppliesPerMonth().unmodify(SILBER_ID);

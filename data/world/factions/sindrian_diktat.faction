@@ -44,7 +44,9 @@
 		"weapons":[
 			"tahlan_armiger",
 			"tahlan_efreet",
-			"tahlan_amboss"
+			"tahlan_amboss",
+			"tahlan_ryza",
+			"tahlan_mezoa"
 		],
 	},
 	"priorityWeapons":{

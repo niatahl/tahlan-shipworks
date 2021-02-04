@@ -1,8 +1,8 @@
 {
 	"id":"tahlan", # internal id
 	"name":"Tahlan Shipworks", # displayed to the player
-	"author":"Nia and Nicke",
-	"version":"0.3.19",
+	"author":"Nia Tahl",
+	"version":"0.4.1",
 	"description":"A ship pack that suffers from feature creep",
 	"gameVersion":"0.9.1a",
 	"jars":["jars/TahlanShipworks.jar"],

@@ -32,8 +32,9 @@ public class tahlan_AtraposOnHitEffect implements OnHitEffectPlugin {
             return;
         }
 
+        float bonusDamage = projectile.getDamageAmount()*0.66f;
         if (projectile.didDamage()) {
-            Global.getCombatEngine().applyDamage(target, point, 200f, DamageType.FRAGMENTATION, 0, true, false, projectile.getSource(), true);
+            Global.getCombatEngine().applyDamage(target, point, bonusDamage, DamageType.FRAGMENTATION, 0, true, false, projectile.getSource(), true);
         }
 
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);

@@ -1,5 +1,6 @@
 {
     "startShipsCombatLarge":[
-      ["tahlan_Kodai_standard", "tahlan_Bento_standard", "buffalo_Standard"],
+      ["tahlan_Kodai_standard", "tahlan_Bento_standard", "buffalo_Standard"], 
+	  ["tahlan_providence_brawler", "tahlan_throne_artillery"]
     ],
 }

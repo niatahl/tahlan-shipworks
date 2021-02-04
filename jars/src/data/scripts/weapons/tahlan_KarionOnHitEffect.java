@@ -17,6 +17,9 @@ public class tahlan_KarionOnHitEffect implements OnHitEffectPlugin {
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+
+        float bonusDamage = projectile.getEmpAmount()/3f;
+
         MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 8, 400, 0, new Color(186, 240, 255), new Color(255, 255, 255));
 
         if (point != null) {
@@ -34,7 +37,7 @@ public class tahlan_KarionOnHitEffect implements OnHitEffectPlugin {
                     if (!shieldHit || piercedShield) {
                         hitLevel += 0.33f;
                         engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
-                                DamageType.ENERGY, 0f, BONUS_DAMAGE, 100000f, null, 10f, COLOR1, COLOR2);
+                                DamageType.ENERGY, 0f, bonusDamage, 100000f, null, 10f, COLOR1, COLOR2);
                     }
                 }
 

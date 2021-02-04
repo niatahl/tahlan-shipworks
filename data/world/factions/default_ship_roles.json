@@ -74,6 +74,9 @@
 		"tahlan_blockhead_combat":4,
 		"tahlan_blockhead_overdriven":3,
 		"tahlan_blockhead_support":3,
+		"tahlan_throne_artillery":4,
+		"tahlan_throne_gunship":3,
+		"tahlan_throne_overdriven":3,
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,

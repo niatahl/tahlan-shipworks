@@ -14,6 +14,36 @@
 		{"file":"sounds/sfx_wpn_energy/tachyon_lance_fire_01.ogg","pitch":0.6,"volume":2.0},
 	],
 	
+	"tahlan_ryza_fire":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_ryza_fire.ogg","pitch":0.8,"volume":1.2},
+	],
+	
+	"tahlan_ryza_charge":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_ryza_charge.ogg","pitch":1.0,"volume":1.0},
+	],
+	
+	"tahlan_ryza_impact":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_ryza_impact.ogg","pitch":0.8,"volume":1.2},
+	],
+	
+	"tahlan_mezoa_fire":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_ryza_fire.ogg","pitch":1,"volume":0.9},
+	],
+	
+	"tahlan_mezoa_charge":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_ryza_charge.ogg","pitch":1.0,"volume":1.0},
+	],
+	
+	"tahlan_mezoa_impact":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_ryza_impact.ogg","pitch":1,"volume":1.0},
+	],
+	
 	"tahlan_efreet_fire":
 	[
 		{"file":"sounds/sfx_wpn_guns/hypervel_driver_fire_01_loud.ogg","pitch":0.6,"volume":0.95},
@@ -322,11 +352,11 @@
     },
 	"tahlan_conand_fire":
 	[
-		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.50,"volume":0.5},
-		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.52,"volume":0.5},
-		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.54,"volume":0.5},
-		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.56,"volume":0.5},
-		{"file":"sounds/sfx_wpn_guns/vulcan_cannon_fire_01_01.ogg","pitch":1.58,"volume":0.5},
+		{"file":"sounds/tahlan/weapons/tahlan_conand_fire.ogg","pitch":1.0,"volume":0.9},
+		{"file":"sounds/tahlan/weapons/tahlan_conand_fire.ogg","pitch":1.02,"volume":0.9},
+		{"file":"sounds/tahlan/weapons/tahlan_conand_fire.ogg","pitch":1.04,"volume":0.9},
+		{"file":"sounds/tahlan/weapons/tahlan_conand_fire.ogg","pitch":1.06,"volume":0.9},
+		{"file":"sounds/tahlan/weapons/tahlan_conand_fire.ogg","pitch":1.08,"volume":0.9},
 	],
 	"tahlan_taffeta_fire":
 	[

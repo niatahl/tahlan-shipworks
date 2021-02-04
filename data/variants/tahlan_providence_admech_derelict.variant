@@ -1,0 +1,57 @@
+{
+    "displayName": "Relic",
+    "fluxCapacitors": 31,
+    "fluxVents": 50,
+    "hullId": "tahlan_providence_admech",
+    "hullMods": [
+        "missleracks",
+        "targetingunit",
+        "magazines"
+    ],
+    "permaMods": [],
+    "variantId": "tahlan_providence_admech_derelict",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_ryza"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "hammerrack"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "lightdualac",
+                "WS0008": "lightdualac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "heavyac",
+                "WS0004": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "dualflak",
+                "WS0006": "dualflak",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan"
+            }
+        }
+    ]
+}
