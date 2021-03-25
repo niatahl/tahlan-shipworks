@@ -3,11 +3,13 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.IntervalUtil;
+import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 
 	private IntervalUtil fireInterval = new IntervalUtil(0.2f, 0.3f);
+	private IntervalUtil flashInterval = new IntervalUtil(0.1f,0.1f);
 	private boolean wasZero = true;
 	
 	public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
@@ -43,5 +45,6 @@ public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 				}
 			}
 		}
+
 	}
 }

@@ -51,13 +51,13 @@ Due to the limited understanding of the technology, maintenance costs and CR deg
 
 The extensive modifications are also incompatible with %s and the non-standard shield generators are incompatible with regular %s.","Reduces amount of EMP damage taken, improves venting.",graphics/tahlan/hullmods/tahlan_heavyconduits.png
 Makeshift Turret Mounts,tahlan_makeshiftmounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_MakeshiftMounts,"The turret mounts of this ship have been ""upgraded"" in a makeshift manner. Due to inferior engineering, weapons can only turn at %s speed and ballistic weapon rate of fire is reduced to %s of base.",Reduces weapon turnrate and rate of fire.,graphics/tahlan/hullmods/tahlan_makeshiftmounts.png
-Blessed Machinery,tahlan_admechrefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdMechRefit,"This Vessel has been blessed by the Machine God, granting it %s better flux stats, while the Children of Mars have augmented the armor plating, increasing the armor value by %s. 
+Blessed Machinery,tahlan_admechrefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdMechRefit,"This Vessel has been blessed by the Machine God, granting it %s better flux stats and an additional %s increase to energy weapon range, while the Children of Mars have augmented the armor plating, increasing the armor value by %s. 
 
-The heat of combat will rouse the ship's Machine Spirit and as it accumulates flux, ballistic and energy weapon damage will increase while their rate of fire will decrease by up to %s.",Blessings of the Machine God.,graphics/tahlan/hullmods/tahlan_admech.png
+The heat of combat will rouse the ship's Machine Spirit and as it accumulates flux, ballistic and energy weapon damage will increase while their rate of fire will decrease by up to %s for ballistic weapons and up to %s for energy weapons.",Blessings of the Machine God.,graphics/tahlan/hullmods/tahlan_admech.png
 ,,,,,,,,,,,,,,,,,,
 Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
 
-Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
+Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles by %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
 Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, an officer of at least level %s will be capable of bringing out the machine's full potential, increasing its general performance by about %s. Additionally, pilots with %s benefit from a direct link, improving weapon range and active vent rate by %s.
 
@@ -66,7 +66,7 @@ Additionally, the need for specialized maintenance equipment means supply use fo
 %s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz.png
 Silberherz Subcore,tahlan_silberherz_minor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_SilberherzMinor,"The arcane technology of this warmachine is powered and controlled by a downscaled variant of the Silberherz, a hyperadvanced combined computing and power core.
 
-Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
+Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles by %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
 Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
 
@@ -92,4 +92,5 @@ Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmo
 Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileDissipation,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,
 Vent Weapon Boost,tahlan_ventweaponboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VentWeaponBoost,(Hidden) Boosts weapon damage after venting,(Hidden) Boosts weapon damage after venting,
 Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_RealityGlitch,(Hidden) Randomly phases and repairs some armor,(Hidden) Randomly phases and repairs some armor,
+Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_10pctCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
 ,,,,,,,,,,,,,,,,,,

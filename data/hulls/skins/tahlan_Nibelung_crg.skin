@@ -20,7 +20,7 @@
         "WS0030": "tahlan_nibelung_cover_l_crg",
 		"WS0031": "tahlan_nibelung_cover_r_crg",
     },
-    "builtInMods":[],
+    "builtInMods":["tahlan_10pctCritChance"],
     "weaponSlotChanges":{
 		"WS0001":{
       		"type": "HYBRID",

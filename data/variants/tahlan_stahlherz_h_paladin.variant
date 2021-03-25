@@ -1,0 +1,41 @@
+{
+    "displayName": "Paladin",
+    "fluxCapacitors": 4,
+    "fluxVents": 20,
+    "hullId": "tahlan_stahlherz_h",
+    "hullMods": [
+        "hardenedshieldemitter",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+	#"goalVariant": true,
+    "variantId": "tahlan_stahlherz_h_paladin",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WEAPON_L": "tahlan_sturmkanone_l",
+                "WEAPON_R": "tahlan_sturmkanone_r"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabot",
+                "WS0004": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_hueter"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "tahlan_hueter"}
+        }
+    ]
+}

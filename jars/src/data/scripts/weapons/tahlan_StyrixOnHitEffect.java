@@ -39,7 +39,7 @@ public class tahlan_StyrixOnHitEffect implements OnHitEffectPlugin {
         float bonusDamage = projectile.getDamageAmount()/3.5f;
         Float critLevel = MathUtils.getRandomNumberInRange(0.2f, 1f);
         if (projectile.didDamage()) {
-            Global.getCombatEngine().applyDamage(target, point, critLevel * bonusDamage, DamageType.HIGH_EXPLOSIVE, 0, true, false, projectile.getSource(), true);
+            Global.getCombatEngine().applyDamage(target, point, critLevel * bonusDamage, DamageType.ENERGY, 0, true, false, projectile.getSource(), true);
         }
         Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), EXPLOSION_COLOR, critLevel * EXPLOSION_SIZE, EXPLOSION_DURATION_MAX);
         for (int i = 0; i < PARTICLE_COUNT; i++) {

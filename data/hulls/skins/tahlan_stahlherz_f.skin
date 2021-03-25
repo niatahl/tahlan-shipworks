@@ -1,9 +1,9 @@
 {
     "baseHullId":"tahlan_stahlherz",
-    "skinHullId":"tahlan_stahlherz_d",
-    "hullName":"Silberblut Regalia Kfg.D",
+    "skinHullId":"tahlan_stahlherz_f",
+    "hullName":"Silberblut Regalia Kfg.F",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration D. Artillery barrage specialist.",
+    "descriptionPrefix":"Alternate configuration F. Heavy Sniper.",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,

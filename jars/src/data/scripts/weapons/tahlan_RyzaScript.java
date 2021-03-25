@@ -31,14 +31,14 @@ public class tahlan_RyzaScript implements EveryFrameWeaponEffectPlugin {
     private final String CHARGE_SOUND_ID = "tahlan_ryza_charge";
 
     private boolean hasFiredThisCharge = false;
-    private IntervalUtil trailInterval = new IntervalUtil(0.02f, 0.02f);
-
-    private List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
-
-    //A map for known projectiles and their IDs: should be cleared in init
-    private Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
-    private Map<DamagingProjectileAPI, Float> projectileTrailIDs2 = new WeakHashMap<>();
-    private Map<DamagingProjectileAPI, Float> projectileTrailIDs3 = new WeakHashMap<>();
+//    private IntervalUtil trailInterval = new IntervalUtil(0.02f, 0.02f);
+//
+//    private List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
+//
+//    //A map for known projectiles and their IDs: should be cleared in init
+//    private Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
+//    private Map<DamagingProjectileAPI, Float> projectileTrailIDs2 = new WeakHashMap<>();
+//    private Map<DamagingProjectileAPI, Float> projectileTrailIDs3 = new WeakHashMap<>();
 
     private boolean runOnce = true;
 
@@ -103,70 +103,70 @@ public class tahlan_RyzaScript implements EveryFrameWeaponEffectPlugin {
             }
         }
 
-        trailInterval.advance(amount);
-        if (trailInterval.intervalElapsed()) {
-            //Projectile trails
+//        trailInterval.advance(amount);
+//        if (trailInterval.intervalElapsed()) {
+//            //Projectile trails
+//
+//            for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 100f)) {
+//                if (weapon == proj.getWeapon() && !registeredProjectiles.contains(proj)) {
+//                    registeredProjectiles.add(proj);
+//                }
+//            }
+//
+//            for (DamagingProjectileAPI proj : registeredProjectiles) {
+//                String specID = proj.getProjectileSpecId();
+//                Vector2f projVel = new Vector2f(proj.getVelocity());
+//                SpriteAPI spriteToUse = Global.getSettings().getSprite("fx", "tahlan_trail_foggy");
+//
+//                //Ignore already-collided projectiles, and projectiles that don't match our IDs
+//                if (proj.getProjectileSpecId() == null || proj.didDamage()) {
+//                    continue;
+//                }
+//
+//                //New IDs for new projectiles
+//                if (projectileTrailIDs.get(proj) == null) {
+//                    projectileTrailIDs.put(proj, MagicTrailPlugin.getUniqueID());
+//                    projectileTrailIDs2.put(proj, MagicTrailPlugin.getUniqueID());
+//                    projectileTrailIDs3.put(proj, MagicTrailPlugin.getUniqueID());
+//
+//                    //Fix for some first-frame error shenanigans
+//                    if (projVel.length() < 0.1f && proj.getSource() != null) {
+//                        projVel = new Vector2f(proj.getSource().getVelocity());
+//                    }
+//                }
+//
+//                //Gets a custom "offset" position, so we can slightly alter the spawn location to account for "natural fade-in", and add that to our spawn position
+//                Vector2f offsetPoint = new Vector2f((float) Math.cos(Math.toRadians(proj.getFacing())) * 50, (float) Math.sin(Math.toRadians(proj.getFacing())) * 50);
+//                Vector2f spawnPosition = new Vector2f(offsetPoint.x + proj.getLocation().x, offsetPoint.y + proj.getLocation().y);
+//
+//                //Sideway offset velocity, for projectiles that use it
+//                Vector2f projBodyVel = VectorUtils.rotate(projVel, -proj.getFacing());
+//                Vector2f projLateralBodyVel = new Vector2f(0f, projBodyVel.getY());
+//                Vector2f sidewayVel = (Vector2f) VectorUtils.rotate(projLateralBodyVel, proj.getFacing());
+//
+//                //Opacity adjustment for fade-out, if the projectile uses it
+//                float opacityMult = 1f;
+//                if (proj.isFading()) {
+//                    opacityMult = Math.max(0, Math.min(1, proj.getDamageAmount() / proj.getBaseDamageAmount()));
+//                }
+//
+//                //Duration adjustment for projectile velocity to normalize trail length
+//                float durationMult = 1 / weapon.getShip().getMutableStats().getProjectileSpeedMult().getModifiedValue();
 
-            for (DamagingProjectileAPI proj : CombatUtils.getProjectilesWithinRange(weapon.getLocation(), 100f)) {
-                if (weapon == proj.getWeapon() && !registeredProjectiles.contains(proj)) {
-                    registeredProjectiles.add(proj);
-                }
-            }
-
-            for (DamagingProjectileAPI proj : registeredProjectiles) {
-                String specID = proj.getProjectileSpecId();
-                Vector2f projVel = new Vector2f(proj.getVelocity());
-                SpriteAPI spriteToUse = Global.getSettings().getSprite("fx", "tahlan_trail_foggy");
-
-                //Ignore already-collided projectiles, and projectiles that don't match our IDs
-                if (proj.getProjectileSpecId() == null || proj.didDamage()) {
-                    continue;
-                }
-
-                //New IDs for new projectiles
-                if (projectileTrailIDs.get(proj) == null) {
-                    projectileTrailIDs.put(proj, MagicTrailPlugin.getUniqueID());
-                    projectileTrailIDs2.put(proj, MagicTrailPlugin.getUniqueID());
-                    projectileTrailIDs3.put(proj, MagicTrailPlugin.getUniqueID());
-
-                    //Fix for some first-frame error shenanigans
-                    if (projVel.length() < 0.1f && proj.getSource() != null) {
-                        projVel = new Vector2f(proj.getSource().getVelocity());
-                    }
-                }
-
-                //Gets a custom "offset" position, so we can slightly alter the spawn location to account for "natural fade-in", and add that to our spawn position
-                Vector2f offsetPoint = new Vector2f((float) Math.cos(Math.toRadians(proj.getFacing())) * 50, (float) Math.sin(Math.toRadians(proj.getFacing())) * 50);
-                Vector2f spawnPosition = new Vector2f(offsetPoint.x + proj.getLocation().x, offsetPoint.y + proj.getLocation().y);
-
-                //Sideway offset velocity, for projectiles that use it
-                Vector2f projBodyVel = VectorUtils.rotate(projVel, -proj.getFacing());
-                Vector2f projLateralBodyVel = new Vector2f(0f, projBodyVel.getY());
-                Vector2f sidewayVel = (Vector2f) VectorUtils.rotate(projLateralBodyVel, proj.getFacing());
-
-                //Opacity adjustment for fade-out, if the projectile uses it
-                float opacityMult = 1f;
-                if (proj.isFading()) {
-                    opacityMult = Math.max(0, Math.min(1, proj.getDamageAmount() / proj.getBaseDamageAmount()));
-                }
-
-                //Duration adjustment for projectile velocity to normalize trail length
-                float durationMult = 1 / weapon.getShip().getMutableStats().getProjectileSpeedMult().getModifiedValue();
-
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
-                        0, 0, 60f, 5f, new Color(39, 176, 255), new Color(40, 238, 255), 0.5f * opacityMult,
-                        0.05f, 0.04f, 0.08f, GL_SRC_ALPHA, GL_ONE, 200, 1600, sidewayVel, null);
-
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
-                        0, 0, 80f, 15f, new Color(35, 138, 255), new Color(60, 233, 255), 0.6f * opacityMult,
-                        0.05f, 0.05f, 0.1f, GL_SRC_ALPHA, GL_ONE, 200, 1400, sidewayVel, null);
-
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
-                        0, 0, 40f, 3f, Color.white, Color.white, 0.5f * opacityMult,
-                        0.05f, 0.03f, 0.06f, GL_SRC_ALPHA, GL_ONE, 200, 1400, sidewayVel, null);
-            }
-
-        }
+//                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
+//                        0, 0, 60f, 5f, new Color(39, 176, 255), new Color(40, 238, 255), 0.5f * opacityMult,
+//                        0.05f, 0.04f, 0.08f, GL_SRC_ALPHA, GL_ONE, 200, 1600, sidewayVel, null);
+//
+//                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
+//                        0, 0, 80f, 15f, new Color(35, 138, 255), new Color(60, 233, 255), 0.6f * opacityMult,
+//                        0.05f, 0.05f, 0.1f, GL_SRC_ALPHA, GL_ONE, 200, 1400, sidewayVel, null);
+//
+//                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
+//                        0, 0, 40f, 3f, Color.white, Color.white, 0.5f * opacityMult,
+//                        0.05f, 0.03f, 0.06f, GL_SRC_ALPHA, GL_ONE, 200, 1400, sidewayVel, null);
+//            }
+//
+//        }
     }
 }
 

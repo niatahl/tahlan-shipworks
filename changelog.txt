@@ -1,3 +1,30 @@
+0.4.2
+- Metallican hulls
+	- Added a 200su range increase for energy weapons
+	- Energy weapons now give double benefit from the "machine spirit" effect compared to ballistics
+	- This should make it more viable to actually take advantage of the hybrid mounts on these ships
+- Castigator (XIV)
+	- Changed TPC efficiency to 0.6 to align with upcoming vanilla balance changes
+- Ryza, Mezoa
+	- Improved projectile visuals
+- Magaera
+	- Lowered efficiency from 1.1 to 1.3
+	- Increased range from 900 to 1100
+- Gardion
+	- Increased dps to 100
+- Gardas
+	- Increased dps to 200
+- Styrix
+	- Changed onHit effect damage from HE to Energy
+- Scoralis
+	- Removed EMP arcing from torps
+	- Lowered top speed from 140 to 120
+	- Increased hp from 400 to 600
+	- Increased armor from 40 to 50
+	- Removed shields
+	- Lowered torpedo hp from 300 to 250
+	
+
 0.4.1
 - Added Ryza-type Plasma Cannon
 - Added Mezoa-type Plasma Gun

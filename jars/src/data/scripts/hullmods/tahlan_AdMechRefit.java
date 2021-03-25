@@ -4,6 +4,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -18,7 +19,9 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 
 	private static final float FLUX_MULT = 1.05f;
 	private static final float ARMOR_BONUS = 100f;
-	private static final float WEAPON_AMP = 0.2f;
+	private static final float WEAPON_AMP = 0.15f;
+	private static final float ENERGY_AMP = 0.3f;
+	private static final float RANGE_BONUS = 200f;
 
 	private final String INNERLARGE = "graphics/tahlan/fx/tahlan_tempshield.png";
 	private final String MS_ID = "tahlan_AdMechRefitID";
@@ -29,6 +32,7 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 		stats.getFluxDissipation().modifyMult(id, FLUX_MULT);
 		stats.getFluxCapacity().modifyMult(id, FLUX_MULT);
 
+		stats.getEnergyWeaponRangeBonus().modifyFlat(id,RANGE_BONUS);
 	}
 
     @Override
@@ -43,9 +47,9 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 
         float power = Math.min((ship.getFluxLevel() / 0.90f), 1f);
 
-        ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(MS_ID,1+WEAPON_AMP*power);
+        ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(MS_ID,1+ENERGY_AMP*power);
         ship.getMutableStats().getBallisticWeaponDamageMult().modifyMult(MS_ID,1+WEAPON_AMP*power);
-        ship.getMutableStats().getEnergyRoFMult().modifyMult(MS_ID,1-WEAPON_AMP*power);
+        ship.getMutableStats().getEnergyRoFMult().modifyMult(MS_ID,1-ENERGY_AMP*power);
         ship.getMutableStats().getBallisticRoFMult().modifyMult(MS_ID,1-WEAPON_AMP*power);
     }
 
@@ -55,8 +59,10 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 
 	public String getDescriptionParam(int index, HullSize hullSize) {
 		if (index == 0) return "" + round((FLUX_MULT - 1f) * 100f) + txt("%");
-		if (index == 1) return "" + (int) (ARMOR_BONUS);
-		if (index == 2) return "" + round(WEAPON_AMP*100f) + txt("%");
+		if (index == 1) return "" + (int)RANGE_BONUS + txt("su");
+		if (index == 2) return "" + (int) (ARMOR_BONUS);
+		if (index == 3) return "" + round(WEAPON_AMP*100f) + txt("%");
+		if (index == 4) return "" + round(ENERGY_AMP*100f) + txt("%");
 		return null;
 	}
 	
