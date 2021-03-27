@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jars/jars.iml" filepath="$PROJECT_DIR$/jars/jars.iml" />
       <module fileurl="file://$PROJECT_DIR$/tahlan-shipworks.iml" filepath="$PROJECT_DIR$/tahlan-shipworks.iml" />
     </modules>
   </component>
