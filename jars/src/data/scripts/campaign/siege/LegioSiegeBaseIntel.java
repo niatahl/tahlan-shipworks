@@ -1012,9 +1012,9 @@ public class LegioSiegeBaseIntel extends BaseIntelPlugin implements EveryFrameSc
 
         if (num == 0 || size >= 7) {
             if (military) {
-                if (skills.contains(Skills.FLEET_LOGISTICS)) {
-                    admin.getStats().setSkillLevel(Skills.FLEET_LOGISTICS, 3);
-                }
+//                if (skills.contains(Skills.FLEET_LOGISTICS)) {
+//                    admin.getStats().setSkillLevel(Skills.FLEET_LOGISTICS, 3);
+//                }
             } else if (defenses > 0) {
                 if (skills.contains(Skills.PLANETARY_OPERATIONS)) {
                     admin.getStats().setSkillLevel(Skills.PLANETARY_OPERATIONS, 3);

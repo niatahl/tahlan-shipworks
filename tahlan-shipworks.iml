@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../Projects/tahlan/out" />
+    <output-test url="file://$MODULE_DIR$/../Projects/tahlan/out" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/jars/src" isTestSource="false" />
@@ -11,5 +13,6 @@
     <orderEntry type="library" name="Graphics" level="project" />
     <orderEntry type="library" name="MagicLib" level="project" />
     <orderEntry type="library" name="LazyLib-Kotlin" level="project" />
+    <orderEntry type="library" name="ExerelinCore" level="project" />
   </component>
 </module>
