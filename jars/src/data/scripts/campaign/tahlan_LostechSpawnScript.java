@@ -35,12 +35,12 @@ public class tahlan_LostechSpawnScript {
     //List of teaser ships to spawn and their count
     private static final List<Pair<String, Integer>> SHIP_SPAWNS = new ArrayList<>();
     static {
-        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 4));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 4));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 3));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 2));
         SHIP_SPAWNS.add(new Pair<>("tahlan_rigveda_relic", 4));
         SHIP_SPAWNS.add(new Pair<>("tahlan_yajurveda_relic", 6));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_nirvana_relic", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_nirvana_relic", 1));
     }
 
     //Systems that can never get a teaser ship spawned in them

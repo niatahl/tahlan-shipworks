@@ -1,3 +1,11 @@
+0.5
+- Initial 0.95a compatibilty
+- Porphyrion
+	- Now counts as an energy weapon for stat modifiers
+- LosTech weapons
+	- Now hybrid mount type
+	- Still count as old weapon types for stat modifiers
+
 0.4.2
 - Metallican hulls
 	- Added a 200su range increase for energy weapons

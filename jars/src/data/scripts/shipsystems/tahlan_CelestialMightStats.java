@@ -87,10 +87,16 @@ public class tahlan_CelestialMightStats extends BaseShipSystemScript {
                         0f,
                         AFTERIMAGE_COLOR,
                         true,
+                        0f,
+                        0f,
+                        0f,
+                        0f,
+                        0f,
                         0.1f,
                         0.1f,
                         1f,
                         CombatEngineLayers.BELOW_SHIPS_LAYER);
+
             }
         }
 

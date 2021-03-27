@@ -3,6 +3,7 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.AsteroidAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
@@ -19,7 +20,7 @@ public class tahlan_TaffetaDummyOnHitEffect implements OnHitEffectPlugin {
     private static final Color ARC_CORE_COLOR = new Color(206, 255, 252, 250);
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
         if (projectile.didDamage() && (target instanceof ShipAPI) && Math.random()<=0.1f) {
 
             ShipAPI ship = (ShipAPI)target;

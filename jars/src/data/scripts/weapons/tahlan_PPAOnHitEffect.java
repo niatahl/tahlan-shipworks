@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import data.scripts.plugins.MagicTrailPlugin;
 import org.lazywizard.lazylib.MathUtils;
@@ -18,8 +19,7 @@ public class tahlan_PPAOnHitEffect implements OnHitEffectPlugin {
     private static final Color COLOR2 = new Color(237, 255, 246);
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit,
-                      CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
         if (point == null) {
             return;
         }
@@ -37,7 +37,7 @@ public class tahlan_PPAOnHitEffect implements OnHitEffectPlugin {
                 if (!shieldHit && triggered) {
                     hitLevel += 0.25f;
                     ShipAPI empTarget = ship;
-                    engine.spawnEmpArcPierceShields(projectile.getSource(), point, empTarget, empTarget,
+                    EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(projectile.getSource(), point, empTarget, empTarget,
                             projectile.getDamageType(), dam, emp, 1000f * hitLevel, null, 20f, COLOR1, COLOR2);
                 }
             }

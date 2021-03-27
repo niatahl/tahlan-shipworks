@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
@@ -17,7 +18,7 @@ public class tahlan_RakatonOnHitEffect implements OnHitEffectPlugin {
     private static final Color COLOR2 = new Color(236, 248, 255);
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
         float bonusDamage = projectile.getDamageAmount()*0.6f;
 

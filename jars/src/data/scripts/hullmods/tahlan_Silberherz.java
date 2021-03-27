@@ -52,7 +52,7 @@ public class tahlan_Silberherz extends BaseHullMod {
             PersonAPI captain = ship.getCaptain();
 
 
-	        if ((captain.getStats().getLevel() > 9)) {
+	        if ((captain.getStats().getLevel() > 4)) {
 
 	            ship.getMutableStats().getFluxDissipation().modifyMult(SILBER_ID, BUFF_FACTOR);
                 ship.getMutableStats().getFluxCapacity().modifyMult(SILBER_ID, BUFF_FACTOR);
@@ -74,15 +74,15 @@ public class tahlan_Silberherz extends BaseHullMod {
                 ship.getMutableStats().getShieldDamageTakenMult().unmodify(SILBER_ID);
             }
 
-            if (captain.getStats().getSkillLevel(Skills.GUNNERY_IMPLANTS) == 3) {
-	            ship.getMutableStats().getBallisticWeaponRangeBonus().modifyMult(SILBER_ID,1.1f);
-	            ship.getMutableStats().getEnergyWeaponRangeBonus().modifyMult(SILBER_ID, 1.1f);
-	            ship.getMutableStats().getVentRateMult().modifyMult(SILBER_ID, 1.1f);
-            } else {
-                ship.getMutableStats().getBallisticWeaponRangeBonus().unmodify(SILBER_ID);
-                ship.getMutableStats().getEnergyWeaponRangeBonus().unmodify(SILBER_ID);
-                ship.getMutableStats().getVentRateMult().unmodify(SILBER_ID);
-            }
+//            if (captain.getStats().getSkillLevel(Skills.GUNNERY_IMPLANTS) == 3) {
+//	            ship.getMutableStats().getBallisticWeaponRangeBonus().modifyMult(SILBER_ID,1.1f);
+//	            ship.getMutableStats().getEnergyWeaponRangeBonus().modifyMult(SILBER_ID, 1.1f);
+//	            ship.getMutableStats().getVentRateMult().modifyMult(SILBER_ID, 1.1f);
+//            } else {
+//                ship.getMutableStats().getBallisticWeaponRangeBonus().unmodify(SILBER_ID);
+//                ship.getMutableStats().getEnergyWeaponRangeBonus().unmodify(SILBER_ID);
+//                ship.getMutableStats().getVentRateMult().unmodify(SILBER_ID);
+//            }
 
         }
 
@@ -117,12 +117,12 @@ public class tahlan_Silberherz extends BaseHullMod {
 		if (index == 1) return "" + (int)WEAPON_HP + txt("%");
 		if (index == 2) return txt("hmd_silberherz1");
 		if (index == 3) return "" + (int)((BUFF_FACTOR-1f)*100f) + txt("%");
-		if (index == 4) return txt("hmd_silberherz2");
-		if (index == 5) return txt("hmd_silberherz3");
-		if (index == 6) return txt("hmd_silberherz4");
-		if (index == 7) return txt("hmd_silberherz5");
-		if (index == 8) return txt("hmd_silberherz6");
-		if (index == 9) return txt("hmd_silberherz7");
+		//if (index == 4) return txt("hmd_silberherz2");
+		if (index == 4) return txt("hmd_silberherz3");
+		if (index == 5) return txt("hmd_silberherz4");
+		if (index == 6) return txt("hmd_silberherz5");
+		if (index == 7) return txt("hmd_silberherz6");
+		if (index == 8) return txt("hmd_silberherz7");
 		return null;
 	}
 	

@@ -59,7 +59,7 @@ public class tahlan_MachineSpiritStats extends BaseShipSystemScript {
         stats.getBallisticWeaponFluxCostMod().unmodify(id);
         stats.getEnergyRoFMult().unmodify(id);
         stats.getEnergyWeaponFluxCostMod().unmodify(id);
-        //ship.setWeaponGlow(0f, GLOW_COLOR, WEAPON_TYPES);
+        ship.setWeaponGlow(0f, GLOW_COLOR, WEAPON_TYPES);
         runOnce = true;
 
     }

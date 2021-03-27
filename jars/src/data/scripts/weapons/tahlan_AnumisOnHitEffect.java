@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
@@ -17,7 +18,7 @@ public class tahlan_AnumisOnHitEffect implements OnHitEffectPlugin {
     private static final float EXPLOSION_DURATION = 0.7f;
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
         if (!(target instanceof ShipAPI)){
             return;

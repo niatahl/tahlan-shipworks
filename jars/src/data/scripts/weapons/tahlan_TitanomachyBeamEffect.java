@@ -33,7 +33,7 @@ public class tahlan_TitanomachyBeamEffect implements BeamEffectPlugin {
 
 
 					float bonusDamage = beam.getDamage().getDamage()/9f;
-					engine.spawnEmpArc(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getDamageTarget(),
+					EmpArcEntityAPI arc =  engine.spawnEmpArc(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getDamageTarget(),
 							DamageType.ENERGY,
 							bonusDamage,
 							bonusDamage*5f,
@@ -50,7 +50,7 @@ public class tahlan_TitanomachyBeamEffect implements BeamEffectPlugin {
 		    effectInterval.advance(engine.getElapsedInLastFrame());
 		    if (effectInterval.intervalElapsed()){
 		        Vector2f point = MathUtils.getRandomPointInCircle(beam.getFrom(),50f);
-		        engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
+		        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
                         new SimpleEntity(point),
                         DamageType.FRAGMENTATION,
                         0f,

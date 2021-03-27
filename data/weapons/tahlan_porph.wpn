@@ -36,5 +36,6 @@
     0
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_porphyrion_turret_base.png",
-  "type": "BALLISTIC"
+  "type": "ENERGY",
+  "mountTypeOverride":"BALLISTIC"
 }

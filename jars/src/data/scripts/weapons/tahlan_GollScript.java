@@ -1,9 +1,6 @@
 package data.scripts.weapons;
 
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.DamageType;
-import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.*;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;
@@ -45,7 +42,7 @@ public class tahlan_GollScript implements EveryFrameWeaponEffectPlugin {
 
             for (int i = 0; i < 3; i++) {
                 Vector2f targetpoint = MathUtils.getRandomPointInCone(barrelLocation,50f, weapon.getCurrAngle()-45f, weapon.getCurrAngle()+45f);
-                engine.spawnEmpArcPierceShields(weapon.getShip(), barrelLocation, weapon.getShip(),
+                EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(weapon.getShip(), barrelLocation, weapon.getShip(),
                         new SimpleEntity(targetpoint),
                         DamageType.FRAGMENTATION,
                         0f,

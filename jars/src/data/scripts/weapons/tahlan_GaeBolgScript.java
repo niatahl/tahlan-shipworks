@@ -43,7 +43,7 @@ public class tahlan_GaeBolgScript implements BeamEffectPlugin {
                     Vector2f point = Vector2f.sub(beam.getTo(), dir, new Vector2f());
                     float emp = beam.getWeapon().getDamage().getFluxComponent() * 0.5f;
                     float dam = beam.getWeapon().getDamage().getDamage() * 0.25f;
-                    engine.spawnEmpArcPierceShields(
+                    EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(
                             beam.getSource(), point, beam.getDamageTarget(), beam.getDamageTarget(),
                             DamageType.ENERGY,
                             dam, // damage
@@ -67,7 +67,7 @@ public class tahlan_GaeBolgScript implements BeamEffectPlugin {
 
             Vector2f point = MathUtils.getRandomPointInCircle(beam.getFrom(),50f);
             if (effectInterval.intervalElapsed()){
-                engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
+                EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
                         new SimpleEntity(point),
                         DamageType.FRAGMENTATION,
                         0f,

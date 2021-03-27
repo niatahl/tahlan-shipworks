@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
@@ -16,7 +17,7 @@ public class tahlan_KarionOnHitEffect implements OnHitEffectPlugin {
     private static final Color COLOR2 = new Color(236, 248, 255);
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
         float bonusDamage = projectile.getEmpAmount()/3f;
 
@@ -36,7 +37,7 @@ public class tahlan_KarionOnHitEffect implements OnHitEffectPlugin {
                     boolean piercedShield = shieldHit && (float) Math.random() < pierceChance;
                     if (!shieldHit || piercedShield) {
                         hitLevel += 0.33f;
-                        engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
+                        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
                                 DamageType.ENERGY, 0f, bonusDamage, 100000f, null, 10f, COLOR1, COLOR2);
                     }
                 }

@@ -46,7 +46,7 @@ public class tahlan_VelvetScript implements EveryFrameWeaponEffectPlugin {
 
                 if (flux > 0.25f) {
 
-                    engine.spawnEmpArcPierceShields(weapon.getShip(), point, weapon.getShip(), weapon.getShip(),
+                    EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(weapon.getShip(), point, weapon.getShip(), weapon.getShip(),
                             DamageType.FRAGMENTATION,
                             0f,
                             fluxToVent,
@@ -56,6 +56,7 @@ public class tahlan_VelvetScript implements EveryFrameWeaponEffectPlugin {
                             ARC_FRINGE_COLOR,
                             ARC_CORE_COLOR
                     );
+
                 }
 
 

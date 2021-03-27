@@ -3,6 +3,7 @@ package data.scripts.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.AsteroidAPI;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.CollectionUtils;
 import org.lazywizard.lazylib.CollisionUtils;
@@ -33,7 +34,7 @@ public class tahlan_TaffetaOnHitEffect implements OnHitEffectPlugin {
     private static final String SPLINTER_WEAPON_ID = "tahlan_taffeta_dummy";
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
         if (projectile.didDamage() && !(target instanceof MissileAPI)) {
 
             // Blast visuals

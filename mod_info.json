@@ -4,7 +4,7 @@
 	"author":"Nia Tahl",
 	"version":"0.4.1",
 	"description":"A ship pack that suffers from feature creep",
-	"gameVersion":"0.9.1a",
+	"gameVersion":"0.95a-RC9",
 	"jars":["jars/TahlanShipworks.jar"],
 	"modPlugin":"data.scripts.tahlan_ModPlugin"
 }

@@ -4,6 +4,7 @@
   "projectileSpecId": "tahlan_taffeta_shot",
   "everyFrameEffect": "data.scripts.weapons.tahlan_TaffetaScript",
   "type": "BALLISTIC",
+  "mountTypeOverride":"HYBRID",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_turret_base.png",  
   "turretGlowSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_turret_glow.png",

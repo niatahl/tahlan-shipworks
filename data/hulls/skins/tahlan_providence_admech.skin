@@ -23,6 +23,15 @@
     	"WS0003":{
       		"type": "UNIVERSAL",
     	},
+		"WS0004":{
+      		"type": "HYBRID",
+    	},
+		"WS0005":{
+      		"type": "HYBRID",
+    	},
+		"WS0006":{
+      		"type": "HYBRID",
+    	},
     },
     
 }

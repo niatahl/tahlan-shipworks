@@ -22,6 +22,12 @@
     	"WS0004":{
       		"type": "HYBRID",
     	},
+		"WS0011":{
+      		"type": "HYBRID",
+    	},
+    	"WS0012":{
+      		"type": "HYBRID",
+    	},
     },
     
 }

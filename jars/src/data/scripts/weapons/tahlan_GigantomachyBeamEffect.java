@@ -26,7 +26,7 @@ public class tahlan_GigantomachyBeamEffect implements BeamEffectPlugin {
             wasZero = beam.getDamage().getDpsDuration() <= 0;
             fireInterval.advance(dur);
             if (fireInterval.intervalElapsed()) {
-                engine.spawnEmpArc(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getDamageTarget(),
+                EmpArcEntityAPI arc =  engine.spawnEmpArc(beam.getSource(), beam.getFrom(), beam.getSource(), beam.getDamageTarget(),
                         DamageType.ENERGY,
                         500f,
                         500f,
@@ -42,7 +42,7 @@ public class tahlan_GigantomachyBeamEffect implements BeamEffectPlugin {
             effectInterval.advance(engine.getElapsedInLastFrame());
             if (effectInterval.intervalElapsed()) {
                 Vector2f point = MathUtils.getRandomPointInCircle(beam.getFrom(), 50f);
-                engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
+                EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(beam.getSource(), beam.getFrom(), beam.getSource(),
                         new SimpleEntity(point),
                         DamageType.FRAGMENTATION,
                         0f,

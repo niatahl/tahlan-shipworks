@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import data.scripts.util.MagicLensFlare;
@@ -20,7 +21,7 @@ public class tahlan_KriegsmesserOnHitEffect implements OnHitEffectPlugin {
     private static final int NUM_ECHOES = 5;
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
         float bonusDamage = projectile.getDamageAmount()*0.1f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,

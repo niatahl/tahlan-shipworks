@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import data.scripts.plugins.MagicTrailPlugin;
 import org.lazywizard.lazylib.MathUtils;
@@ -18,8 +19,7 @@ public class tahlan_PhiraOnHitEffect implements OnHitEffectPlugin {
     private static final Color COLOR2 = new Color(255, 246, 234);
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit,
-                      CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
         if (point == null) {
             return;
         }
@@ -47,7 +47,7 @@ public class tahlan_PhiraOnHitEffect implements OnHitEffectPlugin {
                         startSpeed * ((float)i2 / 70f), fizzleConstantSpeed * (1f - (float)i2 / 70f),
                         angle, startAngularVelocity * ((float)i2 / 70f), fizzleConstantAngle * (1f - (float)i2 / 70f), startSize, 0f,
                         colorToUse, colorToUse,0.45f, 0f, 0.5f * ((float)i2 / 70f) * lifetimeMult, 1.1f * ((float)i2 / 70f) * lifetimeMult,
-                        GL_SRC_ALPHA, GL_ONE,500f, 600f, new Vector2f(0f, 0f), null);
+                        GL_SRC_ALPHA, GL_ONE,500f, 600f, new Vector2f(0f, 0f), null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
             }
         }
 
@@ -64,7 +64,7 @@ public class tahlan_PhiraOnHitEffect implements OnHitEffectPlugin {
                 if (!shieldHit && triggered) {
                     hitLevel += 0.25f;
                     ShipAPI empTarget = ship;
-                    engine.spawnEmpArcPierceShields(projectile.getSource(), point, empTarget, empTarget,
+                    EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(projectile.getSource(), point, empTarget, empTarget,
                             projectile.getDamageType(), dam, emp, 1000f * hitLevel, null, 20f, COLOR1, COLOR2);
                 }
             }

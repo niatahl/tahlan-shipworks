@@ -4,6 +4,7 @@
   "projectileSpecId": "tahlan_cashmere_shot",
   "everyFrameEffect": "data.scripts.weapons.tahlan_CashmereScript",
   "type": "ENERGY",
+  "mountTypeOverride":"HYBRID",
   "size": "LARGE",
   "turretSprite": "graphics/tahlan/weapons/relics/tahlan_cashmere_turret_base.png",
   "turretGlowSprite": "graphics/tahlan/weapons/relics/tahlan_cashmere_turret_glow.png",

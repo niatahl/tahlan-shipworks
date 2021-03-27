@@ -71,7 +71,7 @@ public class tahlan_SilkBoltScript implements EveryFrameWeaponEffectPlugin {
             effectInterval.advance(engine.getElapsedInLastFrame());
             if (effectInterval.intervalElapsed()){
                 Vector2f arcPoint = MathUtils.getRandomPointInCone(weaponFirePoint,75f*chargelevel,weapon.getCurrAngle()-45, weapon.getCurrAngle()+45);
-                engine.spawnEmpArcPierceShields(weapon.getShip(), weaponFirePoint, weapon.getShip(),
+                EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(weapon.getShip(), weaponFirePoint, weapon.getShip(),
                         new SimpleEntity(arcPoint),
                         DamageType.FRAGMENTATION,
                         0f,

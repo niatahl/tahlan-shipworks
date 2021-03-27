@@ -43,7 +43,7 @@ public class tahlan_GleipnirScript implements EveryFrameWeaponEffectPlugin {
                     //Visuals for KE shot
                     for (int i = 0; i < 7; i++) {
                         Vector2f point = MathUtils.getRandomPointInCircle(weapon.getLocation(), MathUtils.getRandomNumberInRange(50f, 100f));
-                        engine.spawnEmpArcPierceShields(weapon.getShip(), weapon.getLocation(), weapon.getShip(),
+                        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(weapon.getShip(), weapon.getLocation(), weapon.getShip(),
                                 new SimpleEntity(point),
                                 DamageType.FRAGMENTATION,
                                 0f,
@@ -61,7 +61,7 @@ public class tahlan_GleipnirScript implements EveryFrameWeaponEffectPlugin {
                     //Visuals for HE shot
                     for (int i = 0; i < 7; i++) {
                         Vector2f point = MathUtils.getRandomPointInCircle(weapon.getLocation(), MathUtils.getRandomNumberInRange(50f, 100f));
-                        engine.spawnEmpArcPierceShields(weapon.getShip(), weapon.getLocation(), weapon.getShip(),
+                        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(weapon.getShip(), weapon.getLocation(), weapon.getShip(),
                                 new SimpleEntity(point),
                                 DamageType.FRAGMENTATION,
                                 0f,

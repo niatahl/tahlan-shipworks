@@ -32,7 +32,7 @@ public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 					Vector2f point = Vector2f.sub(beam.getTo(), dir, new Vector2f());
 
 					float dam = beam.getWeapon().getDamage().getDamage() * 0.1f;
-					engine.spawnEmpArc(beam.getSource(), point, beam.getDamageTarget(), beam.getDamageTarget(),
+					EmpArcEntityAPI arc =  engine.spawnEmpArc(beam.getSource(), point, beam.getDamageTarget(), beam.getDamageTarget(),
 							DamageType.ENERGY,
 							dam,
 							0f,

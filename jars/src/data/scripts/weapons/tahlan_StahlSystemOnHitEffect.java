@@ -2,6 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import org.lazywizard.lazylib.MathUtils;
@@ -21,7 +22,7 @@ public class tahlan_StahlSystemOnHitEffect implements OnHitEffectPlugin {
     private static final float EMP_DAMAGE = 100;
 
     @Override
-    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, CombatEngineAPI engine) {
+    public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
         //MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 8, 400, 0, new Color(186, 240, 255), new Color(255, 255, 255));
 
@@ -67,7 +68,7 @@ public class tahlan_StahlSystemOnHitEffect implements OnHitEffectPlugin {
                     bonusDamage = projectile.getEmpAmount();
                     boolean piercedShield = shieldHit && (float) Math.random() < pierceChance;
                     if (!shieldHit || piercedShield) {
-                        engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
+                        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
                                 DamageType.ENERGY, bonusDamage*0.1f, bonusDamage, 100000f, null, 20f, PARTICLE_COLOR, CORE_COLOR);
                     }
 

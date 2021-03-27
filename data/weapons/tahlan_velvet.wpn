@@ -4,6 +4,7 @@
   "projectileSpecId": "tahlan_velvet_shot",
   "everyFrameEffect": "data.scripts.weapons.tahlan_VelvetScript",
   "type": "ENERGY",
+  "mountTypeOverride":"HYBRID",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/relics/tahlan_velvet_turret_base.png",
   "hardpointSprite": "graphics/tahlan/weapons/relics/tahlan_velvet_hp_base.png",

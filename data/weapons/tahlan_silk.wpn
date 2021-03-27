@@ -4,6 +4,7 @@
   "projectileSpecId": "tahlan_prismcoil_dummy",
   "everyFrameEffect": "data.scripts.weapons.tahlan_SilkBoltScript",
   "type": "ENERGY",
+  "mountTypeOverride":"HYBRID",
   "size": "LARGE",
   "turretSprite": "graphics/tahlan/weapons/relics/tahlan_silk_turret_base.png",
   "hardpointSprite": "graphics/tahlan/weapons/relics/tahlan_silk_hp_base.png",

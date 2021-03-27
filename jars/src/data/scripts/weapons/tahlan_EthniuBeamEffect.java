@@ -91,7 +91,7 @@ public class tahlan_EthniuBeamEffect implements BeamEffectPlugin {
 
         ShipAPI ship = beam.getWeapon().getShip();
 
-        engine.spawnEmpArcPierceShields(
+        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(
                 ship,
                 beam.getFrom(),
                 ship,
