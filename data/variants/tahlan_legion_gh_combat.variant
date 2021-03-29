@@ -1,59 +1,54 @@
 {
-  "displayName": "Combat",
-  "fluxCapacitors": 0,
-  "fluxVents": 37,
-  "goalVariant": true,
-  "hullId": "tahlan_legion_gh",
-  "hullMods": [
-    "targetingunit"
-  ],
-  "modules": [],
-  "permaMods": [],
-  "quality": 0,
-  "variantId": "tahlan_legion_gh_combat",
-  "weaponGroups": [
-    {
-      "autofire": false,
-      "mode": "ALTERNATING",
-      "weapons": {
-        "WS 005": "tahlan_hekaton"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 000": "tahlan_anumis",
-        "WS 001": "tahlan_anumis"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 002": "tahlan_magaera",
-        "WS 003": "tahlan_magaera",
-        "WS 004": "tahlan_magaera",
-        "WS 007": "tahlan_magaera"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS 014": "tahlan_teltrite",
-        "WS 015": "tahlan_teltrite",
-        "WS 018": "tahlan_teltrite",
-        "WS 019": "tahlan_teltrite",
-        "WS 020": "tahlan_teltrite",
-        "WS 021": "tahlan_teltrite"
-      }
-    }
-  ],
-  "wings": [
-    "tahlan_Valacor_hunter_wing",
-    "tahlan_Valacor_hunter_wing",
-    "tahlan_Acastus_fighter_wing",
-    "tahlan_Acastus_fighter_wing"
-  ]
+    "displayName": "Combat",
+    "fluxCapacitors": 17,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "tahlan_legion_gh",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_legion_gh_combat",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {"WS 005": "tahlan_hekaton"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "tahlan_anumis",
+                "WS 001": "tahlan_anumis"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "tahlan_magaera",
+                "WS 003": "tahlan_magaera",
+                "WS 004": "tahlan_magaera",
+                "WS 007": "tahlan_magaera"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 014": "tahlan_teltrite",
+                "WS 015": "tahlan_teltrite",
+                "WS 018": "tahlan_teltrite",
+                "WS 019": "tahlan_teltrite",
+                "WS 020": "tahlan_teltrite",
+                "WS 021": "tahlan_teltrite"
+            }
+        }
+    ],
+    "wings": [
+        "tahlan_Valacor_hunter_wing",
+        "tahlan_Valacor_hunter_wing",
+        "tahlan_Acastus_fighter_wing",
+        "tahlan_Acastus_fighter_wing"
+    ]
 }

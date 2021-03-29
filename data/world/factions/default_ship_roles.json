@@ -81,6 +81,9 @@
 		"tahlan_throne_artillery":4,
 		"tahlan_throne_gunship":3,
 		"tahlan_throne_overdriven":3,
+		"tahlan_Cobalt_combat":4,
+		"tahlan_Cobalt_overdriven":3,
+		"tahlan_Cobalt_disabler":3
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,

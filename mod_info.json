@@ -4,7 +4,19 @@
 	"author":"Nia Tahl",
 	"version":"0.4.1",
 	"description":"A ship pack that suffers from feature creep",
-	"gameVersion":"0.95a-RC9",
+	"gameVersion":"0.95a-RC10",
 	"jars":["jars/TahlanShipworks.jar"],
-	"modPlugin":"data.scripts.tahlan_ModPlugin"
+	"modPlugin":"data.scripts.tahlan_ModPlugin",
+	"dependencies": [
+		{
+			"id": "lw_lazylib",
+			"name": "LazyLib",
+			#"version": "2.6" # If a specific version or higher is required, include this line
+		},
+		{
+			"id": "MagicLib",
+			"name": "MagicLib",
+			#"version": "0.32rc2" # If a specific version is NOT required, comment out this line
+		}
+	]
 }

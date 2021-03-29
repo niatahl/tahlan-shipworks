@@ -1,11 +1,12 @@
 {
     "displayName": "Prototype",
-    "fluxCapacitors": 11,
+    "fluxCapacitors": 13,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_Cuchulainn",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-	"goalVariant": true,
+    "sMods": [],
     "variantId": "tahlan_Cuchulainn_proto",
     "weaponGroups": [
         {

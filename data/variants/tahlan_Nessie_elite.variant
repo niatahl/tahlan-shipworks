@@ -1,11 +1,12 @@
 {
     "displayName": "E1337",
-    "fluxCapacitors": 29,
-    "fluxVents": 0,
+    "fluxCapacitors": 30,
+    "fluxVents": 3,
+    "goalVariant": true,
     "hullId": "tahlan_Nessie",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-	"goalVariant": true,
+    "sMods": [],
     "variantId": "tahlan_Nessie_elite",
     "weaponGroups": [
         {

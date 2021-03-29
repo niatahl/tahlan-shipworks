@@ -1,11 +1,12 @@
 {
     "displayName": "Combat",
     "fluxCapacitors": 0,
-    "fluxVents": 34,
+    "fluxVents": 35,
+    "goalVariant": true,
     "hullId": "tahlan_Hresvelgr",
     "hullMods": ["targetingunit"],
     "permaMods": [],
-	"goalVariant": true,
+    "sMods": [],
     "variantId": "tahlan_Hresvelgr_combat",
     "weaponGroups": [
         {

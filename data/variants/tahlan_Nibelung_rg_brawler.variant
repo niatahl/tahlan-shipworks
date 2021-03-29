@@ -1,6 +1,6 @@
 {
     "displayName": "Brawler",
-    "fluxCapacitors": 19,
+    "fluxCapacitors": 31,
     "fluxVents": 50,
     "hullId": "tahlan_Nibelung_rg",
     "hullMods": [
@@ -8,6 +8,7 @@
         "unstable_injector"
     ],
     "permaMods": [],
+    "sMods": [],
     "variantId": "tahlan_Nibelung_rg_brawler",
     "weaponGroups": [
         {
