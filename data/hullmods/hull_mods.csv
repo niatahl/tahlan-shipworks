@@ -59,7 +59,7 @@ Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tah
 
 Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles by %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
-Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, an officer of at least level %s will be capable of bringing out the machine's full potential, increasing its general performance by about %s.
+Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, an officer of at least %s will be capable of bringing out the machine's full potential, increasing its general performance by about %s.
 
 Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
 
@@ -93,4 +93,5 @@ Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,data.sc
 Vent Weapon Boost,tahlan_ventweaponboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VentWeaponBoost,(Hidden) Boosts weapon damage after venting,(Hidden) Boosts weapon damage after venting,
 Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_RealityGlitch,(Hidden) Randomly phases and repairs some armor,(Hidden) Randomly phases and repairs some armor,
 Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_10pctCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
+Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_CreepyFog,(Hidden) Adds spooky fog to a ship,(Hidden) Adds spooky fog to a ship,
 ,,,,,,,,,,,,,,,,,,

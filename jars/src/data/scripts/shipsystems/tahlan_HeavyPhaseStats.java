@@ -105,6 +105,9 @@ public class tahlan_HeavyPhaseStats extends BaseShipSystemScript {
             Global.getCombatEngine().getTimeMult().unmodify(id);
         }
 
+        float speedPercentMod = stats.getDynamic().getMod(Stats.PHASE_CLOAK_SPEED_MOD).computeEffective(0f);
+        stats.getMaxSpeed().modifyPercent(id, speedPercentMod * effectLevel);
+
         if (state == State.OUT) {
             stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
             stats.getMaxTurnRate().unmodify(id);

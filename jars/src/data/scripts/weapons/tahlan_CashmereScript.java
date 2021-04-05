@@ -120,13 +120,16 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
                 }
             }
 
+            List<DamagingProjectileAPI> toRemove = new ArrayList<DamagingProjectileAPI>();
+
             for (DamagingProjectileAPI proj : registeredProjectiles) {
                 String specID = proj.getProjectileSpecId();
                 Vector2f projVel = new Vector2f(proj.getVelocity());
                 SpriteAPI spriteToUse = Global.getSettings().getSprite("fx", "tahlan_trail_foggy");
 
                 //Ignore already-collided projectiles, and projectiles that don't match our IDs
-                if (proj.getProjectileSpecId() == null || proj.didDamage()) {
+                if (proj.getProjectileSpecId() == null || proj.didDamage() || !engine.isEntityInPlay(proj)) {
+                    toRemove.add(proj);
                     continue;
                 }
 
@@ -175,6 +178,11 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
                         0, 0, 60f, 3f, Color.white, Color.white, 0.5f * opacityMult,
                         0.1f * durationMult, 0.05f * durationMult, 0.05f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 1400,
                         sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+
+            }
+
+            for (DamagingProjectileAPI proj : toRemove) {
+                registeredProjectiles.remove(proj);
             }
 
         }

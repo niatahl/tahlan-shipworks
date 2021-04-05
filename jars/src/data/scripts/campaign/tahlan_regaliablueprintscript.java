@@ -190,12 +190,11 @@ public class tahlan_regaliablueprintscript implements EveryFrameScript {
 
     //Function for getting the player's aptitude in technology (as 0, 1, 2 or 3)
     private int getTechAptitude () {
-        float level = Global.getSector().getPlayerStats().getAptitudeLevel(Skills.APT_TECHNOLOGY);
-        if (level >= 3f) {
+        if (Global.getSector().getPlayerStats().getSkillLevel("special_modifications")>0 || Global.getSector().getPlayerStats().getSkillLevel("automated_ships")>0) {
             return 3;
-        } else if (level >= 2f) {
+        } else if (Global.getSector().getPlayerStats().getSkillLevel("electronic_warfare")>0 || Global.getSector().getPlayerStats().getSkillLevel("fighter_uplink")>0) {
             return 2;
-        } else if (level >= 1f) {
+        } else if (Global.getSector().getPlayerStats().getSkillLevel("navigation")>0 || Global.getSector().getPlayerStats().getSkillLevel("sensors")>0) {
             return 1;
         } else {
             return 0;

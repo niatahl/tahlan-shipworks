@@ -1,5 +1,12 @@
+0.5b
+- Various bugfixes
+- Further 0.95a compatibility adjustments
+    - Rosenritter quest now scales with how deep into the tech tree you are
+    - Custom phase cloaks now properly account for elite phase mastery
+- Aetnos damage per shot lowered to 220, RoF slightly increased
+
 0.5
-- Initial 0.95a compatibilty
+- Initial 0.95a compatibility
 - Porphyrion
 	- Now counts as an energy weapon for stat modifiers
 - LosTech weapons

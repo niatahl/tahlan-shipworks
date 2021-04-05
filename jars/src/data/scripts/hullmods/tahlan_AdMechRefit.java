@@ -37,13 +37,17 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-		ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, INNERLARGE);
+		if (ship.getShield() != null) {
+			ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, INNERLARGE);
+		}
     }
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
-        ship.getShield().setInnerColor(new Color(112+round(120*ship.getFluxLevel()), 27, 187-round(70*ship.getFluxLevel()), 123));
-        ship.getShield().setRingColor(new Color(252, 222, 255,60));
+		if (ship.getShield() != null) {
+			ship.getShield().setInnerColor(new Color(112 + round(120 * ship.getFluxLevel()), 27, 187 - round(70 * ship.getFluxLevel()), 123));
+			ship.getShield().setRingColor(new Color(252, 222, 255, 60));
+		}
 
         float power = Math.min((ship.getFluxLevel() / 0.90f), 1f);
 
