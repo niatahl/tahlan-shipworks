@@ -4,6 +4,8 @@
     - Rosenritter quest now scales with how deep into the tech tree you are
     - Custom phase cloaks now properly account for elite phase mastery
 - Aetnos damage per shot lowered to 220, RoF slightly increased
+- Various sprite touchups
+
 
 0.5
 - Initial 0.95a compatibility

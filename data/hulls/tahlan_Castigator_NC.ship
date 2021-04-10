@@ -29,7 +29,7 @@
       "mount": "TURRET",
       "arc": 97,
       "angle": -20.5,
-      "locations": [33.5, -27.5]
+      "locations": [33, -28]
     },
     {
       "id": "WS0002",
@@ -38,7 +38,7 @@
       "mount": "TURRET",
       "arc": 97,
       "angle": 20.5,
-      "locations": [33.5, 27.5]
+      "locations": [33, 28]
     },
     {
       "id": "WS0003",
@@ -47,7 +47,7 @@
       "mount": "TURRET",
       "arc": 108,
       "angle": 31.5,
-      "locations": [-3.5, 39.5]
+      "locations": [-4, 39]
     },
     {
       "id": "WS0004",
@@ -56,7 +56,7 @@
       "mount": "TURRET",
       "arc": 108,
       "angle": -31.5,
-      "locations": [-3.5, -39.5]
+      "locations": [-4, -39]
     },
     {
       "id": "WS0005",

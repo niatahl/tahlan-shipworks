@@ -1,0 +1,37 @@
+{
+    "baseHullId":"tahlan_Castigator_P",
+    "skinHullId":"tahlan_Castigator_pxiv",
+    "hullName":"Cinderblade",
+    "descriptionId":"tahlan_Castigator_P",
+    "descriptionPrefix":"Presumably originally one of the few remaining Castigator-class cruisers built to the 14th Legion's alternate specifications, this hull was captured by Legio Infernalis forces and retrofitted according to Legio doctrine. The hull was later recaptured by a hegemony taskforce and repainted in its original colours, although the modifications remained.",
+	#"fleetPoints":28,
+	"addHints":["HIDE_IN_CODEX"],
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Castigator_pxiv.png",
+    "baseValueMult":1.25,
+    "removeWeaponSlots":[],         # ids
+    "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
+    "removeBuiltInMods":[],         # hullmod ids
+    "removeBuiltInWeapons":[],      # weapon slot ids
+    "builtInMods":["fourteenth"],
+	#"systemId":"tahlan_machinespirit",
+	"weaponSlotChanges":{
+		"WS0012":{
+      		"type": "UNIVERSAL",
+    	},
+    },
+	"engineSlotChanges":{
+		"0":{"style":"LOW_TECH"},
+		"1":{"style":"LOW_TECH"},
+		"2":{"style":"LOW_TECH"},
+		"3":{"style":"LOW_TECH"},
+		"4":{"style":"LOW_TECH"},
+		"5":{"style":"LOW_TECH"},
+		"6":{"style":"LOW_TECH"},
+		"7":{"style":"LOW_TECH"},
+		"8":{"style":"LOW_TECH"},
+		"9":{"style":"LOW_TECH"},
+		"10":{"style":"LOW_TECH"},
+		"11":{"style":"LOW_TECH"},
+	},
+    
+}
