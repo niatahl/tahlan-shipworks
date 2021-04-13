@@ -1,0 +1,45 @@
+{
+  "id": "tahlan_cinder_swivel_l",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_cinder_shot",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  #"everyFrameEffect": "data.scripts.weapons.tahlan_UnstableTPCScript",
+  "fireSoundTwo": "tahlan_cinder_fire",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_cinder_swivel_l.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_cinder_swivel_l_glow.png",
+  "interruptibleBurst": true,
+  "hardpointSprite": "",
+  "renderAboveAllWeapons": 0,
+  "turretOffsets": [
+    35,
+    1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [
+      255,
+      120,
+      90,
+      255
+    ],
+    "particleCount": 15,
+    "particleDuration": 0.2,
+    "particleSizeMin": 15,
+    "particleSizeRange": 20,
+    "spread": 5
+  },
+  "textureType": ROUGH
+}

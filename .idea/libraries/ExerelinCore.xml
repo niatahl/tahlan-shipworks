@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="ExerelinCore">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Starsector/mods/Nexerelin/jars/ExerelinCore.jar!/" />
+      <root url="jar://G:/Starsector/mods/Nexerelin/jars/ExerelinCore.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

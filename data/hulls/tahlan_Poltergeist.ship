@@ -1,0 +1,222 @@
+{
+  "hullName": "Poltergeist",
+  "hullId": "tahlan_Poltergeist",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/tahlan_Poltergeist.png",
+  "style": "HIGH_TECH",
+  "height": 298,
+  "width": 188,
+  "center": [94, 149],
+  "collisionRadius": 204,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 188,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 93,
+      "angle": 24.5,
+      "locations": [45, 29]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 93,
+      "angle": -24.5,
+      "locations": [45, -29]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [139, 46]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [139, -46]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -90,
+      "locations": [-42, -36]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 90,
+      "locations": [-42, 36]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 90,
+      "locations": [-74, 36]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -90,
+      "locations": [-74, -36]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 155,
+      "angle": 57.5,
+      "locations": [21, 82]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 155,
+      "angle": -57.5,
+      "locations": [21, -82]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 138,
+      "angle": 123.5,
+      "locations": [-101, 36]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 138,
+      "angle": -123.5,
+      "locations": [-101, -36]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-145, 44.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-145, -44.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-147.5, 35.5],
+      "length": 36,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-147.5, -35.5],
+      "length": 36,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-9, 77.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-9, -77.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-11.5, 68],
+      "length": 35.5,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-11.5, -68],
+      "length": 35.5,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 10,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -129.5, -12.5,
+    -146.5, -13,
+    -145.5, -39,
+    -134, -50.5,
+    -90.5, -38.5,
+    -11, -41.5,
+    -6.5, -78.5,
+    20, -90,
+    29.5, -82.5,
+    54, -92,
+    74.5, -66.5,
+    104.5, -72.5,
+    139.5, -55.5,
+    142, -38,
+    135.5, -34.5,
+    135.5, 34.5,
+    142, 38,
+    139.5, 55.5,
+    104.5, 72.5,
+    74.5, 66.5,
+    54, 92,
+    29.5, 82.5,
+    20, 90,
+    -6.5, 78.5,
+    -11, 41.5,
+    -90.5, 38.5,
+    -134, 50.5,
+    -145.5, 39,
+    -146.5, 13,
+    -129.5, 12.5
+  ]
+}

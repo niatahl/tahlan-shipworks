@@ -19,6 +19,7 @@ Stronghold Shield,tahlan_strongholdshield,,,0.025,,,,,,,1.5,,1.5,0,TRUE,,,TRUE,T
 Cavalry Charge,tahlan_cavalrycharge,1,,,,,,,,,1,2,1,12,,,,,,,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
 Royal Charge,tahlan_royalcharge,1,,,,,,,,,1,2,1,10,,,,,,,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
 Raider Jets,tahlan_raiderjets,,,,,,,,,,0.5,1.5,3,5,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Onslaught Jets,tahlan_raidestjets,,,,,,,,3,0.1,0.2,1,1,0.1,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Weaponry Overdrive,tahlan_weaponsoverdrive,1,,,,,,,3,0.05,0.25,3,0.25,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Enhanced EWAR Suite,tahlan_activeeccm,,,,,,0.2,,,,0.5,10,0.5,2,TRUE,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Heavy Phase Cloak,tahlan_heavyphase,,,,,,,,,,0.5,,0.5,2,TRUE,,TRUE,TRUE,TRUE,,,,TRUE,TRUE,,graphics/icons/hullsys/phase_cloak.png

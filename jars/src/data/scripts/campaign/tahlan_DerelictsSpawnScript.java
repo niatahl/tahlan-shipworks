@@ -37,13 +37,9 @@ public class tahlan_DerelictsSpawnScript {
     static {
         SHIP_SPAWNS.add(new Pair<>("tahlan_Timeless_retro_standard", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_schneefall_traum_albtraum", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_paladin", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_b_vanguard", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_c_longbowman", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_stahlherz_d_smiter", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_Nibelung_crg_elite", 1));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 2));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_throne_admech_derelict", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_throne_admech_derelict", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_providence_admech_derelict", 1));
     }
 
@@ -76,9 +72,6 @@ public class tahlan_DerelictsSpawnScript {
         WEIGHTS.put(LocationType.NEAR_STAR, 2f);
         WEIGHTS.put(LocationType.JUMP_ORBIT, 1f);
     }
-
-    public static String TRAUM_LOCATION;
-
     // Functions
 
     /**
@@ -117,11 +110,10 @@ public class tahlan_DerelictsSpawnScript {
                 }
 
                 //Now, simply spawn the ship in the spawn location
-                boolean recoverable = Math.random()>0.75f;
+                boolean recoverable = Math.random()>0.9f;
 
                 if ( spawnData.one.contains("tahlan_schneefall_traum_albtraum") ) {
                     Global.getSector().getMemoryWithoutUpdate().set("$tahlan_traum_location", system.getConstellation().getName());
-                    recoverable = true;
                     shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
                 }
                 if (  spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals( "tahlan_providence_admech_derelict" ) ) recoverable = true;

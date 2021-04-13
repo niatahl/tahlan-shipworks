@@ -1,15 +1,15 @@
 {
-	"id":"tahlan_raiderjets",
+	"id":"tahlan_raidestjets",
 	"type":"ENGINE_MOD",
 	"aiType":"MANEUVERING_JETS",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_RaiderJetsStats",
+	"statsScript":"data.scripts.shipsystems.tahlan_RaidestJetsStats",
 	
-	"engineGlowColor":[225,18,89,185],
+	"engineGlowColor":[100,230,255,165],
 	#"engineGlowContrailColor":[100,165,255,25],
-	"engineGlowLengthMult":1.5,
-	"engineGlowWidthMult":1.5,
-	"engineGlowGlowMult":1.5,
+	"engineGlowLengthMult":1.6,
+	"engineGlowWidthMult":1.4,
+	"engineGlowGlowMult":1.2,
 	
 	"flameoutOnImpactChance":0,
 

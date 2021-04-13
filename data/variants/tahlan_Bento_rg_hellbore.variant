@@ -1,0 +1,44 @@
+{
+    "displayName": "Breaker",
+    "fluxCapacitors": 0,
+    "fluxVents": 20,
+    "hullId": "tahlan_Bento_rg",
+    "hullMods": ["fluxdistributor"],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Bento_rg_hellbore",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0010": "hellbore"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0008": "sabot",
+                "WS0009": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "lightdualac",
+                "WS0002": "lightdualac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0006": "lightdualac",
+                "WS0007": "lightdualac"
+            }
+        }
+    ]
+}

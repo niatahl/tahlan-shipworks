@@ -139,7 +139,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         Global.getSector().addScript(new tahlan_regaliablueprintscript());
         log.info("added Rosenritter Blueprint script");
 
-        if (!ENABLE_LIFELESS) {
+        if (ENABLE_LIFELESS) {
             sector.getFaction("remnant").removeKnownShip("tahlan_Timeless");
             sector.getFaction("remnant").removeKnownShip("tahlan_Nameless");
             sector.getFaction("remnant").removeKnownWeapon("tahlan_disparax");

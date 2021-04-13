@@ -3,9 +3,30 @@
 - Further 0.95a compatibility adjustments
     - Rosenritter quest now scales with how deep into the tech tree you are
     - Custom phase cloaks now properly account for elite phase mastery
-- Aetnos damage per shot lowered to 220, RoF slightly increased
+	- Fixed various other shit
+- Lowered number of preplaced derelicts
+- Reduced recovery chance of preplaced derelicts (can still recover with story points)
+- Aetnos damage per shot lowered to 220, RoF increased accordingly
 - Various sprite touchups
+- Added Cinderblade
+- Added Poltergeist-class phase missile cruiser
+- Castigators
+    - DP lowered from 30 to 28
+    - Seems justified after that speed nerf a while a go
+- Doominator
+    - DP lowered from 30 to 25
+    - Was rather overcosted tbh
+- Removed Edengate (sort of)
+    - Will be removed fully down the line
+    - Replaced by Cinderblade
+- Removed Kaivalya
+    - Didn't really fit the other lostech hulls visually
+    - Also too similar to the Karma overall
+- Karma system changed to Spatial Shift
+- Removed Higanbana
 
+0.5a
+- Bugfixes
 
 0.5
 - Initial 0.95a compatibility

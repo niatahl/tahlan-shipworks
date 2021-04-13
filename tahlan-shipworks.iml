@@ -9,10 +9,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="commons-compiler-jdk" level="project" />
+    <orderEntry type="library" name="Starsector API" level="project" />
     <orderEntry type="library" name="Graphics" level="project" />
     <orderEntry type="library" name="MagicLib" level="project" />
-    <orderEntry type="library" name="LazyLib-Kotlin" level="project" />
+    <orderEntry type="library" name="LazyLib" level="project" />
     <orderEntry type="library" name="ExerelinCore" level="project" />
   </component>
 </module>

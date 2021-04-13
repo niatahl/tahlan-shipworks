@@ -2,4 +2,8 @@
 	"startShipsCombatLarge":[
       ["tahlan_Castigator_standard", "tahlan_Bento_standard", "lasher_Standard"]
     ],
+	
+	"startShipsSuper":[
+	  ["tahlan_Castigator_pxiv_ash"]
+	],
 }

@@ -35,9 +35,8 @@ public class tahlan_LostechSpawnScript {
     //List of teaser ships to spawn and their count
     private static final List<Pair<String, Integer>> SHIP_SPAWNS = new ArrayList<>();
     static {
-        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 2));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 2));
-        SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_relic_relic", 2));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_karma_relic", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_samsara_relic", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_rigveda_relic", 4));
         SHIP_SPAWNS.add(new Pair<>("tahlan_yajurveda_relic", 6));
         SHIP_SPAWNS.add(new Pair<>("tahlan_nirvana_relic", 1));
@@ -101,7 +100,7 @@ public class tahlan_LostechSpawnScript {
                 }
 
                 //Now, simply spawn the ship in the spawn location
-                boolean recoverable = Math.random()>0.75f;
+                boolean recoverable = Math.random()>0.9f;
 
                 float condition = (float)Math.random();
                 ShipRecoverySpecial.ShipCondition shipCondition;

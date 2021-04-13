@@ -1,0 +1,44 @@
+{
+    "displayName": "Optimist",
+    "fluxCapacitors": 0,
+    "fluxVents": 14,
+    "hullId": "tahlan_Bento_rg",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Bento_rg_needler",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0010": "multineedler"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0008": "reaper",
+                "WS0009": "reaper"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "lightag",
+                "WS0002": "lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan"
+            }
+        }
+    ]
+}

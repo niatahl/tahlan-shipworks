@@ -9,6 +9,11 @@
 		{"file":"sounds/tahlan/weapons/tahlan_silk_fire.ogg","pitch":1.5,"volume":2.6},
 	],
 	
+	"tahlan_cinder_fire":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_cinder_fire.ogg","pitch":1,"volume":0.8},
+	],
+	
 	"tahlan_gaebolg_fire":
 	[
 		{"file":"sounds/sfx_wpn_energy/tachyon_lance_fire_01.ogg","pitch":0.6,"volume":2.0},

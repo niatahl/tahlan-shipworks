@@ -1,5 +1,5 @@
 {
-  "hullName": "Castigator (P)",
+  "hullName": "Castigator (LI)",
   "hullId": "tahlan_Castigator_P",
   "hullSize": "CRUISER",
   "spriteName": "graphics/tahlan/ships/legio/tahlan_Castigator_P.png",
@@ -149,6 +149,24 @@
       "arc": 0,
       "angle": 0,
       "locations": [2.5, -0]
+    },
+    {
+      "id": "SWIVEL_LEFT",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 39,
+      "angle": -2.5,
+      "locations": [91.5, 65.5]
+    },
+    {
+      "id": "SWIVEL_RIGHT",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 39,
+      "angle": 2.5,
+      "locations": [91.5, -65.5]
     }
   ],
   "engineSlots": [
