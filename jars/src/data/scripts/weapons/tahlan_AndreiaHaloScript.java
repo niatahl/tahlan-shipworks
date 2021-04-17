@@ -43,6 +43,9 @@ public class tahlan_AndreiaHaloScript implements EveryFrameWeaponEffectPlugin {
             return;
         }
 
+        //Brightness clamp, cause there's some weird cases with flux level > 1f, I guess
+        currentBrightness = Math.max(0f,Math.min(currentBrightness,1f));
+
         //Now, set the color to the one we want, and include opacity
         Color colorToUse = new Color(COLOR_NORMAL[0], COLOR_NORMAL[1], COLOR_NORMAL[2], currentBrightness * MAX_OPACITY);
 

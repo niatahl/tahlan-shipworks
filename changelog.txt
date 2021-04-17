@@ -1,4 +1,4 @@
-0.5b
+0.6
 - Various bugfixes
 - Further 0.95a compatibility adjustments
     - Rosenritter quest now scales with how deep into the tech tree you are
@@ -10,9 +10,18 @@
 - Various sprite touchups
 - Added Cinderblade
 - Added Poltergeist-class phase missile cruiser
+- Scoralis
+	- Lowered torpedo range from 1200 to 1000
+- Styrix
+	- Improved efficiency to 1.2
+- Korikaze
+	- Removed automated ship hullmod
+- Nibelung
+    - Improved shield efficiency to 1.0
+- Bronco
+    - Improved shield efficeincy to 1.0
 - Castigators
-    - DP lowered from 30 to 28
-    - Seems justified after that speed nerf a while a go
+    - Improved shield efficeincy to 1.0
 - Doominator
     - DP lowered from 30 to 25
     - Was rather overcosted tbh

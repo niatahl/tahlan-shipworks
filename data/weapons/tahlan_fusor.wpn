@@ -1,7 +1,7 @@
 {
   "animationType": "GLOW",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect":"data.scripts.weapons.tahlan_FusorSoundScript",
+  "everyFrameEffect":"data.scripts.weapons.tahlan_FlamerScript",
   #"fireSoundTwo": "tahlan_fusor_fire",
   "glowColor": [
     255,

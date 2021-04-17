@@ -113,19 +113,19 @@ public class tahlan_FusorMuzzleFlashScript implements EveryFrameWeaponEffectPlug
     //What's the highest velocity a particle can spawn with (can be negative)?
     private static final Map<String, Float> PARTICLE_VELOCITY_MAX = new HashMap<>();
     static {
-        PARTICLE_VELOCITY_MAX.put("default", 500f);
+        PARTICLE_VELOCITY_MAX.put("default", 400f);
     }
 
     //The shortest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MIN = new HashMap<>();
     static {
-        PARTICLE_DURATION_MIN.put("default", 0.4f);
+        PARTICLE_DURATION_MIN.put("default", 0.2f);
     }
 
     //The longest duration a particle will last before completely fading away
     private static final Map<String, Float> PARTICLE_DURATION_MAX = new HashMap<>();
     static {
-        PARTICLE_DURATION_MAX.put("default", 0.6f);
+        PARTICLE_DURATION_MAX.put("default", 0.4f);
     }
 
     //The shortest along their velocity vector any individual particle is allowed to spawn (can be negative to spawn behind their origin point)

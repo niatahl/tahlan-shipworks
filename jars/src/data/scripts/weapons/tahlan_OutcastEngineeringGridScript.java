@@ -36,6 +36,9 @@ public class tahlan_OutcastEngineeringGridScript implements EveryFrameWeaponEffe
             weapon.getAnimation().setFrame(0);
         }
 
+        //Brightness clamp, cause there's some weird cases with flux level > 1f, I guess
+        currentBrightness = Math.max(0f,Math.min(currentBrightness,1f));
+
         //Now, set the color to the one we want, and include opacity
         Color colorToUse = new Color(COLORS[0], COLORS[1], COLORS[2], currentBrightness*MAX_OPACITY);
 

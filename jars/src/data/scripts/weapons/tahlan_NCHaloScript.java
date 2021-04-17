@@ -48,6 +48,8 @@ public class tahlan_NCHaloScript implements EveryFrameWeaponEffectPlugin {
         }
 
 
+        //Brightness clamp, cause there's some weird cases with flux level > 1f, I guess
+        currentBrightness = Math.max(0f,Math.min(currentBrightness,1f));
 
         //Now, set the color to the one we want, and include opacity
         Color colorToUse = new Color(COLOR_OVERDRIVE[0], COLOR_OVERDRIVE[1], COLOR_OVERDRIVE[2], currentBrightness * MAX_OPACITY);

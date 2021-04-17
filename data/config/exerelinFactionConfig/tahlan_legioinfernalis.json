@@ -57,11 +57,11 @@
 	},
 	
 	"maxRelationships":{ 
-		"default":0.5, 
+		"default":0, 
 		"hegemony":-0.5, 
 		"diableavionics":1,
 		"pirates":1,
-		"player":1,
+		"player":0.1,
 		"junk_pirates":1,
 		"syndicate_asp":1,
 	},

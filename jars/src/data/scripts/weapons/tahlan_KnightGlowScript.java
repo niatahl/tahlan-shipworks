@@ -18,8 +18,6 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
     private static final float TRIGGER_PERCENTAGE = 0.3f;
     private boolean overdrive = false;
 
-    private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 80);
-
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         if (Global.getCombatEngine().isPaused()) {
@@ -41,13 +39,8 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
             currentBrightness = Math.max(currentBrightness, ship.getSystem().getEffectLevel());
         }
 
-        //No glows on wrecks
-        if ( ship.isPiece() || !ship.isAlive() ) {
-            currentBrightness = 0f;
-        }
-
-        //Glows off in refit screen
-        if (ship.getOriginalOwner() == -1) {
+        //No glows on wrecks or in refit
+        if ( ship.isPiece() || !ship.isAlive() || ship.getOriginalOwner() == -1) {
             currentBrightness = 0f;
         }
 
@@ -57,6 +50,9 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         } else {
             weapon.getAnimation().setFrame(0);
         }
+
+        //Brightness clamp, cause there's some weird cases with flux level > 1f, I guess
+        currentBrightness = Math.max(0f,Math.min(currentBrightness,1f));
 
         //Now, set the color to the one we want, and include opacity
         Color colorToUse = new Color(COLOR_NORMAL[0], COLOR_NORMAL[1], COLOR_NORMAL[2], currentBrightness*MAX_OPACITY);

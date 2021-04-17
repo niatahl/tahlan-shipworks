@@ -238,7 +238,7 @@
 		},
 		"posts":{
 			"patrolCommander":{"name":"Captain"},
-			"fleetCommander":{"name":""},
+			"fleetCommander":{"name":"Lord"},
 			"baseCommander":{"name":"High Lord"},
 			"administrator":{"name":"Imperator"},
 		},

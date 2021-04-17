@@ -93,11 +93,12 @@ public class tahlan_Adlerauge extends BaseHullMod {
             glOrtho(0.0, Display.getWidth(), 0.0, Display.getHeight(), -1.0, 1.0);
             glEnable(GL_TEXTURE_2D);
             glEnable(GL_BLEND);
-            final float radius = (EFFECT_RANGE * 2f) / view.getViewMult();
+            float scale = Global.getSettings().getScreenScaleMult();
+            final float radius = (EFFECT_RANGE * 2f) * scale / view.getViewMult();
             sprite.setSize(radius, radius);
             sprite.setColor(COLOR);
             sprite.setAlphaMult(0.1f);
-            sprite.renderAtCenter(view.convertWorldXtoScreenX(loc.x), view.convertWorldYtoScreenY(loc.y));
+            sprite.renderAtCenter(view.convertWorldXtoScreenX(loc.x) * scale, view.convertWorldYtoScreenY(loc.y) * scale);
             sprite.setAngle(rotation);
             glPopMatrix();
             glPopAttrib();

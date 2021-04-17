@@ -36,7 +36,7 @@ public class zen_ForwardBoostStats extends BaseShipSystemScript {
         }
         if (reverseScale > 1f) {
             /* Going backwards */
-            penalty = (MAX_SPEED_BONUS + ((reverseScale - 1f) * MAX_SPEED_PENALTY))*effectLevel;
+            penalty = ((reverseScale - 1f) * MAX_SPEED_PENALTY)*effectLevel;
         } else {
             /* Going forwards */
             penalty = reverseScale * MAX_SPEED_BONUS * effectLevel;

@@ -6,7 +6,7 @@ tahlan_Caliver_bomber_wing,tahlan_Caliver_bomber,"bomber10, bomber, mid, tahlan_
 tahlan_Dikaiosyne_drone_wing,tahlan_Dikaiosyne_drone,"no_drop, no_sell, high",0,,1,0,V,0,500,,2,SUPPORT,Drone,5,2000,,,,,,,,,,,,,223
 tahlan_Fragmenta_drone_wing,tahlan_Fragmenta_drone,"high, no_drop, no_sell",0,,5,0,CLAW,4000,500,,5,FIGHTER,Drone,5,99999,,,,,,,,,,,,,227
 tahlan_Prim_drone_wing,tahlan_Prim_drone,"high, no_drop, no_sell",0,,5,0,CLAW,4000,500,,6,INTERCEPTOR,Drone,5,99999,,,,,,,,,,,,,228
-tahlan_Scoralis_bomber_wing,tahlan_Scoralis_bomber,"bomber7, bomber, mid, tahlan_knight_bp, tahlan_knights",3,0.2,5,16,V,4000,2000,700,1,BOMBER,Heavy Bomber,18,25000,,,,,,,,,,,,,230
+tahlan_Scoralis_bomber_wing,tahlan_Scoralis_bomber,"bomber7, bomber, mid, tahlan_knight_bp, tahlan_knights",3,0.2,5,16,V,4000,1500,700,1,BOMBER,Heavy Bomber,18,25000,,,,,,,,,,,,,230
 tahlan_turrmy_drone_wing,tahlan_turrmy_drone,"no_drop, no_sell, low",3,,6,0,BOX,0,200,,2,SUPPORT,Anti Fighter?,18,6000,,,,,,,,,,,,,19
 tahlan_Valacor_hunter_wing,tahlan_Valacor_hunter,"fighter6, fighter, high, tahlan_knights, tahlan_knight_bp",3,0.2,5,14,V,4000,450,,2,FIGHTER,Hunter,10,15000,,,,,,,,,,,,,229
 tahlan_dorn_funnel_wing,tahlan_dorn_funnel,"mid, support1, fighter, no_drop, no_sell, tahlan_jagd_bp",0,,2,2,CLAW,3000,500,,6,SUPPORT,Funnel,5,10000,,,,,,,,,,,,,227
