@@ -108,10 +108,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         //Legio things
         if (ENABLE_LEGIO) {
 
-            if (!haveNexerelin) {
-                //Legio Infernalis relations
-                tahlan_FactionRelationPlugin.initFactionRelationships(sector);
-            }
+            //Legio Infernalis relations
+            tahlan_FactionRelationPlugin.initFactionRelationships(sector);
 
             //Adding Legio to bounty system
             SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");

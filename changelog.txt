@@ -1,3 +1,15 @@
+0.6a
+- Fixed Poltergeist missing description
+- Fixed Castigator (LI) still having old shield stats
+- Fixed Doominator phase cloak still causing overloads
+- Project Silk
+	- Doubled damage
+	- Yes
+	- Did nerf rate of fire
+	- a bit
+- Fixed Legio not getting their relations set properly
+
+
 0.6
 - Various bugfixes
 - Further 0.95a compatibility adjustments

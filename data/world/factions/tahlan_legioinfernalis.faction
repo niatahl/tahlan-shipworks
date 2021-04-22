@@ -167,8 +167,8 @@
 		"carriers":1,
 		"phaseShips":1,
 		
-		"officerQuality":3,
-		"shipQuality":4,
+		"officerQuality":5,
+		"shipQuality":5,
 		"numShips":3,
 		
 		"shipSize":3,
@@ -182,7 +182,11 @@
 
 		"commanderSkillsShuffleProbability":0,
 		"commanderSkills":[
+			"crew_training",
 			"officer_management",
+			"coordinated_maneuvers",			
+			"flux_regulation",
+			"electronic_warfare",
 		],
 	},
 	"illegalCommodities":[
@@ -244,26 +248,25 @@
 		},
 	},
 	"custom":{
-		"offersCommissions":true,
+		"offersCommissions":true,		
+		"engagesInHostilities":true,
 		"engageWhenEvenStrength":true,
+		"buysAICores":true,
+		"AICoreValueMult":2,
+		"AICoreRepMult":0.5,
 		"exemptFromFoodShortages":true,
 		"willTradeWhenHostile":false,
-		"ignoreTradeWithEnemiesForReputation":true,
+		"ignoreTradeWithEnemiesForReputation":false,
 		"postsNoBounties":false,
 		"offerMissionsWhenHostile":false,
-		"allowsTransponderOffTrade":true,
+		"allowsTransponderOffTrade":false,
 		"patrolsHaveNoPatrolMemoryKey":true,
 		"pirateBehavior":false, # for fleet behavior
 		#"makesPirateBases":true,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
-		#"pirateBaseStationTypes":{
-		#	"orbitalstation":10,
-		#	"orbitalstation_mid":6,
-		#	"orbitalstation_high":2,
-		#},
 		"punitiveExpeditionData":{
-			"vsCompetitors":false,
-			"vsFreePort":false,
+			"vsCompetitors":true,
+			"vsFreePort":true,
 			"canBombard":true,
 			"territorial":true,
 		},

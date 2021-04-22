@@ -8,6 +8,8 @@
 	"runScriptWhileIdle":true,  # this means unapply() never gets called
 	"blockActionsWhileChargingDown":false,
 	
+	"canNotCauseOverload":true,
+	
 	"phaseHighlight":"_glow1",
 	"phaseDiffuse":"_glow2",
 	
