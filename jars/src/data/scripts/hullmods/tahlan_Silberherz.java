@@ -7,12 +7,11 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_Silberherz extends BaseHullMod {
 
@@ -118,7 +117,7 @@ public class tahlan_Silberherz extends BaseHullMod {
 		if (index == 2) return txt("hmd_silberherz1");
 		if (index == 3) return "" + (int)((BUFF_FACTOR-1f)*100f) + txt("%");
 		//if (index == 4) return txt("hmd_silberherz2");
-		if (index == 4) return txt("hmd_silberherz3");
+		//if (index == 4) return txt("hmd_silberherz3");
 		if (index == 5) return txt("hmd_silberherz4");
 		if (index == 6) return txt("hmd_silberherz5");
 		if (index == 7) return txt("hmd_silberherz6");

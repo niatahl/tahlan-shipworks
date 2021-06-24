@@ -139,8 +139,9 @@ public class tahlan_VolatileDissipation extends BaseHullMod {
                             LIGHTNING_CORE_COLOR, //Central color
                             LIGHTNING_FRINGE_COLOR //Fringe Color
                     );
-
+                    validTargets.clear();
                 }
+                vents.clear();
             }
         }
 
@@ -158,7 +159,7 @@ public class tahlan_VolatileDissipation extends BaseHullMod {
                 return;
             }
 
-            if ( ship.getFluxTracker().getFluxLevel()<0.5 && AIUtils.getNearbyEnemies(ship, maxRange)!=null) {
+            if ( ship.getFluxTracker().getFluxLevel()<0.5 && !AIUtils.getNearbyEnemies(ship, maxRange).isEmpty()) {
                 return;
             }
 

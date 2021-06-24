@@ -3,7 +3,7 @@
     "skinHullId":"tahlan_stahlherz_e",
     "hullName":"Silberblut Regalia Kfg.E",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration D. Incredible burst potential",
+    "descriptionPrefix":"Alternate configuration E. Incredible burst potential",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,

@@ -1,0 +1,66 @@
+{
+    "displayName": "Lancer",
+    "fluxCapacitors": 29,
+    "fluxVents": 50,
+    "hullId": "tahlan_skyrend",
+    "hullMods": [
+        "targetingunit",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_skyrend_lancer",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hil",
+                "WS0002": "hil"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "hveldriver",
+                "WS0004": "hveldriver",
+                "WS0005": "hveldriver",
+                "WS0006": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "railgun",
+                "WS0014": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "lrpdlaser",
+                "WS0008": "lrpdlaser",
+                "WS0009": "lrpdlaser",
+                "WS0010": "lrpdlaser",
+                "WS0011": "lrpdlaser",
+                "WS0012": "lrpdlaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0015": "pdlaser",
+                "WS0016": "pdlaser"
+            }
+        }
+    ],
+    "wings": [
+        "thunder_wing",
+        "thunder_wing"
+    ]
+}

@@ -4,15 +4,10 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 import java.awt.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 import static java.lang.Math.round;
 
 public class tahlan_AdMechRefit extends BaseHullMod {
@@ -23,9 +18,6 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 	private static final float ENERGY_AMP = 0.3f;
 	private static final float RANGE_BONUS = 200f;
 
-	private final String INNERLARGE = "graphics/tahlan/fx/tahlan_tempshield.png";
-	private final String MS_ID = "tahlan_AdMechRefitID";
-	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
 		stats.getArmorBonus().modifyFlat(id,ARMOR_BONUS);
@@ -38,6 +30,7 @@ public class tahlan_AdMechRefit extends BaseHullMod {
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
 		if (ship.getShield() != null) {
+			String INNERLARGE = "graphics/tahlan/fx/tahlan_tempshield.png";
 			ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, INNERLARGE);
 		}
     }
@@ -51,7 +44,8 @@ public class tahlan_AdMechRefit extends BaseHullMod {
 
         float power = Math.min((ship.getFluxLevel() / 0.90f), 1f);
 
-        ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(MS_ID,1+ENERGY_AMP*power);
+		String MS_ID = "tahlan_AdMechRefitID";
+		ship.getMutableStats().getEnergyWeaponDamageMult().modifyMult(MS_ID,1+ENERGY_AMP*power);
         ship.getMutableStats().getBallisticWeaponDamageMult().modifyMult(MS_ID,1+WEAPON_AMP*power);
         ship.getMutableStats().getEnergyRoFMult().modifyMult(MS_ID,1-ENERGY_AMP*power);
         ship.getMutableStats().getBallisticRoFMult().modifyMult(MS_ID,1-WEAPON_AMP*power);

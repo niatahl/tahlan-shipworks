@@ -1,0 +1,60 @@
+{
+    "displayName": "Strike",
+    "fluxCapacitors": 28,
+    "fluxVents": 50,
+    "hullId": "tahlan_skyrend",
+    "hullMods": [
+        "targetingunit",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_skyrend_strike",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tachyonlance",
+                "WS0002": "tachyonlance"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "heavyneedler",
+                "WS0004": "heavyneedler",
+                "WS0005": "heavyneedler",
+                "WS0006": "heavyneedler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "lightneedler",
+                "WS0014": "lightneedler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "pdlaser",
+                "WS0008": "pdlaser",
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser",
+                "WS0011": "pdlaser",
+                "WS0012": "pdlaser",
+                "WS0015": "pdlaser",
+                "WS0016": "pdlaser"
+            }
+        }
+    ],
+    "wings": [
+        "longbow_wing",
+        "longbow_wing"
+    ]
+}

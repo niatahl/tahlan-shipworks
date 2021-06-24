@@ -17,7 +17,7 @@ Due to high power needs, all these effects are %s and the delicate nature of the
 Advanced Ballistic Interface,tahlan_advballistics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdvBallistics,Enhanced mounts reduce the ordnance point cost of ballistic weapons by %s.,Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
 Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_BroadsideMounts,"The weapon mounts on this ship have been hardened to better withstand the stresses of broadside engagements.
 
-Weapon mount health is increased by %s and repairs are sped up by %s.",Hardens weapon mounts,graphics/hullmods/armored_weapon_emplacements.png
+Weapon mount health is increased by %s and repairs are sped up by %s. Reduces OP cost of large mount weaponry by %s.",Hardens weapon mounts,graphics/hullmods/armored_weapon_emplacements.png
 Forced Overdrive,tahlan_forcedoverdrive,,0.5,,"shields, offensive",,10000,,,,4,8,14,20,data.scripts.hullmods.tahlan_ForcedOverdrive,"An unusual modification for Kassadari hulls and refits, redirecting power from the shields to the Temporal Conduit Grid, allowing for a %s. To at least partially counteract the loss of shields, the saved weight of a missing shield generator is used to instead mount additional armor plating %s.
 
 (Can only be applied to Kassadari ships)",Sacrifices shields for permanent overdrive activation.,graphics/tahlan/hullmods/tahlan_knightrefit.png
@@ -36,9 +36,7 @@ Infernalis Drives,tahlan_lirefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahl
 
 %s.",Improved drives,graphics/tahlan/hullmods/tahlan_lirefit.png
 Escape Afterburners,tahlan_afterburners,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Afterburners,Grants a boost to mobility once missile ordnance has been depleted,Grants a boost to mobility once missile ordnance has been depleted,
-Parallel Targeting Core,tahlan_paralleltargeting,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_ParallelTargetingUnit,"A specialized targeting core, optimized to equalize weapon ranges. Increases the range of non-missile weapons by %s for non-PD and %s for PD weapons up to a range of %s, after which its effect falls to %s effectiveness.
-
-Incompatible with Integrated Targeting Unit and Dedicated Targeting Core.",Increases weapon range,graphics/tahlan/hullmods/tahlan_paralleltargeting.png
+Parallel Targeting Core,tahlan_paralleltargeting,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_ParallelTargetingUnit,A secondary targeting core for secondary weaponry. Increases the base range of small non-missile weapons by %s for non-PD and %s for PD weapons.,Increases small weapon range,graphics/tahlan/hullmods/tahlan_paralleltargeting.png
 Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VundAutoforge,"This ship contains a large autoforge passively producing missile ammunition during combat. Restores %s of every missile weapon's base maximum ammunition %s.  
 
 Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
@@ -94,4 +92,5 @@ Vent Weapon Boost,tahlan_ventweaponboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.h
 Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_RealityGlitch,(Hidden) Randomly phases and repairs some armor,(Hidden) Randomly phases and repairs some armor,
 Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_10pctCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
 Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_CreepyFog,(Hidden) Adds spooky fog to a ship,(Hidden) Adds spooky fog to a ship,
+Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
 ,,,,,,,,,,,,,,,,,,

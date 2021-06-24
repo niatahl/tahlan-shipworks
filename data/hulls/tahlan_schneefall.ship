@@ -4,7 +4,7 @@
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/tahlan/ships/ma/tahlan_schneefall.png",
   "style": "TAHLAN_RR_TECH",
-  "height": 427,
+  "height": 428,
   "width": 266,
   "center": [133, 213.5],
   "collisionRadius": 242.5,
@@ -15,6 +15,9 @@
     "tahlan_adlerauge",
     "hiressensors"
   ],
+  "builtInWeapons": {
+    "WS0021": "tahlan_adlerauge"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -221,6 +224,15 @@
         -25.5, 93.5,
         -24.5, 71
       ]
+    },
+    {
+      "id": "WS0021",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 100,
+      "angle": -1.5,
+      "locations": [12.5, -0]
     }
   ],
   "engineSlots": [
@@ -370,7 +382,7 @@
     },
     {
       "location": [-82.5, 92],
-      "length": 16.5,
+      "length": 17.5,
       "width": 17,
       "angle": 180,
       "contrailSize": 17,
@@ -378,7 +390,7 @@
     },
     {
       "location": [-82.5, -92],
-      "length": 16.5,
+      "length": 17.5,
       "width": 17,
       "angle": -180,
       "contrailSize": 17,

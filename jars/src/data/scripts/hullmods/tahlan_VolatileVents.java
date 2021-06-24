@@ -109,8 +109,9 @@ public class tahlan_VolatileVents extends BaseHullMod {
                             LIGHTNING_CORE_COLOR, //Central color
                             LIGHTNING_FRINGE_COLOR //Fringe Color
                     );
-
+                    validTargets.clear();
                 }
+                vents.clear();
             }
         }
     }

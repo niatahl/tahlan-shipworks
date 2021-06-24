@@ -108,6 +108,9 @@
 		"tahlan_providence_assault":4,
 		"tahlan_providence_artillery":3,
 		"tahlan_providence_brawler":3,
+		"tahlan_skyrend_lancer":3,
+		"tahlan_skyrend_combat":4,
+		"tahlan_skyrend_strike":3,
 	},
 	
 	
@@ -163,6 +166,8 @@
 		"tahlan_Dominator_PH_overdriven":2,
 		"tahlan_Dominator_PH_striker":4,
 		"tahlan_Dominator_PH_sabot":4,
+		"tahlan_Poltergeist_strike":5,
+		"tahlan_Poltergeist_standard":5,
 	},
 	"phaseCapital":{
 	},

@@ -102,6 +102,8 @@ public class tahlan_LostechSpawnScript {
                 //Now, simply spawn the ship in the spawn location
                 boolean recoverable = Math.random()>0.9f;
 
+                boolean actuallySpawn = Math.random()>0.5f;
+
                 float condition = (float)Math.random();
                 ShipRecoverySpecial.ShipCondition shipCondition;
                 if (condition < 0.3) {
@@ -114,9 +116,11 @@ public class tahlan_LostechSpawnScript {
                     shipCondition = ShipRecoverySpecial.ShipCondition.GOOD;
                 }
 
-                addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
+                if (actuallySpawn) {
+                    addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
+                    LOGGER.info("Spawned LosTech Derelict in " + system.getId());
+                }
 
-                LOGGER.info("Spawned LosTech Derelict in " + system.getId());
                 numberOfSpawns++;
             }
         }

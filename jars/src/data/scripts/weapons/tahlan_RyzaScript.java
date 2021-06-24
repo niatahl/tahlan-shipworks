@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.plugins.MagicFakeBeamPlugin;
 import data.scripts.plugins.MagicTrailPlugin;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
@@ -27,6 +28,10 @@ public class tahlan_RyzaScript implements EveryFrameWeaponEffectPlugin {
     private static final Color GLOW_COLOR = new Color(75, 159, 255, 50);
     private static final Color FLASH_COLOR = new Color(227, 255, 253);
     private static final int NUM_PARTICLES = 30;
+
+    public static final float BEAM_WIDTH = 8f;
+    public static final Color BEAM_CORE = new Color(19, 206, 255);
+    public static final Color BEAM_FRINGE = new Color(19, 206, 255).darker();
 
     private final String CHARGE_SOUND_ID = "tahlan_ryza_charge";
 
@@ -85,6 +90,22 @@ public class tahlan_RyzaScript implements EveryFrameWeaponEffectPlugin {
                 Global.getSoundPlayer().playSound(CHARGE_SOUND_ID, 1f, 1f, weapon.getLocation(), weapon.getShip().getVelocity());
                 runOnce = false;
             }
+
+            /*
+            float fadeDuration = 0f;
+            float angle = weapon.getCurrAngle();
+            float muzzle = weapon.getSpec().getTurretFireOffsets().get(0).getX();
+            Vector2f weaponLoc = weapon.getLocation();
+            float x = weaponLoc.x + 5f;
+            float y = weaponLoc.y - 1f;
+            Vector2f offset = new Vector2f(x, y);
+            Vector2f from = VectorUtils.rotateAroundPivot(offset, weapon.getLocation(), angle);
+            float length = 500f;
+
+            MagicFakeBeamPlugin.addBeam(0f, fadeDuration, BEAM_WIDTH, from, angle, length, BEAM_CORE, BEAM_FRINGE);
+            engine.addHitParticle(from,weapon.getShip().getVelocity(),60f,chargelevel*0.5f,BEAM_CORE);
+            */
+
         }
 
         //Firing visuals

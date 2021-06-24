@@ -5,7 +5,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
 

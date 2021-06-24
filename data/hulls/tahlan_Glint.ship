@@ -1,361 +1,254 @@
 {
-  "bounds": [
-    -99.5,
-    33.5,
-    -83,
-    77,
-    -35,
-    103.5,
-    25.5,
-    81,
-    34,
-    63.5,
-    75.5,
-    53.5,
-    75,
-    43.5,
-    50.5,
-    42.5,
-    93,
-    32,
-    108,
-    16,
-    102.5,
-    9,
-    25,
-    10.5,
-    -9,
-    22.5,
-    15,
-    0.5,
-    -9,
-    -21.5,
-    25,
-    -9.5,
-    102.5,
-    -8,
-    108,
-    -15,
-    93,
-    -31,
-    50.5,
-    -41.5,
-    75,
-    -42.5,
-    75.5,
-    -52.5,
-    34,
-    -62.5,
-    25.5,
-    -80,
-    -35,
-    -102.5,
-    -83,
-    -76,
-    -99.5,
-    -33.5,
-    -66,
-    -14,
-    -66,
-    14
-  ],
+  "hullName": "Glint",
+  "hullId": "tahlan_Glint",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/tahlan_Glint.png",
+  "style": "HIGH_TECH",
+  "height": 221,
+  "width": 210,
+  "center": [105, 104],
+  "collisionRadius": 154.5,
+  "shieldCenter": [0.5, -0],
+  "shieldRadius": 140,
+  "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyenergy"
   ],
-  "center": [
-    105,
-    104.5
-  ],
-  "collisionRadius": 154.5,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 19,
-      "length": 35.5,
-      "location": [
-        -85,
-        70.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 19
-    },
-    {
-      "angle": -180,
-      "contrailSize": 19,
-      "length": 35.5,
-      "location": [
-        -85,
-        -70.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 19
-    },
-    {
-      "angle": 180,
-      "contrailSize": 13,
-      "length": 39.5,
-      "location": [
-        -95,
-        54
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    },
-    {
-      "angle": -180,
-      "contrailSize": 13,
-      "length": 39.5,
-      "location": [
-        -95,
-        -54
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    },
-    {
-      "angle": 180,
-      "contrailSize": 13,
-      "length": 39.5,
-      "location": [
-        -95,
-        45.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    },
-    {
-      "angle": -180,
-      "contrailSize": 13,
-      "length": 39.5,
-      "location": [
-        -95,
-        -45.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    },
-    {
-      "angle": 180,
-      "contrailSize": 128,
-      "length": 18.5,
-      "location": [
-        -69,
-        8.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 5
-    },
-    {
-      "angle": -180,
-      "contrailSize": 128,
-      "length": 18.5,
-      "location": [
-        -69,
-        -8.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 5
-    },
-    {
-      "angle": 180,
-      "contrailSize": 128,
-      "length": 22.5,
-      "location": [
-        -70,
-        2.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 6
-    },
-    {
-      "angle": -180,
-      "contrailSize": 128,
-      "length": 22.5,
-      "location": [
-        -70,
-        -2.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 6
-    },
-    {
-      "angle": 167,
-      "contrailSize": 13,
-      "length": 39.5,
-      "location": [
-        -65,
-        88
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    },
-    {
-      "angle": -167,
-      "contrailSize": 13,
-      "length": 39.5,
-      "location": [
-        -65,
-        -88
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    },
-    {
-      "angle": 169.5,
-      "contrailSize": 128,
-      "length": 36.5,
-      "location": [
-        -79,
-        81.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 9
-    },
-    {
-      "angle": -169.5,
-      "contrailSize": 128,
-      "length": 36.5,
-      "location": [
-        -79,
-        -81.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 9
-    }
-  ],
-  "height": 221,
-  "hullId": "tahlan_Glint",
-  "hullName": "Glint",
-  "hullSize": "CRUISER",
-  "shieldCenter": [
-    0,
-    -0
-  ],
-  "shieldRadius": 140,
-  "spriteName": "graphics/tahlan/ships/tahlan_Glint.png",
-  "style": "HIGH_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 33.5,
-      "arc": 96,
       "id": "WS0001",
-      "locations": [
-        -35.5,
-        80
-      ],
-      "mount": "TURRET",
       "size": "LARGE",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -33.5,
+      "type": "ENERGY",
+      "mount": "TURRET",
       "arc": 96,
+      "angle": 33.5,
+      "locations": [-35, 80]
+    },
+    {
       "id": "WS0002",
-      "locations": [
-        -35.5,
-        -80
-      ],
-      "mount": "TURRET",
       "size": "LARGE",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 96,
+      "angle": -33.5,
+      "locations": [-35, -80]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0003",
-      "locations": [
-        31.5,
-        73
-      ],
-      "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": -0,
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
       "arc": 5,
-      "id": "WS0004",
-      "locations": [
-        31.5,
-        -73
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": 143.5,
-      "arc": 125,
-      "id": "WS0005",
-      "locations": [
-        -53.5,
-        39
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -143.5,
-      "arc": 125,
-      "id": "WS0006",
-      "locations": [
-        -53.5,
-        -39
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -25,
-      "arc": 125,
-      "id": "WS0007",
-      "locations": [
-        80.5,
-        -21
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": 25,
-      "arc": 125,
-      "id": "WS0008",
-      "locations": [
-        80.5,
-        21
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
       "angle": 0,
-      "arc": 5,
-      "id": "WS0009",
-      "locations": [
-        111.5,
-        24
-      ],
-      "mount": "HARDPOINT",
-      "size": "SMALL",
-      "type": "SYNERGY"
+      "locations": [32, 73]
     },
     {
-      "angle": -0,
-      "arc": 5,
-      "id": "WS0010",
-      "locations": [
-        111.5,
-        -24
-      ],
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "MISSILE",
       "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [32, -73]
+    },
+    {
+      "id": "WS0005",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": 143.5,
+      "locations": [-53, 39]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": -143.5,
+      "locations": [-53, -39]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": -25,
+      "locations": [81, -21]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 125,
+      "angle": 25,
+      "locations": [81, 21]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [112, 24]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [112, -24]
     }
   ],
-  "width": 210
+  "engineSlots": [
+    {
+      "location": [-84.5, 70.5],
+      "length": 35.5,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-84.5, -70.5],
+      "length": 35.5,
+      "width": 19,
+      "angle": -180,
+      "contrailSize": 19,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-94.5, 54],
+      "length": 39.5,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-94.5, -54],
+      "length": 39.5,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-94.5, 45.5],
+      "length": 39.5,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-94.5, -45.5],
+      "length": 39.5,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-68.5, 8.5],
+      "length": 18.5,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-68.5, -8.5],
+      "length": 18.5,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-69.5, 2.5],
+      "length": 22.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-69.5, -2.5],
+      "length": 22.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-64.5, 88],
+      "length": 39.5,
+      "width": 13,
+      "angle": 167,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-64.5, -88],
+      "length": 39.5,
+      "width": 13,
+      "angle": -167,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-78.5, 81.5],
+      "length": 36.5,
+      "width": 9,
+      "angle": 169.5,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-78.5, -81.5],
+      "length": 36.5,
+      "width": 9,
+      "angle": -169.5,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -99, 33.5,
+    -82.5, 77,
+    -34.5, 103.5,
+    26, 81,
+    34.5, 63.5,
+    76, 53.5,
+    75.5, 43.5,
+    51, 42.5,
+    93.5, 32,
+    108.5, 16,
+    103, 9,
+    25.5, 10.5,
+    -8.5, 22.5,
+    15.5, 0.5,
+    -8.5, -21.5,
+    25.5, -9.5,
+    103, -8,
+    108.5, -15,
+    93.5, -31,
+    51, -41.5,
+    75.5, -42.5,
+    76, -52.5,
+    34.5, -62.5,
+    26, -80,
+    -34.5, -102.5,
+    -82.5, -76,
+    -99, -33.5,
+    -65.5, -14,
+    -65.5, 14
+  ]
 }

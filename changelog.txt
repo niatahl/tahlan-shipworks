@@ -1,13 +1,60 @@
+0.7a
+- Plucked a memory leak or two, probably
+- Skybreak
+	- Changed front medium turrets to energy
+
+0.7
+- Added Skybreak-class Battlecruiser
+- Izanami
+	- Sprite overhaul (with lovely assistance from Alfonzo)
+	- Redone mount layout
+- Nibelung
+	- Reworked Parallel Targeting Core. Now boost small mount ranges only.
+	- Effect of HBI has been rolled into Broadside mounts. Now also affects large energies.
+	- Increased OP by 20 (It no longer comes with a free overall range increase hullmod)
+- Shiva
+	- Increased dps from 600 to 800
+	- Lowered efficiency from about 0.8 to 0.9
+- Kodai
+	- The angled side thrusters now act as system thrusters
+- Scathach
+	- Lowered dissipation from 1200 to 1000
+	- Lowered armor from 1700 to 1500
+	- Increased system cooldown from 10s to 15s
+- Timeless
+	- Lowered DP from 55 to 50
+- Nameless
+	- Lowered DP from 25 to 15
+- Did some cleanup
+
+
 0.6a
-- Fixed Poltergeist missing description
-- Fixed Castigator (LI) still having old shield stats
-- Fixed Doominator phase cloak still causing overloads
+- Poltergeist
+	- fixed missing description
+	- actually spawns properly now
+	- added missing hullmods
 - Project Silk
 	- Doubled damage
 	- Yes
 	- Did nerf rate of fire
 	- a bit
+- Darnus
+	- Increased DP from 10 to 13
+- Blockhead
+	- Changed Damper Field to Heavy Damper Field
+- Castigator
+	- UTPCs renamed to Thermal Blast Cannons
+	- Efficiency increased to 1.0
+- Onslaught (GH)
+	- UTPCs renamed to Heavy Thermal Blast Cannons
+	- Efficiency increased to 0.8
+- Enforcer (GH)
+	- Updated stats to new Enforcer stats
+- Renamed Cobalt to Cordite due to name overlap
 - Fixed Legio not getting their relations set properly
+- Fixed Castigator (LI) still having old shield stats
+- Fixed Doominator phase cloak still causing overloads
+- Adjusted values of some blueprint packages
 
 
 0.6

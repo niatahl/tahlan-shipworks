@@ -1,375 +1,239 @@
 {
-  "bounds": [
-    -65.5,
-    -3.5,
-    -88,
-    -7,
-    -90,
-    -30,
-    -62,
-    -39.5,
-    -55,
-    -70,
-    -48,
-    -74.5,
-    -44.5,
-    -87.5,
-    -20.5,
-    -102,
-    -6.5,
-    -58,
-    21,
-    -45,
-    112,
-    -23,
-    83,
-    -3.5,
-    72,
-    -2.5,
-    72,
-    2.5,
-    83,
-    3.5,
-    112,
-    23,
-    21,
-    45,
-    -6.5,
-    58,
-    -20.5,
-    102,
-    -44.5,
-    87.5,
-    -48,
-    74.5,
-    -55,
-    70,
-    -62,
-    39.5,
-    -90,
-    30,
-    -88,
-    7,
-    -65.5,
-    3.5
-  ],
+  "hullName": "Izanami",
+  "hullId": "tahlan_Izanami",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/tahlan_Izanami.png",
+  "style": "TAHLAN_GH_TECH",
+  "height": 206,
+  "width": 208,
+  "center": [104, 92.5],
+  "collisionRadius": 148,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 137,
+  "viewOffset": 0,
   "builtInMods": [
     "tahlan_knightrefit",
     "tahlan_temporaltraveldrive"
   ],
   "builtInWeapons": {
+    "WS0008": "tahlan_izanami_cover",
     "WS0011": "tahlan_izanami_glow",
     "WS0013": "tahlan_nuboko_l",
     "WS0014": "tahlan_nuboko_r"
   },
-  "center": [
-    104,
-    92.5
-  ],
-  "collisionRadius": 148,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 18,
-      "length": 3,
-      "location": [
-        -89.5,
-        13.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 18
-    },
-    {
-      "angle": -180,
-      "contrailSize": 18,
-      "length": 3,
-      "location": [
-        -89.5,
-        -13.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 18
-    },
-    {
-      "angle": 171,
-      "contrailSize": 16.790703,
-      "length": 1,
-      "location": [
-        -56,
-        65
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 10
-    },
-    {
-      "angle": -171,
-      "contrailSize": 16.790703,
-      "length": 1,
-      "location": [
-        -56,
-        -65
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 10
-    },
-    {
-      "angle": 180,
-      "contrailSize": 5,
-      "length": 14,
-      "location": [
-        -89.5,
-        20
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5
-    },
-    {
-      "angle": -180,
-      "contrailSize": 5,
-      "length": 14,
-      "location": [
-        -89.5,
-        -20
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5
-    },
-    {
-      "angle": 180,
-      "contrailSize": 5,
-      "length": 14,
-      "location": [
-        -89.5,
-        8
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5
-    },
-    {
-      "angle": -180,
-      "contrailSize": 5,
-      "length": 14,
-      "location": [
-        -89.5,
-        -8
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5
-    },
-    {
-      "angle": 168,
-      "contrailSize": 16.836422,
-      "length": 1,
-      "location": [
-        -60,
-        49
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 10
-    },
-    {
-      "angle": -168,
-      "contrailSize": 16.836422,
-      "length": 1,
-      "location": [
-        -60,
-        -49
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 10
-    },
-    {
-      "angle": 171,
-      "contrailSize": 16.790703,
-      "length": 1,
-      "location": [
-        -58,
-        57
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 10
-    },
-    {
-      "angle": -171,
-      "contrailSize": 16.790703,
-      "length": 1,
-      "location": [
-        -58,
-        -57
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 10
-    }
-  ],
-  "height": 206,
-  "hullId": "tahlan_Izanami",
-  "hullName": "Izanami",
-  "hullSize": "CRUISER",
-  "shieldCenter": [
-    0,
-    -0
-  ],
-  "shieldRadius": 137,
-  "spriteName": "graphics/tahlan/ships/tahlan_Izanami.png",
-  "style": "TAHLAN_GH_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 30,
-      "arc": 80,
       "id": "WS0001",
-      "locations": [
-        -38,
-        37.5
-      ],
-      "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "HYBRID"
-    },
-    {
-      "angle": -30,
+      "type": "HYBRID",
+      "mount": "TURRET",
       "arc": 80,
-      "id": "WS0002",
-      "locations": [
-        -38,
-        -37.5
-      ],
-      "mount": "TURRET",
-      "size": "MEDIUM",
-      "type": "HYBRID"
-    },
-    {
       "angle": 30,
-      "arc": 128,
-      "id": "WS0003",
-      "locations": [
-        -8.5,
-        30
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "UNIVERSAL"
+      "locations": [-38, 37.5]
     },
     {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 80,
       "angle": -30,
+      "locations": [-38, -37.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
       "arc": 128,
+      "angle": 30,
+      "locations": [-9.5, 32]
+    },
+    {
       "id": "WS0004",
-      "locations": [
-        -8.5,
-        -30
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "UNIVERSAL"
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 128,
+      "angle": -30,
+      "locations": [-8.5, -30]
     },
     {
-      "angle": 15,
-      "arc": 81,
       "id": "WS0005",
-      "locations": [
-        26.5,
-        18
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "HYBRID"
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 81,
+      "angle": 15,
+	  "renderOrderMod": 100,
+      "locations": [26.5, 18]
     },
     {
-      "angle": -15,
-      "arc": 81,
       "id": "WS0006",
-      "locations": [
-        26.5,
-        -18
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "HYBRID"
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 81,
+      "angle": -15,	  
+	  "renderOrderMod": 100,
+      "locations": [26.5, -18]
     },
     {
-      "angle": 0,
-      "arc": 81,
       "id": "WS0007",
-      "locations": [
-        51.5,
-        14
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "HYBRID"
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [69.5, -0]
     },
     {
-      "angle": -0,
-      "arc": 81,
       "id": "WS0008",
-      "locations": [
-        51.5,
-        -14
-      ],
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
       "mount": "TURRET",
-      "size": "SMALL",
-      "type": "HYBRID"
+      "arc": 0,
+      "angle": 0,
+      "locations": [67.5, -0]
     },
     {
-      "angle": 135,
-      "arc": 128,
       "id": "WS0009",
-      "locations": [
-        -36.5,
-        62
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "HYBRID"
-    },
-    {
-      "angle": -135,
+      "type": "HYBRID",
+      "mount": "TURRET",
       "arc": 128,
+      "angle": 135,
+      "locations": [-36.5, 62]
+    },
+    {
       "id": "WS0010",
-      "locations": [
-        -36.5,
-        -62
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "HYBRID"
-    },
-    {
-      "angle": 0,
-      "arc": 0,
-      "id": "WS0013",
-      "locations": [
-        -21,
-        72.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "BUILT_IN"
-    },
-    {
-      "angle": -0,
-      "arc": 0,
-      "id": "WS0014",
-      "locations": [
-        -21,
-        -72.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "BUILT_IN"
-    },
-    {
-      "angle": 0,
-      "arc": 0,
-      "id": "WS0011",
-      "locations": [
-        10.5,
-        -0
-      ],
+      "type": "HYBRID",
       "mount": "TURRET",
+      "arc": 128,
+      "angle": -135,
+      "locations": [-36.5, -62]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-20, 68.5]
+    },
+    {
+      "id": "WS0014",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-20, -68.5]
+    },
+    {
+      "id": "WS0011",
       "size": "LARGE",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [10.5, -0]
     }
   ],
-  "width": 208
+  "engineSlots": [
+    {
+      "location": [-89.5, 13.5],
+      "length": 45,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-89.5, -13.5],
+      "length": 45,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-56, 65],
+      "length": 1,
+      "width": 10,
+      "angle": 171,
+      "contrailSize": 16.790703,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-56, -65],
+      "length": 1,
+      "width": 10,
+      "angle": -171,
+      "contrailSize": 16.790703,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-60, 49],
+      "length": 1,
+      "width": 10,
+      "angle": 168,
+      "contrailSize": 16.836422,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-60, -49],
+      "length": 1,
+      "width": 10,
+      "angle": -168,
+      "contrailSize": 16.836422,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-58, 57],
+      "length": 1,
+      "width": 10,
+      "angle": 171,
+      "contrailSize": 16.790703,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    },
+    {
+      "location": [-58, -57],
+      "length": 1,
+      "width": 10,
+      "angle": -171,
+      "contrailSize": 16.790703,
+      "style": "TAHLAN_GH_WIDE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -65.5, -3.5,
+    -88, -7,
+    -90, -30,
+    -62, -39.5,
+    -55, -70,
+    -48, -74.5,
+    -44.5, -87.5,
+    -20.5, -102,
+    -6.5, -58,
+    21, -45,
+    112, -23,
+    83, -3.5,
+    72, -2.5,
+    72, 2.5,
+    83, 3.5,
+    112, 23,
+    21, 45,
+    -6.5, 58,
+    -20.5, 102,
+    -44.5, 87.5,
+    -48, 74.5,
+    -55, 70,
+    -62, 39.5,
+    -90, 30,
+    -88, 7,
+    -65.5, 3.5
+  ]
 }

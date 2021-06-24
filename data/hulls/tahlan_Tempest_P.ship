@@ -1,117 +1,86 @@
 {
-  "bounds": [
-    -20.5,
-    -30,
-    36.5,
-    -4.5,
-    45,
-    10,
-    9,
-    19.5,
-    3,
-    31,
-    -36.5,
-    23,
-    -36,
-    12.5,
-    -46,
-    10,
-    -45.5,
-    -9
-  ],
-  "builtInWings": ["tahlan_turrmy_drone_wing"],
+  "hullName": "Tempest (P)",
+  "hullId": "tahlan_Tempest_P",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/tahlan_Tempest_P.png",
+  "style": "HIGH_TECH",
+  "height": 93,
+  "width": 63,
+  "center": [31, 46],
+  "collisionRadius": 77,
+  "shieldCenter": [0.5, -0.5],
+  "shieldRadius": 67.5,
+  "viewOffset": 0,
   "builtInMods": [
     "unstable_injector"
   ],
-  "center": [
-    31.5,
-    46.5
+  "builtInWings": [
+    "tahlan_turrmy_drone_wing"
   ],
-  "collisionRadius": 77,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 10,
-      "length": 53.5,
-      "location": [
-        -46.5,
-        0.5
-      ],
-      "style": "LOW_TECH",
-      "width": 10
-    },
-    {
-      "angle": 180,
-      "contrailSize": 8,
-      "length": 36,
-      "location": [
-        -46.5,
-        6.5
-      ],
-      "style": "LOW_TECH",
-      "width": 8
-    },
-    {
-      "angle": -180,
-      "contrailSize": 8,
-      "length": 36,
-      "location": [
-        -46.5,
-        -6.5
-      ],
-      "style": "LOW_TECH",
-      "width": 8
-    }
-  ],
-  "height": 93,
-  "hullId": "tahlan_Tempest_P",
-  "hullName": "Tempest (P)",
-  "hullSize": "FRIGATE",
-  "shieldCenter": [
-    0,
-    0
-  ],
-  "shieldRadius": 67.5,
-  "spriteName": "graphics/tahlan/ships/tahlan_Tempest_P.png",
-  "style": "HIGH_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 60,
-      "arc": 235,
       "id": "WS0001",
-      "locations": [
-        -1.5,
-        20.5
-      ],
-      "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 235,
+      "angle": 60,
+      "locations": [-1, 20]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0002",
-      "locations": [
-        3.5,
-        -14.5
-      ],
-      "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [4, -15]
     },
     {
-      "angle": -55,
-      "arc": 180,
       "id": "WS0003",
-      "locations": [
-        -20.5,
-        -15.5
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "COMPOSITE"
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -55,
+      "locations": [-20, -16]
     }
   ],
-  "width": 63
+  "engineSlots": [
+    {
+      "location": [-46, 0],
+      "length": 53.5,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-46, 6],
+      "length": 36,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-46, -7],
+      "length": 36,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -20, -30.5,
+    37, -5,
+    45.5, 9.5,
+    9.5, 19,
+    3.5, 30.5,
+    -36, 22.5,
+    -35.5, 12,
+    -45.5, 9.5,
+    -45, -9.5
+  ]
 }

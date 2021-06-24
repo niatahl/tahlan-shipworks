@@ -68,7 +68,7 @@ public class tahlan_StormDriveAI implements ShipSystemAIScript {
     private boolean rightDirection(ShipAPI ship, Vector2f targetLocation) {
         Vector2f curr = ship.getLocation();
         float angleToTarget = VectorUtils.getAngle(curr, targetLocation);
-        return (MathUtils.getShortestRotation(angleToTarget, ship.getFacing()) <= DEGREES);
+        return (Math.abs(MathUtils.getShortestRotation(angleToTarget, ship.getFacing())) <= DEGREES);
     }
 
     private boolean nothingCanStopMe(ShipAPI ship) {

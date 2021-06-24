@@ -47,7 +47,7 @@ public class tahlan_PhiraOnHitEffect implements OnHitEffectPlugin {
                         startSpeed * ((float)i2 / 70f), fizzleConstantSpeed * (1f - (float)i2 / 70f),
                         angle, startAngularVelocity * ((float)i2 / 70f), fizzleConstantAngle * (1f - (float)i2 / 70f), startSize, 0f,
                         colorToUse, colorToUse,0.45f, 0f, 0.5f * ((float)i2 / 70f) * lifetimeMult, 1.1f * ((float)i2 / 70f) * lifetimeMult,
-                        GL_SRC_ALPHA, GL_ONE,500f, 600f, new Vector2f(0f, 0f), null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+                        GL_SRC_ALPHA, GL_ONE,500f, 600f, 0f, new Vector2f(0f, 0f), null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
             }
         }
 

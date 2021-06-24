@@ -1,23 +1,13 @@
 package data.scripts.hullmods;
 
-import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.AsteroidAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.loading.WeaponSlotAPI;
-import com.fs.starfarer.api.util.IntervalUtil;
 import data.scripts.tahlan_ModPlugin;
 import data.scripts.util.MagicIncompatibleHullmods;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.combat.entities.SimpleEntity;
-import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
 import java.util.*;
-import java.util.List;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_HeavyConduits extends BaseHullMod {
 

@@ -1,0 +1,52 @@
+{
+    "displayName": "Strike",
+    "fluxCapacitors": 15,
+    "fluxVents": 0,
+    "hullId": "tahlan_Poltergeist",
+    "hullMods": [
+        "magazines",
+        "missleracks"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Poltergeist_strike",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "harpoonpod",
+                "WS0006": "harpoonpod",
+                "WS0007": "harpoonpod",
+                "WS0008": "harpoonpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "typhoon",
+                "WS0004": "typhoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "ionpulser",
+                "WS0002": "ionpulser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser",
+                "WS0011": "pdlaser",
+                "WS0012": "pdlaser"
+            }
+        }
+    ]
+}

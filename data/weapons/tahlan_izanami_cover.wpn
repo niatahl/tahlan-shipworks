@@ -1,0 +1,48 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "tahlan_izanami_cover",
+  "showDamageWhenDecorative": True,
+  "pixelsPerTexel": 1,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 64,
+  "textureType": ROUGH,  
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_izanami_cover.png",
+  "type": "DECORATIVE",
+  "width": 10
+}

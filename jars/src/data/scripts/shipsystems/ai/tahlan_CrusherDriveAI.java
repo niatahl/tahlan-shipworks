@@ -48,7 +48,7 @@ public class tahlan_CrusherDriveAI implements ShipSystemAIScript {
                         return;
                     }
 
-                    if (target.isFighter() || target.isDrone()) {
+                    if (target.isFighter() || target.isDrone() || target.isStation() || target.isStationModule() || target.getEngineController().isFlamedOut()) {
                         return;
                     }
 

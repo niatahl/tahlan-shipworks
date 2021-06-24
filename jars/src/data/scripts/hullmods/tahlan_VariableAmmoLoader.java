@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.fs.starfarer.api.util.Misc.ZERO;
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_VariableAmmoLoader extends BaseHullMod {
     //Cooldown each time we fire after switching shell type: only applies once per switching

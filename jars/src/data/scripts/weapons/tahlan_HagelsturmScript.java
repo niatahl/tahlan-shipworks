@@ -20,14 +20,12 @@ public class tahlan_HagelsturmScript implements EveryFrameWeaponEffectPlugin {
     public static final Color BEAM_CORE = Color.red;
     public static final Color BEAM_FRINGE = Color.red.darker();
 
-    private final IntervalUtil render = new IntervalUtil(0.05f, 0.05f);
+    private final IntervalUtil render = new IntervalUtil(0.01f, 0.01f);
 
     private tahlan_HagelsturmMuzzleFlashScript muzzleFlashScript = null;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
-
-        render.advance(amount);
 
         //Run our muzzle flash script, and get one if we don't already have one
         if (muzzleFlashScript == null) {
@@ -35,21 +33,17 @@ public class tahlan_HagelsturmScript implements EveryFrameWeaponEffectPlugin {
         }
         muzzleFlashScript.advance(amount, engine, weapon);
 
-        if (render.intervalElapsed()) {
-            float duration = render.getIntervalDuration();
-            float fadeDuration = 0f;
-            float angle = weapon.getCurrAngle();
-            float muzzle = weapon.getSpec().getTurretFireOffsets().get(0).getX();
-            Vector2f weaponLoc = weapon.getLocation();
-            //float x = weaponLoc.x + muzzle - 30f;
-            float x = weaponLoc.x + 5f;
-            float y = weaponLoc.y - 1f;
-            Vector2f offset = new Vector2f(x, y);
-            Vector2f from = VectorUtils.rotateAroundPivot(offset, weapon.getLocation(), angle);
-            float length = 40f;
+        float fadeDuration = 0f;
+        float angle = weapon.getCurrAngle();
+        float muzzle = weapon.getSpec().getTurretFireOffsets().get(0).getX();
+        Vector2f weaponLoc = weapon.getLocation();
+        float x = weaponLoc.x + 5f;
+        float y = weaponLoc.y - 1f;
+        Vector2f offset = new Vector2f(x, y);
+        Vector2f from = VectorUtils.rotateAroundPivot(offset, weapon.getLocation(), angle);
+        float length = 60f;
 
-            MagicFakeBeamPlugin.addBeam(duration, fadeDuration, BEAM_WIDTH, from, angle, length, BEAM_CORE, BEAM_FRINGE);
-        }
+        MagicFakeBeamPlugin.addBeam(0f, fadeDuration, BEAM_WIDTH, from, angle, length, BEAM_CORE, BEAM_FRINGE);
 
     }
 }

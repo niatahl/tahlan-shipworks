@@ -456,6 +456,7 @@ public class tahlan_AnumisMuzzleFlashScript implements EveryFrameWeaponEffectPlu
                     engine.addSmoothParticle(spawnLocation, velocity, size, 1f, duration, color);
                     break;
                 case "SMOKE":
+                    //engine.addNebulaParticle(spawnLocation, velocity, size, 1.2f, 0.25f / duration, 0f, duration, color);
                     engine.addSmokeParticle(spawnLocation, velocity, size, 1f, duration, color);
                     break;
                 default:

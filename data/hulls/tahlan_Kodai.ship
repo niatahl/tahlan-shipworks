@@ -124,7 +124,7 @@
     },
     {
       "angle": 149.5,
-      "contrailSize": 15,
+      "contrailSize": 128,
       "length": 30,
       "location": [
         -25.5,
@@ -135,7 +135,7 @@
     },
     {
       "angle": -149.5,
-      "contrailSize": 15,
+      "contrailSize": 128,
       "length": 30,
       "location": [
         -25.5,

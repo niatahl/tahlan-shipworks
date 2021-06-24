@@ -122,6 +122,62 @@
     }
   ],
   "engineSlots": [
+	{
+      "location": [-100, 10],
+      "length": 80,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-100, -10],
+      "length": 80,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-100, -0],
+      "length": 85,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, 68.5],
+      "length": 70.5,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, -68.5],
+      "length": 70.5,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, 76.5],
+      "length": 60,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-67, -76.5],
+      "length": 60,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
     {
       "location": [-99, 10],
       "length": 50.5,
@@ -177,62 +233,6 @@
       "angle": -180,
       "contrailSize": 13,
       "style": "LOW_TECH"
-    },
-    {
-      "location": [-100, 10],
-      "length": 80,
-      "width": 8,
-      "angle": 180,
-      "contrailSize": 8,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-100, -10],
-      "length": 80,
-      "width": 8,
-      "angle": -180,
-      "contrailSize": 8,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-100, -0],
-      "length": 85,
-      "width": 8,
-      "angle": 180,
-      "contrailSize": 8,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-67, 68.5],
-      "length": 70.5,
-      "width": 7,
-      "angle": 180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-67, -68.5],
-      "length": 70.5,
-      "width": 7,
-      "angle": -180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-67, 76.5],
-      "length": 60,
-      "width": 7,
-      "angle": 180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-67, -76.5],
-      "length": 60,
-      "width": 7,
-      "angle": -180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
     }
   ],
   "bounds": [

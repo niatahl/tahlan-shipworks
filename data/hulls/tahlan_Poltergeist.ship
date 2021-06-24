@@ -11,6 +11,10 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 188,
   "viewOffset": 0,
+  "builtInMods": [
+	"phasefield",
+    "delicate"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",

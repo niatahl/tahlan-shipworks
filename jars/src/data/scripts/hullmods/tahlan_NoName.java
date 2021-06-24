@@ -6,7 +6,6 @@ import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import data.scripts.util.MagicRender;
@@ -14,9 +13,8 @@ import org.lazywizard.lazylib.FastTrig;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
-import java.util.EnumSet;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_NoName extends BaseHullMod {
 

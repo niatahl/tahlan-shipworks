@@ -1,27 +1,16 @@
 package data.scripts.hullmods;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.AsteroidAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.graphics.SpriteAPI;
-import com.fs.starfarer.api.loading.WeaponSlotAPI;
-import data.scripts.plugins.MagicTrailPlugin;
 import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.FastTrig;
-import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import static data.scripts.utils.tahlan_txt.txt;
-import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
-import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_OutcastEngineering extends BaseHullMod {
 
@@ -136,8 +125,7 @@ public class tahlan_OutcastEngineering extends BaseHullMod {
     //Prevents the hullmod from being put on ships
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        boolean canBeApplied = false;
-        return canBeApplied;
+        return false;
     }
 
     //Adds the description strings

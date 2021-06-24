@@ -1,374 +1,274 @@
 {
-  "bounds": [
-    -65,
-    -20.5,
-    -85,
-    -56,
-    -37.5,
-    -104,
-    -21.5,
-    -86,
-    -9,
-    -89,
-    18.5,
-    -70.5,
-    57.5,
-    -76,
-    84.5,
-    -48,
-    51,
-    -15.5,
-    51,
-    15.5,
-    84.5,
-    48,
-    57.5,
-    76,
-    18.5,
-    70.5,
-    -9,
-    89,
-    -21.5,
-    86,
-    -37.5,
-    104,
-    -85,
-    56,
-    -65,
-    20.5,
-    -85.5,
-    -0
-  ],
+  "hullName": "Sophrosyne",
+  "hullId": "tahlan_Sophrosyne",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/tahlan_Sophrosyne.png",
+  "style": "TAHLAN_GH_TECH",
+  "height": 177,
+  "width": 216,
+  "center": [108, 88],
+  "collisionRadius": 151.5,
+  "shieldCenter": [0.5, 0],
+  "shieldRadius": 130,
+  "viewOffset": 0,
   "builtInMods": [
     "tahlan_knightrefit",
     "tahlan_temporaltraveldrive"
+  ],
+  "builtInWings": [
+    "tahlan_Dikaiosyne_drone_wing",
+    "tahlan_Dikaiosyne_drone_wing"
   ],
   "builtInWeapons": {
     "WS0012": "tahlan_sophrosyne_cover",
     "WS0013": "tahlan_sophrosyne_halo"
   },
-  "builtInWings": [
-    "tahlan_Dikaiosyne_drone_wing",
-    "tahlan_Dikaiosyne_drone_wing"
-  ],
-  "center": [
-    108,
-    88.5
-  ],
-  "collisionRadius": 151.5,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 21,
-      "length": 63,
-      "location": [
-        -77.5,
-        30.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 21
-    },
-    {
-      "angle": -180,
-      "contrailSize": 21,
-      "length": 63,
-      "location": [
-        -77.5,
-        -30.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 21
-    },
-    {
-      "angle": 180,
-      "contrailSize": 16,
-      "length": 68,
-      "location": [
-        -85.5,
-        48
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 16
-    },
-    {
-      "angle": -180,
-      "contrailSize": 16,
-      "length": 68,
-      "location": [
-        -85.5,
-        -48
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 16
-    },
-    {
-      "angle": 139,
-      "contrailSize": 128,
-      "length": 66.520676,
-      "location": [
-        27,
-        81.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 7.00001
-    },
-    {
-      "angle": -139,
-      "contrailSize": 128,
-      "length": 66.520676,
-      "location": [
-        27,
-        -81.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 7.00001
-    },
-    {
-      "angle": 124.5,
-      "contrailSize": 128,
-      "length": 50.859253,
-      "location": [
-        34,
-        87
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5.598656
-    },
-    {
-      "angle": -124.5,
-      "contrailSize": 128,
-      "length": 50.859253,
-      "location": [
-        34,
-        -87
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5.598656
-    },
-    {
-      "angle": 115,
-      "contrailSize": 128,
-      "length": 36.951092,
-      "location": [
-        43.5,
-        89.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5.335463
-    },
-    {
-      "angle": -115,
-      "contrailSize": 128,
-      "length": 36.951092,
-      "location": [
-        43.5,
-        -89.5
-      ],
-      "style": "TAHLAN_GH_ENGINE",
-      "width": 5.335463
-    }
-  ],
-  "height": 177,
-  "hullId": "tahlan_Sophrosyne",
-  "hullName": "Sophrosyne",
-  "hullSize": "CRUISER",
-  "shieldCenter": [
-    0,
-    0
-  ],
-  "shieldRadius": 130,
-  "spriteName": "graphics/tahlan/ships/tahlan_Sophrosyne.png",
-  "style": "TAHLAN_GH_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0001",
-      "locations": [
-        63.5,
-        32
-      ],
-      "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "SYNERGY"
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [64, 32]
     },
     {
-      "angle": -0,
-      "arc": 5,
       "id": "WS0002",
-      "locations": [
-        63.5,
-        -32
-      ],
+      "size": "MEDIUM",
+      "type": "SYNERGY",
       "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "SYNERGY"
-    },
-    {
-      "angle": 23.5,
-      "arc": 94,
-      "id": "WS0003",
-      "locations": [
-        -9.5,
-        53
-      ],
-      "mount": "TURRET",
-      "size": "MEDIUM",
-      "type": "HYBRID"
-    },
-    {
-      "angle": -23.5,
-      "arc": 94,
-      "id": "WS0004",
-      "locations": [
-        -9.5,
-        -53
-      ],
-      "mount": "TURRET",
-      "size": "MEDIUM",
-      "type": "HYBRID"
-    },
-    {
-      "angle": 0,
-      "arc": 15,
-      "id": "WS0005",
-      "locations": [
-        73.5,
-        68
-      ],
-      "mount": "HARDPOINT",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
+      "arc": 5,
       "angle": -0,
+      "locations": [64, -32]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 94,
+      "angle": 23.5,
+      "locations": [-9, 53]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 94,
+      "angle": -23.5,
+      "locations": [-9, -53]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
       "arc": 15,
+      "angle": 0,
+      "locations": [74, 68]
+    },
+    {
       "id": "WS0006",
-      "locations": [
-        73.5,
-        -68
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": -0,
+      "locations": [74, -68]
     },
     {
-      "angle": 45,
-      "arc": 5,
       "id": "WS0007",
-      "locations": [
-        -6,
-        82.5
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "MISSILE"
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 45,
+      "locations": [-5.5, 82.5]
     },
     {
-      "angle": -45,
-      "arc": 5,
       "id": "WS0008",
-      "locations": [
-        -6,
-        -82.5
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "MISSILE"
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -45,
+      "locations": [-5.5, -82.5]
     },
     {
-      "angle": 143,
-      "arc": 126,
       "id": "WS0009",
-      "locations": [
-        -54.5,
-        68
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -143,
+      "type": "ENERGY",
+      "mount": "TURRET",
       "arc": 126,
+      "angle": 143,
+      "locations": [-54, 68]
+    },
+    {
       "id": "WS0010",
-      "locations": [
-        -54.5,
-        -68
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 126,
+      "angle": -143,
+      "locations": [-54, -68]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0011",
-      "locations": [
-        31.5,
-        -0
-      ],
+      "size": "LARGE",
+      "type": "ENERGY",
       "mount": "HARDPOINT",
-      "size": "LARGE",
-      "type": "ENERGY"
+      "arc": 5,
+      "angle": 0,
+      "locations": [32, -0]
     },
     {
-      "angle": 0,
-      "arc": 360,
       "id": "LB 1",
-      "locations": [
-        -24.5,
-        79.5,
-        -30.5,
-        78.5,
-        -38.5,
-        78.5
-      ],
-      "mount": "HIDDEN",
       "size": "LARGE",
-      "type": "LAUNCH_BAY"
-    },
-    {
-      "angle": 0,
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
       "arc": 360,
+      "angle": 0,
+      "locations": [
+        -24, 79.5,
+        -30, 78.5,
+        -38, 78.5
+      ]
+    },
+    {
       "id": "LB 2",
-      "locations": [
-        -24,
-        -80,
-        -31.5,
-        -78.5,
-        -39,
-        -78
-      ],
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
       "mount": "HIDDEN",
-      "size": "LARGE",
-      "type": "LAUNCH_BAY"
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -23.5, -80,
+        -31, -78.5,
+        -38.5, -78
+      ]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0012",
-      "locations": [
-        14.5,
-        -0
-      ],
-      "mount": "TURRET",
       "size": "LARGE",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [15, -0]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0013",
-      "locations": [
-        0,
-        -0
-      ],
-      "mount": "TURRET",
       "size": "LARGE",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [0.5, -0]
     }
   ],
-  "width": 216
+  "engineSlots": [
+    {
+      "location": [-77, 30.5],
+      "length": 63,
+      "width": 21,
+      "angle": 180,
+      "contrailSize": 21,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [-77, -30.5],
+      "length": 63,
+      "width": 21,
+      "angle": -180,
+      "contrailSize": 21,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [-85, 48],
+      "length": 68,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [-85, -48],
+      "length": 68,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [27.5, 81.5],
+      "length": 66.520676,
+      "width": 7.00001,
+      "angle": 139,
+      "contrailSize": 128,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [27.5, -81.5],
+      "length": 66.520676,
+      "width": 7.00001,
+      "angle": -139,
+      "contrailSize": 128,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [34.5, 87],
+      "length": 50.859253,
+      "width": 5.598656,
+      "angle": 124.5,
+      "contrailSize": 128,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [34.5, -87],
+      "length": 50.859253,
+      "width": 5.598656,
+      "angle": -124.5,
+      "contrailSize": 128,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [44, 89.5],
+      "length": 36.951092,
+      "width": 5.335463,
+      "angle": 115,
+      "contrailSize": 128,
+      "style": "TAHLAN_GH_ENGINE"
+    },
+    {
+      "location": [44, -89.5],
+      "length": 36.951092,
+      "width": 5.335463,
+      "angle": -115,
+      "contrailSize": 128,
+      "style": "TAHLAN_GH_ENGINE"
+    }
+  ],
+  "bounds": [
+    -64.5, -20.5,
+    -84.5, -56,
+    -37, -104,
+    -21, -86,
+    -8.5, -89,
+    19, -70.5,
+    58, -76,
+    85, -48,
+    51.5, -15.5,
+    51.5, 15.5,
+    85, 48,
+    58, 76,
+    19, 70.5,
+    -8.5, 89,
+    -21, 86,
+    -37, 104,
+    -84.5, 56,
+    -64.5, 20.5,
+    -85, -0
+  ]
 }

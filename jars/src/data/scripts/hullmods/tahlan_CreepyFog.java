@@ -17,7 +17,7 @@ import static com.fs.starfarer.api.util.Misc.isPointInBounds;
 
 public class tahlan_CreepyFog extends BaseHullMod {
 
-    private IntervalUtil interval = new IntervalUtil(0.1f, 0.15f);
+    private final IntervalUtil interval = new IntervalUtil(0.1f, 0.15f);
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {

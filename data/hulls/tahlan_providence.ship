@@ -4,7 +4,7 @@
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/tahlan/ships/tahlan_providence.png",
   "style": "LOW_TECH",
-  "height": 393,
+  "height": 394,
   "width": 196,
   "center": [98, 196.5],
   "collisionRadius": 216.5,
@@ -158,6 +158,62 @@
     }
   ],
   "engineSlots": [
+	{
+      "location": [-174.5, 10],
+      "length": 75,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-174.5, -10],
+      "length": 75,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-174.5, -0.5],
+      "length": 78,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-110.5, 65.5],
+      "length": 66,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-110.5, -65.5],
+      "length": 66,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-111, 73.5],
+      "length": 64,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
+    {
+      "location": [-111, -73.5],
+      "length": 54,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_REDCONE_ENGINE"
+    },
     {
       "location": [-109, 73.5],
       "length": 33,
@@ -213,62 +269,6 @@
       "angle": -180,
       "contrailSize": 18,
       "style": "LOW_TECH"
-    },
-    {
-      "location": [-174.5, 10],
-      "length": 75,
-      "width": 7,
-      "angle": 180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-174.5, -10],
-      "length": 75,
-      "width": 7,
-      "angle": -180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-174.5, -0.5],
-      "length": 78,
-      "width": 7,
-      "angle": 180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-110.5, 65.5],
-      "length": 66,
-      "width": 7,
-      "angle": 180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-110.5, -65.5],
-      "length": 66,
-      "width": 7,
-      "angle": -180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-111, 73.5],
-      "length": 64,
-      "width": 7,
-      "angle": 180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
-    },
-    {
-      "location": [-111, -73.5],
-      "length": 54,
-      "width": 7,
-      "angle": -180,
-      "contrailSize": 7,
-      "style": "TAHLAN_REDCONE_ENGINE"
     }
   ],
   "bounds": [

@@ -8,7 +8,7 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import java.awt.*;
 import java.util.EnumSet;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_FluxFeederStats extends BaseShipSystemScript {
 

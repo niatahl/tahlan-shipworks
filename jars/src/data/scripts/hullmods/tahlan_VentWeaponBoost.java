@@ -3,10 +3,7 @@ package data.scripts.hullmods;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonalityAPI;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponSize;
 import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
-import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
@@ -14,11 +11,9 @@ import org.lazywizard.lazylib.combat.AIUtils;
 
 import java.awt.*;
 import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 /**
  * Gives bonus damage to a ship's energy weapons after venting

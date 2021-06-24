@@ -1,272 +1,195 @@
 {
-  "bounds": [
-    -54,
-    -21.5,
-    -59.5,
-    -70.5,
-    -48.5,
-    -82.5,
-    -14,
-    -69.5,
-    6,
-    -81.5,
-    42,
-    -50,
-    56,
-    -10.5,
-    14,
-    -9,
-    14,
-    9,
-    56,
-    10.5,
-    42,
-    50,
-    6,
-    81.5,
-    -14,
-    69.5,
-    -48.5,
-    82.5,
-    -59.5,
-    70.5,
-    -54,
-    21.5,
-    -65.5,
-    -0
-  ],
+  "hullName": "Andreia",
+  "hullId": "tahlan_Andreia",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tahlan/ships/tahlan_Andreia.png",
+  "style": "HIGH_TECH",
+  "height": 135,
+  "width": 188,
+  "center": [94, 67],
+  "collisionRadius": 125.5,
+  "shieldCenter": [0.5, 0],
+  "shieldRadius": 112.5,
+  "viewOffset": 0,
   "builtInMods": [
     "tahlan_noname"
   ],
   "builtInWings": [
     "tahlan_Fragmenta_drone_wing"
   ],
-  "center": [
-    94,
-    67.5
-  ],
-  "collisionRadius": 125.5,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 11,
-      "length": 35.5,
-      "location": [
-        -55.5,
-        27
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 11
-    },
-    {
-      "angle": -180,
-      "contrailSize": 11,
-      "length": 35.5,
-      "location": [
-        -55.5,
-        -27
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 11
-    },
-    {
-      "angle": -180,
-      "contrailSize": 12,
-      "length": 40.5,
-      "location": [
-        -56.5,
-        -35
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 12
-    },
-    {
-      "angle": 180,
-      "contrailSize": 12,
-      "length": 40.5,
-      "location": [
-        -56.5,
-        35
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 12
-    },
-    {
-      "angle": 180,
-      "contrailSize": 6,
-      "length": 24,
-      "location": [
-        -62.5,
-        52.5
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 6
-    },
-    {
-      "angle": -180,
-      "contrailSize": 6,
-      "length": 24,
-      "location": [
-        -62.5,
-        -52.5
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 6
-    },
-    {
-      "angle": 180,
-      "contrailSize": 6,
-      "length": 24,
-      "location": [
-        -60.5,
-        48.5
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 6
-    },
-    {
-      "angle": -180,
-      "contrailSize": 6,
-      "length": 24,
-      "location": [
-        -60.5,
-        -48.5
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 6
-    },
-    {
-      "angle": 180,
-      "contrailSize": 6,
-      "length": 24,
-      "location": [
-        -58.5,
-        44.5
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 6
-    },
-    {
-      "angle": -180,
-      "contrailSize": 6,
-      "length": 24,
-      "location": [
-        -58.5,
-        -44.5
-      ],
-      "style": "TAHLAN_NL_ENGINE",
-      "width": 6
-    }
-  ],
-  "height": 135,
-  "hullId": "tahlan_Andreia",
-  "hullName": "Andreia",
-  "hullSize": "DESTROYER",
-  "shieldCenter": [
-    0,
-    0
-  ],
-  "shieldRadius": 112.5,
-  "spriteName": "graphics/tahlan/ships/tahlan_Andreia.png",
-  "style": "HIGH_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0001",
-      "locations": [
-        1.5,
-        -0
-      ],
+      "size": "LARGE",
+      "type": "ENERGY",
       "mount": "HARDPOINT",
-      "size": "LARGE",
-      "type": "ENERGY"
+      "arc": 5,
+      "angle": 0,
+      "locations": [2, -0]
     },
     {
-      "angle": 16,
-      "arc": 86,
       "id": "WS0002",
-      "locations": [
-        14.5,
-        50
-      ],
-      "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -16,
+      "type": "ENERGY",
+      "mount": "TURRET",
       "arc": 86,
+      "angle": 16,
+      "locations": [15, 50]
+    },
+    {
       "id": "WS0003",
-      "locations": [
-        14.5,
-        -50
-      ],
-      "mount": "TURRET",
       "size": "MEDIUM",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 86,
+      "angle": -16,
+      "locations": [15, -50]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0004",
-      "locations": [
-        49.5,
-        20
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -0,
+      "type": "ENERGY",
+      "mount": "TURRET",
       "arc": 5,
-      "id": "WS0005",
-      "locations": [
-        49.5,
-        -20
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": 125,
-      "arc": 231,
-      "id": "WS0006",
-      "locations": [
-        -46.5,
-        68
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -125,
-      "arc": 231,
-      "id": "WS0007",
-      "locations": [
-        -46.5,
-        -68
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
       "angle": 0,
-      "arc": 0,
-      "id": "WS0008",
-      "locations": [
-        0,
-        -0
-      ],
+      "locations": [50, 20]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
       "mount": "TURRET",
+      "arc": 5,
+      "angle": -0,
+      "locations": [50, -20]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 231,
+      "angle": 125,
+      "locations": [-46, 68]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 231,
+      "angle": -125,
+      "locations": [-46, -68]
+    },
+    {
+      "id": "WS0008",
       "size": "LARGE",
-      "type": "DECORATIVE"
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0.5, -0]
     }
   ],
-  "width": 188
+  "engineSlots": [
+    {
+      "location": [-55, 27],
+      "length": 35.5,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-55, -27],
+      "length": 35.5,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-56, -35],
+      "length": 40.5,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-56, 35],
+      "length": 40.5,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-62, 52.5],
+      "length": 24,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-62, -52.5],
+      "length": 24,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-60, 48.5],
+      "length": 24,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-60, -48.5],
+      "length": 24,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-58, 44.5],
+      "length": 24,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_NL_ENGINE"
+    },
+    {
+      "location": [-58, -44.5],
+      "length": 24,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_NL_ENGINE"
+    }
+  ],
+  "bounds": [
+    -53.5, -21.5,
+    -59, -70.5,
+    -48, -82.5,
+    -13.5, -69.5,
+    6.5, -81.5,
+    42.5, -50,
+    56.5, -10.5,
+    14.5, -9,
+    14.5, 9,
+    56.5, 10.5,
+    42.5, 50,
+    6.5, 81.5,
+    -13.5, 69.5,
+    -48, 82.5,
+    -59, 70.5,
+    -53.5, 21.5,
+    -65, -0
+  ]
 }

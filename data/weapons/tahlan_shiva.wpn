@@ -31,12 +31,12 @@
     0
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_shiva_hp_base.png",
-  "hitGlowRadius": 30,
+  "hitGlowRadius": 50,
   "id": "tahlan_shiva",
   "pixelsPerTexel": 4,
   "size": "LARGE",
   "specClass": "beam",
-  "textureScrollSpeed": 200,
+  "textureScrollSpeed": 1000,
   "textureType": [
     "graphics/tahlan/fx/tahlan_shiva_beam_fringe.png",
     "graphics/tahlan/fx/tahlan_shiva_beam_core.png"
@@ -51,5 +51,5 @@
   ],
   "turretSprite": "graphics/tahlan/weapons/tahlan_shiva_turret_base.png",
   "type": "ENERGY",
-  "width": 30
+  "width": 45
 }

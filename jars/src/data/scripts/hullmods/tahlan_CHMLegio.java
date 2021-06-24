@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class tahlan_CHMLegio extends BaseHullMod {
 
-    private static Map mag = new HashMap();
+    private static final Map<ShipAPI.HullSize, Float> mag = new HashMap<ShipAPI.HullSize, Float>();
     static {
         mag.put(ShipAPI.HullSize.FRIGATE, 20f);
         mag.put(ShipAPI.HullSize.DESTROYER, 15f);
@@ -20,7 +20,7 @@ public class tahlan_CHMLegio extends BaseHullMod {
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getMaxSpeed().modifyFlat(id, (Float) mag.get(hullSize));
+        stats.getMaxSpeed().modifyFlat(id, mag.get(hullSize));
         stats.getZeroFluxSpeedBoost().modifyFlat(id,ZERO_FLUX_BOOST);
     }
 
@@ -32,10 +32,10 @@ public class tahlan_CHMLegio extends BaseHullMod {
     }
 
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
-        if (index == 0) return "" + ((Float) mag.get(ShipAPI.HullSize.FRIGATE)).intValue();
-        if (index == 1) return "" + ((Float) mag.get(ShipAPI.HullSize.DESTROYER)).intValue();
-        if (index == 2) return "" + ((Float) mag.get(ShipAPI.HullSize.CRUISER)).intValue();
-        if (index == 3) return "" + ((Float) mag.get(ShipAPI.HullSize.CAPITAL_SHIP)).intValue();
+        if (index == 0) return "" + (mag.get(ShipAPI.HullSize.FRIGATE)).intValue();
+        if (index == 1) return "" + (mag.get(ShipAPI.HullSize.DESTROYER)).intValue();
+        if (index == 2) return "" + (mag.get(ShipAPI.HullSize.CRUISER)).intValue();
+        if (index == 3) return "" + (mag.get(ShipAPI.HullSize.CAPITAL_SHIP)).intValue();
         if (index == 4) return "" + (int)ZERO_FLUX_BOOST;
         return null;
     }

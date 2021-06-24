@@ -469,10 +469,10 @@
     },
     {
       "angle": 80,
-      "arc": 150,
+      "arc": 135,
       "id": "WS 018",
       "locations": [
-        76,
+        77,
         87
       ],
       "mount": "TURRET",
@@ -493,10 +493,10 @@
     },
     {
       "angle": -80,
-      "arc": 150,
+      "arc": 135,
       "id": "WS 020",
       "locations": [
-        76,
+        77,
         -87
       ],
       "mount": "TURRET",

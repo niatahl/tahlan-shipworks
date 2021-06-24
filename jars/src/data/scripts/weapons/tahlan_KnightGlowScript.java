@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import data.scripts.util.MagicRender;
+import data.scripts.utils.tahlan_Utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -16,7 +17,9 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
     private static final float MAX_JITTER_DISTANCE = 0.8f;
     private static final float MAX_OPACITY = 1f;
     private static final float TRIGGER_PERCENTAGE = 0.3f;
-    private boolean overdrive = false;
+    private static final float FADE_RATE = 2f;
+
+    private float overdriveLevel = 0f;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -30,13 +33,22 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         }
 
         //Brightness based on flux under normal conditions
-        float currentBrightness = ship.getFluxTracker().getFluxLevel() *  0.8f;
+        float targetBrightness = ship.getFluxTracker().getFluxLevel() *  0.8f;
 
         //If we are in overdrive, we glow even more
         if (ship.getVariant().hasHullMod("tahlan_knightrefit") && (ship.getHitpoints() <= ship.getMaxHitpoints()*TRIGGER_PERCENTAGE || ship.getVariant().hasHullMod("tahlan_forcedoverdrive"))) {
-            currentBrightness = 1f;
+            targetBrightness = 1f;
         } else if (ship.getSystem().isActive()){
-            currentBrightness = Math.max(currentBrightness, ship.getSystem().getEffectLevel());
+            targetBrightness = Math.max(targetBrightness, ship.getSystem().getEffectLevel());
+        }
+
+        //Fading the brightness levels
+        float prevBrightness = weapon.getSprite().getColor().getAlpha()/255f;
+        float currentBrightness;
+        if (targetBrightness > prevBrightness) {
+            currentBrightness = Math.min(prevBrightness + FADE_RATE*amount,targetBrightness);
+        } else {
+            currentBrightness = Math.max(prevBrightness - FADE_RATE*amount,targetBrightness);
         }
 
         //No glows on wrecks or in refit
@@ -58,14 +70,27 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         Color colorToUse = new Color(COLOR_NORMAL[0], COLOR_NORMAL[1], COLOR_NORMAL[2], currentBrightness*MAX_OPACITY);
 
         //Change color if in overdrive
-        if (currentBrightness > 0.8) {
-            colorToUse = new Color(COLOR_OVERDRIVE[0], COLOR_OVERDRIVE[1], COLOR_OVERDRIVE[2], currentBrightness*MAX_OPACITY);
+        if (targetBrightness > 0.8) {
+            overdriveLevel = Math.min(1f,overdriveLevel+FADE_RATE*amount);
+        } else {
+            overdriveLevel = Math.max(0f,overdriveLevel-FADE_RATE*amount);
         }
 
+        colorToUse = new Color(
+                tahlan_Utils.lerp(COLOR_NORMAL[0],COLOR_OVERDRIVE[0],overdriveLevel),
+                tahlan_Utils.lerp(COLOR_NORMAL[1],COLOR_OVERDRIVE[1],overdriveLevel),
+                tahlan_Utils.lerp(COLOR_NORMAL[2],COLOR_OVERDRIVE[2],overdriveLevel),
+                currentBrightness*MAX_OPACITY);
 
+
+        float systemLevel = ship.getSystem().getEffectLevel();
         //Change color again if system is active and set brightness to max
         if (ship.getSystem().isActive()) {
-            colorToUse = new Color(COLOR_SYSTEM[0], COLOR_SYSTEM[1], COLOR_SYSTEM[2], currentBrightness*MAX_OPACITY);
+            colorToUse = new Color(
+                    tahlan_Utils.lerp(COLOR_NORMAL[0],COLOR_SYSTEM[0],systemLevel),
+                    tahlan_Utils.lerp(COLOR_NORMAL[1],COLOR_SYSTEM[1],systemLevel),
+                    tahlan_Utils.lerp(COLOR_NORMAL[2],COLOR_SYSTEM[2],systemLevel),
+                    currentBrightness*MAX_OPACITY);
         }
 
         //And finally actually apply the color

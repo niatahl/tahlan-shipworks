@@ -165,19 +165,18 @@ public class tahlan_CashmereScript implements EveryFrameWeaponEffectPlugin {
 
                 MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
                         0, 0, 90f, 5f, new Color(185, 52, 255), new Color(165, 52, 255), 0.7f * opacityMult,
-                        0.2f * durationMult, 0.05f * durationMult, 0.05f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 1600,
-                        sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
-
+                        0.2f * durationMult, 0.05f * durationMult, 0.05f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
+                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
 
                 MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
                         0, 0, 120f, 15f, new Color(150, 59, 255), new Color(150, 59, 255), 0.5f * opacityMult,
-                        0.2f * durationMult, 0.07f * durationMult, 0.1f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 1400,
-                        sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+                        0.2f * durationMult, 0.07f * durationMult, 0.1f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
+                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
 
                 MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), spriteToUse, spawnPosition, 0, 0, proj.getFacing() - 180f,
                         0, 0, 60f, 3f, Color.white, Color.white, 0.5f * opacityMult,
-                        0.1f * durationMult, 0.05f * durationMult, 0.05f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 1400,
-                        sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+                        0.1f * durationMult, 0.05f * durationMult, 0.05f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
+                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
 
             }
 

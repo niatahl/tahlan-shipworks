@@ -60,7 +60,8 @@
     -0
   ],
   "builtInMods": [
-    "tahlan_noname"
+    "tahlan_noname",
+	"automated"
   ],
   "builtInWeapons": {
     "WS0017": "tahlan_timeless_cover"

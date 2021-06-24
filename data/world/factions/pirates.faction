@@ -6,7 +6,13 @@
 	
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
-		"tags":{"tahlan_legio":0.3},
+		"tags":{
+			"tahlan_legio":0.3,
+			"tahlan_silberherz_bp":10,
+			"tahlan_halbmond_bp":10,
+			"tahlan_schneefall_bp":10,
+			"tahlan_jagd_bp":10
+		},
 		"hulls":{
 			"tahlan_Eagle_P":0.6,
 			"tahlan_Tempest_P":0.5,

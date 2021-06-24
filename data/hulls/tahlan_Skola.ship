@@ -1,142 +1,102 @@
 {
-  "bounds": [
-    -26,
-    -8,
-    -39,
-    -8.5,
-    -39.5,
-    -34,
-    -24.5,
-    -44,
-    37,
-    -17,
-    37,
-    17,
-    -24.5,
-    44,
-    -39.5,
-    34,
-    -39,
-    8.5,
-    -26,
-    8
-  ],
+  "hullName": "Skola",
+  "hullId": "tahlan_Skola",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/tahlan_Skola.png",
+  "style": "HIGH_TECH",
+  "height": 85,
+  "width": 90,
+  "center": [45, 42],
+  "collisionRadius": 74,
+  "shieldCenter": [-2.5, -0],
+  "shieldRadius": 68.5,
+  "viewOffset": 0,
   "builtInWeapons": {
     "WS0003": "tahlan_prismcoil",
     "WS0004": "tahlan_prismcoil"
   },
-  "center": [
-    45,
-    42.5
-  ],
-  "collisionRadius": 74,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -41.5,
-        19
-      ],
-      "style": "HIGH_TECH",
-      "width": 10
-    },
-    {
-      "angle": -180,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -41.5,
-        -19
-      ],
-      "style": "HIGH_TECH",
-      "width": 10
-    },
-    {
-      "angle": 180,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -39.5,
-        11
-      ],
-      "style": "HIGH_TECH",
-      "width": 10
-    },
-    {
-      "angle": -180,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -39.5,
-        -11
-      ],
-      "style": "HIGH_TECH",
-      "width": 10
-    }
-  ],
-  "height": 85,
-  "hullId": "tahlan_Skola",
-  "hullName": "Skola",
-  "hullSize": "FRIGATE",
-  "shieldCenter": [
-    -3,
-    -0
-  ],
-  "shieldRadius": 68.5,
-  "spriteName": "graphics/tahlan/ships/tahlan_Skola.png",
-  "style": "HIGH_TECH",
-  "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": 39,
-      "arc": 137,
       "id": "WS0001",
-      "locations": [
-        -18.5,
-        18
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -39,
+      "type": "ENERGY",
+      "mount": "TURRET",
       "arc": 137,
+      "angle": 39,
+      "locations": [-18, 18]
+    },
+    {
       "id": "WS0002",
-      "locations": [
-        -18.5,
-        -18
-      ],
+      "size": "SMALL",
+      "type": "ENERGY",
       "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
+      "arc": 137,
+      "angle": -39,
+      "locations": [-18, -18]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0003",
-      "locations": [
-        34,
-        22.5
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [34.5, 22.5]
     },
     {
-      "angle": -0,
-      "arc": 5,
       "id": "WS0004",
-      "locations": [
-        34,
-        -22.5
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [34.5, -22.5]
     }
   ],
-  "width": 90
+  "engineSlots": [
+    {
+      "location": [-41, 19],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-41, -19],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-39, 11],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-39, -11],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -25.5, -8,
+    -38.5, -8.5,
+    -39, -34,
+    -24, -44,
+    37.5, -17,
+    37.5, 17,
+    -24, 44,
+    -39, 34,
+    -38.5, 8.5,
+    -25.5, 8
+  ]
 }

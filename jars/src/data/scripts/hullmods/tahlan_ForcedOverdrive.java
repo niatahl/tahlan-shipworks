@@ -7,7 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import data.scripts.tahlan_ModPlugin;
 
 import static data.scripts.hullmods.tahlan_KnightRefit.*;
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 
 public class tahlan_ForcedOverdrive extends BaseHullMod {

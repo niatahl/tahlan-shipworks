@@ -4,7 +4,7 @@
   "hullSize": "CAPITAL_SHIP",
   "spriteName": "graphics/tahlan/ships/oddities/tahlan_schneefall_traum.png",
   "style": "TAHLAN_RR_TECH",
-  "height": 427,
+  "height": 428,
   "width": 266,
   "center": [133, 213.5],
   "collisionRadius": 242.5,
@@ -14,12 +14,13 @@
   "builtInMods": [
     "tahlan_adlerauge",
     "tahlan_vundautoforge",
-	"tahlan_traummounts",
+    "tahlan_traummounts",
     "eccm",
     "high_maintenance"
   ],
   "builtInWeapons": {
-    "WS0023": "tahlan_vundautoforge"
+    "WS0023": "tahlan_vundautoforge",
+    "WS0024": "tahlan_adlerauge"
   },
   "weaponSlots": [
     {
@@ -228,6 +229,15 @@
       "arc": 0,
       "angle": 0,
       "locations": [-24.5, -0]
+    },
+    {
+      "id": "WS0024",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [15.5, -0]
     }
   ],
   "engineSlots": [

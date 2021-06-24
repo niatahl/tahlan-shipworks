@@ -1,63 +1,88 @@
 package data.scripts.hullmods;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
-import data.scripts.util.MagicIncompatibleHullmods;
+import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.listeners.WeaponRangeModifier;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import static data.scripts.utils.tahlan_txt.txt;
 
 public class tahlan_ParallelTargetingUnit extends BaseHullMod {
 
     private static final Set<String> BLOCKED_HULLMODS = new HashSet<>(2);
 
-    static final float RANGE_BOOST = 120f;
-    static final float PD_MINUS = 60f;
-    static final float RANGE_CAP = 1400f;
-    static final float RANGE_MULT = 0.25f;
-
-    static {
-        BLOCKED_HULLMODS.add("dedicated_targeting_core");
-        BLOCKED_HULLMODS.add("targetingunit");
-    }
+    static final float RANGE_BOOST = 200f;
+    static final float PD_MINUS = 100f;
 
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
         return true;
     }
 
-    @Override
-    public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getWeaponRangeThreshold().modifyFlat(id,RANGE_CAP);
-        stats.getWeaponRangeMultPastThreshold().modifyMult(id,RANGE_MULT);
-
-        stats.getBallisticWeaponRangeBonus().modifyPercent(id,RANGE_BOOST);
-        stats.getEnergyWeaponRangeBonus().modifyPercent(id,RANGE_BOOST);
-
-        stats.getNonBeamPDWeaponRangeBonus().modifyPercent(id, -PD_MINUS);
-        stats.getBeamPDWeaponRangeBonus().modifyPercent(id, -PD_MINUS);
-
-    }
+//    @Override
+//    public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
+//        stats.getWeaponRangeThreshold().modifyFlat(id,RANGE_CAP);
+//        stats.getWeaponRangeMultPastThreshold().modifyMult(id,RANGE_MULT);
+//
+//        stats.getBallisticWeaponRangeBonus().modifyPercent(id,RANGE_BOOST);
+//        stats.getEnergyWeaponRangeBonus().modifyPercent(id,RANGE_BOOST);
+//
+//        stats.getNonBeamPDWeaponRangeBonus().modifyPercent(id, -PD_MINUS);
+//        stats.getBeamPDWeaponRangeBonus().modifyPercent(id, -PD_MINUS);
+//    }
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
-        for (String tmp : BLOCKED_HULLMODS) {
-            if (ship.getVariant().getHullMods().contains(tmp)) {
-                //ship.getVariant().removeMod(tmp);
-                MagicIncompatibleHullmods.removeHullmodWithWarning(ship.getVariant(),tmp,"tahlan_paralleltargeting");
-            }
+        if (!ship.hasListenerOfClass(tahlan_PTUListener.class)) {
+            ship.addListener(new tahlan_PTUListener());
         }
     }
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if (index == 0) return "" + (int) RANGE_BOOST + txt("%");
-        if (index == 1) return "" + (int) (RANGE_BOOST-PD_MINUS) + txt("%");
-        if (index == 2) return "" + (int) RANGE_CAP + txt("su");
-        if (index == 3) return "" + (int) (RANGE_MULT*100f) + txt("%");
+        if (index == 0) return "" + Math.round(RANGE_BOOST);
+        if (index == 1) return "" + Math.round(RANGE_BOOST-PD_MINUS);
         return null;
+    }
+
+    // Our range listener
+    private static class tahlan_PTUListener implements WeaponRangeModifier {
+
+        @Override
+        public float getWeaponRangePercentMod(ShipAPI ship, WeaponAPI weapon) {
+            return 0f;
+        }
+
+        @Override
+        public float getWeaponRangeMultMod(ShipAPI ship, WeaponAPI weapon) {
+            return 1f;
+        }
+
+        @Override
+        public float getWeaponRangeFlatMod(ShipAPI ship, WeaponAPI weapon) {
+            if (weapon.getSize() != WeaponAPI.WeaponSize.SMALL || weapon.getType() == WeaponAPI.WeaponType.MISSILE) {
+                return 0f;
+            }
+
+            //Stolen from Nicke. Thx buddy
+            float percentRangeIncreases = ship.getMutableStats().getEnergyWeaponRangeBonus().getPercentMod();
+            if (ship.hasListenerOfClass(WeaponRangeModifier.class)) {
+                for (WeaponRangeModifier listener : ship.getListeners(WeaponRangeModifier.class)) {
+                    //Should not be needed, but good practice: no infinite loops allowed here, no
+                    if (listener == this) {
+                        continue;
+                    }
+                    percentRangeIncreases += listener.getWeaponRangePercentMod(ship, weapon);
+                }
+            }
+
+            float baseRangeMod = RANGE_BOOST;
+            if (weapon.getSpec().getAIHints().contains(WeaponAPI.AIHints.PD)) {
+                baseRangeMod -= PD_MINUS;
+            }
+
+            return baseRangeMod * (1f + (percentRangeIncreases/100f));
+        }
     }
 }

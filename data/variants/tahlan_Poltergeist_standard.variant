@@ -1,0 +1,49 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 8,
+    "fluxVents": 0,
+    "hullId": "tahlan_Poltergeist",
+    "hullMods": ["missleracks"],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_Poltergeist_standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "harpoonpod",
+                "WS0006": "harpoonpod",
+                "WS0007": "harpoonpod",
+                "WS0008": "harpoonpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabotpod",
+                "WS0004": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavyblaster",
+                "WS0002": "heavyblaster"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "pdburst",
+                "WS0010": "pdburst",
+                "WS0011": "pdburst",
+                "WS0012": "pdburst"
+            }
+        }
+    ]
+}

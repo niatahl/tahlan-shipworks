@@ -8,6 +8,7 @@
 	
 	"startRelationships":{
 		"independent": 0.5,
+		"remnant":-0.6
 	},
 
 	"startShipsCombatSmall":[

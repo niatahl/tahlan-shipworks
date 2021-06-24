@@ -28,20 +28,5 @@
 	"builtInWeapons":{
 		"SWIVEL_LEFT": "tahlan_cinder_swivel_l",
 		"SWIVEL_RIGHT": "tahlan_cinder_swivel_r",
-	},
-	"engineSlotChanges":{
-		"0":{"style":"LOW_TECH"},
-		"1":{"style":"LOW_TECH"},
-		"2":{"style":"LOW_TECH"},
-		"3":{"style":"LOW_TECH"},
-		"4":{"style":"LOW_TECH"},
-		"5":{"style":"LOW_TECH"},
-		"6":{"style":"LOW_TECH"},
-		"7":{"style":"LOW_TECH"},
-		"8":{"style":"LOW_TECH"},
-		"9":{"style":"LOW_TECH"},
-		"10":{"style":"LOW_TECH"},
-		"11":{"style":"LOW_TECH"},
-	},
-    
+	}    
 }

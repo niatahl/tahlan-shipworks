@@ -1,0 +1,65 @@
+{
+    "displayName": "Hunter",
+    "fluxCapacitors": 10,
+    "fluxVents": 50,
+    "hullId": "tahlan_skyrend_rp",
+    "hullMods": [
+        "unstable_injector",
+        "hardenedshieldemitter",
+        "targetingunit"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_skyrend_rp_hunter",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "plasma",
+                "WS0002": "plasma"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "MSL_L": "sabotpod",
+                "MSL_R": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "pulselaser",
+                "WS0004": "pulselaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "heavyac",
+                "WS0006": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "pdlaser",
+                "WS0008": "pdlaser",
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser",
+                "WS0011": "pdlaser",
+                "WS0012": "pdlaser",
+                "WS0013": "pdlaser",
+                "WS0014": "pdlaser",
+                "WS0015": "pdlaser",
+                "WS0016": "pdlaser"
+            }
+        }
+    ]
+}

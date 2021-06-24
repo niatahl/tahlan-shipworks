@@ -7,7 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import org.lazywizard.lazylib.combat.CombatUtils;
 
-import static data.scripts.utils.tahlan_txt.txt;
+import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_CooperativeProtocolsYuki extends BaseHullMod {
     //General hullmod stats
@@ -75,8 +75,7 @@ public class tahlan_CooperativeProtocolsYuki extends BaseHullMod {
     //Prevents the hullmod from being put on ships
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
-        boolean canBeApplied = false;
-        return canBeApplied;
+        return false;
     }
 
     //Adds the description strings

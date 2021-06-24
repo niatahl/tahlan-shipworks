@@ -111,15 +111,21 @@ public class tahlan_DerelictsSpawnScript {
 
                 //Now, simply spawn the ship in the spawn location
                 boolean recoverable = Math.random()>0.9f;
+                //Lazy hax. Fuck you, Story Points!
+                boolean actuallySpawn = Math.random()>0.6f;
 
                 if ( spawnData.one.contains("tahlan_schneefall_traum_albtraum") ) {
                     Global.getSector().getMemoryWithoutUpdate().set("$tahlan_traum_location", system.getConstellation().getName());
                     shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
+                    actuallySpawn = true;
                 }
                 if (  spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals( "tahlan_providence_admech_derelict" ) ) recoverable = true;
-                addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
 
-                LOGGER.info("Spawned Derelict in " + system.getId());
+                if (actuallySpawn) {
+                    addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
+                    LOGGER.info("Spawned Derelict in " + system.getId());
+                }
+
                 numberOfSpawns++;
             }
         }

@@ -40,7 +40,7 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 20);
+        ON_SHOT_PARTICLE_COUNT.put("default", 10);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_2", 10);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_3", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_ID_4", 1);
@@ -97,7 +97,7 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(210,220,230, 165));
+        PARTICLE_COLOR.put("default", new Color(210,220,230, 125));
         PARTICLE_COLOR.put("FLASH_ID_3", new Color(71, 191, 255));
         PARTICLE_COLOR.put("FLASH_ID_4", new Color(236, 248, 255));
     }
@@ -401,7 +401,8 @@ public class tahlan_FafnirMuzzleFlashScript implements EveryFrameWeaponEffectPlu
                     engine.addSmoothParticle(spawnLocation, velocity, size, 1f, duration, color);
                     break;
                 case "SMOKE":
-                    engine.addSmokeParticle(spawnLocation, velocity, size, 1f, duration, color);
+                    //engine.addSmokeParticle(spawnLocation, velocity, size, 1f, duration, color);
+                    engine.addNebulaParticle(spawnLocation, velocity, size*1.5f, 1.2f, 0.25f / duration, 0f, duration, color);
                     break;
                 default:
                     engine.addHitParticle(spawnLocation, velocity, size, 10f, duration, color);

@@ -1,113 +1,81 @@
 {
-  "bounds": [
-    -16.5,
-    -18.5,
-    -26,
-    -38.5,
-    27.5,
-    -15,
-    27.5,
-    15,
-    -26,
-    38.5,
-    -16.5,
-    18.5,
-    -32,
-    -0
-  ],
-  "builtInMods": [
-	"tahlan_cooperative_protocols_kori"
-  ],
-  "builtInWings": [],
-  "center": [
-    41,
-    34.5
-  ],
-  "collisionRadius": 63,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -31.5,
-        10.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 10
-    },
-    {
-      "angle": -180,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -31.5,
-        -10.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 10
-    },
-    {
-      "angle": 180,
-      "contrailSize": 13,
-      "length": 43,
-      "location": [
-        -34.5,
-        -0
-      ],
-      "style": "HIGH_TECH",
-      "width": 13
-    }
-  ],
-  "height": 69,
-  "hullId": "tahlan_Korikaze",
   "hullName": "Korikaze",
+  "hullId": "tahlan_Korikaze",
   "hullSize": "FRIGATE",
-  "shieldCenter": [
-    0,
-    0
-  ],
-  "shieldRadius": 58,
   "spriteName": "graphics/tahlan/ships/tahlan_Korikaze.png",
   "style": "HIGH_TECH",
+  "height": 69,
+  "width": 82,
+  "center": [41, 34],
+  "collisionRadius": 63,
+  "shieldCenter": [0.5, 0],
+  "shieldRadius": 58,
   "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_cooperative_protocols_kori"
+  ],
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 0,
       "id": "WS0001",
-      "locations": [
-        21.5,
-        -0
-      ],
-      "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "ENERGY"
-    },
-    {
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 0,
       "angle": 0,
-      "arc": 360,
-      "id": "WS0002",
-      "locations": [
-        0.5,
-        13
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
+      "locations": [22, -0]
     },
     {
-      "angle": -0,
-      "arc": 360,
-      "id": "WS0003",
-      "locations": [
-        0.5,
-        -13
-      ],
-      "mount": "TURRET",
+      "id": "WS0002",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [1, 13]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [1, -13]
     }
   ],
-  "width": 82
+  "engineSlots": [
+    {
+      "location": [-31, 10.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-31, -10.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-34, -0],
+      "length": 43,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -16, -18.5,
+    -25.5, -38.5,
+    28, -15,
+    28, 15,
+    -25.5, 38.5,
+    -16, 18.5,
+    -31.5, -0
+  ]
 }

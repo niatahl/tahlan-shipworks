@@ -1,127 +1,92 @@
 {
-  "bounds": [
-    -53.5,
-    -8,
-    -15.5,
-    -18,
-    19,
-    -40,
-    45,
-    -16.5,
-    45,
-    16.5,
-    19,
-    40,
-    -15.5,
-    18,
-    -53.5,
-    8
-  ],
-  "builtInMods": [
-	"eccm",
-	"ecm",
-    "delicate"
-  ],
-  "center": [
-    40,
-    57.5
-  ],
-  "collisionRadius": 85.5,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 9,
-      "length": 25,
-      "location": [
-        -15.5,
-        21
-      ],
-      "style": "HIGH_TECH",
-      "width": 9
-    },
-    {
-      "angle": -180,
-      "contrailSize": 9,
-      "length": 25,
-      "location": [
-        -15.5,
-        -21
-      ],
-      "style": "HIGH_TECH",
-      "width": 9
-    },
-    {
-      "angle": 171.5,
-      "contrailSize": 6.086559,
-      "length": 13.756396,
-      "location": [
-        -5.5,
-        28.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 6.086559
-    },
-    {
-      "angle": -171.5,
-      "contrailSize": 6.086559,
-      "length": 13.756396,
-      "location": [
-        -5.5,
-        -28.5
-      ],
-      "style": "HIGH_TECH",
-      "width": 6.086559
-    }
-  ],
-  "height": 115,
-  "hullId": "tahlan_Renki",
   "hullName": "Renki",
+  "hullId": "tahlan_Renki",
   "hullSize": "FRIGATE",
-  "shieldCenter": [
-    0,
-    0
-  ],
-  "shieldRadius": 77.5,
   "spriteName": "graphics/tahlan/ships/tahlan_Renki.png",
   "style": "HIGH_TECH",
+  "height": 115,
+  "width": 80,
+  "center": [40, 57],
+  "collisionRadius": 85.5,
+  "shieldCenter": [0.5, 0],
+  "shieldRadius": 77.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "eccm",
+    "ecm",
+    "delicate"
+  ],
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0001",
-      "locations": [
-        35.5,
-        -0
-      ],
-      "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [36, -0]
     },
     {
-      "angle": 45,
-      "arc": 110,
       "id": "WS0002",
-      "locations": [
-        22.5,
-        17
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": 45,
+      "locations": [23, 17]
     },
     {
-      "angle": -45,
-      "arc": 110,
       "id": "WS0003",
-      "locations": [
-        22.5,
-        -17
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 110,
+      "angle": -45,
+      "locations": [23, -17]
     }
   ],
-  "width": 80
+  "engineSlots": [
+    {
+      "location": [-15, 21],
+      "length": 25,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-15, -21],
+      "length": 25,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-5, 28.5],
+      "length": 13.756396,
+      "width": 6.086559,
+      "angle": 171.5,
+      "contrailSize": 6.086559,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-5, -28.5],
+      "length": 13.756396,
+      "width": 6.086559,
+      "angle": -171.5,
+      "contrailSize": 6.086559,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -53, -8,
+    -15, -18,
+    19.5, -40,
+    45.5, -16.5,
+    45.5, 16.5,
+    19.5, 40,
+    -15, 18,
+    -53, 8
+  ]
 }
