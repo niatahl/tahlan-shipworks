@@ -1,7 +1,18 @@
-0.7a
+0.7.1
+- Added Nelson-class Assault Cruiser
 - Plucked a memory leak or two, probably
 - Skybreak
 	- Changed front medium turrets to energy
+- Monitor (GH)
+	- System dissipation boost changed to small speed boost
+- Prism-related
+	- Scathach no longer appears for sale at Prism
+	- Repulse can now appear for sale at Prism
+- Nibelung
+	- Fixed Broadside mounts not properly applying OP discount to large weapons
+	- Increased OP of RG variant by 20
+- New visuals for GH and Legio engines
+	
 
 0.7
 - Added Skybreak-class Battlecruiser

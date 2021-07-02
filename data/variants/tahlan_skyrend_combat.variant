@@ -1,57 +1,63 @@
 {
-    "displayName": "Combat",
-    "fluxCapacitors": 36,
-    "fluxVents": 50,
-    "hullId": "tahlan_skyrend",
-    "hullMods": [
-        "targetingunit",
-        "fluxbreakers",
-        "magazines"
-    ],
-    "permaMods": [],
-    "sMods": [],
-	"goalVariant": true,
-    "variantId": "tahlan_skyrend_combat",
-    "weaponGroups": [
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0001": "autopulse"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0002": "tahlan_ppa"}
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0003": "heavyac",
-                "WS0004": "heavyac",
-                "WS0005": "heavyac",
-                "WS0006": "heavyac"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0007": "pdlaser",
-                "WS0008": "pdlaser",
-                "WS0009": "pdlaser",
-                "WS0010": "pdlaser",
-                "WS0011": "pdlaser",
-                "WS0012": "pdlaser",
-                "WS0013": "pdburst",
-                "WS0014": "pdburst",
-                "WS0015": "pdlaser",
-                "WS0016": "pdlaser"
-            }
-        }
-    ],
-    "wings": [
-        "dagger_wing",
-        "dagger_wing"
-    ]
+  "variantId": "tahlan_skyrend_combat",
+  "hullId": "tahlan_skyrend",
+  "displayName": "Combat",
+  "goalVariant": true,
+  "fluxCapacitors": 46,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "fluxbreakers",
+    "magazines",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "autopulse",
+        "WS0003": "pulselaser",
+        "WS0004": "pulselaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "tahlan_ppa"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "heavyac",
+        "WS0006": "heavyac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "pdlaser",
+        "WS0008": "pdlaser",
+        "WS0009": "pdlaser",
+        "WS0010": "pdlaser",
+        "WS0011": "pdlaser",
+        "WS0012": "pdlaser",
+        "WS0013": "pdburst",
+        "WS0014": "pdburst",
+        "WS0015": "pdlaser",
+        "WS0016": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "dagger_wing",
+    "dagger_wing"
+  ]
 }

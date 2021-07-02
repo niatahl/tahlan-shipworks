@@ -1,0 +1,29 @@
+{
+	"id":"tahlan_boostthruster",
+	"type":"ENGINE_MOD",
+	"aiType":"BURN_DRIVE",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_BoostThrusterStats",
+	
+	#"engineGlowColor":[100,230,255,165],
+	#"engineGlowContrailColor":[100,165,255,25],
+	"engineGlowLengthMult":1.2,
+	"engineGlowWidthMult":1.1,
+	"engineGlowGlowMult":1.1,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":false,
+
+	"useSound":"system_burn_drive_activate",
+	"loopSound":"system_burn_drive_loop",
+	"deactivateSound":"system_burn_drive_deactivate",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":50,
+		"burstMovementPotential":50,
+		"averageSpeedIncrease":50,
+	}
+}

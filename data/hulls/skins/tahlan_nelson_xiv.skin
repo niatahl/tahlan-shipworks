@@ -1,0 +1,36 @@
+{
+	"baseHullId":"tahlan_nelson",
+	"skinHullId":"tahlan_nelson_xiv",
+	"hullName":"Nelson (XIV)",
+	"descriptionId":"tahlan_nelson",
+	"descriptionPrefix":"Built to the specifications of the 14th Domain Battlegroup which founded the Hegemony, this vessel is a prime example of the Domain Navy's 'decisive battle' doctrine, particularly exhibited by a series of radical structural modifications performed using pre-Collapse industrial technology.",
+	"tags":["XIV_bp"],
+	"tech":"XIV Battlegroup",
+	"fleetPoints":20,
+	"ordnancePoints":190,
+	"baseValueMult":1.75,
+	"spriteName":"graphics/tahlan/ships/tahlan_nelson_xiv.png",
+	"coversColor":[255,255,255,255],
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"removeBuiltInWeapons":[
+		"COVER"
+	],
+	"builtInMods":["fourteenth"],
+	"builtInWeapons":{
+		"COVER":"tahlan_nelson_xiv_cover",
+		"SHIELD_L":"tahlan_nelson_xiv_shield_L",
+		"SHIELD_L2":"tahlan_nelson_xiv_shield_L2",
+		"SHIELD_R":"tahlan_nelson_xiv_shield_R",
+		"SHIELD_R2":"tahlan_nelson_xiv_shield_R2",
+    },
+	"weaponSlotChanges":{
+		"WS0002":{
+      		"type": "HYBRID",
+    	},
+    	"WS0003":{
+      		"type": "HYBRID",
+    	},
+    },
+}

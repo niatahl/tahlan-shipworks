@@ -20,6 +20,7 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
     private static final float FADE_RATE = 2f;
 
     private float overdriveLevel = 0f;
+    private float prevBrightness = 0f;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -43,13 +44,13 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         }
 
         //Fading the brightness levels
-        float prevBrightness = weapon.getSprite().getColor().getAlpha()/255f;
         float currentBrightness;
         if (targetBrightness > prevBrightness) {
             currentBrightness = Math.min(prevBrightness + FADE_RATE*amount,targetBrightness);
         } else {
             currentBrightness = Math.max(prevBrightness - FADE_RATE*amount,targetBrightness);
         }
+        prevBrightness = currentBrightness;
 
         //No glows on wrecks or in refit
         if ( ship.isPiece() || !ship.isAlive() || ship.getOriginalOwner() == -1) {

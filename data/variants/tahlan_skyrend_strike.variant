@@ -1,6 +1,6 @@
 {
     "displayName": "Strike",
-    "fluxCapacitors": 28,
+    "fluxCapacitors": 34,
     "fluxVents": 50,
     "hullId": "tahlan_skyrend",
     "hullMods": [
@@ -24,8 +24,14 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "heavyneedler",
-                "WS0004": "heavyneedler",
+                "WS0003": "heavyblaster",
+                "WS0004": "heavyblaster",
+            }
+        },
+		{
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
                 "WS0005": "heavyneedler",
                 "WS0006": "heavyneedler"
             }

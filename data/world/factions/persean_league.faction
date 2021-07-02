@@ -27,6 +27,7 @@
 			"tahlan_providence",
 			"tahlan_throne",
 			"tahlan_skyrend",
+			"tahlan_nelson",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

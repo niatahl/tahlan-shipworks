@@ -6,7 +6,7 @@
     "descriptionPrefix":"Beneath the bright coat of Red Guards livery, this ship has been stripped down and rebuilt for maximum durability at minimal cost. Elaborate sensor arrays and failure-prone high-tech communication consoles have been pared away, leaving only those systems absolutely necessary to the vessel's function as a mercilessly efficient weapon of war.",
     "tags":["revolutionary","vayra_red_army"],
     "tech":"Red Guards",
-	"ordnancePoints":300,
+	"ordnancePoints":320,
     "spriteName":"graphics/tahlan/ships/rg/tahlan_Nibelung_rg.png",
     "baseValueMult":1,
     "removeWeaponSlots":[],         # ids

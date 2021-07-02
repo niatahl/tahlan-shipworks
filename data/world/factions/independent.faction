@@ -20,7 +20,8 @@
 			"tahlan_darnus":0.3,
 			"tahlan_providence":0.5,
 			"tahlan_throne":0.5,
-			"tahlan_skyrend":0.3
+			"tahlan_skyrend":0.3,
+			"tahlan_nelson":0.7,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -45,6 +46,7 @@
 			"tahlan_providence",
 			"tahlan_throne",
 			"tahlan_skyrend",
+			"tahlan_nelson",
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

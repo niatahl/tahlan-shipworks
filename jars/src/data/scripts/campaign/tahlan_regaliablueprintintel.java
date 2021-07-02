@@ -14,8 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static data.scripts.campaign.tahlan_DerelictsSpawnScript.TRAUM_LOCATION;
-
 public class tahlan_regaliablueprintintel extends BaseIntelPlugin {
 
     //List of all the event stages we can be at

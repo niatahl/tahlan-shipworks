@@ -17,8 +17,8 @@ public class tahlan_BroadsideMounts extends BaseHullMod {
 		stats.getCombatEngineRepairTimeMult().modifyMult(id, 1f - REPAIR_BONUS*0.01f);
 		stats.getCombatWeaponRepairTimeMult().modifyMult(id, 1f - REPAIR_BONUS*0.01f);
 		stats.getWeaponHealthBonus().modifyPercent(id, WEAPON_HEALTH_BONUS);
-		stats.getDynamic().getStat(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id,-LARGE_OP_REDUCTION);
-		stats.getDynamic().getStat(Stats.LARGE_ENERGY_MOD).modifyFlat(id,-LARGE_OP_REDUCTION);
+		stats.getDynamic().getMod(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id,-LARGE_OP_REDUCTION);
+		stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id,-LARGE_OP_REDUCTION);
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {

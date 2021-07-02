@@ -85,7 +85,11 @@
 		"tahlan_throne_overdriven":3,
 		"tahlan_Cobalt_combat":4,
 		"tahlan_Cobalt_overdriven":3,
-		"tahlan_Cobalt_disabler":3
+		"tahlan_Cobalt_disabler":3,
+		"tahlan_nelson_combat":4,
+		"tahlan_nelson_overdriven":3,
+		"tahlan_nelson_artillery":3,
+		"tahlan_nelson_xiv_elite":3
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,

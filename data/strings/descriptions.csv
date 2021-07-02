@@ -109,6 +109,9 @@ tahlan_skyrend,SHIP,"The Skybreak-class battlecruiser is a technologically-advan
 However, these strengths would come with a cost. Maintaining the Skybreak's high speed within its size category would require reducing its armor to a relatively frail shell. The weapon overcharge system became mutually exclusive to more efficient and flexible shielding systems. Extensive and expensive automation had to be integrated in nearly every facet the ship's operation in order to offset the extended crew requirements of two hangar bays. Perhaps most damning of all, scope creep and compromise after compromise in the Skybreak's development would lead to the project budget being extended far beyond its limits. While the Skybreak-class has since proven itself, in its time the class's high unit cost and unproven status led to a limited inventory being adopted.
 
 The few ships of this class which have made their way into the Persean sector have nonetheless performed admirably under pressure. Production of the hulls is still limited, but those few which circulate are coveted as truly fearsome battlecruisers.",,,
+tahlan_nelson,SHIP,"Few ships embody boldness quite like the Nelson. Armed to the teeth with a varied arsenal of weaponry, this heavy cruiser can lay waste to just about anything that would dare approach it from the front. Built for aggressive assault tactics, the Nelson comes equipped with a massive Starburn Mk.69 heavy boost thruster that allows for rapid advances, letting it easily exploit any weak points in enemy formations.
+
+Often described as the Champion's more aggressive cousin due to some layout similarities, captains of both of these classes have been known to be in a long-standing rivalry over the perceived superiority of their respective ships, but the two are generally agreed to serve different and complementary fleet roles. Often employed in tandem in League warfleets for hammer and anvil tactics, it is unlikely that this rivalry will fade anytime soon.",,,
 ,,,,,
 #LosTech,,,,,
 tahlan_karma,SHIP,"A seemingly jury-rigged design based on a Brilliant-class cruiser. While appearing like a crude modification at first sight, closer inspection has revealed the ship to be anything but. The complex remnant tech has been flawlessly integrated with the custom-built central hull section and shows a number of unusual modifications using what appears to be late domain-level hardware that current databases fail to identify.
@@ -402,7 +405,7 @@ tahlan_strahlfaust_l,WEAPON,"A heavily charged plasma beam that branched off the
 ,,,,,
 # Ship Systems,,,,,
 ,,,,,
-tahlan_stormdrive,SHIP_SYSTEM,Divert power from shields to drives to quickly charge forward while an integrated damper field reduces all damage to hull and armor by half for the duration.,Movement,,
+tahlan_stormdrive,SHIP_SYSTEM,Divert power from shields to drives to quickly charge forward while an integrated damper field reduces all damage to hull and armor by half for the duration.,Mobility,,
 tahlan_holyfuror,SHIP_SYSTEM,"""By his holy grace your weapons shall strike harder, your feet shall be swift and your faith shall shield you from all harm""",Assault,,
 tahlan_assaultlockdown,SHIP_SYSTEM,Divert power from drives to weapons to boost ballistic RoF by 25%.,Assault,,
 tahlan_sentrymode,SHIP_SYSTEM,Boost weapon range by 300su and halve shield damage taken at cost of most mobility.,Defense,,
@@ -411,7 +414,7 @@ tahlan_navigationfeed,SHIP_SYSTEM,Boosts mobility of equipped fighters by 50%. G
 tahlan_dodgynavigationfeed,SHIP_SYSTEM,Boosts mobility of equipped fighters by 10%-40%. Amount fluctuates roughly evers 5 seconds. Generates hard flux while active.,Fighters,,
 tahlan_temporaldrift,SHIP_SYSTEM,Heavily accelerates time by a factor of 20 for a moment then quickly returns to normal timeflow. Doubles damage taken and halves energy weapon damage and ballistic weapon rate of fire while active.,General,,
 tahlan_activeeccm,SHIP_SYSTEM,Provides ECCM benefits to self and allies within 1000su while active and increases fleet ECM rating by 3%. Generates soft flux while in use.,Support,,
-tahlan_strongholdshield,SHIP_SYSTEM,"Reduces damage taken by shield by 90%, unfolds it instantly and increases its arc. Also slightly boosts dissipation.",Defense,,
+tahlan_strongholdshield,SHIP_SYSTEM,"Reduces damage taken by shield by 90%, unfolds it instantly and increases its arc. Also slightly boosts top speed.",Defense,,
 tahlan_cavalrycharge,SHIP_SYSTEM,"Charges forward while weapons fire 50% faster and armor and hull damage are halved, but with limited maneuverability.",Assault,,
 tahlan_temporalcoordinator,SHIP_SYSTEM,Accelerates timeflow of ship and its fighters simulataneously.,General,,
 tahlan_raiderjets,SHIP_SYSTEM,Grants a strong boost to maneuverability that decays over time.,Mobility,,
@@ -442,6 +445,7 @@ tahlan_inertialessdrive,SHIP_SYSTEM,"Switches to an inertialess propulsion syste
 tahlan_ltskimmer,SHIP_SYSTEM,An enhanced phase skimmer variant boasting improved range.,Mobility,,
 tahlan_fluxfeeder,SHIP_SYSTEM,"Increases ballistic weapon rate of fire and reduces flux cost accordingly. Becomes more effective at higher ship flux at moment of activation, going from 50% rate of fire increase at 0 flux to 100% at 90% flux.",Assault,,
 tahlan_machinespirit,SHIP_SYSTEM,"Increases ballistic and energy weapon rate of fire and reduces flux cost accordingly. Becomes more effective at higher ship flux at moment of activation, going from 50% rate of fire increase at 0 flux to 100% at 90% flux.",Assault,,
+tahlan_boostthruster,SHIP_SYSTEM,Activates heavy boost thruster to increase forward top speed and enhance maneuverability slightly. Greatly reduced speed increase when reversing.,Mobility,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,

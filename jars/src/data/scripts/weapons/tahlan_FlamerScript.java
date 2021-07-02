@@ -251,7 +251,7 @@ public class tahlan_FlamerScript extends BaseCombatLayeredRenderingPlugin implem
         float x = entity.getLocation().x;
         float y = entity.getLocation().y;
 
-        Color color = new Color(212, 109, 109, 206);
+        Color color = new Color(124, 109, 212, 206);
        //Color color = proj.getProjectileSpec().getFringeColor();
         color = Misc.setAlpha(color, 100);
         float b = proj.getBrightness();

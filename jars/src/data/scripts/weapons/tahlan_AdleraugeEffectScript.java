@@ -36,7 +36,7 @@ public class tahlan_AdleraugeEffectScript implements EveryFrameWeaponEffectPlugi
 
     private static final EnumSet<WeaponAPI.WeaponType> WEAPON_TYPES = EnumSet.of(WeaponAPI.WeaponType.MISSILE,WeaponAPI.WeaponType.BALLISTIC,WeaponAPI.WeaponType.ENERGY);
 
-    private List<ShipAPI> targetList = new ArrayList<ShipAPI>();
+    private final List<ShipAPI> targetList = new ArrayList<ShipAPI>();
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {

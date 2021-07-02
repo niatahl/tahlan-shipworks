@@ -33,7 +33,7 @@ public class LegioSiegeManager implements EveryFrameScript {
     public static final float MAX_FP = 500f; // cap out at this much
 
     private IntervalUtil timer = null;
-    private boolean devSpawn = false;
+    private final boolean devSpawn = false;
     
     public static LegioSiegeManager getInstance() {
         Object test = Global.getSector().getMemoryWithoutUpdate().get(KEY);

@@ -1,6 +1,6 @@
 {
     "displayName": "Lancer",
-    "fluxCapacitors": 29,
+    "fluxCapacitors": 37,
     "fluxVents": 50,
     "hullId": "tahlan_skyrend",
     "hullMods": [
@@ -24,8 +24,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "hveldriver",
-                "WS0004": "hveldriver",
+                "WS0003": "gravitonbeam",
+                "WS0004": "gravitonbeam",
                 "WS0005": "hveldriver",
                 "WS0006": "hveldriver"
             }
