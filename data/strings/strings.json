@@ -53,6 +53,8 @@
 		hmd_ventBoost2:"Weapon damage +",
 		hmd_VundForge1: "10%",
 		hmd_VundForge2:"per minute",
+		hmd_VundForge3:"50%",
+		hmd_VundForge4:"Missile Specialization",
 		econ_claim1:"Kassadari Claim",
 		econ_claim2:"%s population growth (based on market size).",
 		access:"%s accessibility",

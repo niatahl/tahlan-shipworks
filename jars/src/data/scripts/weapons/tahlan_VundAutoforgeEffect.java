@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Skills;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -43,8 +44,13 @@ public class tahlan_VundAutoforgeEffect implements EveryFrameWeaponEffectPlugin 
                 //reset the loader if the weapon is already fully loaded
                 LAUNCHERS.put(entry.getKey(), 0f);
             } else {
-                //build 10% of the total ammo per minute
-                float build = entry.getValue() + (amount * entry.getKey().getSpec().getMaxAmmo() * 0.1f / 60f);
+                // build 10% of the total ammo per minute
+                // buffed to 15% with missile spec
+                float regenFactor = 0.1f;
+                if (weapon.getShip().getCaptain().getStats().getSkillLevel(Skills.MISSILE_SPECIALIZATION) > 0) {
+                    regenFactor = 0.15f;
+                }
+                float build = entry.getValue() + (amount * entry.getKey().getSpec().getMaxAmmo() * regenFactor / 60f);
                 if (build >= 1) {
                     //add one ammo if it's built
                     LAUNCHERS.put(entry.getKey(), build - 1);

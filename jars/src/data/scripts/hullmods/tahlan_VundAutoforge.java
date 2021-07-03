@@ -11,6 +11,8 @@ public class tahlan_VundAutoforge extends BaseHullMod {
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
         if ( index == 0 ) return txt("hmd_VundForge1");
         if ( index == 1 ) return txt("hmd_VundForge2");
+        if ( index == 2 ) return txt("hmd_VundForge3");
+        if ( index == 3 ) return txt("hmd_VundForge4");
         return null;
     }
 

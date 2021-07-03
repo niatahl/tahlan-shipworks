@@ -12,6 +12,7 @@
 	- Fixed Broadside mounts not properly applying OP discount to large weapons
 	- Increased OP of RG variant by 20
 - New visuals for GH and Legio engines
+- Added Mercenary companies for Nexerelin
 	
 
 0.7
