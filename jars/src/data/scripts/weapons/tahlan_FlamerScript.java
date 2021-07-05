@@ -155,7 +155,7 @@ public class tahlan_FlamerScript extends BaseCombatLayeredRenderingPlugin implem
 
             float maxDur = proj.getWeapon().getRange() / proj.getWeapon().getProjectileSpeed();
             scaleIncreaseRate = 2f / maxDur;
-            scale = 1f;
+            scale = 0.5f;
 
             turnDir = Math.signum((float) Math.random() - 0.5f) * 60f * (float) Math.random();
             //turnDir = 0f;

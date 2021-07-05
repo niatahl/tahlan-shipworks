@@ -10,13 +10,25 @@ import java.awt.*;
 public class tahlan_VelvetScript implements EveryFrameWeaponEffectPlugin {
 
     private float flux = 0;
-    private IntervalUtil time = new IntervalUtil(0.18f, 0.22f);
+    private final IntervalUtil time = new IntervalUtil(0.18f, 0.22f);
 
     private static final Color ARC_FRINGE_COLOR = new Color(185, 52, 255);
     private static final Color ARC_CORE_COLOR = new Color(255, 212, 215);
 
+    private tahlan_LostechRangeEffect rangeModifier = null;
+
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
+
+        if (engine.isPaused()) {
+            return;
+        }
+
+        if (rangeModifier == null) {
+            rangeModifier = new tahlan_LostechRangeEffect();
+        }
+        rangeModifier.advance(amount, engine, weapon);
+
         //weapon is actually firing
         if (weapon.getChargeLevel() == 1) {
             //EXTRA FLUX

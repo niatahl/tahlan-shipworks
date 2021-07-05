@@ -12,7 +12,8 @@
   "shieldRadius": 154.5,
   "viewOffset": 0,
   "builtInWeapons": {
-    "COVER": "tahlan_nelson_cover"
+    "COVER": "tahlan_nelson_cover",
+    "COVER_SHADOW": "tahlan_nelson_cover_shadow"
   },
   "weaponSlots": [
     {
@@ -22,7 +23,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [87, -0]
+      "locations": [84, -0]
     },
     {
       "id": "WS0002",
@@ -148,6 +149,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
+	  "rednerOrderMod": 10,
       "locations": [71, -0]
     },
     {
@@ -185,6 +187,15 @@
       "arc": 5,
       "angle": -0,
       "locations": [-40, -100]
+    },
+    {
+      "id": "COVER_SHADOW",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [72, -0]
     }
   ],
   "engineSlots": [

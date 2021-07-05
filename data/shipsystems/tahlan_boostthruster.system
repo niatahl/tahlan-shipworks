@@ -1,7 +1,7 @@
 {
 	"id":"tahlan_boostthruster",
 	"type":"ENGINE_MOD",
-	"aiType":"BURN_DRIVE",
+	"aiType":"MANEUVERING_JETS",
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_BoostThrusterStats",
 	
@@ -22,8 +22,8 @@
 	"outOfUsesSound":"engine_disabled",
 	
 	"aiHints":{
-		"activeSpeedIncrease":50,
+		"activeSpeedIncrease":80,
 		"burstMovementPotential":50,
-		"averageSpeedIncrease":50,
+		"averageSpeedIncrease":40,
 	}
 }

@@ -1,3 +1,19 @@
+0.7.2
+- Vund Autoforge now restores 50% more ammo if the captain has missile specialisation
+- Castigator (all variants)
+	- Reduced flux capacity from 14000 to 12000
+	- Reduced flux dissipation from 600 to 550
+	- Increased armor from 1300 to 1400
+	- Hitpoints increased from 8000 to 10000
+- Nelson
+	- Reduced armor from 1400 to 1300
+	- Increased dissipation from 600 to 700
+	- Increased DP from 26 to 28
+	- Hitpoints reduced from 10000 to 9000
+- Doominator
+	- Increased top speed from 30 to 40
+	
+
 0.7.1
 - Added Nelson-class Assault Cruiser
 - Plucked a memory leak or two, probably

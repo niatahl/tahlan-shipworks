@@ -26,18 +26,25 @@ public class tahlan_TaffetaScript implements EveryFrameWeaponEffectPlugin {
     private final String CHARGE_SOUND_ID = "tahlan_virtue_loop";
 
     private boolean hasFiredThisCharge = false;
-    private IntervalUtil effectInterval = new IntervalUtil(0.05f, 0.1f);
+    private final IntervalUtil effectInterval = new IntervalUtil(0.05f, 0.1f);
 
-    private List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
+    private final List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
 
     //A map for known projectiles and their IDs: should be cleared in init
-    private Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
+    private final Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
+
+    private tahlan_LostechRangeEffect rangeModifier = null;
 
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
 
         if (engine.isPaused() || weapon == null) {
             return;
         }
+
+        if (rangeModifier == null) {
+            rangeModifier = new tahlan_LostechRangeEffect();
+        }
+        rangeModifier.advance(amount, engine, weapon);
 
         float chargelevel = weapon.getChargeLevel();
 

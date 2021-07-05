@@ -38,12 +38,19 @@ public class tahlan_SilkBoltScript implements EveryFrameWeaponEffectPlugin {
     private boolean hasFiredThisCharge = false;
     private IntervalUtil effectInterval = new IntervalUtil(0.1f, 0.2f);
 
+    private tahlan_LostechRangeEffect rangeModifier = null;
+
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         //Don't run if we are paused, or our weapon is null
         if (engine.isPaused() || weapon == null) {
             return;
         }
+
+        if (rangeModifier == null) {
+            rangeModifier = new tahlan_LostechRangeEffect();
+        }
+        rangeModifier.advance(amount, engine, weapon);
 
         float chargelevel = weapon.getChargeLevel();
 

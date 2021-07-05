@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
@@ -26,6 +27,11 @@ public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
             return;
         }
 
+        float actualMaxPenalty = MAX_SPEED_PENALTY;
+        if (ship.getCaptain().getStats().getSkillLevel(Skills.SYSTEMS_EXPERTISE) > 0) {
+            actualMaxPenalty = MAX_SPEED_PENALTY-10f;
+        }
+
         //Some code magic from DR
         float forwardDir = ship.getFacing();
         float currDir = VectorUtils.getFacing(ship.getVelocity());
@@ -35,7 +41,7 @@ public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
         }
         if (reverseScale > 1f) {
             /* Going backwards */
-            penalty = ((reverseScale - 1f) * MAX_SPEED_PENALTY)*effectLevel;
+            penalty = ((reverseScale - 1f) * actualMaxPenalty)*effectLevel;
         } else {
             /* Going forwards */
             penalty = reverseScale * MAX_SPEED_BONUS * effectLevel;

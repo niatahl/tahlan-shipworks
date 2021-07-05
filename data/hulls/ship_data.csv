@@ -21,7 +21,7 @@ Castella,tahlan_Castella,Battlecarrier,Low Tech,tahlan_heavydamper,28,15000,1400
 Bento (LP),tahlan_Bento_lp,Combat Tanker,Low Tech,tahlan_crusherdrive,6,3000,500,8000,1250,150,70,1,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,30,250,1,240,9,15000,6,20,240,0.25,7,7,"TANKER, COMBAT",LP_bp,,0.5,2,4,209
 Bento,tahlan_Bento,Armored Tanker,Low Tech,reservewing,6,3000,500,8000,1250,150,70,1,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,30,250,1,240,9,15000,6,20,240,0.25,7,7,TANKER,lowtech_bp,,0.5,2,4,209
 Throne,tahlan_throne,Cruiser,Low Tech,tahlan_fluxfeeder,15,7000,1200,12000,10500,450,150,,70,50,40,22,30,1200,FRONT,,270,0.5,1.1,,,160,220,180,120,3,33,8,120000,3,12,480,0.25,26,26,WEAPONS_FRONT_TO_BACK,"rare_bp, hist2t",0.5,0.5,2,3,401
-Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,8000,1300,14000,10500,600,160,,50,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, hist2t",0.5,0.5,2,3,401
+Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,10000,1400,12000,10500,550,160,,50,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, hist2t",0.5,0.5,2,3,401
 Providence,tahlan_providence,Battlecruiser,Low Tech,tahlan_fluxfeeder,25,12000,1500,16000,,600,270,,60,38,24,16,18,2800,FRONT,,270,0.5,1.1,,,500,900,320,500,12,38,8,380000,3,15,720,0.25,45,45,,rare_bp,0.8,0.5,2,5,2202
 Nibelung,tahlan_Nibelung,Fast Battleship,Low Tech,tahlan_auxthrusters,25,15000,1600,22000,,800,300,,50,30,20,12,15,3200,OMNI,,200,0.4,1,,,600,1000,300,400,12,33,7,320000,3,15,720,0.25,45,45,,"rare_bp, hist3t",0.8,0.5,2,5,2202
 Nessie,tahlan_Nessie,Makeshift Phase Cruiser,Low Tech,ammofeed,,6000,1000,10000,,500,120,,70,50,20,20,20,1300,PHASE,phasecloak,,,,0.05,0.05,120,160,50,50,6,16,7,180000,5,25,360,0.25,24,24,PHASE,"rare_bp, hist1t",,0.8,3,5,4212
@@ -34,9 +34,9 @@ Tempest (P),tahlan_Tempest_P,Frigate,Pirate,tahlan_weaponsoverdrive,8,1100,200,2
 Eagle (P),tahlan_Eagle_P,Cruiser,Pirate,tahlan_raiderjets,15,8000,900,10000,10500,450,155,1,50,30,20,15,20,1200,FRONT,,270,0.4,0.8,,,150,250,150,100,3,33,8,140000,3,12,480,0.25,22,22,WEAPONS_FRONT_TO_BACK,rare_bp,0.75,0.5,2,3,40111
 Cordite,tahlan_Cobalt,Cruiser,High Tech,highenergyfocus,14,5000,600,10000,12000,700,140,,90,100,80,30,60,750,OMNI,,160,0.3,0.7,,,70,140,60,80,3,27,9,120000,4,12,420,0.25,25,25,PHASE,"rare_bp, hist2t",0.75,2,2,3,
 Poltergeist,tahlan_Poltergeist,Phase Cruiser,High Tech,forgevats,22,7000,1100,9000,18000,700,140,,60,50,40,18,25,1200,PHASE,phasecloak,,,,0.05,0.05,60,110,125,160,3,50,8,230000,4,20,420,0.25,30,30,,"rare_bp, hist3t",,,,,
-Castigator (XIV),tahlan_Castigator_xiv,Assault Cruiser,XIV Battlegroup,burndrive,16,8000,1300,14000,10500,600,160,,50,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, hist3t",0.1,0.5,2,3,401
+Castigator (XIV),tahlan_Castigator_xiv,Assault Cruiser,XIV Battlegroup,burndrive,16,10000,1400,12000,10500,550,160,,50,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, hist3t",0.1,0.5,2,3,401
 Skybreak,tahlan_skyrend,Battlecruiser,Midline,highenergyfocus,25,12000,900,18000,,1200,300,2,60,90,55,15,20,3000,FRONT,,300,0.4,1.2,,,350,500,250,250,10,30,8,380000,3,15,660,0.25,40,40,,rare_bp,,0.5,2,5,11311
-Nelson,tahlan_nelson,Assault Cruiser,Midline,tahlan_boostthruster,16,10000,1400,9000,11000,600,180,,50,40,30,15,20,1500,FRONT,,240,0.4,0.9,,,180,260,140,140,4,38,8,135000,4,12,480,0.25,26,26,WEAPONS_FRONT_TO_BACK,rare_bp,,,,,
+Nelson,tahlan_nelson,Assault Cruiser,Midline,tahlan_boostthruster,16,9000,1300,9000,11000,700,180,,50,40,30,15,20,1500,FRONT,,240,0.4,0.9,,,180,260,140,140,4,38,8,135000,4,12,480,0.25,28,28,WEAPONS_FRONT_TO_BACK,rare_bp,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Rosenritter,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -91,13 +91,13 @@ Bento (RG),tahlan_Bento_rg,Gunship,Red Guards,ammofeed,8,3000,800,8000,1250,150,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Legio Infernalis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Doominator,tahlan_Dominator_PH,Phase Cruiser,Legio Infernalis,tahlan_weaponsoverdrive,15,11000,1400,12000,9000,500,150,,30,20,10,12,12,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,540,0.25,25,25,PHASE,"rare_bp, tahlan_legio, hist2t",0.2,0.4,2,3,404
+Doominator,tahlan_Dominator_PH,Phase Cruiser,Legio Infernalis,tahlan_weaponsoverdrive,15,11000,1400,12000,9000,500,150,,40,20,10,12,12,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,540,0.25,25,25,PHASE,"rare_bp, tahlan_legio, hist2t",0.2,0.4,2,3,404
 Flagellator (LI),tahlan_Flagellator_pi,Destroyer,Legio Infernalis,tahlan_crusherdrive,10,4500,800,4000,3333,300,100,,90,100,60,40,40,450,FRONT,,90,0.4,1,,,50,90,70,70,3,28,9,35000,5,12,420,0.25,9,9,,"tahlan_legio_bp, tahlan_legio",,0.4,2,3,13464
 Bronco (LI),tahlan_Bronco_p,Destroyer,Legio Infernalis,ammofeed,10,4000,600,3500,3333,200,80,,70,50,20,30,20,500,OMNI,,120,0.4,1.1,,,50,90,120,80,3,28,9,35000,5,12,420,0.25,10,10,,"tahlan_legio_bp, tahlan_legio",,0.5,2,3,1134
 Lasher (LI),tahlan_lasher_pi,Frigate,Legio Infernalis,ammofeed,5,1750,250,2100,1750,140,50,,130,110,90,60,90,200,FRONT,,210,0.4,1,,,25,50,40,25,1,25,10,9000,8,10,240,0.25,4,4,,"tahlan_legio_bp, tahlan_legio",,0.4,2,2,204
 Hresvelgr (LI),tahlan_Hresvelgr_p,Fleetcarrier,Legio Infernalis,forgevats,28,14000,1200,11000,12500,400,260,6,35,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, tahlan_legio, hist3t",,0.4,2,4,507
 Castella (LI),tahlan_Castella_pirates,Battlecarrier,Legio Infernalis,tahlan_heavydamper,28,15000,1400,11000,12500,650,240,4,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, tahlan_legio, hist3t",,0.4,2,4,507
-Castigator (LI),tahlan_Castigator_P,Assault Cruiser,Legio Infernalis,tahlan_raiderjets,16,8000,1300,14000,10500,600,160,,50,50,40,25,35,1400,FRONT,,270,0.4,1,,,180,290,200,140,5,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, tahlan_legio, hist2t",0.4,0.5,2,3,401
+Castigator (LI),tahlan_Castigator_P,Assault Cruiser,Legio Infernalis,tahlan_raiderjets,16,10000,1400,12000,10500,550,160,,50,50,40,25,35,1400,FRONT,,270,0.4,1,,,180,290,200,140,5,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, tahlan_legio, hist2t",0.4,0.5,2,3,401
 Dun Scaith,tahlan_DunScaith,Dreadnought,Legio Infernalis,tahlan_infernalcharge,35,22000,1700,20000,,900,370,2,20,10,10,4,4,6000,FRONT,,60,0.4,1,,,900,1800,500,600,20,30,7,800000,3,15,720,0.25,55,55,,"no_bp_drop, tahlan_legio",0.05,0.4,3,5,666
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

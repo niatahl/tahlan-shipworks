@@ -59,7 +59,7 @@ tahlan_gardas_trail_smoke2,tahlan_gardas_shot,tahlan_trail_contrail,10,0.05,0.5,
 tahlan_atrapos_trail,tahlan_atrapos_shot,tahlan_trail_zappy,10,0.05,0,0.5,14,4,"[255,180,100]","[255,150,150]",0.4,300,-300,true,30,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_atrapos_trail_smoke,tahlan_atrapos_shot,tahlan_trail_contrail,10,0.05,0.5,1.3,8,3,"[180,120,120]","[50,50,50]",0.2,300,-300,true,20,0,1,TRUE,FALSE,TRUE,20,60,0.4,0,0,200,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-tahlan_fusor_trail,tahlan_fusor_shot,tahlan_trail_fuzzy,20,0,0.1,0.1,40,100,"[0,180,255]","[0,180,255]",0.4,300,300,true,10,50,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,50,true,false
+tahlan_fusor_trail,tahlan_fusor_shot,tahlan_trail_fuzzy,20,0,0.1,0.1,30,60,"[0,180,255]","[0,180,255]",0.2,300,300,true,10,50,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,50,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_armiger_trail,tahlan_armiger_shot,tahlan_trail_contrail,10,0.05,0.5,0.3,12,10,"[150,140,120]","[120,120,120]",0.2,300,-300,true,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false
 tahlan_armiger_trail_2,tahlan_armiger_shot,tahlan_trail_contrail,10,0.05,0.3,0.5,10,12,"[150,150,150]","[120,120,120]",0.3,300,-300,true,20,10,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,90,true,false

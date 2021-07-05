@@ -5,11 +5,11 @@
 	
 	"statsScript":"data.scripts.shipsystems.tahlan_RaiderJetsStats",
 	
-	"engineGlowColor":[225,18,89,185],
+	"engineGlowColor":[225,60,120,185],
 	#"engineGlowContrailColor":[100,165,255,25],
-	"engineGlowLengthMult":1.5,
-	"engineGlowWidthMult":1.5,
-	"engineGlowGlowMult":1.5,
+	"engineGlowLengthMult":1.4,
+	"engineGlowWidthMult":1.4,
+	"engineGlowGlowMult":1.4,
 	
 	"flameoutOnImpactChance":0,
 

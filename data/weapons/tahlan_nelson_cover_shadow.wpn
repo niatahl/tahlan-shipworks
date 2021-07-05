@@ -1,0 +1,49 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_nelson_cover_shadow.png",
+  "hitGlowRadius": 0,
+  "renderAdditive": False,
+  "id": "tahlan_nelson_cover_shadow",
+  "showDamageWhenDecorative": False,
+  "pixelsPerTexel": 1,
+  "size": "LARGE",
+  "specClass": "beam",
+  "textureScrollSpeed": 64,
+  "textureType": ROUGH,  
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_nelson_cover_shadow.png",
+  "type": "DECORATIVE",
+  "width": 10
+}
