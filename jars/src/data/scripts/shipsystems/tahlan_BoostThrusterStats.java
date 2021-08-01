@@ -18,7 +18,7 @@ public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
-        ShipAPI ship = null;
+        ShipAPI ship;
         CombatEngineAPI engine = Global.getCombatEngine();
 
         if (stats.getEntity() instanceof ShipAPI) {
@@ -28,8 +28,10 @@ public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
         }
 
         float actualMaxPenalty = MAX_SPEED_PENALTY;
-        if (ship.getCaptain().getStats().getSkillLevel(Skills.SYSTEMS_EXPERTISE) > 0) {
-            actualMaxPenalty = MAX_SPEED_PENALTY-10f;
+        if (ship.getCaptain() != null) {
+            if (ship.getCaptain().getStats().getSkillLevel(Skills.SYSTEMS_EXPERTISE) > 0) {
+                actualMaxPenalty = MAX_SPEED_PENALTY - 10f;
+            }
         }
 
         //Some code magic from DR
