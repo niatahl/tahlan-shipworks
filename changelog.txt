@@ -1,3 +1,6 @@
+0.7.3
+- Renamed Skybreak back to its original name "Skyrend" cause nobody paid attention anyway
+
 0.7.2
 - Vund Autoforge now restores 50% more ammo if the captain has missile specialisation
 - Castigator (all variants)

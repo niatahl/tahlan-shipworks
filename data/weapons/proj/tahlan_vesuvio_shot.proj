@@ -1,0 +1,19 @@
+{
+	"id":"tahlan_vesuvio_shot",
+	"specClass":"projectile",
+	"onFireEffect":"data.scripts.weapons.tahlan_VesuvioOnFireEffect",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":80.0,
+	"width":5.0,
+	"fadeTime":0.15,
+	"coreColor":[255,255,255,255],
+	"fringeColor": [255,255,255,255],
+	"glowColor":[255,255,255,60],
+	"glowRadius":28,
+	"hitGlowRadius":50,	
+	"textureScrollSpeed":32.0,
+	"pixelsPerTexel":10.0,
+	"bulletSprite":"graphics/missiles/flechette_med.png"
+}

@@ -119,9 +119,8 @@ public class tahlan_Silberherz extends BaseHullMod {
 		//if (index == 4) return txt("hmd_silberherz2");
 		//if (index == 4) return txt("hmd_silberherz3");
 		if (index == 5) return txt("hmd_silberherz4");
-		if (index == 6) return txt("hmd_silberherz5");
-		if (index == 7) return txt("hmd_silberherz6");
-		if (index == 8) return txt("hmd_silberherz7");
+		if (index == 6) return txt("hmd_silberherz6");
+		if (index == 7) return txt("hmd_silberherz7");
 		return null;
 	}
 	

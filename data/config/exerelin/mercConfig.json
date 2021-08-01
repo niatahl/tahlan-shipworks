@@ -33,7 +33,7 @@
 
 		"tahlan_mercRosenritter":{
 			"name":"Sternenlied",
-			"desc":"A small group of mercenaries with unusual warmachines. It is said they are the last remnants of a once mighty fleet",
+			"desc":"A small group of mercenaries with unusual warmachines. It is said they are the last remnants of a once mighty fleet.",
 			"logo":"graphics/tahlan/factions/tahlan_rosenritter_crest.png",
 			"feeUpfront":80000,
 			"feeMonthly":2400,
@@ -63,18 +63,17 @@
 
 		"tahlan_mercLegio":{
 			"name":"Crimson Raiders",
-			"desc":"A small group of mercenaries with unusual warmachines. It is said they are the last remnants of a once mighty fleet",
+			"desc":"Legio mercenaries will work for just about anyone if the price is right, but one should be careful about trusting these people.",
 			"feeUpfront":75000,
 			"feeMonthly":2200,
 			"faction":"tahlan_legioinfernalis",
 			"minRep":"SUSPICIOUS",
 			"minLevel":3,
 			"ships":[
-				["tahlan_stahlherz_b_vanguard","tahlan_stahlherz_c_longbowman","tahlan_stahlherz_paladin"],
-				["tahlan_glanzwurf_knappe","tahlan_glanzwurf_b_soldner"],
-				["tahlan_glanzwurf_knappe","tahlan_glanzwurf_b_soldner"],
+				["tahlan_Castigator_P_raider","tahlan_Dominator_PH_striker"],
+				["tahlan_Bronco_p_brawler","tahlan_Flagellator_overdriven"],
+				["tahlan_lasher_pi_elite","tahlan_lasher_pi_overdriven"],
 			],
-			"extraFP":10,	# added to fleet after regular ships are generated
 			"doctrineSizeOverride":4,
 			"officers":[
 				{
@@ -82,7 +81,7 @@
 					"rankId":"spaceCommander",
 				},
 				{
-					"level":4,
+					"level":3,
 				},
 				{
 					"level":3,

@@ -66,7 +66,7 @@ Silberherz Subcore,tahlan_silberherz_minor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hul
 
 Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles by %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
-Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
+Additionally, the need for specialized maintenance equipment means supply use for maintanance and time to recover is %s if the fleet lacks a vessel with %s.
 
 %s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz_minor.png
 Adlerauge Array,tahlan_adlerauge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Adlerauge,"Built into the bow of the ship, this massive combat scanner supplies improved targeting data, increasing the effective range of energy and ballistic weapons by %s, boosting projectile velocity by %s and improving autofire accuracy.

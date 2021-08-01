@@ -4,6 +4,16 @@
 		{"file":"sounds/tahlan/systems/tahlan_rrskimmer.ogg","pitch":1.0,"volume":1.0},
 	],
 	
+	"tahlan_vesuvio_fire":{
+        "sounds":[
+           	{"file":"sounds/tahlan/weapons/tahlan_vesuvio_fire.ogg","pitch":0.7,"volume":1},
+			{"file":"sounds/tahlan/weapons/tahlan_vesuvio_fire.ogg","pitch":0.71,"volume":1},
+			{"file":"sounds/tahlan/weapons/tahlan_vesuvio_fire.ogg","pitch":0.72,"volume":1},
+			{"file":"sounds/tahlan/weapons/tahlan_vesuvio_fire.ogg","pitch":0.73,"volume":1},
+			{"file":"sounds/tahlan/weapons/tahlan_vesuvio_fire.ogg","pitch":0.74,"volume":1},
+        ],
+    },
+	
 	"tahlan_silk_fire":
 	[
 		{"file":"sounds/tahlan/weapons/tahlan_silk_fire.ogg","pitch":1.5,"volume":2.6},
@@ -283,9 +293,9 @@
     },
 	"tahlan_aetnos_fire":{
         "sounds":[
-           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.82,"volume":0.6},
-           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.84,"volume":0.6},
-           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.86,"volume":0.6},
+           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.82,"volume":0.55},
+           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.84,"volume":0.55},
+           	{"file":"sounds/tahlan/weapons/tahlan_aetnos_fire.ogg","pitch":0.86,"volume":0.55},
         ],
     },
 	"tahlan_magaera_fire":{

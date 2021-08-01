@@ -72,9 +72,8 @@ public class tahlan_SilberherzMinor extends BaseHullMod {
 		if (index == 0) return "" + (int)PD_PERCENT + txt("%");
 		if (index == 1) return "" + (int)WEAPON_HP + txt("%");
         if (index == 2) return txt("hmd_silberherz4");
-        if (index == 3) return txt("hmd_silberherz5");
-        if (index == 4) return txt("hmd_silberherz6");
-        if (index == 5) return txt("hmd_silberherz7");
+        if (index == 3) return txt("hmd_silberherz6");
+        if (index == 4) return txt("hmd_silberherz7");
 		return null;
 	}
 	

@@ -19,7 +19,10 @@
 
     "knownWeapons":{
         "weapons":[
-            "tahlan_disparax"
+            "tahlan_disparax",
+			"tahlan_vesuvio",
+			"tahlan_armiger",
+			"tahlan_efreet",
         ],
     },
 },

@@ -149,7 +149,6 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-	  "rednerOrderMod": 10,
       "locations": [71, -0]
     },
     {
@@ -200,7 +199,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-59, 64],
+      "location": [-58, 64],
       "length": 57,
       "width": 16,
       "angle": 180,
@@ -208,7 +207,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-59, -64],
+      "location": [-58, -64],
       "length": 57,
       "width": 16,
       "angle": -180,
@@ -216,7 +215,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-60, 75.5],
+      "location": [-59, 75.5],
       "length": 41,
       "width": 11,
       "angle": 180,
@@ -224,7 +223,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-60, -75.5],
+      "location": [-59, -75.5],
       "length": 41,
       "width": 11,
       "angle": -180,
@@ -232,7 +231,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-106, 26],
+      "location": [-105, 26],
       "length": 81,
       "width": 20,
       "angle": 180,
@@ -240,7 +239,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-106, -26],
+      "location": [-105, -26],
       "length": 81,
       "width": 20,
       "angle": -180,
@@ -248,7 +247,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-107, 37],
+      "location": [-106, 37],
       "length": 68,
       "width": 17,
       "angle": 180,
@@ -256,7 +255,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-107, -37],
+      "location": [-106, -37],
       "length": 68,
       "width": 17,
       "angle": -180,
@@ -264,7 +263,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-109, 47],
+      "location": [-108, 47],
       "length": 58.5,
       "width": 14,
       "angle": 180,
@@ -272,7 +271,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-109, -47],
+      "location": [-108, -47],
       "length": 58.5,
       "width": 14,
       "angle": -180,
@@ -280,7 +279,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-120.5, -0],
+      "location": [-118, -0],
       "length": 114,
       "width": 40,
       "angle": 180,
@@ -288,7 +287,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-121, 5.5],
+      "location": [-119, 5.5],
       "length": 60.854782,
       "width": 14.13445,
       "angle": 171,
@@ -296,7 +295,7 @@
       "style": "TAHLAN_REDCONE_ENGINE"
     },
     {
-      "location": [-121, -5.5],
+      "location": [-119, -5.5],
       "length": 60.854782,
       "width": 14.13445,
       "angle": -171,

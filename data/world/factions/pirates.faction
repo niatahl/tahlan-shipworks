@@ -17,7 +17,6 @@
 			"tahlan_Eagle_P":0.6,
 			"tahlan_Tempest_P":0.5,
 			"tahlan_Dominator_PH":0.1,
-			"tahlan_Nessie":0.4,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -28,7 +27,6 @@
 	"knownShips":{
 		"tags":["tahlan_legio_bp"],
 		"hulls":[
-			"tahlan_Nessie",
 			"tahlan_Castella_pirates",
 			"tahlan_Eagle_P",
 			"tahlan_Tempest_P",
