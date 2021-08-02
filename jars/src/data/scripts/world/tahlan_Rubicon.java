@@ -201,7 +201,7 @@ public class tahlan_Rubicon  {
                         )
                 ),
                 0.3f,
-                true,
+                false,
                 true);
 
         rubicon_3_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.PRISTINE_NANOFORGE)));
@@ -272,7 +272,7 @@ public class tahlan_Rubicon  {
                         )
                 ),
                 0.3f,
-                true,
+                false,
                 true);
 
         rubicon_outpost_market.getIndustry(Industries.MILITARYBASE).setAICoreId(Commodities.ALPHA_CORE);
