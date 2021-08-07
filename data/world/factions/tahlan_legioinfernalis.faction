@@ -261,7 +261,7 @@
 		"offerMissionsWhenHostile":false,
 		"allowsTransponderOffTrade":false,
 		"patrolsHaveNoPatrolMemoryKey":true,
-		"pirateBehavior":false, # for fleet behavior
+		"pirateBehavior":true, # for fleet behavior
 		#"makesPirateBases":true,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
 		"punitiveExpeditionData":{
