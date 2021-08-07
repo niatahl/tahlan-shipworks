@@ -1,5 +1,8 @@
 0.7.3
-- Renamed Skybreak back to its original name "Skyrend" cause nobody paid attention anyway
+- Renamed Skybreak back to Skysplitter cause it sounds better
+- Added Vesuvio Magcannon
+- Reworked Nelson sprite again
+
 
 0.7.2
 - Vund Autoforge now restores 50% more ammo if the captain has missile specialisation

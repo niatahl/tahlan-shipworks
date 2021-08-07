@@ -4,9 +4,9 @@
   "hullSize": "CRUISER",
   "spriteName": "graphics/tahlan/ships/tahlan_nelson.png",
   "style": "MIDLINE",
-  "height": 246,
+  "height": 258,
   "width": 226,
-  "center": [113, 123],
+  "center": [113, 135],
   "collisionRadius": 165,
   "shieldCenter": [0, 0],
   "shieldRadius": 154.5,
@@ -199,7 +199,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-58, 64],
+      "location": [-58.5, 64],
       "length": 57,
       "width": 16,
       "angle": 180,
@@ -207,7 +207,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-58, -64],
+      "location": [-58.5, -64],
       "length": 57,
       "width": 16,
       "angle": -180,
@@ -215,7 +215,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-59, 75.5],
+      "location": [-59.5, 75.5],
       "length": 41,
       "width": 11,
       "angle": 180,
@@ -223,7 +223,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-59, -75.5],
+      "location": [-59.5, -75.5],
       "length": 41,
       "width": 11,
       "angle": -180,
@@ -231,7 +231,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-105, 26],
+      "location": [-116.5, 27],
       "length": 81,
       "width": 20,
       "angle": 180,
@@ -239,7 +239,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-105, -26],
+      "location": [-116.5, -27],
       "length": 81,
       "width": 20,
       "angle": -180,
@@ -247,7 +247,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-106, 37],
+      "location": [-104.5, 37.5],
       "length": 68,
       "width": 17,
       "angle": 180,
@@ -255,7 +255,7 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-106, -37],
+      "location": [-104.5, -37.5],
       "length": 68,
       "width": 17,
       "angle": -180,
@@ -263,23 +263,23 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-108, 47],
-      "length": 58.5,
-      "width": 14,
+      "location": [-93.5, 47.5],
+      "length": 59,
+      "width": 19,
       "angle": 180,
-      "contrailSize": 14,
+      "contrailSize": 19,
       "style": "MIDLINE"
     },
     {
-      "location": [-108, -47],
-      "length": 58.5,
-      "width": 14,
+      "location": [-93.5, -47.5],
+      "length": 59,
+      "width": 19,
       "angle": -180,
-      "contrailSize": 14,
+      "contrailSize": 19,
       "style": "MIDLINE"
     },
     {
-      "location": [-118, -0],
+      "location": [-132.5, -0],
       "length": 114,
       "width": 40,
       "angle": 180,
@@ -287,7 +287,7 @@
       "style": "LOW_TECH"
     },
     {
-      "location": [-119, 5.5],
+      "location": [-132.5, 7],
       "length": 60.854782,
       "width": 14.13445,
       "angle": 171,
@@ -295,7 +295,7 @@
       "style": "TAHLAN_REDCONE_ENGINE"
     },
     {
-      "location": [-119, -5.5],
+      "location": [-132.5, -7],
       "length": 60.854782,
       "width": 14.13445,
       "angle": -171,

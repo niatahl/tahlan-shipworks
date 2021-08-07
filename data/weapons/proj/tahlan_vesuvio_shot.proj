@@ -2,6 +2,7 @@
 	"id":"tahlan_vesuvio_shot",
 	"specClass":"projectile",
 	"onFireEffect":"data.scripts.weapons.tahlan_VesuvioOnFireEffect",
+	"onHitEffect":"data.scripts.weapons.tahlan_VesuvioOnHitEffect",
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",

@@ -76,8 +76,9 @@ tahlan_throne,ship,,1.2,normal,graphics/tahlan/maps/ships_normals/tahlan_throne_
 tahlan_providence_admech,ship,,1.2,normal,graphics/tahlan/maps/ships_normals/tahlan_providence_admech_Normal.png
 tahlan_blockhead,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_blockhead_Normal.png
 tahlan_skyrend,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_skyrend_Normal.png
-tahlan_nelson,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_Normal.png
-tahlan_nelson_xiv,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_Normal.png
+tahlan_nelson,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_Normal.png
+tahlan_nelson_xiv,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_xiv_Normal.png
+tahlan_nelson_fpe,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_xiv_Normal.png
 ,,,,,
 ,,,,,
 tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png
@@ -89,7 +90,9 @@ tahlan_fountainfall_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tah
 tahlan_stahlherz_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_stahlherz_shoulder_l_Normal.png
 tahlan_stahlherz_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_stahlherz_shoulder_r_Normal.png
 tahlan_skyrend_cover,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_skyrend_cover_Normal.png
-tahlan_nelson_cover,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_cover_Normal.png
-tahlan_nelson_cover,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_cover_Normal.png
-tahlan_nelson_xiv_cover,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_cover_Normal.png
-tahlan_nelson_xiv_cover,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_cover_Normal.png
+tahlan_nelson_cover,turret,,2,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_cover_Normal.png
+tahlan_nelson_cover,hardpoint,,2,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_cover_Normal.png
+tahlan_nelson_xiv_cover,turret,,2,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_xiv_cover_Normal.png
+tahlan_nelson_xiv_cover,hardpoint,,2,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_xiv_cover_Normal.png
+tahlan_nelson_fpe_cover,turret,,2,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_xiv_cover_Normal.png
+tahlan_nelson_fpe_cover,hardpoint,,2,normal,graphics/tahlan/maps/weapon_normals/tahlan_nelson_xiv_cover_Normal.png

@@ -1,6 +1,7 @@
 //Based on Tartiflette's missileFab script. Thanks, buddy
 package data.scripts.weapons;
 
+import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
@@ -32,7 +33,7 @@ public class tahlan_VundAutoforgeEffect implements EveryFrameWeaponEffectPlugin 
             }
         }
 
-        if (engine.isPaused() || LAUNCHERS.isEmpty()) {
+        if (engine.isPaused() || LAUNCHERS.isEmpty() || !weapon.getShip().isAlive() ) {
             return;
         }
 
@@ -47,8 +48,11 @@ public class tahlan_VundAutoforgeEffect implements EveryFrameWeaponEffectPlugin 
                 // build 10% of the total ammo per minute
                 // buffed to 15% with missile spec
                 float regenFactor = 0.1f;
-                if (weapon.getShip().getCaptain().getStats().getSkillLevel(Skills.MISSILE_SPECIALIZATION) > 0) {
-                    regenFactor = 0.15f;
+                PersonAPI captain = weapon.getShip().getCaptain();
+                if (captain != null) {
+                    if (captain.getStats().getSkillLevel(Skills.MISSILE_SPECIALIZATION) > 0) {
+                        regenFactor = 0.15f;
+                    }
                 }
                 float build = entry.getValue() + (amount * entry.getKey().getSpec().getMaxAmmo() * regenFactor / 60f);
                 if (build >= 1) {
