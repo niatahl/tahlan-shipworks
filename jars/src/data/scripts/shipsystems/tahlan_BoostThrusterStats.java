@@ -6,8 +6,15 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
+import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
+import org.lwjgl.util.vector.Vector2f;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
 
@@ -15,6 +22,8 @@ public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
     private static final float MAX_SPEED_PENALTY = 60f;
 
     private float penalty;
+
+    private IntervalUtil interval = new IntervalUtil(0.01f,0.01f);
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
@@ -56,8 +65,6 @@ public class tahlan_BoostThrusterStats extends BaseShipSystemScript {
         stats.getTurnAcceleration().modifyPercent(id, 100f * effectLevel);
         stats.getMaxTurnRate().modifyFlat(id, 10f);
         stats.getMaxTurnRate().modifyPercent(id, 50f);
-
-
 
     }
 

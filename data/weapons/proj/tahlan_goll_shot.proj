@@ -2,6 +2,7 @@
 	"id":"tahlan_goll_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
+	"onHitEffect":"data.scripts.weapons.tahlan_GollOnHitEffect",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"length":50.0,
