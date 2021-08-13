@@ -11,7 +11,7 @@
 	- Increased damage from 90 to 100
 	- Increased efficiency from 1.2 to 1.0
 - Goll Overcharge Cannon
-	- Increased kinetic damage per shot from 10 to 50
+	- Increased kinetic damage per shot from 10 to 30
 	- Set efficiency to 1.5
 	- Added arcing effect
 
