@@ -77,7 +77,7 @@ public class tahlan_StahlSystemOnHitEffect implements OnHitEffectPlugin {
             }
         }
 
-        bonusDamage = projectile.getDamageAmount()*1.25f;
+        bonusDamage = projectile.getDamageAmount()*2.5f;
         if ( Math.random() > 0.9 ) {
             engine.applyDamage(target, point, bonusDamage, DamageType.FRAGMENTATION, 0f, false, false, projectile.getSource(),true);
 
