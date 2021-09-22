@@ -1,3 +1,16 @@
+0.7.4
+- Flagellator
+	- Insulated Engine Assembly has been replaced with Reinforced Bulkheads
+	- Reinforced Bulkheads added to Legio variant
+	- Hitpoints reduced from 4500 to 4000
+- Nelson
+	- DP increased from 28 to 30
+	- Re-re-re-re-re-re-reworked the sprite (help)
+- Kupferflug Regalia
+	- Fixed weapon groups so beam and torpedo can fire independently
+- Some fixes
+
+
 0.7.3
 - Renamed Skybreak back to Skysplitter cause it sounds better
 - Added Vesuvio Magcannon

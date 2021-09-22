@@ -13,22 +13,22 @@
 			"ships":[
 				["tahlan_dominator_gh_knight"],
 				["tahlan_enforcer_gh_knight"],
-				["tahlan_monitor_gh_knight"],
+				["tahlan_monitor_gh_knight"]
 			],
 			"officers":[
 				{
 					"level":5,
-					"rankId":"spaceCommander",
+					"rankId":"spaceCommander"
 				},
 				{
-					"level":4,
+					"level":4
 				},
 				{
-					"level":3,
-				},
+					"level":3
+				}
 			],
 			"averageSMods":2,
-			"pickChance":0.75,
+			"pickChance":0.75
 		},
 
 		"tahlan_mercRosenritter":{
@@ -48,17 +48,17 @@
 			"officers":[
 				{
 					"level":5,
-					"rankId":"spaceCommander",
+					"rankId":"spaceCommander"
 				},
 				{
-					"level":4,
+					"level":4
 				},
 				{
-					"level":3,
-				},
+					"level":3
+				}
 			],
 			"averageSMods":1,
-			"pickChance":0.75,
+			"pickChance":0.75
 		},
 
 		"tahlan_mercLegio":{
@@ -72,23 +72,23 @@
 			"ships":[
 				["tahlan_Castigator_P_raider","tahlan_Dominator_PH_striker"],
 				["tahlan_Bronco_p_brawler","tahlan_Flagellator_overdriven"],
-				["tahlan_lasher_pi_elite","tahlan_lasher_pi_overdriven"],
+				["tahlan_lasher_pi_elite","tahlan_lasher_pi_overdriven"]
 			],
 			"doctrineSizeOverride":4,
 			"officers":[
 				{
 					"level":5,
-					"rankId":"spaceCommander",
+					"rankId":"spaceCommander"
 				},
 				{
-					"level":3,
+					"level":3
 				},
 				{
-					"level":3,
-				},
+					"level":3
+				}
 			],
-			"averageSMods":1,
-		},
+			"averageSMods":1
+		}
 	
 	}
 }

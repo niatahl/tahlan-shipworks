@@ -12,6 +12,7 @@
   "shieldRadius": 108.5,
   "viewOffset": 0,
   "builtInMods": [
+    "reinforcedhull",
     "tahlan_lirefit"
   ],
   "builtInWeapons": {
