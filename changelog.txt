@@ -8,6 +8,8 @@
 	- Re-re-re-re-re-re-reworked the sprite (help)
 - Kupferflug Regalia
 	- Fixed weapon groups so beam and torpedo can fire independently
+- Hekaton
+	- Halved energy damage component of emp arcs from 200 to 100
 - Some fixes
 
 

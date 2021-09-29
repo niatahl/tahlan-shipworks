@@ -43,7 +43,7 @@ public class tahlan_HekatonOnHitEffect implements OnHitEffectPlugin {
                     if (!shieldHit || piercedShield) {
                         hitLevel += 0.25f;
                         EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(projectile.getSource(), point, ship, ship,
-                                DamageType.ENERGY, bonusDamage, bonusDamage, 100000f, null, 20f, COLOR1, COLOR2);
+                                DamageType.ENERGY, bonusDamage/2f, bonusDamage, 100000f, null, 20f, COLOR1, COLOR2);
                     }
                 }
 
