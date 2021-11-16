@@ -28,7 +28,7 @@ public class tahlan_TaffetaScript implements EveryFrameWeaponEffectPlugin {
     private boolean hasFiredThisCharge = false;
     private final IntervalUtil effectInterval = new IntervalUtil(0.05f, 0.1f);
 
-    private final List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
+    private final List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<>();
 
     //A map for known projectiles and their IDs: should be cleared in init
     private final Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
@@ -106,6 +106,8 @@ public class tahlan_TaffetaScript implements EveryFrameWeaponEffectPlugin {
             engine.addSmoothParticle(point2, ZERO, 100f, 0.7f, 0.1f, PARTICLE_COLOR);
             engine.addSmoothParticle(point2, ZERO, 150f, 0.7f, 1f, GLOW_COLOR);
             engine.addHitParticle(point2, ZERO, 200f, 1f, 0.05f, FLASH_COLOR);
+
+            weapon.getShip().getFluxTracker().increaseFlux(MathUtils.getRandomNumberInRange(0f,200f),false);
         }
 
 
