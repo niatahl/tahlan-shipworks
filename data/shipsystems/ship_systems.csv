@@ -1,46 +1,46 @@
-name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,isPhaseCloak,noVent,icon
-Assault Burn,tahlan_stormdrive,1,,,,,,,,,0.5,1,0.5,7,,,,,,,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
-Impes Infernalis,tahlan_infernalcharge,1,,,,,,,,,0.5,3,0.5,15,,,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
-Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,15,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Divine Might,tahlan_divinemight,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Celestial Might,tahlan_divinemight_nc,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Absolute Virtue,tahlan_absolutevirtue,,,,,,,,,,0.5,3,0.5,12,,,,,TRUE,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Errant Drive,tahlan_errantdrive,,,,0.1,,,,,,0.5,0.5,0.1,7,,,,TRUE,,TRUE,,,TRUE,,TRUE,graphics/icons/hullsys/maneuvering_jets.png
-Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,2,,2,5,TRUE,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,TRUE,,,,,,TRUE,TRUE,,,,graphics/icons/hullsys/fortress_shield.png
-Navigation Feed,tahlan_navigationfeed,,,,,,0.3,,,,0.5,20,0.5,10,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
-Dodgy Nav Feed,tahlan_dodgynavigationfeed,,,,,,0.2,,,,0.5,20,0.5,10,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
-Defensive Formations,tahlan_defformation,,,,,,0.2,,,,0.5,10,0.5,5,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
-Temporal Coordinator,tahlan_temporalcoordinator,,,,,,0.1,,,,0.5,6,0.5,12,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
-Periodic Breaker,tahlan_periodicbreaker,,,,,,0.40,,,,3,6,1,18,,,TRUE,TRUE,,,,,TRUE,,TRUE,graphics/icons/hullsys/temporal_shell.png
-Chrono Rupture,tahlan_temporaldrift,,,,,,0.15,,,,0.2,0.5,4,8,,,,TRUE,,,,,,,TRUE,graphics/icons/hullsys/temporal_shell.png
-Chrono Break,tahlan_supertemporaldrift,,,,,,0.1,,,,0.5,3,0.5,5,,,,TRUE,,,,,,,TRUE,graphics/icons/hullsys/temporal_shell.png
-Stronghold Shield,tahlan_strongholdshield,,,0.025,,,,,,,1.5,,1.5,0,TRUE,,,TRUE,TRUE,,,,,,,graphics/icons/hullsys/fortress_shield.png
-Cavalry Charge,tahlan_cavalrycharge,1,,,,,,,,,1,2,1,12,,,,,,,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
-Royal Charge,tahlan_royalcharge,1,,,,,,,,,1,2,1,15,,,,,,,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
-Raider Jets,tahlan_raiderjets,,,,,,,,,,0.5,1.5,3,5,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Boost Thruster,tahlan_boostthruster,,,,,,,,,,0.5,5,0.5,5,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Onslaught Jets,tahlan_raidestjets,,,,,,,,3,0.1,0.2,1,1,0.1,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Weaponry Overdrive,tahlan_weaponsoverdrive,1,,,,,,,3,0.05,0.25,3,0.25,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
-Enhanced EWAR Suite,tahlan_activeeccm,,,,,,0.2,,,,0.5,10,0.5,2,TRUE,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
-Heavy Phase Cloak,tahlan_heavyphase,,,,,,,,,,0.5,,0.5,2,TRUE,,TRUE,TRUE,TRUE,,,,TRUE,TRUE,,graphics/icons/hullsys/phase_cloak.png
-Auxiliary Thrusters,tahlan_auxthrusters,,,,,,,,3,0.05,0.5,3,0.5,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Steamlight Booster,tahlan_steamlight,,,,,,,,,,1,2,5,10,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Assault Mode,tahlan_assaultmode,,,,,,,,,,5,5,1,12,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Flux Overdrive,tahlan_fluxoverdrive,,,,,,,,,,2,10,2,20,,,TRUE,,,,,,TRUE,,,graphics/icons/hullsys/high_energy_focus.png
-Variable Ammo,tahlan_variable_ammo,,,0,,,,,3,0,0.15,,0,0.05,,,,,,,,,,,,graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png
-Weapon Stabilizers,tahlan_weaponstabilization,,,,,,,,,,0.5,7,0.5,14,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Microfusion Rounds,tahlan_explosiverounds,,,,,,,,3,0.05,0,5,0,0.5,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Plasma Rounds,tahlan_plasmarounds,,,,,,,,3,0.05,0,2,0,0.5,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Heavy Damper Field,tahlan_heavydamper,1,,,,,,,2,0.05,0.25,2,0.25,0,,,,,TRUE,,,,TRUE,,TRUE,graphics/icons/hullsys/damper_field.png
-Crusher Drive,tahlan_crusherdrive,1,,,,,,,,,0.5,4,0.5,20,,,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,graphics/icons/hullsys/burn_drive.png
-R-Type Phase Skimmer,tahlan_rrskimmer,,,,,,,,5,0.15,0.1,,0.1,0.1,,TRUE,,TRUE,,,,,,,,graphics/icons/hullsys/displacer.png
-Spatial Skimmer,tahlan_ltskimmer,,,,,,,,2,0.15,0.4,,0.4,0.2,,TRUE,,TRUE,,,,,,,,graphics/icons/hullsys/displacer.png
-Spatial Shift,tahlan_shiftdrive,,,,,,,,5,0.15,0.1,0.4,0.1,,,,TRUE,,TRUE,,,,TRUE,,TRUE,graphics/icons/hullsys/maneuvering_jets.png
-Spatial Jaunt,tahlan_jauntdrive,,,,,,,,3,0.25,0.1,0.6,0.1,,,,TRUE,,TRUE,TRUE,,,TRUE,,TRUE,graphics/icons/hullsys/maneuvering_jets.png
-Flux Blast,tahlan_fluxblast,,,,,,,,,,0.5,0.1,0.1,10,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Reality Shell,tahlan_realityshell,,,,,,,,,,5,10,1,30,,,,,,,,,TRUE,,TRUE,graphics/icons/hullsys/temporal_shell.png
-Inertialess Drive Mode,tahlan_inertialessdrive,,,,,,,,,,0.5,5,0.5,5,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
-Induction Ammo Feeders,tahlan_fluxfeeder,1,,,,,,,,,1,3,1,10,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-Wrath of the Machine,tahlan_machinespirit,1,,,,,,,,,1,3,1,10,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
-,,,,,,,,,,,,,,,,,,,,,,,,,,
+name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,isPhaseCloak,noVent,tags,icon
+Assault Burn,tahlan_stormdrive,1,,,,,,,,,0.5,1,0.5,7,,,,,,,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
+Impes Infernalis,tahlan_infernalcharge,1,,,,,,,,,0.5,3,0.5,15,,,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
+Holy Furor,tahlan_holyfuror,1,,,,,,,,,0.5,5,0.5,15,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Divine Might,tahlan_divinemight,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Celestial Might,tahlan_divinemight_nc,,,,,,,,3,0.05,0.5,2,0.5,,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Absolute Virtue,tahlan_absolutevirtue,,,,,,,,,,0.5,3,0.5,12,,,,,TRUE,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Errant Drive,tahlan_errantdrive,,,,0.1,,,,,,0.5,0.5,0.1,7,,,,TRUE,,TRUE,,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
+Assault Lockdown,tahlan_assaultlockdown,,,,,,,,,,2,,2,5,TRUE,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Sentry Mode,tahlan_sentrymode,,,,,,,,,,1,,1,,TRUE,,,,,,TRUE,TRUE,,,,,graphics/icons/hullsys/fortress_shield.png
+Navigation Feed,tahlan_navigationfeed,,,,,,0.3,,,,0.5,20,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Dodgy Nav Feed,tahlan_dodgynavigationfeed,,,,,,0.2,,,,0.5,20,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Defensive Formations,tahlan_defformation,,,,,,0.2,,,,0.5,10,0.5,5,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Temporal Coordinator,tahlan_temporalcoordinator,,,,,,0.1,,,,0.5,6,0.5,12,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Periodic Breaker,tahlan_periodicbreaker,,,,,,0.40,,,,3,6,1,18,,,TRUE,TRUE,,,,,TRUE,,TRUE,,graphics/icons/hullsys/temporal_shell.png
+Chrono Rupture,tahlan_temporaldrift,,,,,,0.15,,,,0.2,0.5,4,8,,,,TRUE,,,,,,,TRUE,,graphics/icons/hullsys/temporal_shell.png
+Chrono Break,tahlan_supertemporaldrift,,,,,,0.1,,,,0.5,3,0.5,5,,,,TRUE,,,,,,,TRUE,,graphics/icons/hullsys/temporal_shell.png
+Stronghold Shield,tahlan_strongholdshield,,,0.025,,,,,,,1.5,,1.5,0,TRUE,,,TRUE,TRUE,,,,,,,,graphics/icons/hullsys/fortress_shield.png
+Cavalry Charge,tahlan_cavalrycharge,1,,,,,,,,,1,2,1,12,,,,,,,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
+Royal Charge,tahlan_royalcharge,1,,,,,,,,,1,2,1,15,,,,,,,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
+Raider Jets,tahlan_raiderjets,,,,,,,,,,0.5,1.5,3,5,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Boost Thruster,tahlan_boostthruster,,,,,,,,,,0.5,5,0.5,5,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Onslaught Jets,tahlan_raidestjets,,,,,,,,3,0.1,0.2,1,1,0.1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Weaponry Overdrive,tahlan_weaponsoverdrive,1,,,,,,,3,0.05,0.25,3,0.25,,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Enhanced EWAR Suite,tahlan_activeeccm,,,,,,0.2,,,,0.5,10,0.5,2,TRUE,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Heavy Phase Cloak,tahlan_heavyphase,,,,,,,,,,0.5,,0.5,2,TRUE,,TRUE,TRUE,TRUE,,,,TRUE,TRUE,,,graphics/icons/hullsys/phase_cloak.png
+Auxiliary Thrusters,tahlan_auxthrusters,,,,,,,,3,0.05,0.5,3,0.5,,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Steamlight Booster,tahlan_steamlight,,,,,,,,,,1,2,5,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Assault Mode,tahlan_assaultmode,,,,,,,,,,5,5,1,12,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Flux Overdrive,tahlan_fluxoverdrive,,,,,,,,,,2,10,2,20,,,TRUE,,,,,,TRUE,,,,graphics/icons/hullsys/high_energy_focus.png
+Variable Ammo,tahlan_variable_ammo,,,0,,,,,3,0,0.15,,0,0.05,,,,,,,,,,,,,graphics/tahlan/icons/hullsys/tahlan_shell_swapping.png
+Weapon Stabilizers,tahlan_weaponstabilization,,,,,,,,,,0.5,7,0.5,14,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Microfusion Rounds,tahlan_explosiverounds,,,,,,,,3,0.05,0,5,0,0.5,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Plasma Rounds,tahlan_plasmarounds,,,,,,,,3,0.05,0,2,0,0.5,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Heavy Damper Field,tahlan_heavydamper,1,,,,,,,2,0.05,0.25,2,0.25,0,,,,,TRUE,,,,TRUE,,TRUE,,graphics/icons/hullsys/damper_field.png
+Crusher Drive,tahlan_crusherdrive,1,,,,,,,,,0.5,4,0.5,20,,,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
+R-Type Phase Skimmer,tahlan_rrskimmer,,,,,,,,5,0.15,0.1,,0.1,0.1,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
+Spatial Skimmer,tahlan_ltskimmer,,,,,,,,2,0.15,0.4,,0.4,0.2,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
+Spatial Shift,tahlan_shiftdrive,,,,,,,,5,0.15,0.1,0.4,0.1,,,,TRUE,,TRUE,,,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
+Spatial Jaunt,tahlan_jauntdrive,,,,,,,,3,0.25,0.1,0.6,0.1,,,,TRUE,,TRUE,TRUE,,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
+Flux Blast,tahlan_fluxblast,,,,,,,,,,0.5,0.1,0.1,10,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Reality Shell,tahlan_realityshell,,,,,,,,,,5,10,1,30,,,,,,,,,TRUE,,TRUE,,graphics/icons/hullsys/temporal_shell.png
+Inertialess Drive Mode,tahlan_inertialessdrive,,,,,,,,,,0.5,5,0.5,5,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Induction Ammo Feeders,tahlan_fluxfeeder,1,,,,,,,,,1,3,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Wrath of the Machine,tahlan_machinespirit,1,,,,,,,,,1,3,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,

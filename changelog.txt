@@ -1,3 +1,20 @@
+0.7.6
+- Flagellator
+	- Hitpoints increased from 4000 to 6000
+	- Reinfoced Bulkheads replaced with Rugged Construction
+	
+
+0.7.5
+- Quick fix for 0.95.1a
+- Castella
+	- Now has standard Damper Field
+- Blockhead
+	- Now has standard Damper Field
+- Wanna guess what Alex broke?
+- Exactly, custom damper fields using vanilla AI
+- Guess Castella and Blockhead are getting some buffs then
+
+
 0.7.4
 - Flagellator
 	- Insulated Engine Assembly has been replaced with Reinforced Bulkheads

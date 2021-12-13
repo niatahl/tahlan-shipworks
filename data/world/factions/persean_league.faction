@@ -33,7 +33,9 @@
 	# listing ships here will make the faction mostly use them even if other hulls become available
 	"priorityShips":{
 		#"tags":[],
-		#"hulls":[],
+		"hulls":[
+			"tahlan_skyrend",
+		],
 	},
 	
 	"knownFighters":{

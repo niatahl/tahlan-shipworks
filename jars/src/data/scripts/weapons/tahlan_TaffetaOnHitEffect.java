@@ -95,7 +95,7 @@ public class tahlan_TaffetaOnHitEffect implements OnHitEffectPlugin {
                 /*if (!shieldHit && !CollisionUtils.isPointWithinBounds(location,target)){
                     source = (ShipAPI)target;
                 }*/
-                DamagingProjectileAPI newProj = (DamagingProjectileAPI)Global.getCombatEngine().spawnProjectile(source, null, SPLINTER_WEAPON_ID, location, angle, new Vector2f(0,0));
+                DamagingProjectileAPI newProj = (DamagingProjectileAPI)Global.getCombatEngine().spawnProjectile(source, projectile.getWeapon(), SPLINTER_WEAPON_ID, location, angle, new Vector2f(0,0));
                 Vector2f newVel = new Vector2f(newProj.getVelocity());
                 //VectorUtils.rotate(newVel,angle,newVel);
                 newVel.scale((float)Math.random());

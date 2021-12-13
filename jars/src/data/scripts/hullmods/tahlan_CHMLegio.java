@@ -15,6 +15,8 @@ public class tahlan_CHMLegio extends BaseHullMod {
         mag.put(ShipAPI.HullSize.DESTROYER, 15f);
         mag.put(ShipAPI.HullSize.CRUISER, 10f);
         mag.put(ShipAPI.HullSize.CAPITAL_SHIP, 5f);
+        mag.put(ShipAPI.HullSize.FIGHTER,20f);
+        mag.put(ShipAPI.HullSize.DEFAULT,0f);
     }
     private static final float ZERO_FLUX_BOOST = 10f;
 
