@@ -1,4 +1,5 @@
-0.7.6
+0.7.5b
+- Fixed the Taffeta fix
 - Flagellator
 	- Hitpoints increased from 4000 to 6000
 	- Reinfoced Bulkheads replaced with Rugged Construction
