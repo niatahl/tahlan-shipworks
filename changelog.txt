@@ -1,3 +1,9 @@
+0.7.5c
+- Fixed the Taffeta for good this time
+- I swear to god if this crashes again...
+- @SirHartley: I am the new crash fairy!
+
+
 0.7.5b
 - Fixed the Taffeta fix
 - Flagellator
