@@ -1,0 +1,67 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 1,
+    "fluxVents": 30,
+    "hullId": "tahlan_tower",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor",
+        "armoredweapons"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_tower_brawler",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "typhoon"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "swarmer",
+                "WS0012": "swarmer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "tahlan_aetnos",
+                "WS0003": "tahlan_aetnos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "lightdualac",
+                "WS0006": "lightdualac",
+                "WS0007": "lightdualac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "dualflak",
+                "WS0004": "dualflak"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "vulcan",
+                "WS0010": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "piranha_wing",
+        "piranha_wing"
+    ]
+}

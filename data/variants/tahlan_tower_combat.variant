@@ -1,0 +1,67 @@
+{
+    "displayName": "Combat",
+    "fluxCapacitors": 12,
+    "fluxVents": 30,
+    "hullId": "tahlan_tower",
+    "hullMods": [
+        "targetingunit",
+        "fluxbreakers",
+        "auxiliarythrusters"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_tower_combat",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "harpoonpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "atropos",
+                "WS0012": "atropos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "heavyac",
+                "WS0003": "heavyac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "lightag",
+                "WS0006": "lightag",
+                "WS0007": "lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "dualflak",
+                "WS0004": "dualflak"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "vulcan",
+                "WS0010": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "thunder_wing",
+        "thunder_wing"
+    ]
+}

@@ -14,11 +14,11 @@ public class tahlan_HeavyDamperStats extends BaseShipSystemScript {
 
 	private static final Map<HullSize, Float> mag = new HashMap<>();
 	static {
-		mag.put(HullSize.FIGHTER, 0.33f);
-		mag.put(HullSize.FRIGATE, 0.33f);
-		mag.put(HullSize.DESTROYER, 0.33f);
-		mag.put(HullSize.CRUISER, 0.5f);
-		mag.put(HullSize.CAPITAL_SHIP, 0.5f);
+		mag.put(HullSize.FIGHTER, 0.25f);
+		mag.put(HullSize.FRIGATE, 0.25f);
+		mag.put(HullSize.DESTROYER, 0.25f);
+		mag.put(HullSize.CRUISER, 0.25f);
+		mag.put(HullSize.CAPITAL_SHIP, 0.25f);
 	}
 	
 	protected Object STATUSKEY1 = new Object();

@@ -1,0 +1,67 @@
+{
+    "displayName": "Elite",
+    "fluxCapacitors": 2,
+    "fluxVents": 30,
+    "hullId": "tahlan_tower",
+    "hullMods": [
+        "targetingunit",
+        "fluxbreakers",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_tower_elite",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "pilum"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "sabot",
+                "WS0012": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "heavymauler",
+                "WS0003": "heavymauler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "railgun",
+                "WS0006": "railgun",
+                "WS0007": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "dualflak",
+                "WS0004": "dualflak"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "vulcan",
+                "WS0010": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "broadsword_wing",
+        "broadsword_wing"
+    ]
+}

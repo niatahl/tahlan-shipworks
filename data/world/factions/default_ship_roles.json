@@ -80,6 +80,7 @@
 		"tahlan_blockhead_combat":4,
 		"tahlan_blockhead_overdriven":3,
 		"tahlan_blockhead_support":3,
+		"tahlan_blockhead_lp_pather":10,
 		"tahlan_throne_artillery":4,
 		"tahlan_throne_gunship":3,
 		"tahlan_throne_overdriven":3,
@@ -89,7 +90,10 @@
 		"tahlan_nelson_combat":4,
 		"tahlan_nelson_overdriven":3,
 		"tahlan_nelson_artillery":3,
-		"tahlan_nelson_xiv_elite":3
+		"tahlan_nelson_xiv_elite":3,
+		"tahlan_tower_combat":3,
+		"tahlan_tower_brawler":4,
+		"tahlan_tower_elite":3
 	},
 	"combatCapital":{
 		"tahlan_Castella_lp_standard":10,
