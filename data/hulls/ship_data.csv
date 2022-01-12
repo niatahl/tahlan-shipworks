@@ -18,7 +18,7 @@ Darnus,tahlan_darnus,Frigate,Low Tech,tahlan_jauntdrive,8,1800,400,4000,2813,300
 Blockhead,tahlan_blockhead,Cruiser,Low Tech,damper,14,8000,1200,9000,2000,400,130,,40,25,15,18,15,1500,FRONT,,120,0.5,1.0,,,45,100,300,100,3,30,7,70000,3,20,480,0.25,22,22,,lowtech_bp,,0.6,2,3,411
 Hresvelgr,tahlan_Hresvelgr,Fleetcarrier,Low Tech,tahlan_defformation,28,14000,1200,11000,12500,400,260,6,35,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, hist3t",,0.4,2,4,507
 Castella,tahlan_Castella,Battlecarrier,Low Tech,damper,28,15000,1400,11000,12500,600,240,5,30,15,15,8,8,3500,FRONT,,100,0.4,1,,,700,1500,300,300,15,20,7,400000,3,12,720,0.25,40,40,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, hist3t",,0.4,2,4,507
-Bento (LP),tahlan_Bento_lp,Combat Tanker,Low Tech,tahlan_crusherdrive,6,3000,500,8000,1250,150,70,1,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,30,250,1,240,9,15000,6,20,240,0.25,7,7,"TANKER, COMBAT",LP_bp,,0.5,2,4,209
+Bento (LP),tahlan_Bento_lp,Combat Tanker,Luddic Path,tahlan_crusherdrive,6,3000,500,8000,1250,150,70,1,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,30,250,1,240,9,15000,6,20,240,0.25,7,7,"TANKER, COMBAT",LP_bp,,0.5,2,4,209
 Bento,tahlan_Bento,Armored Tanker,Low Tech,reservewing,6,3000,500,8000,1250,150,70,1,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,10,20,30,250,1,240,9,15000,6,20,240,0.25,7,7,TANKER,lowtech_bp,,0.5,2,4,209
 Throne,tahlan_throne,Cruiser,Low Tech,tahlan_fluxfeeder,15,7000,1200,12000,10500,450,150,,70,50,40,22,30,1200,FRONT,,270,0.5,1.1,,,160,220,180,120,3,33,8,120000,3,12,480,0.25,26,26,WEAPONS_FRONT_TO_BACK,"rare_bp, hist2t",0.5,0.5,2,3,401
 Castigator,tahlan_Castigator,Assault Cruiser,Low Tech,tahlan_stormdrive,16,10000,1400,12000,10500,550,160,,50,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, hist2t",0.5,0.5,2,3,401
@@ -31,12 +31,13 @@ Defiance,tahlan_Defiance,Missile Cruiser,Midline,forgevats,14,8500,800,7000,4000
 Ingress,tahlan_Ingress,Battlecarrier,Midline,tahlan_navigationfeed,28,14000,1000,13000,12500,800,240,4,40,30,24,10,10,3500,OMNI,,90,0.4,1,,,650,1300,280,250,14,19,8,340000,5,15,720,0.25,40,40,"CARRIER, COMBAT, NO_AUTO_ESCORT","rare_bp, hist3t",,0.4,2,4,12121
 Kodai,tahlan_Kodai,Cruiser,Midline,maneuveringjets,14,8000,800,10000,10500,600,120,1,60,40,25,20,30,1100,FRONT,,160,0.4,0.8,,,170,300,300,120,3,33,8,110000,3,12,480,0.25,22,22,,"rare_bp, hist2t",,0.5,2,3,121212
 Tempest (P),tahlan_Tempest_P,Frigate,Pirate,tahlan_weaponsoverdrive,8,1100,200,2500,2813,200,50,1,180,200,175,90,270,200,OMNI,,120,0.2,0.8,,,15,25,30,20,1,20,11,40000,10,20,180,0.25,8,8,,rare_bp,0.75,0.5,2,2,206
-Eagle (P),tahlan_Eagle_P,Cruiser,Pirate,tahlan_raiderjets,15,8000,900,10000,10500,450,155,1,50,30,20,15,20,1200,FRONT,,270,0.4,0.8,,,150,250,150,100,3,33,8,140000,3,12,480,0.25,22,22,WEAPONS_FRONT_TO_BACK,rare_bp,0.75,0.5,2,3,40111
+Eagle (P),tahlan_Eagle_P,Cruiser,Pirate,tahlan_raiderjets,15,8000,900,10000,10500,500,155,1,50,30,20,15,20,1200,FRONT,,270,0.4,0.8,,,150,250,150,100,3,33,8,140000,3,12,480,0.25,22,22,WEAPONS_FRONT_TO_BACK,rare_bp,0.75,0.5,2,3,40111
 Cordite,tahlan_Cobalt,Cruiser,High Tech,highenergyfocus,14,5000,600,10000,12000,700,140,,90,100,80,30,60,750,OMNI,,160,0.3,0.7,,,70,140,60,80,3,27,9,120000,4,12,420,0.25,25,25,,"rare_bp, hist2t",0.75,2,2,3,
 Poltergeist,tahlan_Poltergeist,Phase Cruiser,High Tech,forgevats,22,7000,1100,9000,18000,700,140,,60,50,40,18,25,1200,PHASE,phasecloak,,,,0.05,0.05,60,110,125,160,3,50,8,230000,4,20,420,0.25,30,30,PHASE,"rare_bp, hist3t",,,,,
 Castigator (XIV),tahlan_Castigator_xiv,Assault Cruiser,XIV Battlegroup,burndrive,16,10000,1400,12000,10500,550,160,,50,40,30,20,25,1400,FRONT,,270,0.4,1,,,180,290,200,140,3,33,8,140000,3,15,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,"rare_bp, hist3t",0.1,0.5,2,3,401
 Skysplitter,tahlan_skyrend,Battlecruiser,Midline,highenergyfocus,25,12000,900,18000,,1200,300,2,60,90,55,15,20,3000,FRONT,,300,0.4,1.2,,,350,500,250,250,10,30,8,380000,3,15,660,0.25,40,40,,rare_bp,,0.5,2,5,11311
 Nelson,tahlan_nelson,Assault Cruiser,Midline,tahlan_boostthruster,16,9000,1300,9000,11000,700,180,,50,40,30,15,20,1500,FRONT,,240,0.4,0.9,,,180,260,140,140,4,38,8,135000,4,12,480,0.25,30,30,WEAPONS_FRONT_TO_BACK,rare_bp,,,,,
+Tower,tahlan_tower,Heavy Cruiser,Low Tech,ammofeed,15,10000,1500,9000,9000,400,160,2,40,25,10,14,14,2100,FRONT,,150,0.4,1,,,180,320,150,150,5,30,8,370000,4,12,540,0.25,26,26,,,,0.4,2,3,404
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Rosenritter,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

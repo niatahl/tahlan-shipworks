@@ -128,7 +128,7 @@
       "id": "WS0013",
       "size": "LARGE",
       "type": "BALLISTIC",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
       "locations": [7, -0]

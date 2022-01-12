@@ -1,3 +1,19 @@
+0.7.6
+- Added Tower-class Heavy Cruiser
+- Reduced fadeout time for Ryza and Mezoa since someone was bitching about it
+- Fixed Nessie large mount being a turret
+- Fixed Bento (LP) tech type
+- Fixed spawning for Blockhead (LP)
+- Eagle (P)
+	- Increased dissipation to 500
+
+
+0.7.5c
+- Fixed the Taffeta for good this time
+- I swear to god if this crashes again...
+- @SirHartley: I am the new crash fairy!
+
+
 0.7.5b
 - Fixed the Taffeta fix
 - Flagellator

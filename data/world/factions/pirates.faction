@@ -17,6 +17,7 @@
 			"tahlan_Eagle_P":0.6,
 			"tahlan_Tempest_P":0.5,
 			"tahlan_Dominator_PH":0.1,
+			"tahlan_tower":0.5
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -34,6 +35,7 @@
 			"tahlan_Dominator_PH",
 			"tahlan_Hresvelgr_p",
 			"tahlan_blockhead",
+			"tahlan_tower"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

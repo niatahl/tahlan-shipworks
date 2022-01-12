@@ -7,7 +7,7 @@
 	#"fleetPoints":14,
 	#"ordnancePoints":150,
     "spriteName":"graphics/tahlan/ships/tahlan_blockhead_lp.png",
-	"tags":["LP_bp"],
+	"tags":["LP_bp","luddic_path"],
 	"tech":"Luddic Path",
     "baseValueMult":1.5,
     "removeWeaponSlots":[],         # ids

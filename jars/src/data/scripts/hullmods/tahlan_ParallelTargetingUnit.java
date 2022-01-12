@@ -1,6 +1,7 @@
 package data.scripts.hullmods;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
+import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.listeners.WeaponRangeModifier;
@@ -19,18 +20,6 @@ public class tahlan_ParallelTargetingUnit extends BaseHullMod {
     public boolean isApplicableToShip(ShipAPI ship) {
         return true;
     }
-
-//    @Override
-//    public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-//        stats.getWeaponRangeThreshold().modifyFlat(id,RANGE_CAP);
-//        stats.getWeaponRangeMultPastThreshold().modifyMult(id,RANGE_MULT);
-//
-//        stats.getBallisticWeaponRangeBonus().modifyPercent(id,RANGE_BOOST);
-//        stats.getEnergyWeaponRangeBonus().modifyPercent(id,RANGE_BOOST);
-//
-//        stats.getNonBeamPDWeaponRangeBonus().modifyPercent(id, -PD_MINUS);
-//        stats.getBeamPDWeaponRangeBonus().modifyPercent(id, -PD_MINUS);
-//    }
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {

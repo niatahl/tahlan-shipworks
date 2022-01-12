@@ -59,7 +59,7 @@ Regalia were designed for resilience. The advanced targeting matrix is highly ef
 
 Due to their high complexity, Regalia are directly controlled by their captain via a neural interface. While this allows for incredibly precise control, only well-experienced individuals will be able to bring out the machine's full potential. As such, an officer of at least %s will be capable of bringing out the machine's full potential, increasing its general performance by about %s.
 
-Additionally, the need for specialized maintenance equipment means supply use for maintanance is %s and time to recover is %s if the fleet lacks a vessel with %s.
+Additionally, the need for specialized maintenance equipment means supply use for maintanance and time to recover is %s if the fleet lacks a vessel with %s.
 
 %s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz.png
 Silberherz Subcore,tahlan_silberherz_minor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_SilberherzMinor,"The arcane technology of this warmachine is powered and controlled by a downscaled variant of the Silberherz, a hyperadvanced combined computing and power core.
