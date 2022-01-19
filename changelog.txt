@@ -1,3 +1,21 @@
+0.7.7
+- Armiger
+	- Reduced damage from 300 to 150
+	- Reduced flux/s accordingly
+	- Reduced time between salvos from 2.8s to 1.4s
+	- Reduced recoil per shot
+- Nelson
+	- Reduced armor from 1300 to 1200
+- Castigator (all variants)
+	- Reduced dissipation from 550 to 500
+- Magaera
+	- Increased time between shots from 1s to 1.2s
+- Gardion
+	- Increased chargeup from 0.2s to 0.4s
+- Gardas
+	- Increased chargeup from 0.3s to 0.5s
+
+
 0.7.6
 - Added Tower-class Heavy Cruiser
 - Reduced fadeout time for Ryza and Mezoa since someone was bitching about it
