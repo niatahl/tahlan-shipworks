@@ -20,7 +20,17 @@ public class tahlan_BroadsideMounts extends BaseHullMod {
 		stats.getDynamic().getMod(Stats.LARGE_BALLISTIC_MOD).modifyFlat(id,-LARGE_OP_REDUCTION);
 		stats.getDynamic().getMod(Stats.LARGE_ENERGY_MOD).modifyFlat(id,-LARGE_OP_REDUCTION);
 	}
-	
+
+//  Just in case Nick's retardation ever reaches critical levels
+//	@Override
+//	public void advanceInCombat(ShipAPI ship, float amount) {
+//		for (WeaponAPI weapon: ship.getAllWeapons()) {
+//			if (weapon.getSpec().getWeaponId().equals("devastator") && weapon.getSlot().getId().equals("WS0003")) {
+//				throw new RuntimeException("Stop being trash lmao");
+//			}
+//		}
+//	}
+
 	public String getDescriptionParam(int index, HullSize hullSize) {
 		if (index == 0) return "" + (int) WEAPON_HEALTH_BONUS + txt("%");
 		if (index == 1) return "" + (int) REPAIR_BONUS + txt("%");

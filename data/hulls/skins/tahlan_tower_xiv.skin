@@ -1,0 +1,34 @@
+{
+	"baseHullId":"tahlan_tower",
+	"skinHullId":"tahlan_tower_xiv",
+	"hullName":"Column (XIV)",
+	"descriptionId":"tahlan_tower",
+	"descriptionPrefix":"Built to the specifications of the 14th Domain Battlegroup which founded the Hegemony, this vessel is a prime example of the Domain Navy's 'decisive battle' doctrine, particularly exhibited by a series of radical structural modifications performed using pre-Collapse industrial technology.",
+	"tags":["XIV_bp"],
+	"tech":"XIV Battlegroup",
+	"fleetPoints":16,
+	"ordnancePoints":165,
+	"baseValueMult":1.75,
+	"spriteName":"graphics/tahlan/ships/tahlan_tower_xiv.png",
+	"coversColor":[255,255,255,255],
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"removeBuiltInWeapons":[
+		"WS0001",
+		"WS0004"
+	],
+	"builtInMods":["fourteenth"],
+	"builtInWeapons":{
+		"WS0001":"dualflak",
+		"WS0004":"dualflak",
+    },
+	"weaponSlotChanges":{
+		"WS0002":{
+      		"type": "HYBRID",
+    	},
+    	"WS0003":{
+      		"type": "HYBRID",
+    	},
+    },
+}

@@ -8,7 +8,7 @@
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_jagd_bp"],
+    "tags":["tahlan_jagd_bp","no_dealer"],
 	"systemId":"tahlan_weaponstabilization",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids

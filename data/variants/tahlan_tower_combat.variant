@@ -47,8 +47,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "dualflak",
-                "WS0004": "dualflak"
+                "WS0001": "flak",
+                "WS0004": "flak"
             }
         },
         {

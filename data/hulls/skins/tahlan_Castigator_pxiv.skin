@@ -5,6 +5,7 @@
     "descriptionId":"tahlan_Castigator_P",
     "descriptionPrefix":"Presumably originally one of the few remaining Castigator-class cruisers built to the 14th Legion's alternate specifications, this hull was captured by Legio Infernalis forces and retrofitted according to Legio doctrine. The hull was later recaptured by a hegemony taskforce and repainted in its original colours, although the modifications remained. Converting the hull back to its initial configuration was regarded as too expensive, but it seems some creative Hegemony engineers managed to take advantage of the remaining TPC-components inside the hull to fit it with a pair of antiquated but effective Thermal Pulse Blasters.",
 	#"fleetPoints":28,
+	"tags":["no_bp_drop","no_dealer",no_sell"],
 	"addHints":["HIDE_IN_CODEX"],
     "spriteName":"graphics/tahlan/ships/oddities/tahlan_Castigator_pxiv.png",
     "baseValueMult":1.25,

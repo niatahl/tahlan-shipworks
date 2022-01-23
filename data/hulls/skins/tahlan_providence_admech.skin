@@ -6,6 +6,7 @@
     "descriptionPrefix":"Painted in the colors of the Children of Mars, sanctified in the name of the Machine God and enhanced with His holy technology.",
 	"fleetPoints":28,
 	"addHints":["HIDE_IN_CODEX"],
+	"tags":["no_bp_drop","no_dealer",no_sell"],
 	"ordnancePoints":280,
     "spriteName":"graphics/tahlan/ships/oddities/tahlan_providence_admech.png",
     "baseValueMult":1.25,

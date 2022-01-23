@@ -15,8 +15,8 @@
     "ballistic_rangefinder"
   ],
   "builtInWeapons": {
-    "WS0001": "dualflak",
-    "WS0004": "dualflak"
+    "WS0001": "flak",
+    "WS0004": "flak"
   },
   "weaponSlots": [
     {
@@ -159,50 +159,50 @@
   "engineSlots": [
     {
       "location": [-71.5, 65.5],
-      "length": 36,
-      "width": 15,
+      "length": 47.5,
+      "width": 18,
       "angle": 180,
-      "contrailSize": 15,
+      "contrailSize": 18,
       "style": "LOW_TECH"
     },
     {
       "location": [-71.5, -65.5],
-      "length": 36,
-      "width": 15,
+      "length": 47.5,
+      "width": 18,
       "angle": -180,
-      "contrailSize": 15,
+      "contrailSize": 18,
       "style": "LOW_TECH"
     },
     {
       "location": [-75.5, 52],
-      "length": 46,
-      "width": 20,
+      "length": 69,
+      "width": 25,
       "angle": 180,
-      "contrailSize": 20,
+      "contrailSize": 25,
       "style": "LOW_TECH"
     },
     {
       "location": [-75.5, -52],
-      "length": 46,
-      "width": 20,
+      "length": 69,
+      "width": 25,
       "angle": -180,
-      "contrailSize": 20,
+      "contrailSize": 25,
       "style": "LOW_TECH"
     },
     {
       "location": [-50, 7.5],
-      "length": 55,
-      "width": 20,
+      "length": 76.5,
+      "width": 25,
       "angle": 180,
-      "contrailSize": 20,
+      "contrailSize": 25,
       "style": "LOW_TECH"
     },
     {
       "location": [-50, -7.5],
-      "length": 55,
-      "width": 20,
+      "length": 76.5,
+      "width": 25,
       "angle": -180,
-      "contrailSize": 20,
+      "contrailSize": 25,
       "style": "LOW_TECH"
     }
   ],

@@ -4,7 +4,7 @@
     "hullName":"Yari (B)",
     "descriptionId":"tahlan_Glint",
     "descriptionPrefix":"A custom variant of the Yari-class cruiser, commonly used by bounty hunters for its unrivaled ability to take out key targets swiftly.",
-    "tags":[],
+    "tags":["no_bp_drop","no_dealer",no_sell"],
 	"addHints":["HIDE_IN_CODEX"],
     #"tech":"High Tech",
 	"ordnancePoints":160,

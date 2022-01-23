@@ -4,7 +4,7 @@
     "hullName":"Nibelung Albion",
     "descriptionId":"tahlan_Nibelung",
     "descriptionPrefix":"This ancient vessel carries the ceremonial colors of the royal guard of a long-lost polity. Its origins lost to time, this relic now serves only as a reminder of all those forgotten in the endless void of our universe. At least it comes with some neat upgrades, though.",
-    "tags":[],
+    "tags":["no_bp_drop","no_dealer",no_sell"],
 	"addHints":["HIDE_IN_CODEX"],
     #"tech":"High Tech",
     "spriteName":"graphics/tahlan/ships/oddities/tahlan_Nibelung_crg.png",

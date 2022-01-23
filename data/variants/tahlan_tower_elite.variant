@@ -1,8 +1,8 @@
 {
     "displayName": "Elite",
-    "fluxCapacitors": 2,
+    "fluxCapacitors": 4,
     "fluxVents": 30,
-    "hullId": "tahlan_tower",
+    "hullId": "tahlan_tower_xiv",
     "hullMods": [
         "targetingunit",
         "fluxbreakers",
@@ -16,7 +16,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0008": "pilum"}
+            "weapons": {"WS0008": "sabotpod"}
         },
         {
             "autofire": false,
