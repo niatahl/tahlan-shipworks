@@ -1,8 +1,13 @@
 0.7.7
 - Armiger
-	- Reduced damage from 300 to 150
+	- Reduced damage from 300 to 200
 	- Reduced flux/s accordingly
-	- Reduced time between salvos from 2.8s to 1.4s
+	- Reduced time between salvos from 2.8s to 1.8s
+	- Reduced recoil per shot
+- Efreet
+	- Reduced maximum spread
+- Aetnos
+	- Slightly reduced maximum spread
 	- Reduced recoil per shot
 - Nelson
 	- Reduced armor from 1300 to 1200
@@ -14,6 +19,13 @@
 	- Increased chargeup from 0.2s to 0.4s
 - Gardas
 	- Increased chargeup from 0.3s to 0.5s
+- Timeless Prototype
+	- Lowered DP from 75 to 60 cause some sissy had to winge about it
+- Column (formerly Tower)
+	- Renamed due to name conflict with a dead mod
+	- Dual flaks swapped to single flaks
+	- XIV variant added (which gets the dual flaks)
+- Blocked a bunch of stuff from being available from that bloody dealer
 
 
 0.7.6
