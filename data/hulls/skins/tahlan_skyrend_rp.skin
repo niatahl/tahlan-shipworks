@@ -8,7 +8,7 @@
     "baseValueMult":1.5,
     "restoreToBaseHull":false,
     "addHints":["HIDE_IN_CODEX"],
-    "tags":[""],
+    "tags":["no_bp_drop","no_dealer","no_sell"],
 	#"systemId":"highenergyfocus",
     "tech":"Midline",
     "removeWeaponSlots":[], 		# ids

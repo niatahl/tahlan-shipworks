@@ -6,7 +6,7 @@
     "descriptionPrefix":"This ship has received a number of non-standard modifications, seemingly for participation in belt races, if the rather fetching paintjob is anything to go by.",
 	"fleetPoints":14,
 	"ordnancePoints":150,
-	"tags":["no_bp_drop","no_dealer",no_sell"],
+	"tags":["no_bp_drop","no_dealer","no_sell"],
     "spriteName":"graphics/tahlan/ships/oddities/tahlan_Phoca_r.png",
     "baseValueMult":1.5,
     "removeWeaponSlots":[],         # ids
