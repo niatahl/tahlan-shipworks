@@ -3,13 +3,19 @@ package data.scripts;
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.PluginPick;
+import com.fs.starfarer.api.campaign.BaseCampaignEventListener;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
+import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.impl.campaign.GateEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
+import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.*;
 import data.scripts.weapons.ai.tahlan_FountainAI;
 import data.scripts.weapons.ai.tahlan_KriegsmesserAI;
@@ -19,6 +25,7 @@ import data.scripts.world.tahlan_Lethia;
 import data.scripts.world.tahlan_Rubicon;
 import exerelin.campaign.SectorManager;
 import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
 import org.dark.shaders.util.TextureData;
@@ -34,9 +41,11 @@ import static data.scripts.campaign.siege.LegioSiegeBaseIntel.log;
 
 public class tahlan_ModPlugin extends BaseModPlugin {
     static private boolean graphicsLibAvailable = false;
-    static public boolean isGraphicsLibAvailable () {
+
+    static public boolean isGraphicsLibAvailable() {
         return graphicsLibAvailable;
     }
+
     //All hullmods related to shields, saved in a convenient list
     public static List<String> SHIELD_HULLMODS = new ArrayList<String>();
 
@@ -52,15 +61,17 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public static boolean ENABLE_LIFELESS;
     public static boolean ENABLE_LEGIOBPS;
 
+    public static final Logger LOGGER = Global.getLogger(tahlan_ModPlugin.class);
+
     @Override
     public void onApplicationLoad() {
         boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
         if (!hasLazyLib) {
-            throw new RuntimeException("Tahlan Shipworks requires LazyLib by LazyWizard"  + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
+            throw new RuntimeException("Tahlan Shipworks requires LazyLib by LazyWizard" + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
         }
         boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
         if (!hasMagicLib) {
-            throw new RuntimeException("Tahlan Shipworks requires MagicLib!"  + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718");
+            throw new RuntimeException("Tahlan Shipworks requires MagicLib!" + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718");
         }
         if (Global.getSettings().getModManager().isModEnabled("@_ss_rebal_@"))
             throw new RuntimeException("Tahlan Shipworks is incompatible with Starsector Rebal. It breaks everything");
@@ -100,7 +111,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        if (!haveNexerelin || SectorManager.getManager().isCorvusMode()){
+        if (!haveNexerelin || SectorManager.getManager().isCorvusMode()) {
             if (ENABLE_LETHIA) new tahlan_Lethia().generate(sector);
             if (ENABLE_LEGIO) new tahlan_Rubicon().generate(sector);
         }
@@ -128,10 +139,22 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         } else {
             sector.getFaction("tahlan_legioinfernalis").setShowInIntelTab(false);
 
-            if (haveNexerelin){
-                sector.getFaction("tahlan_legioinfernalis").getMemoryWithoutUpdate().set("$nex_respawn_cooldown",true);
+            if (haveNexerelin) {
+                sector.getFaction("tahlan_legioinfernalis").getMemoryWithoutUpdate().set("$nex_respawn_cooldown", true);
             }
         }
+
+        // Because apparently I have to do this
+        FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
+        legio.removeKnownShip("tahlan_dominator_dmn");
+        legio.removeKnownShip("tahlan_champion_dmn");
+        legio.removeKnownShip("tahlan_manticore_dmn");
+        legio.removeKnownShip("tahlan_hammerhead_dmn");
+        legio.removeKnownShip("tahlan_centurion_dmn");
+        legio.removeKnownShip("tahlan_vanguard_dmn");
+        legio.removeKnownFighter("flash_wing");
+        legio.removeKnownFighter("spark_wing");
+        legio.removeKnownFighter("lux_wing");
 
         //Rosenritter Blueprint Script
         Global.getSector().addScript(new tahlan_regaliablueprintscript());
@@ -164,12 +187,86 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             sector.getFaction("remnant").removeKnownWeapon("tahlan_disparax");
             sector.getFaction("remnant").removeKnownWeapon("tahlan_relparax");
             sector.getFaction("remnant").removeKnownWeapon("tahlan_nenparax");
-        } else if (!sector.getFaction("remnant").knowsShip("tahlan_Timeless")){
-            sector.getFaction("remnant").addKnownShip("tahlan_Timeless",false);
-            sector.getFaction("remnant").addKnownShip("tahlan_Nameless",false);
-            sector.getFaction("remnant").addKnownWeapon("tahlan_disparax",false);
+        } else if (!sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
+            sector.getFaction("remnant").addKnownShip("tahlan_Timeless", false);
+            sector.getFaction("remnant").addKnownShip("tahlan_Nameless", false);
+            sector.getFaction("remnant").addKnownWeapon("tahlan_disparax", false);
             sector.getFaction("remnant").addKnownWeapon("tahlan_relparax", false);
             sector.getFaction("remnant").addKnownWeapon("tahlan_nenparax", false);
+        }
+        if (!Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+            if (ENABLE_LEGIO) {
+                Global.getSector().addTransientListener(new TahlanTrigger());
+            } else {
+                FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
+                if (!legio.knowsShip("tahlan_deominator_dmn")) {
+                    legio.addKnownShip("tahlan_dominator_dmn", false);
+                    legio.addKnownShip("tahlan_champion_dmn", false);
+                    legio.addKnownShip("tahlan_manticore_dmn", false);
+                    legio.addKnownShip("tahlan_hammerhead_dmn", false);
+                    legio.addKnownShip("tahlan_centurion_dmn", false);
+                    legio.addKnownShip("tahlan_vanguard_dmn", false);
+                    legio.addKnownFighter("flash_wing",false);
+                    legio.addKnownFighter("spark_wing",false);
+                    legio.addKnownFighter("lux_wing",false);
+                }
+            }
+        }
+    }
+
+    private static class TahlanTrigger extends BaseCampaignEventListener {
+        private TahlanTrigger() {
+            super(false);
+        }
+
+        @Override
+        public void reportEconomyMonthEnd() {
+            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+                return;
+            }
+            SectorAPI sector = Global.getSector();
+
+            int iLegioStartingCondition = 0;
+            if (Global.getSector().getClock().getCycle() >= 210) {
+                iLegioStartingCondition++;
+            } //Choose cycle
+            for (MarketAPI market : Misc.getPlayerMarkets(true)) {
+                if (market.getSize() >= 5) {
+                    iLegioStartingCondition++;
+                    break;
+                }
+            } //Ok size 6
+            MemoryAPI mem = Global.getSector().getMemoryWithoutUpdate();
+            if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES)
+                    && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)
+                    && mem.getBoolean("$interactedWithGABarEvent")
+                    && mem.getBoolean("$metDaud")
+                    && mem.getBoolean("$gaATG_missionCompleted")
+                    && mem.getBoolean("$gaFC_missionCompleted")
+                    && mem.getBoolean("$gaKA_missionCompleted")
+                    && mem.getBoolean("$gaPZ_missionCompleted")
+                    && mem.getBoolean("$interactedWithGABarEvent")) {
+                iLegioStartingCondition++; //Follow Histidine's "Skip Story format"
+            }
+            if (sector.getPlayerStats().getLevel() >= 13) {
+                iLegioStartingCondition++;
+            }
+            if (iLegioStartingCondition >= 3) {
+                Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
+                LOGGER.info("The Daemonic horde awakens");
+                FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
+                if (!legio.knowsShip("tahlan_deominator_dmn")) {
+                    legio.addKnownShip("tahlan_dominator_dmn", false);
+                    legio.addKnownShip("tahlan_champion_dmn", false);
+                    legio.addKnownShip("tahlan_manticore_dmn", false);
+                    legio.addKnownShip("tahlan_hammerhead_dmn", false);
+                    legio.addKnownShip("tahlan_centurion_dmn", false);
+                    legio.addKnownShip("tahlan_vanguard_dmn", false);
+                    legio.addKnownFighter("flash_wing",false);
+                    legio.addKnownFighter("spark_wing",false);
+                    legio.addKnownFighter("lux_wing",false);
+                }
+            }
         }
     }
 

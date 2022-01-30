@@ -1,5 +1,6 @@
 package data.scripts.campaign.econ;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.impl.campaign.econ.BaseMarketConditionPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
@@ -17,9 +18,14 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
         if (market.getFaction() != null) {
             if (market.getFaction().getId().contains("tahlan_legioinfernalis")) {
                 market.getStability().modifyFlat(id, STAB_BONUS, txt("tyranny"));
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id,1.5f, txt("tyranny"));
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id,1.5f, txt("tyranny"));
-                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id,2f, txt("tyranny"));
+                if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.25f, txt("tyranny"));
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.25f, txt("tyranny"));
+                } else {
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.1f, txt("tyranny"));
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.1f, txt("tyranny"));
+                }
+                market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id, 2f, txt("tyranny"));
             } else {
                 market.getStability().unmodify(id);
                 market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).unmodify(id);
@@ -50,6 +56,6 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
                 10f, Misc.getHighlightColor(),
                 "+" + (int) STAB_BONUS);
         tooltip.addPara(txt("tyranny2"), 10f);
-        tooltip.addPara(txt("tyranny3"), 10f, Misc.getHighlightColor(),txt("tyranny4"));
+        tooltip.addPara(txt("tyranny3"), 10f, Misc.getHighlightColor(), txt("tyranny4"));
     }
 }

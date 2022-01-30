@@ -79,6 +79,12 @@ tahlan_skyrend,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_skyren
 tahlan_nelson,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_Normal.png
 tahlan_nelson_xiv,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_xiv_Normal.png
 tahlan_nelson_fpe,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_xiv_Normal.png
+tahlan_centurion_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_centurion_dmn_Normal.png
+tahlan_vanguard_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_vanguard_dmn_Normal.png
+tahlan_hammerhead_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_hammerhead_dmn_Normal.png
+tahlan_manticore_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_manticore_dmn_Normal.png
+tahlan_champion_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_champion_dmn_Normal.png
+tahlan_dominator_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_dominator_dmn_Normal.png
 ,,,,,
 ,,,,,
 tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png

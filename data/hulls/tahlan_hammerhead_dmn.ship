@@ -1,0 +1,210 @@
+{
+  "hullName": "Hel Hammerhead",
+  "hullId": "tahlan_hammerhead_dmn",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_hammerhead_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 170,
+  "width": 138,
+  "center": [69, 85],
+  "collisionRadius": 140,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 133.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "automated"
+  ],
+  "builtInWings": [
+    "tahlan_miasma_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [70, 36]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [70, -36]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [74, 11]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [74, -11]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 22,
+      "locations": [43, 16]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -22,
+      "locations": [43, -16]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 221,
+      "angle": 80.5,
+      "locations": [-30, 39]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 221,
+      "angle": -80.5,
+      "locations": [-30, -39]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        3, 42,
+        7.5, 44.5,
+        -5, 42
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        3.5, -42,
+        -5, -42,
+        8.5, -44.5
+      ]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 275,
+      "angle": 0,
+      "locations": [60, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-80, 15],
+      "length": 69,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-80, -15],
+      "length": 69,
+      "width": 19,
+      "angle": -180,
+      "contrailSize": 19,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-81, 26.5],
+      "length": 71,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-81, -26.5],
+      "length": 71,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-82, 37],
+      "length": 71,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-82, -37],
+      "length": 71,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -48, -6.5,
+    -74.5, -7,
+    -82.5, -42.5,
+    -77, -47.5,
+    -59, -37.5,
+    -24, -53,
+    -28, -61.5,
+    -7, -69,
+    5, -57.5,
+    57.5, -58,
+    58, -52,
+    80, -51.5,
+    80.5, -21.5,
+    68.5, -19.5,
+    68.5, 19.5,
+    80.5, 21.5,
+    80, 51.5,
+    58, 52,
+    57.5, 58,
+    5, 57.5,
+    -7, 69,
+    -28, 61.5,
+    -24, 53,
+    -59, 37.5,
+    -77, 47.5,
+    -82.5, 42.5,
+    -74.5, 7,
+    -48, 6.5
+  ]
+}

@@ -25,7 +25,18 @@
 	- Renamed due to name conflict with a dead mod
 	- Dual flaks swapped to single flaks
 	- XIV variant added (which gets the dual flaks)
+- Balor
+	- Reduced refire time from 1s to 0.8s
+- Tethra
+	- Reduced refire time from 0.5s to 0.4s
+- Deathgaze
+	- Increased ammo regen from 0.18/s to 0.2/s
+- Ryza / Mezoa
+	- Increased time between shots from 3s to 3.5s
 - Blocked a bunch of stuff from being available from that bloody dealer
+- Reduced Legio Tyranny's buff to fleet size and spawn rate cause people are too weak
+- Adjusted HVB level requirements for better compatibility with MagicBounts
+	- Will receive a proper conversion to the MagicBounty system at a later date
 
 
 0.7.6

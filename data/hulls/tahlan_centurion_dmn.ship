@@ -1,0 +1,140 @@
+{
+  "hullName": "Hel Centurion",
+  "hullId": "tahlan_centurion_dmn",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_centurion_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 92,
+  "width": 114,
+  "center": [57, 49.5],
+  "collisionRadius": 89.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 84,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "automated"
+  ],
+  "builtInWings": [
+    "tahlan_miasma_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [25.5, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 97,
+      "angle": 20,
+      "locations": [31.5, 32]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 97,
+      "angle": -20,
+      "locations": [31.5, -32]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": 83,
+      "locations": [-6.5, 45]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": -83,
+      "locations": [-6.5, -45]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": 135,
+      "locations": [-21.5, 23]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 142,
+      "angle": -135,
+      "locations": [-21.5, -23]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-44.5, 13.5],
+      "length": 55,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-44.5, -13.5],
+      "length": 55,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-48.5, 21.5],
+      "length": 43.5,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-48.5, -21.5],
+      "length": 43.5,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -26.5, -8,
+    -40, -8,
+    -47, -26,
+    -24.5, -52,
+    2, -54,
+    14.5, -40.5,
+    36, -44,
+    39.5, -26,
+    20.5, -24,
+    20.5, 24,
+    39.5, 26,
+    36, 44,
+    14.5, 40.5,
+    2, 54,
+    -24.5, 52,
+    -47, 26,
+    -40, 8,
+    -26.5, 8
+  ]
+}

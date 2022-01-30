@@ -34,6 +34,7 @@ public class tahlan_DerelictsSpawnScript {
 
     //List of teaser ships to spawn and their count
     private static final List<Pair<String, Integer>> SHIP_SPAWNS = new ArrayList<>();
+
     static {
         SHIP_SPAWNS.add(new Pair<>("tahlan_Timeless_retro_standard", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_schneefall_traum_albtraum", 1));
@@ -45,12 +46,14 @@ public class tahlan_DerelictsSpawnScript {
 
     //Systems that can never get a teaser ship spawned in them
     public static final List<String> BLACKLISTED_SYSTEMS = new ArrayList<>();
+
     static {
         BLACKLISTED_SYSTEMS.add("spookysecretsystem_omega");
     }
 
     //Systems with any of these tags can never get a teaser ship spawned in them
     public static final List<String> BLACKLISTED_SYSTEM_TAGS = new ArrayList<>();
+
     static {
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_main");
@@ -63,6 +66,7 @@ public class tahlan_DerelictsSpawnScript {
 
     //Weights for the different types of locations our teasers can spawn in
     private static final LinkedHashMap<LocationType, Float> WEIGHTS = new LinkedHashMap<>();
+
     static {
         WEIGHTS.put(LocationType.GAS_GIANT_ORBIT, 3f);
         WEIGHTS.put(LocationType.IN_ASTEROID_BELT, 5f);
@@ -76,6 +80,7 @@ public class tahlan_DerelictsSpawnScript {
 
     /**
      * Spawns all the teaser ships into the sector: should be run once on sector generation
+     *
      * @param sector the sector to spawn the ships in
      */
     public static void spawnDerelicts(SectorAPI sector) {
@@ -97,7 +102,7 @@ public class tahlan_DerelictsSpawnScript {
                     placeToSpawn = validPoints.pick();
                 }
 
-                float condition = (float)Math.random();
+                float condition = (float) Math.random();
                 ShipRecoverySpecial.ShipCondition shipCondition;
                 if (condition < 0.25) {
                     shipCondition = ShipRecoverySpecial.ShipCondition.WRECKED;
@@ -110,16 +115,17 @@ public class tahlan_DerelictsSpawnScript {
                 }
 
                 //Now, simply spawn the ship in the spawn location
-                boolean recoverable = Math.random()>0.9f;
+                boolean recoverable = Math.random() > 0.9f;
                 //Lazy hax. Fuck you, Story Points!
-                boolean actuallySpawn = Math.random()>0.6f;
+                boolean actuallySpawn = Math.random() > 0.6f;
 
-                if ( spawnData.one.contains("tahlan_schneefall_traum_albtraum") ) {
+                if (spawnData.one.contains("tahlan_schneefall_traum_albtraum")) {
                     Global.getSector().getMemoryWithoutUpdate().set("$tahlan_traum_location", system.getConstellation().getName());
                     shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
                     actuallySpawn = true;
                 }
-                if (  spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals( "tahlan_providence_admech_derelict" ) ) recoverable = true;
+                if (spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals("tahlan_providence_admech_derelict"))
+                    recoverable = true;
 
                 if (actuallySpawn) {
                     addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
@@ -133,12 +139,12 @@ public class tahlan_DerelictsSpawnScript {
 
 
     /**
-     *  Utility function for getting a random system, with blacklist functionality in case some systems really shouldn't
-     *  be included.
+     * Utility function for getting a random system, with blacklist functionality in case some systems really shouldn't
+     * be included.
      *
-     *  @param blacklist A list of all the systems we are forbidden from picking
-     *  @param tagBlacklist A list of all the system tags that prevent a system from being picked
-     *  @param sector The SectorAPI to check for systems in
+     * @param blacklist    A list of all the systems we are forbidden from picking
+     * @param tagBlacklist A list of all the system tags that prevent a system from being picked
+     * @param sector       The SectorAPI to check for systems in
      **/
     private static StarSystemAPI getRandomSystemWithBlacklist(List<String> blacklist, List<String> tagBlacklist, SectorAPI sector) {
         //First, get all the valid systems and put them in a separate list
@@ -171,7 +177,7 @@ public class tahlan_DerelictsSpawnScript {
 
         //Otherwise, get a random element in it and return that
         else {
-            int rand = MathUtils.getRandomNumberInRange(0, validSystems.size()-1);
+            int rand = MathUtils.getRandomNumberInRange(0, validSystems.size() - 1);
             return validSystems.get(rand);
         }
     }
@@ -179,7 +185,7 @@ public class tahlan_DerelictsSpawnScript {
 
     //Mini-function for generating derelicts
     private static SectorEntityToken addDerelict(StarSystemAPI system, String variantId, OrbitAPI orbit,
-                                                ShipRecoverySpecial.ShipCondition condition, boolean recoverable,
+                                                 ShipRecoverySpecial.ShipCondition condition, boolean recoverable,
                                                  @Nullable DefenderDataOverride defenders) {
 
         DerelictShipEntityPlugin.DerelictShipData params = new DerelictShipEntityPlugin.DerelictShipData(new ShipRecoverySpecial.PerShipData(variantId, condition), false);

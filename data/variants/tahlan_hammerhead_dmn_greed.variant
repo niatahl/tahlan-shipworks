@@ -1,0 +1,40 @@
+{
+    "displayName": "Greed",
+    "fluxCapacitors": 5,
+    "fluxVents": 20,
+    "hullId": "tahlan_hammerhead_dmn",
+    "hullMods": ["heavyarmor"],
+    "permaMods": [],
+    "sMods": [],
+	"goalVariant": true,
+    "variantId": "tahlan_hammerhead_dmn_greed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0002": "tahlan_ryza",
+                "WS0003": "tahlan_ryza"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "reaper",
+                "WS0005": "reaper"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "vulcan",
+                "WS0006": "railgun",
+                "WS0007": "railgun",
+                "WS0008": "vulcan"
+            }
+        }
+    ],
+    "wings": ["spark_wing"]
+}

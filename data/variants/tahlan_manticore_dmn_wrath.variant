@@ -1,0 +1,43 @@
+{
+    "displayName": "Wrath",
+    "fluxCapacitors": 9,
+    "fluxVents": 20,
+    "hullId": "tahlan_manticore_dmn",
+    "hullMods": [
+        "heavyarmor",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true;
+    "variantId": "tahlan_manticore_dmn_wrath",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "mjolnir"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "typhoon"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "tahlan_conand",
+                "WS0004": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "vulcan",
+                "WS0007": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

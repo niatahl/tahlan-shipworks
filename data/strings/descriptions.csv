@@ -171,6 +171,80 @@ tahlan_Flagellator_pi,SHIP,"Seeing the Flagellator's design as ideal for pirate 
 Built for speed and equipped with an early variant of graviton beam, the Flagellator is a dedicated hunter-killer designed to chase down and eliminate fast targets.",,,
 ,,,,,
 ,,,,,
+tahlan_vanguard_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Vanguard-class Frigate : 72% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_centurion_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Centurion-class Frigate : 67% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_hammerhead_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Hammerhead-class Destroyer : 59% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_manticore_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Manticore-class Destroyer : 78% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_champion_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Champion-class Cruiser : 81% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_dominator_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Dominator-class Cruiser : 68% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_miasma,SHIP,"#> Object Classification: Unknown
+#> Query closest match.
+#> No Match found.
+#> Query predictive capabilits.
+#> >> Autonomous fighter craft
+#> >> Capabilities: unknown",,,
+,,,,,
+,,,,,
 #HVBs,,,,,
 tahlan_Cuchulainn,SHIP,"The Cuchulainn is an experimental craft built around a massively upscaled tachyon beam weapon. Originally intended as a potential siege weapon for engaging stations and orbital bombardment, the final prototype never produced the expected results and the project was abandoned. The remaining prototypes have since found their way into the hands of various collectors around the sector.",,,
 tahlan_Higanbana,SHIP,"Originally ordered by House Vund as the ""Hammer of Vund"" just 2 cycles prior to the collapse, this ship remained unfinished for decades in an orbital shipyard as the events following the collapse demanded a reallocation of all remaining resources to strengthen the unified Kassadari fleet. Only in the cycle c+187 House Arataka finally reactivated the dormant orbital yard in order to complete construction of the vessel. Taking full control over the project, as House Vund had since acquired and modified the dreadnought Scathach as their new flagship, the ship was rechristened as the ""Higanbana"" and minor modification to the design were added. It finished construction in c+191 and entered service as the flagship of House Arataka's Royal Guard Fleet.

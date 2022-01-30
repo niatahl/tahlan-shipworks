@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.IntervalUtil;
+
 import java.awt.Color;
 
 import data.scripts.plugins.MagicTrailPlugin;
@@ -52,7 +53,7 @@ public class tahlan_EthniuBeamEffect implements BeamEffectPlugin {
                 engine.spawnExplosion(point, ZERO, CORE_COLOR, 100f, 1f);
                 engine.spawnExplosion(point, ZERO, FLASH_COLOR, 50f, 1f);
 
-                spawnArc(engine,beam,point);
+                spawnArc(engine, beam, point);
 
                 DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
                         100f,
@@ -69,7 +70,7 @@ public class tahlan_EthniuBeamEffect implements BeamEffectPlugin {
                         null);
                 blast.setDamageType(DamageType.HIGH_EXPLOSIVE);
                 blast.setShowGraphic(false);
-                engine.spawnDamagingExplosion(blast,beam.getSource(),point,false);
+                engine.spawnDamagingExplosion(blast, beam.getSource(), point, false);
 
                 engine.addSmoothParticle(point, ZERO, 400f, 0.5f, 0.1f, PARTICLE_COLOR);
                 engine.addHitParticle(point, ZERO, 200f, 0.5f, 0.25f, FLASH_COLOR);
@@ -78,8 +79,8 @@ public class tahlan_EthniuBeamEffect implements BeamEffectPlugin {
                             MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 300f), (float) Math.random() * 360f),
                             6f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR);
                 }
-                MagicLensFlare.createSharpFlare(engine,beam.getSource(),point,8,400,0,new Color(100,215,255),new Color(255,255,255));
-                Global.getSoundPlayer().playSound("tahlan_ethniu_blast",1f,1f,point,ZERO);
+                MagicLensFlare.createSharpFlare(engine, beam.getSource(), point, 8, 400, 0, new Color(100, 215, 255), new Color(255, 255, 255));
+                Global.getSoundPlayer().playSound("tahlan_ethniu_blast", 1f, 1f, point, ZERO);
 
                 detonated = true;
             }
@@ -91,7 +92,7 @@ public class tahlan_EthniuBeamEffect implements BeamEffectPlugin {
 
         ShipAPI ship = beam.getWeapon().getShip();
 
-        EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(
+        EmpArcEntityAPI arc = engine.spawnEmpArcPierceShields(
                 ship,
                 beam.getFrom(),
                 ship,

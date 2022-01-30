@@ -8,7 +8,7 @@ import java.util.List;
 
 public class tahlan_BalorWeaponScript implements EveryFrameWeaponEffectPlugin {
 
-    private List<DamagingProjectileAPI> alreadyRegisteredProjectiles = new ArrayList<DamagingProjectileAPI>();
+    private final List<DamagingProjectileAPI> alreadyRegisteredProjectiles = new ArrayList<DamagingProjectileAPI>();
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -16,13 +16,12 @@ public class tahlan_BalorWeaponScript implements EveryFrameWeaponEffectPlugin {
         ShipAPI source = weapon.getShip();
         ShipAPI target = null;
 
-        if(source.getWeaponGroupFor(weapon)!=null ){
+        if (source.getWeaponGroupFor(weapon) != null) {
             //WEAPON IN AUTOFIRE
-            if(source.getWeaponGroupFor(weapon).isAutofiring()  //weapon group is autofiring
-                    && source.getSelectedGroupAPI()!=source.getWeaponGroupFor(weapon)){ //weapon group is not the selected group
+            if (source.getWeaponGroupFor(weapon).isAutofiring()  //weapon group is autofiring
+                    && source.getSelectedGroupAPI() != source.getWeaponGroupFor(weapon)) { //weapon group is not the selected group
                 target = source.getWeaponGroupFor(weapon).getAutofirePlugin(weapon).getTargetShip();
-            }
-            else {
+            } else {
                 target = source.getShipTarget();
             }
         }

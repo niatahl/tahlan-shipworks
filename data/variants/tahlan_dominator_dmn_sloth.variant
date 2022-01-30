@@ -1,0 +1,59 @@
+{
+    "displayName": "Sloth",
+    "fluxCapacitors": 2,
+    "fluxVents": 30,
+    "hullId": "tahlan_dominator_dmn",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true;
+    "variantId": "tahlan_dominator_dmn_sloth",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "hurricane",
+                "WS0002": "hurricane"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "heavymauler",
+                "WS0006": "heavymauler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "hveldriver",
+                "WS0005": "hveldriver",
+                "WS0007": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "flak",
+                "WS0010": "vulcan",
+                "WS0011": "flak",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "lux_wing",
+        "lux_wing"
+    ]
+}

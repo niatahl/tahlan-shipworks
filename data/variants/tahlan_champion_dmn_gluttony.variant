@@ -1,0 +1,55 @@
+{
+    "displayName": "Gluttony",
+    "fluxCapacitors": 15,
+    "fluxVents": 30,
+    "hullId": "tahlan_champion_dmn",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true;
+    "variantId": "tahlan_champion_dmn_gluttony",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0011": "tahlan_balor"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "hammerrack"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_mezoa",
+                "WS0002": "tahlan_mezoa"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "tahlan_conand",
+                "WS0005": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

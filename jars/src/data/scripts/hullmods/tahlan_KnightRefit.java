@@ -45,10 +45,6 @@ public class tahlan_KnightRefit extends BaseHullMod {
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
-        //Better flux stats
-        //stats.getFluxCapacity().modifyMult(id,FLUX_MULT);
-        //stats.getFluxDissipation().modifyMult(id,FLUX_MULT);
-
         switch (hullSize) {
             case FRIGATE:
                 stats.getArmorBonus().modifyFlat(ke_id, -ARMOR_MALUS_FRIGATE);
@@ -62,11 +58,6 @@ public class tahlan_KnightRefit extends BaseHullMod {
             case CAPITAL_SHIP:
                 stats.getArmorBonus().modifyFlat(ke_id, -ARMOR_MALUS_CAPITAL);
         }
-
-        //stats.getMaxSpeed().modifyMult(id,HANDLING_MULT);
-        //stats.getAcceleration().modifyMult(id,HANDLING_MULT);
-        //stats.getDeceleration().modifyMult(id,HANDLING_MULT);
-        //stats.getTurnAcceleration().modifyMult(id,HANDLING_MULT);
 
         stats.getSuppliesPerMonth().modifyPercent(ke_id, SUPPLIES_MULT);
         stats.getCRLossPerSecondPercent().modifyMult(ke_id, 2f);
@@ -113,9 +104,6 @@ public class tahlan_KnightRefit extends BaseHullMod {
                     }
 
                     if (!(ship.getOriginalOwner() == -1)) {
-
-                        //EnumSet<WeaponType> WEAPON_TYPES = EnumSet.of(WeaponType.BALLISTIC, WeaponType.COMPOSITE, WeaponType.MISSILE);
-                        //ship.setWeaponGlow(0.4f, OVERDRIVE_GLOW_COLOR, WEAPON_TYPES);
 
                         ship.getEngineController().fadeToOtherColor(this, OVERDRIVE_ENGINE_COLOR, null, 1f, 0.7f);
                         ship.setJitter(ke_id, OVERDRIVE_JITTER_COLOR, 0.5f, 3, 5f);

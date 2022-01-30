@@ -200,6 +200,44 @@
 		"dHullOverlayMedium":"graphics/damage/dmod_overlay_lowtech_medium.png",
 		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_lowtech_heavy.png",
 	},
+
+	"TAHLAN_DAEMON":{
+		"hyperspaceJitterColor":[255,100,100,200],
+		"baseCampaignExplosionColor":[255,100,100,255],
+		"baseCombatExplosionColor":[255,100,100,255],
+		"fighterRepairFlickerColor":[100,145,255,255],
+		"fighterChipIconColor":[255,100,100,255],
+		"weaponDisabledExplosionColor":[255,100,100,255],
+		"shieldRingColor":[255,115,95,205],
+		"shieldInnerColor":[255,100,60,131],
+		"fluxVentCoreColor":[255,50,50,155],
+		"fluxVentFringeColor":[255,100,70,155],
+		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
+		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
+		"empLoopSet":"emp_loop",						# id of entry in sounds.json
+		"fluxLoopSet":"flux_loop",						# id of entry in sounds.json
+		"ventFluxSet":"vent_flux",						# id of entry in sounds.json
+		"shieldBurnoutSet":"shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"explosion_ship",			# id of entry in sounds.json
+		"damageDecalSheet":"graphics/damage/damage_decal_sheet_base.png",
+		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
+		
+		"colorShiftCovers":true,
+		"coversColorShiftAmount":1,  # 0 to 1
+		"coversMatchShipBrightness":true,
+		"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_lowtech_small.png",
+		"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_lowtech_small.png",
+		"slotCoverMediumTurret":"graphics/weapons/covers/cover_turret_lowtech_medium.png",
+		"slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_lowtech_medium.png",
+		"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_lowtech_large.png",
+		"slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_lowtech_large.png",
+
+		"dHullOverlayLight":"graphics/damage/dmod_overlay_lowtech_light.png",
+		"dHullOverlayMedium":"graphics/damage/dmod_overlay_lowtech_medium.png",
+		"dHullOverlayHeavy":"graphics/damage/dmod_overlay_lowtech_heavy.png",
+	},
 }
 
 

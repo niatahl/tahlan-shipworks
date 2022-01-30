@@ -3,10 +3,10 @@ package data.scripts.utils;
 import com.fs.starfarer.api.Global;
 
 public class tahlan_Utils {
-    private static final String tahlan="tahlan";
+    private static final String tahlan = "tahlan";
 
     // For translation friendliness
-    public static String txt(String id){
+    public static String txt(String id) {
         return Global.getSettings().getString(tahlan, id);
     }
 

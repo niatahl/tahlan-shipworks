@@ -1,0 +1,43 @@
+{
+  "hullName": "Miasma",
+  "hullId": "tahlan_miasma",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_miasma.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 32,
+  "width": 32,
+  "center": [16, 16],
+  "collisionRadius": 26.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 23.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "terminator_core"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": -0,
+      "locations": [4, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-8, -0],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -8.5, -12.5,
+    11.5, -0,
+    -8.5, 12.5
+  ]
+}
