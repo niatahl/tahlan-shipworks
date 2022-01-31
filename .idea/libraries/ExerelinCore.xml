@@ -2,8 +2,11 @@
   <library name="ExerelinCore">
     <CLASSES>
       <root url="jar://G:/Starsector/mods/Nexerelin/jars/ExerelinCore.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Nexerelin/jars/ExerelinCore.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Nexerelin/jars/sources/ExerelinCore" />
+    </SOURCES>
   </library>
 </component>

@@ -4,12 +4,19 @@
       <root url="file://G:/Starsector/mods/LazyLib/jars/lib" />
       <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib-Kotlin.jar!/" />
       <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LazyLib/jars/LazyLib-Kotlin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LazyLib/jars/LazyLib.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../LazyLib/javadoc.zip!/" />
+    </JAVADOC>
     <SOURCES>
       <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib-Kotlin.jar!/" />
       <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib.jar!/" />
       <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LazyLib/jars/LazyLib-Kotlin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LazyLib/jars/LazyLib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LazyLib/jars/LazyLib.jar!/" />
     </SOURCES>
     <jarDirectory url="file://G:/Starsector/mods/LazyLib/jars/lib" recursive="false" />
   </library>

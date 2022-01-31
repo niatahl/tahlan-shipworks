@@ -12,11 +12,9 @@ public class tahlan_WeaponsOverdriveStats extends BaseShipSystemScript {
 		float mult = 1f + DAMAGE_BONUS * effectLevel;
 		stats.getEnergyWeaponDamageMult().modifyMult(id,mult);
 		stats.getBallisticWeaponDamageMult().modifyMult(id,mult);
-		stats.getBeamWeaponDamageMult().modifyMult(id,mult);
 	}
 	public void unapply(MutableShipStatsAPI stats, String id) {
 		stats.getEnergyWeaponDamageMult().unmodify(id);
-		stats.getBeamWeaponDamageMult().unmodify(id);
 		stats.getBallisticWeaponDamageMult().unmodify(id);
 	}
 	

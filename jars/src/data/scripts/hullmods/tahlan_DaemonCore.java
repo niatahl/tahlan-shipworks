@@ -11,6 +11,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.combat.CombatUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +38,8 @@ public class tahlan_DaemonCore extends BaseHullMod {
         stats.getRecoilDecayMult().modifyMult(id, 1.25f);
         stats.getRecoilPerShotMult().modifyMult(id, 0.75f);
         stats.getDynamic().getStat(Stats.FIGHTER_CREW_LOSS_MULT).modifyMult(id, 0f);
+        stats.getDamageToCruisers().modifyMult(id,1.1f);
+        stats.getDamageToCapital().modifyMult(id,1.2f);
 
     }
 
@@ -44,6 +47,25 @@ public class tahlan_DaemonCore extends BaseHullMod {
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         if (ship.getShield() != null) {
             ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
+        }
+    }
+
+    // If you actually manage to find this, Chase, I'll remove it. Good luck lmao.
+    @Override
+    public void advanceInCombat(ShipAPI ship, float amount) {
+        boolean scrub = false;
+        for (ShipAPI enemy: Global.getCombatEngine().getShips()) {
+            if (enemy.getOwner() != ship.getOwner()) {
+                continue;
+            }
+            if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura")) {
+                scrub = true;
+                break;
+            }
+        }
+        if (scrub) {
+            ship.getMutableStats().getDamageToCapital().modifyMult("scrub_police",2f);
+            ship.getMutableStats().getDamageToCruisers().modifyMult("scrub_police",1.5f);
         }
     }
 
