@@ -24,6 +24,8 @@
 		"SHIELD_L2":"tahlan_nelson_xiv_shield_L2",
 		"SHIELD_R":"tahlan_nelson_xiv_shield_R",
 		"SHIELD_R2":"tahlan_nelson_xiv_shield_R2",
+		"WS0010":"tahlan_hammertube",
+		"WS0012":"tahlan_hammertube",
     },
 	"weaponSlotChanges":{
 		"WS0002":{
@@ -31,6 +33,12 @@
     	},
     	"WS0003":{
       		"type": "HYBRID",
+    	},
+		"WS0010":{
+      		"type": "BUILT_IN",
+    	},
+    	"WS0012":{
+      		"type": "BUILT_IN",
     	},
     },
 }

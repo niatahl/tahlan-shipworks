@@ -1,15 +1,9 @@
 {
     "tahlan_daemons":{
     
-        "required_mods_id": [],
-
-        #TRIGGERS (ALL OPTIONAL)
-        
+      
         "trigger_marketFaction_none": ["tahlan_legioinfernalis"],
         "trigger_memKeys_all": {"$tahlan_triggered":true,},
-        
-        #BOUNTY DESCRIPTION
-        
         "job_name": "Legio rising",
         "job_description": "After recent unsettling reports of increased Legio Infernalis activity, the Hegemony has put out a number of bounties on key Legio officers, with the intent of curbing their ambitions. The target offered to you is a former pirate warlord going by the name of Idris the Great, a grandstanding but crude example of a man.\nThe exact capabilities of your target's fleet seem to be unknown, but as rumor has it, the Legio is testing some new weaponry, god knows how they get their hands on that kind of tech, and Idris is involved in that program, so his ship is bound to be heavily armed.\nGo take that bastard out and make sure his fleet is crippled.",
         "job_comm_reply": "Ha! You're the third little bounty hunter bitch trying to take my head and you won't be the last! The eggheads are going to love all that fancy combat data I'll deliver to them. I hope you enjoy dancing with my lovely Demons.",
@@ -29,9 +23,6 @@
         "job_show_arrow": false,
         "job_difficultyDescription": "auto",
         "job_pick_option": "Accept the bounty.",
-
-        #TARGET COMMANDER (OPTIONAL)
-        
         "target_first_name":"Idris",
         "target_last_name":"the Great",
         "target_gender":"MALE",
@@ -41,9 +32,6 @@
         "target_level": 7,
         "target_elite_skills":3,
         "target_skill_preference": "NO_ENERGY_YES_BALLISTIC_YES_MISSILE_YES_DEFENSE",    
-    
-        #TARGET FLEET
-        
         "fleet_name":"The Demonic Horde",
         "fleet_faction": "tahlan_legioinfernalis",
         "fleet_flagship_variant":"tahlan_DunScaith_elite",
@@ -59,17 +47,13 @@
             "tahlan_centurion_dmn":7},
         "fleet_preset_autofit": false,
         "fleet_scaling_multiplier": 1.2,
-        "fleet_min_FP": 0,
+        "fleet_min_FP": 300,
         "fleet_composition_faction": "tahlan_legioninfernalis",
         "fleet_composition_quality": 1,
         "fleet_transponder": false,
 		"fleet_no_retreat": true,
         "fleet_behavior": "AGGRESSIVE",
-        
-        #LOCATION
-        
         "location_distance": "CLOSE",
-        "location_themes": ["procgen_no_theme", "procgen_no_theme_pulsar_blackhole",],
         "location_themes_blacklist": ["theme_already_occupied", "theme_already_colonized", "theme_hidden", "no_pulsar_blackhole"],
         "location_prioritizeUnexplored": true,
         "location_defaultToAnyEntity": true,

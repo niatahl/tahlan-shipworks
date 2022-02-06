@@ -13,6 +13,7 @@ import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,8 +29,12 @@ public class tahlan_DaemonCore extends BaseHullMod {
         mag.put(HullSize.CAPITAL_SHIP, 0);
     }
 
+    private static final Color JITTER_COLOR = new Color(255, 0, 0, 20);
+    private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
+
     private final String INNERLARGE = "graphics/tahlan/fx/tahlan_shellshield.png";
     private final String OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
+    private static final  String dc_id = "tahlan_daemoncore";
 
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
@@ -50,9 +55,16 @@ public class tahlan_DaemonCore extends BaseHullMod {
         }
     }
 
-    // If you actually manage to find this, Chase, I'll remove it. Good luck lmao.
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+
+        // Enrage function
+        float enrage = 1f + (ship.getHullLevel() * 0.25f);
+        ship.getMutableStats().getTimeMult().modifyMult(dc_id,enrage);
+        ship.setJitter(dc_id, JITTER_COLOR, 1f-ship.getHullLevel(), 3, 5f);
+        ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, 1f-ship.getHullLevel(), 20, 10f);
+
+        // Scrub Police starts here
         boolean scrub = false;
         for (ShipAPI enemy: Global.getCombatEngine().getShips()) {
             if (enemy.getOwner() != ship.getOwner()) {
@@ -92,7 +104,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
             member.getStats().getDynamic().getMod("individual_ship_recovery_mod").modifyFlat("tahlan_daemoncore",-100f);
         } else {
             person = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, "tahlan_legioinfernalis", Misc.random);
-            member.getStats().getDynamic().getMod("individual_ship_recovery_mod").modifyFlat("tahlan_daemoncore",-10000f);
+            member.getStats().getDynamic().getMod("individual_ship_recovery_mod").modifyFlat("tahlan_daemoncore",-1000f);
         }
         member.setCaptain(person);
     }

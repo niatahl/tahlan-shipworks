@@ -17,8 +17,10 @@
 	- Increased time between shots from 1s to 1.2s
 - Gardion
 	- Increased chargeup from 0.2s to 0.4s
+	- Overall rate of Fire remains the same
 - Gardas
 	- Increased chargeup from 0.3s to 0.5s
+	- Overall rate of fire remains the same
 - Timeless Prototype
 	- Lowered DP from 75 to 60 cause some sissy had to winge about it
 - Column (formerly Tower)
@@ -33,6 +35,25 @@
 	- Increased ammo regen from 0.18/s to 0.2/s
 - Ryza / Mezoa
 	- Increased time between shots from 3s to 3.5s
+- Nenparax Beamer
+	- Increased dps from 85 to 100
+- Relparax Blaster
+	- Increased damage from 100 to 150
+	- Increased emp damage from 100 to 300
+- Traumtänzer
+	- Armor reduced from 1200 to 900
+	- Shield efficiency reduced from 0.9 to 1.0
+	- Reduced flux dissipation from 1100 to 900
+	- Increased base value from 750.000 to 900.000
+	- Reduced flux capacity from 18000 to 16000
+	- PPT reduced from 720s to 600s
+	- Lowered DP from 70 to 60
+- Nachtgesang
+	- Lowered DP from 50 to 45
+- Nessie
+	- Increased armor from 1000 to 1100
+- R-Type Phase Skimmer
+	- Added a 5% flux cost to use
 - Blocked a bunch of stuff from being available from that bloody dealer
 - Reduced Legio Tyranny's buff to fleet size and spawn rate cause people are too weak
 - Adjusted HVB level requirements for better compatibility with MagicBounts

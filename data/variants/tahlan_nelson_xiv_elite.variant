@@ -1,11 +1,12 @@
 {
     "displayName": "Elite",
-    "fluxCapacitors": 15,
+    "fluxCapacitors": 14,
     "fluxVents": 30,
     "hullId": "tahlan_nelson_xiv",
     "hullMods": [
         "targetingunit",
-        "hardenedshieldemitter"
+        "hardenedshieldemitter",
+        "fluxbreakers"
     ],
     "permaMods": [],
     "sMods": [],
@@ -21,8 +22,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0010": "harpoon",
-                "WS0012": "harpoon"
+                "WS0010": "tahlan_hammertube",
+                "WS0012": "tahlan_hammertube"
             }
         },
         {

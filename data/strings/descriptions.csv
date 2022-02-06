@@ -449,6 +449,7 @@ tahlan_cinder_swivel_r,WEAPON,"Attempts to downscale thermal pulse weaponry are 
 tahlan_vesuvio,WEAPON,"With a high rate of fire and fast ionized shells, the Vesuvio has the potential to be terrifying to most vessels, but is held back by its below average range and high flux overhead.
 
 Supposedly designed to supplant the Mk.IX Autocannon, this fast-cycling magnetic accelerator cannon is really just an example of a solution in search of a problem. While the EMP capabilities and excellent output are surely nice attributes, the weapon it was meant to replace just continues to prove that simplicity of design will often triumph.",,,
+tahlan_hammertube,WEAPON,"An integrated launch tube for Hammer-type torpedoes, feeding from an internal reserve at the cost of taking a short while to reload after firing.",,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,

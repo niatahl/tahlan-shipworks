@@ -34,7 +34,7 @@ Microfusion Rounds,tahlan_explosiverounds,,,,,,,,3,0.05,0,5,0,0.5,,,,,,,,,,,,,gr
 Plasma Rounds,tahlan_plasmarounds,,,,,,,,3,0.05,0,2,0,0.5,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Heavy Damper Field,tahlan_heavydamper,1,,,,,,,5,0.1,0.1,1,0.1,1,,,,,TRUE,,,,TRUE,,TRUE,,graphics/icons/hullsys/damper_field.png
 Crusher Drive,tahlan_crusherdrive,1,,,,,,,,,0.5,4,0.5,20,,,,,,TRUE,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
-R-Type Phase Skimmer,tahlan_rrskimmer,,,,,,,,5,0.15,0.1,,0.1,0.1,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
+R-Type Phase Skimmer,tahlan_rrskimmer,,,,,,0.05,,5,0.15,0.1,,0.1,0.1,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
 Spatial Skimmer,tahlan_ltskimmer,,,,,,,,2,0.15,0.4,,0.4,0.2,,TRUE,,TRUE,,,,,,,,,graphics/icons/hullsys/displacer.png
 Spatial Shift,tahlan_shiftdrive,,,,,,,,5,0.15,0.1,0.4,0.1,,,,TRUE,,TRUE,,,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
 Spatial Jaunt,tahlan_jauntdrive,,,,,,,,3,0.25,0.1,0.6,0.1,,,,TRUE,,TRUE,TRUE,,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png

@@ -53,8 +53,8 @@ Conand Autocannon,tahlan_conand,2,0.6,3000,800,,20,20,1,16,12,,,,KINETIC,20,,,0.
 Goll Overcharge Cannon,tahlan_goll,2,0.7,2500,700,,30,100,1,14,12,,,,KINETIC,45,,0.3,1.7,,,4,4,4,0,,800,,,100,,"kinetic5, rare_bp, tahlan_legio_bp, tahlan_legio",,Legio Infernalis,,Suppression,,,,,Direct hits to armor or hull have a %s chance per projectile of causing an additional %s arcing emp damage,20% | 100,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Lifeless,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Relparax Blaster,tahlan_relparax,3,0.2,4000,600,,100,100,20,15,12,,,,ENERGY,150,,0,0.5,,,,,,,,800,,,100,,"energy12, remnant, tahlan_lifeless_bp, no_dealer",,Unknown,,Suppression,,,,,"Spawns up to %s EMP arcs on each impact that can pierce shields at high flux, dealing %s EMP damage each",3 | 100,,,
-Nenparax Beamer,tahlan_nenparax,3,0.3,,700,85,,,20,120,6,,,,ENERGY,,85,,,,,,,,,5000,,,,,,"energy9, remnant, tahlan_lifeless_bp, no_dealer",,Unknown,,General,,,,,,,,,
+Relparax Blaster,tahlan_relparax,3,0.2,4000,600,,150,300,20,15,12,,,,ENERGY,180,,0,0.5,,,,,,,,800,,,100,,"energy12, remnant, tahlan_lifeless_bp, no_dealer",,Unknown,,Suppression,,,,,"Spawns up to %s EMP arcs on each impact that can pierce shields at high flux, dealing %s EMP damage each",3 | 100,,,
+Nenparax Beamer,tahlan_nenparax,3,0.3,,700,100,,,20,120,6,,,,ENERGY,,100,,,,,,,,,5000,,,,,,"energy9, remnant, tahlan_lifeless_bp, no_dealer",,Unknown,,General,,,,,,,,,
 Disparax Plasma Cannon,tahlan_disparax,3,0.2,6000,800,,500,,50,20,26,,,,ENERGY,600,,0.3,2.5,3,0.1,,,,,,800,,,,,"he14, beam10, remnant, tahlan_lifeless_bp, no_dealer",,Unknown,,General,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #built-in,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -87,6 +87,7 @@ Atropos-class Torpedo Tube,tahlan_atropos_tube,2,,300,1200,,1000,,40,10,69,2,0.0
 Mod. Hammer Barrage,tahlan_reloadinghammers,0,,1250,1200,,1500,,30,10,69,12,0.2,4,HIGH_EXPLOSIVE,0,,0,5,4,0.15,0,0,0,0,,500,40,4,350,"STRIKE, SYSTEM",,,,,Torpedo,Fast,None,,,,,,,TRUE
 Thermal Pulse Blaster,tahlan_cinder_swivel_l,0,,100000,800,,150,,0,12,69,9,1.2,3,ENERGY,120,,0,0.1,999999,0.3,0,8,2,3,,1000,,,,"SYSTEM,SHOW_IN_CODEX",,,,,Assault,,,,,,,Individual shots can be fired manually at higher rate of fire,,
 Thermal Pulse Blaster,tahlan_cinder_swivel_r,0,,100000,800,,150,,0,12,69,9,1.2,3,ENERGY,120,,0,0.1,999999,0.3,0,8,2,3,,1000,,,,"SYSTEM,SHOW_IN_CODEX",,,,,Assault,,,,,,,Individual shots can be fired manually at higher rate of fire,,
+Hammer Tube,tahlan_hammertube,0,,75,1200,,1500,,30,10,69,2,0.02,,HIGH_EXPLOSIVE,0,,0,5,1,,0,0,0,0,,500,40,4,350,"STRIKE, SYSTEM",,,,,Torpedo,Fast,None,,,,,,,TRUE
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Phira,tahlan_phira_burst,3,0,9999,1000,,400,,50,10,69,,,,HIGH_EXPLOSIVE,480,,0,4,3,0.2,,,,,,1200,,,,"SYSTEM, SHOW_IN_CODEX",he20,,The Great Houses,,Variable,,,,,"Linked to variable ammo loader ship system, allowing the firing of different ammo types",,,,
 Phira Burst Split,tahlan_phira_burst_split,3,0,9999,500,,400,,50,10,69,,,,HIGH_EXPLOSIVE,480,,0,4,3,0.2,,,,,,1200,,,,SYSTEM,he20,,The Great Houses,,,,,,,,,,,
