@@ -34,8 +34,8 @@ public class tahlan_ErrantDriveStats extends BaseShipSystemScript {
     private IntervalUtil interval = new IntervalUtil(0.2f, 0.2f);
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
-        ShipAPI ship = null;
-        boolean player = false;
+        ShipAPI ship;
+        boolean player;
         CombatEngineAPI engine = Global.getCombatEngine();
 
         if (stats.getEntity() instanceof ShipAPI) {
