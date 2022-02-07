@@ -54,6 +54,7 @@
 	- Increased armor from 1000 to 1100
 - R-Type Phase Skimmer
 	- Added a 5% flux cost to use
+- Updated Legion (GH) and other variants of vanilla ships to new vanilla stats
 - Blocked a bunch of stuff from being available from that bloody dealer
 - Reduced Legio Tyranny's buff to fleet size and spawn rate cause people are too weak
 - Adjusted HVB level requirements for better compatibility with MagicBounts
