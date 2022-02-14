@@ -145,16 +145,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         }
 
         // Because apparently I have to do this
-        FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-        legio.removeKnownShip("tahlan_dominator_dmn");
-        legio.removeKnownShip("tahlan_champion_dmn");
-        legio.removeKnownShip("tahlan_manticore_dmn");
-        legio.removeKnownShip("tahlan_hammerhead_dmn");
-        legio.removeKnownShip("tahlan_centurion_dmn");
-        legio.removeKnownShip("tahlan_vanguard_dmn");
-        legio.removeKnownFighter("flash_wing");
-        legio.removeKnownFighter("spark_wing");
-        legio.removeKnownFighter("lux_wing");
+        removeDaemons(sector);
 
         //Rosenritter Blueprint Script
         Global.getSector().addScript(new tahlan_regaliablueprintscript());
@@ -168,6 +159,34 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             sector.getFaction("remnant").removeKnownWeapon("tahlan_nenparax");
         }
 
+    }
+
+    private void addDaemons(SectorAPI sector) {
+        FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
+        legio.addKnownShip("tahlan_dominator_dmn", false);
+        legio.addKnownShip("tahlan_champion_dmn", false);
+        legio.addKnownShip("tahlan_manticore_dmn", false);
+        legio.addKnownShip("tahlan_hammerhead_dmn", false);
+        legio.addKnownShip("tahlan_centurion_dmn", false);
+        legio.addKnownShip("tahlan_vanguard_dmn", false);
+        legio.addKnownShip("tahlan_DunScaith_dmn", false);
+        legio.addKnownFighter("flash_wing",false);
+        legio.addKnownFighter("spark_wing",false);
+        legio.addKnownFighter("lux_wing",false);
+    }
+
+    private void removeDaemons(SectorAPI sector) {
+        FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
+        legio.removeKnownShip("tahlan_dominator_dmn");
+        legio.removeKnownShip("tahlan_champion_dmn");
+        legio.removeKnownShip("tahlan_manticore_dmn");
+        legio.removeKnownShip("tahlan_hammerhead_dmn");
+        legio.removeKnownShip("tahlan_centurion_dmn");
+        legio.removeKnownShip("tahlan_vanguard_dmn");
+        legio.removeKnownShip("tahlan_DunScaith_dmn");
+        legio.removeKnownFighter("flash_wing");
+        legio.removeKnownFighter("spark_wing");
+        legio.removeKnownFighter("lux_wing");
     }
 
     @Override
@@ -200,15 +219,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             } else {
                 FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
                 if (!legio.knowsShip("tahlan_deominator_dmn")) {
-                    legio.addKnownShip("tahlan_dominator_dmn", false);
-                    legio.addKnownShip("tahlan_champion_dmn", false);
-                    legio.addKnownShip("tahlan_manticore_dmn", false);
-                    legio.addKnownShip("tahlan_hammerhead_dmn", false);
-                    legio.addKnownShip("tahlan_centurion_dmn", false);
-                    legio.addKnownShip("tahlan_vanguard_dmn", false);
-                    legio.addKnownFighter("flash_wing",false);
-                    legio.addKnownFighter("spark_wing",false);
-                    legio.addKnownFighter("lux_wing",false);
+                    addDaemons(sector);
                 }
             }
         }
