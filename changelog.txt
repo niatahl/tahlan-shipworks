@@ -54,6 +54,12 @@
 	- Increased armor from 1000 to 1100
 - R-Type Phase Skimmer
 	- Added a 5% flux cost to use
+- Project Silk
+	- Increased total damage to 3000
+	- Increased total emp damage to 3000
+	- Halved chargeup duration
+- Project Taffeta
+	- Lowered range from 800 to 700
 - Updated Legion (GH) and other variants of vanilla ships to new vanilla stats
 - Blocked a bunch of stuff from being available from that bloody dealer
 - Reduced Legio Tyranny's buff to fleet size and spawn rate cause people are too weak

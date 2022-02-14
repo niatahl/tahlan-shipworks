@@ -1,0 +1,45 @@
+{
+    "displayName": "Devastator",
+    "fluxCapacitors": 1,
+    "fluxVents": 0,
+    "hullId": "tahlan_centurion_dmn",
+    "hullMods": [
+        "safetyoverrides",
+        "missleracks"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_centurion_dmn_deva",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "devastator"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabot",
+                "WS0004": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "vulcan",
+                "WS0007": "vulcan"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "lightdualmg",
+                "WS0006": "lightdualmg"
+            }
+        }
+    ],
+    "wings": []
+}

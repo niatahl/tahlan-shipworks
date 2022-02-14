@@ -50,8 +50,13 @@
 		"tahlan_stahlherz_f_paladin": 10,
 		"tahlan_stahlherz_g_paladin": 10,
 		"tahlan_stahlherz_h_paladin": 10,
-		"tahlan_vanguard_dmn_envy": 10,
-		"tahlan_centurion_dmn_lust": 10
+		"tahlan_vanguard_dmn_envy": 5,
+		"tahlan_vanguard_dmn_assault": 5,
+		"tahlan_centurion_dmn_lust": 2,
+		"tahlan_centurion_dmn_disabler": 2,
+		"tahlan_centurion_dmn_deva": 2,
+		"tahlan_centurion_dmn_sniper": 2,
+		"tahlan_centurion_dmn_heavy": 2,
 	},
 	"combatLarge": {
 		"tahlan_Castigator_standard": 5,
@@ -94,8 +99,15 @@
 		"tahlan_tower_combat": 3,
 		"tahlan_tower_brawler": 4,
 		"tahlan_tower_elite": 3,
-		"tahlan_manticore_dmn_wrath": 10,
-		"tahlan_hammerhead_dmn_greed": 10
+		"tahlan_manticore_dmn_wrath": 4,
+		"tahlan_manticore_dmn_hammer": 2,
+		"tahlan_manticore_dmn_overdriven": 2,
+		"tahlan_manticore_dmn_needler": 2,
+		"tahlan_hammerhead_dmn_greed": 2,
+		"tahlan_hammerhead_dmn_combat": 2,
+		"tahlan_hammerhead_dmn_sniper": 2,
+		"tahlan_hammerhead_dmn_suppression": 2,
+		"tahlan_hammerhead_dmn_striker": 2,
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,
@@ -121,8 +133,15 @@
 		"tahlan_skyrend_lancer": 3,
 		"tahlan_skyrend_combat": 4,
 		"tahlan_skyrend_strike": 3,
-		"tahlan_dominator_dmn_sloth": 10,
-		"tahlan_champion_dmn_gluttony": 10
+		"tahlan_dominator_dmn_sloth": 3,
+		"tahlan_dominator_dmn_overdriven": 2,
+		"tahlan_dominator_dmn_combat": 3,
+		"tahlan_dominator_dmn_barrage": 2,
+		"tahlan_champion_dmn_gluttony": 3,
+		"tahlan_champion_dmn_brawler": 2,
+		"tahlan_champion_dmn_striker": 2,
+		"tahlan_champion_dmn_artillery": 3,
+		"tahlan_DunScaith_dmn_arch": 10,
 	},
 	
 	

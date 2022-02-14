@@ -1,0 +1,66 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 5,
+    "fluxVents": 17,
+    "hullId": "tahlan_dominator_dmn",
+    "hullMods": [
+        "safetyoverrides",
+        "stabilizedshieldemitter",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_dominator_dmn_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "chaingun",
+                "WS0006": "chaingun"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "locust",
+                "WS0002": "locust"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "heavymg",
+                "WS0005": "heavymg",
+                "WS0007": "heavymg"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "tahlan_conand",
+                "WS0011": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0010": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "wasp_wing",
+        "lux_wing"
+    ]
+}

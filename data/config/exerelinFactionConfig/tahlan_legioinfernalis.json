@@ -23,7 +23,7 @@
 		"default": -0.5,
 		"hegemony": -1.00, 
 		"tritachyon": 0.0,
-		"pirates": 0.60, 
+		"pirates": 0.80, 
 		"independent": -0.50,
 		"luddic_church": -1.00,
 		"luddic_path": -1.00,
@@ -75,7 +75,7 @@
 	"diplomacyNegativeChance":{
 		"default": 1.5,
 		"diableavionics": 1.0,
-		"pirates": 0.5,
+		"pirates": 0,
 	},
 	
 	"industrySeeds":[

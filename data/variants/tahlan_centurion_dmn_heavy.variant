@@ -1,0 +1,43 @@
+{
+    "displayName": "Heavy",
+    "fluxCapacitors": 10,
+    "fluxVents": 10,
+    "hullId": "tahlan_centurion_dmn",
+    "hullMods": [],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_centurion_dmn_heavy",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "mjolnir"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "swarmer",
+                "WS0004": "swarmer"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "ioncannon",
+                "WS0006": "ioncannon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "pdlaser",
+                "WS0007": "pdlaser"
+            }
+        }
+    ],
+    "wings": []
+}

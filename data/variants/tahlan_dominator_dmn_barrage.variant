@@ -1,0 +1,71 @@
+{
+    "displayName": "Barrage",
+    "fluxCapacitors": 12,
+    "fluxVents": 30,
+    "hullId": "tahlan_dominator_dmn",
+    "hullMods": [
+        "targetingunit",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_dominator_dmn_barrage",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "hveldriver",
+                "WS0006": "hveldriver"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "squall",
+                "WS0002": "squall"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "tahlan_tethra",
+                "WS0005": "tahlan_tethra"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0012": "lightac",
+                "WS0013": "lightac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0010": "lightac",
+                "WS0014": "lightac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "flak",
+                "WS0008": "dualflak",
+                "WS0011": "dualflak",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "flash_wing",
+        "flash_wing"
+    ]
+}

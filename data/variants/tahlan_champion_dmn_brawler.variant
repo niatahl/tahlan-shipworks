@@ -1,0 +1,55 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 22,
+    "fluxVents": 30,
+    "hullId": "tahlan_champion_dmn",
+    "hullMods": [
+        "targetingunit",
+        "unstable_injector",
+        "magazines"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_champion_dmn_brawler",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0011": "multineedler"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "hurricane"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "phasebeam",
+                "WS0002": "phasebeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "shredder",
+                "WS0005": "shredder"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

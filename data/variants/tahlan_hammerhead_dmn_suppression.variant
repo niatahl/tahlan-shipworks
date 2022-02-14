@@ -1,0 +1,49 @@
+{
+    "displayName": "Suppression",
+    "fluxCapacitors": 14,
+    "fluxVents": 20,
+    "hullId": "tahlan_hammerhead_dmn",
+    "hullMods": [
+        "ballistic_rangefinder",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_hammerhead_dmn_suppression",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "tahlan_vesuvio",
+                "WS0003": "tahlan_vesuvio"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "annihilator",
+                "WS0005": "annihilator"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "lightag",
+                "WS0007": "lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "vulcan",
+                "WS0008": "vulcan"
+            }
+        }
+    ],
+    "wings": ["lux_wing"]
+}

@@ -122,7 +122,13 @@
 			"locust",
 			"tahlan_eradicator",
 			"tahlan_ryza",
-			"tahlan_mezoa"
+			"tahlan_mezoa",
+			"tahlan_vesuvio",
+			"tahlan_breaker",
+			"tahlan_ppa",
+			"tahlan_armiger",
+			"tahlan_efreet",
+			"tahlan_pastel",
 		],
 	},
 	"priorityWeapons":{

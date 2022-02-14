@@ -1,0 +1,44 @@
+{
+    "displayName": "Hammer",
+    "fluxCapacitors": 7,
+    "fluxVents": 20,
+    "hullId": "tahlan_manticore_dmn",
+    "hullMods": [
+        "fluxdistributor",
+        "heavyarmor",
+        "armoredweapons"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_manticore_dmn_hammer",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "tahlan_amboss"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "phasecl"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "tahlan_conand",
+                "WS0004": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "vulcan",
+                "WS0007": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

@@ -1,0 +1,78 @@
+{
+    "displayName": "Arch",
+    "fluxCapacitors": 24,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith_dmn",
+    "hullMods": [
+        "heavyarmor",
+        "targetingunit",
+        "armoredweapons"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_DunScaith_dmn_arch",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_fray"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "cyclone",
+                "WS0023": "cyclone"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0029": "sabotpod",
+                "WS0030": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "gauss",
+                "WS0021": "gauss",
+                "WS0024": "gauss",
+                "WS0025": "gauss"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "guardian",
+                "WS0005": "guardian",
+                "WS0028": "guardian"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "spark_wing",
+        "spark_wing"
+    ]
+}
