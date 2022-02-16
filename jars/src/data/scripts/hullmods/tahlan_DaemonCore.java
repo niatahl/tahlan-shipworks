@@ -96,6 +96,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
         }
 
         int die = MathUtils.getRandomNumberInRange(1, 5) - mag.get(member.getHullSpec().getHullSize());
+        if (member.getHullSpec().getHullId().equals("tahlan_DunScaith_dmn")) {
+            die = 3;    // Hel Scaith always gets an alpha
+        }
         PersonAPI person; // yes, a "person"
         if (die <= 1) {
             person = Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random);

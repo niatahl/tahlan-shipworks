@@ -34,7 +34,7 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
         float days = Global.getSector().getClock().convertToDays(amount);
         timer.advance(days);
         if (timer.intervalElapsed()) {
-            log.info(String.format("Interval elapsed, the space fascists gonna learn today"));
+            log.info("Interval elapsed, the space fascists gonna learn today");
             stealPirateBlueprints();
         }
     }
@@ -46,9 +46,10 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
                 Global.getSector().getFaction(LEGIO_ID).addKnownWeapon(weapon, true);
             }
         }
-        
+
+        // Copy all ships except for LTA garbage
         for (String ship : Global.getSector().getFaction(Factions.PIRATES).getKnownShips()) {
-            if (!Global.getSector().getFaction(LEGIO_ID).knowsShip(ship)) {
+            if (!Global.getSector().getFaction(LEGIO_ID).knowsShip(ship) && !ship.startsWith("LTA_")) {
                 Global.getSector().getFaction(LEGIO_ID).addKnownShip(ship, true);
             }
         } 

@@ -264,13 +264,14 @@ private static class TahlanTrigger extends BaseCampaignEventListener {
             Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
             LOGGER.info("The Daemonic horde awakens");
             FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-            if (!legio.knowsShip("tahlan_deominator_dmn")) {
+            if (!legio.knowsShip("tahlan_dominator_dmn")) {
                 legio.addKnownShip("tahlan_dominator_dmn", false);
                 legio.addKnownShip("tahlan_champion_dmn", false);
                 legio.addKnownShip("tahlan_manticore_dmn", false);
                 legio.addKnownShip("tahlan_hammerhead_dmn", false);
                 legio.addKnownShip("tahlan_centurion_dmn", false);
                 legio.addKnownShip("tahlan_vanguard_dmn", false);
+                legio.addKnownShip("tahlan_DunScaith_dmn", false);
                 legio.addKnownFighter("flash_wing", false);
                 legio.addKnownFighter("spark_wing", false);
                 legio.addKnownFighter("lux_wing", false);
