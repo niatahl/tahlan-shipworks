@@ -1,0 +1,87 @@
+{
+    "displayName": "Barrage",
+    "fluxCapacitors": 25,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith_dmn",
+    "hullMods": [
+        "targetingunit",
+        "fluxbreakers",
+        "missleracks",
+        "armoredweapons"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_DunScaith_dmn_barrage",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_fray"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0022": "hurricane",
+                "WS0023": "hurricane"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0029": "salamanderpod",
+                "WS0030": "salamanderpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "tahlan_efreet",
+                "WS0021": "tahlan_efreet",
+                "WS0024": "tahlan_efreet",
+                "WS0025": "tahlan_efreet"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "lightag",
+                "WS0008": "lightag"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "devastator",
+                "WS0005": "devastator",
+                "WS0028": "guardian"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0006": "lightmg",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "lightmg"
+            }
+        }
+    ],
+    "wings": [
+        "spark_wing",
+        "spark_wing"
+    ]
+}

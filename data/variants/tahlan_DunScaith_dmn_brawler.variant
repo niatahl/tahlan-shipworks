@@ -1,0 +1,89 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 10,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith_dmn",
+    "hullMods": [
+        "fluxdistributor",
+        "frontemitter",
+        "hardenedshieldemitter",
+        "targetingunit",
+        "unstable_injector",
+        "armoredweapons"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_DunScaith_dmn_brawler",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_fray"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0022": "locust",
+                "WS0023": "locust"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0029": "harpoonpod",
+                "WS0030": "harpoonpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "multineedler",
+                "WS0021": "multineedler",
+                "WS0024": "multineedler",
+                "WS0025": "multineedler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "lightmortar",
+                "WS0008": "lightmortar",
+                "WS0009": "lightmortar",
+                "WS0010": "lightmortar"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "devastator",
+                "WS0005": "devastator",
+                "WS0028": "devastator"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0006": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "wasp_wing",
+        "wasp_wing"
+    ]
+}

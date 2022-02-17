@@ -141,7 +141,11 @@
 		"tahlan_champion_dmn_brawler": 2,
 		"tahlan_champion_dmn_striker": 2,
 		"tahlan_champion_dmn_artillery": 3,
-		"tahlan_DunScaith_dmn_arch": 10,
+		"tahlan_DunScaith_dmn_arch": 2,
+		"tahlan_DunScaith_dmn_barrage": 2,
+		"tahlan_DunScaith_dmn_fury": 2,
+		"tahlan_DunScaith_dmn_brawler": 2,
+		"tahlan_DunScaith_dmn_heavy": 2,
 	},
 	
 	

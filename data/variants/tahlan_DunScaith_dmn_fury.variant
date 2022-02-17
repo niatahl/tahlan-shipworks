@@ -1,0 +1,83 @@
+{
+    "displayName": "Fury",
+    "fluxCapacitors": 22,
+    "fluxVents": 50,
+    "hullId": "tahlan_DunScaith_dmn",
+    "hullMods": [
+        "heavyarmor",
+        "targetingunit",
+        "fluxbreakers",
+        "autorepair",
+        "stabilizedshieldemitter",
+        "missleracks"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_DunScaith_dmn_fury",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_fray"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0022": "locust",
+                "WS0023": "locust"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0020": "tahlan_vesuvio",
+                "WS0021": "tahlan_vesuvio"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0024": "mark9",
+                "WS0025": "mark9"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "devastator",
+                "WS0005": "devastator",
+                "WS0011": "lightmortar",
+                "WS0012": "lightmortar",
+                "WS0013": "lightmortar",
+                "WS0014": "lightmortar"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0028": "devastator",
+                "WS0029": "pilum",
+                "WS0030": "pilum"
+            }
+        }
+    ],
+    "wings": [
+        "flash_wing",
+        "flash_wing"
+    ]
+}
