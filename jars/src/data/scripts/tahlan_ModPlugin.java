@@ -151,7 +151,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         Global.getSector().addScript(new tahlan_regaliablueprintscript());
         log.info("added Rosenritter Blueprint script");
 
-        if (ENABLE_LIFELESS) {
+        if (!ENABLE_LIFELESS) {
             sector.getFaction("remnant").removeKnownShip("tahlan_Timeless");
             sector.getFaction("remnant").removeKnownShip("tahlan_Nameless");
             sector.getFaction("remnant").removeKnownWeapon("tahlan_disparax");
@@ -218,53 +218,54 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             Global.getSector().addTransientListener(new TahlanTrigger());
             FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
             // If somehow the Daemons are missing, add them
-            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered") && !legio.knowsShip("tahlan_deominator_dmn")) {
+            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 addDaemons(sector);
             }
         }
     }
 
-private static class TahlanTrigger extends BaseCampaignEventListener {
-    private TahlanTrigger() {
-        super(false);
-    }
-    @Override
-    public void reportEconomyMonthEnd() {
-        if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
-            return;
+    private static class TahlanTrigger extends BaseCampaignEventListener {
+        private TahlanTrigger() {
+            super(false);
         }
-        SectorAPI sector = Global.getSector();
 
-        int iLegioStartingCondition = 0;
-        if (Global.getSector().getClock().getCycle() >= 210) {
-            iLegioStartingCondition++;
-        } //Choose cycle
-        for (MarketAPI market : Misc.getPlayerMarkets(true)) {
-            if (market.getSize() >= 5) {
-                iLegioStartingCondition++;
-                break;
+        @Override
+        public void reportEconomyMonthEnd() {
+            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+                return;
             }
-        } //Ok size 6
-        MemoryAPI mem = Global.getSector().getMemoryWithoutUpdate();
-        if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES)
-                && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)
-                && mem.getBoolean("$interactedWithGABarEvent")
-                && mem.getBoolean("$metDaud")
-                && mem.getBoolean("$gaATG_missionCompleted")
-                && mem.getBoolean("$gaFC_missionCompleted")
-                && mem.getBoolean("$gaKA_missionCompleted")
-                && mem.getBoolean("$gaPZ_missionCompleted")
-                && mem.getBoolean("$interactedWithGABarEvent")) {
-            iLegioStartingCondition++; //Follow Histidine's "Skip Story format"
-        }
-        if (sector.getPlayerStats().getLevel() >= 13) {
-            iLegioStartingCondition++;
-        }
-        if (iLegioStartingCondition >= 3) {
-            Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
-            LOGGER.info("The Daemonic horde awakens");
-            FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-            if (!legio.knowsShip("tahlan_dominator_dmn")) {
+            SectorAPI sector = Global.getSector();
+
+            int iLegioStartingCondition = 0;
+            if (Global.getSector().getClock().getCycle() >= 210) {
+                iLegioStartingCondition++;
+            } //Choose cycle
+            for (MarketAPI market : Misc.getPlayerMarkets(true)) {
+                if (market.getSize() >= 5) {
+                    iLegioStartingCondition++;
+                    break;
+                }
+            } //Ok size 6
+            MemoryAPI mem = Global.getSector().getMemoryWithoutUpdate();
+            if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES)
+                    && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)
+                    && mem.getBoolean("$interactedWithGABarEvent")
+                    && mem.getBoolean("$metDaud")
+                    && mem.getBoolean("$gaATG_missionCompleted")
+                    && mem.getBoolean("$gaFC_missionCompleted")
+                    && mem.getBoolean("$gaKA_missionCompleted")
+                    && mem.getBoolean("$gaPZ_missionCompleted")
+                    && mem.getBoolean("$interactedWithGABarEvent")) {
+                iLegioStartingCondition++; //Follow Histidine's "Skip Story format"
+            }
+            if (sector.getPlayerStats().getLevel() >= 13) {
+                iLegioStartingCondition++;
+            }
+            if (iLegioStartingCondition >= 3) {
+                Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
+                LOGGER.info("The Daemonic horde awakens");
+                FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
+
                 legio.addKnownShip("tahlan_dominator_dmn", false);
                 legio.addKnownShip("tahlan_champion_dmn", false);
                 legio.addKnownShip("tahlan_manticore_dmn", false);
@@ -275,11 +276,11 @@ private static class TahlanTrigger extends BaseCampaignEventListener {
                 legio.addKnownFighter("flash_wing", false);
                 legio.addKnownFighter("spark_wing", false);
                 legio.addKnownFighter("lux_wing", false);
+
             }
         }
-    }
 
-}
+    }
 
     @Override
     public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
