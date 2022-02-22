@@ -174,13 +174,13 @@
 		"carriers":1,
 		"phaseShips":1,
 		
-		"officerQuality":5,
+		"officerQuality":7,
 		"shipQuality":5,
 		"numShips":3,
 		
 		"shipSize":3,
 		
-		"aggression":4,
+		"aggression":5,
 		
 		"combatFreighterProbability":0.75,     				# instead of some portion of the freighters in a fleet
 		"combatFreighterCombatUseFraction":1,  				# as part of the normal combat lineup
@@ -268,7 +268,7 @@
 		"offerMissionsWhenHostile":false,
 		"allowsTransponderOffTrade":false,
 		"patrolsHaveNoPatrolMemoryKey":true,
-		"pirateBehavior":true, # for fleet behavior
+		"pirateBehavior":false, # for fleet behavior
 		#"makesPirateBases":true,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
 		"punitiveExpeditionData":{
