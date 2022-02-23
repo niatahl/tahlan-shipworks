@@ -4,8 +4,12 @@ package data.scripts.campaign;
 
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.util.Misc;
+import exerelin.campaign.fleets.InvasionFleetManager;
+import exerelin.utilities.NexConfig;
 import org.apache.log4j.Logger;
 
 public class tahlan_LegioStealingHomework implements EveryFrameScript {
@@ -36,6 +40,18 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
         if (timer.intervalElapsed()) {
             log.info("Interval elapsed, the space fascists gonna learn today");
             stealPirateBlueprints();
+            
+            // Now we also make the Legio more aggressive once it has gone daemonic
+            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+                float increment = 0;
+                for (MarketAPI market : Misc.getFactionMarkets(LEGIO_ID)) {
+                    increment += InvasionFleetManager.getMarketInvasionCommodityValue(market) * NexConfig.invasionPointEconomyMult;
+                }
+
+                increment += NexConfig.baseInvasionPointsPerFaction;
+                increment += NexConfig.invasionPointsPerPlayerLevel * Global.getSector().getPlayerPerson().getStats().getLevel();
+                InvasionFleetManager.getManager().modifySpawnCounter(LEGIO_ID,increment*0.5f);
+            }
         }
     }
 
