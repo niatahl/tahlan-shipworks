@@ -12,6 +12,7 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.GateEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.loading.HullModSpecAPI;
@@ -232,6 +233,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         @Override
         public void reportEconomyMonthEnd() {
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+                LOGGER.info("Daemons lurk");
                 return;
             }
             SectorAPI sector = Global.getSector();
@@ -239,27 +241,41 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             int iLegioStartingCondition = 0;
             if (Global.getSector().getClock().getCycle() >= 210) {
                 iLegioStartingCondition++;
+                LOGGER.info("Daemonic Incursion - Cycle");
             } //Choose cycle
             for (MarketAPI market : Misc.getPlayerMarkets(true)) {
                 if (market.getSize() >= 5) {
                     iLegioStartingCondition++;
+                    LOGGER.info("Daemonic Incursion - Market");
                     break;
                 }
             } //Ok size 6
             MemoryAPI mem = Global.getSector().getMemoryWithoutUpdate();
-            if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES)
-                    && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)
-                    && mem.getBoolean("$interactedWithGABarEvent")
-                    && mem.getBoolean("$metDaud")
-                    && mem.getBoolean("$gaATG_missionCompleted")
-                    && mem.getBoolean("$gaFC_missionCompleted")
-                    && mem.getBoolean("$gaKA_missionCompleted")
-                    && mem.getBoolean("$gaPZ_missionCompleted")
-                    && mem.getBoolean("$interactedWithGABarEvent")) {
+            if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES) && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)) {
                 iLegioStartingCondition++; //Follow Histidine's "Skip Story format"
+                LOGGER.info("Daemonic Incursion - Gates");
             }
             if (sector.getPlayerStats().getLevel() >= 13) {
                 iLegioStartingCondition++;
+                LOGGER.info("Daemonic Incursion - Level");
+            } // Two capitals or Metafalica
+            int caps = 0;
+            for (FleetMemberAPI bote: sector.getPlayerFleet().getMembersWithFightersCopy()) {
+                if (bote.getHullSpec().getHullSize() == ShipAPI.HullSize.CAPITAL_SHIP) {
+                    caps++;
+                }
+                // Metafalica counts double
+                if (bote.getHullSpec().getHullId().contains("Metafalica")) {
+                    caps++;
+                }
+                // got Daemons? instant trigger
+                if (bote.getHullSpec().getHullId().contains("_dmn")) {
+                    iLegioStartingCondition = 3;
+                }
+            }
+            if (caps >= 2) {
+                iLegioStartingCondition++;
+                LOGGER.info("Daemonic Incursion - Capitals");
             }
             if (iLegioStartingCondition >= 3) {
                 Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);

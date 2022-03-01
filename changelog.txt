@@ -60,6 +60,8 @@
 	- Halved chargeup duration
 - Project Taffeta
 	- Lowered range from 800 to 700
+- Dun Scaith
+	- Armour increased from 1700 to 1800
 - Updated Legion (GH) and other variants of vanilla ships to new vanilla stats
 - Blocked a bunch of stuff from being available from that bloody dealer
 - Reduced Legio Tyranny's buff to fleet size and spawn rate cause people are too weak
