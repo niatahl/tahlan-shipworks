@@ -70,7 +70,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
             if (enemy.getOwner() != ship.getOwner()) {
                 continue;
             }
-            if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura")) {
+            if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
                 scrub = true;
                 break;
             }

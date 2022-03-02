@@ -61,6 +61,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public static boolean ENABLE_SIEGE;
     public static boolean ENABLE_LIFELESS;
     public static boolean ENABLE_LEGIOBPS;
+    public static boolean HAS_NEX = false;
 
     public static final Logger LOGGER = Global.getLogger(tahlan_ModPlugin.class);
 
@@ -111,8 +112,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         SectorAPI sector = Global.getSector();
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
-        boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        if (!haveNexerelin || SectorManager.getManager().isCorvusMode()) {
+        HAS_NEX = Global.getSettings().getModManager().isModEnabled("nexerelin");
+        if (!HAS_NEX || SectorManager.getManager().isCorvusMode()) {
             if (ENABLE_LETHIA) new tahlan_Lethia().generate(sector);
             if (ENABLE_LEGIO) new tahlan_Rubicon().generate(sector);
         }
@@ -140,7 +141,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         } else {
             sector.getFaction("tahlan_legioinfernalis").setShowInIntelTab(false);
 
-            if (haveNexerelin) {
+            if (HAS_NEX) {
                 sector.getFaction("tahlan_legioinfernalis").getMemoryWithoutUpdate().set("$nex_respawn_cooldown", true);
             }
         }

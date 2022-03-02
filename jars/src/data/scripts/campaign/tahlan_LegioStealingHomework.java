@@ -12,6 +12,8 @@ import exerelin.campaign.fleets.InvasionFleetManager;
 import exerelin.utilities.NexConfig;
 import org.apache.log4j.Logger;
 
+import static data.scripts.tahlan_ModPlugin.HAS_NEX;
+
 public class tahlan_LegioStealingHomework implements EveryFrameScript {
 
     public static Logger log = Global.getLogger(tahlan_LegioStealingHomework.class);
@@ -42,7 +44,7 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
             stealPirateBlueprints();
             
             // Now we also make the Legio more aggressive once it has gone daemonic
-            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+            if (HAS_NEX && Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 float increment = 0;
                 for (MarketAPI market : Misc.getFactionMarkets(LEGIO_ID)) {
                     increment += InvasionFleetManager.getMarketInvasionCommodityValue(market) * NexConfig.invasionPointEconomyMult;
