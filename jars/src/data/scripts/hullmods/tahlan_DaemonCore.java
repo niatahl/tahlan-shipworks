@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
@@ -66,16 +67,33 @@ public class tahlan_DaemonCore extends BaseHullMod {
 
         // Scrub Police starts here
         boolean scrub = false;
+        boolean turboscrub = false;
         for (ShipAPI enemy: Global.getCombatEngine().getShips()) {
             if (enemy.getOwner() != ship.getOwner()) {
                 continue;
             }
+            // find scrub botes
             if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
                 scrub = true;
                 break;
             }
+            if (enemy.getHullSpec().getHullId().contains("tesseract") || enemy.getHullSpec().getHullId().contains("facet") || enemy.getHullSpec().getHullId().contains("shard_")) {
+                turboscrub = true;
+            }
+            if (!scrub) { // only check weapons if we haven't found scrub botes
+                for (WeaponAPI weapon : enemy.getAllWeapons()) {
+                    if (weapon.getSpec().getWeaponId().contains("sw_")) {
+                        scrub = true;
+                        break;
+                    }
+                }
+            }
         }
-        if (scrub) {
+
+        if (turboscrub) {
+            ship.getMutableStats().getDamageToCapital().modifyMult("scrub_police",3f);
+            ship.getMutableStats().getDamageToCruisers().modifyMult("scrub_police",2f);
+        } else if (scrub) { // then get fucked lmao
             ship.getMutableStats().getDamageToCapital().modifyMult("scrub_police",2f);
             ship.getMutableStats().getDamageToCruisers().modifyMult("scrub_police",1.5f);
         }
