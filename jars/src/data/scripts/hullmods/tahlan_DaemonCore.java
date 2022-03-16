@@ -102,7 +102,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
     @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
         // Don't do this if we're in player fleet
-        if (member.getFleetCommander().isPlayer()) {
+        if (member.getFleetCommander().isPlayer() || member.getFleetCommander().isDefault()) {
             return;
         }
 
@@ -113,8 +113,13 @@ public class tahlan_DaemonCore extends BaseHullMod {
             }
         }
 
+        // Apparently this can be the case
+        if (Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE) == null) {
+            return;
+        }
+
         int die = MathUtils.getRandomNumberInRange(1, 5) - mag.get(member.getHullSpec().getHullSize());
-        if (member.getHullSpec().getHullId().equals("tahlan_DunScaith_dmn")) {
+        if (member.getHullSpec().getHullId().contains("tahlan_DunScaith_dmn")) {
             die = 3;    // Hel Scaith always gets an alpha
         }
         PersonAPI person; // yes, a "person"
