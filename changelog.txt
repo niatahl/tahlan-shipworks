@@ -1,4 +1,4 @@
-0.7.7
+0.8
 - Armiger
 	- Reduced damage from 300 to 200
 	- Reduced flux/s accordingly

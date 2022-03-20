@@ -52,7 +52,7 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
 
                 increment += NexConfig.baseInvasionPointsPerFaction;
                 increment += NexConfig.invasionPointsPerPlayerLevel * Global.getSector().getPlayerPerson().getStats().getLevel();
-                InvasionFleetManager.getManager().modifySpawnCounter(LEGIO_ID,increment*0.5f);
+                InvasionFleetManager.getManager().modifySpawnCounter(LEGIO_ID,increment);
             }
         }
     }
