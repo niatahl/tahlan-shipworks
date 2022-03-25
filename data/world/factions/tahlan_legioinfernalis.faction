@@ -41,9 +41,9 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"pirate_bp":0.5,
 			"tahlan_legio":2,
-			"tahlan_daemon":10,
+			"tahlan_daemon":7,
+			"rare_bp":2,
 		},
 		"hulls":{			
 			"paragon":2,

@@ -271,14 +271,14 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 }
                 // got Daemons? instant trigger
                 if (bote.getHullSpec().getHullId().contains("_dmn")) {
-                    iLegioStartingCondition = 3;
+                    iLegioStartingCondition = 99;
                 }
             }
             if (caps >= 2) {
                 iLegioStartingCondition++;
                 LOGGER.info("Daemonic Incursion - Capitals");
             }
-            if (iLegioStartingCondition >= 3) {
+            if (iLegioStartingCondition >= 4) {
                 Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
                 LOGGER.info("The Daemonic horde awakens");
                 FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");

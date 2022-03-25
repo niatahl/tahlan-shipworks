@@ -93,6 +93,5 @@ Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmo
 Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_10pctCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
 Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_CreepyFog,(Hidden) Adds spooky fog to a ship,(Hidden) Adds spooky fog to a ship,
 Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
-Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities by %s and reduces recoil by %s.
-
-Any fighters equipped on this ship are converted to automated drones.",Enhances targeting,graphics/tahlan/hullmods/tahlan_lirefit.png
+Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,Equipped with an advanced AI targeting system. Improves projectile velocities by %s and reduces recoil by %s.,Enhances targeting,graphics/tahlan/hullmods/tahlan_lirefit.png
+Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png

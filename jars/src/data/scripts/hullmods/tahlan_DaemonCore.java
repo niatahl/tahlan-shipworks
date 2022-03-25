@@ -12,7 +12,6 @@ import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -22,13 +21,15 @@ import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_DaemonCore extends BaseHullMod {
 
-    private static final Map<HullSize, Integer> mag = new HashMap<HullSize, Integer>();
+    private static final Map<HullSize, Integer> MAG = new HashMap<>();
     static {
-        mag.put(HullSize.FRIGATE, 2);
-        mag.put(HullSize.DESTROYER, 1);
-        mag.put(HullSize.CRUISER, 0);
-        mag.put(HullSize.CAPITAL_SHIP, 0);
+        MAG.put(HullSize.FRIGATE, 2);
+        MAG.put(HullSize.DESTROYER, 1);
+        MAG.put(HullSize.CRUISER, 0);
+        MAG.put(HullSize.CAPITAL_SHIP, 0);
     }
+
+
 
     private static final Color JITTER_COLOR = new Color(255, 0, 0, 20);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
@@ -37,15 +38,13 @@ public class tahlan_DaemonCore extends BaseHullMod {
     private final String OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
     private static final  String dc_id = "tahlan_daemoncore";
 
+    @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
         stats.getProjectileSpeedMult().modifyMult(id, 1.5f);
         stats.getMaxRecoilMult().modifyMult(id, 0.75f);
         stats.getRecoilDecayMult().modifyMult(id, 1.25f);
         stats.getRecoilPerShotMult().modifyMult(id, 0.75f);
-        stats.getDynamic().getStat(Stats.FIGHTER_CREW_LOSS_MULT).modifyMult(id, 0f);
-        stats.getDamageToCruisers().modifyMult(id,1.1f);
-        stats.getDamageToCapital().modifyMult(id,1.2f);
 
     }
 
@@ -54,10 +53,37 @@ public class tahlan_DaemonCore extends BaseHullMod {
         if (ship.getShield() != null) {
             ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
         }
+
+        boolean isPlayerFleet = false;
+        for (FleetMemberAPI member: Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
+            if (member.getVariant().getHullVariantId().equals(ship.getVariant().getHullVariantId())) {
+                isPlayerFleet = true;
+            }
+        }
+
+        if (ship.getVariant().hasHullMod("tahlan_daemonboost")) {
+            ship.getVariant().removeMod("tahlan_daemonboost");
+        }
+
+        if (!isPlayerFleet) {
+            ship.getVariant().addMod("tahlan_daemonboost");
+        }
+
     }
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+
+        // no hidden stuff for player
+        if (ship.getFleetMember().getFleetData().getFleet().isPlayerFleet()) {
+            return;
+        }
+
+        if (!ship.isAlive() || ship.isHulk() || ship.isPiece()) {
+            ship.setJitter(dc_id,JITTER_COLOR,0f,0,0f);
+            ship.setJitterUnder(dc_id,JITTER_UNDER_COLOR,0f,0,0f);
+            return;
+        }
 
         // Enrage function
         float enrage = 1f + (ship.getHullLevel() * 0.25f);
@@ -101,8 +127,23 @@ public class tahlan_DaemonCore extends BaseHullMod {
 
     @Override
     public void advanceInCampaign(FleetMemberAPI member, float amount) {
+
         // Don't do this if we're in player fleet
         if (member.getFleetCommander().isPlayer() || member.getFleetCommander().isDefault()) {
+            return;
+        }
+
+        // Another check, I guess
+        if (Global.getSector() != null && Global.getSector().getPlayerFleet() != null) {
+            for (FleetMemberAPI mem : Global.getSector().getPlayerFleet().getMembersWithFightersCopy()) {
+                if (mem.getId().equals(member.getId())) {
+                    return;
+                }
+            }
+        }
+
+        // and another
+        if (!member.getFleetCommander().getFaction().getId().contains("legioinfernalis")) {
             return;
         }
 
@@ -118,7 +159,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
             return;
         }
 
-        int die = MathUtils.getRandomNumberInRange(1, 5) - mag.get(member.getHullSpec().getHullSize());
+        int die = MathUtils.getRandomNumberInRange(1, 5) - MAG.get(member.getHullSpec().getHullSize());
         if (member.getHullSpec().getHullId().contains("tahlan_DunScaith_dmn")) {
             die = 3;    // Hel Scaith always gets an alpha
         }

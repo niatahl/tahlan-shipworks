@@ -1,3 +1,7 @@
+0.8.1
+- Fine-tuning
+
+
 0.8
 - Armiger
 	- Reduced damage from 300 to 200

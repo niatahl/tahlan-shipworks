@@ -249,19 +249,19 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-96, 26.5],
-      "length": 80,
-      "width": 20,
+      "location": [-102, 26],
+      "length": 86.5,
+      "width": 30,
       "angle": 180,
-      "contrailSize": 20,
+      "contrailSize": 30,
       "style": "MIDLINE"
     },
     {
-      "location": [-96, -26.5],
-      "length": 80,
-      "width": 20,
+      "location": [-102, -26],
+      "length": 86.5,
+      "width": 30,
       "angle": -180,
-      "contrailSize": 20,
+      "contrailSize": 30,
       "style": "MIDLINE"
     },
     {
@@ -281,19 +281,19 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-98, 49],
-      "length": 89,
-      "width": 16,
+      "location": [-98.5, 49],
+      "length": 69,
+      "width": 17,
       "angle": 180,
-      "contrailSize": 16,
+      "contrailSize": 17,
       "style": "MIDLINE"
     },
     {
-      "location": [-98, -49],
-      "length": 89,
-      "width": 16,
+      "location": [-98.5, -49],
+      "length": 69,
+      "width": 17,
       "angle": -180,
-      "contrailSize": 16,
+      "contrailSize": 17,
       "style": "MIDLINE"
     },
     {
