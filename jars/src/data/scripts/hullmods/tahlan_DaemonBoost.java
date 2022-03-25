@@ -13,10 +13,10 @@ public class tahlan_DaemonBoost extends BaseHullMod {
     public static final Map<ShipAPI.HullSize, Float> SUPPLYMALUS = new HashMap<>();
     static {
         SUPPLYMALUS.put(ShipAPI.HullSize.DEFAULT, 0f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.FRIGATE, -2f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.DESTROYER, -4f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.CRUISER, -6f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.CAPITAL_SHIP, -10f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.FRIGATE, -3f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.DESTROYER, -6f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.CRUISER, -10f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.CAPITAL_SHIP, -15f);
     }
 
     @Override

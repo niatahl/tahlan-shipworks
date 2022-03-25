@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
+import com.fs.starfarer.api.combat.listeners.DamageDealtModifier;
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
@@ -27,13 +28,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
         MAG.put(HullSize.CAPITAL_SHIP, 0);
     }
 
-
-
     private static final Color JITTER_COLOR = new Color(255, 0, 0, 20);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
 
-    private final String INNERLARGE = "graphics/tahlan/fx/tahlan_shellshield.png";
-    private final String OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
     private static final  String dc_id = "tahlan_daemoncore";
 
     @Override
@@ -43,17 +40,24 @@ public class tahlan_DaemonCore extends BaseHullMod {
         stats.getMaxRecoilMult().modifyMult(id, 0.75f);
         stats.getRecoilDecayMult().modifyMult(id, 1.25f);
         stats.getRecoilPerShotMult().modifyMult(id, 0.75f);
+        stats.getDamageToMissiles().modifyMult(id, 1.5f);
 
     }
 
     @Override
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         if (ship.getShield() != null) {
-            ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
+            String inner = "graphics/tahlan/fx/tahlan_shellshield.png";
+            String outer = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
+            ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), inner, outer);
         }
 
         if (!ship.hasListenerOfClass(daemonListener.class)) {
             ship.addListener(new daemonListener(ship));
+        }
+
+        if (Global.getSector().getPlayerFleet() == null) {
+            return;
         }
 
         boolean isPlayerFleet = false;
@@ -76,9 +80,11 @@ public class tahlan_DaemonCore extends BaseHullMod {
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
 
-        // no hidden stuff for player
-        if (ship.getFleetMember().getFleetData().getFleet().isPlayerFleet()) {
-            return;
+        if (ship.getFleetMember().getFleetData() != null) {
+            // no hidden stuff for player
+            if (ship.getFleetMember().getFleetData().getFleet().isPlayerFleet()) {
+                return;
+            }
         }
 
         if (!ship.isAlive() || ship.isHulk() || ship.isPiece()) {
@@ -93,38 +99,6 @@ public class tahlan_DaemonCore extends BaseHullMod {
         ship.setJitter(dc_id, JITTER_COLOR, 1f-ship.getHullLevel(), 3, 5f);
         ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, 1f-ship.getHullLevel(), 20, 10f);
 
-        // Scrub Police starts here
-        boolean scrub = false;
-        boolean turboscrub = false;
-        for (ShipAPI enemy: Global.getCombatEngine().getShips()) {
-            if (enemy.getOwner() != ship.getOwner()) {
-                continue;
-            }
-            // find scrub botes
-            if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
-                scrub = true;
-                break;
-            }
-            if (enemy.getHullSpec().getHullId().contains("tesseract") || enemy.getHullSpec().getHullId().contains("facet") || enemy.getHullSpec().getHullId().contains("shard_")) {
-                turboscrub = true;
-            }
-            if (!scrub) { // only check weapons if we haven't found scrub botes
-                for (WeaponAPI weapon : enemy.getAllWeapons()) {
-                    if (weapon.getSpec().getWeaponId().contains("sw_")) {
-                        scrub = true;
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (turboscrub) {
-            ship.getMutableStats().getDamageToCapital().modifyMult("scrub_police",3f);
-            ship.getMutableStats().getDamageToCruisers().modifyMult("scrub_police",2f);
-        } else if (scrub) { // then get fucked lmao
-            ship.getMutableStats().getDamageToCapital().modifyMult("scrub_police",2f);
-            ship.getMutableStats().getDamageToCruisers().modifyMult("scrub_police",1.5f);
-        }
     }
 
     @Override
@@ -185,10 +159,11 @@ public class tahlan_DaemonCore extends BaseHullMod {
     public String getDescriptionParam(int index, HullSize hullSize) {
         if (index == 0) return "" + 50 + txt("%");
         if (index == 1) return "" + 25 + txt("%");
+        if (index == 2) return "" + 40 + txt("%");
         return null;
     }
 
-    private static class daemonListener implements DamageTakenModifier {
+    private static class daemonListener implements DamageTakenModifier, DamageDealtModifier {
         protected ShipAPI ship;
 
         public daemonListener(ShipAPI ship) {
@@ -210,8 +185,31 @@ public class tahlan_DaemonCore extends BaseHullMod {
             } else {
                 return null;
             }
-            if (weapon.getId().contains("sw_")) {
-                damage.setDamage(damage.getDamage() * 0.1f);
+            if (weapon.getId().contains("sw_") || weapon.getId().contains("HIVER_")) {
+                damage.setDamage(damage.getDamage() * 0.25f);
+            }
+            return null;
+        }
+
+        // Scrub police v2
+        // If someone finds this, I might remove it. Kinda just want to see if the pl*yers manage to figure it out.
+        @Override
+        public String modifyDamageDealt(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
+            if (!(target instanceof ShipAPI)) {
+                return null;
+            }
+            ShipAPI enemy = (ShipAPI) target;
+            if (enemy.getVariant().hasHullMod("es_shiplevelHM")) {
+                damage.setDamage(damage.getDamage()*MathUtils.getRandomNumberInRange(1f,5f));
+                return null;
+            }
+            if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
+                damage.setDamage(damage.getDamage()*1.5f);
+                return null;
+            }
+            if (enemy.getHullSpec().getHullId().contains("tesseract") || enemy.getHullSpec().getHullId().contains("facet") || enemy.getHullSpec().getHullId().contains("shard_")) {
+                damage.setDamage(damage.getDamage()*2f);
+                return null;
             }
             return null;
         }
