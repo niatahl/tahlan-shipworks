@@ -2,16 +2,18 @@ package data.scripts.hullmods;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonAPI;
-import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
+import com.fs.starfarer.api.combat.listeners.DamageListener;
+import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.combat.CombatUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -52,6 +54,10 @@ public class tahlan_DaemonCore extends BaseHullMod {
     public void applyEffectsAfterShipCreation(ShipAPI ship, String id) {
         if (ship.getShield() != null) {
             ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), INNERLARGE, OUTERLARGE);
+        }
+
+        if (!ship.hasListenerOfClass(daemonListener.class)) {
+            ship.addListener(new daemonListener(ship));
         }
 
         boolean isPlayerFleet = false;
@@ -186,5 +192,33 @@ public class tahlan_DaemonCore extends BaseHullMod {
         return null;
     }
 
+    private static class daemonListener implements DamageTakenModifier {
+        protected ShipAPI ship;
+
+        public daemonListener(ShipAPI ship) {
+            this.ship = ship;
+        }
+
+        @Override
+        public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
+            if (target != ship) {
+                return null;
+            }
+            WeaponAPI weapon;
+            if (param instanceof DamagingProjectileAPI) {
+                weapon = ((DamagingProjectileAPI) param).getWeapon();
+            } else if ( param instanceof BeamAPI ){
+                weapon = ((BeamAPI) param).getWeapon();
+            } else if ( param instanceof WeaponAPI ) {
+                weapon = (WeaponAPI) param;
+            } else {
+                return null;
+            }
+            if (weapon.getId().contains("sw_")) {
+                damage.setDamage(damage.getDamage() * 0.1f);
+            }
+            return null;
+        }
+    }
 
 }
