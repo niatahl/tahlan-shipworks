@@ -1,6 +1,6 @@
 {
     "displayName": "Barrage",
-    "fluxCapacitors": 25,
+    "fluxCapacitors": 21,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
@@ -81,7 +81,7 @@
         }
     ],
     "wings": [
-        "spark_wing",
-        "spark_wing"
+        "tahlan_thunder_dmn_wing",
+        "tahlan_thunder_dmn_wing"
     ]
 }

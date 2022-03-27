@@ -11,7 +11,7 @@
         "job_intel_failure": "",
         "job_intel_expired": "",
         "job_forFaction": "hegemony",
-        "job_deadline": 60,
+        "job_deadline": 180,
         "job_credit_reward": 500000,
         "job_reward_scaling": 0.5,
         "job_reputation_reward":10,

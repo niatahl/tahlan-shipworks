@@ -1,6 +1,6 @@
 {
     "displayName": "Fury",
-    "fluxCapacitors": 22,
+    "fluxCapacitors": 6,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
@@ -77,7 +77,7 @@
         }
     ],
     "wings": [
-        "flash_wing",
-        "flash_wing"
+        "tahlan_flash_dmn_wing",
+        "tahlan_flash_dmn_wing"
     ]
 }

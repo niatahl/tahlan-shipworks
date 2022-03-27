@@ -1,6 +1,6 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 9,
+    "fluxCapacitors": 6,
     "fluxVents": 10,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": [
@@ -47,5 +47,5 @@
             }
         }
     ],
-    "wings": ["wasp_wing"]
+    "wings": ["tahlan_spark_dmn_wing"]
 }

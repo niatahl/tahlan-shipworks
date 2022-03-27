@@ -1,6 +1,6 @@
 {
     "displayName": "Arch",
-    "fluxCapacitors": 24,
+    "fluxCapacitors": 16,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
@@ -72,7 +72,7 @@
         }
     ],
     "wings": [
-        "spark_wing",
-        "spark_wing"
+        "tahlan_gaze_dmn_wing",
+        "tahlan_gaze_dmn_wing"
     ]
 }

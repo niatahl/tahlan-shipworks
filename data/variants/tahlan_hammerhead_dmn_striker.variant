@@ -1,6 +1,6 @@
 {
     "displayName": "Striker",
-    "fluxCapacitors": 9,
+    "fluxCapacitors": 4,
     "fluxVents": 20,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": [
@@ -40,5 +40,5 @@
             }
         }
     ],
-    "wings": ["wasp_wing"]
+    "wings": ["tahlan_lux_dmn_wing"]
 }

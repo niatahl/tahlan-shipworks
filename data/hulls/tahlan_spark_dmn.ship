@@ -1,0 +1,77 @@
+{
+  "hullName": "Hel Spark",
+  "hullId": "tahlan_spark_dmn",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_spark_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 23,
+  "width": 30,
+  "center": [15, 11.5],
+  "collisionRadius": 21,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 18.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 81,
+      "angle": 18.5,
+      "locations": [0.5, 7]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 81,
+      "angle": -18.5,
+      "locations": [0.5, -7]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 180,
+      "angle": 0,
+      "locations": [2.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-7.5, 9],
+      "length": 17,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-7.5, -9],
+      "length": 17,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-10.5, -0],
+      "length": 17,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE_FIGHTER"
+    }
+  ],
+  "bounds": [
+    -5.5, -14.5,
+    -5.5, 14.5,
+    9.5, -0
+  ]
+}

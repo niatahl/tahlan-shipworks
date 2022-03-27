@@ -185,6 +185,13 @@ public class tahlan_DaemonCore extends BaseHullMod {
             } else {
                 return null;
             }
+            if (weapon == null) {
+                return null;
+            }
+            if (weapon.getId() == null) {
+                return null;
+            }
+            // If you're not balancing your mods, I'll just counterbalans
             if (weapon.getId().contains("sw_") || weapon.getId().contains("HIVER_")) {
                 damage.setDamage(damage.getDamage() * 0.25f);
             }
@@ -200,6 +207,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
             }
             ShipAPI enemy = (ShipAPI) target;
             if (enemy.getVariant().hasHullMod("es_shiplevelHM")) {
+                // Clown mod gets clown damage
                 damage.setDamage(damage.getDamage()*MathUtils.getRandomNumberInRange(1f,5f));
                 return null;
             }

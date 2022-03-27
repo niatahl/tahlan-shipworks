@@ -1,0 +1,68 @@
+{
+  "hullName": "Hel Flash",
+  "hullId": "tahlan_flash_dmn",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_flash_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 32,
+  "width": 38,
+  "center": [19, 16],
+  "collisionRadius": 28.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 26.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-11, 9],
+      "length": 15,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-11, -9],
+      "length": 15,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-14, 13],
+      "length": 15,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE_FIGHTER"
+    },
+    {
+      "location": [-14, -13],
+      "length": 15,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE_FIGHTER"
+    }
+  ],
+  "bounds": [
+    -10.5, -15.5,
+    8.5, -12,
+    8.5, 12,
+    -10.5, 15.5
+  ]
+}

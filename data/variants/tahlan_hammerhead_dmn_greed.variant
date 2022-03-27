@@ -1,6 +1,6 @@
 {
     "displayName": "Greed",
-    "fluxCapacitors": 5,
+    "fluxCapacitors": 1,
     "fluxVents": 20,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": ["heavyarmor"],
@@ -36,5 +36,5 @@
             }
         }
     ],
-    "wings": ["spark_wing"]
+    "wings": ["tahlan_gaze_dmn_wing"]
 }

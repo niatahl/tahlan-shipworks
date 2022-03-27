@@ -1,0 +1,52 @@
+{
+  "hullName": "Hel Lux",
+  "hullId": "tahlan_lux_dmn",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_lux_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 27,
+  "width": 30,
+  "center": [15, 13.5],
+  "collisionRadius": 23,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 20.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [10.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-11.5, 9],
+      "length": 17,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-11.5, -9],
+      "length": 17,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    }
+  ],
+  "bounds": [
+    10.5, -8,
+    -11, -13.5,
+    -11, 13.5,
+    10.5, 8
+  ]
+}

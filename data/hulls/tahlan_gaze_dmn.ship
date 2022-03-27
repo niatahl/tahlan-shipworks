@@ -1,0 +1,61 @@
+{
+  "hullName": "Hel Gaze",
+  "hullId": "tahlan_gaze_dmn",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_gaze_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 31,
+  "width": 32,
+  "center": [16, 15.5],
+  "collisionRadius": 24,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 22,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [9.5, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [6.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-12.5, 9.5],
+      "length": 19,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-12.5, -9.5],
+      "length": 19,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    }
+  ],
+  "bounds": [
+    -8, -14,
+    9, -9.5,
+    9, 9.5,
+    -8, 14
+  ]
+}

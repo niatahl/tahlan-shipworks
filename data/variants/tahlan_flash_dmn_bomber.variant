@@ -1,0 +1,22 @@
+{
+  "variantId": "tahlan_flash_dmn_bomber",
+  "hullId": "tahlan_flash_dmn",
+  "displayName": "Bonmber",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "reaper"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

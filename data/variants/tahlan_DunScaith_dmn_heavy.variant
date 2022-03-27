@@ -1,6 +1,6 @@
 {
     "displayName": "Heavy",
-    "fluxCapacitors": 17,
+    "fluxCapacitors": 10,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
@@ -82,7 +82,7 @@
         }
     ],
     "wings": [
-        "wasp_wing",
-        "spark_wing"
+        "tahlan_lux_dmn_wing",
+        "tahlan_lux_dmn_wing"
     ]
 }

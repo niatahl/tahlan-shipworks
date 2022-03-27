@@ -237,7 +237,7 @@ tahlan_dominator_dmn,SHIP,"#> Ship Classification: Unknown
 #> .
 #> .
 #> .",,,
-tahlan_dunscaith_dmn,SHIP,"#> Ship Classification: Unknown
+tahlan_DunScaith_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest mat5##6sf...
 #> .
 #> ..
@@ -252,6 +252,11 @@ tahlan_miasma,SHIP,"#> Object Classification: Unknown
 #> >> Autonomous fighter craft
 #> >> Capabilities: unknown",,,
 ,,,,,
+tahlan_spark_dmn,SHIP,"A variant of the Spark-class interceptor drone, trading its burst laser for a pair of standard PD lasers.",,,
+tahlan_lux_dmn,SHIP,"A variant of the Lux-class fighter drone, armed with a needler for shield suppression.",,,
+tahlan_flash_dmn,SHIP,"A variant of the Flash-class strike drone, carrying a devastating Reaper-class torpedo.",,,
+tahlan_thunder_dmn,SHIP,"A drone variant of the Thunder-class interceptor, upgraded with a shield generator and heavily upgunned.",,,
+tahlan_gaze_dmn,SHIP,A heavy attack drone carrying a single thumper.,,,
 ,,,,,
 #HVBs,,,,,
 tahlan_Cuchulainn,SHIP,"The Cuchulainn is an experimental craft built around a massively upscaled tachyon beam weapon. Originally intended as a potential siege weapon for engaging stations and orbital bombardment, the final prototype never produced the expected results and the project was abandoned. The remaining prototypes have since found their way into the hands of various collectors around the sector.",,,

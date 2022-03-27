@@ -1,6 +1,6 @@
 {
     "displayName": "Sniper",
-    "fluxCapacitors": 5,
+    "fluxCapacitors": 3,
     "fluxVents": 20,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": [
@@ -41,5 +41,5 @@
             }
         }
     ],
-    "wings": ["spark_wing"]
+    "wings": ["tahlan_thunder_dmn_wing"]
 }

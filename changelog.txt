@@ -1,3 +1,9 @@
+0.8.2
+- Bees
+- Bees?
+- Yes, Bees
+
+
 0.8.1
 - Fine-tuning
 

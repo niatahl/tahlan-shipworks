@@ -1,6 +1,6 @@
 {
     "displayName": "Overdriven",
-    "fluxCapacitors": 5,
+    "fluxCapacitors": 0,
     "fluxVents": 17,
     "hullId": "tahlan_dominator_dmn",
     "hullMods": [
@@ -60,7 +60,7 @@
         }
     ],
     "wings": [
-        "wasp_wing",
-        "lux_wing"
+        "tahlan_thunder_dmn_wing",
+        "tahlan_lux_dmn_wing"
     ]
 }

@@ -42,7 +42,7 @@
 	"hullFrequency":{
 		"tags":{
 			"tahlan_legio":2,
-			"tahlan_daemon":7,
+			"tahlan_daemon":8,
 			"rare_bp":2,
 		},
 		"hulls":{			
@@ -86,6 +86,8 @@
 			"atlas2",
 			"tahlan_Eagle_P",
 			"tahlan_Tempest_P",
+			"atlas",
+			"prometheus"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -102,7 +104,7 @@
 		],
 	},
 	"priorityFighters":{
-		"tags":[],
+		"tags":["tahlan_daemon"],
 		"fighters":[
 		],
 	},

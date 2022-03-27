@@ -172,9 +172,15 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         legio.addKnownShip("tahlan_centurion_dmn", false);
         legio.addKnownShip("tahlan_vanguard_dmn", false);
         legio.addKnownShip("tahlan_DunScaith_dmn", false);
-        legio.addKnownFighter("flash_wing", false);
-        legio.addKnownFighter("spark_wing", false);
-        legio.addKnownFighter("lux_wing", false);
+        legio.removeKnownFighter("flash_wing");
+        legio.removeKnownFighter("spark_wing");
+        legio.removeKnownFighter("lux_wing");
+        legio.addKnownFighter("tahlan_miasma_drone_wing", false);
+        legio.addKnownFighter("tahlan_flash_dmn_wing", false);
+        legio.addKnownFighter("tahlan_spark_dmn_wing", false);
+        legio.addKnownFighter("tahlan_lux_dmn_wing", false);
+        legio.addKnownFighter("tahlan_thunder_dmn_wing", false);
+        legio.addKnownFighter("tahlan_gaze_dmn_wing", false);
     }
 
     private void removeDaemons(SectorAPI sector) {
@@ -186,9 +192,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         legio.removeKnownShip("tahlan_centurion_dmn");
         legio.removeKnownShip("tahlan_vanguard_dmn");
         legio.removeKnownShip("tahlan_DunScaith_dmn");
-        legio.removeKnownFighter("flash_wing");
-        legio.removeKnownFighter("spark_wing");
-        legio.removeKnownFighter("lux_wing");
     }
 
     @Override
@@ -218,7 +221,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         if (ENABLE_LEGIO) {
             // Add our listener for stuff
             Global.getSector().addTransientListener(new TahlanTrigger());
-            FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
             // If somehow the Daemons are missing, add them
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 addDaemons(sector);
@@ -261,7 +263,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 LOGGER.info("Daemonic Incursion - Level");
             } // Two capitals or Metafalica
             int caps = 0;
-            for (FleetMemberAPI bote: sector.getPlayerFleet().getMembersWithFightersCopy()) {
+            for (FleetMemberAPI bote : sector.getPlayerFleet().getMembersWithFightersCopy()) {
                 if (bote.getHullSpec().getHullSize() == ShipAPI.HullSize.CAPITAL_SHIP) {
                     caps++;
                 }
@@ -298,9 +300,15 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.addKnownShip("tahlan_centurion_dmn", false);
                 legio.addKnownShip("tahlan_vanguard_dmn", false);
                 legio.addKnownShip("tahlan_DunScaith_dmn", false);
-                legio.addKnownFighter("flash_wing", false);
-                legio.addKnownFighter("spark_wing", false);
-                legio.addKnownFighter("lux_wing", false);
+                legio.removeKnownFighter("flash_wing");
+                legio.removeKnownFighter("spark_wing");
+                legio.removeKnownFighter("lux_wing");
+                legio.addKnownFighter("tahlan_miasma_drone_wing", false);
+                legio.addKnownFighter("tahlan_flash_dmn_wing", false);
+                legio.addKnownFighter("tahlan_spark_dmn_wing", false);
+                legio.addKnownFighter("tahlan_lux_dmn_wing", false);
+                legio.addKnownFighter("tahlan_thunder_dmn_wing", false);
+                legio.addKnownFighter("tahlan_gaze_dmn_wing", false);
 
             }
         }

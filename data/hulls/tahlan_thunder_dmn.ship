@@ -1,0 +1,79 @@
+{
+  "hullName": "Hel Thunder",
+  "hullId": "tahlan_thunder_dmn",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_thunder_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 38,
+  "width": 38,
+  "center": [19, 19],
+  "collisionRadius": 28.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 26.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [16, 6]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": -0,
+      "locations": [16, -6]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [4, 11]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": -0,
+      "locations": [4, -11]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-17, 5.5],
+      "length": 22,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-17, -5.5],
+      "length": 22,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    }
+  ],
+  "bounds": [
+    -4, -18,
+    -17.5, -0,
+    -4, 18,
+    12, -0
+  ]
+}

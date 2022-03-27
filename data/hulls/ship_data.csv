@@ -111,6 +111,12 @@ Hel Champion,tahlan_champion_dmn,Daemon,Legio Infernalis,tahlan_weaponsoverdrive
 Hel Dominator,tahlan_dominator_dmn,Daemon,Legio Infernalis,tahlan_raiderjets,14,14000,1600,12000,,700,240,3,30,20,10,12,12,2250,FRONT,,150,0.4,0.8,,,0,0,150,150,5,30,8,250000,4,12,600,0.25,35,35,"UNBOARDABLE, HIDE_IN_CODEX","tahlan_daemon, auto_rec, no_sell, no_dealer, no_bp_drop",,,,,
 Miasma,tahlan_miasma,Drone,Legio Infernalis,,,150,100,100,,10,,,500,500,500,100,200,10,NONE,,90,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,no_sell,,0,,,454
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Hel Spark,tahlan_spark_dmn,,Legio Infernalis,,,300,40,150,,50,0,,320,500,400,90,270,15,OMNI,,160,0,1,,,0,0,,,,,,,,,,,,,,,,,,,
+Hel Lux,tahlan_lux_dmn,,Legio Infernalis,flarelauncher_fighter,,400,60,350,,50,0,,220,350,350,100,240,30,OMNI,,160,0,1,,,0,0,,,,,,,,,,,,,,,,,,,
+Hel Flash,tahlan_flash_dmn,,Legio Infernalis,,,500,70,400,,50,0,,190,240,200,40,120,30,OMNI,,160,0,1,,,0,0,,,,,,,,,,,,,,,,,,,
+Hel Thunder,tahlan_thunder_dmn,,Legio Infernalis,,,500,60,200,,50,0,,450,600,500,150,300,30,OMNI,,160,0,1,,,0,0,,,,,,,,,,,,,,,,,,,
+Hel Gaze,tahlan_gaze_dmn,,Legio Infernalis,flarelauncher_single,,400,70,350,,50,0,,160,180,150,100,200,40,OMNI,,160,0,1,,,0,0,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Uniques,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Hresvelgr X,tahlan_Hresvelgr_X,Fleetcarrier,High Tech,fortressshield,28,14000,1000,11000,,400,260,6,35,20,20,8,10,3100,FRONT,,360,0.4,0.9,,,200,400,300,300,15,20,7,600000,3,12,720,0.25,55,55,"CARRIER, COMBAT, NO_AUTO_ESCORT","no_bp_drop, no_dealer",,0.4,2,4,507

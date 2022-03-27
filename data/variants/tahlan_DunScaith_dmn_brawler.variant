@@ -1,6 +1,6 @@
 {
     "displayName": "Brawler",
-    "fluxCapacitors": 10,
+    "fluxCapacitors": 4,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
@@ -83,7 +83,7 @@
         }
     ],
     "wings": [
-        "wasp_wing",
-        "wasp_wing"
+        "tahlan_spark_dmn_wing",
+        "tahlan_spark_dmn_wing"
     ]
 }
