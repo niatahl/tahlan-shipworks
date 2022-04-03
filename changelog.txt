@@ -1,3 +1,9 @@
+0.8.3
+- Added Legio Hard Mode
+- Further tweaks to new content
+- Fixed some Legio behaviours, I hopefully
+
+
 0.8.2
 - Bees
 - Bees?
