@@ -12,7 +12,7 @@ import com.fs.starfarer.api.util.WeightedRandomPicker;
 import java.util.List;
 import org.apache.log4j.Logger;
 
-import static data.scripts.tahlan_ModPlugin.ENABLE_SIEGE;
+//import static data.scripts.tahlan_ModPlugin.ENABLE_SIEGE;
 
 public class LegioSiegeManager implements EveryFrameScript {
     
@@ -54,7 +54,7 @@ public class LegioSiegeManager implements EveryFrameScript {
         }
 
         // if legio is dead, do nothing
-        if (legio == null || !legio.isShowInIntelTab() || !ENABLE_SIEGE) {
+        if (legio == null || !legio.isShowInIntelTab()) {
             return;
         }
         boolean nonHiddenMarkets = false;

@@ -15,8 +15,8 @@
       "weapons": {
         "WS0001": "lightmg",
         "WS0002": "lightmg",
-        "WS0003": "lightmortar",
-        "WS0004": "lightmortar"
+        "WS0003": "swarmer_fighter",
+        "WS0004": "swarmer_fighter"
       }
     }
   ],

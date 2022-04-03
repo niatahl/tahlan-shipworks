@@ -58,9 +58,10 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
     public static boolean ENABLE_LETHIA;
     public static boolean ENABLE_LEGIO;
-    public static boolean ENABLE_SIEGE;
+//    public static boolean ENABLE_SIEGE;
     public static boolean ENABLE_LIFELESS;
     public static boolean ENABLE_LEGIOBPS;
+    public static boolean ENABLE_HARDMODE;
     public static boolean HAS_NEX = false;
 
     public static final Logger LOGGER = Global.getLogger(tahlan_ModPlugin.class);
@@ -128,10 +129,10 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");
 
             //Legio siege event
-            if (ENABLE_SIEGE) {
-                Global.getSector().addScript(new LegioSiegeManager());
-                log.info("added LegioSiegeManager");
-            }
+//            if (ENABLE_SIEGE) {
+//                Global.getSector().addScript(new LegioSiegeManager());
+//                log.info("added LegioSiegeManager");
+//            }
 
             //Legio stealing pirates homework
             if (ENABLE_LEGIOBPS) {
@@ -225,6 +226,24 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 addDaemons(sector);
             }
+            FactionAPI legio = Global.getSector().getFaction("tahlan_legioinfernalis");
+            if (ENABLE_HARDMODE) {
+                legio.addPriorityShip("tahlan_dominator_dmn");
+                legio.addPriorityShip("tahlan_champion_dmn");
+                legio.addPriorityShip("tahlan_manticore_dmn");
+                legio.addPriorityShip("tahlan_hammerhead_dmn");
+                legio.addPriorityShip("tahlan_centurion_dmn");
+                legio.addPriorityShip("tahlan_vanguard_dmn");
+                legio.addPriorityShip("tahlan_DunScaith_dmn");
+            } else {
+                legio.removePriorityShip("tahlan_dominator_dmn");
+                legio.removePriorityShip("tahlan_champion_dmn");
+                legio.removePriorityShip("tahlan_manticore_dmn");
+                legio.removePriorityShip("tahlan_hammerhead_dmn");
+                legio.removePriorityShip("tahlan_centurion_dmn");
+                legio.removePriorityShip("tahlan_vanguard_dmn");
+                legio.removePriorityShip("tahlan_DunScaith_dmn");
+            }
         }
     }
 
@@ -309,7 +328,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.addKnownFighter("tahlan_lux_dmn_wing", false);
                 legio.addKnownFighter("tahlan_thunder_dmn_wing", false);
                 legio.addKnownFighter("tahlan_gaze_dmn_wing", false);
-
             }
         }
 
@@ -333,8 +351,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         JSONObject setting = Global.getSettings().loadJSON(SETTINGS_FILE);
         ENABLE_LETHIA = setting.getBoolean("enableLethia");
         ENABLE_LEGIO = setting.getBoolean("enableLegio");
-        ENABLE_SIEGE = setting.getBoolean("enableLegioSiege");
+//        ENABLE_SIEGE = setting.getBoolean("enableLegioSiege");
         ENABLE_LIFELESS = setting.getBoolean("enableLifelessShips");
         ENABLE_LEGIOBPS = setting.getBoolean("enableLegioBlueprintLearning");
+        ENABLE_HARDMODE = setting.getBoolean("enableHardMode");
     }
 }

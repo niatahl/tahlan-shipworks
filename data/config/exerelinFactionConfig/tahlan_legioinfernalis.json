@@ -12,6 +12,8 @@
 	"invasionPointMult": 1.2,
     
     "difficultyString":"hard",
+
+	"factionIdForHqResponse":"scalartech_elite",	
     
     "alignments":{
         "ideological":0.5,

@@ -4,6 +4,7 @@ package data.scripts.campaign;
 
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.util.IntervalUtil;
@@ -81,6 +82,37 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
         for (String fighter : Global.getSector().getFaction(Factions.PIRATES).getKnownFighters()) {
             if (!Global.getSector().getFaction(LEGIO_ID).knowsFighter(fighter)) {
                 Global.getSector().getFaction(LEGIO_ID).addKnownFighter(fighter, true);
+            }
+        }
+
+        // Now copy everything over to the Elite faction
+        FactionAPI elites = Global.getSector().getFaction("tahlan_legioelite");
+        if (elites==null) {
+            return;
+        }
+
+        for (String weapon : Global.getSector().getFaction(LEGIO_ID).getKnownWeapons()) {
+            if (!elites.knowsWeapon(weapon)) {
+                elites.addKnownWeapon(weapon, true);
+            }
+        }
+
+        // Copy all ships except for LTA garbage
+        for (String ship : Global.getSector().getFaction(LEGIO_ID).getKnownShips()) {
+            if (!elites.knowsShip(ship) && !ship.startsWith("LTA_")) {
+                elites.addKnownShip(ship, true);
+            }
+        }
+
+        for (String baseShip : Global.getSector().getFaction(LEGIO_ID).getAlwaysKnownShips()) {
+            if (!elites.useWhenImportingShip(baseShip)) {
+                elites.addUseWhenImportingShip(baseShip);
+            }
+        }
+
+        for (String fighter : Global.getSector().getFaction(LEGIO_ID).getKnownFighters()) {
+            if (!elites.knowsFighter(fighter)) {
+                elites.addKnownFighter(fighter, true);
             }
         }
     }

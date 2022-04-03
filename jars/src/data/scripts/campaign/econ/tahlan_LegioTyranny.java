@@ -6,6 +6,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
+import static data.scripts.tahlan_ModPlugin.ENABLE_HARDMODE;
 import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
@@ -23,8 +24,13 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
             market.getStability().modifyFlat(id, STAB_BONUS * marketMult, txt("tyranny"));
 
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.25f, txt("tyranny"));
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.25f, txt("tyranny"));
+                if (ENABLE_HARDMODE) {
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.3f, txt("tyranny"));
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.3f, txt("tyranny"));
+                } else {
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.2f, txt("tyranny"));
+                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.2f, txt("tyranny"));
+                }
             } else {
                 market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.1f, txt("tyranny"));
                 market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.1f, txt("tyranny"));

@@ -36,7 +36,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
-        stats.getProjectileSpeedMult().modifyMult(id, 1.5f);
+        stats.getProjectileSpeedMult().modifyMult(id, 1.25f);
         stats.getMaxRecoilMult().modifyMult(id, 0.75f);
         stats.getRecoilDecayMult().modifyMult(id, 1.25f);
         stats.getRecoilPerShotMult().modifyMult(id, 0.75f);
@@ -50,6 +50,12 @@ public class tahlan_DaemonCore extends BaseHullMod {
             String inner = "graphics/tahlan/fx/tahlan_shellshield.png";
             String outer = "graphics/tahlan/fx/tahlan_tempshield_ring.png";
             ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), inner, outer);
+        }
+
+        if (ship.getVariant().hasHullMod("es_shiplevelHM")) {
+            ship.getMutableStats().getEngineMalfunctionChance().modifyFlat(id,0.1f);
+            ship.getMutableStats().getWeaponMalfunctionChance().modifyFlat(id,0.1f);
+            ship.getMutableStats().getCriticalMalfunctionChance().modifyFlat(id,0.01f);
         }
 
         if (!ship.hasListenerOfClass(daemonListener.class)) {
@@ -157,9 +163,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
     }
 
     public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "" + 50 + txt("%");
+        if (index == 0) return "" + 25 + txt("%");
         if (index == 1) return "" + 25 + txt("%");
-        if (index == 2) return "" + 40 + txt("%");
+        if (index == 2) return "" + 50 + txt("%");
         return null;
     }
 
@@ -211,7 +217,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
                 damage.setDamage(damage.getDamage()*MathUtils.getRandomNumberInRange(1f,5f));
                 return null;
             }
-            if (enemy.getVariant().hasHullMod("MSS_Prime") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
+            if (enemy.getHullSpec().getHullId().contains("MSS_") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
                 damage.setDamage(damage.getDamage()*1.5f);
                 return null;
             }

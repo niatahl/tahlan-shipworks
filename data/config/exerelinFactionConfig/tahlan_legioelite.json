@@ -1,0 +1,11 @@
+{
+    "playableFaction":false,
+    "corvusCompatible":true,
+    "spawnAsFactionId":"tahlan_legioinfernalis",
+    "rebelFleetSuffix":"Rogues",
+    "startRelationships":{ "tahlan_legioinfernalis":1 },
+    
+    "responseFleetName":"Bastion Fleet",
+    
+    "morality":"amoral",
+}
