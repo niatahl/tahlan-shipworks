@@ -1,7 +1,12 @@
+0.8.3a
+- Hotfix
+
+
 0.8.3
 - Added Legio Hard Mode
 - Further tweaks to new content
 - Fixed some Legio behaviours, I hopefully
+- Removed Legio Siege feature 
 
 
 0.8.2
