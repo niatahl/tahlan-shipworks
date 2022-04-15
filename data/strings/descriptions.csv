@@ -463,6 +463,7 @@ tahlan_vesuvio,WEAPON,"With a high rate of fire and fast ionized shells, the Ves
 
 Supposedly designed to supplant the Mk.IX Autocannon, this fast-cycling magnetic accelerator cannon is really just an example of a solution in search of a problem. While the EMP capabilities and excellent output are surely nice attributes, the weapon it was meant to replace just continues to prove that simplicity of design will often triumph.",,,
 tahlan_hammertube,WEAPON,"An integrated launch tube for Hammer-type torpedoes, feeding from an internal reserve at the cost of taking a short while to reload after firing.",,,
+tahlan_sabottube,WEAPON,"An integrated launch tube for Sabot SRMs, feeding from an internal reserve at the cost of taking a short while to reload after firing.",,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,

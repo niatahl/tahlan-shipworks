@@ -40,7 +40,9 @@ Parallel Targeting Core,tahlan_paralleltargeting,,,,,,,,TRUE,,0,0,0,0,data.scrip
 Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VundAutoforge,"This ship contains a large autoforge passively producing missile ammunition during combat. Restores %s of every missile weapon's base maximum ammunition %s.  
 
 Effect increased by %s if commanding officer has the %s skill. Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
-Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing its damage by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
+Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing damage and flux costs by %s.
+
+Damage is increased further by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
 Lostech Engineering,tahlan_heavyconduits,,,,defensive,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyConduits,"The flux grid of this ship has been heavily reinforced and modified with advanced and unknown Domain lostech. Its exact specs are unknown, but through tests and extensive analysis you have been able to deduce most of the effects. Similar to common reinforced flux conduits, EMP damage taken is reduced by %s. Additionally the ship's flux dissipation rate while venting is boosted by %s and a fully integrated autorepair system reduces weapon and engine repair times by %s.
 
 Detailed analysis indicates that the ship may possess other, as of yet undocumented, capabilities.
@@ -95,5 +97,7 @@ Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullm
 Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
 Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities by %s and reduces recoil by %s. Further increases damage to missiles by %s.
 
-Specialised integration enhances the tracking capabilities of Legio smartguns.",Enhances targeting,graphics/tahlan/hullmods/tahlan_lirefit.png
+Specialised integration enhances the tracking capabilities of Legio smartguns.
+
+There appear to be various protocols in place restricting the ship's capabilities without Legio command codes, causing the entire ship to only operate at %s of its peak capacity.",Enhances targeting,graphics/tahlan/hullmods/tahlan_lirefit.png
 Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png

@@ -299,11 +299,11 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 iLegioStartingCondition++;
                 LOGGER.info("Daemonic Incursion - Ships");
             }
-            if (Global.getSector().getPlayerFleet().getCargo().getCredits().get() > 3000000f) {
+            if (Global.getSector().getPlayerFleet().getCargo().getCredits().get() > 5000000f) {
                 iLegioStartingCondition++;
                 LOGGER.info("Daemonic Incursion - Wealth");
             }
-            if (Misc.getNumNonMercOfficers(Global.getSector().getPlayerFleet()) > 5) {
+            if (Misc.getNumNonMercOfficers(Global.getSector().getPlayerFleet()) > 7) {
                 iLegioStartingCondition++;
                 LOGGER.info("Daemonic Incursion - Officers");
             }

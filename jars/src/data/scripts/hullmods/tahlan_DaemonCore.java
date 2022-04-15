@@ -10,17 +10,19 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
-import sun.jvm.hotspot.utilities.Interval;
 
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
 import static data.scripts.utils.tahlan_Utils.txt;
+
+// There was some fun here. It was silly indeed.
 
 public class tahlan_DaemonCore extends BaseHullMod {
 
@@ -36,6 +38,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
     private static final Color JITTER_COLOR = new Color(255, 0, 0, 20);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
 
+    private static final IntervalUtil kaboom = new IntervalUtil(1f, 10f);
     private static final String dc_id = "tahlan_daemoncore";
 
     private static final IntervalUtil yoinkTimer = new IntervalUtil(5f, 10f);
@@ -59,20 +62,12 @@ public class tahlan_DaemonCore extends BaseHullMod {
             ship.getShield().setRadius(ship.getShieldRadiusEvenIfNoShield(), inner, outer);
         }
 
-        if (ship.getVariant().hasHullMod("es_shiplevelHM")) {
-            ship.getMutableStats().getEngineMalfunctionChance().modifyFlat(id, 0.1f);
-            ship.getMutableStats().getWeaponMalfunctionChance().modifyFlat(id, 0.1f);
-            ship.getMutableStats().getCriticalMalfunctionChance().modifyFlat(id, 0.01f);
-        }
-
-        if (!ship.hasListenerOfClass(daemonListener.class)) {
-            ship.addListener(new daemonListener(ship));
-        }
 
         if (Global.getSector().getPlayerFleet() == null) {
             return;
         }
 
+        // Hackery to make the ships uniquely more poteent while in Legio fleets in attempt to keep them more balanced in player hands
         boolean isPlayerFleet = false;
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
             if (member.getVariant().getHullVariantId().equals(ship.getVariant().getHullVariantId())) {
@@ -84,7 +79,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
             ship.getVariant().removeMod("tahlan_daemonboost");
         }
 
-        if (!isPlayerFleet) {
+        if (isPlayerFleet) {
+            ship.getMutableStats().getTimeMult().modifyMult(id,0.9f);
+        } else {
             ship.getVariant().addMod("tahlan_daemonboost");
         }
 
@@ -93,9 +90,14 @@ public class tahlan_DaemonCore extends BaseHullMod {
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
 
-        if (Global.getCombatEngine().getFleetManager(ship.getOwner()) == Global.getCombatEngine().getFleetManager(FleetSide.PLAYER)) {
+        CombatEngineAPI engine = Global.getCombatEngine();
+        if (engine == null) {
+            return;
+        }
+
+        if (engine.getFleetManager(ship.getOwner()) == engine.getFleetManager(FleetSide.PLAYER)) {
             //Only run this in campaign context
-            if (!Global.getCombatEngine().isInCampaign()) {
+            if (!engine.isInCampaign()) {
                 return;
             }
             yoinkTimer.advance(amount);
@@ -104,7 +106,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
                     if (bote.getHullSpec().getHullId().contains("tahlan_DunScaith_dmn")
                             && (Math.random() > 0.75f)
                             && bote.getFleetMember().getFleetCommander().getFaction().getId().contains("legioinfernalis")) {
-                        Global.getCombatEngine().addFloatingText(ship.getLocation(), "ASSUMING DIRECT CONTROL", 40f, Color.RED, ship, 0.5f, 3f);
+                        engine.addFloatingText(ship.getLocation(), "ASSUMING DIRECT CONTROL", 40f, Color.RED, ship, 0.5f, 3f);
                         ship.setOwner(bote.getOwner());
                     }
                 }
@@ -122,7 +124,10 @@ public class tahlan_DaemonCore extends BaseHullMod {
             ship.getMutableStats().getTimeMult().modifyMult(dc_id, enrage);
             ship.setJitter(dc_id, JITTER_COLOR, 1f - ship.getHullLevel(), 3, 5f);
             ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, 1f - ship.getHullLevel(), 20, 10f);
+
+
         }
+
     }
 
     @Override
@@ -184,67 +189,8 @@ public class tahlan_DaemonCore extends BaseHullMod {
         if (index == 0) return "" + 25 + txt("%");
         if (index == 1) return "" + 25 + txt("%");
         if (index == 2) return "" + 50 + txt("%");
+        if (index == 3) return "" + 90 + txt("%");
         return null;
-    }
-
-    private static class daemonListener implements DamageTakenModifier, DamageDealtModifier {
-        protected ShipAPI ship;
-
-        public daemonListener(ShipAPI ship) {
-            this.ship = ship;
-        }
-
-        @Override
-        public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
-            if (target != ship) {
-                return null;
-            }
-            WeaponAPI weapon;
-            if (param instanceof DamagingProjectileAPI) {
-                weapon = ((DamagingProjectileAPI) param).getWeapon();
-            } else if (param instanceof BeamAPI) {
-                weapon = ((BeamAPI) param).getWeapon();
-            } else if (param instanceof WeaponAPI) {
-                weapon = (WeaponAPI) param;
-            } else {
-                return null;
-            }
-            if (weapon == null) {
-                return null;
-            }
-            if (weapon.getId() == null) {
-                return null;
-            }
-            // If you're not balancing your mods, I'll just counterbalans
-            if (weapon.getId().contains("sw_") || weapon.getId().contains("HIVER_")) {
-                damage.setDamage(damage.getDamage() * 0.25f);
-            }
-            return null;
-        }
-
-        // Scrub police v2
-        // If someone finds this, I might remove it. Kinda just want to see if the pl*yers manage to figure it out.
-        @Override
-        public String modifyDamageDealt(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
-            if (!(target instanceof ShipAPI)) {
-                return null;
-            }
-            ShipAPI enemy = (ShipAPI) target;
-            if (enemy.getVariant().hasHullMod("es_shiplevelHM")) {
-                // Clown mod gets clown damage
-                damage.setDamage(damage.getDamage() * MathUtils.getRandomNumberInRange(1f, 5f));
-                return null;
-            }
-            if (enemy.getHullSpec().getHullId().contains("MSS_") || enemy.getVariant().hasHullMod("CHM_mayasura") || enemy.getHullSpec().getHullId().contains("missp_")) {
-                damage.setDamage(damage.getDamage() * 1.5f);
-                return null;
-            }
-            if (enemy.getHullSpec().getHullId().contains("tesseract") || enemy.getHullSpec().getHullId().contains("facet") || enemy.getHullSpec().getHullId().contains("shard_")) {
-                damage.setDamage(damage.getDamage() * 2f);
-                return null;
-            }
-            return null;
-        }
     }
 
 }

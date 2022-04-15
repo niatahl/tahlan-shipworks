@@ -1,3 +1,19 @@
+0.8.5
+- Various Daemon tweaks
+- Hel Centurion system changed to fortress shield
+- Hel Dominator system changed to canister flaks
+- Small stat tweaks here and there
+- Removed meme features from Daemon Core
+- Added a 10% timeflow reduction in player fleet to Daemon Core
+- Nelson (XIV) Hammer tubes changed to Sabot tubes
+    - This is mainly a lore-based change since built-in hammers don't really make sense on a XIV ship
+
+
+0.8.4
+- More fixes and minor tweaks
+- I did most of this during downtime at work and didn't take notes on the specifics
+
+
 0.8.3a
 - Hotfix
 
