@@ -50,6 +50,10 @@ public class tahlan_HalbmondSpawnScript {
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_destroyed");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_suppressed");
         BLACKLISTED_SYSTEM_TAGS.add("theme_breakers_resurgent");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_magellan_homeworld");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_magellan_graveyard");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_magellan_leveller");
+        BLACKLISTED_SYSTEM_TAGS.add("theme_magellan_leveller_home_nebula");
     }
 
     //Weights for the different types of locations our teasers can spawn in
