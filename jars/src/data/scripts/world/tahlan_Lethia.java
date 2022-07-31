@@ -158,8 +158,6 @@ public class tahlan_Lethia {
         lethia_5.setCustomDescriptionId("tahlan_planet_kassadar");
         lethia_5.setInteractionImage("illustrations","tahlan_kassadar_illus");
         system.addRingBand(lethia_5, "misc", "rings_dust0", 256f, 1, Color.gray, 256f, 360, 400f);
-        //SectorEntityToken lethia_5_station = system.addCustomEntity("tahlan_lethia_station", "Skyward Station", "tahlan_station_skyward", "independent");
-        //lethia_5_station.setCircularOrbitPointingDown(lethia_5, 360*(float)Math.random(), 200, 50);
 
         MarketAPI lethia_5_market = addMarketplace("independent", lethia_5, null,
                 "Kassadar",
@@ -201,8 +199,7 @@ public class tahlan_Lethia {
                 false,
                 true);
 
-        //lethia_5_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
-
+        lethia_5_market.addTag("magellan_indiemarket");
 
         SectorEntityToken stableLoc2 = system.addCustomEntity("tahlan_lethia_stableloc_2", "Stable Location", "stable_location", Factions.NEUTRAL);
         stableLoc2.setCircularOrbit(lethia_star, MathUtils.getRandomNumberInRange(0f,360f),8200, 520);
