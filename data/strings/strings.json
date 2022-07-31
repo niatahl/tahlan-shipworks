@@ -59,15 +59,13 @@
 		econ_claim2:"%s population growth (based on market size).",
 		access:"%s accessibility",
 		stab:"%s stability",
+		fleetSize:"%s fleet size",
 		tyranny:"Legio Tyranny",
 		tyranny2:"Increased fleet sizes and ground defenses",
 		tyranny3:"Only active while under %s control",
 		tyranny4:"Legio Infernalis",
 		sys_FluxFeeder:"Ballistic weapons accelerated by ",
 		sys_MachineSpirit:"Weapons accelerated by ",
-		
-		
-		
-		
+		rangefinder:"Ballistic Rangefinder"
 	}
 }

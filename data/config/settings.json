@@ -68,6 +68,9 @@
 		},
 		"illustrations":{
 			"tahlan_kassadar_illus":"graphics/tahlan/illustrations/tahlan_kassadar_illus.png",
+			"tahlan_lucifron_illus":"graphics/tahlan/illustrations/tahlan_lucifron_illus.png",
+			"tahlan_melchiresa_illus":"graphics/tahlan/illustrations/tahlan_melchiresa_illus.png",
+			"tahlan_adramelech_illus":"graphics/tahlan/illustrations/tahlan_adramelech_illus.png",
 		},
 	}
 }

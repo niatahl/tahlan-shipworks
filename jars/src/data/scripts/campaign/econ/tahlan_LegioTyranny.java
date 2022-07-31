@@ -14,6 +14,8 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
     public static final float STAB_BONUS = 1f;
     public static final float DEFENSE_BONUS = 0.2f;
 
+    private float FLEET_PERCENT = 0f;
+
     @Override
     public void apply(String id) {
         if (market.getFaction() == null) {
@@ -25,16 +27,16 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
 
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 if (ENABLE_HARDMODE) {
-                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.3f, txt("tyranny"));
-                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.3f, txt("tyranny"));
+                    FLEET_PERCENT = 10f;
                 } else {
-                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.2f, txt("tyranny"));
-                    market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.2f, txt("tyranny"));
+                    FLEET_PERCENT = 20f;
                 }
             } else {
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyMult(id, 1.1f, txt("tyranny"));
-                market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyMult(id, 1.1f, txt("tyranny"));
+                FLEET_PERCENT = 10f;
             }
+
+            market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyPercent(id, FLEET_PERCENT, txt("tyranny"));
+            market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SPAWN_RATE_MULT).modifyPercent(id, FLEET_PERCENT, txt("tyranny"));
 
             market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id, Math.min(1f + DEFENSE_BONUS * marketMult, 3f), txt("tyranny"));
         } else {
@@ -63,6 +65,9 @@ public class tahlan_LegioTyranny extends BaseMarketConditionPlugin {
         }
 
         int marketMult = Misc.getFactionMarkets(market.getFactionId()).size();
+        tooltip.addPara(txt("fleetsize"),
+                10f, Misc.getHighlightColor(),
+                "+" + (int) FLEET_PERCENT);
         tooltip.addPara(txt("stab"),
                 10f, Misc.getHighlightColor(),
                 "+" + (int) STAB_BONUS * marketMult);

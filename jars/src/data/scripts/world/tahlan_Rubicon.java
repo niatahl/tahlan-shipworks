@@ -86,6 +86,7 @@ public class tahlan_Rubicon  {
                 320f);
 
         rubicon_1.setCustomDescriptionId("tahlan_rubicon_p01");
+        rubicon_1.setInteractionImage("illustrations","tahlan_melchiresa_illus");
 
         MarketAPI rubicon_1_market = addMarketplace("tahlan_legioinfernalis", rubicon_1, null,
                 "Melchiresa",
@@ -162,6 +163,7 @@ public class tahlan_Rubicon  {
                 380f);
 
         rubicon_3.setCustomDescriptionId("tahlan_rubicon_p03");
+        rubicon_3.setInteractionImage("illustrations","tahlan_lucifron_illus");
 
         MarketAPI rubicon_3_market = addMarketplace("tahlan_legioinfernalis", rubicon_3, null,
                 "Lucifron",
@@ -242,6 +244,7 @@ public class tahlan_Rubicon  {
         SectorEntityToken rubicon_outpost = system.addCustomEntity("tahlan_rubicon_outpost", "Adramelech Fortress", "station_side06", "tahlan_legioinfernalis");
         rubicon_outpost.setCircularOrbitPointingDown(rubicon_star,360*(float)Math.random(),radiusAfter+700f,600f);
         rubicon_outpost.setCustomDescriptionId("tahlan_rubicon_outpost");
+        rubicon_outpost.setInteractionImage("illustrations","tahlan_adramelech_illus");
         MarketAPI rubicon_outpost_market = addMarketplace("tahlan_legioinfernalis", rubicon_outpost, null,
                 "Adramelech Fortress",
                 5,

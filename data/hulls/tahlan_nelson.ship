@@ -218,50 +218,50 @@
   "engineSlots": [
     {
       "location": [-57.5, 64],
-      "length": 53.5,
-      "width": 18,
+      "length": 44.322193,
+      "width": 16.91666,
       "angle": 178,
-      "contrailSize": 18,
+      "contrailSize": 16.91666,
       "style": "MIDLINE"
     },
     {
       "location": [-57.5, -64],
-      "length": 53.5,
-      "width": 18,
+      "length": 44.322193,
+      "width": 16.91666,
       "angle": -178,
-      "contrailSize": 18,
+      "contrailSize": 16.91666,
       "style": "MIDLINE"
     },
     {
       "location": [-58.5, 75.5],
-      "length": 55,
-      "width": 14,
+      "length": 44.769539,
+      "width": 13.883589,
       "angle": 178,
-      "contrailSize": 14,
+      "contrailSize": 13.883589,
       "style": "MIDLINE"
     },
     {
       "location": [-58.5, -75.5],
-      "length": 55,
-      "width": 14,
+      "length": 44.769539,
+      "width": 13.883589,
       "angle": -178,
-      "contrailSize": 14,
+      "contrailSize": 13.883589,
       "style": "MIDLINE"
     },
     {
       "location": [-102, 26],
-      "length": 77,
-      "width": 24,
+      "length": 74.5,
+      "width": 21,
       "angle": 180,
-      "contrailSize": 24,
+      "contrailSize": 21,
       "style": "MIDLINE"
     },
     {
       "location": [-102, -26],
-      "length": 77,
-      "width": 24,
+      "length": 74.5,
+      "width": 21,
       "angle": -180,
-      "contrailSize": 24,
+      "contrailSize": 21,
       "style": "MIDLINE"
     },
     {
@@ -281,19 +281,19 @@
       "style": "MIDLINE"
     },
     {
-      "location": [-98.5, 47.5],
-      "length": 70.5,
-      "width": 22,
+      "location": [-97, 47.5],
+      "length": 63.5,
+      "width": 19,
       "angle": 180,
-      "contrailSize": 22,
+      "contrailSize": 19,
       "style": "MIDLINE"
     },
     {
-      "location": [-98.5, -47.5],
-      "length": 70.5,
-      "width": 22,
+      "location": [-97, -47.5],
+      "length": 63.5,
+      "width": 19,
       "angle": -180,
-      "contrailSize": 22,
+      "contrailSize": 19,
       "style": "MIDLINE"
     },
     {

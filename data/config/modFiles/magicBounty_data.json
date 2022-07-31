@@ -20,6 +20,7 @@
         "job_show_arrow": false,
         "job_difficultyDescription": "auto",
         "job_pick_option": "Accept the bounty.",
+        "job_item_reward": {"modspec tahlan_daemonplating":1},
         "target_first_name":"Idris",
         "target_last_name":"the Great",
         "target_gender":"MALE",

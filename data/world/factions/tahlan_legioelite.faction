@@ -45,7 +45,8 @@
 			"tahlan_daemon":20,
 			"rare_bp":4,
 		},
-		"hulls":{			
+		"hulls":{		
+			"tahlan_DunScaith_dmn":0.5,	
 			"paragon":2,
 			"astral":2,
 			"istl_jeannedarc":2,

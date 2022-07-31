@@ -38,6 +38,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin.addMarketToList;
 import static data.scripts.campaign.siege.LegioSiegeBaseIntel.log;
 
 public class tahlan_ModPlugin extends BaseModPlugin {
@@ -46,6 +47,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     static public boolean isGraphicsLibAvailable() {
         return graphicsLibAvailable;
     }
+
+
 
     //All hullmods related to shields, saved in a convenient list
     public static List<String> SHIELD_HULLMODS = new ArrayList<>();
@@ -61,8 +64,10 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 //    public static boolean ENABLE_SIEGE;
     public static boolean ENABLE_LIFELESS;
     public static boolean ENABLE_LEGIOBPS;
+    public static boolean ENABLE_DAEMONS;
     public static boolean ENABLE_HARDMODE;
     public static boolean HAS_NEX = false;
+    public static boolean HAS_INDEVO = false;
 
     public static final Logger LOGGER = Global.getLogger(tahlan_ModPlugin.class);
 
@@ -88,6 +93,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         } else {
             graphicsLibAvailable = false;
         }
+
+        HAS_INDEVO = Global.getSettings().getModManager().isModEnabled("IndEvo");
 
         try {
             loadTahlanSettings();
@@ -127,12 +134,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
             //Adding Legio to bounty system
             SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");
-
-            //Legio siege event
-//            if (ENABLE_SIEGE) {
-//                Global.getSector().addScript(new LegioSiegeManager());
-//                log.info("added LegioSiegeManager");
-//            }
 
             //Legio stealing pirates homework
             if (ENABLE_LEGIOBPS) {
@@ -221,7 +222,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         }
         if (ENABLE_LEGIO) {
             // Add our listener for stuff
-            Global.getSector().addTransientListener(new TahlanTrigger());
+            if (ENABLE_DAEMONS) {
+                Global.getSector().addTransientListener(new TahlanTrigger());
+            }
             // If somehow the Daemons are missing, add them
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 addDaemons(sector);
@@ -243,6 +246,14 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.removePriorityShip("tahlan_centurion_dmn");
                 legio.removePriorityShip("tahlan_vanguard_dmn");
                 legio.removePriorityShip("tahlan_DunScaith_dmn");
+            }
+            MarketAPI market = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
+            if (HAS_INDEVO) {
+                if (!market.hasCondition("IndEvo_mineFieldCondition")) {
+                    market.addCondition("IndEvo_mineFieldCondition");
+                    sector.getEconomy().getMarket("tahlan_rubicon_p01_market").addCondition("IndEvo_mineFieldCondition");
+                    sector.getEconomy().getMarket("tahlan_rubicon_outpost_market").addCondition("IndEvo_mineFieldCondition");
+                }
             }
         }
     }
@@ -319,9 +330,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.addKnownShip("tahlan_centurion_dmn", false);
                 legio.addKnownShip("tahlan_vanguard_dmn", false);
                 legio.addKnownShip("tahlan_DunScaith_dmn", false);
-                legio.removeKnownFighter("flash_wing");
-                legio.removeKnownFighter("spark_wing");
-                legio.removeKnownFighter("lux_wing");
                 legio.addKnownFighter("tahlan_miasma_drone_wing", false);
                 legio.addKnownFighter("tahlan_flash_dmn_wing", false);
                 legio.addKnownFighter("tahlan_spark_dmn_wing", false);
@@ -351,9 +359,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         JSONObject setting = Global.getSettings().loadJSON(SETTINGS_FILE);
         ENABLE_LETHIA = setting.getBoolean("enableLethia");
         ENABLE_LEGIO = setting.getBoolean("enableLegio");
-//        ENABLE_SIEGE = setting.getBoolean("enableLegioSiege");
         ENABLE_LIFELESS = setting.getBoolean("enableLifelessShips");
         ENABLE_LEGIOBPS = setting.getBoolean("enableLegioBlueprintLearning");
         ENABLE_HARDMODE = setting.getBoolean("enableHardMode");
+        ENABLE_DAEMONS = setting.getBoolean("enableDaemons");
     }
 }

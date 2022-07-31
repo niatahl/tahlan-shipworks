@@ -13,6 +13,7 @@ import exerelin.campaign.fleets.InvasionFleetManager;
 import exerelin.utilities.NexConfig;
 import org.apache.log4j.Logger;
 
+import static data.scripts.tahlan_ModPlugin.ENABLE_HARDMODE;
 import static data.scripts.tahlan_ModPlugin.HAS_NEX;
 
 public class tahlan_LegioStealingHomework implements EveryFrameScript {
@@ -22,7 +23,7 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
     public static final String LEGIO_ID = "tahlan_legioinfernalis";
 
     // only check every couple days
-    private final IntervalUtil timer = new IntervalUtil(2f, 3f);
+    private final IntervalUtil timer = new IntervalUtil(4f,4f);
     private IntervalUtil t;
 
     @Override
@@ -53,7 +54,9 @@ public class tahlan_LegioStealingHomework implements EveryFrameScript {
 
                 increment += NexConfig.baseInvasionPointsPerFaction;
                 increment += NexConfig.invasionPointsPerPlayerLevel * Global.getSector().getPlayerPerson().getStats().getLevel();
-                InvasionFleetManager.getManager().modifySpawnCounter(LEGIO_ID,increment);
+                increment *= NexConfig.getFactionConfig(LEGIO_ID).invasionPointMult;
+                float mult = ENABLE_HARDMODE ? 2f : 1f;
+                InvasionFleetManager.getManager().modifySpawnCounter(LEGIO_ID,increment*mult);
             }
         }
     }

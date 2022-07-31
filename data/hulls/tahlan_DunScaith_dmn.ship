@@ -13,6 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_daemoncore",
+    "tahlan_daemonarmor",
     "automated",
     "hbi",
     "high_maintenance"

@@ -42,7 +42,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
     private static final IntervalUtil kaboom = new IntervalUtil(1f, 10f);
     private static final String dc_id = "tahlan_daemoncore";
 
-    private static final IntervalUtil yoinkTimer = new IntervalUtil(5f, 10f);
+    private static final IntervalUtil yoinkTimer = new IntervalUtil(10f, 30f);
 
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -97,18 +97,35 @@ public class tahlan_DaemonCore extends BaseHullMod {
         }
 
         if (engine.getFleetManager(ship.getOwner()) == engine.getFleetManager(FleetSide.PLAYER)) {
-            //Only run this in campaign context
+            //Only run this in campaign context, not missions
             if (!engine.isInCampaign()) {
                 return;
             }
             yoinkTimer.advance(amount);
             if (yoinkTimer.intervalElapsed()) {
+                // Legio-owned Hel Scaiths can hijack enemy Daemons
                 for (ShipAPI bote : CombatUtils.getShipsWithinRange(ship.getLocation(), 2000f)) {
                     if (bote.getHullSpec().getHullId().contains("tahlan_DunScaith_dmn")
                             && (Math.random() > 0.75f)
                             && bote.getFleetMember().getFleetCommander().getFaction().getId().contains("legioinfernalis")) {
                         engine.addFloatingText(ship.getLocation(), "ASSUMING DIRECT CONTROL", 40f, Color.RED, ship, 0.5f, 3f);
                         ship.setOwner(bote.getOwner());
+
+                        // yoinked from Xhan
+                        if (ship.getShipAI() != null) {
+
+                            //cancel orders so the AI doesn't get confused
+                            DeployedFleetMemberAPI member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
+                            if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false);
+
+                            DeployedFleetMemberAPI member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
+                            if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false);
+
+                            DeployedFleetMemberAPI member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship);
+                            if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false);
+
+                            ship.getShipAI().forceCircumstanceEvaluation();
+                        }
                     }
                 }
             }

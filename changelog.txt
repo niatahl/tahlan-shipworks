@@ -1,4 +1,32 @@
 0.8.5
+- Dun Scaith
+	- DP lowered from 55 to 50
+- Hel Scaith
+	- DP lowered from 70 to 65
+- Hel Centurion
+	- System changed to Hel Temporal Shell
+- Hel Flash
+	- Top speed reduced from 190 to 170
+	- HP reduced from 500 to 400
+- Nirvana
+	- Lowered armor from 1600 to 1400
+- Daemon defenses reworked
+	- Now use regenerating armor
+	- Greatly reduced armor ratings 
+- Timeless Prototype
+	- Top speed increased from 40 to 55
+- Made Hel Scaith less common
+- Added new reward for Legio Rising
+- Removed Scathach bounty and ship
+- Made hard mode even harder
+- Code improvements
+- Added malware
+- Improved Legio Tyranny tooltip
+- Made Daemons stronger in autoresolve
+- Added toggle for Daemons to config
+
+
+0.8.4
 - Various Daemon tweaks
 - Hel Centurion system changed to fortress shield
 - Hel Dominator system changed to canister flaks
@@ -7,11 +35,6 @@
 - Added a 10% timeflow reduction in player fleet to Daemon Core
 - Nelson (XIV) Hammer tubes changed to Sabot tubes
     - This is mainly a lore-based change since built-in hammers don't really make sense on a XIV ship
-
-
-0.8.4
-- More fixes and minor tweaks
-- I did most of this during downtime at work and didn't take notes on the specifics
 
 
 0.8.3a
