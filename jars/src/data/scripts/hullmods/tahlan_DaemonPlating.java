@@ -33,13 +33,16 @@ public class tahlan_DaemonPlating extends BaseHullMod {
     public void advanceInCombat(ShipAPI ship, float amount) {
         if (!DefenseUtils.hasArmorDamage(ship)) return;
         if (ship.isHulk()) return;
+        if (ship.getFluxTracker().isVenting()) return;
 
         ArmorGridAPI armorGrid = ship.getArmorGrid();
         final float[][] grid = armorGrid.getGrid();
         final float max = armorGrid.getMaxArmorInCell();
 
-        float baseCell = armorGrid.getMaxArmorInCell() * Math.min(ship.getHullSpec().getArmorRating(),ARMOR_CAP) / armorGrid.getArmorRating();
-        float repairAmount = baseCell * (REGEN_PER_SEC_PERCENT / 100f) * amount;
+        float statusMult = ship.getFluxTracker().isOverloaded() ? 0.5f : 1f;
+
+        float baseCell = armorGrid.getMaxArmorInCell() * Math.min(ship.getHullSpec().getArmorRating(), ARMOR_CAP) / armorGrid.getArmorRating();
+        float repairAmount = baseCell * (REGEN_PER_SEC_PERCENT / 100f) * statusMult * amount;
 
         // Iterate through all armor cells and find any that aren't at max
         for (int x = 0; x < grid.length; x++) {
@@ -57,13 +60,15 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
         if (index == 1) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
         if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
-        if (index == 3) return "2/3";
+        if (index == 3) return "66"+txt("%");
+        if (index == 4) return txt("halved");
+        if (index == 5) return txt("disabled");
         return null;
     }
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getArmorBonus().modifyMult(id,ARMOR_MULT);
-        stats.getEffectiveArmorBonus().modifyPercent(id,CALC_PERCENT);
+        stats.getArmorBonus().modifyMult(id, ARMOR_MULT);
+        stats.getEffectiveArmorBonus().modifyPercent(id, CALC_PERCENT);
     }
 }
