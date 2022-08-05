@@ -51,7 +51,7 @@ public class tahlan_DaemonArmor extends BaseHullMod {
 
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
-        if (index == 1) return "" + Math.round(ARMOR_CAP);
+        if (index == 1) return "" + Math.round(ARMOR_CAP/100*REGEN_PER_SEC_PERCENT) + "/s";
         if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
         if (index == 3) return txt("halved");
         if (index == 4) return txt("disabled");
