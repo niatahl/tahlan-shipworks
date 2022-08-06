@@ -3,6 +3,10 @@
 	- DP lowered from 55 to 50
 - Hel Scaith
 	- DP lowered from 70 to 65
+	- Built-in Fray cannon has been replaced with Hel Razer
+	- System changed to Impes Infernalis
+- Hel Vanguard
+	- System changed to Assault Burn
 - Hel Centurion
 	- System changed to Hel Temporal Shell
 - Hel Flash
@@ -24,6 +28,7 @@
 - Improved Legio Tyranny tooltip
 - Made Daemons stronger in autoresolve
 - Added toggle for Daemons to config
+- Added illustrations for Legio planets
 
 
 0.8.4

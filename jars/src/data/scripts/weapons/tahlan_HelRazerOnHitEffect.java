@@ -49,7 +49,7 @@ public class tahlan_HelRazerOnHitEffect implements OnHitEffectPlugin {
                 0,
                 BLAST_COLOR,
                 null);
-        blast.setDamageType(DamageType.ENERGY);
+        blast.setDamageType(DamageType.HIGH_EXPLOSIVE);
         blast.setShowGraphic(false);
         engine.spawnDamagingExplosion(blast,projectile.getSource(),point,false);
 

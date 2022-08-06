@@ -23,7 +23,7 @@ import static com.fs.starfarer.api.util.Misc.ZERO;
 import static org.lwjgl.opengl.GL11.GL_ONE;
 import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
-public class tahlan_HelRazerScript implements EveryFrameWeaponEffectPlugin {
+public class tahlan_HelRazerScript implements EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
 
     private static final Color PARTICLE_COLOR = new Color(255, 52, 52);
     private static final Color GLOW_COLOR = new Color(255, 52, 52, 50);
@@ -47,67 +47,6 @@ public class tahlan_HelRazerScript implements EveryFrameWeaponEffectPlugin {
         if (engine.isPaused() || weapon == null) {
             return;
         }
-
-        if (rangeModifier == null) {
-            rangeModifier = new tahlan_LostechRangeEffect();
-        }
-        rangeModifier.advance(amount, engine, weapon);
-
-        float chargelevel = weapon.getChargeLevel();
-
-        if (hasFiredThisCharge && (chargelevel <= 0f || !weapon.isFiring())) {
-            hasFiredThisCharge = false;
-        }
-
-        //Muzzle location calculation
-        Vector2f point = new Vector2f();
-
-        if (weapon.getSlot().isHardpoint()) {
-            point.x = weapon.getSpec().getHardpointFireOffsets().get(0).x;
-            point.y = weapon.getSpec().getHardpointFireOffsets().get(0).y;
-        } else if (weapon.getSlot().isTurret()) {
-            point.x = weapon.getSpec().getTurretFireOffsets().get(0).x;
-            point.y = weapon.getSpec().getTurretFireOffsets().get(0).y;
-        } else {
-            point.x = weapon.getSpec().getHiddenFireOffsets().get(0).x;
-            point.y = weapon.getSpec().getHiddenFireOffsets().get(0).y;
-        }
-
-        point = VectorUtils.rotate(point, weapon.getCurrAngle(), new Vector2f(0f, 0f));
-        point.x += weapon.getLocation().x;
-        point.y += weapon.getLocation().y;
-
-        //Firing visuals
-        if (chargelevel >= 1f && !hasFiredThisCharge) {
-            hasFiredThisCharge = true;
-
-            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), PARTICLE_COLOR, 160f, 0.2f);
-            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 80f, 0.2f);
-            engine.addSmoothParticle(point, ZERO, 200f, 0.7f, 0.1f, PARTICLE_COLOR);
-            engine.addSmoothParticle(point, ZERO, 300f, 0.7f, 1f, GLOW_COLOR);
-            engine.addHitParticle(point, ZERO, 400f, 1f, 0.05f, FLASH_COLOR);
-            for (int x = 0; x < NUM_PARTICLES; x++) {
-                engine.addHitParticle(point,
-                        MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 150f), (float) Math.random() * 360f),
-                        5f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR);
-                if (Math.random() > 0.5f) {
-                    Vector2f vel = new Vector2f();
-                    Vector2f.add(weapon.getShip().getVelocity(), MathUtils.getRandomPointInCircle(ZERO, 40f), vel);
-                    engine.addNebulaParticle(
-                            point,
-                            vel,
-                            MathUtils.getRandomNumberInRange(40f, 100f),
-                            1.2f,
-                            0.1f,
-                            0.3f,
-                            MathUtils.getRandomNumberInRange(2f, 5f),
-                            new Color(60, 60, 60, 140),
-                            true
-                    );
-                }
-            }
-        }
-
 
         //Projectile trails
 
@@ -204,6 +143,36 @@ public class tahlan_HelRazerScript implements EveryFrameWeaponEffectPlugin {
 
         for (DamagingProjectileAPI proj : toRemove) {
             registeredProjectiles.remove(proj);
+        }
+    }
+
+    @Override
+    public void onFire(DamagingProjectileAPI projectile, WeaponAPI weapon, CombatEngineAPI engine) {
+        Vector2f point = projectile.getLocation();
+        Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), PARTICLE_COLOR, 160f, 0.2f);
+        Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 80f, 0.2f);
+        engine.addSmoothParticle(point, ZERO, 200f, 0.7f, 0.1f, PARTICLE_COLOR);
+        engine.addSmoothParticle(point, ZERO, 300f, 0.7f, 1f, GLOW_COLOR);
+        engine.addHitParticle(point, ZERO, 400f, 1f, 0.05f, FLASH_COLOR);
+        for (int x = 0; x < NUM_PARTICLES; x++) {
+            engine.addHitParticle(point,
+                    MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(50f, 150f), (float) Math.random() * 360f),
+                    5f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR);
+            if (Math.random() > 0.5f) {
+                Vector2f vel = new Vector2f();
+                Vector2f.add(weapon.getShip().getVelocity(), MathUtils.getRandomPointInCircle(ZERO, 40f), vel);
+                engine.addNebulaParticle(
+                        point,
+                        vel,
+                        MathUtils.getRandomNumberInRange(40f, 100f),
+                        1.2f,
+                        0.1f,
+                        0.3f,
+                        MathUtils.getRandomNumberInRange(2f, 5f),
+                        new Color(60, 60, 60, 140),
+                        true
+                );
+            }
         }
     }
 }

@@ -89,7 +89,7 @@ Thermal Pulse Blaster,tahlan_cinder_swivel_l,0,,100000,800,,150,,0,12,69,9,1.2,3
 Thermal Pulse Blaster,tahlan_cinder_swivel_r,0,,100000,800,,150,,0,12,69,9,1.2,3,ENERGY,120,,0,0.1,999999,0.3,0,8,2,3,,1000,,,,"SYSTEM,SHOW_IN_CODEX",,,,,Assault,,,,,,,Individual shots can be fired manually at higher rate of fire,,
 Hammer Tube,tahlan_hammertube,0,,75,1200,,1500,,30,10,69,2,0.02,,HIGH_EXPLOSIVE,0,,0,5,1,,0,0,0,0,,500,40,4,350,"STRIKE, SYSTEM",,,,,Torpedo,Fast,None,,,,,,,TRUE
 Sabot Tube,tahlan_sabottube,0,,100,1200,,100,,15,30,69,2,0.02,,KINETIC,0,,0,10,1,,0,0,0,0,,150,50,8,300,"GUIDED_POOR, SYSTEM",,,,,Anti Shield,Slow,Poor,,,"Submunition hits on hull or armor have a %s chance to arc to weapons and engines, dealing %s EMP damage.",25% | 200,,,
-Hel Razer,tahlan_helrazer,3,0.2,10000,1200,,4000,,50,10,28,,,,ENERGY,6000,,0,10,,,,,,,,250,,,1000,"SYSTEM, STRIKE",,,Legio Infernalis,,General,,,,,Deals an additional %s energy damage in a %s radius around impact.,1000 | 300su,,,
+Hel Razer,tahlan_helrazer,3,0.2,10000,1200,,4000,,50,10,28,,,,ENERGY,6000,,0,10,,,,,,,,250,,,1000,"SYSTEM, STRIKE",,,Legio Infernalis,,General,,,,,Deals an additional %s damage in a %s radius around impact.,1000 High-Explosive | 300su,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Phira,tahlan_phira_burst,3,0,9999,1000,,400,,50,10,69,,,,HIGH_EXPLOSIVE,480,,0,4,3,0.2,,,,,,1200,,,,"SYSTEM, SHOW_IN_CODEX",he20,,The Great Houses,,Variable,,,,,"Linked to variable ammo loader ship system, allowing the firing of different ammo types",,,,
 Phira Burst Split,tahlan_phira_burst_split,3,0,9999,500,,400,,50,10,69,,,,HIGH_EXPLOSIVE,480,,0,4,3,0.2,,,,,,1200,,,,SYSTEM,he20,,The Great Houses,,,,,,,,,,,
