@@ -23,7 +23,7 @@
     "tahlan_miasma_drone_wing"
   ],
   "builtInWeapons": {
-    "WS0001": "tahlan_fray"
+    "WS0001": "tahlan_helrazer"
   },
   "weaponSlots": [
     {
@@ -207,7 +207,7 @@
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
-      "locations": [120, -0]
+      "locations": [111.5, -0]
     },
     {
       "id": "LB 1",

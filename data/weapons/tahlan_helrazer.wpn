@@ -1,0 +1,48 @@
+{
+  "id": "tahlan_helrazer",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_helrazer_shot",
+  "everyFrameEffect": "data.scripts.weapons.tahlan_HelRazerScript",
+  "type": "BALLISTIC",
+  "size": "LARGE",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_helrazer_base.png",
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_helrazer_recoil.png",
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_helrazer_recoil.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_helrazer_base.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "visualRecoil": 8,
+  "turretOffsets": [
+    36,
+    0
+  ],
+  "turretAngleOffsets": [0],
+  "hardpointOffsets": [36, 0],
+  "hardpointAngleOffsets": [0],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "muzzleFlashSpec": {
+    "length": 30, # only used if animationType = MUZZLE_FLASH
+    "spread": 30,
+    "particleSizeMin": 30,
+    "particleSizeRange": 50,
+    "particleDuration": 0.1,
+    "particleCount": 10,
+    "particleColor": [
+      255,
+      200,
+      200,
+      245
+    ]
+  },
+  "textureType": "ROUGH,",
+  "fireSoundTwo": "tahlan_helrazer_fire"
+}

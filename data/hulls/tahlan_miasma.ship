@@ -22,16 +22,16 @@
       "mount": "HIDDEN",
       "arc": 10,
       "angle": -0,
-      "locations": [4, 0]
+      "locations": [3, -0]
     }
   ],
   "engineSlots": [
     {
       "location": [-8, -0],
-      "length": 30,
-      "width": 10,
+      "length": 17.5,
+      "width": 11,
       "angle": 180,
-      "contrailSize": 30,
+      "contrailSize": 11,
       "style": "TAHLAN_PIRATE_ENGINE"
     }
   ],

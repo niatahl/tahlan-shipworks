@@ -3,9 +3,7 @@
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "hellbore_fire",
   "everyFrameEffect": "data.scripts.weapons.tahlan_FrayMuzzleFlashScript",
-  "hardpointAngleOffsets": [
-    0
-  ],
+  "hardpointAngleOffsets": [0],
   "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_fray_recoil.png",
   "hardpointOffsets": [
     71.5,
@@ -13,13 +11,20 @@
   ],
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_fray_base.png",
   "id": "tahlan_fray",
-  "muzzleFlashSpec":{"length":75.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":15.0,
-					   "particleSizeMin":15.0,
-					   "particleSizeRange":35.0,
-					   "particleDuration":0.75,
-					   "particleCount":50,
-					   "particleColor":[255,120,50,245]},
+  "muzzleFlashSpec": {
+    "length": 75, # only used if animationType = MUZZLE_FLASH
+    "spread": 15,
+    "particleSizeMin": 15,
+    "particleSizeRange": 35,
+    "particleDuration": 0.75,
+    "particleCount": 50,
+    "particleColor": [
+      255,
+      120,
+      50,
+      245
+    ]
+  },
   "noImpactSounds": false,
   "noNonShieldImpactSounds": false,
   "noShieldImpactSounds": false,
@@ -30,10 +35,8 @@
   ],
   "size": "LARGE",
   "specClass": "projectile",
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
+  "textureType": "ROUGH,",
+  "turretAngleOffsets": [0],
   "turretGunSprite": "graphics/tahlan/weapons/tahlan_fray_recoil.png",
   "turretOffsets": [
     38,
