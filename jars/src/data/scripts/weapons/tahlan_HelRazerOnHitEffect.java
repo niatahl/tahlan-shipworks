@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
+import data.scripts.util.MagicRender;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -26,6 +27,7 @@ public class tahlan_HelRazerOnHitEffect implements OnHitEffectPlugin {
 
         engine.spawnExplosion(point, ZERO, PARTICLE_COLOR, 300f, 1f);
         engine.spawnExplosion(point, ZERO, CORE_COLOR, 150f, 1f);
+        engine.addHitParticle(point, ZERO, 600, 1f, 0.05f, FLASH_COLOR);
 
         engine.addSmoothParticle(point, ZERO, 400f, 0.5f, 0.1f, PARTICLE_COLOR);
         engine.addHitParticle(point, ZERO, 200f, 0.5f, 0.25f, FLASH_COLOR);
@@ -34,6 +36,21 @@ public class tahlan_HelRazerOnHitEffect implements OnHitEffectPlugin {
                     MathUtils.getPointOnCircumference(null, MathUtils.getRandomNumberInRange(100f, 500f), (float) Math.random() * 360f),
                     10f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR);
         }
+        MagicRender.battlespace(
+                Global.getSettings().getSprite("fx","tahlan_tineola_blast1"),
+                point,
+                new Vector2f(),
+                new Vector2f(100,100),
+                new Vector2f(500,500),
+                //angle,
+                360*(float)Math.random(),
+                0,
+                new Color(236, 31, 31,100),
+                true,
+                0,
+                0.2f,
+                0.6f
+        );
 
         float bonusDamage = projectile.getDamageAmount()/4f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
@@ -53,6 +70,6 @@ public class tahlan_HelRazerOnHitEffect implements OnHitEffectPlugin {
         blast.setShowGraphic(false);
         engine.spawnDamagingExplosion(blast,projectile.getSource(),point,false);
 
-        Global.getSoundPlayer().playSound("tahlan_porph_impact",0.8f,1.2f,point,ZERO);
+        Global.getSoundPlayer().playSound("tahlan_helrazer_impact",1f,1.5f,point,ZERO);
     }
 }

@@ -1147,6 +1147,15 @@
       }
     ]
   },
+  "tahlan_helrazer_impact": {
+    "sounds": [
+      {
+        "file": "sounds/tahlan/weapons/tahlan_tineola_blast.ogg",
+        "pitch": 0.8,
+        "volume": 1
+      }
+    ]
+  },
   "tahlan_nadel_fire": {
     "sounds": [
       {

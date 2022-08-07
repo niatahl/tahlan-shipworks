@@ -248,7 +248,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.removePriorityShip("tahlan_DunScaith_dmn");
             }
             MarketAPI market = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
-            if (HAS_INDEVO) {
+            if (HAS_INDEVO  && market != null) {
                 if (!market.hasCondition("IndEvo_mineFieldCondition")) {
                     market.addCondition("IndEvo_mineFieldCondition");
                     sector.getEconomy().getMarket("tahlan_rubicon_p01_market").addCondition("IndEvo_mineFieldCondition");

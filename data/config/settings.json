@@ -33,7 +33,8 @@
 			"tahlan_pinhieldIN":"graphics/tahlan/fx/tahlan_pinshield.png",   
             "tahlan_tempshieldOUT":"graphics/tahlan/fx/tahlan_tempshield_ring.png", 
 			"tahlan_lens_flare":"graphics/tahlan/fx/tahlan_lens_flare.png",
-			"tahlan_lens_flare2":"graphics/tahlan/fx/tahlan_lens_flare2.png"
+			"tahlan_lens_flare2":"graphics/tahlan/fx/tahlan_lens_flare2.png",
+			"tahlan_tineola_blast1":"graphics/tahlan/fx/tahlan_pinshield.png"
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",
