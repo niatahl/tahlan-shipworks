@@ -54,8 +54,7 @@
 		"sylphon": -0.60,
 		"mayasura": -0.60,
 		"persean_league": -0.60,
-		"yrxp": 0.00, #so anime, they just can't hate them
-		"aria": 0.00,
+		"aria": 0.00
 	},
 	
 	"maxRelationships":{ 
@@ -65,26 +64,26 @@
 		"pirates":1,
 		"player":0.9,
 		"junk_pirates":1,
-		"syndicate_asp":1,
+		"syndicate_asp":1
 	},
 	
 	"diplomacyPositiveChance":{
 		"default": 0.5,
 		"diableavionics": 1.0,
-		"pirates":1.5,
+		"pirates":1.5
 	},
 	
 	"diplomacyNegativeChance":{
 		"default": 1.5,
 		"diableavionics": 1.0,
-		"pirates": 0,
+		"pirates": 0
 	},
 	
 	"industrySeeds":[
-        {"id":"orbitalworks", "mult":0.1},
+        {"id":"orbitalworks", "mult":0.1}
     ],
 	
-    "diplomacyTraits":["selfrighteous", "irredentist", "foreverwar", "envious", "lowprofile"],
+    "diplomacyTraits":["selfrighteous", "irredentist", "foreverwar", "envious", "lowprofile", "monstrous"],
 	"morality":"evil",
     
     "freeMarket":true,
@@ -100,7 +99,7 @@
     ],
 	
 	"startShipsCombatSmall":[
-		["tahlan_Eagle_P_raider"],
+		["tahlan_Eagle_P_raider"]
 	],
     "startShipsCombatLarge":[
 		["tahlan_Castigator_P_raider", "tahlan_Bronco_p_sniper", "tahlan_lasher_pi_support"],
@@ -112,7 +111,7 @@
 	  ["tahlan_DunScaith_barrage","tahlan_Castigator_P_raider","tahlan_Flagellator_pi_missile","tahlan_Flagellator_pi_missile","tahlan_Bronco_p_brawler","tahlan_Bronco_p_brawler","buffalo_pirates_Standard"]
 	],
 	"startSpecialItems":[
-        [["tahlan_legio_full_package",""]],
+        [["tahlan_legio_full_package",""]]
     ],
     
 }
