@@ -43,10 +43,10 @@ public class tahlan_BreakerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 5);
+        ON_SHOT_PARTICLE_COUNT.put("default", 3);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
-        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 5);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 3);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -92,7 +92,8 @@ public class tahlan_BreakerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //Which kind of particle is spawned (valid values are "SMOOTH", "BRIGHT" and "SMOKE")
     private static final Map<String, String> PARTICLE_TYPE = new HashMap<>();
     static {
-        PARTICLE_TYPE.put("default", "SMOKE");
+        PARTICLE_TYPE.put("default", "NEBULA");
+        PARTICLE_TYPE.put("SMOKE_3", "SMOKE");
         PARTICLE_TYPE.put("FLASH_FRINGE_1", "BRIGHT");
         PARTICLE_TYPE.put("FLASH_CORE_1", "BRIGHT");
     }
@@ -100,8 +101,8 @@ public class tahlan_BreakerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(140,130,120, 125));
-        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("default", new Color(80,80,80, 85));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(40,40,40, 85));
         PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 175, 65, 80));
         PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 234, 212, 80));
     }
@@ -109,7 +110,7 @@ public class tahlan_BreakerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 5f);
+        PARTICLE_SIZE_MIN.put("default", 30f);
         PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 130f);
         PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
     }
@@ -117,7 +118,7 @@ public class tahlan_BreakerMuzzleFlashScript implements EveryFrameWeaponEffectPl
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
-        PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("default", 50f);
         PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 130f);
         PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
     }
@@ -420,6 +421,9 @@ public class tahlan_BreakerMuzzleFlashScript implements EveryFrameWeaponEffectPl
                     break;
                 case "SMOKE":
                     engine.addSmokeParticle(spawnLocation, velocity, size, 1f, duration, color);
+                    break;
+                case "NEBULA":
+                    engine.addNebulaParticle(spawnLocation, velocity, size, 1.5f, 0.1f, 0.2f, duration, color);
                     break;
                 default:
                     engine.addHitParticle(spawnLocation, velocity, size, 10f, duration, color);

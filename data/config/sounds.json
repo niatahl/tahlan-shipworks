@@ -620,17 +620,17 @@
       {
         "file": "sounds/tahlan/weapons/tahlan_aetnos_fire.ogg",
         "pitch": 0.82,
-        "volume": 0.55
+        "volume": 0.65
       },
       {
         "file": "sounds/tahlan/weapons/tahlan_aetnos_fire.ogg",
         "pitch": 0.84,
-        "volume": 0.55
+        "volume": 0.65
       },
       {
         "file": "sounds/tahlan/weapons/tahlan_aetnos_fire.ogg",
         "pitch": 0.86,
-        "volume": 0.55
+        "volume": 0.65
       }
     ]
   },

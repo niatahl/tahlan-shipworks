@@ -19,6 +19,8 @@
 	- Greatly reduced armor ratings 
 - Timeless Prototype
 	- Top speed increased from 40 to 55
+- Aetnos
+	- Now fires a burst of two shots
 - Made Hel Scaith less common
 - Added new reward for Legio Rising
 - Removed Scathach bounty and ship

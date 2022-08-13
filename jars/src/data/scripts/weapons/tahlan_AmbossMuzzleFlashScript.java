@@ -41,10 +41,10 @@ public class tahlan_AmbossMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 15);
+        ON_SHOT_PARTICLE_COUNT.put("default", 10);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
-        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 10);
+        ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 5);
     }
 
     //How many particles are spawned each second the weapon is firing, on average
@@ -98,8 +98,8 @@ public class tahlan_AmbossMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //What color does the particles have?
     private static final Map<String, Color> PARTICLE_COLOR = new HashMap<>();
     static {
-        PARTICLE_COLOR.put("default", new Color(140,130,120, 125));
-        PARTICLE_COLOR.put("SMOKE_3", new Color(90,80,80, 105));
+        PARTICLE_COLOR.put("default", new Color(50,50,50, 90));
+        PARTICLE_COLOR.put("SMOKE_3", new Color(40,40,40, 80));
         PARTICLE_COLOR.put("FLASH_FRINGE_1", new Color(255, 120, 50));
         PARTICLE_COLOR.put("FLASH_CORE_1", new Color(255, 224, 202));
     }
@@ -107,7 +107,7 @@ public class tahlan_AmbossMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //What's the smallest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MIN = new HashMap<>();
     static {
-        PARTICLE_SIZE_MIN.put("default", 5f);
+        PARTICLE_SIZE_MIN.put("default", 20f);
         PARTICLE_SIZE_MIN.put("FLASH_FRINGE_1", 150f);
         PARTICLE_SIZE_MIN.put("FLASH_CORE_1", 70f);
     }
@@ -115,7 +115,7 @@ public class tahlan_AmbossMuzzleFlashScript implements EveryFrameWeaponEffectPlu
     //What's the largest size the particles can have?
     private static final Map<String, Float> PARTICLE_SIZE_MAX = new HashMap<>();
     static {
-        PARTICLE_SIZE_MAX.put("default", 20f);
+        PARTICLE_SIZE_MAX.put("default", 50f);
         PARTICLE_SIZE_MAX.put("FLASH_FRINGE_1", 150f);
         PARTICLE_SIZE_MAX.put("FLASH_CORE_1", 70f);
     }

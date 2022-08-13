@@ -84,7 +84,7 @@
 		"contrailColor":[50,50,50,50],
 		"contrailCampaignColor":[255,60,40,240],
 		"glowAlternateColor":[255,90,20,235],
-		"glowSprite":"graphics/tahlan/fx/tahlan_li_engineglow.png",
+		#"glowSprite":"graphics/tahlan/fx/tahlan_li_engineglow.png",
 		#"glowOutline":"graphics/tahlan/fx/tahlan_li_engineflame.png",
 		"type":"SMOKE"
 	},
@@ -99,7 +99,7 @@
 		"contrailColor":[0,0,0,0],
 		"contrailCampaignColor":[255,60,40,240],
 		"glowAlternateColor":[255,90,20,235],
-		"glowSprite":"graphics/tahlan/fx/tahlan_li_engineglow.png",
+		#"glowSprite":"graphics/tahlan/fx/tahlan_li_engineglow.png",
 		#"glowOutline":"graphics/tahlan/fx/tahlan_li_engineflame.png",
 		"type":"SMOKE"
 	},
@@ -116,7 +116,7 @@
 		"contrailColor":[255,60,40,100],
 		"contrailCampaignColor":[255,60,40,240],
 		"glowAlternateColor":[255,90,20,235],
-		"glowSprite":"graphics/tahlan/fx/tahlan_li_engineglow.png",
+		#"glowSprite":"graphics/tahlan/fx/tahlan_li_engineglow.png",
 		#"glowOutline":"graphics/tahlan/fx/tahlan_li_engineflame.png",
 		"type":"SMOKE"
 	},
