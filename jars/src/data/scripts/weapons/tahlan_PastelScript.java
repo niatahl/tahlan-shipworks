@@ -76,9 +76,9 @@ public class tahlan_PastelScript implements EveryFrameWeaponEffectPlugin {
 
             Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), PARTICLE_COLOR, 80f, 0.1f);
             Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 40f, 0.1f);
-            engine.addSmoothParticle(point, ZERO, 100f, 0.5f, 0.08f, PARTICLE_COLOR);
-            engine.addSmoothParticle(point, ZERO, 150f, 0.5f, 0.05f, GLOW_COLOR);
-            engine.addHitParticle(point, ZERO, 200f, 0.8f, 0.03f, FLASH_COLOR);
+            engine.addSmoothParticle(point, ZERO, 100f, 0.5f, 0.04f, PARTICLE_COLOR);
+            engine.addSmoothParticle(point, ZERO, 150f, 0.5f, 0.03f, GLOW_COLOR);
+            engine.addHitParticle(point, ZERO, 200f, 0.8f, 0.02f, FLASH_COLOR);
         }
 
 

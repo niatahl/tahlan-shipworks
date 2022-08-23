@@ -12,7 +12,7 @@ import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_DaemonPlating extends BaseHullMod {
 
-    private static final float ARMOR_MULT = 0.33f;
+    private static final float ARMOR_MULT = (float) (1/Math.PI);
     private static final float CALC_PERCENT = 50f;
     private static final float ARMOR_CAP = 2000f;
     private static final float REGEN_PER_SEC_PERCENT = 4f;
@@ -62,7 +62,8 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
         if (index == 3) return txt("halved");
         if (index == 4) return txt("disabled");
-        if (index == 5) return "66"+txt("%");
+        if (index == 5) return txt("pi");
+        if (index == 6) return txt("heavyarmor");
         return null;
     }
 

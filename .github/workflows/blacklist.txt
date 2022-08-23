@@ -1,6 +1,7 @@
 .psd$
 .ai$
 .afphoto$
+.iml$
 ^.idea
 ^.circleci
 DO_NOT_USE

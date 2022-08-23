@@ -68,6 +68,8 @@
 		"sys_MachineSpirit": "Weapons accelerated by ",
 		"rangefinder": "Ballistic Rangefinder",
 		"disabled": "disabled",
-		"halved": "halved"
+		"halved": "halved",
+		"pi": "Pi",
+		"heavyarmor": "Heavy Armor"
 	}
 }

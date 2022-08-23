@@ -13,8 +13,8 @@
 	"width":20.0,
 	"fadeTime":0.4,
 	"fringeColor":[57, 255, 255,255],
-	"coreColor":[179, 236, 255,205],
-	"glowColor":[57, 205, 255,30],
+	"coreColor":[200, 240, 255,245],
+	"glowColor":[57, 205, 255,50],
 	"glowRadius":70,
 	"pixelsPerTexel":5.0,
 	"textureType": [
