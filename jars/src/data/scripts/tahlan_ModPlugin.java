@@ -68,6 +68,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
     public static final Logger LOGGER = Global.getLogger(tahlan_ModPlugin.class);
 
+
+
     @Override
     public void onApplicationLoad() {
         boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
@@ -108,6 +110,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 SHIELD_HULLMODS.add("swp_shieldbypass"); //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
             }
         }
+
     }
 
 
@@ -171,6 +174,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         legio.addKnownShip("tahlan_centurion_dmn", false);
         legio.addKnownShip("tahlan_vanguard_dmn", false);
         legio.addKnownShip("tahlan_DunScaith_dmn", false);
+        legio.addKnownShip("tahlan_hound_dmn", false);
+        legio.addKnownShip("tahlan_sunder_dmn", false);
+        legio.addKnownShip("tahlan_kodai_dmn", false);
         legio.removeKnownFighter("flash_wing");
         legio.removeKnownFighter("spark_wing");
         legio.removeKnownFighter("lux_wing");
@@ -191,6 +197,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         legio.removeKnownShip("tahlan_centurion_dmn");
         legio.removeKnownShip("tahlan_vanguard_dmn");
         legio.removeKnownShip("tahlan_DunScaith_dmn");
+        legio.removeKnownShip("tahlan_hound_dmn");
+        legio.removeKnownShip("tahlan_sunder_dmn");
+        legio.removeKnownShip("tahlan_kodai_dmn");
     }
 
     @Override
@@ -229,6 +238,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 addDaemons(sector);
             }
             FactionAPI legio = Global.getSector().getFaction("tahlan_legioinfernalis");
+
             if (ENABLE_HARDMODE) {
                 legio.addPriorityShip("tahlan_dominator_dmn");
                 legio.addPriorityShip("tahlan_champion_dmn");
@@ -237,6 +247,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.addPriorityShip("tahlan_centurion_dmn");
                 legio.addPriorityShip("tahlan_vanguard_dmn");
                 legio.addPriorityShip("tahlan_DunScaith_dmn");
+                legio.addPriorityShip("tahlan_hound_dmn");
+                legio.addPriorityShip("tahlan_sunder_dmn");
+                legio.addPriorityShip("tahlan_kodai_dmn");
             } else {
                 legio.removePriorityShip("tahlan_dominator_dmn");
                 legio.removePriorityShip("tahlan_champion_dmn");
@@ -245,6 +258,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.removePriorityShip("tahlan_centurion_dmn");
                 legio.removePriorityShip("tahlan_vanguard_dmn");
                 legio.removePriorityShip("tahlan_DunScaith_dmn");
+                legio.removePriorityShip("tahlan_hound_dmn");
+                legio.removePriorityShip("tahlan_sunder_dmn");
+                legio.removePriorityShip("tahlan_kodai_dmn");
             }
             MarketAPI market = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
             if (HAS_INDEVO  && market != null) {
@@ -329,6 +345,9 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.addKnownShip("tahlan_centurion_dmn", false);
                 legio.addKnownShip("tahlan_vanguard_dmn", false);
                 legio.addKnownShip("tahlan_DunScaith_dmn", false);
+                legio.addKnownShip("tahlan_hound_dmn", false);
+                legio.addKnownShip("tahlan_sunder_dmn", false);
+                legio.addKnownShip("tahlan_kodai_dmn", false);
                 legio.addKnownFighter("tahlan_miasma_drone_wing", false);
                 legio.addKnownFighter("tahlan_flash_dmn_wing", false);
                 legio.addKnownFighter("tahlan_spark_dmn_wing", false);

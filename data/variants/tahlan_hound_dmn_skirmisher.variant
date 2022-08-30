@@ -1,0 +1,28 @@
+{
+    "displayName": "Skirmisher",
+    "fluxCapacitors": 3,
+    "fluxVents": 10,
+    "hullId": "tahlan_hound_dmn",
+    "hullMods": [
+        "missleracks",
+        "unstable_injector"
+    ],
+    "modules": [{"ARMOR": "tahlan_hound_dmn_armor_a"}],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_hound_dmn_skirmisher",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "tahlan_conand"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "phasecl"}
+        }
+    ],
+    "wings": []
+}

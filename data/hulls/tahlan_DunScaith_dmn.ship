@@ -366,51 +366,35 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-177, 69],
-      "length": 108.5,
-      "width": 35,
+      "location": [-176, 70],
+      "length": 105.5,
+      "width": 29,
       "angle": 180,
-      "contrailSize": 35,
+      "contrailSize": 29,
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-177, -69],
-      "length": 108.5,
-      "width": 35,
+      "location": [-176, -70],
+      "length": 105.5,
+      "width": 29,
       "angle": -180,
-      "contrailSize": 35,
+      "contrailSize": 29,
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-180.5, 51.5],
-      "length": 118,
-      "width": 31,
+      "location": [-184, 44],
+      "length": 131.5,
+      "width": 38,
       "angle": 180,
-      "contrailSize": 31,
+      "contrailSize": 38,
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-180.5, -51.5],
-      "length": 118,
-      "width": 31,
+      "location": [-184, -44],
+      "length": 131.5,
+      "width": 38,
       "angle": -180,
-      "contrailSize": 31,
-      "style": "TAHLAN_PIRATE_ENGINE"
-    },
-    {
-      "location": [-176, 38],
-      "length": 111,
-      "width": 21,
-      "angle": 180,
-      "contrailSize": 21,
-      "style": "TAHLAN_PIRATE_ENGINE"
-    },
-    {
-      "location": [-176, -38],
-      "length": 111,
-      "width": 21,
-      "angle": -180,
-      "contrailSize": 21,
+      "contrailSize": 38,
       "style": "TAHLAN_PIRATE_ENGINE"
     }
   ],

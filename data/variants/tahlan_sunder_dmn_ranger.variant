@@ -1,0 +1,48 @@
+{
+    "displayName": "Ranger",
+    "fluxCapacitors": 5,
+    "fluxVents": 20,
+    "hullId": "tahlan_sunder_dmn",
+    "hullMods": [
+        "missleracks",
+        "unstable_injector"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_sunder_dmn_ranger",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "hurricane"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "swarmer",
+                "WS0005": "swarmer"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "hveldriver",
+                "WS0003": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

@@ -1,0 +1,48 @@
+{
+    "displayName": "Blighter",
+    "fluxCapacitors": 13,
+    "fluxVents": 30,
+    "hullId": "tahlan_kodai_dmn",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_kodai_dmn_blighter",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hil",
+                "WS0002": "hil"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "tahlan_eradicator_dmn"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "hveldriver",
+                "WS0004": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

@@ -8,7 +8,7 @@ import org.lazywizard.lazylib.MathUtils;
 
 public class tahlan_BeamFlashEffect implements BeamEffectPlugin {
 
-    private IntervalUtil flashInterval = new IntervalUtil(0.1f,0.2f);
+    private final IntervalUtil flashInterval = new IntervalUtil(0.1f,0.2f);
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {

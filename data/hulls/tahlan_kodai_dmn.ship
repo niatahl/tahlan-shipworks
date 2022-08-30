@@ -1,0 +1,197 @@
+{
+  "hullName": "Hel Kodai",
+  "hullId": "tahlan_kodai_dmn",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_kodai_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 234,
+  "width": 214,
+  "center": [107, 126.5],
+  "collisionRadius": 155,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 139,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0009": "tahlan_eradicator_dmn"
+  },
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "tahlan_daemonarmor",
+    "automated"
+  ],
+  "builtInWings": [
+    "tahlan_miasma_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [48.5, 72]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [48.5, -72]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [77.5, 34]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [77.5, -34]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 129,
+      "angle": -37,
+      "locations": [32.5, -26]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 129,
+      "angle": 37,
+      "locations": [32.5, 26]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 169,
+      "angle": -131,
+      "locations": [-9.5, -56]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 169,
+      "angle": 131,
+      "locations": [-9.5, 56]
+    },
+    {
+      "id": "WS0009",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [85.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-37.5, 84],
+      "length": 57,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-37.5, -84],
+      "length": 57,
+      "width": 19,
+      "angle": -180,
+      "contrailSize": 19,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-37.5, 73],
+      "length": 57,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-37.5, -73],
+      "length": 57,
+      "width": 19,
+      "angle": -180,
+      "contrailSize": 19,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-77.5, 22],
+      "length": 94.5,
+      "width": 36,
+      "angle": 180,
+      "contrailSize": 36,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-77.5, -22],
+      "length": 94.5,
+      "width": 36,
+      "angle": -180,
+      "contrailSize": 36,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-25, 94],
+      "length": 41.0298,
+      "width": 16.131397,
+      "angle": 150,
+      "contrailSize": 16.131397,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-25, -94],
+      "length": 41.0298,
+      "width": 16.131397,
+      "angle": -150,
+      "contrailSize": 16.131397,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -75.5, -11.5,
+    -76.5, -28.5,
+    -17, -37,
+    -48, -44,
+    -18.5, -102.5,
+    59, -103,
+    61.5, -61,
+    19.5, -36.5,
+    67, -41,
+    97, -23.5,
+    97, 23.5,
+    67, 41,
+    19.5, 36.5,
+    61.5, 61,
+    59, 103,
+    -18.5, 102.5,
+    -48, 44,
+    -17, 37,
+    -76.5, 28.5,
+    -75.5, 11.5,
+    -124.5, -0
+  ]
+}

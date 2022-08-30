@@ -26,6 +26,9 @@
 		"tahlan_centurion_dmn_deva": 2,
 		"tahlan_centurion_dmn_sniper": 2,
 		"tahlan_centurion_dmn_heavy": 2,
+		"tahlan_hound_dmn_blaster":4,
+		"tahlan_hound_dmn_rampager":3,
+		"tahlan_hound_dmn_skirmisher":3
 	},
 	"combatMedium": {
 		"tahlan_Vale_crusader": 10,
@@ -66,6 +69,9 @@
 		"tahlan_hammerhead_dmn_sniper": 2,
 		"tahlan_hammerhead_dmn_suppression": 2,
 		"tahlan_hammerhead_dmn_striker": 2,
+		"tahlan_sunder_dmn_rage":3,
+		"tahlan_sunder_dmn_ranger":4,
+		"tahlan_sunder_dmn_reaper":3
 	},
 	"combatLarge": {
 		"tahlan_Castigator_standard": 5,
@@ -116,6 +122,10 @@
 		"tahlan_champion_dmn_brawler": 2,
 		"tahlan_champion_dmn_striker": 2,
 		"tahlan_champion_dmn_artillery": 3,
+		"tahlan_kodai_dmn_blighter":2,
+		"tahlan_kodai_dmn_carnage":2,
+		"tahlan_kodai_dmn_harbinger":3,
+		"tahlan_kodai_dmn_sniper":3
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,

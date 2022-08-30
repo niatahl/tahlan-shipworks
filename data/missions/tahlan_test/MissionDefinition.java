@@ -39,7 +39,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		boolean isFlagship = true;
 		for (String testID : Global.getSettings().getAllVariantIds()) {
 			if (testID.contains("tahlan_") && Global.getSettings().getVariant(testID).getSource() == VariantSource.HULL && !Global.getSettings().getVariant(testID).getHullSize().equals(ShipAPI.HullSize.FIGHTER)
-					&& !Global.getSettings().getVariant(testID).hasHullMod("tahlan_scalarspecs") && !Global.getSettings().getVariant(testID).hasHullMod("tahlan_filamentspecs")) {
+					&& !Global.getSettings().getVariant(testID).hasHullMod("tahlan_scalarspecs") && !Global.getSettings().getVariant(testID).hasHullMod("tahlan_filamentspecs") && !testID.contains("_armor")) {
 				api.addToFleet(FleetSide.PLAYER, testID, FleetMemberType.SHIP, isFlagship);
 				isFlagship = false;
 			}

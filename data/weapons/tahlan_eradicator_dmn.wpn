@@ -1,0 +1,66 @@
+{
+  "beamFireOnlyOnFullCharge": false,
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "fireSoundOne": "tahlan_eradicator_fire",
+  "fireSoundTwo": "tahlan_eradicator_loop",
+  "everyFrameEffect":"data.scripts.weapons.tahlan_EradicatorSmokeScript", 
+  "beamEffect":"data.scripts.weapons.tahlan_EradicatorBeamEffect",
+  "coreColor": [
+    255,
+    255,
+    245,
+    255
+  ],
+  "fringeColor": [
+    255,
+    30,
+    0,
+    205
+  ],
+  "glowColor": [
+    255,
+    30,
+    0,
+    200
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "",
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "tahlan_eradicator_dmn",
+  "pixelsPerTexel": 1,
+  "size": "LARGE",
+  "specClass": "beam",
+  "textureScrollSpeed": 512,
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER,
+    MISSILE_FF,
+    MISSILE_NO_FF
+  ],
+  #"textureType": SMOOTH,
+  "textureType": [
+    "graphics/tahlan/fx/tahlan_titanomachy_beam_fringe.png",
+    "graphics/tahlan/fx/tahlan_shiva_beam_core.png"
+  ],
+  "fringeScrollSpeedMult":-1,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_eradicator_turret_glow.png",
+  "turretOffsets": [
+    13.5,
+    0
+  ],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_eradicator_turret_base.png",
+  "type": "ENERGY",
+  "width": 22
+}

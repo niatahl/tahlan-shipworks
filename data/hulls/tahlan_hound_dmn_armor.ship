@@ -1,0 +1,26 @@
+{
+  "hullName": "Hel Hound Armor Module",
+  "hullId": "tahlan_hound_dmn_armor",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_hound_dmn_armor.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 30,
+  "width": 28,
+  "center": [14, 14],
+  "collisionRadius": 20,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 19,
+  "viewOffset": 0,
+  "builtInMods": [
+    "reduced_explosion",
+    "never_detaches",
+    "tahlan_helhoundarmor"
+  ],
+  "weaponSlots": [],
+  "engineSlots": [],
+  "bounds": [
+    -3, -11,
+    14.5, -0.5,
+    -3, 11
+  ]
+}

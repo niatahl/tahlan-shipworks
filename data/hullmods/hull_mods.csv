@@ -99,7 +99,9 @@ Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullm
 Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
 Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities by %s and reduces recoil by %s. Further increases damage to missiles by %s. Specialised integration enhances the tracking capabilities of Legio smartguns.
 
-There appear to be various protocols in place restricting the ship's capabilities without Legio command codes, causing it to only operate at %s of its peak capacity. Furthermore your technicians have found a number of backdoors that might allow certain Daemon command ships to take direct remote control of this vessel, though they estimate this would require close proximity to said command ship. Any attempts to remove these restrictions would unfortunately cripple the essential automated systems of the ship, rendering it effectively useless.",Enhances targeting,graphics/tahlan/hullmods/tahlan_daemoncore.png
+There appear to be various protocols in place restricting the ship's capabilities without Legio command codes, causing it to only operate at %s of its peak capacity. Furthermore your technicians have found a number of backdoors that might allow certain Daemon command ships to take direct remote control of this vessel, though they estimate this would require close proximity to said command ship. Any attempts to remove these restrictions would unfortunately cripple the essential automated systems of the ship, rendering it effectively useless.
+
+Increases supply use for maintenance and recovery by %s.",Enhances targeting,graphics/tahlan/hullmods/tahlan_daemoncore.png
 Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png
 Hel Carapace,tahlan_daemonarmor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
@@ -111,3 +113,4 @@ Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,data.sc
 Regeneration is %s while overloaded and %s while actively venting flux.
 
 While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Hel Hound Armor,tahlan_helhoundarmor,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png

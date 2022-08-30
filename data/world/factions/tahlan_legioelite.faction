@@ -42,7 +42,7 @@
 	"hullFrequency":{
 		"tags":{
 			"tahlan_legio":4,
-			"tahlan_daemon":20,
+			"tahlan_daemon":30,
 			"rare_bp":4,
 		},
 		"hulls":{		

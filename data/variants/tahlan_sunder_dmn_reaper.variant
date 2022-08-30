@@ -1,0 +1,48 @@
+{
+    "displayName": "Reaper",
+    "fluxCapacitors": 10,
+    "fluxVents": 20,
+    "hullId": "tahlan_sunder_dmn",
+    "hullMods": [
+        "missleracks",
+        "eccm"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_sunder_dmn_reaper",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "cyclone"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "reaper",
+                "WS0005": "reaper"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "tahlan_conand",
+                "WS0003": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan",
+                "WS0009": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

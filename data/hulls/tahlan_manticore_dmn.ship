@@ -14,8 +14,7 @@
   "builtInMods": [
     "tahlan_daemoncore",
     "tahlan_daemonarmor",
-    "automated",
-    "high_maintenance"
+    "automated"
   ],
   "builtInWings": [
     "tahlan_miasma_drone_wing"

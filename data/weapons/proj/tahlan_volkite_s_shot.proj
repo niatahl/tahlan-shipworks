@@ -14,6 +14,7 @@
 	"pixelsPerTexel":5.0,
 	"bulletSprite":"graphics/missiles/shell_large_blue.png",
 	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+					"onExplosionEffect":"data.scripts.weapons.tahlan_FlakOnExplosionEffect",
 					"shotRangeVariance":0.1,
 					"range":4,
 					"explosionSpec":{"duration":0.1f,

@@ -1,16 +1,15 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 4,
+  "displayName": "Elite",
+  "fluxCapacitors": 9,
   "fluxVents": 30,
   "goalVariant": true,
   "hullId": "tahlan_Kodai",
   "hullMods": [
-    "targetingunit",
-    "armoredweapons"
+    "targetingunit"
   ],
   "permaMods": [],
   "quality": 0,
-  "variantId": "tahlan_Kodai_standard",
+  "variantId": "tahlan_Kodai_elite",
   "weaponGroups": [
     {
       "autofire": false,
@@ -23,16 +22,16 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "heavyac",
-        "WS0002": "heavyac"
+        "WS0001": "heavymauler",
+        "WS0002": "heavymauler"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0003": "tahlan_aetnos",
-        "WS0004": "tahlan_aetnos"
+        "WS0003": "hveldriver",
+        "WS0004": "hveldriver"
       }
     },
     {

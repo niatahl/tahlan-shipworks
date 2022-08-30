@@ -375,7 +375,8 @@ public class tahlan_EradicatorSmokeScript implements EveryFrameWeaponEffectPlugi
                     engine.addSmoothParticle(spawnLocation, velocity, size, 1f, duration, color);
                     break;
                 case "SMOKE":
-                    engine.addSmokeParticle(spawnLocation, velocity, size, 1f, duration, color);
+//                    engine.addSmokeParticle(spawnLocation, velocity, size, 1f, duration, color);
+                    engine.addNebulaParticle(spawnLocation,velocity,size,1.3f,0.1f,0.3f,duration,color);
                     break;
                 default:
                     engine.addHitParticle(spawnLocation, velocity, size, 10f, duration, color);

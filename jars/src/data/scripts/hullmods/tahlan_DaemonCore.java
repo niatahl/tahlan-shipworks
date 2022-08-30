@@ -4,18 +4,13 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.combat.listeners.DamageDealtModifier;
-import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
-import org.lazywizard.lazylib.combat.DefenseUtils;
-import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -36,6 +31,8 @@ public class tahlan_DaemonCore extends BaseHullMod {
         MAG.put(HullSize.CAPITAL_SHIP, 0);
     }
 
+    private static final float SUPPLIES_PERCENT = 100f;
+
     private static final Color JITTER_COLOR = new Color(255, 0, 0, 20);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
 
@@ -53,6 +50,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
         stats.getRecoilPerShotMult().modifyMult(id, 0.75f);
         stats.getDamageToMissiles().modifyMult(id, 1.5f);
 
+        stats.getSuppliesPerMonth().modifyPercent(id, SUPPLIES_PERCENT);
     }
 
     @Override
@@ -208,6 +206,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
         if (index == 1) return "" + 25 + txt("%");
         if (index == 2) return "" + 50 + txt("%");
         if (index == 3) return "" + 90 + txt("%");
+        if (index == 4) return "" + (int)SUPPLIES_PERCENT +txt("%");
         return null;
     }
 

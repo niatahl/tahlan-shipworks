@@ -1,0 +1,48 @@
+{
+    "displayName": "Carnage",
+    "fluxCapacitors": 17,
+    "fluxVents": 0,
+    "hullId": "tahlan_kodai_dmn",
+    "hullMods": [
+        "safetyoverrides",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_kodai_dmn_carnage",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "devastator",
+                "WS0002": "devastator"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "tahlan_eradicator_dmn"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "heavymg",
+                "WS0004": "heavymg"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "lightdualmg",
+                "WS0006": "lightdualmg",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

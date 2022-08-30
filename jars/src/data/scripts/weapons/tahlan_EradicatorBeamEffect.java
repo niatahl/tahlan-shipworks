@@ -8,11 +8,21 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class tahlan_EradicatorBeamEffect implements BeamEffectPlugin {
 
-	private IntervalUtil fireInterval = new IntervalUtil(0.2f, 0.3f);
-	private IntervalUtil flashInterval = new IntervalUtil(0.1f,0.1f);
+	private final IntervalUtil fireInterval = new IntervalUtil(0.2f, 0.3f);
+	private final IntervalUtil flashInterval = new IntervalUtil(0.1f,0.1f);
 	private boolean wasZero = true;
 	
 	public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
+
+		flashInterval.advance(engine.getElapsedInLastFrame());
+		if (flashInterval.intervalElapsed()) {
+			float size = beam.getWidth() * MathUtils.getRandomNumberInRange(2f, 2.2f);
+			float dur = MathUtils.getRandomNumberInRange(0.2f,0.25f);
+			engine.addHitParticle(beam.getFrom(), beam.getSource().getVelocity(), beam.getWidth(), 0.8f, dur, beam.getCoreColor());
+			engine.addHitParticle(beam.getFrom(), beam.getSource().getVelocity(), size, 0.8f, dur, beam.getFringeColor().brighter());
+			engine.addHitParticle(beam.getTo(), beam.getSource().getVelocity(), size * 3f, 0.8f, dur, beam.getFringeColor());
+		}
+
 		CombatEntityAPI target = beam.getDamageTarget();
 		if (target instanceof ShipAPI && beam.getBrightness() >= 1f) {
 			float dur = beam.getDamage().getDpsDuration();

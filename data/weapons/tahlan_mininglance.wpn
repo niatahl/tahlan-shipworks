@@ -1,36 +1,56 @@
 {
+  "id": "tahlan_mininglance",
+  "specClass": "beam",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "beamEffect": "data.scripts.weapons.tahlan_BeamFlashEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "fringeColor":[255,0,0,175],
-  "coreColor":[255,155,155,255],
-  "glowColor":[255,155,155,255],
+  "turretSprite": "graphics/tahlan/weapons/tahlan_mininglance_base.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_mininglance_base.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    155,
+    155,
+    255
+  ],
+  "hitGlowRadius": 0,
+  "turretOffsets": [
+    11.5,
+    4.5,
+    11.5,
+    -4.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    18.5,
+    4.5,
+    19,
+    -4.5
+  ],
   "hardpointAngleOffsets": [
     -0,
     0
   ],
-  "hardpointOffsets": [
-    13.5,
-    5,
-    13.5,
-    -5
-  ],
-  "hardpointSprite": "",
-  "hitGlowRadius": 0,
-  "id": "tahlan_mininglance",
-  "pixelsPerTexel": 5,
-  "size": "MEDIUM",
-  "specClass": "beam",
-  "textureScrollSpeed": 64,
-  "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0
-  ],
-  "turretOffsets": [
+  "fringeColor": [
+    255,
     0,
-    0
+    0,
+    175
   ],
-  "turretSprite": "",
-  "type": "ENERGY",
+  "coreColor": [
+    255,
+    155,
+    155,
+    255
+  ],
   "width": 20,
-  "fireSoundTwo":"phase_beam_loop",
+  "textureType": ROUGH,
+  "textureScrollSpeed": 64,
+  "pixelsPerTexel": 5,
+  "fireSoundTwo": "phase_beam_loop"
 }

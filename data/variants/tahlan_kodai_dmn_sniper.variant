@@ -1,0 +1,49 @@
+{
+    "displayName": "Sniper",
+    "fluxCapacitors": 7,
+    "fluxVents": 30,
+    "hullId": "tahlan_kodai_dmn",
+    "hullMods": [
+        "targetingunit",
+        "fluxbreakers",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_kodai_dmn_sniper",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "gauss",
+                "WS0002": "gauss"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "tahlan_eradicator_dmn"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "heavymauler",
+                "WS0004": "heavymauler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0007": "vulcan",
+                "WS0008": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

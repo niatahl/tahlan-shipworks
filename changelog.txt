@@ -1,3 +1,16 @@
+0.8.6
+- Hel Vanguard
+	- Defense changed from damper to shields
+- Added Hel Sunder
+- Added Hel Hound
+- Added Hel Kodai
+- Updated Kodai sprite
+- Updated Bungalow sprite
+- Other minor sprite updates
+- Rolled high maintenance effect into Daemon Core
+- Removed high maintenance from Daemons
+
+
 0.8.5
 - Dun Scaith
 	- DP lowered from 55 to 50

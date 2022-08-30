@@ -239,6 +239,28 @@ tahlan_dominator_dmn,SHIP,"#> Ship Classification: Unknown
 #> .
 #> .
 #> .",,,
+tahlan_sunder_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Sunder-class Cruiser : 62% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_hound_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Hound-class Cruiser : 81% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
 tahlan_DunScaith_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest mat5##6sf...
 #> .

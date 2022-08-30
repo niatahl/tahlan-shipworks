@@ -1,0 +1,78 @@
+{
+  "hullName": "Hel Hound",
+  "hullId": "tahlan_hound_dmn",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_hound_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 78,
+  "width": 74,
+  "center": [37, 39],
+  "collisionRadius": 72,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 68,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "tahlan_daemonarmor",
+    "rugged",
+    "automated"
+  ],
+  "builtInWings": [
+    "tahlan_miasma_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [25, -6]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-14, 1]
+    },
+    {
+      "id": "ARMOR",
+      "size": "MEDIUM",
+      "type": "STATION_MODULE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [30, 10]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-36, 22],
+      "length": 45.5,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-36, -22],
+      "length": 45.5,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    28.5, -13.5,
+    2, -30.5,
+    -32.5, -28.5,
+    -32.5, 28.5,
+    2, 30.5,
+    28.5, 13.5
+  ]
+}
