@@ -4,11 +4,19 @@
 - Added Hel Sunder
 - Added Hel Hound
 - Added Hel Kodai
+- Legio Rising
+	- Updated fleet composition with new Daemons
+	- Now has more Daemons when scaled up to higher FP
 - Updated Kodai sprite
 - Updated Bungalow sprite
 - Other minor sprite updates
 - Rolled high maintenance effect into Daemon Core
 - Removed high maintenance from Daemons
+- Slightly increased daemon spawnrate in regular Legio fleets
+- Hel Plating/Carapace
+	- Added an additional flat 100 armor for calculation
+	- Plating now reduces armor to 1/pi
+
 
 
 0.8.5

@@ -13,6 +13,7 @@ public class tahlan_DaemonArmor extends BaseHullMod {
     private static final float ARMOR_CAP = 2000f;
     private static final float REGEN_PER_SEC_PERCENT = 10f;
     private static final float CALC_PERCENT = 50f;
+    private static final float CALC_FLAT = 100f;
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
@@ -53,8 +54,9 @@ public class tahlan_DaemonArmor extends BaseHullMod {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
         if (index == 1) return "" + Math.round(ARMOR_CAP/100*REGEN_PER_SEC_PERCENT) + "/s";
         if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
-        if (index == 3) return txt("halved");
-        if (index == 4) return txt("disabled");
+        if (index == 3) return "" + Math.round(CALC_FLAT);
+        if (index == 4) return txt("halved");
+        if (index == 5) return txt("disabled");
         return null;
     }
 }

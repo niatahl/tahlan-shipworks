@@ -14,6 +14,7 @@ public class tahlan_DaemonPlating extends BaseHullMod {
 
     private static final float ARMOR_MULT = (float) (1/Math.PI);
     private static final float CALC_PERCENT = 50f;
+    private static final float CALC_FLAT = 100f;
     private static final float ARMOR_CAP = 2000f;
     private static final float REGEN_PER_SEC_PERCENT = 4f;
 
@@ -60,10 +61,11 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
         if (index == 1) return "" + Math.round(ARMOR_CAP/100*REGEN_PER_SEC_PERCENT) + "/s";
         if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
-        if (index == 3) return txt("halved");
-        if (index == 4) return txt("disabled");
-        if (index == 5) return txt("pi");
-        if (index == 6) return txt("heavyarmor");
+        if (index == 3) return "" + Math.round(CALC_FLAT);
+        if (index == 4) return txt("halved");
+        if (index == 5) return txt("disabled");
+        if (index == 6) return txt("pi");
+        if (index == 7) return txt("heavyarmor");
         return null;
     }
 
@@ -71,5 +73,6 @@ public class tahlan_DaemonPlating extends BaseHullMod {
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
         stats.getArmorBonus().modifyMult(id, ARMOR_MULT);
         stats.getEffectiveArmorBonus().modifyPercent(id, CALC_PERCENT);
+        stats.getEffectiveArmorBonus().modifyFlat(id, CALC_FLAT);
     }
 }
