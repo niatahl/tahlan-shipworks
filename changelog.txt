@@ -4,6 +4,7 @@
 - Added Hel Sunder
 - Added Hel Hound
 - Added Hel Kodai
+- Added Raba-class Mining Barge
 - Legio Rising
 	- Updated fleet composition with new Daemons
 	- Now has more Daemons when scaled up to higher FP
@@ -16,6 +17,9 @@
 - Hel Plating/Carapace
 	- Added an additional flat 100 armor for calculation
 	- Plating now reduces armor to 1/pi
+- Nelson
+	- small missiles changed to composite
+	- built-ins of XIV variant changed from sabot to atropos tubes
 
 
 

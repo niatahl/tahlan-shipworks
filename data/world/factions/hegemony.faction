@@ -11,6 +11,7 @@
 			"tahlan_Castigator":0.6,
 			"tahlan_Nibelung":0.5,
 			"tahlan_nelson":0.5,
+			"tahlan_raba":0.2
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -27,7 +28,8 @@
 			"tahlan_Hresvelgr",
 			"tahlan_Nibelung",
 			"tahlan_nelson",
-			"tahlan_tower"
+			"tahlan_tower",
+			"tahlan_raba"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

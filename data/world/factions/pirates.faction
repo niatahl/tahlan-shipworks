@@ -35,7 +35,8 @@
 			"tahlan_Dominator_PH",
 			"tahlan_Hresvelgr_p",
 			"tahlan_blockhead",
-			"tahlan_tower"
+			"tahlan_tower",
+			"tahlan_raba"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

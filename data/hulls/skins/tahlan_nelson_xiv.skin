@@ -24,8 +24,8 @@
 		"SHIELD_L2":"tahlan_nelson_xiv_shield_L2",
 		"SHIELD_R":"tahlan_nelson_xiv_shield_R",
 		"SHIELD_R2":"tahlan_nelson_xiv_shield_R2",
-		"WS0010":"tahlan_sabottube",
-		"WS0012":"tahlan_sabottube",
+		"WS0010":"tahlan_atropos_tube",
+		"WS0012":"tahlan_atropos_tube",
     },
 	"weaponSlotChanges":{
 		"WS0002":{

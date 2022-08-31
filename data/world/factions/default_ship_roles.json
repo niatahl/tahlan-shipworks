@@ -125,7 +125,10 @@
 		"tahlan_kodai_dmn_blighter":2,
 		"tahlan_kodai_dmn_carnage":2,
 		"tahlan_kodai_dmn_harbinger":3,
-		"tahlan_kodai_dmn_sniper":3
+		"tahlan_kodai_dmn_sniper":3,
+		"tahlan_raba_brawler":4,
+		"tahlan_raba_elite":3,
+		"tahlan_raba_overdriven":3
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,
