@@ -1,8 +1,11 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.combat.*;
+import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
+import org.lwjgl.util.vector.Vector2f;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +33,29 @@ public class tahlan_BalorWeaponScript implements EveryFrameWeaponEffectPlugin {
             if (proj.getWeapon() == weapon && !alreadyRegisteredProjectiles.contains(proj) && engine.isEntityInPlay(proj) && !proj.didDamage()) {
                 engine.addPlugin(new tahlan_BalorProjectileScript(proj, target));
                 alreadyRegisteredProjectiles.add(proj);
+
+                Vector2f projVel;
+                Vector2f smokeVel;
+
+                for (int i = 0; i < 10; i++) {
+                    projVel = new Vector2f();
+                    smokeVel = new Vector2f();
+                    proj.getVelocity().normalise(projVel);
+                    projVel.scale(MathUtils.getRandomNumberInRange(0f,30f));
+                    Vector2f.add(weapon.getShip().getVelocity(),projVel,smokeVel);
+
+                    engine.addNebulaParticle(
+                            proj.getLocation(),
+                            smokeVel,
+                            MathUtils.getRandomNumberInRange(20f, 30f),
+                            1.5f,
+                            0.1f,
+                            0.3f,
+                            MathUtils.getRandomNumberInRange(2f, 2.5f),
+                            new Color(50, 48, 45, 120),
+                            true
+                    );
+                }
             }
         }
 

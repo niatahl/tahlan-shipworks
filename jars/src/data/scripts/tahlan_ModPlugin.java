@@ -22,6 +22,7 @@ import data.scripts.world.tahlan_FactionRelationPlugin;
 import data.scripts.world.tahlan_Lethia;
 import data.scripts.world.tahlan_Rubicon;
 import exerelin.campaign.SectorManager;
+import exerelin.utilities.NexConfig;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.dark.shaders.light.LightData;
@@ -271,6 +272,11 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 }
             }
         }
+        if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered") && !NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
+            NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
+        } else {
+            NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous");
+        }
     }
 
     private static class TahlanTrigger extends BaseCampaignEventListener {
@@ -338,6 +344,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 LOGGER.info("The Daemonic horde awakens");
                 FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
 
+                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
                 legio.addKnownShip("tahlan_dominator_dmn", false);
                 legio.addKnownShip("tahlan_champion_dmn", false);
                 legio.addKnownShip("tahlan_manticore_dmn", false);

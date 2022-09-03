@@ -14,9 +14,6 @@
   "builtInMods": [
     "surveying_equipment"
   ],
-  "builtInWings": [
-    "mining_drone_wing"
-  ],
   "builtInWeapons": {
     "WS0009": "tahlan_mininglance"
   },

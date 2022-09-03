@@ -8,7 +8,11 @@
 - Legio Rising
 	- Updated fleet composition with new Daemons
 	- Now has more Daemons when scaled up to higher FP
-- Updated Kodai sprite
+- Kodai
+	- New sprite
+	- Removed mining pods
+	- Armor 800 -> 900
+	- Mining Lnace efficiency -> 1.0
 - Updated Bungalow sprite
 - Other minor sprite updates
 - Rolled high maintenance effect into Daemon Core
@@ -20,7 +24,7 @@
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
-
+- Added NX-A
 
 
 0.8.5

@@ -60,9 +60,9 @@ public class tahlan_JauntDriveStats extends BaseShipSystemScript {
                     ship.getVelocity().getY() * (-1f),
                     5,0f,0.1f,0.5f,true,true,false);
 
-            for (int i=0;i<5;i++) {
+            for (int i=0;i<10;i++) {
                 engine.addNegativeNebulaParticle(
-                        MathUtils.getRandomPointInCircle(ship.getLocation(), 20),
+                        MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()*0.75f),
                         MathUtils.getRandomPointInCircle(ZERO,50f),
                         MathUtils.getRandomNumberInRange(60f, 120f),
                         0.3f,

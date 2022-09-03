@@ -1,0 +1,212 @@
+{
+  "hullName": "NX-A",
+  "hullId": "tahlan_nxa",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/oddities/tahlan_nxa.png",
+  "style": "HIGH_TECH",
+  "height": 254,
+  "width": 192,
+  "center": [96, 127],
+  "collisionRadius": 154,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 148,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_phaseharmonics"
+  ],
+  "builtInWeapons": {
+    "WS0013": "tahlan_nxa_cover",
+    "WS0014": "tahlan_nxa_cover_l",
+    "WS0015": "tahlan_nxa_cover_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [76, 51]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [76, -51]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 101,
+      "angle": 26.5,
+      "locations": [50, 32]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 101,
+      "angle": -26.5,
+      "locations": [50, -32]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 147,
+      "angle": 46,
+      "locations": [-10, 42]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 147,
+      "angle": -46,
+      "locations": [-10, -42]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 226,
+      "angle": 104.5,
+      "locations": [-22, 79]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 226,
+      "angle": -104.5,
+      "locations": [-22, -79]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [64, 11]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -0,
+      "locations": [64, -11]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [40, -0]
+    },
+    {
+      "id": "WS0012",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-21, -0]
+    },
+    {
+      "id": "WS0013",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [34.5, -0]
+    },
+    {
+      "id": "WS0014",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [72, 43.5]
+    },
+    {
+      "id": "WS0015",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [72, -43.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-63, 37],
+      "length": 85.5,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 33,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-63, -37],
+      "length": 85.5,
+      "width": 30,
+      "angle": -180,
+      "contrailSize": 33,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-76, 52.5],
+      "length": 45.5,
+      "width": 11,
+      "angle": 180,
+      "contrailSize": 11,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-76, -52.5],
+      "length": 45.5,
+      "width": 11,
+      "angle": -180,
+      "contrailSize": 11,
+      "style": "TAHLAN_NXA_ENGINE"
+    }
+  ],
+  "bounds": [
+    -57.5, -33,
+    -72.5, -56.5,
+    -19, -96,
+    -10, -63,
+    16.5, -52.5,
+    66, -57.5,
+    122.5, -16.5,
+    57, -14.5,
+    57, 14.5,
+    122.5, 16.5,
+    66, 57.5,
+    16.5, 52.5,
+    -10, 63,
+    -19, 96,
+    -72.5, 56.5,
+    -57.5, 33,
+    -124, -0
+  ]
+}

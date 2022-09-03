@@ -83,7 +83,7 @@
         {"id":"orbitalworks", "mult":0.1}
     ],
 	
-    "diplomacyTraits":["selfrighteous", "irredentist", "foreverwar", "envious", "lowprofile", "monstrous"],
+    "diplomacyTraits":["selfrighteous", "irredentist", "foreverwar", "envious", "lowprofile"],
 	"morality":"evil",
     
     "freeMarket":true,

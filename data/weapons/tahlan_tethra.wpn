@@ -1,58 +1,55 @@
 {
-  "animationType": "MUZZLE_FLASH",
-  "barrelMode": "ALTERNATING",
+  "id": "tahlan_tethra",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_tethra_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
   "everyFrameEffect": "data.scripts.weapons.tahlan_BalorWeaponScript",
-  "fireSoundTwo": "tahlan_tethra_fire",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_tethra_turret_base.png",
+  "turretGunSprite": "graphics/tahlan/weapons/tahlan_tethra_turret_recoil.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_tethra_hp_base.png",
+  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_tethra_hp_recoil.png",
+  "renderAboveAllWeapons": 0,
+  "visualRecoil": 4,
+  "renderHints": [
+    "RENDER_BARREL_BELOW"
+  ],
+  "turretOffsets": [
+    10.5,
+    3.5,
+    10.5,
+    -3.5
+  ],
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    13,
+    3.5,
+    13,
+    -3.5
+  ],
   "hardpointAngleOffsets": [
     0,
     0
   ],
-  "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_tethra_hp_recoil.png",
-  "hardpointOffsets": [
-    19,
-    6.5,
-    19,
-    -6.5
-  ],
-  "hardpointSprite": "graphics/tahlan/weapons/tahlan_tethra_hp_base.png",
-  "id": "tahlan_tethra",
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
   "muzzleFlashSpec": {
-    "length": 20,
+    "length": 30,
+    "spread": 20,
+    "particleSizeMin": 8,
+    "particleSizeRange": 16,
+    "particleDuration": 0.5,
+    "particleCount": 10,
     "particleColor": [
       255,
       110,
       50,
       205
-    ],
-    "particleCount": 8,
-    "particleDuration": 0.3,
-    "particleSizeMin": 8,
-    "particleSizeRange": 8,
-    "spread": 20
+    ]
   },
-  "noImpactSounds": false,
-  "noNonShieldImpactSounds": false,
-  "noShieldImpactSounds": false,
-  "projectileSpecId": "tahlan_tethra_shot",
-  "renderAboveAllWeapons": 0,
-  "renderHints": [
-    "RENDER_BARREL_BELOW"
-  ],
-  "size": "MEDIUM",
-  "specClass": "projectile",
   "textureType": ROUGH,
-  "turretAngleOffsets": [
-    0,
-    0
-  ],
-  "turretGunSprite": "graphics/tahlan/weapons/tahlan_tethra_turret_recoil.png",
-  "turretOffsets": [
-    17,
-    6.5,
-    17,
-    -6.5
-  ],
-  "turretSprite": "graphics/tahlan/weapons/tahlan_tethra_turret_base.png",
-  "type": "BALLISTIC",
-  "visualRecoil": 4
+  "fireSoundTwo": "tahlan_tethra_fire"
 }

@@ -1,0 +1,36 @@
+{
+	"id":"tahlan_slipdrive",
+	"type":"DISPLACER",
+	"aiType":"PHASE_DISPLACER",
+	
+	"statsScript":"data.scripts.shipsystems.tahlan_SlipDrive",
+	
+	"weaponGlowColor":[100,165,255,0],
+	"weaponTypes":[ENERGY],
+	
+	"engineGlowColor":[0,0,0,0],
+	"engineGlowContrailColor":[0,0,0,0],
+	"engineGlowLengthMult":0,
+	"engineGlowWidthMult":0,
+	"engineGlowGlowMult":0,
+	
+	"range":350,
+	"randomRange":50,
+	
+	"vulnerableChargeup":false,
+	"vulnerableChargedown":false,
+	"renderCopyDuringTeleport":false,
+	
+	"fadeActivationSoundOnChargedown":false,
+	
+	#"useSound":"system_teleport",
+	"loopSound":"system_maneuvering_jets_loop",	
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	
+	"aiHints":{
+		"activeSpeedIncrease":0,
+		"burstMovementPotential":350,
+		"averageSpeedIncrease":500,
+	}
+}

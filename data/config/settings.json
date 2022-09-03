@@ -8,6 +8,7 @@
             "Unknown":[255,255,255,255],
             "The Great Houses":[160,150,140,255],
 			"Legio Infernalis":[255,0,0,255],
+			"Nightwatch":[125,0,0,255],
 			"Rosenritter":[255,80,100,255],
     },
 	"graphics":{
@@ -34,7 +35,8 @@
             "tahlan_tempshieldOUT":"graphics/tahlan/fx/tahlan_tempshield_ring.png", 
 			"tahlan_lens_flare":"graphics/tahlan/fx/tahlan_lens_flare.png",
 			"tahlan_lens_flare2":"graphics/tahlan/fx/tahlan_lens_flare2.png",
-			"tahlan_tineola_blast1":"graphics/tahlan/fx/tahlan_pinshield.png"
+			"tahlan_tineola_blast1":"graphics/tahlan/fx/tahlan_pinshield.png",
+			"tahlan_nxa_phantom":"graphics/tahlan/ships/oddities/tahlan_nxa_glow1.png"
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",

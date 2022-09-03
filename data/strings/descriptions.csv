@@ -570,6 +570,7 @@ tahlan_fluxfeeder,SHIP_SYSTEM,"Increases ballistic weapon rate of fire and reduc
 tahlan_machinespirit,SHIP_SYSTEM,"Increases ballistic and energy weapon rate of fire and reduces flux cost accordingly. Becomes more effective at higher ship flux at moment of activation, going from 50% rate of fire increase at 0 flux to 100% at 90% flux.",Assault,,
 tahlan_boostthruster,SHIP_SYSTEM,Activates heavy boost thruster to increase forward top speed by up to 80 and enhance maneuverability slightly. Much more effective when moving forward.,Mobility,,
 tahlan_heltempshell,SHIP_SYSTEM,"Modified Temporal Shell system. Only accelerates timeflow by a factor of 2, but increased duration.",General,,
+tahlan_phasebreaker,SHIP_SYSTEM,"Phases the ship for a short moment then enters a quantum superposition of both states, allowing it to retain the temporal flow of phase space while interacting with realspace.",General,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,
