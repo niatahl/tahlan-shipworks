@@ -24,7 +24,20 @@
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
-- Added NX-A
+- Added ???
+- Added ????
+- Balor/Tethra
+	- New sprites
+	- New VFX
+- Skola
+	- New sprite
+- Renki
+	- Small hardpoints energy -> synergy
+- Hel Razer
+	- Damage 4000 -> 5000
+- Kupferflug wing
+	- Increased wing size from 2 to 3
+
 
 
 0.8.5

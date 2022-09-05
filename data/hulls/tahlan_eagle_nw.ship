@@ -11,6 +11,9 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 157.5,
   "viewOffset": 0,
+  "builtInMods":[
+    "tahlan_stealthplating"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",

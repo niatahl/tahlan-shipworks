@@ -1,0 +1,128 @@
+{
+  "hullName": "Falcon (NW)",
+  "hullId": "tahlan_falcon_nw",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_falcon_nw.png",
+  "style": "MIDLINE",
+  "height": 222,
+  "width": 162,
+  "center": [81, 102],
+  "collisionRadius": 156.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 146,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_stealthplating"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 99,
+      "angle": 24.5,
+      "locations": [0, 38]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 99,
+      "angle": -24.5,
+      "locations": [0, -38]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [108, 22]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -0,
+      "locations": [108, -22]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-28, 69]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-28, -69]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 67,
+      "angle": 17,
+      "locations": [40, 29]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 67,
+      "angle": -17,
+      "locations": [40, -29]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 154,
+      "angle": -132.5,
+      "locations": [-75, -26]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 154,
+      "angle": 132.5,
+      "locations": [-75, 26]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -63, -9,
+    -96, -11,
+    -84.5, -49,
+    -61.5, -39,
+    -47, -67,
+    104.5, -30,
+    108.5, -12.5,
+    1, -12.5,
+    1, 12.5,
+    108.5, 12.5,
+    104.5, 30,
+    -47, 67,
+    -61.5, 39,
+    -84.5, 49,
+    -96, 11,
+    -63, 9
+  ]
+}

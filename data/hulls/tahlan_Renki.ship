@@ -29,7 +29,7 @@
     {
       "id": "WS0002",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "SYNERGY",
       "mount": "TURRET",
       "arc": 110,
       "angle": 45,
@@ -38,7 +38,7 @@
     {
       "id": "WS0003",
       "size": "SMALL",
-      "type": "ENERGY",
+      "type": "SYNERGY",
       "mount": "TURRET",
       "arc": 110,
       "angle": -45,

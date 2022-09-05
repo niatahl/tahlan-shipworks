@@ -121,6 +121,7 @@ tahlan_tower,SHIP,"The result of efforts to marry a heavy cruiser with an escort
 
 The design ultimately fell short of its goals due to the simple inability to actually catch the carriers it was meant to counter, but found some new love with commanders who appreciated the ability to carry a small strike package aboard a capable frontline combatant.",,,
 ,,,,,
+,,,,,
 #LosTech,,,,,
 tahlan_karma,SHIP,"A seemingly jury-rigged design based on a Brilliant-class cruiser. While appearing like a crude modification at first sight, closer inspection has revealed the ship to be anything but. The complex remnant tech has been flawlessly integrated with the custom-built central hull section and shows a number of unusual modifications using what appears to be late domain-level hardware that current databases fail to identify.
 
@@ -174,6 +175,9 @@ Rare sources from within the Legio Infernalis imply that the Dun Scaith class is
 tahlan_Flagellator_pi,SHIP,"Seeing the Flagellator's design as ideal for pirate action, the Legio have converted a great number of these ships to even better suit their needs, replacing the graviton beam with a burst-fire variant of the Goll Overcharge Cannon to disable their prey.
 
 Built for speed and equipped with an early variant of graviton beam, the Flagellator is a dedicated hunter-killer designed to chase down and eliminate fast targets.",,,
+tahlan_eagle_nw,SHIP,"Retrofitted with stealth plating and an enhanced missile armament, this unusual variant of the Eagle once belonged the the infamous Nightwatch, or so its logs would have you believe. Many of the technologies incorporated in this craft are long lost to time now, relics of the Domain era.
+
+Not much is known of the Nightwatch, one of the many arms of the Domain's military apparatus. Rumors have it they were elite enforcers, operating covertly to root out dissidents and persons deemed problematic within the Domain navy, but officially they never even existed. What business one of their cells had in the persean sector is surely anyone's guess, but with the XIVth Battlegroup en route to the sector just before the collapse, it can be assumed there is a connection.",,,
 ,,,,,
 ,,,,,
 tahlan_vanguard_dmn,SHIP,"#> Ship Classification: Unknown
