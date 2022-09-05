@@ -37,7 +37,10 @@
 	- Damage 4000 -> 5000
 - Kupferflug wing
 	- Increased wing size from 2 to 3
-
+- Miasma drone
+	- Weapon renamed to Hel Pulser
+	- Damage/shot 50 -> 40
+	- Chargeup 0.33333 -> 0.2
 
 
 0.8.5
