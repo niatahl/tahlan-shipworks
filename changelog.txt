@@ -1,10 +1,15 @@
-0.8.6
-- Hel Vanguard
-	- Defense changed from damper to shields
+0.8.666
 - Added Hel Sunder
 - Added Hel Hound
 - Added Hel Kodai
 - Added Raba-class Mining Barge
+- Added ???
+- Hel Vanguard
+	- Defense changed from damper to shields
+- Hel Dominator
+	- Armor 800 -> 700
+- Hel Scaith
+	- Hel Razer damage 4000 -> 5000
 - Legio Rising
 	- Updated fleet composition with new Daemons
 	- Now has more Daemons when scaled up to higher FP
@@ -12,20 +17,13 @@
 	- New sprite
 	- Removed mining pods
 	- Armor 800 -> 900
-	- Mining Lnace efficiency -> 1.0
-- Updated Bungalow sprite
-- Other minor sprite updates
-- Rolled high maintenance effect into Daemon Core
-- Removed high maintenance from Daemons
-- Slightly increased daemon spawnrate in regular Legio fleets
+	- Mining Lnace efficiency 1.3ish -> 1.0
 - Hel Plating/Carapace
 	- Added an additional flat 100 armor for calculation
 	- Plating now reduces armor to 1/pi
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
-- Added ???
-- Added ????
 - Balor/Tethra
 	- New sprites
 	- New VFX
@@ -33,14 +31,31 @@
 	- New sprite
 - Renki
 	- Small hardpoints energy -> synergy
-- Hel Razer
-	- Damage 4000 -> 5000
-- Kupferflug wing
+- Kupferflug Regalia wing
 	- Increased wing size from 2 to 3
+	- OP 15 -> 18
 - Miasma drone
 	- Weapon renamed to Hel Pulser
 	- Damage/shot 50 -> 40
 	- Chargeup 0.33333 -> 0.2
+- Bungalow
+	- New sprite
+- Other minor sprite updates
+- Daemons
+	- Moved high maintenance effect to Daemon Core Hullmod
+- Lucifron
+	- Added Fortress Inferna structure
+	- Analogous to Lion's Guard HQ
+- Legio Infernalis faction
+	- Slightly increased daemon spawnrate in regular fleets
+	- Reworked relations
+		- No longer hostile to most factions
+		- Increased likelihood for negative diplomacy events
+		- Even further increased after Daemon upgrade
+		- This should lead to a hopefully less polarising Legio behaviour while retaining their general
+		  hostile nature.
+		- Now goes hostile to player faction and player Commissioned faction on Daemon upgrade
+
 
 
 0.8.5

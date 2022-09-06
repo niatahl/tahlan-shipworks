@@ -264,18 +264,29 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.removePriorityShip("tahlan_kodai_dmn");
             }
             MarketAPI market = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
-            if (HAS_INDEVO  && market != null) {
-                if (!market.hasCondition("IndEvo_mineFieldCondition")) {
-                    market.addCondition("IndEvo_mineFieldCondition");
-                    sector.getEconomy().getMarket("tahlan_rubicon_p01_market").addCondition("IndEvo_mineFieldCondition");
-                    sector.getEconomy().getMarket("tahlan_rubicon_outpost_market").addCondition("IndEvo_mineFieldCondition");
+            if (market != null) {
+                if (!market.hasIndustry("tahlan_legiohq")) {
+                    market.addIndustry("tahlan_legiohq");
+                }
+                if (HAS_INDEVO) {
+                    if (!market.hasCondition("IndEvo_mineFieldCondition")) {
+                        market.addCondition("IndEvo_mineFieldCondition");
+                        sector.getEconomy().getMarket("tahlan_rubicon_p01_market").addCondition("IndEvo_mineFieldCondition");
+                        sector.getEconomy().getMarket("tahlan_rubicon_outpost_market").addCondition("IndEvo_mineFieldCondition");
+                    }
                 }
             }
         }
-        if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered") && !NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
-            NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
+        if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+            if (!NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
+                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
+            }
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default",0.1f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default",2f);
         } else {
             NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous");
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default",0.5f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default",1f);
         }
     }
 
@@ -343,8 +354,13 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
                 LOGGER.info("The Daemonic horde awakens");
                 FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-
+                if (Misc.getCommissionFaction() != legio) {
+                    legio.setRelationship(sector.getPlayerFaction().getId(),RepLevel.HOSTILE);
+                    legio.setRelationship(Misc.getCommissionFactionId(),RepLevel.HOSTILE);
+                }
                 NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default",0.1f);
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default",2f);
                 legio.addKnownShip("tahlan_dominator_dmn", false);
                 legio.addKnownShip("tahlan_champion_dmn", false);
                 legio.addKnownShip("tahlan_manticore_dmn", false);

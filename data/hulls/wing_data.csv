@@ -13,7 +13,7 @@ tahlan_Valacor_hunter_wing,tahlan_Valacor_hunter,"fighter6, fighter, high, tahla
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_dorn_funnel_wing,tahlan_dorn_funnel,"mid, support1, fighter, no_drop, no_sell, tahlan_jagd_bp, no_dealer, auto_fighter",0,,2,2,CLAW,3000,500,,6,SUPPORT,Funnel,5,10000,,,,,,,,,,,,,227
 tahlan_eisenflug_regalia_wing,tahlan_eisenflug_regalia,"mid, fighter, fighter10, tahlan_jagd_bp, no_dealer",3,0.1,5,15,V,4000,450,,3,FIGHTER,Mobile Armor,20,30000,,,,,,,,,,,,,229
-tahlan_kupferflug_regalia_wing,tahlan_kupferflug_regalia,"mid, bomber, bomber10, tahlan_jagd_bp, no_dealer",3,0.1,6,15,V,4000,1500,,3,BOMBER,Mobile Armor,20,30000,,,,,,,,,,,,,229
+tahlan_kupferflug_regalia_wing,tahlan_kupferflug_regalia,"mid, bomber, bomber10, tahlan_jagd_bp, no_dealer",3,0.1,6,18,V,4000,1500,,3,BOMBER,Mobile Armor,20,30000,,,,,,,,,,,,,229
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_sutra_drone_wing,tahlan_sutra_drone,"no_drop, no_sell, restricted, no_bp_drop",3,0.1,5,15,V,3000,450,,3,FIGHTER,Drone,10,30000,,,,,,,,,,,,,229
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,

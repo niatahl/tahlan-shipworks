@@ -23,10 +23,10 @@ public class tahlan_FactionRelationPlugin implements SectorGeneratorPlugin {
         //Sets player relations
         player.setRelationship(legio.getId(), RepLevel.HOSTILE);
 
-        //Set hostile to everyone else
+        //Set inhospitable to everyone else
         for (FactionAPI other : Global.getSector().getAllFactions()) {
             if (!other.getId().contains("tahlan_legioinfernalis")) {
-                legio.setRelationship(other.getId(), -0.5f);
+                legio.setRelationship(other.getId(), RepLevel.INHOSPITABLE);
             }
         }
 

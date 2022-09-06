@@ -22,6 +22,7 @@ import static data.scripts.world.tahlan_Lethia.addMarketplace;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class tahlan_Rubicon  {
     public void generate(SectorAPI sector) {
@@ -199,14 +200,15 @@ public class tahlan_Rubicon  {
                                 Industries.HIGHCOMMAND,
                                 Industries.PLANETARYSHIELD,
                                 Industries.LIGHTINDUSTRY,
-                                "tahlan_CloningFacility"
+                                "tahlan_CloningFacility",
+                                "tahlan_legiohq"
                         )
                 ),
                 0.3f,
                 false,
                 true);
 
-        rubicon_3_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.PRISTINE_NANOFORGE)));
+        rubicon_3_market.addIndustry(Industries.ORBITALWORKS, new ArrayList<>(Collections.singletonList(Items.PRISTINE_NANOFORGE)));
         rubicon_3_market.getIndustry(Industries.HIGHCOMMAND).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_3_market.getIndustry(Industries.STARFORTRESS).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_3_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
