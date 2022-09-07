@@ -1,23 +1,30 @@
 package data.scripts.hullmods;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignUIAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.ui.TooltipMakerAPI;
+import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.combat.DefenseUtils;
+
+import java.awt.*;
 
 import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_DaemonPlating extends BaseHullMod {
 
-    private static final float ARMOR_MULT = (float) (1/Math.PI);
+    private static final float ARMOR_MULT = (float) (1 / Math.PI);
+    private static final float ARMOR_MULT_SMOD = 0.5f;
     private static final float CALC_PERCENT = 50f;
-    private static final float CALC_FLAT = 100f;
+    private static final float CALC_FLAT = 200f;
     private static final float ARMOR_CAP = 2000f;
     private static final float REGEN_PER_SEC_PERCENT = 4f;
 
+    private static final float REGEN_PER_SEC_PERCENT_SMOD = 3f;
     private static final float DISUPTION_TIME = 2f;
 
     @Override
@@ -35,15 +42,23 @@ public class tahlan_DaemonPlating extends BaseHullMod {
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
         if (!ship.hasListenerOfClass(tahlan_DaemonArmor.tahlan_DaemonArmorListener.class)) {
-            ship.addListener(tahlan_DaemonArmor.tahlan_DaemonArmorListener.class);
+            ship.addListener(new tahlan_DaemonArmor.tahlan_DaemonArmorListener());
         }
-        if (!DefenseUtils.hasArmorDamage(ship)) return;
+
+
+        if (!DefenseUtils.hasArmorDamage(ship)) {
+//            ship.clearDamageDecals();
+            return;
+        }
+
         if (ship.isHulk()) return;
         if (ship.getFluxTracker().isVenting()) return;
 
-        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorNULLER",-1);
-        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorTRACKER",amount);
-        float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue();
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("nuller", -1);
+
+        float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue() + amount;
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tracker", timer);
+
         if (timer < DISUPTION_TIME) return;
 
         ArmorGridAPI armorGrid = ship.getArmorGrid();
@@ -52,8 +67,12 @@ public class tahlan_DaemonPlating extends BaseHullMod {
 
         float statusMult = ship.getFluxTracker().isOverloaded() ? 0.5f : 1f;
 
+        float regenPercent = REGEN_PER_SEC_PERCENT;
+        if (ship.getVariant().getSMods().contains("tahlan_daemonplating") || ship.getVariant().getHullSpec().isBuiltInMod("tahlan_daemonplating")) {
+            regenPercent = REGEN_PER_SEC_PERCENT_SMOD;
+        }
         float baseCell = armorGrid.getMaxArmorInCell() * Math.min(ship.getHullSpec().getArmorRating(), ARMOR_CAP) / armorGrid.getArmorRating();
-        float repairAmount = baseCell * (REGEN_PER_SEC_PERCENT / 100f) * statusMult * amount;
+        float repairAmount = baseCell * (regenPercent / 100f) * statusMult * amount;
 
         // Iterate through all armor cells and find any that aren't at max
         for (int x = 0; x < grid.length; x++) {
@@ -64,26 +83,45 @@ public class tahlan_DaemonPlating extends BaseHullMod {
                 }
             }
         }
+        ship.syncWithArmorGridState();
+
+
+    }
+
+    @Override
+    public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
+        if (isForModSpec) {
+            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + Math.round((1f-ARMOR_MULT_SMOD)*100f) + txt("%"), "" + Math.round(REGEN_PER_SEC_PERCENT_SMOD) + txt("%"));
+            return;
+        } else if (ship.getVariant().getSMods().contains("tahlan_daemonplating") || ship.getHullSpec().isBuiltInMod("tahlan_daemonplating")) {
+            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getPositiveHighlightColor(), Misc.getHighlightColor(), "" + Math.round((1f-ARMOR_MULT_SMOD)*100f) + txt("%"), "" + Math.round(REGEN_PER_SEC_PERCENT_SMOD) + txt("%"));
+        } else {
+            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + Math.round((1f-ARMOR_MULT_SMOD)*100f) + txt("%"), "" + Math.round(REGEN_PER_SEC_PERCENT_SMOD) + txt("%"));
+        }
     }
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
-        if (index == 1) return "" + Math.round(ARMOR_CAP/100*REGEN_PER_SEC_PERCENT) + "/s";
-        if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
-        if (index == 3) return "" + Math.round(CALC_FLAT);
-        if (index == 4) return txt("halved");
-        if (index == 5) return txt("disabled");
-        if (index == 6) return "" + Math.round(DISUPTION_TIME) + "s";
-        if (index == 7) return txt("pi");
-        if (index == 8) return txt("heavyarmor");
+        if (index == 1) return "" + Math.round(ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT) + "/s";
+//        if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
+        if (index == 2) return "" + Math.round(CALC_FLAT);
+        if (index == 3) return txt("halved");
+        if (index == 4) return txt("disabled");
+        if (index == 5) return "" + Math.round(DISUPTION_TIME) + "s";
+        if (index == 6) return txt("pi");
+        if (index == 7) return txt("heavyarmor");
         return null;
     }
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getArmorBonus().modifyMult(id, ARMOR_MULT);
-        stats.getEffectiveArmorBonus().modifyPercent(id, CALC_PERCENT);
+        if (stats.getVariant().getSMods().contains("tahlan_daemonplating") || stats.getVariant().getHullSpec().isBuiltInMod("tahlan_daemonplating")) {
+            stats.getArmorBonus().modifyMult(id, ARMOR_MULT_SMOD);
+        } else {
+            stats.getArmorBonus().modifyMult(id, ARMOR_MULT);
+        }
+//        stats.getEffectiveArmorBonus().modifyPercent(id, CALC_PERCENT);
         stats.getEffectiveArmorBonus().modifyFlat(id, CALC_FLAT);
     }
 }

@@ -43,7 +43,7 @@
 		"tags":{
 			"tahlan_legio":2,
 			"tahlan_daemon":10,
-			"rare_bp":2,
+			"rare_bp":2
 		},
 		"hulls":{			
 			"tahlan_DunScaith_dmn":0.25, 

@@ -39,5 +39,6 @@ public class tahlan_FactionRelationPlugin implements SectorGeneratorPlugin {
         legio.setRelationship("luddic_church", -1f);
         legio.setRelationship("player", -0.6f);
         legio.setRelationship("tritachyon", 0f);
+        legio.setRelationship("vic", 0.1f);
     }
 }

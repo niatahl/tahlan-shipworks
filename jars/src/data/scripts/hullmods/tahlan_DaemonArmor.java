@@ -1,11 +1,14 @@
 package data.scripts.hullmods;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.combat.listeners.DamageListener;
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import org.lazywizard.lazylib.combat.DefenseUtils;
 import org.lwjgl.util.vector.Vector2f;
+
+import java.awt.*;
 
 import static data.scripts.utils.tahlan_Utils.txt;
 
@@ -14,27 +17,32 @@ public class tahlan_DaemonArmor extends BaseHullMod {
     private static final float ARMOR_CAP = 2000f;
     private static final float REGEN_PER_SEC_PERCENT = 10f;
     private static final float CALC_PERCENT = 50f;
-    private static final float CALC_FLAT = 100f;
+    private static final float CALC_FLAT = 200f;
 
     private static final float DISUPTION_TIME = 2f;
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        stats.getEffectiveArmorBonus().modifyPercent(id,CALC_PERCENT);
+//        stats.getEffectiveArmorBonus().modifyPercent(id,CALC_PERCENT);
+        stats.getEffectiveArmorBonus().modifyFlat(id,CALC_FLAT);
     }
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
         if (!ship.hasListenerOfClass(tahlan_DaemonArmorListener.class)) {
-            ship.addListener(tahlan_DaemonArmorListener.class);
+            ship.addListener(new tahlan_DaemonArmorListener());
+
         }
 
-        if (!DefenseUtils.hasArmorDamage(ship)) return;
+        if (!DefenseUtils.hasArmorDamage(ship)) {
+//            ship.clearDamageDecals();
+            return;
+        }
         if (ship.isHulk()) return;
         if (ship.getFluxTracker().isVenting()) return;
 
-        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorNULLER",-1);
-        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorTRACKER",amount);
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("nuller",-1);
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tracker",amount);
         float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue();
         if (timer < DISUPTION_TIME) return;
 
@@ -56,6 +64,7 @@ public class tahlan_DaemonArmor extends BaseHullMod {
                 }
             }
         }
+        ship.syncWithArmorGridState();
     }
 
     public boolean isApplicableToShip(ShipAPI ship) {
@@ -65,11 +74,11 @@ public class tahlan_DaemonArmor extends BaseHullMod {
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
         if (index == 1) return "" + Math.round(ARMOR_CAP/100*REGEN_PER_SEC_PERCENT) + "/s";
-        if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
-        if (index == 3) return "" + Math.round(CALC_FLAT);
-        if (index == 4) return txt("halved");
-        if (index == 5) return txt("disabled");
-        if (index == 6) return "" + Math.round(DISUPTION_TIME) + "s";
+//        if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
+        if (index == 2) return "" + Math.round(CALC_FLAT);
+        if (index == 3) return txt("halved");
+        if (index == 4) return txt("disabled");
+        if (index == 5) return "" + Math.round(DISUPTION_TIME) + "s";
         return null;
     }
 
@@ -78,9 +87,10 @@ public class tahlan_DaemonArmor extends BaseHullMod {
         public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
             if (shieldHit) return null;
             if (!(target instanceof ShipAPI)) return null;
+
             if (((ShipAPI) target).getVariant().hasHullMod("tahlan_daemonarmor") || ((ShipAPI) target).getVariant().hasHullMod("tahlan_daemonplating")) {
                 if (damage.getDamage() > 0 ) {
-                    ((ShipAPI) target).getMutableStats().getDynamic().getStat("tahlan_daemonarmor").unmodify("tahlan_daemonarmorTRACKER");
+                    ((ShipAPI) target).getMutableStats().getDynamic().getStat("tahlan_daemonarmor").unmodify("tracker");
                 }
             }
             return null;

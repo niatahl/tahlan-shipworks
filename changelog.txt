@@ -19,9 +19,10 @@
 	- Armor 800 -> 900
 	- Mining Lance efficiency 1.3ish -> 1.0
 - Hel Plating/Carapace
-	- Added an additional flat 100 armor for calculation
+	- Armor bonus for damage calculation is now a flat 200
 	- Plating now reduces armor to 1/pi
 	- Regeneration is now disrupted for 2s after taking armor damage
+	- Added S-mod effect: Reduces armor penalty and regeneration rate
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
@@ -65,6 +66,7 @@
 		- This should lead to a hopefully less polarising Legio behaviour while retaining their general
 		  hostile nature.
 		- Now goes hostile to player faction and player Commissioned faction on Daemon upgrade
+- Legio Nex start now starts you as a renegade
 - Updated updated tahlan_settings file to clarify which toggles can be changed mid-campaign
 
 

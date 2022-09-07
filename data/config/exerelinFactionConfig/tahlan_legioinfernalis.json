@@ -12,17 +12,20 @@
 	"invasionPointMult": 1.2,
     
     "difficultyString":"hard",
+	"spawnAsFactionId":"player",	# transfer to this faction at start (after new game time pass)
+    "ngcTooltip":"You fucked up and fell out of grace with the high overlords. Now you're on your own. Earn back your status or seek a new fortune among the stars.",
 
 	"factionIdForHqResponse":"tahlan_legioelite",	
     
     "alignments":{
         "ideological":0.5,
 		"militarist":1,
-		"corporate":-1,
+		"corporate":-1
     },
 	
 	"startRelationships":{
 		"default": -0.4,
+		"player": -1.0,
 		"hegemony": -1.0, 
 		"tritachyon": 0.0,
 		"pirates": 0.80, 
@@ -54,7 +57,8 @@
 		"sylphon": -0.30,
 		"mayasura": -0.40,
 		"persean_league": -0.40,
-		"aria": 0.00
+		"aria": 0.00,
+		"vic": 0.10
 	},
 	
 	"maxRelationships":{ 
@@ -64,18 +68,19 @@
 		"pirates":1,
 		"player":1,
 		"junk_pirates":1,
-		"syndicate_asp":1
+		"syndicate_asp":1,
+		"vic":1
 	},
 	
 	"diplomacyPositiveChance":{
 		"default": 0.5,
 		"diableavionics": 1.0,
+		"vic": 1.0,
 		"pirates":1.5
 	},
 	
 	"diplomacyNegativeChance":{
 		"default": 1,
-		"diableavionics": 0.5,
 		"pirates": 0.1
 	},
 	

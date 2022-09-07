@@ -161,18 +161,18 @@
   "engineSlots": [
     {
       "location": [-63, 37],
-      "length": 85.5,
-      "width": 30,
+      "length": 87,
+      "width": 25,
       "angle": 180,
-      "contrailSize": 33,
+      "contrailSize": 25,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
       "location": [-63, -37],
-      "length": 85.5,
-      "width": 30,
+      "length": 87,
+      "width": 25,
       "angle": -180,
-      "contrailSize": 33,
+      "contrailSize": 25,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
@@ -189,6 +189,38 @@
       "width": 19,
       "angle": -180,
       "contrailSize": 19,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-63.5, 42],
+      "length": 30,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-63.5, -42],
+      "length": 30,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 4,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-63.5, 32],
+      "length": 30,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 4,
+      "style": "TAHLAN_NXA_ENGINE"
+    },
+    {
+      "location": [-63.5, -32],
+      "length": 30,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 4,
       "style": "TAHLAN_NXA_ENGINE"
     }
   ],
