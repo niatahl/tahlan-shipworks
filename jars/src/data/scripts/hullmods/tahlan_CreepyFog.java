@@ -21,46 +21,42 @@ public class tahlan_CreepyFog extends BaseHullMod {
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+        if (!ship.isPhased()) return;
+
         CombatEngineAPI engine = Global.getCombatEngine();
-
-        //if (ship.isPhased()) {
-            interval.advance(amount);
-        //}
-
+        interval.advance(amount);
         if (interval.intervalElapsed()) {
-            //for (int i = 0; i < 5; i++) {
 
-                Vector2f point = new Vector2f(MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()));
-                while (!CollisionUtils.isPointWithinBounds(point,ship)) {
-                    point = MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius());
-                }
+            Vector2f point = new Vector2f(MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()));
+            while (!CollisionUtils.isPointWithinBounds(point, ship)) {
+                point = MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius());
+            }
 
-                engine.addNebulaParticle(
-                        point,
-                        MathUtils.getRandomPointInCircle(ZERO, 50f),
-                        MathUtils.getRandomNumberInRange(200f, 400f),
-                        0.3f,
-                        0.5f,
-                        0.5f,
-                        MathUtils.getRandomNumberInRange(2.0f, 3.4f),
-                        new Color(42, 19, 56, 100)
-                );
+            engine.addNebulaParticle(
+                    point,
+                    MathUtils.getRandomPointInCircle(ZERO, 50f),
+                    MathUtils.getRandomNumberInRange(150f, 300f),
+                    0.3f,
+                    0.5f,
+                    0.5f,
+                    MathUtils.getRandomNumberInRange(2.0f, 3.4f),
+                    new Color(42, 19, 56, 80)
+            );
 
-                while (!CollisionUtils.isPointWithinBounds(point,ship)) {
-                    point = MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius()*0.75f);
-                }
+            while (!CollisionUtils.isPointWithinBounds(point, ship)) {
+                point = MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius() * 0.75f);
+            }
 
-                engine.addNegativeNebulaParticle(
-                        point,
-                        MathUtils.getRandomPointInCircle(ZERO, 50f),
-                        MathUtils.getRandomNumberInRange(150f, 300f),
-                        0.3f,
-                        0.5f,
-                        0.5f,
-                        MathUtils.getRandomNumberInRange(2.0f, 3.4f),
-                        new Color(24, 255, 228, 50)
-                );
-            //}
+            engine.addNegativeNebulaParticle(
+                    point,
+                    MathUtils.getRandomPointInCircle(ZERO, 50f),
+                    MathUtils.getRandomNumberInRange(150f, 300f),
+                    0.3f,
+                    0.5f,
+                    0.5f,
+                    MathUtils.getRandomNumberInRange(2.0f, 3.4f),
+                    new Color(24, 255, 228, 40)
+            );
         }
     }
 }

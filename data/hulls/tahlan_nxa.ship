@@ -12,7 +12,9 @@
   "shieldRadius": 148,
   "viewOffset": 0,
   "builtInMods": [
-    "tahlan_phaseharmonics"
+    "tahlan_phaseharmonics",
+    "phasefield",
+    "tahlan_spookyFog"
   ],
   "builtInWeapons": {
     "WS0013": "tahlan_nxa_cover",
@@ -175,18 +177,18 @@
     },
     {
       "location": [-76, 52.5],
-      "length": 45.5,
-      "width": 11,
+      "length": 79,
+      "width": 19,
       "angle": 180,
-      "contrailSize": 11,
+      "contrailSize": 19,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
       "location": [-76, -52.5],
-      "length": 45.5,
-      "width": 11,
+      "length": 79,
+      "width": 19,
       "angle": -180,
-      "contrailSize": 11,
+      "contrailSize": 19,
       "style": "TAHLAN_NXA_ENGINE"
     }
   ],

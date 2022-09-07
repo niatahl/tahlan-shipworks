@@ -17,10 +17,11 @@
 	- New sprite
 	- Removed mining pods
 	- Armor 800 -> 900
-	- Mining Lnace efficiency 1.3ish -> 1.0
+	- Mining Lance efficiency 1.3ish -> 1.0
 - Hel Plating/Carapace
 	- Added an additional flat 100 armor for calculation
 	- Plating now reduces armor to 1/pi
+	- Regeneration is now disrupted for 2s after taking armor damage
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
@@ -40,6 +41,15 @@
 	- Chargeup 0.33333 -> 0.2
 - Bungalow
 	- New sprite
+- Doominator
+	- Speed 40 -> 60
+	- Dissipation 500 -> 700
+	- No longer spawns in regular fleets
+- Nelson
+	- Armor 1200 -> 1100
+	- System cooldown 5s -> 8s
+- Poltergeist
+	- Flux capacity 9000 -> 10000
 - Other minor sprite updates
 - Daemons
 	- Moved high maintenance effect to Daemon Core Hullmod
@@ -55,6 +65,7 @@
 		- This should lead to a hopefully less polarising Legio behaviour while retaining their general
 		  hostile nature.
 		- Now goes hostile to player faction and player Commissioned faction on Daemon upgrade
+- Updated updated tahlan_settings file to clarify which toggles can be changed mid-campaign
 
 
 

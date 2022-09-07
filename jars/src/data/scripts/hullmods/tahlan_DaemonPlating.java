@@ -18,6 +18,8 @@ public class tahlan_DaemonPlating extends BaseHullMod {
     private static final float ARMOR_CAP = 2000f;
     private static final float REGEN_PER_SEC_PERCENT = 4f;
 
+    private static final float DISUPTION_TIME = 2f;
+
     @Override
     public boolean isApplicableToShip(ShipAPI ship) {
         return (!ship.getVariant().hasHullMod("tahlan_daemonarmor") && !ship.getVariant().hasHullMod("tahlan_heavyconduits"));
@@ -32,9 +34,17 @@ public class tahlan_DaemonPlating extends BaseHullMod {
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+        if (!ship.hasListenerOfClass(tahlan_DaemonArmor.tahlan_DaemonArmorListener.class)) {
+            ship.addListener(tahlan_DaemonArmor.tahlan_DaemonArmorListener.class);
+        }
         if (!DefenseUtils.hasArmorDamage(ship)) return;
         if (ship.isHulk()) return;
         if (ship.getFluxTracker().isVenting()) return;
+
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorNULLER",-1);
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorTRACKER",amount);
+        float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue();
+        if (timer < DISUPTION_TIME) return;
 
         ArmorGridAPI armorGrid = ship.getArmorGrid();
         final float[][] grid = armorGrid.getGrid();
@@ -64,8 +74,9 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         if (index == 3) return "" + Math.round(CALC_FLAT);
         if (index == 4) return txt("halved");
         if (index == 5) return txt("disabled");
-        if (index == 6) return txt("pi");
-        if (index == 7) return txt("heavyarmor");
+        if (index == 6) return "" + Math.round(DISUPTION_TIME) + "s";
+        if (index == 7) return txt("pi");
+        if (index == 8) return txt("heavyarmor");
         return null;
     }
 

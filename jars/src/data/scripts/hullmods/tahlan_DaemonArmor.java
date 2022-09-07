@@ -1,10 +1,11 @@
 package data.scripts.hullmods;
 
-import com.fs.starfarer.api.combat.ArmorGridAPI;
-import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
+import com.fs.starfarer.api.combat.listeners.DamageListener;
+import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import org.lazywizard.lazylib.combat.DefenseUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 import static data.scripts.utils.tahlan_Utils.txt;
 
@@ -15,6 +16,8 @@ public class tahlan_DaemonArmor extends BaseHullMod {
     private static final float CALC_PERCENT = 50f;
     private static final float CALC_FLAT = 100f;
 
+    private static final float DISUPTION_TIME = 2f;
+
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
         stats.getEffectiveArmorBonus().modifyPercent(id,CALC_PERCENT);
@@ -22,9 +25,18 @@ public class tahlan_DaemonArmor extends BaseHullMod {
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+        if (!ship.hasListenerOfClass(tahlan_DaemonArmorListener.class)) {
+            ship.addListener(tahlan_DaemonArmorListener.class);
+        }
+
         if (!DefenseUtils.hasArmorDamage(ship)) return;
         if (ship.isHulk()) return;
         if (ship.getFluxTracker().isVenting()) return;
+
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorNULLER",-1);
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tahlan_daemonarmorTRACKER",amount);
+        float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue();
+        if (timer < DISUPTION_TIME) return;
 
         ArmorGridAPI armorGrid = ship.getArmorGrid();
         final float[][] grid = armorGrid.getGrid();
@@ -57,6 +69,22 @@ public class tahlan_DaemonArmor extends BaseHullMod {
         if (index == 3) return "" + Math.round(CALC_FLAT);
         if (index == 4) return txt("halved");
         if (index == 5) return txt("disabled");
+        if (index == 6) return "" + Math.round(DISUPTION_TIME) + "s";
         return null;
     }
+
+    static class tahlan_DaemonArmorListener implements DamageTakenModifier {
+        @Override
+        public String modifyDamageTaken(Object param, CombatEntityAPI target, DamageAPI damage, Vector2f point, boolean shieldHit) {
+            if (shieldHit) return null;
+            if (!(target instanceof ShipAPI)) return null;
+            if (((ShipAPI) target).getVariant().hasHullMod("tahlan_daemonarmor") || ((ShipAPI) target).getVariant().hasHullMod("tahlan_daemonplating")) {
+                if (damage.getDamage() > 0 ) {
+                    ((ShipAPI) target).getMutableStats().getDynamic().getStat("tahlan_daemonarmor").unmodify("tahlan_daemonarmorTRACKER");
+                }
+            }
+            return null;
+        }
+    }
+
 }

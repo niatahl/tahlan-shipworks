@@ -55,7 +55,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public static final String KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl";
     public static final String DOLCH_MISSILE_ID = "tahlan_dolch_msl";
 
-    private static final String SETTINGS_FILE = "tahlan_settings.ini";
+    private static final String SETTINGS_FILE = "tahlan_settings.json";
 
     public static boolean ENABLE_LETHIA;
     public static boolean ENABLE_LEGIO;
@@ -99,7 +99,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
         try {
             loadTahlanSettings();
         } catch (IOException | JSONException e) {
-            Global.getLogger(tahlan_ModPlugin.class).log(Level.ERROR, "tahlan_settings.ini loading failed! ;....; " + e.getMessage());
+            Global.getLogger(tahlan_ModPlugin.class).log(Level.ERROR, "tahlan_settings.json loading failed! ;....; " + e.getMessage());
         }
 
 
@@ -140,6 +140,8 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             if (ENABLE_LEGIOBPS) {
                 Global.getSector().addScript(new tahlan_LegioStealingHomework());
             }
+
+            sector.getMemoryWithoutUpdate().set("$tahlan_haslegio",true);
 
         } else {
             sector.getFaction("tahlan_legioinfernalis").setShowInIntelTab(false);
@@ -227,7 +229,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             sector.getFaction("remnant").addKnownWeapon("tahlan_relparax", false);
             sector.getFaction("remnant").addKnownWeapon("tahlan_nenparax", false);
         }
-        if (ENABLE_LEGIO) {
+        if (sector.getMemoryWithoutUpdate().getBoolean("$tahlan_haslegio")) {
             // Add our listener for stuff
             if (ENABLE_DAEMONS) {
                 Global.getSector().addTransientListener(new TahlanTrigger());

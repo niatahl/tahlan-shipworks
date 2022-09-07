@@ -1,11 +1,13 @@
 {
-	#All settings here only apply to new campaigns. Once you have made your choice, it is premanent for that campaign.
+	#SAVE-LOCKED SETTINGS - Changes only apply to new campaigns
 
 	#enables the Lethia system housing Kassadar.
 	"enableLethia": true,
 	
 	#enables the Legio Infernalis, an elite pirate faction.
 	"enableLegio": true,
+
+    #TOGGLES - Apply to existing saves on save load (but can take some time to fully take effect)
 
 	#enables Legio droneships.
 	"enableDaemons": true,

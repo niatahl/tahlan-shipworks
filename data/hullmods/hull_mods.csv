@@ -108,12 +108,12 @@ Increases supply use for maintenance and recovery by %s.",Enhances targeting,gra
 Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png
 Hel Carapace,tahlan_daemonarmor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s and an additional flat %s.
 
-Regeneration is %s while overloaded and %s while actively venting flux.
+Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the low durability makes it vulnerable to focused fire.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,data.scripts.hullmods.tahlan_DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s and an additional flat %s.
 
-Regeneration is %s while overloaded and %s while actively venting flux.
+Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png

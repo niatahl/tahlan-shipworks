@@ -4,8 +4,12 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import com.fs.starfarer.api.util.IntervalUtil;
 
 import java.awt.*;
+import java.util.Timer;
+
+import static data.scripts.utils.tahlan_afterimage.renderCustomAfterimage;
 
 public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
 
@@ -23,6 +27,8 @@ public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
     private boolean runOnce = false;
 
     private static final float PHASE_RATIO = 0.33f;
+
+    private final IntervalUtil interval = new IntervalUtil(0.4f,0.4f);
 
     protected Object STATUSKEY1 = new Object();
     protected Object STATUSKEY2 = new Object();
@@ -96,7 +102,8 @@ public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
             return;
         }
 
-        activeTime += Global.getCombatEngine().getElapsedInLastFrame();
+        CombatEngineAPI engine = Global.getCombatEngine();
+        activeTime += engine.getElapsedInLastFrame();
 
         float activeFraction = activeTime/cloak.getChargeActiveDur();
         float levelForAlpha = effectLevel;
@@ -119,7 +126,7 @@ public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
                 Global.getSoundPlayer().playLoop("system_temporalshell_loop",ship,1f,1f,ship.getLocation(),ship.getVelocity());
                 ship.setPhased(false);
                 levelForAlpha = Math.max(1f-(activeFraction-PHASE_RATIO)*10f, 0f);
-                ship.setJitterUnder(id,new Color(239, 40, 110,80),1f-levelForAlpha,10,5f);
+                ship.setJitterUnder(id,new Color(239, 40, 110,80),1f-levelForAlpha,10,8f);
             }
         }
 
