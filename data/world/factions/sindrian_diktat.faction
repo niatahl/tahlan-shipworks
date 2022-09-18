@@ -9,6 +9,7 @@
 		"hulls":{
 			"tahlan_Hresvelgr":0.5,
 			"tahlan_skyrend":0.5,
+			"tahlan_Ingress":0.3
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -32,6 +33,7 @@
 		#"tags":[],
 		"hulls":[
 			"tahlan_skyrend",
+			"tahlan_Ingress"
 		],
 	},
 	

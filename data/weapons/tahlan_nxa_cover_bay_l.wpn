@@ -26,9 +26,9 @@
     0,
     0
   ],
-  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_nxa_cover_r.png",
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_nxa_cover_bay_l.png",
   "hitGlowRadius": 0,
-  "id": "tahlan_nxa_cover_r",
+  "id": "tahlan_nxa_cover_bay_l",
   "showDamageWhenDecorative": True,
   "pixelsPerTexel": 1,
   "size": "LARGE",
@@ -42,7 +42,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_nxa_cover_r.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_nxa_cover_bay_l.png",
   "type": "DECORATIVE",
   "width": 10
 }

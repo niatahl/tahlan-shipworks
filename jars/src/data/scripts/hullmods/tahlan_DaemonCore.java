@@ -32,8 +32,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
     }
 
     private static final float SUPPLIES_PERCENT = 100f;
-
-    private static final Color JITTER_COLOR = new Color(255, 0, 0, 20);
+    private static final float SPEED_BUFF = 0.2f;
+    private static final float SPEED_CAP = 0.6f;
+    private static final Color JITTER_COLOR = new Color(255, 0, 0, 30);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
 
     private static final IntervalUtil kaboom = new IntervalUtil(1f, 10f);
@@ -66,7 +67,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
             return;
         }
 
-        // Hackery to make the ships uniquely more poteent while in Legio fleets in attempt to keep them more balanced in player hands
+        // Hackery to make the ships uniquely more potent while in Legio fleets in attempt to keep them more balanced in player hands
         boolean isPlayerFleet = false;
         for (FleetMemberAPI member : Global.getSector().getPlayerFleet().getFleetData().getMembersListCopy()) {
             if (member.getVariant().getHullVariantId().equals(ship.getVariant().getHullVariantId())) {
@@ -79,7 +80,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
         }
 
         if (isPlayerFleet) {
-            ship.getMutableStats().getTimeMult().modifyMult(id,0.9f);
+            ship.getMutableStats().getTimeMult().modifyMult(id, 0.9f);
         } else {
             ship.getVariant().addMod("tahlan_daemonboost");
         }
@@ -93,6 +94,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
         if (engine == null) {
             return;
         }
+
+        float speedBoost = 1f - Math.min(1f,  (ship.getFluxLevel() / SPEED_CAP) );
+        ship.getMutableStats().getMaxSpeed().modifyMult(dc_id, 1f+(speedBoost * SPEED_BUFF));
 
         if (engine.getFleetManager(ship.getOwner()) == engine.getFleetManager(FleetSide.PLAYER)) {
             //Only run this in campaign context, not missions
@@ -114,13 +118,16 @@ public class tahlan_DaemonCore extends BaseHullMod {
 
                             //cancel orders so the AI doesn't get confused
                             DeployedFleetMemberAPI member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
-                            if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false);
+                            if (member_a != null)
+                                Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false);
 
                             DeployedFleetMemberAPI member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship);
-                            if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false);
+                            if (member_aa != null)
+                                Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false);
 
                             DeployedFleetMemberAPI member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship);
-                            if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false);
+                            if (member_b != null)
+                                Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false);
 
                             ship.getShipAI().forceCircumstanceEvaluation();
                         }
@@ -136,10 +143,10 @@ public class tahlan_DaemonCore extends BaseHullMod {
             }
 
             // Enrage function
-            float enrage = 1f + (ship.getHullLevel() * 0.25f);
-            ship.getMutableStats().getTimeMult().modifyMult(dc_id, enrage);
-            ship.setJitter(dc_id, JITTER_COLOR, 1f - ship.getHullLevel(), 3, 5f);
-            ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, 1f - ship.getHullLevel(), 20, 10f);
+            float enrage = 1f - ship.getHullLevel();
+            ship.getMutableStats().getTimeMult().modifyMult(dc_id, 1f + (enrage * 0.25f));
+            ship.setJitter(dc_id, JITTER_COLOR, enrage, 3, 5f);
+            ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, enrage, 20, 15f);
 
 
         }
@@ -206,7 +213,9 @@ public class tahlan_DaemonCore extends BaseHullMod {
         if (index == 1) return "" + 25 + txt("%");
         if (index == 2) return "" + 50 + txt("%");
         if (index == 3) return "" + 90 + txt("%");
-        if (index == 4) return "" + (int)SUPPLIES_PERCENT +txt("%");
+        if (index == 4) return "" + 60 + txt("%");
+        if (index == 5) return "" + 20 + txt("%");
+        if (index == 6) return "" + (int) SUPPLIES_PERCENT + txt("%");
         return null;
     }
 

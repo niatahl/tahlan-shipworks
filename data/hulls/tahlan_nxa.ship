@@ -19,7 +19,9 @@
   "builtInWeapons": {
     "WS0013": "tahlan_nxa_cover",
     "WS0014": "tahlan_nxa_cover_l",
-    "WS0015": "tahlan_nxa_cover_r"
+    "WS0015": "tahlan_nxa_cover_r",
+    "WS0016": "tahlan_nxa_cover_bay_l",
+    "WS0017": "tahlan_nxa_cover_bay_r"
   },
   "weaponSlots": [
     {
@@ -137,25 +139,43 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [34.5, -0]
+      "locations": [34.5, 0.5]
     },
     {
       "id": "WS0014",
-      "size": "MEDIUM",
+      "size": "LARGE",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
-      "locations": [72, 43.5]
+      "locations": [61, 43.5]
     },
     {
       "id": "WS0015",
-      "size": "MEDIUM",
+      "size": "LARGE",
       "type": "DECORATIVE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 0,
       "angle": -0,
-      "locations": [72, -43.5]
+      "locations": [61, -43.5]
+    },
+    {
+      "id": "WS0016",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [40, 17.5]
+    },
+    {
+      "id": "WS0017",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": -0,
+      "locations": [40, -17.5]
     }
   ],
   "engineSlots": [

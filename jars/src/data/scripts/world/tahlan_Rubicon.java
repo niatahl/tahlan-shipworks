@@ -17,6 +17,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 
+import static data.scripts.tahlan_ModPlugin.HAS_INDEVO;
 import static data.scripts.world.tahlan_Lethia.addMarketplace;
 
 import java.awt.*;
@@ -83,7 +84,7 @@ public class tahlan_Rubicon  {
                 "cryovolcanic",
                 360f*(float)Math.random(),
                 150f,
-                3600f,
+                4600f,
                 320f);
 
         rubicon_1.setCustomDescriptionId("tahlan_rubicon_p01");
@@ -133,7 +134,7 @@ public class tahlan_Rubicon  {
         rubicon_1_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
 
         SectorEntityToken stableLoc1 = system.addCustomEntity("tahlan_rubicon_stableloc_1", "Stable Location", "stable_location", Factions.NEUTRAL);
-        stableLoc1.setCircularOrbit(rubicon_star, MathUtils.getRandomNumberInRange(0f,360f),4200f, 520);
+        stableLoc1.setCircularOrbit(rubicon_star, MathUtils.getRandomNumberInRange(0f,360f),5400f, 520);
 
         // Second Planet
         PlanetAPI rubicon_2 = system.addPlanet("tahlan_rubicon_p02",
@@ -142,7 +143,7 @@ public class tahlan_Rubicon  {
                 "barren3",
                 360f*(float)Math.random(),
                 210f,
-                4800f,
+                6000f,
                 410f);
 
         PlanetConditionGenerator.generateConditionsForPlanet(rubicon_2,StarAge.OLD);
@@ -151,7 +152,7 @@ public class tahlan_Rubicon  {
                 "Rubicon Relay", // name - if null, defaultName from custom_entities.json will be used
                 "comm_relay", // type of object, defined in custom_entities.json
                 "tahlan_legioinfernalis"); // faction
-        relay.setCircularOrbitPointingDown( rubicon_star, 360f*(float)Math.random(), 5900, MathUtils.getRandomNumberInRange(250, 410));
+        relay.setCircularOrbitPointingDown( rubicon_star, 360f*(float)Math.random(), 6700, MathUtils.getRandomNumberInRange(250, 410));
 
         // Third Planet - Primary Legio base
         PlanetAPI rubicon_3 = system.addPlanet("tahlan_rubicon_p03",
@@ -160,7 +161,7 @@ public class tahlan_Rubicon  {
                 "toxic_cold",
                 360f*(float)Math.random(),
                 320f,
-                6000f,
+                7400f,
                 380f);
 
         rubicon_3.setCustomDescriptionId("tahlan_rubicon_p03");
@@ -236,7 +237,7 @@ public class tahlan_Rubicon  {
         // Let's procgen some stuff here cause fuck doing that manually
         float radiusAfter = StarSystemGenerator.addOrbitingEntities(system, rubicon_star, StarAge.OLD,
                 4, 6, // min/max entities to add
-                6800, // radius to start adding at
+                8000, // radius to start adding at
                 3, // name offset - next planet will be <system name> <roman numeral of this parameter + 1>
                 true); // whether to use custom or system-name based names
 
@@ -283,6 +284,15 @@ public class tahlan_Rubicon  {
         rubicon_outpost_market.getIndustry(Industries.MILITARYBASE).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_outpost_market.getIndustry(Industries.STARFORTRESS).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_outpost_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
+
+        if (HAS_INDEVO) {
+            rubicon_3_market.addCondition("IndEvo_ArtilleryStationCondition");
+            rubicon_3_market.addIndustry("IndEvo_Artillery_mortar");
+            rubicon_1_market.addCondition("IndEvo_ArtilleryStationCondition");
+            rubicon_1_market.addIndustry("IndEvo_Artillery_railgun");
+            rubicon_outpost_market.addCondition("IndEvo_ArtilleryStationCondition");
+            rubicon_outpost_market.addIndustry("IndEvo_Artillery_missile");
+        }
 
         // Bit more procgen
         float radiusAfter2 = StarSystemGenerator.addOrbitingEntities(system, rubicon_star, StarAge.OLD,

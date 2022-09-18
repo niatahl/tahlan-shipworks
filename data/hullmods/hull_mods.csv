@@ -90,7 +90,7 @@ Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,
 ,,,,,,,,,,,,,,,,,,
 Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
 ,,,,,,,,,,,,,,,,,,
-Phase Harmonics,tahlan_phaseharmonics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_phaseHarmonics,"The fully integrated phase grid of this ship can place the ship in a partial phase state during low stress periods.
+Phase Harmonics,tahlan_phaseharmonics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_phaseHarmonics,"The fully integrated phase grid of this ship can place it in a partial phase state during low stress periods.
 
 While the %s is out of charges, all damage taken is reduces by %s and active vent rate is increased by %s.",Enhances defenses and venting during system downtime.,graphics/tahlan/hullmods/tahlan_phaseharmonics.png
 Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileVents,(Hidden) Venting spawns volatile emp arcs,(Hidden) Venting spawns volatile emp arcs,
@@ -100,7 +100,7 @@ Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmo
 Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_10pctCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
 Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_CreepyFog,(Hidden) Adds spooky fog to a ship,(Hidden) Adds spooky fog to a ship,
 Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
-Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities by %s and reduces recoil by %s. Further increases damage to missiles by %s. Specialised integration enhances the tracking capabilities of Legio smartguns.
+Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities by %s and reduces recoil by %s. Further increases damage to missiles by %s. Specialised integration enhances the tracking capabilities of Legio smartguns. Engines are increasing optimised at flux levels below %s, increasing top speed by up to %s at zero flux and
 
 There appear to be various protocols in place restricting the ship's capabilities without Legio command codes, causing it to only operate at %s of its peak capacity. Furthermore your technicians have found a number of backdoors that might allow certain Daemon command ships to take direct remote control of this vessel, though they estimate this would require close proximity to said command ship. Any attempts to remove these restrictions would unfortunately cripple the essential automated systems of the ship, rendering it effectively useless.
 
@@ -115,6 +115,6 @@ Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,data.sc
 
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
-While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by a factor of %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,graphics/tahlan/hullmods/tahlan_stealthplating.png

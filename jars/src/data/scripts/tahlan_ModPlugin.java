@@ -47,7 +47,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     }
 
 
-
     //All hullmods related to shields, saved in a convenient list
     public static List<String> SHIELD_HULLMODS = new ArrayList<>();
 
@@ -59,7 +58,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
 
     public static boolean ENABLE_LETHIA;
     public static boolean ENABLE_LEGIO;
-//    public static boolean ENABLE_SIEGE;
+    //    public static boolean ENABLE_SIEGE;
     public static boolean ENABLE_LIFELESS;
     public static boolean ENABLE_LEGIOBPS;
     public static boolean ENABLE_DAEMONS;
@@ -68,7 +67,6 @@ public class tahlan_ModPlugin extends BaseModPlugin {
     public static boolean HAS_INDEVO = false;
 
     public static final Logger LOGGER = Global.getLogger(tahlan_ModPlugin.class);
-
 
 
     @Override
@@ -141,7 +139,7 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 Global.getSector().addScript(new tahlan_LegioStealingHomework());
             }
 
-            sector.getMemoryWithoutUpdate().set("$tahlan_haslegio",true);
+            sector.getMemoryWithoutUpdate().set("$tahlan_haslegio", true);
 
         } else {
             sector.getFaction("tahlan_legioinfernalis").setShowInIntelTab(false);
@@ -229,6 +227,10 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             sector.getFaction("remnant").addKnownWeapon("tahlan_relparax", false);
             sector.getFaction("remnant").addKnownWeapon("tahlan_nenparax", false);
         }
+        // fallback - If Lucifron exists, so does Legio, probably
+        if (sector.getEconomy().getMarket("tahlan_rubicon_p03_market") != null) {
+            sector.getMemoryWithoutUpdate().set("$tahlan_haslegio",true);
+        }
         if (sector.getMemoryWithoutUpdate().getBoolean("$tahlan_haslegio")) {
             // Add our listener for stuff
             if (ENABLE_DAEMONS) {
@@ -265,17 +267,23 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.removePriorityShip("tahlan_sunder_dmn");
                 legio.removePriorityShip("tahlan_kodai_dmn");
             }
-            MarketAPI market = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
-            if (market != null) {
-                if (!market.hasIndustry("tahlan_legiohq")) {
-                    market.addIndustry("tahlan_legiohq");
+            // Adding new fun(tm) to existing saves
+            MarketAPI lucifron = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
+            if (lucifron != null && HAS_INDEVO) {
+                MarketAPI melchi = sector.getEconomy().getMarket("tahlan_rubicon_p01_market");
+                MarketAPI adra = sector.getEconomy().getMarket("tahlan_rubicon_outpost_market");
+                if (!lucifron.hasCondition("IndEvo_mineFieldCondition")) {
+                    lucifron.addCondition("IndEvo_mineFieldCondition");
+                    melchi.addCondition("IndEvo_mineFieldCondition");
+                    adra.addCondition("IndEvo_mineFieldCondition");
                 }
-                if (HAS_INDEVO) {
-                    if (!market.hasCondition("IndEvo_mineFieldCondition")) {
-                        market.addCondition("IndEvo_mineFieldCondition");
-                        sector.getEconomy().getMarket("tahlan_rubicon_p01_market").addCondition("IndEvo_mineFieldCondition");
-                        sector.getEconomy().getMarket("tahlan_rubicon_outpost_market").addCondition("IndEvo_mineFieldCondition");
-                    }
+                if (!lucifron.hasCondition("IndEvo_ArtilleryStationCondition")) {
+                    lucifron.addCondition("IndEvo_ArtilleryStationCondition");
+                    lucifron.addIndustry("IndEvo_Artillery_mortar");
+                    melchi.addCondition("IndEvo_ArtilleryStationCondition");
+                    melchi.addIndustry("IndEvo_Artillery_railgun");
+                    adra.addCondition("IndEvo_ArtilleryStationCondition");
+                    adra.addIndustry("IndEvo_Artillery_missile");
                 }
             }
         }
@@ -283,12 +291,12 @@ public class tahlan_ModPlugin extends BaseModPlugin {
             if (!NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
                 NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
             }
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default",0.1f);
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default",2f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default", 0.1f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default", 2f);
         } else {
             NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous");
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default",0.5f);
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default",1f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default", 0.5f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default", 1f);
         }
     }
 
@@ -357,12 +365,13 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 LOGGER.info("The Daemonic horde awakens");
                 FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
                 if (Misc.getCommissionFaction() != legio) {
-                    legio.setRelationship(sector.getPlayerFaction().getId(),RepLevel.HOSTILE);
-                    legio.setRelationship(Misc.getCommissionFactionId(),RepLevel.HOSTILE);
+                    legio.setRelationship(sector.getPlayerFaction().getId(), RepLevel.HOSTILE);
+                    if (Misc.getCommissionFaction() != null)
+                        legio.setRelationship(Misc.getCommissionFactionId(), RepLevel.HOSTILE);
                 }
                 NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
-                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default",0.1f);
-                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default",2f);
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default", 0.1f);
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default", 2f);
                 legio.addKnownShip("tahlan_dominator_dmn", false);
                 legio.addKnownShip("tahlan_champion_dmn", false);
                 legio.addKnownShip("tahlan_manticore_dmn", false);

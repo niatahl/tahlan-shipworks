@@ -13,7 +13,8 @@
     "knownShips":{
         "hulls":[
             "tahlan_Nameless",
-			"tahlan_Timeless"
+			"tahlan_Timeless",
+            "tahlan_equinox"
         ],
     },
 

@@ -31,7 +31,7 @@
   "id": "tahlan_nxa_cover_l",
   "showDamageWhenDecorative": True,
   "pixelsPerTexel": 1,
-  "size": "MEDIUM",
+  "size": "LARGE",
   "specClass": "beam",
   "textureScrollSpeed": 64,
   "textureType": ROUGH,  

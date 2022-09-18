@@ -12,17 +12,18 @@ import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.combat.DefenseUtils;
 
 import java.awt.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import static data.scripts.utils.tahlan_Utils.txt;
 
 public class tahlan_DaemonPlating extends BaseHullMod {
 
-    private static final float ARMOR_MULT = (float) (1 / Math.PI);
-    private static final float ARMOR_MULT_SMOD = 0.5f;
-    private static final float CALC_PERCENT = 50f;
+    private static final float ARMOR_MULT = 0.3014275134f;
+    private static final float ARMOR_MULT_SMOD = 0.49815742465f;
     private static final float CALC_FLAT = 200f;
     private static final float ARMOR_CAP = 2000f;
-    private static final float REGEN_PER_SEC_PERCENT = 4f;
+    private static final float REGEN_PER_SEC_PERCENT = 5f;
 
     private static final float REGEN_PER_SEC_PERCENT_SMOD = 3f;
     private static final float DISUPTION_TIME = 2f;
@@ -109,7 +110,7 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         if (index == 3) return txt("halved");
         if (index == 4) return txt("disabled");
         if (index == 5) return "" + Math.round(DISUPTION_TIME) + "s";
-        if (index == 6) return txt("pi");
+        if (index == 6) return "" + Math.round(1f-ARMOR_MULT) + txt("%");
         if (index == 7) return txt("heavyarmor");
         return null;
     }

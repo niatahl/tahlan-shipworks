@@ -124,11 +124,11 @@
 		"TAHLAN_NXA_ENGINE":{
 		"engineColor":[255,80,120,255],
 		"contrailParticleSizeMult":2,
-		"contrailParticleDuration":1,
+		"contrailParticleDuration":0,
 		"contrailParticleFinalSizeMult":2.5,
 		"contrailMaxSpeedMult":0.5,
 		"contrailAngularVelocityMult":0.5,
-		"contrailColor":[205,60,210,60],
+		"contrailColor":[205,60,210,0],
 		"contrailCampaignColor":[255,80,120,240],
 		#"glowAlternateColor":[255,90,20,185],
 		#"glowSprite":"graphics/tahlan/fx/tahlan_gh_engineglow.png",

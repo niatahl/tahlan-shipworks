@@ -196,6 +196,9 @@
 		"tahlan_halbmond_citadel": 10,
 		"tahlan_Castella_pirates_standard": 5,
 		"tahlan_Castella_pirates_artillery": 5,
+		"tahlan_equinox_beamer":2,
+		"tahlan_equinox_lancer":3,
+		"tahlan_equinox_strike":5
 	},
 
 	# phase ships

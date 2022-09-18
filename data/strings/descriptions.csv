@@ -120,6 +120,9 @@ Often described as the Champion's more aggressive cousin due to some layout simi
 tahlan_tower,SHIP,"The result of efforts to marry a heavy cruiser with an escort carrier, the Column is a messy design that came about from a need to counter carrier-heavy fleets. To this purpose it was outfitted with a pair of fully integrated dual flak cannons and fighter bays capable of carrying two wings of interceptors, giving it the theoretical capability to fend off fighter attacks.
 
 The design ultimately fell short of its goals due to the simple inability to actually catch the carriers it was meant to counter, but found some new love with commanders who appreciated the ability to carry a small strike package aboard a capable frontline combatant.",,,
+tahlan_equinox,SHIP,"A remnant of the autonomous AI fleets developed by the Tri-Tachyon Corporation. Illegal under Domain (and Hegemony) law, and an abomination to the Church of Galactic Redemption, the First AI War saw these creations purged from the Sector. So the official histories say.
+
+Combining a powerful fighter complement with effective shipborne weaponry, this ship is a credible threat to any vessel employed within the Persean Sector. By no means a backline combat unit, the Equinox can easily hold her own on the frontlines of combat, providing either considerable strike capabilities or fighter dominance.",,,
 ,,,,,
 ,,,,,
 #LosTech,,,,,
@@ -575,6 +578,7 @@ tahlan_machinespirit,SHIP_SYSTEM,"Increases ballistic and energy weapon rate of 
 tahlan_boostthruster,SHIP_SYSTEM,Activates heavy boost thruster to increase forward top speed by up to 80 and enhance maneuverability slightly. Much more effective when moving forward.,Mobility,,
 tahlan_heltempshell,SHIP_SYSTEM,"Modified Temporal Shell system. Only accelerates timeflow by a factor of 2, but increased duration.",General,,
 tahlan_phasebreaker,SHIP_SYSTEM,"Phases the ship for a short moment then enters a quantum superposition of both states, allowing it to retain the temporal flow of phase space while interacting with realspace.",General,,
+tahlan_coordinatedstrike,SHIP_SYSTEM,Increases the damage of energy weapons and all fighter weapons by 50%.,Fighters,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,
@@ -591,3 +595,4 @@ tahlan_rubicon_outpost,CUSTOM,A small military outpost at the edge of the system
 tahlan_legioinfernalis,FACTION,"The Legio Infernalis are an odd breed of pirates with great ambitions that has recently come to greater prominence. While most of them are no different from the average pirate, their leadership appears significantly more sophisticated with a well-established military hierarchy.
 
 Legio Infernalis fleets are feared for their far superior equipment when compared to regular pirates and it is assumed they receive considerable backing from an unknown organization.",,,
+,,,,,

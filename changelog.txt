@@ -3,7 +3,10 @@
 - Added Hel Hound
 - Added Hel Kodai
 - Added Raba-class Mining Barge
-- Added ???
+- Added Equinox Remnant battlecarrier
+- Added Eagle (NW)
+- Added Falcon (NW)
+- Added NX-A
 - Hel Vanguard
 	- Defense changed from damper to shields
 - Hel Dominator
@@ -18,11 +21,6 @@
 	- Removed mining pods
 	- Armor 800 -> 900
 	- Mining Lance efficiency 1.3ish -> 1.0
-- Hel Plating/Carapace
-	- Armor bonus for damage calculation is now a flat 200
-	- Plating now reduces armor to 1/pi
-	- Regeneration is now disrupted for 2s after taking armor damage
-	- Added S-mod effect: Reduces armor penalty and regeneration rate
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
@@ -51,12 +49,34 @@
 	- System cooldown 5s -> 8s
 - Poltergeist
 	- Flux capacity 9000 -> 10000
+- Ingress
+	- Should actually spawn more commonly now
 - Other minor sprite updates
-- Daemons
+- Daemon Core
 	- Moved high maintenance effect to Daemon Core Hullmod
+	- Fixed a major bug that caused enrage working in recoveries
+		- This means they effectively had a permanent 25% time acceleration effect that decayed with ship HP
+		- It's supposed to work the other way round
+		- This is basically an effective 20% nerf to all Daemons
+	- Added a flux-based speed boost to Daemon Core
+		- Partial compensation for bugfix
+		- Max buff at 0 flux
+		- No buff at 60% buff
+		- Should retain current Daemon agility on attack, but limit their ability to easily disengage
+- Daemon ships
+	- Buffed shield efficiency by 0.1 across the board
+		- ie. 0.9 became 0.8 etc
+- Hel Carapace
+	- Armor bonus for damage calculation is now a flat 200
+	- Regeneration is now disrupted for 2s after taking armor damage
+- Hel Plating
+	- Armor bonus for damage calculation is now a flat 200
+	- Regeneration is now disrupted for 2s after taking armor damage
+	- Plating now reduces armor by 70%
+	- Increased armor regen to 5% per second
+	- Added S-mod effect: Reduces armor penalty but also regeneration rate
 - Lucifron
-	- Added Fortress Inferna structure
-	- Analogous to Lion's Guard HQ
+	- Added Fortress Inferna structure (Analogous to Lion's Guard HQ)
 - Legio Infernalis faction
 	- Slightly increased daemon spawnrate in regular fleets
 	- Reworked relations
@@ -66,8 +86,11 @@
 		- This should lead to a hopefully less polarising Legio behaviour while retaining their general
 		  hostile nature.
 		- Now goes hostile to player faction and player Commissioned faction on Daemon upgrade
+		- This will make them a lot more passive without Nex, admittedly, but the faction is designed for Nex, really
 - Legio Nex start now starts you as a renegade
 - Updated updated tahlan_settings file to clarify which toggles can be changed mid-campaign
+- Updated Rubicon to spread out planets more
+- Added support for new IndEvo features
 
 
 

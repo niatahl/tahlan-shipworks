@@ -1,0 +1,65 @@
+{
+    "displayName": "Beamer",
+    "fluxCapacitors": 8,
+    "fluxVents": 50,
+    "hullId": "tahlan_equinox",
+    "hullMods": [
+        "targetingunit",
+        "advancedoptics",
+        "frontemitter",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_equinox_beamer",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hil",
+                "WS0002": "hil"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "gravitonbeam",
+                "WS0004": "gravitonbeam",
+                "WS0005": "gravitonbeam",
+                "WS0006": "gravitonbeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "taclaser",
+                "WS0008": "taclaser",
+                "WS0009": "taclaser",
+                "WS0010": "taclaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "pdburst",
+                "WS0012": "pdburst"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0013": "heavyburst"}
+        }
+    ],
+    "wings": [
+        "spark_wing",
+        "spark_wing",
+        "spark_wing",
+        "spark_wing"
+    ]
+}
