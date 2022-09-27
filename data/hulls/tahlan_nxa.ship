@@ -21,7 +21,17 @@
     "WS0014": "tahlan_nxa_cover_l",
     "WS0015": "tahlan_nxa_cover_r",
     "WS0016": "tahlan_nxa_cover_bay_l",
-    "WS0017": "tahlan_nxa_cover_bay_r"
+    "WS0017": "tahlan_nxa_cover_bay_r",
+    "WS0018": "tahlan_blinker_red",
+    "WS0019": "tahlan_blinker_red",
+    "WS0020": "tahlan_blinker_red",
+    "WS0021": "tahlan_blinker_red",
+    "WS0022": "tahlan_blinker_red",
+    "WS0023": "tahlan_blinker_red",
+    "WS0024": "tahlan_blinker_red",
+    "WS0025": "tahlan_blinker_red",
+    "WS0028": "tahlan_blinker_red",
+    "WS0029": "tahlan_blinker_red"
   },
   "weaponSlots": [
     {
@@ -83,8 +93,8 @@
       "size": "SMALL",
       "type": "ENERGY",
       "mount": "TURRET",
-      "arc": 226,
-      "angle": 104.5,
+      "arc": 245,
+      "angle": 104,
       "locations": [-22, 79]
     },
     {
@@ -92,15 +102,15 @@
       "size": "SMALL",
       "type": "ENERGY",
       "mount": "TURRET",
-      "arc": 226,
-      "angle": -104.5,
+      "arc": 245,
+      "angle": -104,
       "locations": [-22, -79]
     },
     {
       "id": "WS0009",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [64, 11]
@@ -109,7 +119,7 @@
       "id": "WS0010",
       "size": "SMALL",
       "type": "ENERGY",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
       "locations": [64, -11]
@@ -176,39 +186,129 @@
       "arc": 0,
       "angle": -0,
       "locations": [40, -17.5]
+    },
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-21.5, 88.5]
+    },
+    {
+      "id": "WS0019",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-21.5, -88.5]
+    },
+    {
+      "id": "WS0020",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [72.5, 29.5]
+    },
+    {
+      "id": "WS0021",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [72.5, -29.5]
+    },
+    {
+      "id": "WS0022",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [70.5, 29.5]
+    },
+    {
+      "id": "WS0023",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [70.5, -29.5]
+    },
+    {
+      "id": "WS0024",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-92.5, 14.5]
+    },
+    {
+      "id": "WS0025",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-92.5, -14.5]
+    },
+    {
+      "id": "WS0028",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-90.5, 14.5]
+    },
+    {
+      "id": "WS0029",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-90.5, -14.5]
     }
   ],
   "engineSlots": [
     {
       "location": [-63, 37],
-      "length": 87,
-      "width": 25,
+      "length": 71,
+      "width": 24,
       "angle": 180,
-      "contrailSize": 25,
+      "contrailSize": 24,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
       "location": [-63, -37],
-      "length": 87,
-      "width": 25,
+      "length": 71,
+      "width": 24,
       "angle": -180,
-      "contrailSize": 25,
+      "contrailSize": 24,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
       "location": [-76, 52.5],
-      "length": 79,
-      "width": 19,
-      "angle": 180,
-      "contrailSize": 19,
+      "length": 67,
+      "width": 16,
+      "angle": 177,
+      "contrailSize": 16,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
       "location": [-76, -52.5],
-      "length": 79,
-      "width": 19,
-      "angle": -180,
-      "contrailSize": 19,
+      "length": 67,
+      "width": 16,
+      "angle": -177,
+      "contrailSize": 16,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {

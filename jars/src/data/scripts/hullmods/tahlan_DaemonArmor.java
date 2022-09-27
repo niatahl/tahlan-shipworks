@@ -42,8 +42,10 @@ public class tahlan_DaemonArmor extends BaseHullMod {
         if (ship.getFluxTracker().isVenting()) return;
 
         ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("nuller",-1);
-        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tracker",amount);
-        float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue();
+
+        float timer = ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").getModifiedValue() + amount;
+        ship.getMutableStats().getDynamic().getStat("tahlan_daemonarmor").modifyFlat("tracker", timer);
+
         if (timer < DISUPTION_TIME) return;
 
         ArmorGridAPI armorGrid = ship.getArmorGrid();

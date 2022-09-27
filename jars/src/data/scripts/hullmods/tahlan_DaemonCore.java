@@ -32,8 +32,11 @@ public class tahlan_DaemonCore extends BaseHullMod {
     }
 
     private static final float SUPPLIES_PERCENT = 100f;
+    private static final float ACC_BUFF = 0.25f;
+    private static final float MSSL_DAMAGE = 0.5f;
     private static final float SPEED_BUFF = 0.2f;
     private static final float SPEED_CAP = 0.6f;
+    private static final float PLAYER_NERF = 0.9f;
     private static final Color JITTER_COLOR = new Color(255, 0, 0, 30);
     private static final Color JITTER_UNDER_COLOR = new Color(255, 0, 0, 80);
 
@@ -45,11 +48,11 @@ public class tahlan_DaemonCore extends BaseHullMod {
     @Override
     public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 
-        stats.getProjectileSpeedMult().modifyMult(id, 1.25f);
-        stats.getMaxRecoilMult().modifyMult(id, 0.75f);
-        stats.getRecoilDecayMult().modifyMult(id, 1.25f);
-        stats.getRecoilPerShotMult().modifyMult(id, 0.75f);
-        stats.getDamageToMissiles().modifyMult(id, 1.5f);
+        stats.getProjectileSpeedMult().modifyMult(id, 1f + ACC_BUFF);
+        stats.getMaxRecoilMult().modifyMult(id, 1f - ACC_BUFF);
+        stats.getRecoilDecayMult().modifyMult(id, 1f + ACC_BUFF);
+        stats.getRecoilPerShotMult().modifyMult(id, 1f - ACC_BUFF);
+        stats.getDamageToMissiles().modifyMult(id, 1f + MSSL_DAMAGE);
 
         stats.getSuppliesPerMonth().modifyPercent(id, SUPPLIES_PERCENT);
     }
@@ -80,7 +83,7 @@ public class tahlan_DaemonCore extends BaseHullMod {
         }
 
         if (isPlayerFleet) {
-            ship.getMutableStats().getTimeMult().modifyMult(id, 0.9f);
+            ship.getMutableStats().getTimeMult().modifyMult(id, PLAYER_NERF);
         } else {
             ship.getVariant().addMod("tahlan_daemonboost");
         }
@@ -95,8 +98,8 @@ public class tahlan_DaemonCore extends BaseHullMod {
             return;
         }
 
-        float speedBoost = 1f - Math.min(1f,  (ship.getFluxLevel() / SPEED_CAP) );
-        ship.getMutableStats().getMaxSpeed().modifyMult(dc_id, 1f+(speedBoost * SPEED_BUFF));
+        float speedBoost = 1f - Math.min(1f, (ship.getFluxLevel() / SPEED_CAP));
+        ship.getMutableStats().getMaxSpeed().modifyMult(dc_id, 1f + (speedBoost * SPEED_BUFF));
 
         if (engine.getFleetManager(ship.getOwner()) == engine.getFleetManager(FleetSide.PLAYER)) {
             //Only run this in campaign context, not missions
@@ -209,13 +212,12 @@ public class tahlan_DaemonCore extends BaseHullMod {
     }
 
     public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "" + 25 + txt("%");
-        if (index == 1) return "" + 25 + txt("%");
-        if (index == 2) return "" + 50 + txt("%");
-        if (index == 3) return "" + 90 + txt("%");
-        if (index == 4) return "" + 60 + txt("%");
-        if (index == 5) return "" + 20 + txt("%");
-        if (index == 6) return "" + (int) SUPPLIES_PERCENT + txt("%");
+        if (index == 0) return "" + Math.round(ACC_BUFF * 100f) + txt("%");
+        if (index == 1) return "" + Math.round(MSSL_DAMAGE * 100f) + txt("%");
+        if (index == 2) return "" + Math.round(SPEED_CAP * 100f) + txt("%");
+        if (index == 3) return "" + Math.round(SPEED_BUFF * 100f) + txt("%");
+        if (index == 4) return "" + Math.round(PLAYER_NERF * 100f) + txt("%");
+        if (index == 5) return "" + (int) SUPPLIES_PERCENT + txt("%");
         return null;
     }
 

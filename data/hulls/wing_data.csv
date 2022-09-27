@@ -19,8 +19,8 @@ tahlan_sutra_drone_wing,tahlan_sutra_drone,"no_drop, no_sell, restricted, no_bp_
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_miasma_drone_wing,tahlan_miasma_drone,"no_drop, no_sell, restricted, no_bp_drop",0,,3,0,BOX,4000,500,,4,SUPPORT,Drone,7,99999,,,,,,,,,,,,,227
 tahlan_flash_dmn_wing,tahlan_flash_dmn_bomber,"no_sell, bomber, bomber5, auto_fighter, tahlan_daemon, no_bp_drop",3,,5,20,V,4000,1000,300,2,BOMBER,Strike Drone,24,8000,,,,,,,,,,,,,21
-tahlan_spark_dmn_wing,tahlan_spark_dmn_interceptor,"no_sell, interceptor, interceptor5, auto_fighter, tahlan_daemon, no_bp_drop",3,,4,8,CLAW,4000,200,750,4,INTERCEPTOR,Interceptor Drone,10,5000,,,,,,,,,,,,,22
-tahlan_lux_dmn_wing,tahlan_lux_dmn_fighter,"no_sell, fighter, fighter5, auto_fighter, tahlan_daemon, no_bp_drop",3,,6,10,V,4000,500,,4,FIGHTER,Fighter Drone,12,6000,,,,,,,,,,,,,23
-tahlan_thunder_dmn_wing,tahlan_thunder_dmn_attacker,"no_sell, fighter3, interceptor, auto_fighter, tahlan_daemon, no_bp_drop",3,,6,10,V,6000,500,900,2,FIGHTER,Fighter Drone,15,7000,,,,,,,,,,,,,5
+tahlan_spark_dmn_wing,tahlan_spark_dmn_interceptor,"no_sell, interceptor, interceptor5, auto_fighter, tahlan_daemon, no_bp_drop",3,,4,8,CLAW,4000,300,500,5,INTERCEPTOR,Interceptor Drone,10,5000,,,,,,,,,,,,,22
+tahlan_lux_dmn_wing,tahlan_lux_dmn_fighter,"no_sell, fighter, fighter5, auto_fighter, tahlan_daemon, no_bp_drop",3,,6,10,V,4000,500,,3,FIGHTER,Fighter Drone,12,6000,,,,,,,,,,,,,23
+tahlan_thunder_dmn_wing,tahlan_thunder_dmn_attacker,"no_sell, fighter3, interceptor, auto_fighter, tahlan_daemon, no_bp_drop",3,,6,10,V,6000,500,,3,FIGHTER,Fighter Drone,15,7000,,,,,,,,,,,,,5
 tahlan_gaze_dmn_wing,tahlan_gaze_dmn_fighter,"no_sell, fighter3, fighter, auto_fighter, tahlan_daemon, no_bp_drop",3,,8,12,CLAW,2000,500,-400,2,FIGHTER,Fighter Drone,14,9000,,,,,,,,,,,,,4
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,

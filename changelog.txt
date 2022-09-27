@@ -9,10 +9,27 @@
 - Added NX-A
 - Hel Vanguard
 	- Defense changed from damper to shields
+	- System changed to entropy amplifier
+	- Top speed 135 -> 150
 - Hel Dominator
 	- Armor 800 -> 700
 - Hel Scaith
 	- Hel Razer damage 4000 -> 5000
+- Miasma drone
+	- Weapon renamed to Hel Pulser
+	- Damage/shot 50 -> 40
+	- Chargeup 0.33333 -> 0.2
+- Hel Spark
+	- HP 300 -> 250
+	- Wing size 4 -> 5
+	- PD beamers replaced with Hel Pulse
+- Hel Lux
+	- Wing size 4 -> 3
+- Hel Thunder
+	- Wing size 2 -> 3
+- Goll Overcharge Cannon
+	- Damage per pellet 35 -> 50
+	- Flux per pellet 55 -> 75
 - Legio Rising
 	- Updated fleet composition with new Daemons
 	- Now has more Daemons when scaled up to higher FP
@@ -34,10 +51,6 @@
 - Kupferflug Regalia wing
 	- Increased wing size from 2 to 3
 	- OP 15 -> 18
-- Miasma drone
-	- Weapon renamed to Hel Pulser
-	- Damage/shot 50 -> 40
-	- Chargeup 0.33333 -> 0.2
 - Bungalow
 	- New sprite
 - Doominator
@@ -51,6 +64,8 @@
 	- Flux capacity 9000 -> 10000
 - Ingress
 	- Should actually spawn more commonly now
+- Blochead (LP)
+	- System changed to Crusher Drive cause it's funnier
 - Other minor sprite updates
 - Daemon Core
 	- Moved high maintenance effect to Daemon Core Hullmod
@@ -64,8 +79,8 @@
 		- No buff at 60% buff
 		- Should retain current Daemon agility on attack, but limit their ability to easily disengage
 - Daemon ships
-	- Buffed shield efficiency by 0.1 across the board
-		- ie. 0.9 became 0.8 etc
+	- Buffed shield efficiency by 0.2 across the board
+		- ie. 0.9 became 0.7 etc
 - Hel Carapace
 	- Armor bonus for damage calculation is now a flat 200
 	- Regeneration is now disrupted for 2s after taking armor damage

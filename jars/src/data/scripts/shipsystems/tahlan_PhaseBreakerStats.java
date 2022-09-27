@@ -28,7 +28,6 @@ public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
 
     private static final float PHASE_RATIO = 0.33f;
 
-    private final IntervalUtil interval = new IntervalUtil(0.4f,0.4f);
 
     protected Object STATUSKEY1 = new Object();
     protected Object STATUSKEY2 = new Object();

@@ -103,20 +103,20 @@ public class tahlan_HelRazerScript implements EveryFrameWeaponEffectPlugin, OnFi
                 //Duration adjustment for projectile velocity to normalize trail length
                 float durationMult = 1 / weapon.getShip().getMutableStats().getProjectileSpeedMult().getModifiedValue();
 
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs.get(proj), spriteToUse, spawnPosition, 50, 0, proj.getFacing() - 180f,
-                        0, 0, 110f, 5f, new Color(255, 52, 52), new Color(255, 52, 52), 0.7f * opacityMult,
-                        0.3f * durationMult, 0.1f * durationMult, 0.1f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
-                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
-
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), spriteToUse, spawnPosition, 50, 0, proj.getFacing() - 180f,
-                        0, 0, 140f, 15f, new Color(255, 59, 59), new Color(255, 59, 59), 0.5f * opacityMult,
-                        0.3f * durationMult, 0.2f * durationMult, 0.2f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
-                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
-
-                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), spriteToUse, spawnPosition, 50, 0, proj.getFacing() - 180f,
-                        0, 0, 70f, 3f, Color.white, Color.white, 0.5f * opacityMult,
-                        0.2f * durationMult, 0.1f * durationMult, 0.1f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
-                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+//                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs.get(proj), spriteToUse, spawnPosition, 50, 0, proj.getFacing() - 180f,
+//                        0, 0, 110f, 5f, new Color(255, 52, 52), new Color(255, 52, 52), 0.7f * opacityMult,
+//                        0.3f * durationMult, 0.1f * durationMult, 0.1f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
+//                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+//
+//                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs2.get(proj), spriteToUse, spawnPosition, 50, 0, proj.getFacing() - 180f,
+//                        0, 0, 140f, 15f, new Color(255, 59, 59), new Color(255, 59, 59), 0.5f * opacityMult,
+//                        0.3f * durationMult, 0.2f * durationMult, 0.2f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
+//                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
+//
+//                MagicTrailPlugin.AddTrailMemberAdvanced(proj, projectileTrailIDs3.get(proj), spriteToUse, spawnPosition, 50, 0, proj.getFacing() - 180f,
+//                        0, 0, 70f, 3f, Color.white, Color.white, 0.5f * opacityMult,
+//                        0.2f * durationMult, 0.1f * durationMult, 0.1f * durationMult, GL_SRC_ALPHA, GL_ONE, 200, 20,
+//                        0f, sidewayVel, null, CombatEngineLayers.CONTRAILS_LAYER, 1f);
             }
 
             SpriteAPI flare1 = Global.getSettings().getSprite("fx", "tahlan_lens_flare2");

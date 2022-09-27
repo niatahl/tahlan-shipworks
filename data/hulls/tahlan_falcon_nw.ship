@@ -71,7 +71,7 @@
     },
     {
       "id": "WS0007",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY",
       "mount": "TURRET",
       "arc": 67,
@@ -80,7 +80,7 @@
     },
     {
       "id": "WS0008",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY",
       "mount": "TURRET",
       "arc": 67,
@@ -89,7 +89,7 @@
     },
     {
       "id": "WS0009",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY",
       "mount": "TURRET",
       "arc": 154,
@@ -98,7 +98,7 @@
     },
     {
       "id": "WS0010",
-      "size": "MEDIUM",
+      "size": "SMALL",
       "type": "ENERGY",
       "mount": "TURRET",
       "arc": 154,

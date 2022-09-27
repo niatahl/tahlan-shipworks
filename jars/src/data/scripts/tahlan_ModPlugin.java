@@ -28,7 +28,6 @@ import org.apache.log4j.Logger;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
 import org.dark.shaders.util.TextureData;
-import data.scripts.campaign.siege.LegioSiegeManager;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,6 +37,7 @@ import java.util.List;
 
 import static com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin.addMarketToList;
 import static data.scripts.campaign.siege.LegioSiegeBaseIntel.log;
+import static data.scripts.utils.tahlan_IndEvoIntegrations.addDefenses;
 
 public class tahlan_ModPlugin extends BaseModPlugin {
     static private boolean graphicsLibAvailable = false;
@@ -268,26 +268,11 @@ public class tahlan_ModPlugin extends BaseModPlugin {
                 legio.removePriorityShip("tahlan_kodai_dmn");
             }
             // Adding new fun(tm) to existing saves
-            MarketAPI lucifron = sector.getEconomy().getMarket("tahlan_rubicon_p03_market");
-            if (lucifron != null && HAS_INDEVO) {
-                MarketAPI melchi = sector.getEconomy().getMarket("tahlan_rubicon_p01_market");
-                MarketAPI adra = sector.getEconomy().getMarket("tahlan_rubicon_outpost_market");
-                if (!lucifron.hasCondition("IndEvo_mineFieldCondition")) {
-                    lucifron.addCondition("IndEvo_mineFieldCondition");
-                    melchi.addCondition("IndEvo_mineFieldCondition");
-                    adra.addCondition("IndEvo_mineFieldCondition");
-                }
-                if (!lucifron.hasCondition("IndEvo_ArtilleryStationCondition")) {
-                    lucifron.addCondition("IndEvo_ArtilleryStationCondition");
-                    lucifron.addIndustry("IndEvo_Artillery_mortar");
-                    melchi.addCondition("IndEvo_ArtilleryStationCondition");
-                    melchi.addIndustry("IndEvo_Artillery_railgun");
-                    adra.addCondition("IndEvo_ArtilleryStationCondition");
-                    adra.addIndustry("IndEvo_Artillery_missile");
-                }
+            if (HAS_INDEVO) {
+                addDefenses(Global.getSector().getStarSystem("Rubicon"));
             }
         }
-        if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+        if (HAS_NEX && Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
             if (!NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
                 NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
             }

@@ -26,6 +26,7 @@ public class tahlan_Lethia {
 
     public void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Lethia");
+        system.addTag(Tags.THEME_CORE_POPULATED);
 
         switch (MathUtils.getRandomNumberInRange(1,4)) {
             case 1:

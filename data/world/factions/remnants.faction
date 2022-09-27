@@ -6,7 +6,8 @@
     "hullFrequency":{
         "hulls":{
             "tahlan_Nameless":0.2,
-			"tahlan_Timeless":0.2
+			"tahlan_Timeless":0.2,
+            "tahlan_equinox":1.5   #doctrine
         },
     },
 

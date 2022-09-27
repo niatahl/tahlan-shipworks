@@ -14,10 +14,12 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial;
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin;
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin;
+import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 
 import static data.scripts.tahlan_ModPlugin.HAS_INDEVO;
+import static data.scripts.utils.tahlan_IndEvoIntegrations.addDefenses;
 import static data.scripts.world.tahlan_Lethia.addMarketplace;
 
 import java.awt.*;
@@ -31,6 +33,7 @@ public class tahlan_Rubicon  {
         StarSystemAPI system = sector.createStarSystem("Rubicon");
         system.getLocation().set(-28000, -4500);
         system.setBackgroundTextureFilename("graphics/tahlan/backgrounds/tahlan_rubicon.jpg");
+        system.addTag(Tags.THEME_CORE_POPULATED);
 
         PlanetAPI rubicon_star = system.initStar("tahlan_rubicon_maw",
                 "black_hole",
@@ -41,10 +44,27 @@ public class tahlan_Rubicon  {
 
         system.setLightColor(new Color(255, 205, 205));
 
-        system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 2, new Color(101, 76, 49), 500f, 600f, 200f);
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 2, Color.gray, 500f, 1000f, 200f);
-        system.addAsteroidBelt(rubicon_star, 300, 700, 500, 120, 300, Terrain.ASTEROID_BELT,"");
-
+        system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 3, new Color(68, 57, 56), 300f, 1000f, 200f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 2, new Color(201, 77, 49), 600f, 700f, 200f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 3, new Color(201, 49, 49), 300f, 300f, 200f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 3, Color.gray, 600f, 900f, 200f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 4, new Color(119, 48, 48), 600f, 500f, 200f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 1, Color.gray, 600f, 700f, 200f);
+//        system.addAsteroidBelt(rubicon_star, 300, 1200f, 500, 120, 300, Terrain.ASTEROID_BELT,"");
+        SectorEntityToken maw_field = system.addTerrain(Terrain.MAGNETIC_FIELD,new MagneticFieldTerrainPlugin.MagneticFieldParams(1800f, // terrain effect band width
+                1300f, // terrain effect middle radius
+                rubicon_star, // entity that it's around
+                190f, // visual band start
+                600f, // visual band end
+                new Color(157, 28, 9, 150), // base color
+                0.5f, // probability to spawn aurora sequence, checked once/day when no aurora in progress
+                new Color(180, 118, 73),
+                new Color(190, 128, 105),
+                new Color(225, 150, 123),
+                new Color(240, 152, 132),
+                new Color(250, 33, 25),
+                new Color(240, 28, 0),
+                new Color(150, 0, 0)));
 
         // Debris fields
         DebrisFieldTerrainPlugin.DebrisFieldParams params1 = new DebrisFieldTerrainPlugin.DebrisFieldParams(
@@ -76,6 +96,8 @@ public class tahlan_Rubicon  {
 
         system.addAsteroidBelt(rubicon_star, 1000, 3000, 1000, 120, 500, Terrain.ASTEROID_BELT,"");
         system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 1, Color.gray, 500f, 3000f, 250f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 1, Color.gray, 500f, 3200f, 250f);
+        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 4, Color.gray, 500f, 2800f, 250f);
 
         // First Planet
         PlanetAPI rubicon_1 = system.addPlanet("tahlan_rubicon_p01",
@@ -155,11 +177,12 @@ public class tahlan_Rubicon  {
         relay.setCircularOrbitPointingDown( rubicon_star, 360f*(float)Math.random(), 6700, MathUtils.getRandomNumberInRange(250, 410));
 
         // Third Planet - Primary Legio base
+        float angle = 360f*(float)Math.random();
         PlanetAPI rubicon_3 = system.addPlanet("tahlan_rubicon_p03",
                 rubicon_star,
                 "Lucifron",
                 "toxic_cold",
-                360f*(float)Math.random(),
+                angle,
                 320f,
                 7400f,
                 380f);
@@ -228,9 +251,10 @@ public class tahlan_Rubicon  {
         debrisRubicon4.setCircularOrbit(rubicon_3,360*(float)Math.random(),800f,250f);
         debrisRubicon4.setId("tahlan_lethia_debrisRubicon4");
 
-        //Jump point for Scorn
+        //Jump point for Lucifron
         JumpPointAPI jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_rubicon_lucifron_jump", "Lucifron Jump Point");
-        jumpPoint1.setCircularOrbit( system.getEntityById("tahlan_rubicon_p03"), 290, 900, 120);
+//        jumpPoint1.setCircularOrbit( system.getEntityById("tahlan_rubicon_p03"), 290, 900, 120);
+        jumpPoint1.setCircularOrbit( rubicon_star, angle+15f, 7400f, 380f);
         jumpPoint1.setRelatedPlanet(rubicon_3);
         system.addEntity(jumpPoint1);
 
@@ -285,14 +309,6 @@ public class tahlan_Rubicon  {
         rubicon_outpost_market.getIndustry(Industries.STARFORTRESS).setAICoreId(Commodities.ALPHA_CORE);
         rubicon_outpost_market.getIndustry(Industries.HEAVYBATTERIES).setAICoreId(Commodities.ALPHA_CORE);
 
-        if (HAS_INDEVO) {
-            rubicon_3_market.addCondition("IndEvo_ArtilleryStationCondition");
-            rubicon_3_market.addIndustry("IndEvo_Artillery_mortar");
-            rubicon_1_market.addCondition("IndEvo_ArtilleryStationCondition");
-            rubicon_1_market.addIndustry("IndEvo_Artillery_railgun");
-            rubicon_outpost_market.addCondition("IndEvo_ArtilleryStationCondition");
-            rubicon_outpost_market.addIndustry("IndEvo_Artillery_missile");
-        }
 
         // Bit more procgen
         float radiusAfter2 = StarSystemGenerator.addOrbitingEntities(system, rubicon_star, StarAge.OLD,
@@ -303,6 +319,10 @@ public class tahlan_Rubicon  {
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true);
+
+        if (HAS_INDEVO) {
+            addDefenses(system);
+        }
 
         //Finally cleans up hyperspace
         cleanup(system);
@@ -336,4 +356,6 @@ public class tahlan_Rubicon  {
             Misc.setSalvageSpecial(ship, creator.createSpecial(ship, null));
         }
     }
+
+
 }

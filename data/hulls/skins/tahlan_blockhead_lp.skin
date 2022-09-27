@@ -15,7 +15,7 @@
     "removeBuiltInMods":[],         # hullmod ids
     "removeBuiltInWeapons":[],      # weapon slot ids
     "builtInMods":["ill_advised","safetyoverrides"],
-	"systemId":"ammofeed",
+	"systemId":"tahlan_crusherdrive",
     "weaponSlotChanges":{
 		"WS0001":{
       		"type": "COMPOSITE",

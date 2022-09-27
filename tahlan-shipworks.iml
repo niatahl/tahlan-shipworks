@@ -16,5 +16,6 @@
     <orderEntry type="library" name="ExerelinCore" level="application" />
     <orderEntry type="library" name="commons-compiler-jdk" level="application" />
     <orderEntry type="library" name="LazyLib-Kotlin" level="application" />
+    <orderEntry type="library" name="IndEvo" level="application" />
   </component>
 </module>
