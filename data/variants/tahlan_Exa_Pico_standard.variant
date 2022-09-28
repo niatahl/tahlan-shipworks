@@ -1,6 +1,6 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 4,
+  "fluxCapacitors": 5,
   "fluxVents": 10,
   "goalVariant": true,
   "hullId": "tahlan_Exa_Pico",

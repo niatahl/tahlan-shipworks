@@ -1,6 +1,6 @@
 {
     "displayName": "Söldner",
-    "fluxCapacitors": 4,
+    "fluxCapacitors": 5,
     "fluxVents": 10,
     "hullId": "tahlan_glanzwurf_b",
     "hullMods": ["hardenedshieldemitter"],

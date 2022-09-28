@@ -1,7 +1,7 @@
 {
     "displayName": "Standard",
     "fluxCapacitors": 0,
-    "fluxVents": 15,
+    "fluxVents": 17,
     "hullId": "tahlan_Torii",
     "hullMods": ["hardenedshieldemitter"],
     "permaMods": [],

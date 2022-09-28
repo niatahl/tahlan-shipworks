@@ -4,6 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
+import com.fs.starfarer.api.impl.campaign.econ.impl.PlanetaryShield;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
@@ -142,8 +143,7 @@ public class tahlan_Rubicon  {
                                 Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
                                 Industries.MILITARYBASE,
-                                Industries.REFINING,
-                                Industries.PLANETARYSHIELD
+                                Industries.REFINING
                         )
                 ),
                 0.3f,
@@ -222,7 +222,6 @@ public class tahlan_Rubicon  {
                                 Industries.STARFORTRESS,
                                 Industries.HEAVYBATTERIES,
                                 Industries.HIGHCOMMAND,
-                                Industries.PLANETARYSHIELD,
                                 Industries.LIGHTINDUSTRY,
                                 "tahlan_CloningFacility",
                                 "tahlan_legiohq"
@@ -322,6 +321,9 @@ public class tahlan_Rubicon  {
 
         if (HAS_INDEVO) {
             addDefenses(system);
+        } else {
+            rubicon_1_market.addIndustry(Industries.PLANETARYSHIELD);
+            rubicon_3_market.addIndustry(Industries.PLANETARYSHIELD);
         }
 
         //Finally cleans up hyperspace

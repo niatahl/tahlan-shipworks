@@ -1,11 +1,10 @@
 {
     "displayName": "Barrage",
-    "fluxCapacitors": 12,
+    "fluxCapacitors": 5,
     "fluxVents": 30,
     "hullId": "tahlan_dominator_dmn",
     "hullMods": [
-        "targetingunit",
-        "stabilizedshieldemitter"
+        "targetingunit"
     ],
     "permaMods": [],
     "sMods": [],

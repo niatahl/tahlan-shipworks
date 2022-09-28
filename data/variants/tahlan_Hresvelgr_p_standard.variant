@@ -1,7 +1,7 @@
 {
     "displayName": "Raider",
-    "fluxCapacitors": 3,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 33,
     "goalVariant": true,
     "hullId": "tahlan_Hresvelgr_p",
     "hullMods": ["targetingunit"],

@@ -1,7 +1,7 @@
 {
     "displayName": "Overdriven",
     "fluxCapacitors": 0,
-    "fluxVents": 48,
+    "fluxVents": 44,
     "hullId": "tahlan_Ristreza",
     "hullMods": [
         "targetingunit",

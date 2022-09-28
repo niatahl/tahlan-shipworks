@@ -1,6 +1,6 @@
 {
     "displayName": "Artillery",
-    "fluxCapacitors": 7,
+    "fluxCapacitors": 12,
     "fluxVents": 50,
     "hullId": "tahlan_providence",
     "hullMods": [

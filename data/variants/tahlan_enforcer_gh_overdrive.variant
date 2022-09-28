@@ -1,6 +1,6 @@
 {
     "displayName": "Overdrive",
-    "fluxCapacitors": 3,
+    "fluxCapacitors": 2,
     "fluxVents": 20,
     "hullId": "tahlan_enforcer_gh",
     "hullMods": [

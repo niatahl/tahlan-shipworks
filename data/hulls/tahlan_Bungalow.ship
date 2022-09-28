@@ -130,7 +130,7 @@
       "id": "WS0008",
       "size": "SMALL",
       "type": "MISSILE",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": -90,
       "locations": [39, -84]

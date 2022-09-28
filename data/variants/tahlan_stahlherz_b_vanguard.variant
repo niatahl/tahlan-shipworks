@@ -1,6 +1,6 @@
 {
     "displayName": "Vanguard",
-    "fluxCapacitors": 2,
+    "fluxCapacitors": 4,
     "fluxVents": 20,
     "hullId": "tahlan_stahlherz_b",
     "hullMods": [

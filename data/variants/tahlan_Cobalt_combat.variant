@@ -1,6 +1,6 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 8,
+    "fluxCapacitors": 11,
     "fluxVents": 30,
     "hullId": "tahlan_Cobalt",
     "hullMods": [

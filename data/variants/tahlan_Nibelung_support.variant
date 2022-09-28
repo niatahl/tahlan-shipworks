@@ -1,10 +1,11 @@
 {
     "displayName": "Support",
-    "fluxCapacitors": 34,
+    "fluxCapacitors": 14,
     "fluxVents": 50,
     "hullId": "tahlan_Nibelung",
     "hullMods": [
-        "auxiliarythrusters"
+        "auxiliarythrusters",
+        "heavyarmor"
     ],
     "permaMods": [],
 	"goalVariant": true,

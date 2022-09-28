@@ -1,6 +1,6 @@
 {
     "displayName": "Paladin",
-    "fluxCapacitors": 4,
+    "fluxCapacitors": 6,
     "fluxVents": 20,
     "hullId": "tahlan_stahlherz_f",
     "hullMods": [

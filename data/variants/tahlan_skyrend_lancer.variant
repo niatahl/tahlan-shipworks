@@ -1,11 +1,12 @@
 {
     "displayName": "Lancer",
-    "fluxCapacitors": 37,
+    "fluxCapacitors": 29,
     "fluxVents": 50,
     "hullId": "tahlan_skyrend",
     "hullMods": [
         "targetingunit",
-        "hardenedshieldemitter"
+        "hardenedshieldemitter",
+        "stabilizedshieldemitter"
     ],
     "permaMods": [],
     "sMods": [],

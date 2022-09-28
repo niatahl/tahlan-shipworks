@@ -1,7 +1,7 @@
 {
     "displayName": "Albtraum",
     "fluxCapacitors": 0,
-    "fluxVents": 45,
+    "fluxVents": 25,
     "hullId": "tahlan_schneefall_traum",
     "hullMods": [
         "missleracks",

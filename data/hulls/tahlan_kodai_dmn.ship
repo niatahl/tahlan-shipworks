@@ -11,9 +11,6 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 139,
   "viewOffset": 0,
-  "builtInWeapons": {
-    "WS0009": "tahlan_eradicator_dmn"
-  },
   "builtInMods": [
     "tahlan_daemoncore",
     "tahlan_daemonarmor",
@@ -22,6 +19,9 @@
   "builtInWings": [
     "tahlan_miasma_drone_wing"
   ],
+  "builtInWeapons": {
+    "WS0009": "tahlan_eradicator_dmn"
+  },
   "weaponSlots": [
     {
       "id": "WS0001",
@@ -63,7 +63,7 @@
       "id": "WS0005",
       "size": "SMALL",
       "type": "HYBRID",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 129,
       "angle": -37,
       "locations": [32.5, -26]
@@ -72,7 +72,7 @@
       "id": "WS0006",
       "size": "SMALL",
       "type": "HYBRID",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 129,
       "angle": 37,
       "locations": [32.5, 26]
@@ -81,7 +81,7 @@
       "id": "WS0007",
       "size": "SMALL",
       "type": "HYBRID",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 169,
       "angle": -131,
       "locations": [-9.5, -56]
@@ -90,7 +90,7 @@
       "id": "WS0008",
       "size": "SMALL",
       "type": "HYBRID",
-      "mount": "HARDPOINT",
+      "mount": "TURRET",
       "arc": 169,
       "angle": 131,
       "locations": [-9.5, 56]

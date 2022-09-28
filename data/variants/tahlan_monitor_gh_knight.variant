@@ -1,6 +1,6 @@
 {
     "displayName": "Kassadari",
-    "fluxCapacitors": 2,
+    "fluxCapacitors": 3,
     "fluxVents": 10,
     "hullId": "tahlan_monitor_gh",
     "hullMods": ["hardenedshieldemitter"],

@@ -1,6 +1,6 @@
 {
     "displayName": "Raider",
-    "fluxCapacitors": 9,
+    "fluxCapacitors": 10,
     "fluxVents": 10,
     "hullId": "tahlan_Tempest_P",
     "hullMods": ["hardenedshieldemitter"],

@@ -1,11 +1,10 @@
 {
   "displayName": "Barrage",
   "fluxCapacitors": 0,
-  "fluxVents": 27,
+  "fluxVents": 22,
   "goalVariant": true,
   "hullId": "tahlan_Hresvelgr_p",
   "hullMods": [
-    "targetingunit"
   ],
   "modules": [],
   "permaMods": [],

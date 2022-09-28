@@ -1,7 +1,7 @@
 {
     "displayName": "Combat",
     "fluxCapacitors": 0,
-    "fluxVents": 35,
+    "fluxVents": 37,
     "goalVariant": true,
     "hullId": "tahlan_Hresvelgr",
     "hullMods": ["targetingunit"],

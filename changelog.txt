@@ -106,6 +106,8 @@
 - Updated updated tahlan_settings file to clarify which toggles can be changed mid-campaign
 - Updated Rubicon to spread out planets more
 - Added support for new IndEvo features
+- Fixed a bunch of variants
+- Fixed a bunch of wrong mount types
 
 
 

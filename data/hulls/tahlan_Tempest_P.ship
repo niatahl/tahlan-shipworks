@@ -31,7 +31,7 @@
       "id": "WS0002",
       "size": "MEDIUM",
       "type": "BALLISTIC",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [4, -15]

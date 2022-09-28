@@ -55,7 +55,7 @@
       "id": "WS0005",
       "size": "MEDIUM",
       "type": "SYNERGY",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [98, -71]
@@ -64,7 +64,7 @@
       "id": "WS0006",
       "size": "MEDIUM",
       "type": "SYNERGY",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
       "locations": [98, 71]
