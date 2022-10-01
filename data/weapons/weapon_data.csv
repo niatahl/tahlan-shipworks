@@ -172,6 +172,7 @@ Gleipnir_dummy,tahlan_gleipnir_dummy,3,,9999,1200,,1500,,250,5,30,1,,,HIGH_EXPLO
 tahlan_vundautoforge,tahlan_vundautoforge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,
 tahlan_adlerauge,tahlan_adlerauge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,
 tahlan_lostechvents,tahlan_lostechvents,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,
+tahlan_phaseEngines,tahlan_phaseEngines,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,
 Crusher Drive Beam,tahlan_crusherdriveweapon,0,,15000,50,100,,,,0,0,,,,ENERGY,,500,0.1,0.1,8,,,,,,10000,,,,,SYSTEM,,,,,,,,,,,,,,
 Taffeta Dummy,tahlan_taffeta_dummy,3,0.2,4000,300,,5,,50,15,15,,,,KINETIC,0,,1,3,,,0,0,0,0,,1000,,,300,SYSTEM,,,[database_error],,Anti Shield,,,,,"Spawns %s arcs per projectile on hit that can hit %s object within %s of impact point, dealing about %s emp damage each",5 | any | 400su | 50,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

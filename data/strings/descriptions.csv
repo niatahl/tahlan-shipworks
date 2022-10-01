@@ -566,6 +566,7 @@ tahlan_explosiverounds,SHIP_SYSTEM,"Loads microfusion rounds into any equipped S
 tahlan_plasmarounds,SHIP_SYSTEM,Switches the built-in arm-weapons to a high-energy plasma mode similar to a Sturmkanone for a short duration. Plasma projectiles do 300 energy damage and detonate for an additional 100 fragmentation aoe damage.,Assault,,
 tahlan_heavydamper,SHIP_SYSTEM,"Briefly activates an energy field that mitigates incoming damage at the cost of disabling weapons and shields. Higher damage mitigation and charge capacity than standard damper fields, but also far shorter duration.",Defense,,
 tahlan_crusherdrive,SHIP_SYSTEM,Diverts all shield power to engines and structural integrity fields to ram current ship target. Halves damage taken and weapon rate of fire while active.,Ramming,,
+tahlan_helcrusherdrive,SHIP_SYSTEM,Diverts all shield power to engines and structural integrity fields to ram current ship target. Halves damage taken and weapon rate of fire while active.,Ramming,,
 tahlan_rrskimmer,SHIP_SYSTEM,A custom variant of phase skimmer with improved cycle rate at cost of reduced range.,Movement,,
 tahlan_shiftdrive,SHIP_SYSTEM,Phases and dashes in the chosen direction.,Movement,,
 tahlan_jauntdrive,SHIP_SYSTEM,Phases and dashes in the chosen direction.,Movement,,

@@ -110,7 +110,7 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         if (index == 3) return txt("halved");
         if (index == 4) return txt("disabled");
         if (index == 5) return "" + Math.round(DISUPTION_TIME) + "s";
-        if (index == 6) return "" + Math.round(1f-ARMOR_MULT) + txt("%");
+        if (index == 6) return "" + Math.round((1f-ARMOR_MULT)*100f) + txt("%");
         if (index == 7) return txt("heavyarmor");
         return null;
     }
