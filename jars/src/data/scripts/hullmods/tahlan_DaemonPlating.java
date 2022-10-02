@@ -1,6 +1,5 @@
 package data.scripts.hullmods;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignUIAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
@@ -10,10 +9,6 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.combat.DefenseUtils;
-
-import java.awt.*;
-import java.util.HashMap;
-import java.util.Map;
 
 import static data.scripts.utils.tahlan_Utils.txt;
 
@@ -105,7 +100,6 @@ public class tahlan_DaemonPlating extends BaseHullMod {
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
         if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + txt("%");
         if (index == 1) return "" + Math.round(ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT) + "/s";
-//        if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
         if (index == 2) return "" + Math.round(CALC_FLAT);
         if (index == 3) return txt("halved");
         if (index == 4) return txt("disabled");
@@ -122,7 +116,6 @@ public class tahlan_DaemonPlating extends BaseHullMod {
         } else {
             stats.getArmorBonus().modifyMult(id, ARMOR_MULT);
         }
-//        stats.getEffectiveArmorBonus().modifyPercent(id, CALC_PERCENT);
         stats.getEffectiveArmorBonus().modifyFlat(id, CALC_FLAT);
     }
 }

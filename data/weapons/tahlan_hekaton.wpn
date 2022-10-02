@@ -16,7 +16,7 @@
   "id": "tahlan_hekaton",
   "projectileSpecId": "tahlan_hekaton_torp",
   "size": "MEDIUM",
-  "renderHints":[RENDER_LOADED_MISSILES],
+  "renderHints":["RENDER_LOADED_MISSILES"],
   "smokeSpec": {
     "blowbackDuration": 2,
     "blowbackLength": 30,
