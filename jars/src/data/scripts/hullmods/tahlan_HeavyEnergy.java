@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 public class tahlan_HeavyEnergy extends BaseHullMod {
 

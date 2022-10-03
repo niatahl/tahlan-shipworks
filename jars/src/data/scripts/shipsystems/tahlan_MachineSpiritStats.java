@@ -8,7 +8,7 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import java.awt.*;
 import java.util.EnumSet;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 public class tahlan_MachineSpiritStats extends BaseShipSystemScript {
 

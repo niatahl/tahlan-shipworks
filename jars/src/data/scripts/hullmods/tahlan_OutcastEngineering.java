@@ -10,7 +10,7 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 public class tahlan_OutcastEngineering extends BaseHullMod {
 

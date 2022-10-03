@@ -1,17 +1,15 @@
 package data.scripts.hullmods;
 
 import com.fs.starfarer.api.combat.BaseHullMod;
-import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.combat.listeners.WeaponBaseRangeModifier;
-import com.fs.starfarer.api.combat.listeners.WeaponRangeModifier;
 import data.scripts.util.MagicIncompatibleHullmods;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 public class tahlan_ParallelTargetingUnit extends BaseHullMod {
 

@@ -3,7 +3,7 @@ package data.scripts.hullmods
 import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
-import data.scripts.utils.tahlan_Utils
+import data.scripts.TahlanUtils.Utils
 import kotlin.math.roundToInt
 
 class tahlan_phaseHarmonics : BaseHullMod() {
@@ -27,9 +27,9 @@ class tahlan_phaseHarmonics : BaseHullMod() {
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {
         return when (index) {
-            0 -> tahlan_Utils.txt("phaseBreaker")
-            1 -> "${((1f - DAMAGE_MOD) * 100f).roundToInt()}${tahlan_Utils.txt("%")}"
-            2 -> "${((VENT_MOD - 1f) * 100f).roundToInt()}${tahlan_Utils.txt("%")}"
+            0 -> Utils.txt("phaseBreaker")
+            1 -> "${((1f - DAMAGE_MOD) * 100f).roundToInt()}${Utils.txt("%")}"
+            2 -> "${((VENT_MOD - 1f) * 100f).roundToInt()}${Utils.txt("%")}"
             else -> null
         }
     }

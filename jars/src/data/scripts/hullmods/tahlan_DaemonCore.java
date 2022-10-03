@@ -16,7 +16,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 // There was some fun here. It was silly indeed.
 

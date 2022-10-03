@@ -1,8 +1,8 @@
-package data.scripts.utils;
+package data.scripts.TahlanUtils;
 
 import com.fs.starfarer.api.Global;
 
-public class tahlan_Utils {
+public class Utils {
     private static final String tahlan = "tahlan";
 
     // For translation friendliness

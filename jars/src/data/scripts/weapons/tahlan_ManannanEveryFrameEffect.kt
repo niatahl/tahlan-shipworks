@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import data.scripts.util.MagicRender
+import data.scripts.TahlanUtils.random
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.util.vector.Vector2f
@@ -12,28 +13,27 @@ import java.awt.Color
 
 class tahlan_ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
     override fun advance(amount: Float, engine: CombatEngineAPI, weapon: WeaponAPI) {
-
         val flare1 = Global.getSettings().getSprite("fx", "tahlan_lens_flare2")
         val flare2 = Global.getSettings().getSprite("fx", "tahlan_lens_flare2")
         val flare3 = Global.getSettings().getSprite("fx", "tahlan_lens_flare2")
-        val point = Vector2f(10f,0f);
-        VectorUtils.rotate(point,weapon.ship.facing)
-        Vector2f.add(point,weapon.location,point)
+        val point = Vector2f(10f, 0f);
+        VectorUtils.rotate(point, weapon.ship.facing)
+        Vector2f.add(point, weapon.location, point)
         MagicRender.singleframe(
-            flare1,
-            MathUtils.getRandomPointInCircle(point, MathUtils.getRandomNumberInRange(0f, 2f)),
-            Vector2f(400f,10f),
-            0f,
-            Color(255, 50, 50, 80),
-            true
+            /* sprite = */ flare1,
+            /* loc = */ MathUtils.getRandomPointInCircle(point, (0f..2f).random()),
+            /* size = */ Vector2f(400f, 10f),
+            /* angle = */ 0f,
+            /* color = */ Color(255, 50, 50, 80),
+            /* additive = */ true
         )
         MagicRender.singleframe(
-            flare2,
-            MathUtils.getRandomPointInCircle(point, MathUtils.getRandomNumberInRange(0f, 2f)),
-            Vector2f(200f,5f),
-            0f,
-            Color(255, 150, 150, 120),
-            true
+            /* sprite = */ flare2,
+            /* loc = */ MathUtils.getRandomPointInCircle(point, (0f..2f).random()),
+            /* size = */ Vector2f(200f, 5f),
+            /* angle = */ 0f,
+            /* color = */ Color(255, 150, 150, 120),
+            /* additive = */ true
         )
 
         inteval.advance(amount)
@@ -43,28 +43,28 @@ class tahlan_ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffe
 
                 toRemove.add(proj)
             } else {
-                val point2 = Vector2f(-14f,0f);
-                VectorUtils.rotate(point2,proj.facing)
-                Vector2f.add(point2,proj.location,point2)
+                val point2 = Vector2f(-14f, 0f);
+                VectorUtils.rotate(point2, proj.facing)
+                Vector2f.add(point2, proj.location, point2)
                 MagicRender.singleframe(
-                    flare3,
-                    MathUtils.getRandomPointInCircle(point2, MathUtils.getRandomNumberInRange(0f, 2f)),
-                    Vector2f(600f,14f),
-                    0f,
-                    Color(255, 50, 50, 80),
-                    true
+                    /* sprite = */ flare3,
+                    /* loc = */ MathUtils.getRandomPointInCircle(point2, (0f..2f).random()),
+                    /* size = */ Vector2f(600f, 14f),
+                    /* angle = */ 0f,
+                    /* color = */ Color(255, 50, 50, 80),
+                    /* additive = */ true
                 )
 
                 if (inteval.intervalElapsed()) {
                     engine.addNebulaParticle(
-                        proj.location,
-                        Misc.ZERO,
-                        MathUtils.getRandomNumberInRange(20f, 50f),
-                        3f,
-                        0.1f,
-                        0.5f,
-                        MathUtils.getRandomNumberInRange(1f, 1.3f),
-                        Color(MathUtils.getRandomNumberInRange(150, 255), 0, 0, 100)
+                        /* loc = */ proj.location,
+                        /* vel = */ Misc.ZERO,
+                        /* size = */ (20f..50f).random(),
+                        /* endSizeMult = */ 3f,
+                        /* rampUpFraction = */ 0.1f,
+                        /* fullBrightnessFraction = */ 0.5f,
+                        /* totalDuration = */ (1f..1.3f).random(),
+                        /* color = */ Color((150..255).random(), 0, 0, 100)
                     )
                 }
             }

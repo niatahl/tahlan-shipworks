@@ -3,15 +3,11 @@ package data.scripts.hullmods;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
-import com.fs.starfarer.api.graphics.SpriteAPI;
-import data.scripts.util.MagicRender;
-import org.lazywizard.lazylib.FastTrig;
-import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-import static data.scripts.utils.tahlan_Utils.txt;
-import static data.scripts.utils.tahlan_afterimage.renderCustomAfterimage;
+import static data.scripts.TahlanUtils.Utils.txt;
+import static data.scripts.TahlanUtils.Afterimage.renderCustomAfterimage;
 
 public class tahlan_KnightRefit extends BaseHullMod {
 

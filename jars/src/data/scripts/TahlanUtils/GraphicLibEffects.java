@@ -1,7 +1,7 @@
 /*
 By Tartiflette
  */
-package data.scripts.utils;
+package data.scripts.TahlanUtils;
 
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import java.awt.Color;
@@ -12,7 +12,7 @@ import org.dark.shaders.light.LightShader;
 import org.dark.shaders.light.StandardLight;
 import org.lwjgl.util.vector.Vector2f;
 
-public class tahlan_graphicLibEffects {
+public class GraphicLibEffects {
     
     public static void customLight(Vector2f loc, CombatEntityAPI anchor, float size, float intensity, Color color, float fadeIn, float last, float fadeOut){
         StandardLight light = new StandardLight();

@@ -2,9 +2,7 @@ package data.scripts.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.util.IntervalUtil;
-import data.scripts.util.MagicRender;
-import data.scripts.utils.tahlan_Utils;
+import data.scripts.TahlanUtils.Utils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -78,9 +76,9 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         }
 
         colorToUse = new Color(
-                tahlan_Utils.lerp(COLOR_NORMAL[0],COLOR_OVERDRIVE[0],overdriveLevel),
-                tahlan_Utils.lerp(COLOR_NORMAL[1],COLOR_OVERDRIVE[1],overdriveLevel),
-                tahlan_Utils.lerp(COLOR_NORMAL[2],COLOR_OVERDRIVE[2],overdriveLevel),
+                Utils.lerp(COLOR_NORMAL[0],COLOR_OVERDRIVE[0],overdriveLevel),
+                Utils.lerp(COLOR_NORMAL[1],COLOR_OVERDRIVE[1],overdriveLevel),
+                Utils.lerp(COLOR_NORMAL[2],COLOR_OVERDRIVE[2],overdriveLevel),
                 currentBrightness*MAX_OPACITY);
 
 
@@ -88,9 +86,9 @@ public class tahlan_KnightGlowScript implements EveryFrameWeaponEffectPlugin {
         //Change color again if system is active and set brightness to max
         if (ship.getSystem().isActive()) {
             colorToUse = new Color(
-                    tahlan_Utils.lerp(COLOR_NORMAL[0],COLOR_SYSTEM[0],systemLevel),
-                    tahlan_Utils.lerp(COLOR_NORMAL[1],COLOR_SYSTEM[1],systemLevel),
-                    tahlan_Utils.lerp(COLOR_NORMAL[2],COLOR_SYSTEM[2],systemLevel),
+                    Utils.lerp(COLOR_NORMAL[0],COLOR_SYSTEM[0],systemLevel),
+                    Utils.lerp(COLOR_NORMAL[1],COLOR_SYSTEM[1],systemLevel),
+                    Utils.lerp(COLOR_NORMAL[2],COLOR_SYSTEM[2],systemLevel),
                     currentBrightness*MAX_OPACITY);
         }
 

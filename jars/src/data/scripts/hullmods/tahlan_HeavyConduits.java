@@ -7,7 +7,7 @@ import data.scripts.util.MagicIncompatibleHullmods;
 
 import java.util.*;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 public class tahlan_HeavyConduits extends BaseHullMod {
 

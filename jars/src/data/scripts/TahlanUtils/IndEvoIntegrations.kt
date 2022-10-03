@@ -1,10 +1,10 @@
-package data.scripts.utils
+package data.scripts.TahlanUtils
 
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.campaign.StarSystemAPI
 import com.fs.starfarer.api.plugins.derelicts.IndEvo_ArtilleryStationPlacer
 
-object tahlan_IndEvoIntegrations {
+object IndEvoIntegrations {
     @JvmStatic
     fun addDefenses(system: StarSystemAPI?) {
         val sector = Global.getSector()

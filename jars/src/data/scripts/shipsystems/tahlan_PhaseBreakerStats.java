@@ -4,12 +4,8 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import com.fs.starfarer.api.util.IntervalUtil;
 
 import java.awt.*;
-import java.util.Timer;
-
-import static data.scripts.utils.tahlan_afterimage.renderCustomAfterimage;
 
 public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
 
@@ -29,10 +25,7 @@ public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
     private static final float PHASE_RATIO = 0.33f;
 
 
-    protected Object STATUSKEY1 = new Object();
     protected Object STATUSKEY2 = new Object();
-    protected Object STATUSKEY3 = new Object();
-    protected Object STATUSKEY4 = new Object();
 
 
     public static float getMaxTimeMult(MutableShipStatsAPI stats) {
@@ -129,7 +122,7 @@ public class tahlan_PhaseBreakerStats extends BaseShipSystemScript {
             }
         }
 
-        Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_debug",cloak.getSpecAPI().getIconSpriteName(),"cloak","active: "+levelForAlpha,false);
+//        Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_debug",cloak.getSpecAPI().getIconSpriteName(),"cloak","active: "+levelForAlpha,false);
 
         ship.setExtraAlphaMult(1f - (1f - SHIP_ALPHA_MULT) * levelForAlpha);
         ship.setApplyExtraAlphaToEngines(true);

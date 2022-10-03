@@ -1,4 +1,4 @@
-package data.scripts.utils;
+package data.scripts.TahlanUtils;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineLayers;
@@ -10,7 +10,7 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-public class tahlan_afterimage {
+public class Afterimage {
     public static void renderCustomAfterimage(ShipAPI ship, Color color, Float duration) {
 
         // Sprite offset fuckery - Don't you love trigonometry?

@@ -4,7 +4,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin;
-import com.fs.starfarer.api.impl.campaign.econ.impl.PlanetaryShield;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
 import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator;
@@ -20,7 +19,7 @@ import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
 
 import static data.scripts.tahlan_ModPlugin.HAS_INDEVO;
-import static data.scripts.utils.tahlan_IndEvoIntegrations.addDefenses;
+import static data.scripts.TahlanUtils.IndEvoIntegrations.addDefenses;
 import static data.scripts.world.tahlan_Lethia.addMarketplace;
 
 import java.awt.*;

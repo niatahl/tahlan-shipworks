@@ -7,7 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 
 import java.awt.*;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 import static java.lang.Math.round;
 
 public class tahlan_AdMechRefit extends BaseHullMod {

@@ -13,7 +13,7 @@ import java.awt.*;
 import java.util.EnumSet;
 import java.util.List;
 
-import static data.scripts.utils.tahlan_Utils.txt;
+import static data.scripts.TahlanUtils.Utils.txt;
 
 /**
  * Gives bonus damage to a ship's energy weapons after venting

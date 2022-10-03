@@ -37,7 +37,7 @@ import java.util.List;
 
 import static com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin.addMarketToList;
 import static data.scripts.campaign.siege.LegioSiegeBaseIntel.log;
-import static data.scripts.utils.tahlan_IndEvoIntegrations.addDefenses;
+import static data.scripts.TahlanUtils.IndEvoIntegrations.addDefenses;
 
 public class tahlan_ModPlugin extends BaseModPlugin {
     static private boolean graphicsLibAvailable = false;
