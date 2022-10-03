@@ -10,7 +10,9 @@ import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.utils.random
 import java.awt.Color
+import kotlin.random.Random
 
 class ManannanOnHitEffect : OnHitEffectPlugin {
     override fun onHit(
@@ -32,10 +34,10 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
                 point,
                 MathUtils.getPointOnCircumference(
                     null,
-                    MathUtils.getRandomNumberInRange(100f, 500f),
+                    (100f..500f).random(),
                     Math.random().toFloat() * 360f
                 ),
-                10f, 1f, MathUtils.getRandomNumberInRange(0.3f, 0.6f), PARTICLE_COLOR
+                10f, 1f, (0.3f..0.6f).random(), PARTICLE_COLOR
             )
             engine.addNebulaParticle(
                 MathUtils.getRandomPointInCircle(point, 120f),
@@ -55,7 +57,7 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
             Misc.ZERO,
             Vector2f(100f, 100f),   // initial size
             Vector2f(800f, 800f),  // expansion
-            360 * Math.random().toFloat(),
+            360 * Random.nextFloat(),
             0f,
             Color(255, 50, 50, 60),
             true,
@@ -70,7 +72,7 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
             Misc.ZERO,
             Vector2f(100f, 100f),   // initial size
             Vector2f(1100f, 1100f),  // expansion
-            360 * Math.random().toFloat(),
+            360 * Random.nextFloat(),
             0f,
             Color(255, 50, 50, 90),
             true,
@@ -85,7 +87,7 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
             Misc.ZERO,
             Vector2f(100f, 100f),   // initial size
             Vector2f(1400f, 1400f),  // expansion
-            360 * Math.random().toFloat(),
+            360 * Random.nextFloat(),
             0f,
             Color(255, 50, 50, 120),
             true,
@@ -130,8 +132,8 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
             Global.getCombatEngine().spawnEmpArc(
                 projectile.source, point, projectile.source, arcTarget,
                 DamageType.ENERGY,  //Damage type
-                MathUtils.getRandomNumberInRange(0.8f, 1.2f) * bonusDamage,  //Damage
-                MathUtils.getRandomNumberInRange(0.8f, 1.2f) * bonusDamage,  //Emp
+                (0.8f..1.2f).random() * bonusDamage,  //Damage
+                (0.8f..1.2f).random() * bonusDamage,  //Emp
                 100000f,  //Max range
                 "",  //Impact sound
                 10f,  // thickness of the lightning bolt

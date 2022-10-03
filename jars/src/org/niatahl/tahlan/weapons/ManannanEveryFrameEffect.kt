@@ -40,7 +40,6 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
         val toRemove: MutableList<DamagingProjectileAPI> = ArrayList()
         projectiles.forEach { proj ->
             if (proj.isFading || proj.didDamage() || !engine.isEntityInPlay(proj)) {
-
                 toRemove.add(proj)
             } else {
                 val point2 = Vector2f(-14f, 0f);

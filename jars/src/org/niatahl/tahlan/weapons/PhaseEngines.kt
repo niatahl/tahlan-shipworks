@@ -8,6 +8,7 @@ import com.fs.starfarer.api.util.IntervalUtil
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.utils.random
 import java.awt.Color
 import kotlin.math.roundToInt
 
@@ -40,44 +41,44 @@ class PhaseEngines : EveryFrameWeaponEffectPlugin {
                 Global.getCombatEngine().addNegativeNebulaParticle(
                     e.location,
                     vel,
-                    MathUtils.getRandomNumberInRange(40f, 60f),
+                    (40f..60f).random(),
                     1.2f,
                     0.1f,
                     0.5f,
-                    MathUtils.getRandomNumberInRange(1.2f, 1.5f),
+                    (1.2f..1.5f).random(),
                     Color(24, 254, 109, (10 * alphaMult).roundToInt())
                 )
             if (interval2.intervalElapsed())
                 Global.getCombatEngine().addNebulaParticle(
                     e.location,
                     vel,
-                    MathUtils.getRandomNumberInRange(30f, 50f),
+                    (30f..50f).random(),
                     1.2f,
                     0.1f,
                     0.5f,
-                    MathUtils.getRandomNumberInRange(1f, 1.3f),
+                    (1f..1.3f).random(),
                     Color(204, 30, 109, (70 * alphaMult).roundToInt())
                 )
             if (interval3.intervalElapsed())
                 Global.getCombatEngine().addNebulaParticle(
                     e.location,
                     vel,
-                    MathUtils.getRandomNumberInRange(30f, 40f),
+                    (30f..40f).random(),
                     0.6f,
                     0.1f,
                     0.5f,
-                    MathUtils.getRandomNumberInRange(0.3f, 0.7f),
+                    (0.3f..0.7f).random(),
                     Color(255, 100, 189, (120 * alphaMult).roundToInt())
                 )
             if (interval4.intervalElapsed())
                 Global.getCombatEngine().addSwirlyNebulaParticle(
                     MathUtils.getRandomPointInCircle(e.location, 2f),
                     vel,
-                    MathUtils.getRandomNumberInRange(20f, 40f),
+                    (20f..40f).random(),
                     1.1f,
                     0.1f,
                     0.5f,
-                    MathUtils.getRandomNumberInRange(0.8f, 1.1f),
+                    (0.8f..1.1f).random(),
                     Color(255, 112, 251, (50 * alphaMult).roundToInt()),
                     false
                 )
