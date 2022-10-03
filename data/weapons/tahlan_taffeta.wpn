@@ -2,7 +2,7 @@
   "id": "tahlan_taffeta",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_taffeta_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_TaffetaScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.TaffetaScript",
   "type": "BALLISTIC",
   "mountTypeOverride":"HYBRID",
   "size": "MEDIUM",

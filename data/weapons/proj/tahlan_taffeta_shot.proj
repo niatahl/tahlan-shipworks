@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"onHitEffect":"data.scripts.weapons.tahlan_TaffetaOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.TaffetaOnHitEffect",
 	"length":70.0,
 	"width":12.0,
 	"fadeTime":0.15,

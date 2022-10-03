@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"TEMPORAL_SHELL",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_PeriodicBreakerStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.PeriodicBreakerStats",
 	
 	# handled in the script instead of here
 	#"jitterUnderColor":[90,165,255,155],

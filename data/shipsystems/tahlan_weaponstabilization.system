@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_WeaponStabilizers",
+	"statsScript":"org.niatahl.tahlan.shipsystems.WeaponStabilizers",
 	
 	"weaponGlowColor":[255,0,20,155],
 	"weaponTypes":[BALLISTIC,ENERGY],

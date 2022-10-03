@@ -8,7 +8,7 @@
     255,
     255
   ],
-  "everyFrameEffect": "data.scripts.weapons.tahlan_BeamOscillationScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.BeamOscillationScript",
   "fireSoundTwo": "tahlan_shiva_loop",
   "fringeColor": [
     0,

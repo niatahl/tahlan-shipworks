@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_FafnirMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.FafnirMuzzleFlashScript",
   "fireSoundTwo": "tahlan_armiger_fire",
   "hardpointAngleOffsets": [
     0,

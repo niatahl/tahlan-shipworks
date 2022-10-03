@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC",	
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"onHitEffect":"data.scripts.weapons.tahlan_AtraposOnHitEffect",	
+	"onHitEffect":"org.niatahl.tahlan.weapons.AtraposOnHitEffect",
 	"hitGlowRadius":70,
 	"length":100.0,
 	"width":8,

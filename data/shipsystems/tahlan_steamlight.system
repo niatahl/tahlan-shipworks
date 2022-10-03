@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_SteamlightStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.SteamlightStats",
 	
 	"weaponGlowColor":[200,120,0,10],
 	"weaponTypes":[BALLISTIC],

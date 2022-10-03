@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"sprite":"graphics/tahlan/missiles/tahlan_kriegsmesser_msl.png",	
-	"onHitEffect":"data.scripts.weapons.tahlan_KriegsmesserOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.KriegsmesserOnHitEffect",
 	"size":[12,30],	
 	"center":[6,15],
 	"collisionRadius":15,

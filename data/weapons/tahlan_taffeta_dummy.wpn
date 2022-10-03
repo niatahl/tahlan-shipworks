@@ -2,7 +2,7 @@
   "id": "tahlan_taffeta_dummy",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_taffeta_dummy_shot",
-  #"everyFrameEffect": "data.scripts.weapons.tahlan_TaffetaScript",
+  #"everyFrameEffect": "org.niatahl.tahlan.weapons.TaffetaScript",
   "type": "BALLISTIC",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/relics/tahlan_taffeta_turret_base.png",

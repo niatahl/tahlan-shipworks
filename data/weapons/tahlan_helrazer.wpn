@@ -2,7 +2,7 @@
   "id": "tahlan_helrazer",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_helrazer_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_HelRazerScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.HelRazerScript",
   "type": "BALLISTIC",
   "size": "LARGE",
   "turretSprite": "graphics/tahlan/weapons/tahlan_helrazer_base.png",

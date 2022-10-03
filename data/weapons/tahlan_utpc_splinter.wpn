@@ -3,7 +3,7 @@
 	"specClass":"projectile",
 	"type":"ENERGY",
 	"size":"LARGE",
-	"everyFrameEffect": "data.scripts.weapons.tahlan_UnstableTPCScript",
+	"everyFrameEffect": "org.niatahl.tahlan.weapons.UnstableTPCScript",
 	"turretSprite":"graphics/weapons/onslaught_thermal_turret_base.png",
 	"turretGlowSprite":"",
 	"hardpointSprite":"",

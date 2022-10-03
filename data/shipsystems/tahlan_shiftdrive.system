@@ -3,7 +3,7 @@
 	"type":"ENGINE_MOD",
 	"aiType":"MANEUVERING_JETS",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_ShiftDriveStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.ShiftDriveStats",
 	
 	"engineGlowLengthMult":1.2,
 	"engineGlowWidthMult":1.2,

@@ -3,7 +3,7 @@
   "id": "tahlan_hueter",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_hueter_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_HueterWeaponScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.HueterWeaponScript",
   "type": "BALLISTIC",
   "size": "SMALL",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_hueter_turret.png",

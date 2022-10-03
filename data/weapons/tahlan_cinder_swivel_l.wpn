@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_cinder_shot",
   "type": "ENERGY",
   "size": "MEDIUM",
-  #"everyFrameEffect": "data.scripts.weapons.tahlan_UnstableTPCScript",
+  #"everyFrameEffect": "org.niatahl.tahlan.weapons.UnstableTPCScript",
   "fireSoundTwo": "tahlan_cinder_fire",
   "turretSprite": "graphics/tahlan/weapons/tahlan_cinder_swivel_l.png",
   "turretGlowSprite": "graphics/tahlan/weapons/tahlan_cinder_swivel_l_glow.png",

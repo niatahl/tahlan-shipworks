@@ -2,7 +2,7 @@
 	"id":"tahlan_praxus_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
-	"onHitEffect":"data.scripts.weapons.tahlan_PraxusOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.PraxusOnHitEffect",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"hitGlowRadius":10,

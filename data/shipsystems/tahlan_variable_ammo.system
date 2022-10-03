@@ -2,9 +2,9 @@
 	"id":"tahlan_variable_ammo",
 	"type":"STAT_MOD",
 	"aiType":"CUSTOM",
-	"aiScript":"data.scripts.shipsystems.ai.tahlan_VariableAmmoAI",
+	"aiScript":"org.niatahl.tahlan.shipsystems.ai.VariableAmmoAI",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_VariableAmmo",
+	"statsScript":"org.niatahl.tahlan.shipsystems.VariableAmmo",
 
 	"fadeActivationSoundOnChargedown":true,
 	"useSound":"SRD_ammo_switch",

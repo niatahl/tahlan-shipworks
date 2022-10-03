@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"TEMPORAL_SHELL",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_TemporalCoordinatorStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.TemporalCoordinatorStats",
 	
 	"jitterUnderColor":[141, 255, 28,45],
 	"jitterUnderCopies":10,

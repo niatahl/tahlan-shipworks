@@ -2,7 +2,7 @@
   "id": "tahlan_manannan",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_manannan_msl",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_ManannanEveryFrameEffect",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.ManannanEveryFrameEffect",
   "type": "MISSILE",
   "size": "LARGE",
   "turretSprite": "graphics/tahlan/weapons/tahlan_manannan_turret.png",

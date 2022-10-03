@@ -3,7 +3,7 @@
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "tahlan_dirge_fire",
   #"fireSoundTwo": "tahlan_atrapos_loop",
-  "everyFrameEffect":"data.scripts.weapons.tahlan_DisparaxOscillationScript",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.DisparaxOscillationScript",
   "coreColor": [
     226, 255, 155, 230
   ],

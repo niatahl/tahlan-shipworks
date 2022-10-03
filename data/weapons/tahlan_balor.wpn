@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_balor_shot",
   "type": "BALLISTIC",
   "size": "LARGE",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_BalorWeaponScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.BalorWeaponScript",
   "turretSprite": "graphics/tahlan/weapons/tahlan_balor_turret_base.png",
   "turretGunSprite": "graphics/tahlan/weapons/tahlan_balor_turret_recoil.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_balor_hp_base.png",

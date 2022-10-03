@@ -4,8 +4,8 @@
   "collisionClassByFighter": "RAY_FIGHTER",
   "fireSoundOne": "tahlan_eradicator_fire",
   "fireSoundTwo": "tahlan_eradicator_loop",
-  "everyFrameEffect":"data.scripts.weapons.tahlan_EradicatorSmokeScript", 
-  "beamEffect":"data.scripts.weapons.tahlan_EradicatorBeamEffect",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.EradicatorSmokeScript",
+  "beamEffect":"org.niatahl.tahlan.weapons.EradicatorBeamEffect",
   "coreColor": [
     255,
     255,

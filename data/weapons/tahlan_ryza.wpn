@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_ryza_shot",
   "type": "ENERGY",
   "size": "LARGE",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_RyzaScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.RyzaScript",
   "turretSprite": "graphics/tahlan/weapons/tahlan_ryza_turret_base.png",
   "turretGlowSprite": "graphics/tahlan/weapons/tahlan_ryza_turret_glow.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_ryza_hp_base.png",

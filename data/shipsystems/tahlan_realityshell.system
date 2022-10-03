@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_RealityShell",
+	"statsScript":"org.niatahl.tahlan.shipsystems.RealityShell",
 	"runScriptWhileIdle":true,
 	
 	"soundFilterType":"LOWPASS",

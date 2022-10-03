@@ -3,7 +3,7 @@
 	"type":"SHIELD_MOD",
 	"aiType":"FORTRESS_SHIELD",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_StrongholdShieldStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.StrongholdShieldStats",
 	
 	"shieldRingColor":[255,200,150,255],
 	"shieldInnerColor":[220,120,0,75],

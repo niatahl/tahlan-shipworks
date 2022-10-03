@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"TARGETING_FEED",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_DodgyNavigationFeedStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.DodgyNavigationFeedStats",
 	
 	"useSound":"system_targeting_feed",
 	#"loopSound":"system_targeting_feed_loop",

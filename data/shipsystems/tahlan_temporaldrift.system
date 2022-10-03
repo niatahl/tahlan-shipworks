@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"TEMPORAL_SHELL",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_TemporalDriftStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.TemporalDriftStats",
 	
 	"engineGlowColor":[255,50,0,255],
 	#"engineGlowContrailColor":[100,165,255,25],

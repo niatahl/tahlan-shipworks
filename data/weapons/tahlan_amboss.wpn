@@ -2,7 +2,7 @@
   "id": "tahlan_amboss",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_amboss_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_AmbossMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.AmbossMuzzleFlashScript",
   "type": "BALLISTIC",
   "size": "LARGE",
   "turretSprite": "graphics/tahlan/weapons/tahlan_lockdown_turret_base.png",

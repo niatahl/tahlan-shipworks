@@ -2,7 +2,7 @@
 	"id":"tahlan_mezoa_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.tahlan_MezoaOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.MezoaOnHitEffect",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":60.0,

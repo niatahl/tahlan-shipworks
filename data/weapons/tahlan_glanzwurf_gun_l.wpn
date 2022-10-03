@@ -2,7 +2,7 @@
   "id": "tahlan_glanzwurf_gun_l",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_glanzflak_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_GlanzFlakMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.GlanzFlakMuzzleFlashScript",
   "type": "ENERGY",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_glanzwurf_gun_l.png",

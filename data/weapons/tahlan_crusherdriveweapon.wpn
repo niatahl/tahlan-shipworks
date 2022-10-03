@@ -28,5 +28,5 @@
 	"textureScrollSpeed":0.0,
 	"pixelsPerTexel":1.0,
 	"pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER],
-	"beamEffect":"data.scripts.weapons.tahlan_CrusherDriveBeamEffect",
+	"beamEffect":"org.niatahl.tahlan.weapons.CrusherDriveBeamEffect",
 }

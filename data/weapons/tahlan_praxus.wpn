@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect":"data.scripts.weapons.tahlan_rotaryAnimation",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.rotaryAnimation",
   "fireSoundTwo": "tahlan_praxus_fire",
   "hardpointAngleOffsets": [
     0

@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"sprite":"graphics/tahlan/missiles/tahlan_blank.png",
-	"onHitEffect":"data.scripts.weapons.tahlan_KarionOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.KarionOnHitEffect",
 	"size":[2,2],	
 	"center":[1,1],
 	"collisionRadius":10,

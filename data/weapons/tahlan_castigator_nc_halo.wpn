@@ -9,7 +9,7 @@
   ],
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_NCHaloScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.NCHaloScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [

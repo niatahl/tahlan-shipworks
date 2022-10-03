@@ -2,7 +2,7 @@
   "id": "tahlan_panzerfaust_l",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_panzerfaust_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_ArmigerMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.ArmigerMuzzleFlashScript",
   "type": "BALLISTIC",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_panzerfaust_l_base.png",

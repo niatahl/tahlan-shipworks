@@ -2,7 +2,7 @@
 	"id":"tahlan_astrix_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
-	"onHitEffect":"data.scripts.weapons.tahlan_NumeonOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.NumeonOnHitEffect",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"length":100.0,

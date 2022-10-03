@@ -3,7 +3,7 @@
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "tahlan_porph_fire",
   "glowColor": [255,140,80,155],
-  "everyFrameEffect": "data.scripts.weapons.tahlan_PorphyrionMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.PorphyrionMuzzleFlashScript",
   "hardpointAngleOffsets": [
     0
   ],

@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"DAMPER_FIELD",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_HeavyDamperStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.HeavyDamperStats",
 	
 	"jitterUnderColor":[255,165,90,155],
 	"jitterUnderCopies":25,

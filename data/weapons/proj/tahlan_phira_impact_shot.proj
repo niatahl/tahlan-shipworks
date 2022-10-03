@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	#"onHitEffect":"data.scripts.weapons.tahlan_StyrixOnHitEffect",
+	#"onHitEffect":"org.niatahl.tahlan.weapons.StyrixOnHitEffect",
 	"length":70.0,
 	"width":12.0,
 	"fadeTime":0.15,

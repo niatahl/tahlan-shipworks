@@ -6,7 +6,7 @@
   "fringeColor":[85,25,215,255],
   "coreColor":[255,255,255,255],
   "glowColor":[165,100,255,235],
-  "beamEffect":"data.scripts.weapons.tahlan_GaeBolgScript",
+  "beamEffect":"org.niatahl.tahlan.weapons.GaeBolgScript",
   "hardpointAngleOffsets": [
     0
   ],

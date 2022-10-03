@@ -1,63 +1,63 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
-Cooperative Protocols,tahlan_cooperative_protocols_yuki,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CooperativeProtocolsYuki,"The Yukikaze and Korikaze hulls were specifically developed to be fielded in tandem. The Yukikaze features a powerful array of control devices and transmitters which allows it to provide detailed combat information for any nearby Korikaze-class vessels.
+Cooperative Protocols,tahlan_cooperative_protocols_yuki,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.CooperativeProtocolsYuki,"The Yukikaze and Korikaze hulls were specifically developed to be fielded in tandem. The Yukikaze features a powerful array of control devices and transmitters which allows it to provide detailed combat information for any nearby Korikaze-class vessels.
 
 If any allied Korikaze-class ship is within %s SU, this ship counts its ECM rating as %s higher, has %s improved autofire accuracy, and gains %s additional top speed and acceleration.
 
 If at least %s Korikaze-class ships are within this range, all bonuses are increased by %s.",Bonus when grouped with Korikazes,graphics/tahlan/hullmods/cooperative_protocols.png
-Cooperative Protocols,tahlan_cooperative_protocols_kori,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CooperativeProtocolsKori,"The Korikaze and Yukikaze hulls were specifically developed to be fielded in tandem. The Korikaze has fine-tuned transcievers allowing it to accurately exchange information and combat data with a nearby Yukikaze-class vessel.
+Cooperative Protocols,tahlan_cooperative_protocols_kori,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.CooperativeProtocolsKori,"The Korikaze and Yukikaze hulls were specifically developed to be fielded in tandem. The Korikaze has fine-tuned transcievers allowing it to accurately exchange information and combat data with a nearby Yukikaze-class vessel.
 
 If an allied Yukikaze-class ship is within %s SU, this ship ignores %s of enemy ECM, counts its ECM rating as %s higher, and gains %s additional range for all weapons.",Bonus when grouped with a Yukikaze,graphics/tahlan/hullmods/cooperative_protocols.png
-Kassadari Engineering,tahlan_knightrefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_KnightRefit,"A rare ship constructed by the Great Houses.
+Kassadari Engineering,tahlan_knightrefit,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.KnightRefit,"A rare ship constructed by the Great Houses.
 
 Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s. Armor is reduced by %s based on hull size to make room for the exposed components of the system and monthly supply cost is increased by %s. Furthermore the delicate machinery causes CR to decrease at doubled rate after peak performance time has passed.
 
 In emergency situations the Temporal Circuit will enter overdrive mode. Activating automatically if hull integrity falls below %s, the time acceleration is boosted to %s.
 
 Due to high power needs, all these effects are %s and the delicate nature of the circuit grid can lead to a significant risk of malfunctions should the ship's safeties be removed via overrides. Additionally they are %s.",Modernized Refit,graphics/tahlan/hullmods/tahlan_knightrefit.png
-Advanced Ballistic Interface,tahlan_advballistics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdvBallistics,Enhanced mounts reduce the ordnance point cost of ballistic weapons by %s.,Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
-Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_BroadsideMounts,"The weapon mounts on this ship have been hardened to better withstand the stresses of broadside engagements.
+Advanced Ballistic Interface,tahlan_advballistics,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.AdvBallistics,Enhanced mounts reduce the ordnance point cost of ballistic weapons by %s.,Reduces ordnance point cost of all ballistic weapons.,graphics/hullmods/ballistics_integration.png
+Broadside Mounts,tahlan_broadsidemounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.BroadsideMounts,"The weapon mounts on this ship have been hardened to better withstand the stresses of broadside engagements.
 
 Weapon mount health is increased by %s and repairs are sped up by %s. Reduces OP cost of large mount weaponry by %s.",Hardens weapon mounts,graphics/hullmods/armored_weapon_emplacements.png
-Forced Overdrive,tahlan_forcedoverdrive,,0.5,,"shields, offensive",,10000,,,,4,8,14,20,data.scripts.hullmods.tahlan_ForcedOverdrive,"An unusual modification for Kassadari hulls and refits, redirecting power from the shields to the Temporal Conduit Grid, allowing for a %s. To at least partially counteract the loss of shields, the saved weight of a missing shield generator is used to instead mount additional armor plating %s.
+Forced Overdrive,tahlan_forcedoverdrive,,0.5,,"shields, offensive",,10000,,,,4,8,14,20,org.niatahl.tahlan.hullmods.ForcedOverdrive,"An unusual modification for Kassadari hulls and refits, redirecting power from the shields to the Temporal Conduit Grid, allowing for a %s. To at least partially counteract the loss of shields, the saved weight of a missing shield generator is used to instead mount additional armor plating %s.
 
 (Can only be applied to Kassadari ships)",Sacrifices shields for permanent overdrive activation.,graphics/tahlan/hullmods/tahlan_knightrefit.png
-Temporal Travel Drive,tahlan_temporaltraveldrive,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_TemporalTravelDrive,"As the Temporal Circuit Grid installed on Kassadari vessels requires a massive powerspike to be powered up at the start of battle, the system is linked to the ship's travel drives. Diverting energy from the drives upon entering combat, the grid is booted up in a supercharged state, catapulting the ship into battle under massively accelerated temporal flow.",Accelerates time while entering the battlefield.,graphics/tahlan/hullmods/tahlan_knightrefit.png
-Cramped Hangar Bays,tahlan_crampedhangars,,,,fighters,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CrampedHangars,"Fitting an overly large number of fighter bays has come at the cost of particularly cramped decks, making it harder to quickly service and rearm fighters in combat. As a consequence fighter refit times are increased by %s.",Increased fighter refit times.,graphics/tahlan/hullmods/tahlan_cramped_hangar.png
-Lifeless Systems,tahlan_noname,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_NoName,"This unknown ship design is equipped with a %s of unknown design, resembling those found on Kassadari vessels accelerating its timeflow by %s and harbors at its core an advanced drone nanoforge, capable of rapidly constructing drones in combat %s.
+Temporal Travel Drive,tahlan_temporaltraveldrive,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.TemporalTravelDrive,"As the Temporal Circuit Grid installed on Kassadari vessels requires a massive powerspike to be powered up at the start of battle, the system is linked to the ship's travel drives. Diverting energy from the drives upon entering combat, the grid is booted up in a supercharged state, catapulting the ship into battle under massively accelerated temporal flow.",Accelerates time while entering the battlefield.,graphics/tahlan/hullmods/tahlan_knightrefit.png
+Cramped Hangar Bays,tahlan_crampedhangars,,,,fighters,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.CrampedHangars,"Fitting an overly large number of fighter bays has come at the cost of particularly cramped decks, making it harder to quickly service and rearm fighters in combat. As a consequence fighter refit times are increased by %s.",Increased fighter refit times.,graphics/tahlan/hullmods/tahlan_cramped_hangar.png
+Lifeless Systems,tahlan_noname,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.NoName,"This unknown ship design is equipped with a %s of unknown design, resembling those found on Kassadari vessels accelerating its timeflow by %s and harbors at its core an advanced drone nanoforge, capable of rapidly constructing drones in combat %s.
 
 The high complexity of this technology increases monthly maintenance cost by %s.",Time acceleration and enhanced drone nanoforge.,graphics/hullmods/targeting_supercomputer.png
-Aftermarket Phase Coils,tahlan_aftermarketphasecoils,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AftermarketPhasecoils,"This ship is equipped with a set of salvaged phase coils and able to project a low-intensity phase field at all times, negating its sensor profile entirely. 
+Aftermarket Phase Coils,tahlan_aftermarketphasecoils,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.AftermarketPhasecoils,"This ship is equipped with a set of salvaged phase coils and able to project a low-intensity phase field at all times, negating its sensor profile entirely.
 
 As the ship wasn't designed for phase coils however, strong interference with its targeting systems severely limits the range of its weapons past %s and maintenance costs are %s.",Reduces sensor profile and limits range.,graphics/hullmods/phase_field.png
-Specialized Energy Mounts,tahlan_heavyenergy,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyEnergy,"Equipped with specialized energy mounts, the OP cost of large energy weapons is reduced by %s.
+Specialized Energy Mounts,tahlan_heavyenergy,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.HeavyEnergy,"Equipped with specialized energy mounts, the OP cost of large energy weapons is reduced by %s.
 
 Furthermore, a modified flux grid allows for the overcharging of projectile-based energy weapons, increasing their damage by %s. This comes at the cost of a %s reduced rate of fire for all kinds of energy weapons.",Boosts energy weapon damage at cost of firerate.,
-Infernalis Drives,tahlan_lirefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_LIRefit,"An unusually sophisticated drive modification for pirates, the Infernalis Drives increase top speed by %s/%s/%s/%s su based on hull size and raise the ship's burn level by %s. Additionally these drives have been equipped with improved emission shielding, reducing the ship's sensor profile by %s.
+Infernalis Drives,tahlan_lirefit,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.LIRefit,"An unusually sophisticated drive modification for pirates, the Infernalis Drives increase top speed by %s/%s/%s/%s su based on hull size and raise the ship's burn level by %s. Additionally these drives have been equipped with improved emission shielding, reducing the ship's sensor profile by %s.
 
 %s.",Improved drives,graphics/tahlan/hullmods/tahlan_lirefit.png
-Escape Afterburners,tahlan_afterburners,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Afterburners,Grants a boost to mobility once missile ordnance has been depleted,Grants a boost to mobility once missile ordnance has been depleted,
-Parallel Targeting Core,tahlan_paralleltargeting,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_ParallelTargetingUnit,"This ship is outfitted with secondary targeting core for improved rangefinding. Increases the base range of small non-missile weapons by %s for non-PD and %s for PD weapons.
+Escape Afterburners,tahlan_afterburners,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Afterburners,Grants a boost to mobility once missile ordnance has been depleted,Grants a boost to mobility once missile ordnance has been depleted,
+Parallel Targeting Core,tahlan_paralleltargeting,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.ParallelTargetingUnit,"This ship is outfitted with secondary targeting core for improved rangefinding. Increases the base range of small non-missile weapons by %s for non-PD and %s for PD weapons.
 
 Incompatible with %s.",Increases small weapon range,graphics/hullmods/ballistic_rangefinder.png
-Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VundAutoforge,"This ship contains a large autoforge passively producing missile ammunition during combat. Restores %s of every missile weapon's base maximum ammunition %s.  
+Vund-Pattern Autoforge,tahlan_vundautoforge,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.VundAutoforge,"This ship contains a large autoforge passively producing missile ammunition during combat. Restores %s of every missile weapon's base maximum ammunition %s.
 
 Effect increased by %s if commanding officer has the %s skill. Unaffected by hullmods that increase maximum missile ammo.",Regenerates Missiles,graphics/hullmods/missile_autofactory.png
-Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing damage and flux costs by %s.
+Flux Catalyst,tahlan_fluxcatalyst,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.FluxCatalyst,"The Trill houses an experimental flux catalyst system. Utilizing built-up flux, the ship is capable of supercharging its weapon, increasing damage and flux costs by %s.
 
 Damage is increased further by up to %s as flux level increases.",Boosts damage with flux level,graphics/tahlan/hullmods/tahlan_fluxcatalyst.png
-Lostech Engineering,tahlan_heavyconduits,,,,defensive,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_HeavyConduits,"The flux grid of this ship has been heavily reinforced and modified with advanced and unknown Domain lostech. Its exact specs are unknown, but through tests and extensive analysis you have been able to deduce most of the effects. Similar to common reinforced flux conduits, EMP damage taken is reduced by %s. Additionally the ship's flux dissipation rate while venting is boosted by %s and a fully integrated autorepair system reduces weapon and engine repair times by %s.
+Lostech Engineering,tahlan_heavyconduits,,,,defensive,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.HeavyConduits,"The flux grid of this ship has been heavily reinforced and modified with advanced and unknown Domain lostech. Its exact specs are unknown, but through tests and extensive analysis you have been able to deduce most of the effects. Similar to common reinforced flux conduits, EMP damage taken is reduced by %s. Additionally the ship's flux dissipation rate while venting is boosted by %s and a fully integrated autorepair system reduces weapon and engine repair times by %s.
 
 Detailed analysis indicates that the ship may possess other, as of yet undocumented, capabilities.
 
 Due to the limited understanding of the technology, maintenance costs and CR degradation in combat after peak performance time are increased by %s.
 
 The extensive modifications are also incompatible with %s and the non-standard shield generators are incompatible with regular %s.","Reduces amount of EMP damage taken, improves venting.",graphics/tahlan/hullmods/tahlan_heavyconduits.png
-Makeshift Turret Mounts,tahlan_makeshiftmounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_MakeshiftMounts,"The turret mounts of this ship have been ""upgraded"" in a makeshift manner. Due to inferior engineering, weapons can only turn at %s speed and ballistic weapon rate of fire is reduced to %s of base.",Reduces weapon turnrate and rate of fire.,graphics/tahlan/hullmods/tahlan_makeshiftmounts.png
-Blessed Machinery,tahlan_admechrefit,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_AdMechRefit,"This Vessel has been blessed by the Machine God, granting it %s better flux stats and an additional %s increase to energy weapon range, while the Children of Mars have augmented the armor plating, increasing the armor value by %s. 
+Makeshift Turret Mounts,tahlan_makeshiftmounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.MakeshiftMounts,"The turret mounts of this ship have been ""upgraded"" in a makeshift manner. Due to inferior engineering, weapons can only turn at %s speed and ballistic weapon rate of fire is reduced to %s of base.",Reduces weapon turnrate and rate of fire.,graphics/tahlan/hullmods/tahlan_makeshiftmounts.png
+Blessed Machinery,tahlan_admechrefit,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.AdMechRefit,"This Vessel has been blessed by the Machine God, granting it %s better flux stats and an additional %s increase to energy weapon range, while the Children of Mars have augmented the armor plating, increasing the armor value by %s.
 
 The heat of combat will rouse the ship's Machine Spirit and as it accumulates flux, ballistic and energy weapon damage will increase while their rate of fire will decrease by up to %s for ballistic weapons and up to %s for energy weapons.",Blessings of the Machine God.,graphics/tahlan/hullmods/tahlan_admech.png
 ,,,,,,,,,,,,,,,,,,
-Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
+Silberherz Core,tahlan_silberherz,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Silberherz,"The arcane technology of this warmachine is powered and controlled by the Silberherz, a hyperadvanced combined computing and power core.
 
 Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles by %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
@@ -66,55 +66,55 @@ Due to their high complexity, Regalia are directly controlled by their captain v
 Additionally, the need for specialized maintenance equipment means supply use for maintanance and time to recover is %s if the fleet lacks a vessel with %s.
 
 %s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz.png
-Silberherz Subcore,tahlan_silberherz_minor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_SilberherzMinor,"The arcane technology of this warmachine is powered and controlled by a downscaled variant of the Silberherz, a hyperadvanced combined computing and power core.
+Silberherz Subcore,tahlan_silberherz_minor,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.SilberherzMinor,"The arcane technology of this warmachine is powered and controlled by a downscaled variant of the Silberherz, a hyperadvanced combined computing and power core.
 
 Regalia were designed for resilience. The advanced targeting matrix is highly efficient at dealing with small targets, increasing damage to fighters and missiles by %s and specialized microforcefields around all weapon mounts effectively improve their health by %s.
 
 Additionally, the need for specialized maintenance equipment means supply use for maintanance and time to recover is %s if the fleet lacks a vessel with %s.
 
 %s",Exotic Power Core,graphics/tahlan/hullmods/tahlan_silberherz_minor.png
-Adlerauge Array,tahlan_adlerauge,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_Adlerauge,"Built into the bow of the ship, this massive combat scanner supplies improved targeting data, increasing the effective range of energy and ballistic weapons by %s, boosting projectile velocity by %s and improving autofire accuracy.
+Adlerauge Array,tahlan_adlerauge,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Adlerauge,"Built into the bow of the ship, this massive combat scanner supplies improved targeting data, increasing the effective range of energy and ballistic weapons by %s, boosting projectile velocity by %s and improving autofire accuracy.
 
 The Adlerauge will also automatically link with any %s Regalia within a %s radius providing them with the same bonuses.",Buffs self and allies,graphics/tahlan/hullmods/tahlan_adlerauge.png
-Regalia Gantry,tahlan_regaliagantry,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_RegaliaGantry,This vessel is equipped with the necessary equipment for servicing and maintaining Regalia.,Regalia maintenance,graphics/tahlan/hullmods/tahlan_regaliagantry.png
-Artillery Interface,tahlan_traummounts,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_TraumMounts,Enhanced mounts reduce the ordnance point cost of large ballistic and energy weapons by %s.,Reduces OP cost of large ballistic and energy weapons.,graphics/hullmods/ballistics_integration.png
+Regalia Gantry,tahlan_regaliagantry,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaGantry,This vessel is equipped with the necessary equipment for servicing and maintaining Regalia.,Regalia maintenance,graphics/tahlan/hullmods/tahlan_regaliagantry.png
+Artillery Interface,tahlan_traummounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.TraumMounts,Enhanced mounts reduce the ordnance point cost of large ballistic and energy weapons by %s.,Reduces OP cost of large ballistic and energy weapons.,graphics/hullmods/ballistics_integration.png
 ,,,,,,,,,,,,,,,,,,
-Temporal Armor,tahlan_outcast_engineering,2,,,special,Special,9999,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_OutcastEngineering,"A rare ship constructed by the Great Houses.
+Temporal Armor,tahlan_outcast_engineering,2,,,special,Special,9999,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OutcastEngineering,"A rare ship constructed by the Great Houses.
 
 Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s.
 
 Unlike most Kassadari vessels, the Metafalica carries an experimental variant of this circuit grid, replacing the standard overdrive functionality with a unique defensive system that utilizes built-up flux. The ship's armor and hull takes up to %s less damage, and %s less EMP damage, based on the ship's flux. This bonus increases the higher the ship's flux gets, starting at %s and maxing out at %s.
 
 Monthly supply cost is increased by %s. Furthermore the delicate machinery causes CR to decrease at doubled rate after peak performance time has passed.",Increases speed when traveling in a straight line. Bonus armor damage reduction at high flux. Damages anything nearby when overloading.,graphics/tahlan/hullmods/tahlan_knightrefit.png
-Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
+Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
 ,,,,,,,,,,,,,,,,,,
-Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
+Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
 ,,,,,,,,,,,,,,,,,,
-Phase Harmonics,tahlan_phaseharmonics,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_phaseHarmonics,"The fully integrated phase grid of this ship can place it in a partial phase state during low stress periods.
+Phase Harmonics,tahlan_phaseharmonics,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.phaseHarmonics,"The fully integrated phase grid of this ship can place it in a partial phase state during low stress periods.
 
 While the %s is out of charges, all damage taken is reduces by %s and active vent rate is increased by %s.",Enhances defenses and venting during system downtime.,graphics/tahlan/hullmods/tahlan_phaseharmonics.png
-Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileVents,(Hidden) Venting spawns volatile emp arcs,(Hidden) Venting spawns volatile emp arcs,
-Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VolatileDissipation,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,
-Vent Weapon Boost,tahlan_ventweaponboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_VentWeaponBoost,(Hidden) Boosts weapon damage after venting,(Hidden) Boosts weapon damage after venting,
-Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_RealityGlitch,(Hidden) Randomly phases and repairs some armor,(Hidden) Randomly phases and repairs some armor,
-Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_10pctCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
-Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_CreepyFog,(Hidden) Adds spooky fog to a ship,(Hidden) Adds spooky fog to a ship,
-Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
-Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities and reduces recoil by %s. Further increases damage to missiles by %s. Specialised integration enhances the tracking capabilities of Legio smartguns. Engines are increasing optimised at flux levels below %s, increasing top speed by up to %s at zero flux and
+Volatile Vents,tahlan_volatilevents,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.VolatileVents,(Hidden) Venting spawns volatile emp arcs,(Hidden) Venting spawns volatile emp arcs,
+Volatile Dissipation,tahlan_volatiledissipation,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.VolatileDissipation,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,(Hidden) Boosts dissipation with hardflux level. Arcs EMP at high flux,
+Vent Weapon Boost,tahlan_ventweaponboost,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.VentWeaponBoost,(Hidden) Boosts weapon damage after venting,(Hidden) Boosts weapon damage after venting,
+Reality Glitch,tahlan_realityglitch,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.RealityGlitch,(Hidden) Randomly phases and repairs some armor,(Hidden) Randomly phases and repairs some armor,
+Crit Build,tahlan_10pctCritChance,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.TenPercentCritChance,(Hidden) Adds crit chance to a ship,(Hidden) Adds crit chance to a ship,
+Creepy Spooky Stuff,tahlan_spookyFog,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.CreepyFog,(Hidden) Adds spooky fog to a ship,(Hidden) Adds spooky fog to a ship,
+Skyrend Bays,tahlan_skyrendBays,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.SkyrendBays,(Hidden) Removes 2 bays,(Hidden) Removes 2 bays,
+Daemon Core,tahlan_daemoncore,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonCore,"Equipped with an advanced AI targeting system. Improves projectile velocities and reduces recoil by %s. Further increases damage to missiles by %s. Specialised integration enhances the tracking capabilities of Legio smartguns. Engines are increasing optimised at flux levels below %s, increasing top speed by up to %s at zero flux and
 
 There appear to be various protocols in place restricting the ship's capabilities without Legio command codes, causing it to only operate at %s of its peak capacity. Furthermore your technicians have found a number of backdoors that might allow certain Daemon command ships to take direct remote control of this vessel, though they estimate this would require close proximity to said command ship. Any attempts to remove these restrictions would unfortunately cripple the essential automated systems of the ship, rendering it effectively useless.
 
 Increases supply use for maintenance and recovery by %s.",Enhances targeting,graphics/tahlan/hullmods/tahlan_daemoncore.png
-Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png
-Hel Carapace,tahlan_daemonarmor,,,,,,,,TRUE,,0,0,0,0,data.scripts.hullmods.tahlan_DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
+Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png
+Hel Carapace,tahlan_daemonarmor,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the low durability makes it vulnerable to focused fire.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,data.scripts.hullmods.tahlan_DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
+Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,org.niatahl.tahlan.hullmods.DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Hel Hound Armor,tahlan_helhoundarmor,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,TRUE,0,0,0,0,data.scripts.hullmods.tahlan_StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,graphics/tahlan/hullmods/tahlan_stealthplating.png
+Hel Hound Armor,tahlan_helhoundarmor,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,graphics/tahlan/hullmods/tahlan_stealthplating.png

@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "hellbore_fire",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_FrayMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.FrayMuzzleFlashScript",
   "hardpointAngleOffsets": [0],
   "hardpointGunSprite": "graphics/tahlan/weapons/tahlan_fray_recoil.png",
   "hardpointOffsets": [

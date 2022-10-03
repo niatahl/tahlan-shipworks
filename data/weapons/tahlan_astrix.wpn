@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "LINKED",
   "fireSoundTwo": "tahlan_astrix_fire",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_NumeonMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.NumeonMuzzleFlashScript",
   "hardpointAngleOffsets": [
     0,
     0

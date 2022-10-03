@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_aetnos_shot",
   "type": "BALLISTIC",
   "size": "MEDIUM",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_AetnosMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.AetnosMuzzleFlashScript",
   "turretSprite": "graphics/tahlan/weapons/tahlan_aetnos_turret_base.png",
   "turretGunSprite": "graphics/tahlan/weapons/tahlan_aetnos_turret_recoil.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_aetnos_hp_base.png",

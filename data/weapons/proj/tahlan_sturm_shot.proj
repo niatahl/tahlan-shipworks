@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	"onHitEffect":"data.scripts.weapons.tahlan_SturmOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.SturmOnHitEffect",
 	#"spawnType":"BALLISTIC",
 	#"collisionClass":"PROJECTILE_FF",
 	#"collisionClassByFighter":"PROJECTILE_FIGHTER",

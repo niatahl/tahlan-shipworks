@@ -2,7 +2,7 @@
   "id": "tahlan_sturmkanone_m2",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_sturm_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_SturmMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.SturmMuzzleFlashScript",
   "type": "ENERGY",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_sturmkanone_m2_turret.png",

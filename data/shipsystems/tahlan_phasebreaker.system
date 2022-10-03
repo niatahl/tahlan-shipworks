@@ -3,7 +3,7 @@
 	"type":"PHASE_CLOAK",
 	"aiType":"PHASE_CLOAK",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_PhaseBreakerStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.PhaseBreakerStats",
 	"runScriptWhilePaused":true, # only for the player's ship
 	"runScriptWhileIdle":true,  # this means unapply() never gets called
 	"blockActionsWhileChargingDown":false,

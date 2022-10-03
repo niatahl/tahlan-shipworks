@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"ROCKET",
 	"sprite":"graphics/tahlan/missiles/tahlan_manannan_msl.png",
-	"onHitEffect":"data.scripts.weapons.tahlan_ManannanOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.ManannanOnHitEffect",
 	"size":[14,30],	
 	"center":[7,15],
 	"collisionRadius":15,

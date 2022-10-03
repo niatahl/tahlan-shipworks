@@ -1,6 +1,6 @@
 {
-  "beamEffect": "data.scripts.weapons.tahlan_TitanomachyBeamEffect",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_TitanomachyScript",
+  "beamEffect": "org.niatahl.tahlan.weapons.TitanomachyBeamEffect",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.TitanomachyScript",
   "beamFireOnlyOnFullCharge": true,
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",

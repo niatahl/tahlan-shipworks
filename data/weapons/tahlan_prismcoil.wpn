@@ -1,7 +1,7 @@
 {
   "animationType": "NONE",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_SmartBoltScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.SmartBoltScript",
   "fireSoundTwo": "tachyon_lance_emp_impact",
   "glowColor": [
     155,

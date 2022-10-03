@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_PlasmaRounds",
+	"statsScript":"org.niatahl.tahlan.shipsystems.PlasmaRounds",
 	
 	"useSound":"system_ammo_feeder",
 	"outOfUsesSound":"gun_out_of_ammo",

@@ -3,7 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "beamEffect": "data.scripts.weapons.tahlan_BeamFlashEffect",
+  "beamEffect": "org.niatahl.tahlan.weapons.BeamFlashEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
   "turretSprite": "graphics/tahlan/weapons/tahlan_mininglance_base.png",

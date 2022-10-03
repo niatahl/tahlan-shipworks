@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"ROCKET",
 	"sprite":"graphics/tahlan/missiles/tahlan_hekaton_msl.png",
-	"onHitEffect":"data.scripts.weapons.tahlan_HekatonOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.HekatonOnHitEffect",
 	"size":[13,31],	
 	"center":[6.5,15.5],
 	"collisionRadius":15,

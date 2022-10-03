@@ -2,7 +2,7 @@
   "id": "tahlan_velvet_fighter",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_velvet_shot",
-  #"everyFrameEffect": "data.scripts.weapons.tahlan_VelvetScript",
+  #"everyFrameEffect": "org.niatahl.tahlan.weapons.VelvetScript",
   "type": "ENERGY",
   "size": "MEDIUM",
   "turretSprite": "graphics/tahlan/weapons/relics/tahlan_velvet_turret_base.png",

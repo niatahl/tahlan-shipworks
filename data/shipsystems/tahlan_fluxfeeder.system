@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_FluxFeederStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.FluxFeederStats",
 	
 	#"weaponGlowColor":[255,150,0,155],
 	#"weaponTypes":[BALLISTIC,ENERGY],

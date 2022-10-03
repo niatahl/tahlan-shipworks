@@ -10,7 +10,7 @@
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
   "renderBelowAllWeapons":true,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_KnightGlowScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.KnightGlowScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [

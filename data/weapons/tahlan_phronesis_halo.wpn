@@ -9,7 +9,7 @@
   ],
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_PhronHaloScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.PhronHaloScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [

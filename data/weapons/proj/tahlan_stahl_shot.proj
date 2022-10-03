@@ -2,7 +2,7 @@
 	"id":"tahlan_stahl_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC",
-	"onHitEffect":"data.scripts.weapons.tahlan_StahlOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.StahlOnHitEffect",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
 	"hitGlowRadius":10,

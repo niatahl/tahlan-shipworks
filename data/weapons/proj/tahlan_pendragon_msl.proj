@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"MIRV",
 	"sprite":"graphics/tahlan/missiles/tahlan_pendragon_msl.png",
-	#"onHitEffect":"data.scripts.weapons.tahlan_HekatonOnHitEffect",
+	#"onHitEffect":"org.niatahl.tahlan.weapons.HekatonOnHitEffect",
 	"size":[12,30],	
 	"center":[6,15],
 	"collisionRadius":30,

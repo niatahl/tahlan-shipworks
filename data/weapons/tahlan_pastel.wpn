@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_pastel_shot",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_PastelScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.PastelScript",
   "turretSprite": "graphics/tahlan/weapons/tahlan_pastel_turret.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_pastel_hp.png",
   "renderAboveAllWeapons": 0,

@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"TEMPORAL_SHELL",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_HelTempShellStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.HelTempShellStats",
 		
 	"soundFilterType":"LOWPASS",
 	"soundFilterGain":0.8,

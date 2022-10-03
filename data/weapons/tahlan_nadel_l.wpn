@@ -8,7 +8,7 @@
   "turretGunSprite": "graphics/tahlan/weapons/ma/tahlan_nadel_l_recoil.png",
   "hardpointSprite": "",
   "renderAboveAllWeapons": 0,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_NadelMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.NadelMuzzleFlashScript",
   "turretOffsets": [
     61,
     4

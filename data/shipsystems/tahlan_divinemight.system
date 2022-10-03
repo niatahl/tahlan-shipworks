@@ -4,7 +4,7 @@
 	#"aiType":"HIGH_ENERGY_FOCUS",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_DivineMightStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.DivineMightStats",
 	
 	"weaponGlowColor":[255,60,40,185],
 	"weaponTypes":[ENERGY,BALLISTIC],

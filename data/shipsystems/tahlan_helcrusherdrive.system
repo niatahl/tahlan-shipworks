@@ -2,9 +2,9 @@
 	"id":"tahlan_helcrusherdrive",
 	"type":"ENGINE_MOD",
 	"aiType":"CUSTOM",
-    "aiScript":"data.scripts.shipsystems.ai.tahlan_CrusherDriveAI",
+    "aiScript":"org.niatahl.tahlan.shipsystems.ai.CrusherDriveAI",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_HelCrusherDriveStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.HelCrusherDriveStats",
 	
 	#"weaponDataId":"tahlan_crusherdriveweapon",
 	

@@ -2,7 +2,7 @@
   "id": "tahlan_cashmere",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_cashmere_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_CashmereScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.CashmereScript",
   "type": "ENERGY",
   "mountTypeOverride":"HYBRID",
   "size": "LARGE",

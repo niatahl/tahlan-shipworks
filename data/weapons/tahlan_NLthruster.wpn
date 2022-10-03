@@ -21,5 +21,5 @@
 	"textureType":ROUGH,
 	"textureScrollSpeed":1.0,
 	"pixelsPerTexel":5.0,	
-	"everyFrameEffect":"data.scripts.weapons.tahlan_SystemVectorThruster",	
+	"everyFrameEffect":"org.niatahl.tahlan.weapons.SystemVectorThruster",
 }

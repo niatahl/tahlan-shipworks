@@ -3,7 +3,7 @@
 	"specClass":"missile",
 	"missileType":"MISSILE",
 	"sprite":"graphics/tahlan/missiles/tahlan_heraton_msl.png",
-	"onHitEffect":"data.scripts.weapons.tahlan_RakatonOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.RakatonOnHitEffect",
 	"size":[15,23],	
 	"center":[7.5,11.5],
 	"collisionRadius":15,

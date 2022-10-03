@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_glanz_shot",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_LichtAmmoScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.LichtAmmoScript",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_doppellicht_l.png",
   "hardpointSprite": "",
   "renderAboveAllWeapons": 0,

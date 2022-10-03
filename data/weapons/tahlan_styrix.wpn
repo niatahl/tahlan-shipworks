@@ -2,7 +2,7 @@
   "animationType": "GLOW_AND_FLASH",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "tahlan_styrix_fire",  
-  "everyFrameEffect":"data.scripts.weapons.tahlan_StyrixMuzzleFlashScript",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.StyrixMuzzleFlashScript",
   "glowColor": [255,140,80,155],
   "hardpointAngleOffsets": [
     0

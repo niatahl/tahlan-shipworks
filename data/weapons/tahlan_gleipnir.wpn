@@ -4,7 +4,7 @@
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "tahlan_gleipnir_fire",
   "glowColor": [255,140,80,155],
-  "everyFrameEffect":"data.scripts.weapons.tahlan_GleipnirScript",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.GleipnirScript",
   "hardpointAngleOffsets": [
     0
   ],

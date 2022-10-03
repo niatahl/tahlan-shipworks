@@ -2,7 +2,7 @@
   "beamFireOnlyOnFullCharge": true,
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  #"everyFrameEffect": "data.scripts.weapons.tahlan_BeamOscillationScript",
+  #"everyFrameEffect": "org.niatahl.tahlan.weapons.BeamOscillationScript",
   "fireSoundTwo": "tahlan_shiva_loop",
   "fringeColor":[255,100,0,225],
   "coreColor":[255,190,140,220],

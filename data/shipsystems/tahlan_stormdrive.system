@@ -2,9 +2,9 @@
 	"id":"tahlan_stormdrive",
 	"type":"ENGINE_MOD",
 	"aiType":"BURN_DRIVE",
-    #"aiScript":"data.scripts.shipsystems.ai.tahlan_StormDriveAI",
+    #"aiScript":"org.niatahl.tahlan.shipsystems.ai.StormDriveAI",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_StormDriveStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.StormDriveStats",
 	
 	"engineGlowColor":[255,50,0,255],
 	#"engineGlowContrailColor":[100,165,255,25],

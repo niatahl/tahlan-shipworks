@@ -2,7 +2,7 @@
   "id": "tahlan_velvet",
   "specClass": "projectile",
   "projectileSpecId": "tahlan_velvet_shot",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_VelvetScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.VelvetScript",
   "type": "ENERGY",
   "mountTypeOverride":"HYBRID",
   "size": "MEDIUM",

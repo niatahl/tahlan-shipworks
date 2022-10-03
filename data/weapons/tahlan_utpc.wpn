@@ -2,7 +2,7 @@
   "animationType": "GLOW_AND_FLASH",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_UnstableTPCScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.UnstableTPCScript",
   "fireSoundTwo": "thermal_pulse_cannon_fire",
   "glowColor": [
     255,

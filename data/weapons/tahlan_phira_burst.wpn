@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
   "fireSoundTwo": "tahlan_purgatory_fire",  
-  "everyFrameEffect": "data.scripts.weapons.tahlan_ArmigerMuzzleFlashScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.ArmigerMuzzleFlashScript",
   "renderHints":["RENDER_BARREL_BELOW"],
   "hardpointAngleOffsets": [
     0,

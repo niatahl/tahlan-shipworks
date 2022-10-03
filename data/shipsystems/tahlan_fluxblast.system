@@ -2,9 +2,9 @@
 	"id":"tahlan_fluxblast",
 	"type":"STAT_MOD",
 	"aiType":"CUSTOM",
-    "aiScript":"data.scripts.shipsystems.ai.tahlan_FluxBlastAI",
+    "aiScript":"org.niatahl.tahlan.shipsystems.ai.FluxBlastAI",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_FluxBlastStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.FluxBlastStats",
 	
 	"useSound":"",
 	"outOfUsesSound":"gun_out_of_ammo",

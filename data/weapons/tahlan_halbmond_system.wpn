@@ -1,7 +1,7 @@
 {
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_assumeControlEffect",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.assumeControlEffect",
   "coreColor": [
     255,
     255,

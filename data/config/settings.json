@@ -1,8 +1,8 @@
 {
 	"plugins":{
-		#"tahlan_ProjectileTrailHandlerPlugin":"data.scripts.plugins.tahlan_ProjectileTrailHandlerPlugin",
-		#"tahlan_MusicPlayerPlugin":"data.scripts.plugins.tahlan_MusicPlayerPlugin",
-		#"tahlan_ProjectileFX":"data.scripts.plugins.tahlan_ProjectileFX",
+		#"tahlan_ProjectileTrailHandlerPlugin":"data.scripts.plugins.ProjectileTrailHandlerPlugin",
+		#"tahlan_MusicPlayerPlugin":"data.scripts.plugins.MusicPlayerPlugin",
+		#"tahlan_ProjectileFX":"data.scripts.plugins.ProjectileFX",
 		},  
 	"designTypeColors":{
             "Unknown":[255,255,255,255],

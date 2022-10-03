@@ -10,7 +10,7 @@
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
   "renderBelowAllWeapons":true,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_TrillGlowScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.TrillGlowScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [

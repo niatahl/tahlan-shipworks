@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_mezoa_shot",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_MezoaScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.MezoaScript",
   "turretSprite": "graphics/tahlan/weapons/tahlan_mezoa_turret_base.png",
   "turretGlowSprite": "graphics/tahlan/weapons/tahlan_mezoa_turret_glow.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_mezoa_hp_base.png",

@@ -3,7 +3,7 @@
 	"type":"DISPLACER",
 	"aiType":"PHASE_DISPLACER",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_SlipDrive",
+	"statsScript":"org.niatahl.tahlan.shipsystems.SlipDrive",
 	
 	"weaponGlowColor":[100,165,255,0],
 	"weaponTypes":[ENERGY],

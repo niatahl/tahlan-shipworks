@@ -4,7 +4,7 @@
   "projectileSpecId": "tahlan_hagel_shot",
   "type": "BALLISTIC",
   "size": "LARGE",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_HagelsturmScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.HagelsturmScript",
   "turretSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_turret_00.png",
   "turretGlowSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_turret_glow.png",
   "hardpointSprite": "graphics/tahlan/weapons/ma/tahlan_hagelsturm_hp_00.png",

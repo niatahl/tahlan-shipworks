@@ -1,5 +1,5 @@
 {
-  "beamEffect": "data.scripts.weapons.tahlan_GigantomachyBeamEffect",
+  "beamEffect": "org.niatahl.tahlan.weapons.GigantomachyBeamEffect",
   "beamFireOnlyOnFullCharge": true,
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",

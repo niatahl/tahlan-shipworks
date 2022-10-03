@@ -3,7 +3,7 @@
 	"type":"STAT_MOD",
 	"aiType":"ENTROPY_AMPLIFIER",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_ActiveECCMStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.ActiveECCMStats",
 	
 	"useSound":"system_targeting_feed",
 	#"loopSound":"system_targeting_feed_loop",

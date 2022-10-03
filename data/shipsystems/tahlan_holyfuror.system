@@ -4,7 +4,7 @@
 	#"aiType":"HIGH_ENERGY_FOCUS",
 	"aiType":"WEAPON_BOOST",
 	
-	"statsScript":"data.scripts.shipsystems.tahlan_HolyFurorStats",
+	"statsScript":"org.niatahl.tahlan.shipsystems.HolyFurorStats",
 	
 	"weaponGlowColor":[255,255,255,185],
 	"weaponTypes":[ENERGY],

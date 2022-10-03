@@ -1,7 +1,7 @@
 {
   "id": "tahlan_stahlhagel_r",
   "specClass": "projectile",
-  "everyFrameEffect":"data.scripts.weapons.tahlan_StahlhagelMuzzleFlashScript",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.StahlhagelMuzzleFlashScript",
   "projectileSpecId": "tahlan_stahl_shot",
   "type": "BALLISTIC",
   "size": "MEDIUM",

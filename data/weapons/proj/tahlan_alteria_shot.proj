@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC",
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	#"onHitEffect":"data.scripts.weapons.tahlan_StyrixOnHitEffect",
+	#"onHitEffect":"org.niatahl.tahlan.weapons.StyrixOnHitEffect",
 	"length":60.0,
 	"width":5.0,
 	"fadeTime":0.15,

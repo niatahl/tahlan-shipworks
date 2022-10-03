@@ -2,7 +2,7 @@
 	"id":"tahlan_relparax_shot",
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
-	"onHitEffect":"data.scripts.weapons.tahlan_RelparaxOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.RelparaxOnHitEffect",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":80.0,

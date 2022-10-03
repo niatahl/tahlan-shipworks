@@ -10,7 +10,7 @@
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
   "renderBelowAllWeapons":true,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_OutcastEngineeringLightsScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.OutcastEngineeringLightsScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [

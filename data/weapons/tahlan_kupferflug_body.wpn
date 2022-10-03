@@ -1,7 +1,7 @@
 {
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  #"everyFrameEffect": "data.scripts.weapons.tahlan_shoulderEffect",
+  #"everyFrameEffect": "org.niatahl.tahlan.weapons.shoulderEffect",
   "coreColor": [
     255,
     255,

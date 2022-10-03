@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC",	
 	"collisionClass":"PROJECTILE_FF",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"onHitEffect":"data.scripts.weapons.tahlan_GleipnirKinOnHitEffect",	
+	"onHitEffect":"org.niatahl.tahlan.weapons.GleipnirKinOnHitEffect",
 	"hitGlowRadius":70,
 	"length":120.0,
 	"width":10,

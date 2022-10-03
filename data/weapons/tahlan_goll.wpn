@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "LINKED",
-  "everyFrameEffect": "data.scripts.weapons.tahlan_GollScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.GollScript",
   "fireSoundTwo": "tahlan_goll_fire",
   "hardpointAngleOffsets": [
     0,

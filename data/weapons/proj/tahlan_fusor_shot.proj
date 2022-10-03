@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	"onHitEffect":"data.scripts.weapons.tahlan_FusorOnHitEffect",
+	"onHitEffect":"org.niatahl.tahlan.weapons.FusorOnHitEffect",
 	"hitGlowRadius":20,
 	"length":100.0,
 	"width":30,

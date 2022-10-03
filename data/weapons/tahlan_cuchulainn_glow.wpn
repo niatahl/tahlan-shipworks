@@ -10,7 +10,7 @@
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
   "renderBelowAllWeapons":true,
-  "everyFrameEffect": "data.scripts.weapons.tahlan_CuchulainnGlowScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.CuchulainnGlowScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [
