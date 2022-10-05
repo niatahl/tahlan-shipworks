@@ -7,6 +7,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;
 import org.lwjgl.util.vector.Vector2f;
+import org.niatahl.tahlan.weapons.deco.LostechRangeEffect;
 
 import java.awt.*;
 

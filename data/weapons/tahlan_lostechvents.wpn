@@ -1,7 +1,7 @@
 {
   "animationType": "NONE",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect":"org.niatahl.tahlan.weapons.LostechVentsScript",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.deco.LostechVentsScript",
   "hardpointAngleOffsets": [
     0
   ],

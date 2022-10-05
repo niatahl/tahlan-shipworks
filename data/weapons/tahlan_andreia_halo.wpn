@@ -9,7 +9,7 @@
   ],
   "renderHints":["RENDER_ADDITIVE"],
   "showDamageWhenDecorative":false,
-  "everyFrameEffect": "org.niatahl.tahlan.weapons.AndreiaHaloScript",
+  "everyFrameEffect": "org.niatahl.tahlan.weapons.deco.AndreiaHaloScript",
   "numFrames":2,
   "frameRate":0,
   "fringeColor": [

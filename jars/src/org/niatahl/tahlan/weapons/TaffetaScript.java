@@ -6,6 +6,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
+import org.niatahl.tahlan.weapons.deco.LostechRangeEffect;
 
 import java.awt.*;
 import java.util.ArrayList;

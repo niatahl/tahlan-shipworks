@@ -1,7 +1,7 @@
 {
   "animationType": "NONE",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect":"org.niatahl.tahlan.weapons.VundAutoforgeEffect",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.deco.VundAutoforgeEffect",
   "hardpointAngleOffsets": [
     0
   ],

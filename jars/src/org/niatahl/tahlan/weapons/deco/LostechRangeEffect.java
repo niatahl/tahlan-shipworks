@@ -1,6 +1,6 @@
 // by Nia, written in an effort to stop Alfonzo from breaking the game again
 
-package org.niatahl.tahlan.weapons;
+package org.niatahl.tahlan.weapons.deco;
 
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;

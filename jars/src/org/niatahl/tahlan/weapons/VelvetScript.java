@@ -4,6 +4,7 @@ import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
+import org.niatahl.tahlan.weapons.deco.LostechRangeEffect;
 
 import java.awt.*;
 
@@ -68,10 +69,7 @@ public class VelvetScript implements EveryFrameWeaponEffectPlugin {
                             ARC_FRINGE_COLOR,
                             ARC_CORE_COLOR
                     );
-
                 }
-
-
             }
         } else {
             flux = 0;

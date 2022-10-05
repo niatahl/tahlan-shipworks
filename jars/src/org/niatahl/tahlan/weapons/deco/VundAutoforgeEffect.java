@@ -1,5 +1,5 @@
 //Based on Tartiflette's missileFab script. Thanks, buddy
-package org.niatahl.tahlan.weapons;
+package org.niatahl.tahlan.weapons.deco;
 
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;

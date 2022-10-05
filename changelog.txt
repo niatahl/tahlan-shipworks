@@ -11,8 +11,6 @@
 	- Defense changed from damper to shields
 	- System changed to entropy amplifier
 	- Top speed 135 -> 150
-- Hel Dominator
-	- Armor 800 -> 700
 - Hel Scaith
 	- Hel Razer damage 4000 -> 5000
 - Miasma drone
@@ -41,6 +39,8 @@
 - Nelson
 	- small missiles changed to composite
 	- built-ins of XIV variant changed from sabot to atropos tubes
+	 Armor 1200 -> 1100
+	- System cooldown 5s -> 8s
 - Balor/Tethra
 	- New sprites
 	- New VFX
@@ -57,9 +57,6 @@
 	- Speed 40 -> 60
 	- Dissipation 500 -> 700
 	- No longer spawns in regular fleets
-- Nelson
-	- Armor 1200 -> 1100
-	- System cooldown 5s -> 8s
 - Poltergeist
 	- Flux capacity 9000 -> 10000
 - Ingress
@@ -79,8 +76,9 @@
 		- No buff at 60% buff
 		- Should retain current Daemon agility on attack, but limit their ability to easily disengage
 - Daemon ships
-	- Buffed shield efficiency by 0.2 across the board
-		- ie. 0.9 became 0.7 etc
+	- Buffed shield efficiency by 0.1 across the board
+		- ie. 0.9 became 0.8 etc
+	- Increased armor values by around 100 each
 - Hel Carapace
 	- Armor bonus for damage calculation is now a flat 200
 	- Regeneration is now disrupted for 2s after taking armor damage

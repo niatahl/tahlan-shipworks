@@ -1,18 +1,19 @@
-package org.niatahl.tahlan.weapons;
+package org.niatahl.tahlan.weapons.deco;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;
 
-public class SophHaloScript implements EveryFrameWeaponEffectPlugin {
-    private static final float[] COLOR_NORMAL = {255f / 255f, 200f / 255f, 150f / 255f};
-    private static final float[] COLOR_OVERDRIVE = {255f / 255f, 100f / 255f, 40f / 255f};
+public class PhronHaloScript implements EveryFrameWeaponEffectPlugin {
+    private static final float[] COLOR_NORMAL = {255f / 255f, 160f / 255f, 160f / 255f};
     private static final float MAX_JITTER_DISTANCE = 0.2f;
     private static final float MAX_OPACITY = 1f;
-    private static final float TRIGGER_PERCENTAGE = 0.3f;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -28,15 +29,13 @@ public class SophHaloScript implements EveryFrameWeaponEffectPlugin {
         float currentBrightness = 0f;
 
         //We glow when the system or overdrive is active
-        if (ship.getHitpoints() <= ship.getMaxHitpoints() * TRIGGER_PERCENTAGE || ship.getVariant().hasHullMod("tahlan_forcedoverdrive")) {
-            currentBrightness = 1f;
-        } else if (ship.getSystem().isActive()) {
+        if (ship.getSystem().isActive()) {
             currentBrightness = ship.getSystem().getEffectLevel();
         }
 
         //No glows on wrecks
-        if ( ship.isHulk() || ship.isPiece() || !ship.isAlive() ) {
-            currentBrightness = 0;
+        if ( ship.isPiece() || !ship.isAlive() ) {
+            return;
         }
 
         //Glows off in refit screen
@@ -45,11 +44,8 @@ public class SophHaloScript implements EveryFrameWeaponEffectPlugin {
         }
 
         //Now, set the color to the one we want, and include opacity
-        Color colorToUse = new Color(COLOR_OVERDRIVE[0], COLOR_OVERDRIVE[1], COLOR_OVERDRIVE[2], currentBrightness * MAX_OPACITY);
+        Color colorToUse = new Color(COLOR_NORMAL[0], COLOR_NORMAL[1], COLOR_NORMAL[2], currentBrightness * MAX_OPACITY);
 
-        if (ship.getSystem().isActive()) {
-            colorToUse = new Color(COLOR_NORMAL[0], COLOR_NORMAL[1], COLOR_NORMAL[2], currentBrightness * MAX_OPACITY);
-        }
 
         //Switches to the proper sprite
         if (currentBrightness > 0) {

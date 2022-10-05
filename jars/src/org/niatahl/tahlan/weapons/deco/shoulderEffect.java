@@ -1,4 +1,4 @@
-package org.niatahl.tahlan.weapons;
+package org.niatahl.tahlan.weapons.deco;
 
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;

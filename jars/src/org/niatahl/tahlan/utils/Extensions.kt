@@ -6,6 +6,7 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI
 import com.fs.starfarer.api.util.Misc
 import com.fs.starfarer.api.util.Misc.FleetFilter
 import org.lwjgl.util.vector.Vector2f
+import java.awt.Color
 import java.util.*
 
 // Credit to Wisp
@@ -138,3 +139,6 @@ fun Vector2f.getAngleInDegreesStrict(to: Vector2f) =
 
 fun ClosedFloatingPointRange<Float>.random(): Float =
     (this.start + (this.endInclusive - this.start) * kotlin.random.Random.nextFloat())
+
+fun Color.modify(red: Int = this.red, green: Int = this.green, blue: Int = this.blue, alpha: Int = this.alpha) =
+    Color(red, green, blue, alpha)

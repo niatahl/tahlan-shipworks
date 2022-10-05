@@ -2,15 +2,19 @@ package org.niatahl.tahlan.weapons
 
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.CombatEngineAPI
+import com.fs.starfarer.api.combat.CombatEngineLayers
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin
 import com.fs.starfarer.api.combat.WeaponAPI
 import com.fs.starfarer.api.util.IntervalUtil
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.plugins.CustomRender
+import org.niatahl.tahlan.utils.modify
 import org.niatahl.tahlan.utils.random
 import java.awt.Color
 import kotlin.math.roundToInt
+import kotlin.random.Random
 
 class PhaseEngines : EveryFrameWeaponEffectPlugin {
     private var alphaMult = 0f
@@ -26,9 +30,7 @@ class PhaseEngines : EveryFrameWeaponEffectPlugin {
         alphaMult = if (ec.isAccelerating) {
             (alphaMult + amount * 2f).coerceAtMost(1f)
         } else if (ec.isDecelerating || ec.isAcceleratingBackwards || ec.isStrafingLeft || ec.isStrafingRight) {
-            if (alphaMult < 0.5f) (alphaMult + amount * 2f).coerceAtMost(0.5f) else (alphaMult - amount * 2f).coerceAtLeast(
-                0.5f
-            )
+            if (alphaMult < 0.5f) (alphaMult + amount * 2f).coerceAtMost(0.5f) else (alphaMult - amount * 2f).coerceAtLeast(0.5f)
         } else {
             (alphaMult - amount * 2f).coerceAtLeast(0f)
         }
@@ -38,49 +40,55 @@ class PhaseEngines : EveryFrameWeaponEffectPlugin {
         VectorUtils.rotate(vel, ship.facing + 180f)
         for (e in ship.engineController.shipEngines) {
             if (interval1.intervalElapsed())
-                Global.getCombatEngine().addNegativeNebulaParticle(
-                    e.location,
-                    vel,
-                    (40f..60f).random(),
-                    1.2f,
-                    0.1f,
-                    0.5f,
-                    (1.2f..1.5f).random(),
-                    Color(24, 254, 109, (10 * alphaMult).roundToInt())
-                )
-            if (interval2.intervalElapsed())
-                Global.getCombatEngine().addNebulaParticle(
+                CustomRender.addNebula(
                     e.location,
                     vel,
                     (30f..50f).random(),
                     1.2f,
-                    0.1f,
-                    0.5f,
                     (1f..1.3f).random(),
-                    Color(204, 30, 109, (70 * alphaMult).roundToInt())
+                    0.1f,
+                    0.4f,
+                    Color(24, 254, 109).modify(alpha = (10 * alphaMult).roundToInt()),
+                    if (Random.nextFloat() > 0.5f) CombatEngineLayers.BELOW_SHIPS_LAYER else CombatEngineLayers.ABOVE_SHIPS_LAYER,
+                    negative = true
+                )
+            if (interval2.intervalElapsed())
+                CustomRender.addNebula(
+                    e.location,
+                    vel,
+                    (30f..50f).random(),
+                    1.2f,
+                    (1f..1.3f).random(),
+                    0.1f,
+                    0.4f,
+                    Color(204, 30, 109).modify(alpha = (60 * alphaMult).roundToInt()),
+                    if (Random.nextFloat() > 0.5f) CombatEngineLayers.BELOW_SHIPS_LAYER else CombatEngineLayers.ABOVE_SHIPS_LAYER
                 )
             if (interval3.intervalElapsed())
-                Global.getCombatEngine().addNebulaParticle(
+                CustomRender.addNebula(
                     e.location,
                     vel,
                     (30f..40f).random(),
                     0.6f,
-                    0.1f,
-                    0.5f,
                     (0.3f..0.7f).random(),
-                    Color(255, 100, 189, (120 * alphaMult).roundToInt())
+                    0.1f,
+                    0.4f,
+                    Color(255, 160, 230).modify(alpha = (90 * alphaMult).roundToInt()),
+                    if (Random.nextFloat() > 0.5f) CombatEngineLayers.BELOW_SHIPS_LAYER else CombatEngineLayers.ABOVE_SHIPS_LAYER,
+                    CustomRender.NebulaType.NORMAL
                 )
             if (interval4.intervalElapsed())
-                Global.getCombatEngine().addSwirlyNebulaParticle(
-                    MathUtils.getRandomPointInCircle(e.location, 2f),
+                CustomRender.addNebula(
+                    e.location,
                     vel,
                     (20f..40f).random(),
-                    1.1f,
-                    0.1f,
-                    0.5f,
+                    0.6f,
                     (0.8f..1.1f).random(),
-                    Color(255, 112, 251, (50 * alphaMult).roundToInt()),
-                    false
+                    0.1f,
+                    0.4f,
+                    Color(255, 112, 251).modify(alpha = (40 * alphaMult).roundToInt()),
+                    if (Random.nextFloat() > 0.5f) CombatEngineLayers.BELOW_SHIPS_LAYER else CombatEngineLayers.ABOVE_SHIPS_LAYER,
+                    CustomRender.NebulaType.SWIRLY
                 )
         }
     }

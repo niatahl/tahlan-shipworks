@@ -1,7 +1,7 @@
 {
   "animationType": "NONE",
   "barrelMode": "ALTERNATING",
-  "everyFrameEffect":"org.niatahl.tahlan.weapons.AdleraugeEffectScript",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.deco.AdleraugeEffectScript",
   "hardpointAngleOffsets": [
     0
   ],

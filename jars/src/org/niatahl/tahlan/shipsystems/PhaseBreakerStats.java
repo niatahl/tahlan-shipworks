@@ -34,16 +34,6 @@ public class PhaseBreakerStats extends BaseShipSystemScript {
 
 
     protected float getDisruptionLevel(ShipAPI ship) {
-        //return disruptionLevel;
-        //if (true) return 0f;
-        if (FLUX_LEVEL_AFFECTS_SPEED) {
-            float threshold = ship.getMutableStats().getDynamic().getMod(
-                    Stats.PHASE_CLOAK_FLUX_LEVEL_FOR_MIN_SPEED_MOD).computeEffective(BASE_FLUX_LEVEL_FOR_MIN_SPEED);
-            if (threshold <= 0) return 1f;
-            float level = ship.getHardFluxLevel() / threshold;
-            if (level > 1f) level = 1f;
-            return level;
-        }
         return 0f;
     }
 
