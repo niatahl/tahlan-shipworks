@@ -79,7 +79,7 @@
 	- Fixed a major bug that caused enrage working in recoveries
 		- This means they effectively had a permanent 25% time acceleration effect that decayed with ship HP
 		- It's supposed to work the other way round
-		- This is basically an effective 20% nerf to all Daemons
+		- This is basically an effective 20% nerf to everything for all Daemons
 	- Added a flux-based speed boost to Daemon Core
 		- Partial compensation for bugfix
 		- Max buff at 0 flux
@@ -111,7 +111,7 @@
 		- Now goes hostile to player faction and player Commissioned faction on Daemon upgrade
 		- This will make them a lot more passive without Nex, admittedly, but the faction is designed for Nex, really
 - Legio Nex start now starts you as a renegade
-- Updated updated tahlan_settings file to clarify which toggles can be changed mid-campaign
+- Updated tahlan_settings file to clarify which toggles can be changed mid-campaign
 - Updated Rubicon to spread out planets more
 - Added fast Daemon spawns options
 	- Halves the number of conditions that need to be met for Daemons to spawn
