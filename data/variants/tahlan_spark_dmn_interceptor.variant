@@ -13,7 +13,6 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "swarmer_fighter",
         "WS0002": "tahlan_irpulse_miasma",
         "WS0003": "tahlan_irpulse_miasma"
       }

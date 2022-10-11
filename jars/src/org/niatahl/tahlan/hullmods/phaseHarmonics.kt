@@ -25,6 +25,11 @@ class phaseHarmonics : BaseHullMod() {
         }
     }
 
+    override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
+        val shield = ship.shield ?: return
+        shield.setRadius(ship.shieldRadiusEvenIfNoShield,"graphics/tahlan/fx/tahlan_nxashield.png","graphics/tahlan/fx/tahlan_tempshield_ring.png")
+    }
+
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {
         return when (index) {
             0 -> Utils.txt("phaseBreaker")

@@ -44,20 +44,6 @@ public class LegioStealingHomework implements EveryFrameScript {
         if (timer.intervalElapsed()) {
             log.info("Interval elapsed, the space fascists gonna learn today");
             stealPirateBlueprints();
-            
-            // Now we also make the Legio more aggressive once it has gone daemonic
-            if (HAS_NEX && Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
-                float increment = 0;
-                for (MarketAPI market : Misc.getFactionMarkets(LEGIO_ID)) {
-                    increment += InvasionFleetManager.getMarketInvasionCommodityValue(market) * NexConfig.invasionPointEconomyMult;
-                }
-
-                increment += NexConfig.baseInvasionPointsPerFaction;
-                increment += NexConfig.invasionPointsPerPlayerLevel * Global.getSector().getPlayerPerson().getStats().getLevel();
-                increment *= NexConfig.getFactionConfig(LEGIO_ID).invasionPointMult;
-                float mult = ENABLE_HARDMODE ? 2f : 1f;
-                InvasionFleetManager.getManager().modifySpawnCounter(LEGIO_ID,increment*mult);
-            }
         }
     }
 

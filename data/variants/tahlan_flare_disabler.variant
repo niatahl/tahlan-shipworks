@@ -1,0 +1,46 @@
+{
+    "displayName": "Disabler",
+    "fluxCapacitors": 6,
+    "fluxVents": 20,
+    "hullId": "tahlan_flare",
+    "hullMods": [
+        "missleracks",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant":true,
+    "variantId": "tahlan_flare_disabler",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "ionpulser",
+                "WS0002": "ionpulser"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "sabotpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "irpulse",
+                "WS0005": "irpulse"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "pdburst",
+                "WS0007": "pdburst"
+            }
+        }
+    ],
+    "wings": []
+}

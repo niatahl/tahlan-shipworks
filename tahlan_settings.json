@@ -11,6 +11,9 @@
 
 	#enables Legio droneships.
 	"enableDaemons": true,
+
+	#lowers Daemon spawn threshold, causing them to appear (much) sooner
+	"enableFastmode": true,
 	
 	#makes Legio even more dangerous after a certain point.
 	"enableHardMode": false,

@@ -3,10 +3,10 @@
 - Added Hel Hound
 - Added Hel Kodai
 - Added Raba-class Mining Barge
-- Added Equinox Remnant battlecarrier
+- Added Equinox Remnant Battlecarrier
+- Added Flare Remnant Destroyer
 - Added Eagle (NW)
 - Added Falcon (NW)
-- Added NX-A
 - Hel Vanguard
 	- Defense changed from damper to shields
 	- System changed to entropy amplifier
@@ -14,17 +14,23 @@
 - Hel Scaith
 	- Hel Razer damage 4000 -> 5000
 - Miasma drone
+	- Removed weapon flux cost (as it was meant to be)
 	- Weapon renamed to Hel Pulser
 	- Damage/shot 50 -> 40
 	- Chargeup 0.33333 -> 0.2
+	- Engage range 4000 -> 2000
 - Hel Spark
 	- HP 300 -> 250
-	- Wing size 4 -> 5
+	- Removed swarmer
 	- PD beamers replaced with Hel Pulse
 - Hel Lux
 	- Wing size 4 -> 3
 - Hel Thunder
 	- Wing size 2 -> 3
+- Hel Gaze
+	- Engage range 2000 -> 4000
+- Hel Flash
+	- Adjusted AI behaviour
 - Goll Overcharge Cannon
 	- Damage per pellet 35 -> 50
 	- Flux per pellet 55 -> 75
@@ -61,8 +67,12 @@
 	- Flux capacity 9000 -> 10000
 - Ingress
 	- Should actually spawn more commonly now
-- Blochead (LP)
+- Blockhead (LP)
 	- System changed to Crusher Drive cause it's funnier
+- Dominator (GH)
+	- Adjusted OP and shield upkeep to match base Dominator
+- Exa Pico
+	- DP 10 -> 6
 - Other minor sprite updates
 - Daemon Core
 	- Moved high maintenance effect to Daemon Core Hullmod
@@ -103,6 +113,9 @@
 - Legio Nex start now starts you as a renegade
 - Updated updated tahlan_settings file to clarify which toggles can be changed mid-campaign
 - Updated Rubicon to spread out planets more
+- Added fast Daemon spawns options
+	- Halves the number of conditions that need to be met for Daemons to spawn
+	- If you skip story, this will mean very quick Daemon spawns
 - Added support for new IndEvo features
 - Fixed a bunch of variants
 - Fixed a bunch of wrong mount types

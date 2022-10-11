@@ -9,6 +9,7 @@ import org.niatahl.tahlan.utils.random
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.plugins.CustomRender
 import java.awt.Color
 
 class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
@@ -36,7 +37,8 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
             /* additive = */ true
         )
 
-        inteval.advance(amount)
+        interval1.advance(amount)
+        interval2.advance(amount)
         val toRemove: MutableList<DamagingProjectileAPI> = ArrayList()
         projectiles.forEach { proj ->
             if (proj.isFading || proj.didDamage() || !engine.isEntityInPlay(proj)) {
@@ -54,18 +56,28 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
                     /* additive = */ true
                 )
 
-                if (inteval.intervalElapsed()) {
-                    engine.addNebulaParticle(
-                        /* loc = */ proj.location,
-                        /* vel = */ Misc.ZERO,
-                        /* size = */ (20f..50f).random(),
-                        /* endSizeMult = */ 3f,
-                        /* rampUpFraction = */ 0.1f,
-                        /* fullBrightnessFraction = */ 0.5f,
-                        /* totalDuration = */ (1f..1.3f).random(),
-                        /* color = */ Color((150..255).random(), 0, 0, 100)
+                if (interval1.intervalElapsed())
+                    CustomRender.addNebula(
+                        proj.location,
+                        Misc.ZERO,
+                        (20f..40f).random(),
+                        2f,
+                        (1f..1.3f).random(),
+                        0.1f,
+                        0.4f,
+                        Color((150..255).random(), 0, 0, 40)
                     )
-                }
+                if (interval2.intervalElapsed())
+                    CustomRender.addNebula(
+                        proj.location,
+                        Misc.ZERO,
+                        (10f..20f).random(),
+                        1.3f,
+                        (0.3f..0.6f).random(),
+                        0.1f,
+                        0.5f,
+                        Color((150..255).random(), 80, 30, 70)
+                    )
             }
         }
         toRemove.forEach { proj ->
@@ -79,6 +91,7 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
 
     companion object {
         val projectiles: MutableList<DamagingProjectileAPI> = ArrayList()
-        val inteval: IntervalUtil = IntervalUtil(0.1f, 0.1f)
+        val interval1: IntervalUtil = IntervalUtil(0.02f, 0.07f)
+        val interval2: IntervalUtil = IntervalUtil(0.02f, 0.07f)
     }
 }

@@ -17,6 +17,8 @@ import org.niatahl.tahlan.TahlanModPlugin;
 import java.awt.*;
 import java.util.Arrays;
 
+import static org.niatahl.tahlan.TahlanModPlugin.isGraphicsLibAvailable;
+
 /**
  * First comes the time-mult, then comes the reversal.
  *
@@ -126,7 +128,7 @@ public class RealityShell extends BaseShipSystemScript {
         }
 
         //Fancy postprocessing effects
-        if (TahlanModPlugin.isGraphicsLibAvailable()) {
+        if (isGraphicsLibAvailable) {
             handlePostprocessing(effectLevel,Global.getCombatEngine().getPlayerShip()==ship);
         }
 

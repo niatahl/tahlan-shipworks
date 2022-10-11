@@ -9,7 +9,7 @@
 	
 	"marketSpawnWeight":1,
 	
-	"invasionPointMult": 1.2,
+	"invasionPointMult": 1.4,
     
     "difficultyString":"hard",
 	"spawnAsFactionId":"player",	# transfer to this faction at start (after new game time pass)

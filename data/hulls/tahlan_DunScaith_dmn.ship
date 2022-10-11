@@ -15,8 +15,7 @@
     "tahlan_daemoncore",
     "tahlan_daemonarmor",
     "automated",
-    "hbi",
-    "high_maintenance"
+    "hbi"
   ],
   "builtInWings": [
     "tahlan_miasma_drone_wing",

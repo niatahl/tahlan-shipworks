@@ -1,6 +1,6 @@
 {
     "displayName": "Custom",
-    "fluxCapacitors": 20,
+    "fluxCapacitors": 30,
     "fluxVents": 30,
     "hullId": "tahlan_dominator_gh",
     "hullMods": ["targetingunit"],

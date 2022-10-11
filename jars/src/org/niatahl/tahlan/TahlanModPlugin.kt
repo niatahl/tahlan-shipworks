@@ -1,404 +1,333 @@
-package org.niatahl.tahlan;
+package org.niatahl.tahlan
 
-import com.fs.starfarer.api.BaseModPlugin;
-import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.PluginPick;
-import com.fs.starfarer.api.campaign.*;
-import com.fs.starfarer.api.campaign.econ.MarketAPI;
-import com.fs.starfarer.api.campaign.rules.MemoryAPI;
-import com.fs.starfarer.api.combat.MissileAIPlugin;
-import com.fs.starfarer.api.combat.MissileAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.fleet.FleetMemberAPI;
-import com.fs.starfarer.api.impl.campaign.GateEntityPlugin;
-import com.fs.starfarer.api.impl.campaign.shared.SharedData;
-import com.fs.starfarer.api.loading.HullModSpecAPI;
-import com.fs.starfarer.api.util.Misc;
-import org.niatahl.tahlan.weapons.ai.FountainAI;
-import org.niatahl.tahlan.weapons.ai.KriegsmesserAI;
-import org.niatahl.tahlan.weapons.ai.TwoStageMissileAI;
-import org.niatahl.tahlan.world.FactionRelationPlugin;
-import org.niatahl.tahlan.world.Lethia;
-import org.niatahl.tahlan.world.Rubicon;
-import exerelin.campaign.SectorManager;
-import exerelin.utilities.NexConfig;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.dark.shaders.light.LightData;
-import org.dark.shaders.util.ShaderLib;
-import org.dark.shaders.util.TextureData;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.niatahl.tahlan.campaign.*;
+import com.fs.starfarer.api.BaseModPlugin
+import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.PluginPick
+import com.fs.starfarer.api.campaign.BaseCampaignEventListener
+import com.fs.starfarer.api.campaign.CampaignPlugin
+import com.fs.starfarer.api.campaign.RepLevel
+import com.fs.starfarer.api.campaign.SectorAPI
+import com.fs.starfarer.api.combat.MissileAIPlugin
+import com.fs.starfarer.api.combat.MissileAPI
+import com.fs.starfarer.api.combat.ShipAPI
+import com.fs.starfarer.api.impl.campaign.GateEntityPlugin
+import com.fs.starfarer.api.impl.campaign.shared.SharedData
+import com.fs.starfarer.api.util.Misc
+import exerelin.campaign.SectorManager
+import exerelin.utilities.NexConfig
+import org.apache.log4j.Level
+import org.dark.shaders.light.LightData
+import org.dark.shaders.util.ShaderLib
+import org.dark.shaders.util.TextureData
+import org.json.JSONException
+import org.niatahl.tahlan.campaign.*
+import org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel
+import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
+import org.niatahl.tahlan.weapons.ai.FountainAI
+import org.niatahl.tahlan.weapons.ai.KriegsmesserAI
+import org.niatahl.tahlan.weapons.ai.TwoStageMissileAI
+import org.niatahl.tahlan.world.FactionRelationPlugin
+import org.niatahl.tahlan.world.Lethia
+import org.niatahl.tahlan.world.Rubicon
+import java.io.IOException
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+class TahlanModPlugin : BaseModPlugin() {
 
-import static com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin.addMarketToList;
-import static org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel.log;
-import static org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses;
-
-public class TahlanModPlugin extends BaseModPlugin {
-    static private boolean graphicsLibAvailable = false;
-
-    static public boolean isGraphicsLibAvailable() {
-        return graphicsLibAvailable;
-    }
-
-
-    //All hullmods related to shields, saved in a convenient list
-    public static List<String> SHIELD_HULLMODS = new ArrayList<>();
-
-    public static final String FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl";
-    public static final String KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl";
-    public static final String DOLCH_MISSILE_ID = "tahlan_dolch_msl";
-
-    private static final String SETTINGS_FILE = "tahlan_settings.json";
-
-    public static boolean ENABLE_LETHIA;
-    public static boolean ENABLE_LEGIO;
-    //    public static boolean ENABLE_SIEGE;
-    public static boolean ENABLE_LIFELESS;
-    public static boolean ENABLE_LEGIOBPS;
-    public static boolean ENABLE_DAEMONS;
-    public static boolean ENABLE_HARDMODE;
-    public static boolean HAS_NEX = false;
-    public static boolean HAS_INDEVO = false;
-
-    public static final Logger LOGGER = Global.getLogger(TahlanModPlugin.class);
-
-
-    @Override
-    public void onApplicationLoad() {
-        boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
+    override fun onApplicationLoad() {
+        // should no longer be needed but may aswell keep these
+        val hasLazyLib = Global.getSettings().modManager.isModEnabled("lw_lazylib")
         if (!hasLazyLib) {
-            throw new RuntimeException("Tahlan Shipworks requires LazyLib by LazyWizard" + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
+            throw RuntimeException(
+                "Tahlan Shipworks requires LazyLib by LazyWizard\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444"
+            )
         }
-        boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
+        val hasMagicLib = Global.getSettings().modManager.isModEnabled("MagicLib")
         if (!hasMagicLib) {
-            throw new RuntimeException("Tahlan Shipworks requires MagicLib!" + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718");
+            throw RuntimeException(
+                "Tahlan Shipworks requires MagicLib!\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718"
+            )
         }
-        if (Global.getSettings().getModManager().isModEnabled("@_ss_rebal_@"))
-            throw new RuntimeException("Tahlan Shipworks is incompatible with Starsector Rebal. It breaks everything");
-
-        boolean hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        val hasGraphicsLib = Global.getSettings().modManager.isModEnabled("shaderLib")
         if (hasGraphicsLib) {
-            graphicsLibAvailable = true;
-            ShaderLib.init();
-            LightData.readLightDataCSV("data/lights/tahlan_lights.csv");
-            TextureData.readTextureDataCSV("data/lights/tahlan_texture.csv");
+            isGraphicsLibAvailable = true
+            ShaderLib.init()
+            LightData.readLightDataCSV("data/lights/tahlan_lights.csv")
+            TextureData.readTextureDataCSV("data/lights/tahlan_texture.csv")
         } else {
-            graphicsLibAvailable = false;
+            isGraphicsLibAvailable = false
         }
-
-        HAS_INDEVO = Global.getSettings().getModManager().isModEnabled("IndEvo");
-
+        HAS_INDEVO = Global.getSettings().modManager.isModEnabled("IndEvo")
         try {
-            loadTahlanSettings();
-        } catch (IOException | JSONException e) {
-            Global.getLogger(TahlanModPlugin.class).log(Level.ERROR, "tahlan_settings.json loading failed! ;....; " + e.getMessage());
+            loadTahlanSettings()
+        } catch (e: IOException) {
+            Global.getLogger(TahlanModPlugin::class.java).log(Level.ERROR, "tahlan_settings.json loading failed! ;....; " + e.message)
+        } catch (e: JSONException) {
+            Global.getLogger(TahlanModPlugin::class.java).log(Level.ERROR, "tahlan_settings.json loading failed! ;....; " + e.message)
         }
 
 
         //Adds shield hullmods
-        for (HullModSpecAPI hullModSpecAPI : Global.getSettings().getAllHullModSpecs()) {
-            if (hullModSpecAPI.hasTag("shields") && !SHIELD_HULLMODS.contains(hullModSpecAPI.getId())) {
-                SHIELD_HULLMODS.add(hullModSpecAPI.getId());
-            } else if (hullModSpecAPI.getId().contains("swp_shieldbypass") && !SHIELD_HULLMODS.contains(hullModSpecAPI.getId())) {
-                SHIELD_HULLMODS.add("swp_shieldbypass"); //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
+        for (hullModSpecAPI in Global.getSettings().allHullModSpecs) {
+            if (hullModSpecAPI.hasTag("shields") && !SHIELD_HULLMODS.contains(hullModSpecAPI.id)) {
+                SHIELD_HULLMODS.add(hullModSpecAPI.id)
+            } else if (hullModSpecAPI.id.contains("swp_shieldbypass") && !SHIELD_HULLMODS.contains(hullModSpecAPI.id)) {
+                SHIELD_HULLMODS.add("swp_shieldbypass") //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
             }
         }
-
     }
 
-
     //New game stuff
-    @Override
-    public void onNewGame() {
-        SectorAPI sector = Global.getSector();
+    override fun onNewGame() {
+        val sector = Global.getSector()
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
-        HAS_NEX = Global.getSettings().getModManager().isModEnabled("nexerelin");
-        if (!HAS_NEX || SectorManager.getManager().isCorvusMode()) {
-            if (ENABLE_LETHIA) new Lethia().generate(sector);
-            if (ENABLE_LEGIO) new Rubicon().generate(sector);
+        HAS_NEX = Global.getSettings().modManager.isModEnabled("nexerelin")
+        if (!HAS_NEX || SectorManager.getManager().isCorvusMode) {
+            if (ENABLE_LETHIA) Lethia().generate(sector)
+            if (ENABLE_LEGIO) Rubicon().generate(sector)
         }
 
         //Legio things
         if (ENABLE_LEGIO) {
 
             //Legio Infernalis relations
-            FactionRelationPlugin.initFactionRelationships(sector);
+            FactionRelationPlugin.initFactionRelationships(sector)
 
             //Adding Legio to bounty system
-            SharedData.getData().getPersonBountyEventData().addParticipatingFaction("tahlan_legioinfernalis");
+            SharedData.getData().personBountyEventData.addParticipatingFaction("tahlan_legioinfernalis")
 
-            //Legio stealing pirates homework
-            if (ENABLE_LEGIOBPS) {
-                Global.getSector().addScript(new LegioStealingHomework());
-            }
-
-            sector.getMemoryWithoutUpdate().set("$tahlan_haslegio", true);
-
+            sector.memoryWithoutUpdate["\$tahlan_haslegio"] = true
         } else {
-            sector.getFaction("tahlan_legioinfernalis").setShowInIntelTab(false);
-
+            sector.getFaction("tahlan_legioinfernalis").isShowInIntelTab = false
             if (HAS_NEX) {
-                sector.getFaction("tahlan_legioinfernalis").getMemoryWithoutUpdate().set("$nex_respawn_cooldown", true);
+                sector.getFaction("tahlan_legioinfernalis").memoryWithoutUpdate["\$nex_respawn_cooldown"] = true
             }
         }
 
         // Because apparently I have to do this
-        removeDaemons(sector);
+        removeDaemons(sector)
 
         //Rosenritter Blueprint Script
-        Global.getSector().addScript(new regaliablueprintscript());
-        log.info("added Rosenritter Blueprint script");
-
-        if (!ENABLE_LIFELESS) {
-            sector.getFaction("remnant").removeKnownShip("tahlan_Timeless");
-            sector.getFaction("remnant").removeKnownShip("tahlan_Nameless");
-            sector.getFaction("remnant").removeKnownWeapon("tahlan_disparax");
-            sector.getFaction("remnant").removeKnownWeapon("tahlan_relparax");
-            sector.getFaction("remnant").removeKnownWeapon("tahlan_nenparax");
-        }
+        Global.getSector().addScript(regaliablueprintscript())
+        LegioSiegeBaseIntel.log.info("added Rosenritter Blueprint script")
 
     }
 
-    private void addDaemons(SectorAPI sector) {
-        FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-        legio.addKnownShip("tahlan_dominator_dmn", false);
-        legio.addKnownShip("tahlan_champion_dmn", false);
-        legio.addKnownShip("tahlan_manticore_dmn", false);
-        legio.addKnownShip("tahlan_hammerhead_dmn", false);
-        legio.addKnownShip("tahlan_centurion_dmn", false);
-        legio.addKnownShip("tahlan_vanguard_dmn", false);
-        legio.addKnownShip("tahlan_DunScaith_dmn", false);
-        legio.addKnownShip("tahlan_hound_dmn", false);
-        legio.addKnownShip("tahlan_sunder_dmn", false);
-        legio.addKnownShip("tahlan_kodai_dmn", false);
-        legio.removeKnownFighter("flash_wing");
-        legio.removeKnownFighter("spark_wing");
-        legio.removeKnownFighter("lux_wing");
-        legio.addKnownFighter("tahlan_miasma_drone_wing", false);
-        legio.addKnownFighter("tahlan_flash_dmn_wing", false);
-        legio.addKnownFighter("tahlan_spark_dmn_wing", false);
-        legio.addKnownFighter("tahlan_lux_dmn_wing", false);
-        legio.addKnownFighter("tahlan_thunder_dmn_wing", false);
-        legio.addKnownFighter("tahlan_gaze_dmn_wing", false);
-    }
-
-    private void removeDaemons(SectorAPI sector) {
-        FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-        legio.removeKnownShip("tahlan_dominator_dmn");
-        legio.removeKnownShip("tahlan_champion_dmn");
-        legio.removeKnownShip("tahlan_manticore_dmn");
-        legio.removeKnownShip("tahlan_hammerhead_dmn");
-        legio.removeKnownShip("tahlan_centurion_dmn");
-        legio.removeKnownShip("tahlan_vanguard_dmn");
-        legio.removeKnownShip("tahlan_DunScaith_dmn");
-        legio.removeKnownShip("tahlan_hound_dmn");
-        legio.removeKnownShip("tahlan_sunder_dmn");
-        legio.removeKnownShip("tahlan_kodai_dmn");
-    }
-
-    @Override
-    public void onNewGameAfterProcGen() {
+    override fun onNewGameAfterProcGen() {
         //Spawning hidden things
-        HalbmondSpawnScript.spawnHalbmond(Global.getSector());
-        DerelictsSpawnScript.spawnDerelicts(Global.getSector());
-        LostechSpawnScript.spawnLostech(Global.getSector());
+        HalbmondSpawnScript.spawnHalbmond(Global.getSector())
+        DerelictsSpawnScript.spawnDerelicts(Global.getSector())
+        LostechSpawnScript.spawnLostech(Global.getSector())
     }
 
-    @Override
-    public void onGameLoad(boolean newGame) {
-        SectorAPI sector = Global.getSector();
+    override fun onGameLoad(newGame: Boolean) {
+        val sector = Global.getSector()
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
-            sector.getFaction("remnant").removeKnownShip("tahlan_Timeless");
-            sector.getFaction("remnant").removeKnownShip("tahlan_Nameless");
-            sector.getFaction("remnant").removeKnownWeapon("tahlan_disparax");
-            sector.getFaction("remnant").removeKnownWeapon("tahlan_relparax");
-            sector.getFaction("remnant").removeKnownWeapon("tahlan_nenparax");
+            sector.getFaction("remnant").apply {
+                removeKnownShip("tahlan_Timeless")
+                removeKnownShip("tahlan_Nameless")
+                removeKnownWeapon("tahlan_disparax")
+                removeKnownWeapon("tahlan_relparax")
+                removeKnownWeapon("tahlan_nenparax")
+            }
         } else if (!sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
-            sector.getFaction("remnant").addKnownShip("tahlan_Timeless", false);
-            sector.getFaction("remnant").addKnownShip("tahlan_Nameless", false);
-            sector.getFaction("remnant").addKnownWeapon("tahlan_disparax", false);
-            sector.getFaction("remnant").addKnownWeapon("tahlan_relparax", false);
-            sector.getFaction("remnant").addKnownWeapon("tahlan_nenparax", false);
+            sector.getFaction("remnant").apply {
+                addKnownShip("tahlan_Timeless", false)
+                addKnownShip("tahlan_Nameless", false)
+                addKnownWeapon("tahlan_disparax", false)
+                addKnownWeapon("tahlan_relparax", false)
+                addKnownWeapon("tahlan_nenparax", false)
+            }
         }
         // fallback - If Lucifron exists, so does Legio, probably
-        if (sector.getEconomy().getMarket("tahlan_rubicon_p03_market") != null) {
-            sector.getMemoryWithoutUpdate().set("$tahlan_haslegio",true);
+        if (sector.economy.getMarket("tahlan_rubicon_p03_market") != null) {
+            sector.memoryWithoutUpdate["\$tahlan_haslegio"] = true
         }
-        if (sector.getMemoryWithoutUpdate().getBoolean("$tahlan_haslegio")) {
+        if (sector.memoryWithoutUpdate.getBoolean("\$tahlan_haslegio")) {
+            // Legio stealing pirates homework
+            if (ENABLE_LEGIOBPS) {
+                sector.addTransientScript(LegioStealingHomework())
+            }
+
             // Add our listener for stuff
             if (ENABLE_DAEMONS) {
-                Global.getSector().addTransientListener(new TahlanTrigger());
+                Global.getSector().addTransientListener(TahlanTrigger())
             } else {
-                removeDaemons(sector);
+                removeDaemons(sector)
             }
             // If somehow the Daemons are missing, add them
-            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
-                addDaemons(sector);
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
+                addDaemons(sector)
             }
-            FactionAPI legio = Global.getSector().getFaction("tahlan_legioinfernalis");
 
-            if (ENABLE_HARDMODE) {
-                legio.addPriorityShip("tahlan_dominator_dmn");
-                legio.addPriorityShip("tahlan_champion_dmn");
-                legio.addPriorityShip("tahlan_manticore_dmn");
-                legio.addPriorityShip("tahlan_hammerhead_dmn");
-                legio.addPriorityShip("tahlan_centurion_dmn");
-                legio.addPriorityShip("tahlan_vanguard_dmn");
-                legio.addPriorityShip("tahlan_DunScaith_dmn");
-                legio.addPriorityShip("tahlan_hound_dmn");
-                legio.addPriorityShip("tahlan_sunder_dmn");
-                legio.addPriorityShip("tahlan_kodai_dmn");
-            } else {
-                legio.removePriorityShip("tahlan_dominator_dmn");
-                legio.removePriorityShip("tahlan_champion_dmn");
-                legio.removePriorityShip("tahlan_manticore_dmn");
-                legio.removePriorityShip("tahlan_hammerhead_dmn");
-                legio.removePriorityShip("tahlan_centurion_dmn");
-                legio.removePriorityShip("tahlan_vanguard_dmn");
-                legio.removePriorityShip("tahlan_DunScaith_dmn");
-                legio.removePriorityShip("tahlan_hound_dmn");
-                legio.removePriorityShip("tahlan_sunder_dmn");
-                legio.removePriorityShip("tahlan_kodai_dmn");
-            }
+            val legio = Global.getSector().getFaction("tahlan_legioinfernalis")
+            DAEMON_SHIPS.run { if (ENABLE_HARDMODE) forEach{ legio.addPriorityShip(it) } else forEach {legio.removePriorityShip(it)} }
+
             // Adding new fun(tm) to existing saves
             if (HAS_INDEVO) {
-                addDefenses(Global.getSector().getStarSystem("Rubicon"));
+                addDefenses()
             }
         }
-        if (HAS_NEX && Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+        if (HAS_NEX && Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
             if (!NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
-                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
+                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous")
             }
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default", 0.1f);
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default", 2f);
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.1f
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
         } else {
-            NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous");
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default", 0.5f);
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default", 1f);
+            NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous")
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.5f
+            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 1f
         }
     }
 
-    private static class TahlanTrigger extends BaseCampaignEventListener {
-        private TahlanTrigger() {
-            super(false);
-        }
-
-        @Override
-        public void reportEconomyMonthEnd() {
-            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
-                LOGGER.info("Daemons lurk");
-                return;
+    private class TahlanTrigger : BaseCampaignEventListener(false) {
+        override fun reportEconomyMonthEnd() {
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
+                LOGGER.info("Daemons lurk")
+                return
             }
-            SectorAPI sector = Global.getSector();
-
-            int iLegioStartingCondition = 0;
-            if (Global.getSector().getClock().getCycle() >= 210) {
-                iLegioStartingCondition++;
-                LOGGER.info("Daemonic Incursion - Cycle");
+            val sector = Global.getSector()
+            var iLegioStartingCondition = 0
+            if (Global.getSector().clock.cycle >= 210) {
+                iLegioStartingCondition++
+                LOGGER.info("Daemonic Incursion - Cycle")
             } //Choose cycle
-            for (MarketAPI market : Misc.getPlayerMarkets(true)) {
-                if (market.getSize() >= 5) {
-                    iLegioStartingCondition++;
-                    LOGGER.info("Daemonic Incursion - Market");
-                    break;
+            for (market in Misc.getPlayerMarkets(true)) {
+                if (market.size >= 5) {
+                    iLegioStartingCondition++
+                    LOGGER.info("Daemonic Incursion - Market")
+                    break
                 }
             } //Ok size 6
-            MemoryAPI mem = Global.getSector().getMemoryWithoutUpdate();
+            val mem = Global.getSector().memoryWithoutUpdate
             if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES) && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)) {
-                iLegioStartingCondition++; //Follow Histidine's "Skip Story format"
-                LOGGER.info("Daemonic Incursion - Gates");
+                iLegioStartingCondition++ //Follow Histidine's "Skip Story format"
+                LOGGER.info("Daemonic Incursion - Gates")
             }
-            if (sector.getPlayerStats().getLevel() >= 13) {
-                iLegioStartingCondition++;
-                LOGGER.info("Daemonic Incursion - Level");
+            if (sector.playerStats.level >= 13) {
+                iLegioStartingCondition++
+                LOGGER.info("Daemonic Incursion - Level")
             } // Two capitals or Metafalica
-            int caps = 0;
-            for (FleetMemberAPI bote : sector.getPlayerFleet().getMembersWithFightersCopy()) {
-                if (bote.getHullSpec().getHullSize() == ShipAPI.HullSize.CAPITAL_SHIP) {
-                    caps++;
+            var caps = 0
+            for (bote in sector.playerFleet.membersWithFightersCopy) {
+                if (bote.hullSpec.hullSize == ShipAPI.HullSize.CAPITAL_SHIP) {
+                    caps++
                 }
                 // Metafalica counts double
-                if (bote.getHullSpec().getHullId().contains("Metafalica")) {
-                    caps++;
+                if (bote.hullSpec.hullId.contains("Metafalica")) {
+                    caps++
                 }
                 // got Daemons? instant trigger
-                if (bote.getHullSpec().getHullId().contains("_dmn")) {
-                    iLegioStartingCondition = 99;
+                if (bote.hullSpec.hullId.contains("_dmn")) {
+                    iLegioStartingCondition = 99
                 }
             }
             if (caps >= 2) {
-                iLegioStartingCondition++;
-                LOGGER.info("Daemonic Incursion - Ships");
+                iLegioStartingCondition++
+                LOGGER.info("Daemonic Incursion - Ships")
             }
-            if (Global.getSector().getPlayerFleet().getCargo().getCredits().get() > 5000000f) {
-                iLegioStartingCondition++;
-                LOGGER.info("Daemonic Incursion - Wealth");
+            if (Global.getSector().playerFleet.cargo.credits.get() > 5000000f) {
+                iLegioStartingCondition++
+                LOGGER.info("Daemonic Incursion - Wealth")
             }
-            if (Misc.getNumNonMercOfficers(Global.getSector().getPlayerFleet()) > 7) {
-                iLegioStartingCondition++;
-                LOGGER.info("Daemonic Incursion - Officers");
+            if (Misc.getNumNonMercOfficers(Global.getSector().playerFleet) > 7) {
+                iLegioStartingCondition++
+                LOGGER.info("Daemonic Incursion - Officers")
             }
-            if (iLegioStartingCondition >= 4) {
-                Global.getSector().getMemoryWithoutUpdate().set("$tahlan_triggered", true);
-                LOGGER.info("The Daemonic horde awakens");
-                FactionAPI legio = sector.getFaction("tahlan_legioinfernalis");
-                if (Misc.getCommissionFaction() != legio) {
-                    legio.setRelationship(sector.getPlayerFaction().getId(), RepLevel.HOSTILE);
-                    if (Misc.getCommissionFaction() != null)
-                        legio.setRelationship(Misc.getCommissionFactionId(), RepLevel.HOSTILE);
+            val trigger = if (DAEMON_FASTMODE) 2 else 4
+            if (iLegioStartingCondition >= trigger) {
+                Global.getSector().memoryWithoutUpdate["\$tahlan_triggered"] = true
+                LOGGER.info("The Daemonic horde awakens")
+                val legio = sector.getFaction("tahlan_legioinfernalis")
+                if (Misc.getCommissionFaction() !== legio) {
+                    legio.setRelationship(sector.playerFaction.id, RepLevel.HOSTILE)
+                    if (Misc.getCommissionFaction() != null) legio.setRelationship(Misc.getCommissionFactionId(), RepLevel.HOSTILE)
                 }
-                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous");
-                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance.put("default", 0.1f);
-                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance.put("default", 2f);
-                legio.addKnownShip("tahlan_dominator_dmn", false);
-                legio.addKnownShip("tahlan_champion_dmn", false);
-                legio.addKnownShip("tahlan_manticore_dmn", false);
-                legio.addKnownShip("tahlan_hammerhead_dmn", false);
-                legio.addKnownShip("tahlan_centurion_dmn", false);
-                legio.addKnownShip("tahlan_vanguard_dmn", false);
-                legio.addKnownShip("tahlan_DunScaith_dmn", false);
-                legio.addKnownShip("tahlan_hound_dmn", false);
-                legio.addKnownShip("tahlan_sunder_dmn", false);
-                legio.addKnownShip("tahlan_kodai_dmn", false);
-                legio.addKnownFighter("tahlan_miasma_drone_wing", false);
-                legio.addKnownFighter("tahlan_flash_dmn_wing", false);
-                legio.addKnownFighter("tahlan_spark_dmn_wing", false);
-                legio.addKnownFighter("tahlan_lux_dmn_wing", false);
-                legio.addKnownFighter("tahlan_thunder_dmn_wing", false);
-                legio.addKnownFighter("tahlan_gaze_dmn_wing", false);
+                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous")
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.1f
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
+                addDaemons(sector)
             }
         }
-
     }
 
-    @Override
-    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
-        switch (missile.getProjectileSpecId()) {
-            case FOUNTAIN_MISSILE_ID:
-                return new PluginPick<MissileAIPlugin>(new FountainAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
-            case KRIEGSMESSER_MISSILE_ID:
-                return new PluginPick<MissileAIPlugin>(new KriegsmesserAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
-            case DOLCH_MISSILE_ID:
-                return new PluginPick<MissileAIPlugin>(new TwoStageMissileAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC);
-            default:
+    override fun pickMissileAI(missile: MissileAPI, launchingShip: ShipAPI): PluginPick<MissileAIPlugin>? {
+        return when (missile.projectileSpecId) {
+            FOUNTAIN_MISSILE_ID -> PluginPick(FountainAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
+            KRIEGSMESSER_MISSILE_ID -> PluginPick(KriegsmesserAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
+            DOLCH_MISSILE_ID -> PluginPick(TwoStageMissileAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
+            else -> null
         }
-        return null;
     }
 
-    private static void loadTahlanSettings() throws IOException, JSONException {
-        JSONObject setting = Global.getSettings().loadJSON(SETTINGS_FILE);
-        ENABLE_LETHIA = setting.getBoolean("enableLethia");
-        ENABLE_LEGIO = setting.getBoolean("enableLegio");
-        ENABLE_LIFELESS = setting.getBoolean("enableLifelessShips");
-        ENABLE_LEGIOBPS = setting.getBoolean("enableLegioBlueprintLearning");
-        ENABLE_HARDMODE = setting.getBoolean("enableHardMode");
-        ENABLE_DAEMONS = setting.getBoolean("enableDaemons");
+    companion object {
+        @JvmField
+        var isGraphicsLibAvailable = false
+        @JvmField
+        val SHIELD_HULLMODS: MutableList<String> = ArrayList()
+
+        const val FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl"
+        const val KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl"
+        const val DOLCH_MISSILE_ID = "tahlan_dolch_msl"
+
+        private const val SETTINGS_FILE = "tahlan_settings.json"
+        var ENABLE_LETHIA = false
+        var ENABLE_LEGIO = false
+
+        var DAEMON_FASTMODE = false
+        var ENABLE_LIFELESS = false
+        var ENABLE_LEGIOBPS = false
+        var ENABLE_DAEMONS = false
+        @JvmField
+        var ENABLE_HARDMODE = false
+
+        @JvmField
+        var HAS_NEX = false
+        var HAS_INDEVO = false
+        val LOGGER = Global.getLogger(TahlanModPlugin::class.java)
+
+        val DAEMON_SHIPS = listOf(
+            "tahlan_dominator_dmn",
+            "tahlan_champion_dmn",
+            "tahlan_manticore_dmn",
+            "tahlan_hammerhead_dmn",
+            "tahlan_centurion_dmn",
+            "tahlan_vanguard_dmn",
+            "tahlan_DunScaith_dmn",
+            "tahlan_hound_dmn",
+            "tahlan_sunder_dmn",
+            "tahlan_kodai_dmn"
+        )
+        val DAEMON_WINGS = listOf(
+            "tahlan_miasma_drone_wing",
+            "tahlan_flash_dmn_wing",
+            "tahlan_spark_dmn_wing",
+            "tahlan_lux_dmn_wing",
+            "tahlan_thunder_dmn_wing",
+            "tahlan_gaze_dmn_wing"
+        )
+
+        private fun addDaemons(sector: SectorAPI) {
+            DAEMON_SHIPS.forEach {sector.getFaction("tahlan_legioinfernalis").addKnownShip(it,false) }
+            DAEMON_WINGS.forEach {sector.getFaction("tahlan_legioinfernalis").addKnownFighter(it,false)}
+        }
+
+        private fun removeDaemons(sector: SectorAPI) {
+            DAEMON_SHIPS.forEach {sector.getFaction("tahlan_legioinfernalis").removeKnownShip(it) }
+            DAEMON_WINGS.forEach {sector.getFaction("tahlan_legioinfernalis").removeKnownFighter(it)}
+        }
+
+        @Throws(IOException::class, JSONException::class)
+        private fun loadTahlanSettings() {
+            val setting = Global.getSettings().loadJSON(SETTINGS_FILE)
+            ENABLE_LETHIA = setting.getBoolean("enableLethia")
+            ENABLE_LEGIO = setting.getBoolean("enableLegio")
+            ENABLE_LIFELESS = setting.getBoolean("enableLifelessShips")
+            ENABLE_LEGIOBPS = setting.getBoolean("enableLegioBlueprintLearning")
+            ENABLE_HARDMODE = setting.getBoolean("enableHardMode")
+            ENABLE_DAEMONS = setting.getBoolean("enableDaemons")
+            DAEMON_FASTMODE = setting.getBoolean("enableFastmode")
+        }
     }
 }

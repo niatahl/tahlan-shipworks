@@ -12,7 +12,8 @@
   "shieldRadius": 23.5,
   "viewOffset": 0,
   "builtInMods": [
-    "terminator_core"
+    "terminator_core",
+    "no_weapon_flux"
   ],
   "weaponSlots": [
     {

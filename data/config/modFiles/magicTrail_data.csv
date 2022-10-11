@@ -191,9 +191,9 @@ tahlan_vesuvio_trail1,tahlan_vesuvio_shot,tahlan_trail_zappy,5,0,0,0.25,5,1,"[25
 tahlan_vesuvio_trail2,tahlan_vesuvio_shot,tahlan_trail_twin,5,0,0,0.35,5,1,"[155,255,255]","[0,100,255]",0.3,300,20,true,10,100,0,TRUE,TRUE,TRUE,20,40,0.4,0,0,150,true,false
 tahlan_vesuvio_trail3,tahlan_vesuvio_shot,tahlan_trail_zappy,5,0,0,0.35,5,1,"[155,255,255]","[0,100,255]",0.5,300,20,true,10,20,0,TRUE,TRUE,TRUE,20,40,0.4,0,0,150,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-tahlan_cashmere_trail,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.2,0.05,0.05,90,5,"[185,52,255]","[165,52,255]",0.7,200,1600,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
-tahlan_cashmere_trail2,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.2,0.07,0.1,120,15,"[150,59,255]","[150,59,255]",0.5,200,1200,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
-tahlan_cashmere_trail3,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.1,0.05,0.05,60,3,"[255,255,255]","[255,255,255]",0.5,200,1200,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_cashmere_trail,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.1,0.05,0.05,110,5,"[185,52,255]","[165,52,255]",0.7,200,1600,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_cashmere_trail2,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.1,0.07,0.1,140,15,"[150,59,255]","[150,59,255]",0.5,200,1200,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_cashmere_trail3,tahlan_cashmere_shot,tahlan_trail_foggy,10,0.05,0.05,0.05,80,3,"[255,255,255]","[255,255,255]",0.5,200,1200,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_helrazer_trail,tahlan_helrazer_shot,tahlan_trail_foggy,10,0.2,0.1,0.3,110,5,"[255,52,52]","[255,52,52]",0.7,200,1600,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_helrazer_trail2,tahlan_helrazer_shot,tahlan_trail_foggy,10,0.2,0.1,0.3,140,15,"[255,52,52]","[255,52,52]",0.5,200,1200,true,30,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false

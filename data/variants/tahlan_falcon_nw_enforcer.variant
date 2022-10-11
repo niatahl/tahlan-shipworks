@@ -1,0 +1,47 @@
+{
+    "displayName": "Enforcer",
+    "fluxCapacitors": 11,
+    "fluxVents": 30,
+    "hullId": "tahlan_falcon_nw",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_falcon_nw_enforcer",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_conand",
+                "WS0002": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "sabot",
+                "WS0006": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_aetnos",
+                "WS0004": "tahlan_aetnos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "pdlaser",
+                "WS0008": "pdlaser",
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser"
+            }
+        }
+    ]
+}

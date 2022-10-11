@@ -1,0 +1,46 @@
+{
+    "displayName": "Lancer",
+    "fluxCapacitors": 6,
+    "fluxVents": 20,
+    "hullId": "tahlan_flare",
+    "hullMods": [
+        "stabilizedshieldemitter",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_flare_lancer",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "phasebeam",
+                "WS0002": "phasebeam"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "phasebeam"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "railgun",
+                "WS0005": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "pdburst",
+                "WS0007": "pdburst"
+            }
+        }
+    ],
+    "wings": []
+}

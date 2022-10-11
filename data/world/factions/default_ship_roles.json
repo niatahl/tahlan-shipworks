@@ -71,7 +71,10 @@
 		"tahlan_hammerhead_dmn_striker": 2,
 		"tahlan_sunder_dmn_rage":3,
 		"tahlan_sunder_dmn_ranger":4,
-		"tahlan_sunder_dmn_reaper":3
+		"tahlan_sunder_dmn_reaper":3,
+		"tahlan_flare_lancer":3,
+		"tahlan_flare_disabler":3,
+		"tahlan_flare_striker":4
 	},
 	"combatLarge": {
 		"tahlan_Castigator_standard": 5,

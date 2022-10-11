@@ -7,15 +7,15 @@
 	"gridUIColor":[255,0,0,75],
 	"brightUIColor":[231,98,103,255],
 	
-	"entityNamePrefix":"Legio",
-	"personNamePrefix":"Legio",
-	"displayName":"Legio Infernalis",
-	"displayNameWithArticle":"the Legio Infernalis",
+	"entityNamePrefix":"Blackwatch",
+	"personNamePrefix":"Blackwatch",
+	"displayName":"Blackwatch",
+	"displayNameWithArticle":"the Blackwatch",
 	"displayNameIsOrAre":"is",
 	"logo":"graphics/tahlan/factions/tahlan_greatorder.png",
 	"crest":"graphics/tahlan/factions/tahlan_greatorder_crest.png",
 	"showInIntelTab":false,
-	"shipNamePrefix":"LIV", 
+	"shipNamePrefix":"BW", 
 	"shipNameSources":{
 		"PIRATES":1,
 		"AZTEC":1,
@@ -41,12 +41,11 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"tahlan_legio":4,
+			"tahlan_legio":6,
 			"tahlan_daemon":30,
-			"rare_bp":4,
+			"rare_bp":3,
 		},
 		"hulls":{		
-			"tahlan_DunScaith_dmn":0.5,	
 			"paragon":2,
 			"astral":2,
 			"istl_jeannedarc":2,
@@ -57,7 +56,6 @@
 			"onslaught_GMHQ":3,
 			"vayra_prophet":2,
 			"MSS_Javanicus_B":2,
-			
 			
 			"SKR_clipper_d":0.1,
             "SKR_poisonivy":0.1,
@@ -261,15 +259,15 @@
 		"smallTrader":"Trade Convoy",
 		"trade":"Trade Convoy",
 		"tradeLiner":"Passenger Convoy",
-		"patrolSmall":"Corsair",
-		"patrolMedium":"Raiders",
-		"patrolLarge":"Armada",
+		"patrolSmall":"Blackwatch Hunters",
+		"patrolMedium":"Blackwatch Fleet",
+		"patrolLarge":"Blackwatch Armada",
 		"mercScout":"Scout",
 		"mercBountyHunter":"Raiders",
 		"mercPrivateer":"Raiders",
 		"mercPatrol":"Attack Fleet",
 		"mercArmada":"Armada",
-		"taskForce":"Revenge Fleet",
+		"taskForce":"Blackwatch Executioners",
 	},
 }
 

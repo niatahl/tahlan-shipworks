@@ -3,7 +3,7 @@
   "hullId": "tahlan_nxa",
   "hullSize": "CRUISER",
   "spriteName": "graphics/tahlan/ships/oddities/tahlan_nxa.png",
-  "style": "HIGH_TECH",
+  "style": "TAHLAN_NXA_TECH",
   "height": 254,
   "width": 192,
   "center": [96, 127],

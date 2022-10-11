@@ -9,7 +9,10 @@ import org.lwjgl.util.vector.Vector2f
 import java.awt.Color
 import java.util.*
 
-// Credit to Wisp
+/**
+ * Original by Wisp
+ * Additions by Nia Tahl
+ */
 
 val Vector2f.ZERO
     get() = Misc.ZERO
@@ -142,3 +145,6 @@ fun ClosedFloatingPointRange<Float>.random(): Float =
 
 fun Color.modify(red: Int = this.red, green: Int = this.green, blue: Int = this.blue, alpha: Int = this.alpha) =
     Color(red, green, blue, alpha)
+
+fun Float.adjustToward(target: Float, byAmount: Float) =
+    if (target > this) (this + byAmount).coerceAtMost(target) else (this - byAmount).coerceAtLeast(target)
