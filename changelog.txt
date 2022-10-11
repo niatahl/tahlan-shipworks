@@ -79,7 +79,7 @@
 	- Fixed a major bug that caused enrage working in recoveries
 		- This means they effectively had a permanent 25% time acceleration effect that decayed with ship HP
 		- It's supposed to work the other way round
-		- This is basically an effective 20% nerf to all Daemons
+		- This is basically an effective 20% nerf to everything for all Daemons
 	- Added a flux-based speed boost to Daemon Core
 		- Partial compensation for bugfix
 		- Max buff at 0 flux
