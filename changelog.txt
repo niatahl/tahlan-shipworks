@@ -76,7 +76,7 @@
 - Other minor sprite updates
 - Daemon Core
 	- Moved high maintenance effect to Daemon Core Hullmod
-	- Fixed a major bug that caused enrage working in recoveries
+	- Fixed a major bug that caused enrage working in reverse
 		- This means they effectively had a permanent 25% time acceleration effect that decayed with ship HP
 		- It's supposed to work the other way round
 		- This is basically an effective 20% nerf to everything for all Daemons

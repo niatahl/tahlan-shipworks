@@ -3,15 +3,19 @@ package org.niatahl.tahlan.plugins
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.input.InputEventAPI
+import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.opengl.GL11.*
 import org.lwjgl.opengl.GL14.*
 import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.utils.modify
 import org.niatahl.tahlan.utils.random
+import org.niatahl.tahlan.weapons.SpearOnFireEffect
 import java.awt.Color
 import java.util.*
 import kotlin.math.floor
+import kotlin.math.roundToInt
+import kotlin.math.sqrt
 
 
 class CustomRender : BaseEveryFrameCombatPlugin() {
@@ -31,17 +35,53 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val engine = Global.getCombatEngine()
         if (engine.isPaused) return
 
-        val toRemove: MutableList<Nebula> = ArrayList()
+        // clean up nebula list
+        val nebulaToRemove: MutableList<Nebula> = ArrayList()
         nebulaData.forEach { nebula ->
             nebula.lifetime += engine.elapsedInLastFrame
             if (nebula.lifetime > nebula.duration)
-                toRemove.add(nebula)
+                nebulaToRemove.add(nebula)
         }
-        nebulaData.removeAll(toRemove)
+        nebulaData.removeAll(nebulaToRemove)
+
+        // clean up spear list
+        val projToRemove: MutableList<DamagingProjectileAPI> = ArrayList()
+        effectProjectiles.forEach { if (!engine.isEntityInPlay(it)) projToRemove.add(it) }
+        effectProjectiles.removeAll(projToRemove)
     }
 
     fun render(layer: CombatEngineLayers, view: ViewportAPI) {
         nebulaData.filter { it.layer == layer }.forEach { renderNebula(it, view) }
+
+        // projectile effects
+        effectProjectiles.forEach { proj ->
+            when (proj.projectileSpecId) {
+                "tahlan_novaspear_shot", "tahlan_sunspear_shot" -> if (layer == CombatEngineLayers.ABOVE_SHIPS_LAYER) renderSpear(proj)
+            }
+        }
+    }
+
+    private fun renderSpear(proj: DamagingProjectileAPI) {
+        val flare1 = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
+        val flare2 = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
+        val scale = if (proj.weapon.size == WeaponAPI.WeaponSize.LARGE) 1f else 0.6f
+
+        flare1.apply {
+            setAdditiveBlend()
+            color = SpearOnFireEffect.PARTICLE_COLOR.modify(alpha = (60 * proj.brightness).roundToInt().coerceIn(0..255))
+            angle = proj.facing - 90f
+            setSize(100f * scale, 200f * scale)
+        }
+        flare1.renderAtCenter(proj.location.x, proj.location.y)
+
+        flare2.apply {
+            setAdditiveBlend()
+            color = SpearOnFireEffect.GLOW_COLOR.modify(alpha = (100 * proj.brightness).roundToInt().coerceIn(0..255))
+            angle = proj.facing - 90f
+            setSize(120f * scale, 200f * scale)
+        }
+        val pos = MathUtils.getRandomPointInCircle(proj.location, 10f)
+        flare2.renderAtCenter(pos.x, pos.y)
     }
 
     private fun renderNebula(nebula: Nebula, view: ViewportAPI) {
@@ -50,7 +90,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             NebulaType.NORMAL -> Global.getSettings().getSprite("misc", "nebula_particles")
             NebulaType.SWIRLY -> Global.getSettings().getSprite("misc", "fx_particles2")
             NebulaType.SPLINTER -> Global.getSettings().getSprite("misc", "fx_particles1")
-            NebulaType.DUST -> Global.getSettings().getSprite("misc","dust_particles")
+            NebulaType.DUST -> Global.getSettings().getSprite("misc", "dust_particles")
         } ?: return
 
         var alpha = nebula.color.alpha
@@ -63,12 +103,14 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         }
 
         val actualSize =
-            if (nebula.endSizeMult > 1f)
-                nebula.size + nebula.size * (nebula.endSizeMult - 1f) * (nebula.lifetime / nebula.duration) * 2f
-            else
-                nebula.size - nebula.size * (1f - nebula.endSizeMult) * (nebula.lifetime / nebula.duration) * 2f
+            if (nebula.sqrt) {
+                nebula.size + (nebula.endSize - nebula.size) * sqrt(nebula.lifetime / nebula.duration)
+            } else {
+                nebula.size + (nebula.endSize - nebula.size) * nebula.lifetime / nebula.duration
+            }
 
-        cloudSprite.apply{
+
+        cloudSprite.apply {
             color = nebula.color.modify(alpha = alpha)
             setAdditiveBlend()
             angle = nebula.angle
@@ -106,14 +148,15 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val location: Vector2f,
         val velocity: Vector2f,
         val size: Float,
-        val endSizeMult: Float,
+        val endSize: Float,
         val duration: Float,
         val inFraction: Float,
         val outFraction: Float,
         val color: Color,
         val layer: CombatEngineLayers,
         val type: NebulaType,
-        val negative: Boolean
+        val negative: Boolean,
+        val sqrt: Boolean
     ) {
         var lifetime = 0f
         val index = (0..11).random()
@@ -122,6 +165,11 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
     companion object {
         private val nebulaData: MutableList<Nebula> = ArrayList()
+        private val effectProjectiles: MutableList<DamagingProjectileAPI> = ArrayList()
+        fun addProjectile(projectile: DamagingProjectileAPI) {
+            effectProjectiles.add(projectile)
+        }
+
         fun addNebula(
             location: Vector2f,
             velocity: Vector2f,
@@ -133,10 +181,11 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             color: Color,
             layer: CombatEngineLayers = CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER,
             type: NebulaType = NebulaType.NORMAL,
-            negative: Boolean = false
+            negative: Boolean = false,
+            expandAsSqrt: Boolean = false
         ) {
             val newNebula =
-                Nebula(Vector2f(location), Vector2f(velocity), size, endSizeMult, duration, inFraction, outFraction, color, layer, type, negative)
+                Nebula(Vector2f(location), Vector2f(velocity), size, endSizeMult * size, duration, inFraction, outFraction, color, layer, type, negative, expandAsSqrt)
             nebulaData.add(newNebula)
         }
     }

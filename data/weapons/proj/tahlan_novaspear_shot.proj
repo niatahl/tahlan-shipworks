@@ -1,0 +1,23 @@
+{
+	"id":"tahlan_novaspear_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"onHitEffect":"org.niatahl.tahlan.weapons.SpearOnHitEffect",
+	"onFireEffect":"org.niatahl.tahlan.weapons.SpearOnFireEffect",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":160.0,
+	"width":26,
+	"fadeTime":0.1,
+	"coreColor":[255,215,155,255],
+	"fringeColor": [255,105,0,155],
+	"glowColor": [255,105,55,20],
+	"glowRadius":0,
+	"hitGlowRadius":100,	
+	"passThroughMissiles":true,
+	"textureType": [
+    	"graphics/tahlan/fx/tahlan_eradicator_beam_fringe.png",
+    	"graphics/tahlan/fx/tahlan_twin_core.png"],
+	"textureScrollSpeed":20,
+	"pixelsPerTexel":2.0,
+}

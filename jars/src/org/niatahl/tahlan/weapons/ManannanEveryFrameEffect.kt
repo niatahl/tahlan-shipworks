@@ -13,6 +13,7 @@ import org.niatahl.tahlan.plugins.CustomRender
 import java.awt.Color
 
 class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
+    val projectiles: MutableList<DamagingProjectileAPI> = ArrayList()
     override fun advance(amount: Float, engine: CombatEngineAPI, weapon: WeaponAPI) {
         val flare1 = Global.getSettings().getSprite("fx", "tahlan_lens_flare2")
         val flare2 = Global.getSettings().getSprite("fx", "tahlan_lens_flare2")
@@ -90,7 +91,6 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
     }
 
     companion object {
-        val projectiles: MutableList<DamagingProjectileAPI> = ArrayList()
         val interval1: IntervalUtil = IntervalUtil(0.02f, 0.07f)
         val interval2: IntervalUtil = IntervalUtil(0.02f, 0.07f)
     }

@@ -1,0 +1,36 @@
+{
+  "id": "tahlan_sunspear",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_sunspear_shot",
+  "type": "ENERGY",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_sunspear_turret_base.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_sunspear_turret_glow.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_sunspear_hp_base.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_sunspear_hp_glow.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    205,
+    45,
+    150
+  ],
+  "turretOffsets": [
+    14,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    15.5,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW",
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_sunspear_fire"
+}

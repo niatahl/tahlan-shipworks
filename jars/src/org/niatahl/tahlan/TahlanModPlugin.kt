@@ -244,9 +244,11 @@ class TahlanModPlugin : BaseModPlugin() {
                     legio.setRelationship(sector.playerFaction.id, RepLevel.HOSTILE)
                     if (Misc.getCommissionFaction() != null) legio.setRelationship(Misc.getCommissionFactionId(), RepLevel.HOSTILE)
                 }
-                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous")
-                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.1f
-                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
+                if (HAS_NEX) {
+                    NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous")
+                    NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.1f
+                    NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
+                }
                 addDaemons(sector)
             }
         }

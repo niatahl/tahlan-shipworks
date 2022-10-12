@@ -503,6 +503,8 @@ tahlan_hammertube,WEAPON,"An integrated launch tube for Hammer-type torpedoes, f
 tahlan_sabottube,WEAPON,"An integrated launch tube for Sabot SRMs, feeding from an internal reserve at the cost of taking a short while to reload after firing.",,,
 tahlan_helrazer,WEAPON,"The massive spinal gun of the Hel Scaith fires a large supercritical antimatter projectile with devastating destructive potential. Taking even a single hit from this weapon can cripple or destroy many ships, but the weapon's low projectile velocity limits its use to more cumbersome targets.",,,
 tahlan_manannan,WEAPON,"A weapon of last resort, the Manannan is only ever deployed in the face of equivalent escalation of firepower, an act quite unusual of Legio leadership and testament to the sheer devastating power of this weapon.",,,
+tahlan_novaspear,WEAPON,"""If she is to be the allmother, we must grant her the blade with which to defend her children until the day they can take up their own arms.""",- [Source unknown],,
+tahlan_sunspear,WEAPON,"""Did they seriously get the approval for this? You know as much as I that all of it goes against standing law, even if high command signed off on it.""",- [Source unknown],,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,

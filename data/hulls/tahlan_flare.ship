@@ -15,6 +15,9 @@
     "terminator_wing",
     "terminator_wing"
     ],
+  "builtInMods": [
+    "automated"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",

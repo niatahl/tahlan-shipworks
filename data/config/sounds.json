@@ -901,6 +901,24 @@
       }
     ]
   },
+  "tahlan_novaspear_fire": {
+    "sounds": [
+      {
+        "file": "sounds/tahlan/weapons/tahlan_novaspear_fire.ogg",
+        "pitch": 1,
+        "volume": 1
+      }
+    ]
+  },
+  "tahlan_sunspear_fire": {
+    "sounds": [
+      {
+        "file": "sounds/tahlan/weapons/tahlan_novaspear_fire.ogg",
+        "pitch": 1.2,
+        "volume": 0.9
+      }
+    ]
+  },
   "tahlan_velvet_fire": {
     "sounds": [
       {
