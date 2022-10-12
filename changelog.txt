@@ -1,3 +1,9 @@
+0.8.666a
+- Fixed Flare missing automated hullmod
+- Fixed string errors
+- Fixed unintended Nex dependency
+
+
 0.8.666
 - Added Hel Sunder
 - Added Hel Hound
