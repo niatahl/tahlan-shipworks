@@ -70,7 +70,7 @@
         "fleet_preset_autofit": false,
         "fleet_scaling_multiplier": 1.2,
         "fleet_min_FP": 300,
-        "fleet_composition_faction": "tahlan_legioelite",
+        "fleet_composition_faction": "tahlan_legiodaemons",
         "fleet_composition_quality": 1,
         "fleet_transponder": false,
 		"fleet_no_retreat": true,

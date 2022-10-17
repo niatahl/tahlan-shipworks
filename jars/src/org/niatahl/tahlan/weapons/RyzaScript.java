@@ -33,14 +33,6 @@ public class RyzaScript implements EveryFrameWeaponEffectPlugin {
     private final String CHARGE_SOUND_ID = "tahlan_ryza_charge";
 
     private boolean hasFiredThisCharge = false;
-//    private IntervalUtil trailInterval = new IntervalUtil(0.02f, 0.02f);
-//
-//    private List<DamagingProjectileAPI> registeredProjectiles = new ArrayList<DamagingProjectileAPI>();
-//
-//    //A map for known projectiles and their IDs: should be cleared in init
-//    private Map<DamagingProjectileAPI, Float> projectileTrailIDs = new WeakHashMap<>();
-//    private Map<DamagingProjectileAPI, Float> projectileTrailIDs2 = new WeakHashMap<>();
-//    private Map<DamagingProjectileAPI, Float> projectileTrailIDs3 = new WeakHashMap<>();
 
     private boolean runOnce = true;
 

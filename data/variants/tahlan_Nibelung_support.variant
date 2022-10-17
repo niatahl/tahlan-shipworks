@@ -4,7 +4,7 @@
     "fluxVents": 50,
     "hullId": "tahlan_Nibelung",
     "hullMods": [
-        "auxiliarythrusters",
+        "targetingunit",
         "heavyarmor"
     ],
     "permaMods": [],

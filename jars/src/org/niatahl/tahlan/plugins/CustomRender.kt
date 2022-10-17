@@ -54,9 +54,9 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         nebulaData.filter { it.layer == layer }.forEach { renderNebula(it, view) }
 
         // projectile effects
-        effectProjectiles.forEach { proj ->
+        if (layer == CombatEngineLayers.ABOVE_SHIPS_LAYER) effectProjectiles.forEach { proj ->
             when (proj.projectileSpecId) {
-                "tahlan_novaspear_shot", "tahlan_sunspear_shot" -> if (layer == CombatEngineLayers.ABOVE_SHIPS_LAYER) renderSpear(proj)
+                "tahlan_novaspear_shot", "tahlan_sunspear_shot" -> renderSpear(proj)
             }
         }
     }
@@ -68,7 +68,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
         flare1.apply {
             setAdditiveBlend()
-            color = SpearOnFireEffect.PARTICLE_COLOR.modify(alpha = (60 * proj.brightness).roundToInt().coerceIn(0..255))
+            color = SpearOnFireEffect.PARTICLE_COLOR.modify(alpha = (80 * proj.brightness).roundToInt().coerceIn(0..255))
             angle = proj.facing - 90f
             setSize(100f * scale, 200f * scale)
         }
@@ -76,11 +76,11 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
         flare2.apply {
             setAdditiveBlend()
-            color = SpearOnFireEffect.GLOW_COLOR.modify(alpha = (100 * proj.brightness).roundToInt().coerceIn(0..255))
+            color = SpearOnFireEffect.GLOW_COLOR.modify(alpha = (80 * proj.brightness).roundToInt().coerceIn(0..255))
             angle = proj.facing - 90f
             setSize(120f * scale, 200f * scale)
         }
-        val pos = MathUtils.getRandomPointInCircle(proj.location, 10f)
+        val pos = MathUtils.getRandomPointInCircle(proj.location, 5f)
         flare2.renderAtCenter(pos.x, pos.y)
     }
 

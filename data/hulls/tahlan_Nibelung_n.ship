@@ -223,8 +223,8 @@
       "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 154,
-      "angle": 34,
+      "arc": 120,
+      "angle": 72,
       "locations": [112, 18]
     },
     {
@@ -232,8 +232,8 @@
       "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
-      "arc": 154,
-      "angle": -34,
+      "arc": 120,
+      "angle": -72,
       "locations": [112, -18]
     },
     {

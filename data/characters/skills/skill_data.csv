@@ -1,0 +1,2 @@
+id,name,order,tier,description,author,combat officer,admiral,admin,tags,icon
+tahlan_hyperCoordination,Hypercoordination,10015,0,It frankly doesn't even show up in my self-diagnostics,CIEVE,TRUE,,,"npc_only, deprecated",graphics/tahlan/icons/skills/hypercoordination.png

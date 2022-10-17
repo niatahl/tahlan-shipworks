@@ -67,6 +67,8 @@
 		"portraits":{
 			"tahlan_portrait_nia":"graphics/tahlan/portraits/characters/tahlan_portrait_nia.png",
 			"tahlan_portrait_maus":"graphics/tahlan/portraits/characters/tahlan_portrait_maus.png",
+			"tahlan_cieve":"graphics/tahlan/portraits/characters/cieve_quest.png",
+			"tahlan_cieve_waifu":"graphics/tahlan/portraits/characters/cieve_weeb_ed.png",
 		},
 		"tahlan_intel":{			
 			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png", # 20x20

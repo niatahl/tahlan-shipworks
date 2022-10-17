@@ -106,7 +106,56 @@
       "locations": [-75, 26]
     }
   ],
-  "engineSlots": [],
+  "engineSlots": [
+    {
+      "location": [-98, 16],
+      "length": 54.5,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-98, -16],
+      "length": 54.5,
+      "width": 16,
+      "angle": -180,
+      "contrailSize": 16,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-97, 26.5],
+      "length": 51.5,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-97, -26.5],
+      "length": 51.5,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-95, 37],
+      "length": 51.5,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-95, -37],
+      "length": 51.5,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "LOW_TECH"
+    }
+  ],
   "bounds": [
     -63, -9,
     -96, -11,

@@ -1,0 +1,188 @@
+{
+	"id":"tahlan_cieveFaction",
+	"color":[240,255,255,120],
+	
+	"baseUIColor":[240,255,255,255],
+	"darkUIColor":[120,130,130,175],
+	"gridUIColor":[150,255,255,75],
+	
+	"showInIntelTab":false,
+	
+	"displayName":"Cieve",
+	"displayNameWithArticle":"Cieve",
+	"logo":"graphics/factions/player_flag3.png",
+	"crest":"graphics/factions/crest_player_flag.png",
+	"shipNamePrefix":"",
+	"shipNameSources":{
+		"MERCANTILE":1,
+		"SPACE":1,
+		"DERELICT_DRONE":1,
+	},
+	"names":{
+		"ai":1,
+	},
+	"portraits":{
+		"standard_male":[
+			"graphics/tahlan/portraits/characters/cieve_weeb_ed.png",
+			"graphics/tahlan/portraits/characters/cieve_quest.png",
+		],
+		"standard_female":[
+			"graphics/tahlan/portraits/characters/cieve_weeb_ed.png",
+			"graphics/tahlan/portraits/characters/cieve_quest.png",
+		],
+	},
+	"custom":{
+		"engageWhenEvenStrength":true,
+		"allowsTransponderOffTrade":true, # to prevent cargoscan dialog from "patrols"
+		"postsNoBounties":true,
+		"fightToTheLast":true, # never surrender!
+	},	
+	"variantOverrides":{
+	},
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		"tags":{
+		},
+		"hulls":{
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		"tags":["remnant"],
+		"hulls":[
+		],
+	},
+	"knownShips":{
+		"tags":["remnant"],
+		"hulls":[
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		"tags":[],
+		"hulls":[
+		],
+	},
+	"knownFighters":{
+		"tags":["remnant"],
+		"fighters":[
+		],
+	},
+	"priorityFighters":{
+		"tags":[],
+		"fighters":[
+		],
+	},
+	"knownWeapons":{
+		"tags":["lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "remnant"],
+		"weapons":[
+			"lightneedler",
+			"railgun",
+			"dualflak",
+			"heavymauler",
+			"hveldriver",
+			"heavyneedler",
+			"gauss",
+			"mjolnir",
+			"multineedler",
+			"sabotpod",
+			"phasecl",
+			"cyclone",
+			"hurricane",
+			"squall",
+			"locust",
+			"pdburst",
+			"amblaster",
+			"phasebeam",
+			"heavyblaster",
+			"heavyburst",
+			"ionpulser",
+			"ionbeam",
+			"plasma",
+			"guardian",
+			"tachyonlance",
+		],
+	},
+	"priorityWeapons":{
+		"tags":[],
+		"weapons":[
+		],
+	},
+	"knownHullMods":{
+		"tags":["base_bp", "remnant"],
+		"hullMods":[
+			"advancedshieldemitter", # accelerated
+			"advancedoptics",
+			"turretgyros",
+			"armoredweapons",
+			"augmentedengines",
+			"autorepair",
+			"converted_hangar",
+			"eccm",
+			"ecm",
+			"expanded_deck_crew",
+			"magazines",
+			"missleracks",
+			"extendedshieldemitter",
+			"frontemitter",
+			"frontshield",  # makeshift
+			"hardenedshieldemitter",
+			"heavyarmor",
+			"insulatedengine",
+			"pointdefenseai",
+			"targetingunit",
+			"nav_relay",
+			"adaptiveshields", # omni
+			"operations_center",
+			"recovery_shuttles",
+			"fluxbreakers",
+			"solar_shielding",
+			"stabilizedshieldemitter",
+			"surveying_equipment",
+		],
+	},
+	"fleetTypeNames":{
+		"patrolSmall":"Fragment",
+		"patrolMedium":"Shard",
+		"patrolLarge":"Splinter",
+		"battlestation":"Bastion",
+	},
+	"ranks":{
+		"ranks":{
+			"spaceCommander":{"name":"Control Mind"},
+		},
+		"posts":{
+			"patrolCommander":{"name":"Fleet Operations Subroutine"},
+			"fleetCommander":{"name":"Tactical Mind"},
+			"baseCommander":{"name":"Strategic Sub-Manager"},
+			"administrator":{"name":"Administrative Processor"},
+		},
+	},
+	"factionDoctrine":{
+		"warships":4,
+		"carriers":2,
+		"phaseShips":1,
+		
+		"officerQuality":5,
+		"shipQuality":3,
+		"numShips":3,
+		
+		"shipSize":4,
+		
+		"aggression":3,
+		
+		"combatFreighterProbability":0,     				# instead of some portion of the freighters in a fleet
+		"combatFreighterCombatUseFraction":1,				# as part of the normal combat lineup
+		"combatFreighterCombatUseFractionWhenPriority":1,   # as part of normal combat lineup, when marked as priority ship
+		"autofitRandomizeProbability":0.25,
+
+		"commanderSkillsShuffleProbability":0,
+		"commanderSkills":[
+			"electronic_warfare",
+			"officer_management",
+			"coordinated_maneuvers",
+			"fighter_doctrine",
+		],
+	},	
+
+},

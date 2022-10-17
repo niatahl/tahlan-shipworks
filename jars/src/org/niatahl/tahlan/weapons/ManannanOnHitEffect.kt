@@ -98,7 +98,7 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
 
         // Arcing stuff
         val validTargets: MutableList<CombatEntityAPI> = ArrayList()
-        for (entityToTest in CombatUtils.getEntitiesWithinRange(point, 500f)) {
+        for (entityToTest in CombatUtils.getEntitiesWithinRange(point, 1500f)) {
             if (entityToTest is ShipAPI || entityToTest is AsteroidAPI || entityToTest is MissileAPI) {
                 //Phased targets, and targets with no collision, are ignored
                 if (entityToTest is ShipAPI) {

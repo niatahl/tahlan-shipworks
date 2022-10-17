@@ -23,4 +23,7 @@
 	
 	#enables Timeless and Nameless type ships spawning in remnant fleets.
 	"enableLifelessShips": false,
+
+	#WIP
+	"enableWaifu": true,
 }

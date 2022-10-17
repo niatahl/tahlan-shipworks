@@ -1149,17 +1149,17 @@
   "tahlan_helrazer_fire": {
     "sounds": [
       {
-        "file": "sounds/tahlan/weapons/tahlan_helrazer_fire.ogg",
+        "file": "sounds/tahlan/weapons/tahlan_helrazer_fireV2.ogg",
         "pitch": 0.9,
         "volume": 1
       },
       {
-        "file": "sounds/tahlan/weapons/tahlan_helrazer_fire.ogg",
+        "file": "sounds/tahlan/weapons/tahlan_helrazer_fireV2.ogg",
         "pitch": 1,
         "volume": 1
       },
       {
-        "file": "sounds/tahlan/weapons/tahlan_helrazer_fire.ogg",
+        "file": "sounds/tahlan/weapons/tahlan_helrazer_fireV2.ogg",
         "pitch": 0.95,
         "volume": 1
       }

@@ -23,6 +23,8 @@ import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
+import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
+import org.niatahl.tahlan.utils.TahlanPeople
 import org.niatahl.tahlan.weapons.ai.FountainAI
 import org.niatahl.tahlan.weapons.ai.KriegsmesserAI
 import org.niatahl.tahlan.weapons.ai.TwoStageMissileAI
@@ -122,6 +124,8 @@ class TahlanModPlugin : BaseModPlugin() {
 
     override fun onGameLoad(newGame: Boolean) {
         val sector = Global.getSector()
+        TahlanPeople.synchronise()
+        sector.addTransientScript(CieveScript())
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
             sector.getFaction("remnant").apply {
                 removeKnownShip("tahlan_Timeless")
@@ -161,23 +165,28 @@ class TahlanModPlugin : BaseModPlugin() {
             }
 
             val legio = Global.getSector().getFaction("tahlan_legioinfernalis")
-            DAEMON_SHIPS.run { if (ENABLE_HARDMODE) forEach{ legio.addPriorityShip(it) } else forEach {legio.removePriorityShip(it)} }
+            DAEMON_SHIPS.run { if (ENABLE_HARDMODE) forEach { legio.addPriorityShip(it) } else forEach { legio.removePriorityShip(it) } }
 
             // Adding new fun(tm) to existing saves
             if (HAS_INDEVO) {
                 addDefenses()
+                // Daemon upgrade now also upgrades defenses
+                if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered"))
+                    upgradeDefenses()
             }
         }
-        if (HAS_NEX && Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
-            if (!NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
-                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous")
+        if (HAS_NEX) {
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
+                if (!NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.contains("monstrous")) {
+                    NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.add("monstrous")
+                }
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.1f
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
+            } else {
+                NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous")
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.5f
+                NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 1f
             }
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.1f
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
-        } else {
-            NexConfig.getFactionConfig("tahlan_legioinfernalis").diplomacyTraits.remove("monstrous")
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyPositiveChance["default"] = 0.5f
-            NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 1f
         }
     }
 
@@ -250,6 +259,7 @@ class TahlanModPlugin : BaseModPlugin() {
                     NexConfig.getFactionConfig("tahlan_legionifernalis").diplomacyNegativeChance["default"] = 2f
                 }
                 addDaemons(sector)
+                upgradeDefenses()
             }
         }
     }
@@ -266,6 +276,7 @@ class TahlanModPlugin : BaseModPlugin() {
     companion object {
         @JvmField
         var isGraphicsLibAvailable = false
+
         @JvmField
         val SHIELD_HULLMODS: MutableList<String> = ArrayList()
 
@@ -281,8 +292,10 @@ class TahlanModPlugin : BaseModPlugin() {
         var ENABLE_LIFELESS = false
         var ENABLE_LEGIOBPS = false
         var ENABLE_DAEMONS = false
+
         @JvmField
         var ENABLE_HARDMODE = false
+        var WEEB_MODE = false
 
         @JvmField
         var HAS_NEX = false
@@ -311,13 +324,13 @@ class TahlanModPlugin : BaseModPlugin() {
         )
 
         private fun addDaemons(sector: SectorAPI) {
-            DAEMON_SHIPS.forEach {sector.getFaction("tahlan_legioinfernalis").addKnownShip(it,false) }
-            DAEMON_WINGS.forEach {sector.getFaction("tahlan_legioinfernalis").addKnownFighter(it,false)}
+            DAEMON_SHIPS.forEach { sector.getFaction("tahlan_legioinfernalis").addKnownShip(it, false) }
+            DAEMON_WINGS.forEach { sector.getFaction("tahlan_legioinfernalis").addKnownFighter(it, false) }
         }
 
         private fun removeDaemons(sector: SectorAPI) {
-            DAEMON_SHIPS.forEach {sector.getFaction("tahlan_legioinfernalis").removeKnownShip(it) }
-            DAEMON_WINGS.forEach {sector.getFaction("tahlan_legioinfernalis").removeKnownFighter(it)}
+            DAEMON_SHIPS.forEach { sector.getFaction("tahlan_legioinfernalis").removeKnownShip(it) }
+            DAEMON_WINGS.forEach { sector.getFaction("tahlan_legioinfernalis").removeKnownFighter(it) }
         }
 
         @Throws(IOException::class, JSONException::class)
@@ -330,6 +343,7 @@ class TahlanModPlugin : BaseModPlugin() {
             ENABLE_HARDMODE = setting.getBoolean("enableHardMode")
             ENABLE_DAEMONS = setting.getBoolean("enableDaemons")
             DAEMON_FASTMODE = setting.getBoolean("enableFastmode")
+            WEEB_MODE = setting.getBoolean("enableWaifu")
         }
     }
 }

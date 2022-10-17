@@ -4,9 +4,11 @@
 		"tahlan_adjudicator":{"name":"Adjudicator"},
 		"tahlan_architect":{"name":"Architect"},
 		"tahlan_unit":{"name":"Experimental Unit"},
+		"tahlan_cieve":{"name":"Coordinator"}
 	},
 	
 	"posts":{
+		"tahlan_cieve":{"name":"Coordinator"}
 	},
 }
 

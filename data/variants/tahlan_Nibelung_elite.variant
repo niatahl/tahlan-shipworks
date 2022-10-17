@@ -1,10 +1,10 @@
 {
     "displayName": "Elite",
-    "fluxCapacitors": 8,
+    "fluxCapacitors": 3,
     "fluxVents": 50,
     "hullId": "tahlan_Nibelung",
     "hullMods": [
-        "fluxdistributor",
+        "targetingunit",
         "heavyarmor"
     ],
     "permaMods": [],

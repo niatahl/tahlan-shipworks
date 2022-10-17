@@ -15,10 +15,6 @@ public class PhaseBreakerStats extends BaseShipSystemScript {
 
     public static final float MAX_TIME_MULT = 3f;
 
-    public static boolean FLUX_LEVEL_AFFECTS_SPEED = false;
-    public static float MIN_SPEED_MULT = 0.33f;
-    public static float BASE_FLUX_LEVEL_FOR_MIN_SPEED = 0.5f;
-
     private float activeTime = 0f;
     private boolean runOnce = false;
 
@@ -49,12 +45,6 @@ public class PhaseBreakerStats extends BaseShipSystemScript {
                     cloak.getSpecAPI().getIconSpriteName(), cloak.getDisplayName(), "time flow altered", false);
         }
     }
-
-    public float getSpeedMult(ShipAPI ship, float effectLevel) {
-        if (getDisruptionLevel(ship) <= 0f) return 1f;
-        return MIN_SPEED_MULT + (1f - MIN_SPEED_MULT) * (1f - getDisruptionLevel(ship) * effectLevel);
-    }
-
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         ShipAPI ship;

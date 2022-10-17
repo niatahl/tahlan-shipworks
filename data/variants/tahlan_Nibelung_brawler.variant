@@ -1,12 +1,13 @@
 {
     "displayName": "Brawler",
-    "fluxCapacitors": 24,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 49,
     "hullId": "tahlan_Nibelung",
     "hullMods": [
         "heavyarmor",
         "unstable_injector",
-        "advancedshieldemitter"
+        "advancedshieldemitter",
+        "targetingunit"
     ],
     "permaMods": [],
 	"goalVariant": true,

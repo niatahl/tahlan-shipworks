@@ -72,6 +72,16 @@
 		"pi": "Pi",
 		"heavyarmor": "Heavy Armor",
 		"phaseBreaker": "Phase Breaker",
-		"daemonPlatingSmod": "When built-in, armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second."
+		"daemonPlatingSmod": "When built-in, armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",
+		"cieve": "CIEVE",
+
+		"hypercoordination": "Unique Skill - Hypercoordination",
+		"hypercoordination_L1_desc": "5%% reduction in supply and fuel usage",
+		"hypercoordination_L1_desc_hl1": "5%",
+		"hypercoordination_L2_desc": "10%% reduction in Deployment Points up to a maximum of 10",
+		"hypercoordination_L2_desc_hl1": "10%",
+		"hypercoordination_L2_desc_hl2": "10",
+		"baseEffect": "Base Effect",
+		"eliteEffect": "Elite Effect"
 	}
 }

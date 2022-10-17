@@ -1,0 +1,240 @@
+{
+	"id":"tahlan_legiodaemons",
+	"color":[180,0,0,255],
+	
+	"baseUIColor":[200,0,0,255],
+	"darkUIColor":[85,0,0,175],
+	"gridUIColor":[255,0,0,75],
+	"brightUIColor":[231,98,103,255],
+	
+	"entityNamePrefix":"Blackwatch",
+	"personNamePrefix":"Blackwatch",
+	"displayName":"Blackwatch",
+	"displayNameWithArticle":"the Blackwatch",
+	"displayNameIsOrAre":"is",
+	"logo":"graphics/tahlan/factions/tahlan_greatorder.png",
+	"crest":"graphics/tahlan/factions/tahlan_greatorder_crest.png",
+	"showInIntelTab":false,
+	"shipNamePrefix":"BW", 
+	"shipNameSources":{
+		"PIRATES":1,
+		"AZTEC":1,
+		"BEASTS":1,
+		"NORSE":1,
+		"CELTIC":1,
+		"SPACE":1,
+		"GENERAL":1,
+	},
+	"names":{
+		"fringe":1,
+		"modern":1,
+		"world":1,
+		"future":1,
+		"myth":1,
+		"old english":1,
+		"pirate":1,
+	},
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
+	},
+	
+	# multiplier for how often hulls show up in the faction's fleets
+	"hullFrequency":{
+		"tags":{
+		},
+		"hulls":{		
+		},
+	},
+	# ships the faction gets access to when importing S&W out-of-faction
+	"shipsWhenImporting":{
+		"tags":["tahlan_daemon"],
+		"hulls":[
+		],
+	},
+	"knownShips":{
+		"tags":["tahlan_daemon"],
+		"hulls":[
+		],
+	},
+	# listing ships here will make the faction mostly use them even if other hulls become available
+	"priorityShips":{
+		"tags":[],
+		"hulls":[],
+	},
+	"knownFighters":{
+		"tags":["tahlan_daemon"],
+		"fighters":[
+		],
+	},
+	"priorityFighters":{
+		"tags":["tahlan_daemon"],
+		"fighters":[
+		],
+	},
+	"knownWeapons":{
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "pirates", "tahlan_legio"],
+		"weapons":[
+			"railgun",
+			"dualflak",
+			"heavymauler",
+			"hveldriver",
+			"gauss",
+			"mjolnir",
+			"sabotpod",
+			"phasecl",
+			"cyclone",
+			"hurricane",
+			"squall",
+			"locust",
+			"tahlan_eradicator",
+			"tahlan_ryza",
+			"tahlan_mezoa",
+			"tahlan_vesuvio",
+			"tahlan_breaker",
+			"tahlan_ppa",
+			"tahlan_armiger",
+			"tahlan_efreet",
+			"tahlan_pastel",
+		],
+	},
+	"priorityWeapons":{
+		"tags":[],
+		"weapons":[
+		],
+	},
+	"knownHullMods":{
+		"tags":["base_bp", "pirates"],
+		"hullMods":[
+			"advancedshieldemitter", # accelerated
+			"turretgyros",
+			"armoredweapons",
+			"augmentedengines",
+			"autorepair",
+			"converted_hangar",
+			"eccm",
+			"ecm",
+			"expanded_deck_crew",
+			"magazines",
+			"missleracks",
+			"extendedshieldemitter",
+			"frontemitter",
+			"frontshield",  # makeshift
+			"hardenedshieldemitter",
+			"heavyarmor",
+			"insulatedengine",
+			"targetingunit",
+			"nav_relay",
+			"adaptiveshields", # omni
+			"operations_center",
+			"recovery_shuttles",
+			"fluxbreakers",
+			"stabilizedshieldemitter",
+			"surveying_equipment",
+			"hiressensors",
+			"efficiency_overhaul",
+		],
+	},
+	"factionDoctrine":{
+		"warships":5,
+		"carriers":1,
+		"phaseShips":1,
+		
+		"officerQuality":7,
+		"shipQuality":5,
+		"numShips":3,
+		
+		"shipSize":3,
+		
+		"aggression":5,
+		
+		"combatFreighterProbability":0.75,     				# instead of some portion of the freighters in a fleet
+		"combatFreighterCombatUseFraction":1,  				# as part of the normal combat lineup
+		"combatFreighterCombatUseFractionWhenPriority":1,   # as part of normal combat lineup, when marked as priority ship
+		"autofitRandomizeProbability":0.75,
+
+		"commanderSkillsShuffleProbability":0,
+		"commanderSkills":[
+			"crew_training",
+			"officer_management",
+			"coordinated_maneuvers",			
+			"flux_regulation",
+			"electronic_warfare",
+		],
+	},
+	"illegalCommodities":[
+	],
+	"music":{
+		"theme":"music_pirates_market_neutral",
+		"market_neutral":"music_pirates_market_neutral",
+		"market_hostile":"music_pirates_market_hostile",
+		"market_friendly":"music_pirates_market_friendly",
+		"encounter_neutral":"music_pirates_encounter_neutral",
+		"encounter_hostile":"music_pirates_encounter_hostile",
+		"encounter_friendly":"music_pirates_encounter_friendly",
+	},
+	"internalComms":"legio_internal",
+	"portraits":{
+		"standard_male":[
+			"graphics/portraits/portrait_mercenary01.png",
+			"graphics/portraits/portrait_mercenary03.png",
+			"graphics/portraits/portrait_mercenary04.png",
+			"graphics/portraits/portrait_mercenary06.png",
+			"graphics/portraits/portrait12.png",
+			"graphics/portraits/portrait15.png",
+			"graphics/portraits/portrait17.png",
+			"graphics/portraits/portrait18.png",
+			"graphics/portraits/portrait20.png",
+			"graphics/portraits/portrait_pirate02.png",
+			"graphics/portraits/portrait_pirate03.png",
+			"graphics/portraits/portrait33.png",
+			"graphics/portraits/portrait36.png",
+			"graphics/portraits/portrait40.png",
+			#"graphics/portraits/characters/old_spacer02.png",
+		],
+		"standard_female":[
+			"graphics/portraits/portrait_mercenary02.png",
+			"graphics/portraits/portrait_mercenary05.png",
+			"graphics/portraits/portrait_mercenary07.png",
+			"graphics/portraits/portrait14.png",
+			"graphics/portraits/portrait16.png",
+			"graphics/portraits/portrait21.png",
+			"graphics/portraits/portrait22.png",
+			"graphics/portraits/portrait24.png",
+			"graphics/portraits/portrait29.png",
+			"graphics/portraits/portrait_pirate01.png",
+			"graphics/portraits/portrait32.png",
+			"graphics/portraits/portrait37.png",
+			"graphics/portraits/portrait39.png",
+			#"graphics/portraits/characters/old_spacer01.png",
+		],
+	},
+	"ranks":{
+		"ranks":{
+			"spaceCommander":{"name":"Captain"},
+		},
+		"posts":{
+			"patrolCommander":{"name":"Captain"},
+			"fleetCommander":{"name":"Lord"},
+			"baseCommander":{"name":"High Lord"},
+			"administrator":{"name":"Imperator"},
+		},
+	},
+	"fleetTypeNames":{
+		"smallTrader":"Trade Convoy",
+		"trade":"Trade Convoy",
+		"tradeLiner":"Passenger Convoy",
+		"patrolSmall":"Blackwatch Hunters",
+		"patrolMedium":"Blackwatch Fleet",
+		"patrolLarge":"Blackwatch Armada",
+		"mercScout":"Scout",
+		"mercBountyHunter":"Raiders",
+		"mercPrivateer":"Raiders",
+		"mercPatrol":"Attack Fleet",
+		"mercArmada":"Armada",
+		"taskForce":"Blackwatch Executioners",
+	},
+}
+
+
+
+
