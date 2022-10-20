@@ -130,8 +130,8 @@
 		"contrailAngularVelocityMult":0.5,
 		"contrailColor":[205,60,210,0],
 		"contrailCampaignColor":[255,80,120,240],
-		"glowSprite":"graphics/tahlan/fx/tahlan_nxa_engineflame_motion.png",
-		"glowOutline":"graphics/tahlan/fx/tahlan_nxa_engineflame.png",
+		#"glowSprite":"graphics/tahlan/fx/tahlan_nxa_engineflame_motion.png",
+		#"glowOutline":"graphics/tahlan/fx/tahlan_nxa_engineflame.png",
 		#"omegaMode":true,
 		"type":"GLOW" # GLOW or SMOKE
 	},

@@ -79,7 +79,7 @@ The Adlerauge will also automatically link with any %s Regalia within a %s radiu
 Regalia Gantry,tahlan_regaliagantry,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaGantry,This vessel is equipped with the necessary equipment for servicing and maintaining Regalia.,Regalia maintenance,graphics/tahlan/hullmods/tahlan_regaliagantry.png
 Artillery Interface,tahlan_traummounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.TraumMounts,Enhanced mounts reduce the ordnance point cost of large ballistic and energy weapons by %s.,Reduces OP cost of large ballistic and energy weapons.,graphics/hullmods/ballistics_integration.png
 ,,,,,,,,,,,,,,,,,,
-Temporal Armor,tahlan_outcast_engineering,2,,,special,Special,9999,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OutcastEngineering,"A rare ship constructed by the Great Houses.
+Temporal Armor,tahlan_outcast_engineering,2,,,"special, defensive",Special,9999,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OutcastEngineering,"A rare ship constructed by the Great Houses.
 
 Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s.
 
@@ -106,7 +106,7 @@ There appear to be various protocols in place restricting the ship's capabilitie
 
 Increases supply use for maintenance and recovery by %s.",Enhances targeting,graphics/tahlan/hullmods/tahlan_daemoncore.png
 Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png
-Hel Carapace,tahlan_daemonarmor,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
+Hel Carapace,tahlan_daemonarmor,,,,defensive,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
@@ -116,7 +116,7 @@ Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,org.nia
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Hel Hound Armor,tahlan_helhoundarmor,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Hel Hound Armor,tahlan_helhoundarmor,,,,defensive,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.
 
 When no human officer is assigned to this ship, %s will be assigned command instead.",Allows Cieve to control ship,graphics/tahlan/hullmods/cieve_link.png

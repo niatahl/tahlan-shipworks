@@ -126,10 +126,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         Vector2f.add(nebula.location, delta.scale(nebula.lifetime) as Vector2f, actualLocation)
 
         // OpenGL witchcraft that I don't actually understand
-        if (nebula.negative) {
-            glBlendEquation(GL_FUNC_REVERSE_SUBTRACT)
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE)
-        }
+        if (nebula.negative) glBlendEquation(GL_FUNC_REVERSE_SUBTRACT)
 
         cloudSprite.renderRegionAtCenter(
             actualLocation.x + offsetPos.x,
