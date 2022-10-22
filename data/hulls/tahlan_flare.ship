@@ -11,12 +11,12 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 144.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "automated"
+  ],
   "builtInWings": [
     "terminator_wing",
     "terminator_wing"
-    ],
-  "builtInMods": [
-    "automated"
   ],
   "weaponSlots": [
     {

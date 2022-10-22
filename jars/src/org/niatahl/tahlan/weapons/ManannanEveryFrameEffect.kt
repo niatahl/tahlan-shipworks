@@ -2,14 +2,16 @@ package org.niatahl.tahlan.weapons
 
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.*
+import com.fs.starfarer.api.loading.DamagingExplosionSpec
+import com.fs.starfarer.api.mission.FleetSide
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import data.scripts.util.MagicRender
-import org.niatahl.tahlan.utils.random
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.plugins.CustomRender
+import org.niatahl.tahlan.utils.random
 import java.awt.Color
 
 class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
@@ -86,8 +88,31 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
         }
     }
 
-    override fun onFire(projectile: DamagingProjectileAPI, weapon: WeaponAPI?, engine: CombatEngineAPI?) {
+    override fun onFire(projectile: DamagingProjectileAPI, weapon: WeaponAPI, engine: CombatEngineAPI) {
         projectiles.add(projectile)
+
+        if ( engine.isInCampaign && engine.getFleetManager(weapon.ship.owner) == engine.getFleetManager(FleetSide.PLAYER) ) {
+            weapon.disable(true)
+            engine.spawnExplosion(projectile.location,Misc.ZERO,Color.RED,10000f,20f)
+            engine.applyDamage(weapon.ship,weapon.location,50000f,DamageType.ENERGY,50000f,true,false,weapon.ship)
+            val blast = DamagingExplosionSpec(
+                0.1f,
+                10000f,
+                5000f,
+                50000f,
+                25000f,
+                CollisionClass.PROJECTILE_FF,
+                CollisionClass.PROJECTILE_FIGHTER,
+                10f,
+                10f,
+                0f,
+                500,
+                Color.RED,
+                Color.RED
+            )
+            blast.damageType = DamageType.ENERGY
+            engine.spawnDamagingExplosion(blast, projectile.source, projectile.location, true)
+        }
     }
 
     companion object {
