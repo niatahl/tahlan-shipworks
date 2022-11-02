@@ -27,17 +27,14 @@ public class ShiftDriveStats extends BaseShipSystemScript {
     private Color color = new Color(100,255,100,255);
     public static final float MAX_TIME_MULT = 2f;
 
-    private IntervalUtil interval = new IntervalUtil(0.1f, 0.1f);
+    private final IntervalUtil interval = new IntervalUtil(0.1f, 0.1f);
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
-        ShipAPI ship = null;
-        boolean player = false;
+        ShipAPI ship;
         CombatEngineAPI engine = Global.getCombatEngine();
 
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
-            player = ship == Global.getCombatEngine().getPlayerShip();
-            id = id + "_" + ship.getId();
         } else {
             return;
         }
@@ -123,12 +120,9 @@ public class ShiftDriveStats extends BaseShipSystemScript {
     }
 
     public void unapply(MutableShipStatsAPI stats, String id) {
-        ShipAPI ship = null;
-        boolean player = false;
+        ShipAPI ship;
         if (stats.getEntity() instanceof ShipAPI) {
             ship = (ShipAPI) stats.getEntity();
-            player = ship == Global.getCombatEngine().getPlayerShip();
-            id = id + "_" + ship.getId();
         } else {
             return;
         }

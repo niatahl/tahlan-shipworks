@@ -1,3 +1,6 @@
+0.9
+- Improved Legio Tyranny description
+
 0.8.666a
 - Fixed Flare missing automated hullmod
 - Fixed string errors

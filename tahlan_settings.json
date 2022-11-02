@@ -13,7 +13,7 @@
 	"enableDaemons": true,
 
 	#lowers Daemon spawn threshold, causing them to appear (much) sooner
-	"enableFastmode": true,
+	"enableFastmode": false,
 	
 	#makes Legio even more dangerous after a certain point.
 	"enableHardMode": false,

@@ -72,6 +72,7 @@ public class LegioTyranny extends BaseMarketConditionPlugin {
                 10f, Misc.getHighlightColor(),
                 "+" + (int) STAB_BONUS * marketMult);
         tooltip.addPara(txt("tyranny2"), 10f);
+        tooltip.addPara(txt("tyranny5"), 10f);
         tooltip.addPara(txt("tyranny3"), 10f, Misc.getHighlightColor(), txt("tyranny4"));
     }
 }

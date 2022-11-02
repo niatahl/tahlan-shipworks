@@ -61,6 +61,7 @@ tahlan_fountain_msl,projectile,50,0.5,0.4,"[255,120,20]",,100,0.4,0.2,"[255,104,
 tahlan_schwalbe_msl,projectile,50,0.5,0.4,"[255,240,150]",,100,0.4,0.2,"[255,240,150]",,,,,,1,FALSE
 tahlan_dolch_msl,projectile,50,0.5,0.4,"[90,237,205]",,100,0.4,0.2,"[90,237,205]",,,,,,1,FALSE
 tahlan_kriegsmesser_msl,projectile,80,0.6,0.4,"[255,0,50]",,100,0.6,0.5,"[255,0,50]",,,,,,1,FALSE
+tahlan_manannan_msl,projectile,120,1,1,"[255,0,0]",,100,1,1,"[255,0,0]",,,,,,1,FALSE
 ,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,
 #BEAMS,,,,,,,,,,,,,,,,,

@@ -11,7 +11,7 @@ public class HelTempShellStats extends BaseShipSystemScript {
 	public static final float MAX_TIME_MULT = 2f;
 
 	public static final Color JITTER_COLOR = new Color(255, 153, 90,55);
-	public static final Color JITTER_UNDER_COLOR = new Color(255, 96, 90,155);
+	public static final Color JITTER_UNDER_COLOR = new Color(255, 120, 118,185);
 
 	
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {

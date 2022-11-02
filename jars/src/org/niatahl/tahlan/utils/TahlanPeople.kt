@@ -41,7 +41,7 @@ object TahlanPeople {
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_cieve_waifu")
                 // Officer stats
                 setPersonality(Personalities.RECKLESS)
-                stats.setLevel(1)
+                stats.setLevel(2)
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
                 stats.setSkillLevel("tahlan_hyperCoordination", 1f)
                 getMemoryWithoutUpdate().set("\$chatterChar", "cieve")
