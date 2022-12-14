@@ -12,10 +12,11 @@
     <orderEntry type="library" name="Starsector API" level="application" />
     <orderEntry type="library" name="Graphics" level="application" />
     <orderEntry type="library" name="MagicLib" level="application" />
-    <orderEntry type="library" name="LazyLib" level="application" />
     <orderEntry type="library" name="ExerelinCore" level="application" />
     <orderEntry type="library" name="commons-compiler-jdk" level="application" />
     <orderEntry type="library" name="LazyLib-Kotlin" level="application" />
     <orderEntry type="library" name="IndEvo" level="application" />
+    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="LazyLib" level="application" />
   </component>
 </module>

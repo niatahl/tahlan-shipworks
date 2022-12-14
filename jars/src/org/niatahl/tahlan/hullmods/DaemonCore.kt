@@ -17,7 +17,6 @@ import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.utils.Utils
 import java.awt.Color
 import java.util.*
-import kotlin.collections.HashMap
 import kotlin.math.roundToInt
 
 // There was some fun here. It was silly indeed.
@@ -47,6 +46,9 @@ class DaemonCore : BaseHullMod() {
             if (member.variant.hullVariantId == ship.variant.hullVariantId) {
                 isPlayerFleet = true
             }
+        }
+        if (!ship.variant.hasTag(Tags.SHIP_UNIQUE_SIGNATURE)) {
+            ship.variant.addTag(Tags.SHIP_UNIQUE_SIGNATURE)
         }
         if (ship.variant.hasHullMod("tahlan_daemonboost")) {
             ship.variant.removeMod("tahlan_daemonboost")
@@ -195,7 +197,6 @@ class DaemonCore : BaseHullMod() {
         private const val PLAYER_NERF = 0.9f
         private val JITTER_COLOR = Color(255, 0, 0, 30)
         private val JITTER_UNDER_COLOR = Color(255, 0, 0, 80)
-        private val kaboom = IntervalUtil(1f, 10f)
         private const val dc_id = "tahlan_daemoncore"
         private val yoinkTimer = IntervalUtil(10f, 30f)
     }
