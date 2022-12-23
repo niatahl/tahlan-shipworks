@@ -33,8 +33,8 @@
       "size": "MEDIUM",
       "type": "ENERGY",
       "mount": "HARDPOINT",
-      "arc": 0,
-      "angle": -0,
+      "arc": 5,
+      "angle": 0,
       "locations": [75, -51]
     },
     {

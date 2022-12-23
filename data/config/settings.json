@@ -1,6 +1,7 @@
 {
 	"plugins":{
 		"TahlanRenderer":"org.niatahl.tahlan.plugins.CustomRender",
+		"TahlanCampaignPluginImpl":"org.niatahl.tahlan.plugins.CampaignPluginImpl"
 	},  
 	"designTypeColors":{
             "Unknown":[255,255,255,255],
@@ -69,7 +70,9 @@
 			"tahlan_portrait_maus":"graphics/tahlan/portraits/characters/tahlan_portrait_maus.png",
 			"tahlan_cieve":"graphics/tahlan/portraits/characters/cieve_quest.png",
 			"tahlan_cieve_waifu":"graphics/tahlan/portraits/characters/cieve_weeb_ed.png",
-			"tahlan_offspring":"graphics/tahlan/portraits/offspring.png"
+			"tahlan_offspring":"graphics/tahlan/portraits/offspring.png",
+			"tahlan_daemon":"graphics/tahlan/portraits/daemon.png",
+			"tahlan_archdaemon":"graphics/tahlan/portraits/archdaemon.png"
 		},
 		"tahlan_intel":{			
 			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png", # 20x20
@@ -80,5 +83,8 @@
 			"tahlan_melchiresa_illus":"graphics/tahlan/illustrations/tahlan_melchiresa_illus.png",
 			"tahlan_adramelech_illus":"graphics/tahlan/illustrations/tahlan_adramelech_illus.png",
 		},
-	}
+	},
+
+	"drop_prob_officer_tahlan_archdaemoncore":0.05,
+	"drop_prob_officer_tahlan_daemoncore":0.1
 }

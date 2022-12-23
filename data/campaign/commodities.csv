@@ -1,0 +1,3 @@
+name,id,demand class,base price,export value,price variability,utility,origin,tags,stack size,cargo space,icon,sound id,sound id drop,order,economyTier,econUnit,iconWidthMult,plugin,desc
+Daemon Core,tahlan_daemoncore,survey_data,,,,50,,"nonecon, ai_core, no_loss_from_combat",1000,1,graphics/tahlan/icons/cargo/daemoncore.png,ai_core_pickup,ui_beta_core_drop,41,,,1,,
+Archdaemon Core,tahlan_archdaemoncore,survey_data,,,,200,,"nonecon, ai_core, no_loss_from_combat",1000,1,graphics/tahlan/icons/cargo/archdaemoncore.png,ai_core_pickup,ui_alpha_core_drop,42,,,1,,

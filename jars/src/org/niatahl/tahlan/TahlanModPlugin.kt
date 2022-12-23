@@ -25,6 +25,7 @@ import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel
+import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
 import org.niatahl.tahlan.utils.TahlanPeople
@@ -129,6 +130,7 @@ class TahlanModPlugin : BaseModPlugin() {
         val sector = Global.getSector()
         TahlanPeople.synchronise()
         sector.addTransientScript(CieveScript())
+        sector.registerPlugin(CampaignPluginImpl())
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
             sector.getFaction("remnant").apply {
                 removeKnownShip("tahlan_Timeless")

@@ -75,8 +75,8 @@
 		"phaseBreaker": "Phase Breaker",
 		"timeflow": "Timeflow altered",
 		"daemonPlatingSmod": "When built-in, armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",
+		
 		"cieve": "CIEVE",
-
 		"hypercoordination": "Unique Skill - Hypercoordination",
 		"hypercoordination_L1_desc": "5%% reduction in supply and fuel usage",
 		"hypercoordination_L1_desc_hl1": "5%",
@@ -87,7 +87,13 @@
 		"eliteEffect": "Elite Effect",
 		"hmcieve": "Coordinator Mind",
 		"hmcievetext": "When no human officer is assigned to this ship, CIEVE will be assigned command instead.",
-		"hmcieveunknown": "The device is clearly meant for installation on ship command systems, but its actual purpose is unknown."
+		"hmcieveunknown": "The device is clearly meant for installation on ship command systems, but its actual purpose is unknown.",
+
+		"CorruptionLevel1a": "Increases all weapon damage by 20%",
+		"CorruptionLevel1b": "Increases damage taken by 20%",
+		"CorruptionLevel2a": "Increases missile ammo by 50%",
+		"CorruptionLevel2b": "Increases all weapon rates of fire by 10%",
+		"CorruptionLevel2c": "Increases all weapon ranges by 10%"
 
 	}
 }

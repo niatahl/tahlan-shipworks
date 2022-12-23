@@ -1,2 +1,4 @@
 id,name,order,tier,description,author,combat officer,admiral,admin,tags,icon
-tahlan_hyperCoordination,Hypercoordination,10015,0,It frankly doesn't even show up in my self-diagnostics,CIEVE,TRUE,,,"npc_only, deprecated",graphics/tahlan/icons/skills/hypercoordination.png
+tahlan_hyperCoordination,Hypercoordination,10015,0,"It frankly doesn't even show up in my self-diagnostics. Given enough quantum links, I could command the combined fleet of the Hegemony and I still wouldn't notice.",CIEVE,TRUE,,,"npc_only, deprecated",graphics/tahlan/icons/skills/hypercoordination.png
+tahlan_daemonicCorruption,Daemonic Corruption,10016,0,"Artificial or not, every mind can be broken, given the right tools and methods.
+Today, I will teach you how to turn one of these thinking machines into a vicious beast of war.",Executor Blake,TRUE,,,"npc_only, deprecated",graphics/tahlan/icons/skills/daemonicCorruption.png
