@@ -25,6 +25,6 @@ class CieveScript : EveryFrameScript {
     }
 
     override fun runWhilePaused(): Boolean {
-        return false
+        return true
     }
 }

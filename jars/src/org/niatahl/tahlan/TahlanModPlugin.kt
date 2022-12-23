@@ -9,7 +9,10 @@ import com.fs.starfarer.api.campaign.RepLevel
 import com.fs.starfarer.api.campaign.SectorAPI
 import com.fs.starfarer.api.combat.MissileAIPlugin
 import com.fs.starfarer.api.combat.MissileAPI
+import com.fs.starfarer.api.combat.ShipAIConfig
+import com.fs.starfarer.api.combat.ShipAIPlugin
 import com.fs.starfarer.api.combat.ShipAPI
+import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.GateEntityPlugin
 import com.fs.starfarer.api.impl.campaign.shared.SharedData
 import com.fs.starfarer.api.util.Misc
@@ -271,6 +274,24 @@ class TahlanModPlugin : BaseModPlugin() {
             DOLCH_MISSILE_ID -> PluginPick(TwoStageMissileAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
             else -> null
         }
+    }
+
+    override fun pickShipAI(member: FleetMemberAPI?, ship: ShipAPI): PluginPick<ShipAIPlugin>? {
+        if (ship.isFighter) return null
+        if (ship.captain == null || ship.captain.isDefault) return null
+
+        val fearless = ShipAIConfig().apply {
+            alwaysStrafeOffensively = true
+            backingOffWhileNotVentingAllowed = false
+            turnToFaceWithUndamagedArmor = false
+            burnDriveIgnoreEnemies = true
+        }
+
+        if (ship.captain.memoryWithoutUpdate.contains(TahlanPeople.FEARLESS)) {
+            return PluginPick<ShipAIPlugin>(Global.getSettings().createDefaultShipAI(ship, fearless),CampaignPlugin.PickPriority.MOD_SPECIFIC)
+        }
+
+        return null
     }
 
     companion object {

@@ -10,8 +10,10 @@ import com.fs.starfarer.api.impl.campaign.ids.Skills
 import org.niatahl.tahlan.TahlanModPlugin.Companion.WEEB_MODE
 
 object TahlanPeople {
-    // Sierra
-    val CIEVE = "tahlan_cieve"
+    const val CIEVE = "tahlan_cieve"
+    const val CHILD = "tahlan_child"
+
+    const val FEARLESS = "\$tahlan_persFearless"
 
     fun getPerson(id: String): PersonAPI? {
         return Global.getSector().importantPeople.getPerson(id)
@@ -29,7 +31,7 @@ object TahlanPeople {
 
         // Cieve
         if (getPerson(CIEVE) == null) {
-            val person: PersonAPI = Global.getFactory().createPerson().apply {
+            val person = Global.getFactory().createPerson().apply {
                 id = CIEVE
                 setFaction("tahlan_cieveFaction")
                 gender = FullName.Gender.FEMALE
@@ -39,12 +41,35 @@ object TahlanPeople {
                 name.last = ""
                 importance = PersonImportance.VERY_HIGH
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_cieve_waifu")
-                // Officer stats
                 setPersonality(Personalities.RECKLESS)
-                stats.setLevel(2)
+                stats.level = 2
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
                 stats.setSkillLevel("tahlan_hyperCoordination", 1f)
-                getMemoryWithoutUpdate().set("\$chatterChar", "cieve")
+                memoryWithoutUpdate.set("\$chatterChar", "cieve")
+            }
+            ip.addPerson(person)
+        }
+
+        // Allmother's Child, born of the void
+        // This is the default lostech ship AI that gets installed when no other officer is assigned
+        if (getPerson(CHILD) == null) {
+            val person = Global.getFactory().createPerson().apply {
+                id = CHILD
+                setFaction("tahlan_allmother")
+                gender = FullName.Gender.ANY
+                rankId = "tahlan_offspring"
+                postId = "tahlan_offspring"
+                name.first = "VOIDCHILD"
+                name.last = ""
+                aiCoreId
+                importance = PersonImportance.LOW
+                portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_offspring")
+                setPersonality(Personalities.RECKLESS)
+                stats.level = 3
+                stats.setSkillLevel("combat_endurance", 2f)
+                stats.setSkillLevel("impact_mitigation", 2f)
+                stats.setSkillLevel("point_defense", 2f)
+                memoryWithoutUpdate.set(FEARLESS, true)
             }
             ip.addPerson(person)
         }

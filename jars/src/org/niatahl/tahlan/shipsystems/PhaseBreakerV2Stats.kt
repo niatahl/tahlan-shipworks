@@ -16,12 +16,9 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
     private var levelForAlpha = 1f
     private var statuskey = Any()
 
-    fun maintainStatus(playerShip: ShipAPI, state: ShipSystemStatsScript.State?, effectLevel: Float) {
-        val f = VULNERABLE_FRACTION
-        var cloak = playerShip.phaseCloak
-        if (cloak == null) cloak = playerShip.system
-        if (cloak == null) return
-        if (effectLevel > f) {
+    fun maintainStatus(playerShip: ShipAPI, effectLevel: Float) {
+        val cloak = playerShip.phaseCloak ?: playerShip.system ?: return
+        if (effectLevel > VULNERABLE_FRACTION) {
             Global.getCombatEngine().maintainStatusForPlayerShip(
                 statuskey,
                 cloak.specAPI.iconSpriteName, cloak.displayName, txt("timeflow"), false
@@ -30,27 +27,18 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
     }
 
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
-        val ship: ShipAPI
-        val player: Boolean
-        if (stats.entity is ShipAPI) {
-            ship = stats.entity as ShipAPI
-            player = ship === Global.getCombatEngine().playerShip
-        } else {
-            return
-        }
-        if (player) {
-            maintainStatus(ship, state, effectLevel)
-        }
-        if (Global.getCombatEngine().isPaused) {
-            return
-        }
-        var cloak = ship.phaseCloak
-        if (cloak == null) cloak = ship.system
-        if (cloak == null) return
+        if (Global.getCombatEngine().isPaused) return
+        val ship = if (stats.entity is ShipAPI) stats.entity as ShipAPI else return
+        val player = ship === Global.getCombatEngine().playerShip
+        val cloak = ship.phaseCloak ?: ship.system ?: return
+
+        if (player) maintainStatus(ship, effectLevel)
+
         if (state == ShipSystemStatsScript.State.COOLDOWN || state == ShipSystemStatsScript.State.IDLE) {
             unapply(stats, id)
             return
         }
+
         val engine = Global.getCombatEngine()
         activeTime += engine.elapsedInLastFrame
 
@@ -74,7 +62,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
             else -> {}
         }
 
-        Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_debug",cloak.getSpecAPI().getIconSpriteName(),"cloak","active: "+levelForAlpha,false);
+        Global.getCombatEngine().maintainStatusForPlayerShip("tahlan_debug",cloak.getSpecAPI().getIconSpriteName(),"cloak","active: "+levelForAlpha,false)
         ship.extraAlphaMult = 1f - (1f - SHIP_ALPHA_MULT) * levelForAlpha
         ship.setApplyExtraAlphaToEngines(true)
         val shipTimeMult = 1f + (getMaxTimeMult(stats) - 1f) * level

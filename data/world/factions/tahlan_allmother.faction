@@ -30,7 +30,7 @@
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
-		"tags":["tahlan_lostech"]
+		"tags":["tahlan_lostech"],
 		"hulls":[
 		],
 	},

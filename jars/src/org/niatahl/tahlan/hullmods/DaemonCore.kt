@@ -131,6 +131,7 @@ class DaemonCore : BaseHullMod() {
         }
 
         // Daemons are self-repairing so...
+        // basically just making sure they never spawn with D-mods
         member.variant.hullMods.forEach { hm ->
             if (Global.getSettings().getHullModSpec(hm).hasTag(Tags.HULLMOD_DMOD)) {
                 member.variant.removePermaMod(hm)

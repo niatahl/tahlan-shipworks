@@ -18,7 +18,7 @@ import java.util.Map;
 
 public class VolatileVents extends BaseHullMod {
 
-    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_RANGE_MAP = new HashMap<ShipAPI.HullSize, Float>();
+    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_RANGE_MAP = new HashMap<>();
     static {
         LIGHTNING_RANGE_MAP.put(ShipAPI.HullSize.FRIGATE, 400f);
         LIGHTNING_RANGE_MAP.put(ShipAPI.HullSize.DESTROYER, 500f);
@@ -26,7 +26,7 @@ public class VolatileVents extends BaseHullMod {
         LIGHTNING_RANGE_MAP.put(ShipAPI.HullSize.CAPITAL_SHIP, 700f);
     }
 
-    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_DAMAGE = new HashMap<ShipAPI.HullSize, Float>();
+    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_DAMAGE = new HashMap<>();
     static {
         LIGHTNING_DAMAGE.put(ShipAPI.HullSize.FRIGATE, 10f);
         LIGHTNING_DAMAGE.put(ShipAPI.HullSize.DESTROYER, 20f);
@@ -34,7 +34,7 @@ public class VolatileVents extends BaseHullMod {
         LIGHTNING_DAMAGE.put(ShipAPI.HullSize.CAPITAL_SHIP, 80f);
     }
 
-    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_EMP = new HashMap<ShipAPI.HullSize, Float>();
+    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_EMP = new HashMap<>();
     static {
         LIGHTNING_EMP.put(ShipAPI.HullSize.FRIGATE, 20f);
         LIGHTNING_EMP.put(ShipAPI.HullSize.DESTROYER, 40f);
@@ -44,8 +44,7 @@ public class VolatileVents extends BaseHullMod {
 
     public static Color LIGHTNING_CORE_COLOR = new Color(255, 219, 253, 202);
     public static Color LIGHTNING_FRINGE_COLOR = new Color(155, 19, 255, 176);
-
-    private IntervalUtil zapInterval = new IntervalUtil(0.08f, 0.12f);
+    private final IntervalUtil zapInterval = new IntervalUtil(0.08f, 0.12f);
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
