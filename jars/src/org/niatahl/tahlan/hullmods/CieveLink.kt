@@ -1,5 +1,6 @@
 package org.niatahl.tahlan.hullmods
 
+import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.ui.Alignment
@@ -12,24 +13,17 @@ import org.niatahl.tahlan.utils.Utils.txt
 
 class CieveLink : BaseHullMod() {
 
-//    override fun advanceInCampaign(member: FleetMemberAPI, amount: Float) {
-//        val cieve = TahlanPeople.getPerson(CIEVE) ?: return
-////        if (!Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_cieveRecruited")) return
-//        if (member.captain == null || member.captain.isDefault) {
-//            member.captain = cieve
-//        }
-//    }
-
-
-    override fun getDescriptionParam(index: Int, hullSize: ShipAPI.HullSize?): String? {
-        return when (index) {
-            0 -> txt("cieve")
-            else -> null
-        }
-    }
-
     override fun addPostDescriptionSection(tooltip: TooltipMakerAPI, hullSize: ShipAPI.HullSize?, ship: ShipAPI?, width: Float, isForModSpec: Boolean) {
         val pad = 10f
+
+        if (!Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_cieveRecruited")) {
+            tooltip.addPara(txt("hmcieveunknown"),pad,Misc.getPositiveHighlightColor())
+            return
+        }
+
+        tooltip.addSectionHeading(txt("hmcieve"), Alignment.MID, pad)
+        tooltip.addPara(txt("hmcievetext"),pad,Misc.getEnergyMountColor(), txt("cieve"))
+
         tooltip.addSectionHeading(txt("hypercoordination"), Alignment.MID, pad)
 
         val section = tooltip.beginImageWithText("graphics/tahlan/icons/skills/hypercoordination.png", 64f)

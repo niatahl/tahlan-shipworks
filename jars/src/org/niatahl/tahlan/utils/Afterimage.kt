@@ -16,14 +16,8 @@ object Afterimage {
         val sprite = ship.spriteAPI
         val offsetX = sprite.width / 2 - sprite.centerX
         val offsetY = sprite.height / 2 - sprite.centerY
-        val trueOffsetX =
-            FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX - FastTrig.sin(
-                Math.toRadians((ship.facing - 90f).toDouble())
-            ).toFloat() * offsetY
-        val trueOffsetY =
-            FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX + FastTrig.cos(
-                Math.toRadians((ship.facing - 90f).toDouble())
-            ).toFloat() * offsetY
+        val trueOffsetX = FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX - FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetY
+        val trueOffsetY = FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX + FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetY
         MagicRender.battlespace(
             Global.getSettings().getSprite(ship.hullSpec.spriteName),
             Vector2f(ship.location.getX() + trueOffsetX, ship.location.getY() + trueOffsetY),

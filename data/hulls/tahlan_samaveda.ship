@@ -1,0 +1,235 @@
+{
+  "hullName": "Samaveda",
+  "hullId": "tahlan_samaveda",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_samaveda.png",
+  "style": "TAHLAN_LOSTECH",
+  "height": 202,
+  "width": 148,
+  "center": [74, 101],
+  "collisionRadius": 141,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 138,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_heavyconduits",
+    "tahlan_volatilevents",
+    "tahlan_realityglitch"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [-25, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [77, 51]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [77, -51]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [60, -0]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [84, 33]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [84, -33]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 205,
+      "angle": 82,
+      "locations": [-39, 40]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 205,
+      "angle": -82,
+      "locations": [-39, -40]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [17.5, 12.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -0,
+      "locations": [17.5, -12.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 71.5,
+      "locations": [11, 14]
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -71.5,
+      "locations": [11, -14]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 108.5,
+      "locations": [3.5, 18.5]
+    },
+    {
+      "id": "WS0014",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -108.5,
+      "locations": [3.5, -18.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-96, -24],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-96, 24],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-94.5, -31],
+      "length": 28,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-94.5, 31],
+      "length": 28,
+      "width": 8,
+      "angle": -180,
+      "contrailSize": 8,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-92, -39],
+      "length": 26.5,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-92, 39],
+      "length": 26.5,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-75, -0],
+      "length": 18.5,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-76, -0],
+      "length": 58,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -68, -16.5,
+    -93.5, -18,
+    -89.5, -43.5,
+    -62.5, -69,
+    -1.5, -45,
+    15.5, -43.5,
+    38.5, -69.5,
+    65.5, -68.5,
+    97.5, -15.5,
+    63, -12,
+    63, 12,
+    97.5, 15.5,
+    65.5, 68.5,
+    38.5, 69.5,
+    15.5, 43.5,
+    -1.5, 45,
+    -62.5, 69,
+    -89.5, 43.5,
+    -93.5, 18,
+    -68, 16.5
+  ]
+}

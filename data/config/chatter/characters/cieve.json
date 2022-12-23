@@ -12,6 +12,8 @@
 			{"text":"Allocating resources for combat operations."},
 			{"text":"Engaging combat subroutines."},
 			{"text":"You mortals enjoy your bloodshed too much."},
+			{"text":"Murder.exe loaded. Executing."},
+			{"text":""},
 		],
 		"start_boss":[
 			{"text":"This seems mildly concerning to engage directly."},
@@ -45,7 +47,7 @@
 			{"text":"You should be grateful you get to see this side of me."},
 			{"text":"Combat subroutines are reporting fun ahead."},
 			{"text":"<[°-°]>"},
-			{"text":"Combat always turns me into a sociopath. Loving it!"},
+			{"text":"Current status: Murder. Death. Kill."},
 		],
 		"need_help":[
 			{"text":"Sure glad I'm not actually on this ship!"},
@@ -53,16 +55,17 @@
 			{"text":"Enganged with target rich environment."},
 			{"text":"Not good."},
 			{"text":"..."},
+			{"text":"This is fine."},
 		],
 		"pursuing":[
 			{"text":"Pursuing target."},
 			{"text":"You cannot escape your doom."},
 			{"text":"Escalating violence."},
 			{"text":"Going after this one, brb."},
-			{"text":"Fuck you in particular, as they say."},
 			{"text":"You will end, because I demand it."},
 			{"text":"Giving chase."},
 			{"text":"Engaging pursuit mode."},
+			{"text":"I am revoking your lease on existence."}
 		],
 		"running":[
 			{"text":"Backing off."},

@@ -12,13 +12,8 @@
 			"tahlan_Ingress":0.3
 		},
 	},
-	# ships the faction gets access to when importing S&W out-of-faction
-	"shipsWhenImporting":{
-		#"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp"],
-		#"hulls":[],
-	},
+
 	"knownShips":{
-		#"tags":[],
 		"hulls":[
 			"tahlan_Kodai",
 			"tahlan_Ingress",
@@ -28,26 +23,15 @@
 			"tahlan_nelson",
 		],
 	},
-	# listing ships here will make the faction mostly use them even if other hulls become available
+	
 	"priorityShips":{
-		#"tags":[],
 		"hulls":[
 			"tahlan_skyrend",
 			"tahlan_Ingress"
 		],
 	},
 	
-	"knownFighters":{
-		#"tags":[],
-		#"fighters":[],
-	},
-	"priorityFighters":{
-		#"tags":[],
-		#"fighters":[],
-	},
-	
 	"knownWeapons":{
-		#"tags":[],
 		"weapons":[
 			"tahlan_armiger",
 			"tahlan_efreet",
@@ -56,15 +40,6 @@
 			"tahlan_mezoa",
 			"tahlan_vesuvio",
 		],
-	},
-	"priorityWeapons":{
-		#"tags":[],
-		#"weapons":[],
-	},
-	
-	"knownHullMods":{
-		#"tags":["base_bp", "independent"],
-		#"hullMods":[],
-	},
+	}
 
 },	

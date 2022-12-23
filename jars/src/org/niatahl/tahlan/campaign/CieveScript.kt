@@ -9,7 +9,10 @@ class CieveScript : EveryFrameScript {
     override fun advance(amount: Float) {
         val cieve = TahlanPeople.getPerson(CIEVE)
         Global.getSector().playerFleet.fleetData.membersListCopy.forEach { member ->
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_cieveRecruited") && member.variant.hasHullMod("tahlan_cieveLink") && (member.captain == null || member.captain.isDefault)) {
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_cieveRecruited")
+                && member.variant.hasHullMod("tahlan_cieveLink")
+                && (member.captain == null || member.captain.isDefault)
+            ) {
                 member.captain = cieve
             } else if (member.captain == cieve && !member.variant.hasHullMod("tahlan_cieveLink")) {
                 member.captain = null
@@ -22,6 +25,6 @@ class CieveScript : EveryFrameScript {
     }
 
     override fun runWhilePaused(): Boolean {
-        return true
+        return false
     }
 }

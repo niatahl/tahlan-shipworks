@@ -36,7 +36,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         if (engine.isPaused) return
 
         // clean up nebula list
-        val nebulaToRemove: MutableList<Nebula> = ArrayList()
+        val nebulaToRemove = ArrayList<Nebula>()
         nebulaData.forEach { nebula ->
             nebula.lifetime += engine.elapsedInLastFrame
             if (nebula.lifetime > nebula.duration)
@@ -45,7 +45,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         nebulaData.removeAll(nebulaToRemove)
 
         // clean up spear list
-        val projToRemove: MutableList<DamagingProjectileAPI> = ArrayList()
+        val projToRemove = ArrayList<DamagingProjectileAPI>()
         effectProjectiles.forEach { if (!engine.isEntityInPlay(it)) projToRemove.add(it) }
         effectProjectiles.removeAll(projToRemove)
     }
@@ -161,8 +161,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
     }
 
     companion object {
-        private val nebulaData: MutableList<Nebula> = ArrayList()
-        private val effectProjectiles: MutableList<DamagingProjectileAPI> = ArrayList()
+        private val nebulaData = ArrayList<Nebula>()
+        private val effectProjectiles = ArrayList<DamagingProjectileAPI>()
         fun addProjectile(projectile: DamagingProjectileAPI) {
             effectProjectiles.add(projectile)
         }
@@ -195,7 +195,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         }
 
         override fun getRenderRadius(): Float {
-            return 999999999999999f
+            return 9.9999999E14f
         }
 
         override fun getActiveLayers(): EnumSet<CombatEngineLayers> {

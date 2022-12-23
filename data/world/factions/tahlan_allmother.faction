@@ -1,23 +1,18 @@
 {
-	id:"tahlan_greathouses",
+	"id":"tahlan_allmother",
 	"color":[160,150,150,255],
 	"secondaryUIColor":[160,140,50,255],
 	"secondarySegments":2,
-	"displayName":"Great Houses",
-	"displayNameLong":"Great Houses of Kassadar",
+	"displayName":"ALLMOTHER",
+	"displayNameLong":"ALLMOTHER",
 	"logo":"graphics/tahlan/factions/tahlan_greathouses.png",
 	"crest":"graphics/tahlan/factions/tahlan_greathouses_crest.png",
-	"displayNameWithArticle":"the Great Houses",
-	"displayNameLongWithArticle":"the Great Houses of Kassadar",
-	"shipNamePrefix":"KFV",
+	"displayNameWithArticle":"the ALLMOTHER",
+	"displayNameLongWithArticle":"the ALLMOTHER",
+	"shipNamePrefix":"CHILD",
 	"showInIntelTab":false,
 	"shipNameSources":{
-		"BRITISH_NAVY":1, 
-		"ROMAN":1,
-		"GREEK":1,
-		"EGYPTIAN":1,
-		"PERSIAN":1,
-		"SPACE":1,
+		"DERELICT_DRONE":1,
 	},
 	"names":{
 		"old english":1,
@@ -31,38 +26,27 @@
 		"tags":{
 		},
 		"hulls":{
-			"buffalo2":0, # just say no
-			"apogee":0, # too civilian.
-			"gremlin":0, # phase ships fuck off
-			"tahlan_Izanami":0, #The blueprints were lost
-			"tahlan_Ristreza":0.5, #Ancient ships that are no longer being built
-			"tahlan_Ristreza_b":0.1, #Rare version of the ancient ship
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp"],
+		"tags":["tahlan_lostech"]
 		"hulls":[
 		],
 	},
 	"knownShips":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_knight_bp", "tahlan_knights"],
+		"tags":["tahlan_lostech"],
 		"hulls":[
-			"tahlan_vendetta_gh", #not included in the BP package, since it only loads with certain mods
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
 	"priorityShips":{
-		"tags":["tahlan_gh_bp", "tahlan_knights"],
+		"tags":["tahlan_lostech"],
 		"hulls":[],
 	},
 	"knownFighters":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "tahlan_gh_bp", "tahlan_knights"],
+		"tags":["tahlan_lostech"],
 		"fighters":[
-			"xyphos_wing",
-			"thunder_wing",
-			"claw_wing",
-			"longbow_wing",
 		],
 	},
 	"priorityFighters":{
@@ -71,7 +55,7 @@
 		],
 	},
 	"knownWeapons":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "tahlan_knight_bp", "tahlan_knights"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "tahlan_lostech"],
 		"weapons":[
 			"lightneedler",
 			"railgun",
@@ -101,12 +85,12 @@
 		],
 	},
 	"priorityWeapons":{
-		"tags":["tahlan_knight_bp", "tahlan_knights"],
+		"tags":["tahlan_lostech"],
 		"weapons":[
 		],
 	},
 	"knownHullMods":{
-		"tags":["base_bp", "sindrian_diktat", "lions_guard", "tahlan_knights"],
+		"tags":["base_bp", "sindrian_diktat", "lions_guard", "tahlan_lostech"],
 		"hullMods":[
 			"advancedshieldemitter", # accelerated
 			"advancedoptics",
@@ -169,29 +153,16 @@
 	],
 	"portraits":{
 		"standard_male":[
-			"graphics/portraits/portrait_hegemony01.png",
-			"graphics/portraits/portrait_hegemony02.png",
-			"graphics/portraits/portrait_hegemony05.png",
-			"graphics/portraits/portrait_mercenary01.png",
-			"graphics/portraits/portrait_mercenary03.png",
-			"graphics/portraits/portrait13.png",
-			"graphics/portraits/portrait15.png",
-			"graphics/portraits/portrait23.png",
-			"graphics/portraits/portrait35.png",
+			"graphics/tahlan/portraits/offspring.png"
 		],
 		"standard_female":[
-			"graphics/portraits/portrait_hegemony03.png",
-			"graphics/portraits/portrait_hegemony04.png",
-			"graphics/portraits/portrait_mercenary02.png",
-			"graphics/portraits/portrait16.png",
-			"graphics/portraits/portrait29.png",
-			"graphics/portraits/portrait34.png",
+			"graphics/tahlan/portraits/offspring.png"
 		],
 	},
 	"fleetTypeNames":{
-		"patrolSmall":"This shouldn't exist",
-		"patrolMedium":"This shouldn't exist",
-		"patrolLarge":"This shouldn't exist",
+		"patrolSmall":"ALLMOTHER's children",
+		"patrolMedium":"ALLMOTHER's children",
+		"patrolLarge":"ALLMOTHER's children",
 	},
 
 },

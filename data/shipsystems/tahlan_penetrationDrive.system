@@ -1,0 +1,28 @@
+{
+	"id":"tahlan_penetrationDrive",
+	"type":"ENGINE_MOD",
+	"aiType":"CUSTOM",
+    "aiScript":"org.niatahl.tahlan.shipsystems.ai.PenetrationDriveAI",
+	
+	"statsScript":"org.niatahl.tahlan.shipsystems.PenetrationDriveStats",
+	
+	"engineGlowLengthMult":1.2,
+	"engineGlowWidthMult":1.2,
+	"engineGlowGlowMult":1.5,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+
+	"useSound":"system_maneuvering_jets",
+	"loopSound":"system_maneuvering_jets_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":5000,
+		"burstMovementPotential":1500,
+		"averageSpeedIncrease":2000,
+	}
+}

@@ -7,35 +7,34 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
+import org.niatahl.tahlan.utils.Utils.txt
 import java.awt.Color
 
 class PhaseBreakerV2Stats : BaseShipSystemScript() {
     private var activeTime = 0f
     private var runOnce = false
     private var levelForAlpha = 1f
-    protected var STATUSKEY2 = Any()
+    private var statuskey = Any()
 
-    protected fun maintainStatus(playerShip: ShipAPI, state: ShipSystemStatsScript.State?, effectLevel: Float) {
+    fun maintainStatus(playerShip: ShipAPI, state: ShipSystemStatsScript.State?, effectLevel: Float) {
         val f = VULNERABLE_FRACTION
         var cloak = playerShip.phaseCloak
         if (cloak == null) cloak = playerShip.system
         if (cloak == null) return
         if (effectLevel > f) {
             Global.getCombatEngine().maintainStatusForPlayerShip(
-                STATUSKEY2,
-                cloak.specAPI.iconSpriteName, cloak.displayName, "time flow altered", false
+                statuskey,
+                cloak.specAPI.iconSpriteName, cloak.displayName, txt("timeflow"), false
             )
         }
     }
 
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
-        var id = id
         val ship: ShipAPI
         val player: Boolean
         if (stats.entity is ShipAPI) {
             ship = stats.entity as ShipAPI
             player = ship === Global.getCombatEngine().playerShip
-            id = id + "_" + ship.id
         } else {
             return
         }
@@ -90,8 +89,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
     }
 
     override fun unapply(stats: MutableShipStatsAPI, id: String) {
-        val ship: ShipAPI
-        ship = if (stats.entity is ShipAPI) {
+        val ship: ShipAPI = if (stats.entity is ShipAPI) {
             stats.entity as ShipAPI
         } else {
             return

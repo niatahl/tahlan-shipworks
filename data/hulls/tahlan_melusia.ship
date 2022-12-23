@@ -1,0 +1,230 @@
+{
+  "hullName": "Melusia",
+  "hullId": "tahlan_melusia",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_melusia.png",
+  "style": "TAHLAN_LOSTECH",
+  "height": 154,
+  "width": 126,
+  "center": [63, 77],
+  "collisionRadius": 123,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 116.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_heavyconduits",
+    "tahlan_realityglitch"
+  ],
+  "builtInWeapons": {
+    "WS0007": "tahlan_melusia_cover_l",
+    "WS0008": "tahlan_melusia_cover_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 98,
+      "angle": 26,
+      "locations": [37, 26]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 98,
+      "angle": -26,
+      "locations": [37, -26]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [68, 25]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [68, -25]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": 77.5,
+      "locations": [-14, 21]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": -77.5,
+      "locations": [-14, -21]
+    },
+    {
+      "id": "WS0007",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [46, 39]
+    },
+    {
+      "id": "WS0008",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [46, -39]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-71, 34],
+      "length": 43.5,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-71, -34],
+      "length": 43.5,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-68, 43.5],
+      "length": 31,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-68, -43.5],
+      "length": 31,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-70, 34],
+      "length": 12,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-70, -34],
+      "length": 12,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-67, 43.5],
+      "length": 9,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 12,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-67, -43.5],
+      "length": 9,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-60, 55],
+      "length": 24.748737,
+      "width": 9.899495,
+      "angle": 148.5,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-60, -55],
+      "length": 24.748737,
+      "width": 9.899495,
+      "angle": -148.5,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [3, 48.5],
+      "length": 24.748737,
+      "width": 9.899495,
+      "angle": 152.5,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [3, -48.5],
+      "length": 24.748737,
+      "width": 9.899495,
+      "angle": -152.5,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [10.5, 55],
+      "length": 24.748737,
+      "width": 9.899495,
+      "angle": 148,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [10.5, -55],
+      "length": 24.748737,
+      "width": 9.899495,
+      "angle": -148,
+      "contrailSize": 128,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -49.5, -12.5,
+    -71, -34,
+    -47.5, -60.5,
+    -9.5, -48,
+    1, -34,
+    18.5, -57.5,
+    73, -39.5,
+    55, -14.5,
+    74, -0,
+    55, 14.5,
+    73, 39.5,
+    18.5, 57.5,
+    1, 34,
+    -9.5, 48,
+    -47.5, 60.5,
+    -71, 34,
+    -49.5, 12.5,
+    -74, -0
+  ]
+}

@@ -73,6 +73,7 @@
 		"pi": "Pi",
 		"heavyarmor": "Heavy Armor",
 		"phaseBreaker": "Phase Breaker",
+		"timeflow": "Timeflow altered",
 		"daemonPlatingSmod": "When built-in, armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",
 		"cieve": "CIEVE",
 
@@ -83,6 +84,10 @@
 		"hypercoordination_L2_desc_hl1": "10%",
 		"hypercoordination_L2_desc_hl2": "10",
 		"baseEffect": "Base Effect",
-		"eliteEffect": "Elite Effect"
+		"eliteEffect": "Elite Effect",
+		"hmcieve": "Coordinator Mind",
+		"hmcievetext": "When no human officer is assigned to this ship, CIEVE will be assigned command instead.",
+		"hmcieveunknown": "The device is clearly meant for installation on ship command systems, but its actual purpose is unknown."
+
 	}
 }

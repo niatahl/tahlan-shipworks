@@ -1,0 +1,112 @@
+{
+  "hullName": "kelpia",
+  "hullId": "tahlan_kelpia",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_kelpia.png",
+  "style": "TAHLAN_LOSTECH",
+  "height": 160,
+  "width": 106,
+  "center": [53, 80],
+  "collisionRadius": 119.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 114,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0005": "tahlan_kelpia_cover_l",
+    "WS0006": "tahlan_kelpia_cover_r"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-7, 20]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-7, -20]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 60,
+      "locations": [-28, 26]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -60,
+      "locations": [-28, -26]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-16.5, 20.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [-16.5, -20.5]
+    },
+    {
+      "id": "NOSE",
+      "size": "MEDIUM",
+      "type": "SYSTEM",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [71.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-76, -0],
+      "length": 64.5,
+      "width": 23,
+      "angle": 180,
+      "contrailSize": 23,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-75, -0],
+      "length": 20.5,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_RELIC_ENGINE"
+    }
+  ],
+  "bounds": [
+    -75.5, -8.5,
+    -61, -13.5,
+    -52, -48,
+    8, -16,
+    78, -0,
+    8, 16,
+    -52, 48,
+    -61, 13.5,
+    -75.5, 8.5
+  ]
+}

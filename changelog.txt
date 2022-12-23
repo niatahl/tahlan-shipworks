@@ -1,6 +1,12 @@
 0.9
 - Improved Legio Tyranny description
 
+0.8.7
+- Added things
+- Hel Hound
+	- Top speed 200 -> 180
+	
+
 0.8.666a
 - Fixed Flare missing automated hullmod
 - Fixed string errors

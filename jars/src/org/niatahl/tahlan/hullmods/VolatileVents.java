@@ -63,7 +63,7 @@ public class VolatileVents extends BaseHullMod {
 
 
                 //Choose a random vent port to send lightning from
-                List<WeaponSlotAPI> vents = new ArrayList<WeaponSlotAPI>();
+                List<WeaponSlotAPI> vents = new ArrayList<>();
                 for (WeaponSlotAPI weaponSlotAPI : ship.getHullSpec().getAllWeaponSlotsCopy()) {
                     if (weaponSlotAPI.isSystemSlot()) {
                         vents.add(weaponSlotAPI);
@@ -75,7 +75,7 @@ public class VolatileVents extends BaseHullMod {
                     Vector2f sourcePoint = vents.get(MathUtils.getRandomNumberInRange(0, vents.size()-1)).computePosition(ship);
 
                     //Then, find all valid targets: we can only shoot missiles, ships and asteroids [including ourselves]
-                    List<CombatEntityAPI> validTargets = new ArrayList<CombatEntityAPI>();
+                    List<CombatEntityAPI> validTargets = new ArrayList<>();
                     for (CombatEntityAPI entityToTest : CombatUtils.getEntitiesWithinRange(sourcePoint, actualLightningRange)) {
                         if (entityToTest instanceof ShipAPI || entityToTest instanceof AsteroidAPI || entityToTest instanceof MissileAPI) {
                             //Phased targets, and targets with no collision, are ignored

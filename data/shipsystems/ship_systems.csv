@@ -16,7 +16,6 @@ Chrono Rupture,tahlan_temporaldrift,,,,,,0.15,,,,0.2,0.5,4,8,,,,TRUE,,,,,,,TRUE,
 Chrono Break,tahlan_supertemporaldrift,,,,,,0.1,,,,0.5,3,0.5,5,,,,TRUE,,,,,,,TRUE,,graphics/icons/hullsys/temporal_shell.png
 Stronghold Shield,tahlan_strongholdshield,,,0.025,,,,,,,1.5,,1.5,0,TRUE,,,TRUE,TRUE,,,,,,,,graphics/icons/hullsys/fortress_shield.png
 Cavalry Charge,tahlan_cavalrycharge,1,,,,,,,,,1,2,1,12,,,,,,,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
-Royal Charge,tahlan_royalcharge,1,,,,,,,,,1,2,1,15,,,,,,,TRUE,TRUE,TRUE,,TRUE,,graphics/icons/hullsys/burn_drive.png
 Raider Jets,tahlan_raiderjets,,,,,,,,,,0.5,1.5,3,5,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Boost Thruster,tahlan_boostthruster,,,,,,,,,,0.5,5,0.5,8,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Onslaught Jets,tahlan_raidestjets,,,,,,,,3,0.1,0.2,1,1,0.1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
@@ -47,4 +46,5 @@ Hel-type Temporal Shell,tahlan_heltempshell,1,,,,,0.2,,,,3,15,2,15,,,,,,,,,,,,,g
 Slip Drive,tahlan_slipdrive,,,,,,0.05,,3,0.15,0.1,0.35,0,0.4,,TRUE,,TRUE,TRUE,,,,TRUE,,,,graphics/icons/hullsys/displacer.png
 Phase Breaker,tahlan_phasebreaker,,,,,,0.2,,2,0.04,0.25,2,3.25,1,,,,TRUE,TRUE,,,,TRUE,TRUE,,,graphics/icons/hullsys/phase_cloak.png
 Coordinated Strike,tahlan_coordinatedstrike,1,,,,,,,2,0.03,0.25,10,0.25,,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
+Penetration Drive,tahlan_penetrationDrive,,,,,,,,,0.25,0.1,1.6,0.1,10,,,,,TRUE,TRUE,TRUE,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
