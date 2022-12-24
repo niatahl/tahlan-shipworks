@@ -25,7 +25,5 @@ public class DaemonBoost extends BaseHullMod {
         stats.getSuppliesToRecover().modifyFlat(id,SUPPLYMALUS.get(hullSize));
         stats.getPeakCRDuration().modifyFlat(id,-60);
         stats.getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(id,SUPPLYMALUS.get(hullSize));
-        stats.getDamageToCruisers().modifyMult(id,1.1f);
-        stats.getDamageToCapital().modifyMult(id,1.2f);
     }
 }

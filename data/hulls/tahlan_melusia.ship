@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyconduits",
-    "tahlan_realityglitch"
+    "tahlan_realityglitch",
+    "tahlan_ventweaponboost"
   ],
   "builtInWeapons": {
     "WS0007": "tahlan_melusia_cover_l",

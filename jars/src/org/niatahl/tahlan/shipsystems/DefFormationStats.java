@@ -9,6 +9,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.niatahl.tahlan.utils.Utils.txt;
+
 public class DefFormationStats extends BaseShipSystemScript {
 
     private static final float DAMAGE_TAKEN_MULT = 0.5f;
@@ -26,8 +28,7 @@ public class DefFormationStats extends BaseShipSystemScript {
 
 
         if (effectLevel > 0) {
-            float maxRangeBonus = 5f;
-            float jitterRangeBonus = effectLevel * maxRangeBonus;
+            float jitterRangeBonus = effectLevel * 5f;
             for (ShipAPI fighter : getFighters(ship)) {
                 if (fighter.isHulk()) continue;
                 MutableShipStatsAPI fStats = fighter.getMutableStats();
@@ -37,7 +38,7 @@ public class DefFormationStats extends BaseShipSystemScript {
                 fStats.getHullDamageTakenMult().modifyMult(id,DAMAGE_TAKEN_MULT);
 
                 fighter.setJitterUnder(KEY_JITTER, JITTER_COLOR, effectLevel, 5, 0f, jitterRangeBonus);
-                fighter.setJitter(KEY_JITTER, JITTER_UNDER_COLOR, effectLevel, 2, 0f, 0 + jitterRangeBonus * 1f);
+                fighter.setJitter(KEY_JITTER, JITTER_UNDER_COLOR, effectLevel, 2, 0f, 1f + jitterRangeBonus);
                 Global.getSoundPlayer().playLoop("system_targeting_feed_loop", ship, 1f, 1f, fighter.getLocation(), fighter.getVelocity());
 
             }
@@ -77,7 +78,7 @@ public class DefFormationStats extends BaseShipSystemScript {
 
     public StatusData getStatusData(int index, State state, float effectLevel) {
         if (index == 0) {
-            return new StatusData("Fighter damage taken reduced by 50%", false);
+            return new StatusData(txt("defFormation"), false);
         }
         return null;
     }

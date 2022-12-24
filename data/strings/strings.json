@@ -91,9 +91,13 @@
 
 		"CorruptionLevel1a": "Increases all weapon damage by 20%",
 		"CorruptionLevel1b": "Increases damage taken by 20%",
+		"CorruptionLevel1c": "Increases damage to larger ships by 5% per tier difference in class",
 		"CorruptionLevel2a": "Increases missile ammo by 50%",
 		"CorruptionLevel2b": "Increases all weapon rates of fire by 10%",
-		"CorruptionLevel2c": "Increases all weapon ranges by 10%"
+		"CorruptionLevel2c": "Increases all weapon ranges by 10%",
+
+		"defFormation":"Fighter damage taken reduced by 50%",
+		"droneOverdrive":"Drones overcharged"
 
 	}
 }

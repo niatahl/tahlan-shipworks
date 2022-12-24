@@ -11,7 +11,7 @@
 			"effects":[
 				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DaemonicCorruption$Level1a"},
 				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DaemonicCorruption$Level1b"},
-				
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DaemonicCorruption$Level1c"},
 			]
 		},
 		{

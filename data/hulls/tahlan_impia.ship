@@ -1,0 +1,156 @@
+{
+  "hullName": "Impia",
+  "hullId": "tahlan_impia",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/relics/tahlan_impia.png",
+  "style": "TAHLAN_LOSTECH",
+  "height": 103,
+  "width": 102,
+  "center": [51, 58],
+  "collisionRadius": 93,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 85,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [39, 28]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [39, -28]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 141,
+      "angle": 36.5,
+      "locations": [23, 30]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 141,
+      "angle": -36.5,
+      "locations": [23, -30]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [32, -14]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [32, 14]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-41, 27.5],
+      "length": 56,
+      "width": 21,
+      "angle": 180,
+      "contrailSize": 21,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-41, -27.5],
+      "length": 56,
+      "width": 21,
+      "angle": -180,
+      "contrailSize": 21,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-40, 27.5],
+      "length": 21,
+      "width": 33,
+      "angle": 180,
+      "contrailSize": 33,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-40, -27.5],
+      "length": 21,
+      "width": 33,
+      "angle": -180,
+      "contrailSize": 33,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-31, 6.5],
+      "length": 44,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-31, -6.5],
+      "length": 44,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-30, -6.5],
+      "length": 12.5,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_RELIC_ENGINE"
+    },
+    {
+      "location": [-30, 6.5],
+      "length": 12.5,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_RELIC_ENGINE"
+    }
+  ],
+  "bounds": [
+    -31, -7,
+    -56, -12,
+    -30.5, -12.5,
+    -42, -37.5,
+    -24, -44.5,
+    -7.5, -30,
+    26, -49,
+    43.5, -38,
+    21.5, -10,
+    21.5, 10,
+    43.5, 38,
+    26, 49,
+    -7.5, 30,
+    -24, 44.5,
+    -42, 37.5,
+    -30.5, 12.5,
+    -56, 12,
+    -31, 7
+  ]
+}

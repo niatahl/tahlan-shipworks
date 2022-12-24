@@ -6,15 +6,18 @@
   "style": "TAHLAN_LOSTECH",
   "height": 202,
   "width": 148,
-  "center": [74, 101],
+  "center": [74, 110],
   "collisionRadius": 141,
-  "shieldCenter": [0, 0],
+  "shieldCenter": [0, -0],
   "shieldRadius": 138,
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_heavyconduits",
     "tahlan_volatilevents",
     "tahlan_realityglitch"
+  ],
+  "builtInWings": [
+    "tahlan_sutra_drone_wing"
   ],
   "weaponSlots": [
     {
@@ -24,7 +27,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [-25, -0]
+      "locations": [-34, -0]
     },
     {
       "id": "WS0002",
@@ -33,7 +36,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [77, 51]
+      "locations": [68, 51]
     },
     {
       "id": "WS0003",
@@ -42,7 +45,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [77, -51]
+      "locations": [68, -51]
     },
     {
       "id": "WS0004",
@@ -51,7 +54,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [60, -0]
+      "locations": [51, -0]
     },
     {
       "id": "WS0005",
@@ -60,7 +63,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [84, 33]
+      "locations": [75, 33]
     },
     {
       "id": "WS0006",
@@ -69,7 +72,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
-      "locations": [84, -33]
+      "locations": [75, -33]
     },
     {
       "id": "WS0007",
@@ -78,7 +81,7 @@
       "mount": "HARDPOINT",
       "arc": 205,
       "angle": 82,
-      "locations": [-39, 40]
+      "locations": [-38, 40]
     },
     {
       "id": "WS0008",
@@ -87,7 +90,7 @@
       "mount": "HARDPOINT",
       "arc": 205,
       "angle": -82,
-      "locations": [-39, -40]
+      "locations": [-38, -40]
     },
     {
       "id": "WS0009",
@@ -96,7 +99,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 0,
-      "locations": [17.5, 12.5]
+      "locations": [8.5, 12.5]
     },
     {
       "id": "WS0010",
@@ -105,7 +108,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -0,
-      "locations": [17.5, -12.5]
+      "locations": [8.5, -12.5]
     },
     {
       "id": "WS0011",
@@ -114,7 +117,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 71.5,
-      "locations": [11, 14]
+      "locations": [2, 14]
     },
     {
       "id": "WS0012",
@@ -123,7 +126,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -71.5,
-      "locations": [11, -14]
+      "locations": [2, -14]
     },
     {
       "id": "WS0013",
@@ -132,7 +135,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": 108.5,
-      "locations": [3.5, 18.5]
+      "locations": [-5.5, 18.5]
     },
     {
       "id": "WS0014",
@@ -141,12 +144,12 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -108.5,
-      "locations": [3.5, -18.5]
+      "locations": [-5.5, -18.5]
     }
   ],
   "engineSlots": [
     {
-      "location": [-96, -24],
+      "location": [-95, -24],
       "length": 30,
       "width": 10,
       "angle": 180,
@@ -154,7 +157,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-96, 24],
+      "location": [-95, 24],
       "length": 30,
       "width": 10,
       "angle": -180,
@@ -162,7 +165,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-94.5, -31],
+      "location": [-93, -31],
       "length": 28,
       "width": 8,
       "angle": 180,
@@ -170,7 +173,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-94.5, 31],
+      "location": [-93, 31],
       "length": 28,
       "width": 8,
       "angle": -180,
@@ -178,7 +181,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-92, -39],
+      "location": [-90, -39],
       "length": 26.5,
       "width": 7,
       "angle": 180,
@@ -186,7 +189,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-92, 39],
+      "location": [-90, 39],
       "length": 26.5,
       "width": 7,
       "angle": -180,
@@ -194,7 +197,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-75, -0],
+      "location": [-74, -0],
       "length": 18.5,
       "width": 27,
       "angle": 180,
@@ -202,7 +205,7 @@
       "style": "TAHLAN_RELIC_ENGINE"
     },
     {
-      "location": [-76, -0],
+      "location": [-75, -0],
       "length": 58,
       "width": 17,
       "angle": 180,
@@ -211,25 +214,25 @@
     }
   ],
   "bounds": [
-    -68, -16.5,
-    -93.5, -18,
-    -89.5, -43.5,
-    -62.5, -69,
-    -1.5, -45,
-    15.5, -43.5,
-    38.5, -69.5,
-    65.5, -68.5,
-    97.5, -15.5,
-    63, -12,
-    63, 12,
-    97.5, 15.5,
-    65.5, 68.5,
-    38.5, 69.5,
-    15.5, 43.5,
-    -1.5, 45,
-    -62.5, 69,
-    -89.5, 43.5,
-    -93.5, 18,
-    -68, 16.5
+    -77, -16.5,
+    -102.5, -18,
+    -98.5, -43.5,
+    -71.5, -69,
+    -10.5, -45,
+    6.5, -43.5,
+    29.5, -69.5,
+    56.5, -68.5,
+    88.5, -15.5,
+    54, -12,
+    54, 12,
+    88.5, 15.5,
+    56.5, 68.5,
+    29.5, 69.5,
+    6.5, 43.5,
+    -10.5, 45,
+    -71.5, 69,
+    -98.5, 43.5,
+    -102.5, 18,
+    -77, 16.5
   ]
 }

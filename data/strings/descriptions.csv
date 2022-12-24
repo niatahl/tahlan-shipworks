@@ -587,6 +587,7 @@ tahlan_heltempshell,SHIP_SYSTEM,"Modified Temporal Shell system. Only accelerate
 tahlan_phasebreaker,SHIP_SYSTEM,"Phases the ship for a short moment then enters a quantum superposition of both states, allowing it to retain the temporal flow of phase space while interacting with realspace. Counts as a phase cloak but does not suffer from phase stresses.",General,,
 tahlan_coordinatedstrike,SHIP_SYSTEM,Increases the damage of energy weapons and all fighter weapons by 50%.,Fighters,,
 tahlan_penetrationDrive,SHIP_SYSTEM,Propels the ship forward at high velocity in a pseudo-phased state. Impacting with another ship during the charge inflicts 2000 Kinetic damage directly and another 1000 High-Explosive damage in blast around the point of impact.,Fighters,,
+tahlan_droneoverdrive,SHIP_SYSTEM,"Sends drone wing into overdrive, doubling their rate of fire and causing them to discharge EMP arcs at any nearby enemies.",,,
 ,,,,,
 ,,,,,
 # Campaign,,,,,

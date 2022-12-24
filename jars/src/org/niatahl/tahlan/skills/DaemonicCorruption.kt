@@ -10,6 +10,7 @@ object DaemonicCorruption {
 
     const val DAMAGE_MULT = 1.2f
     const val WEAPON_MULT = 1.1f
+    const val SCALE_MULT = 0.05f
 
     class Level1a: ShipSkillEffect {
         override fun getEffectDescription(level: Float): String {
@@ -67,6 +68,47 @@ object DaemonicCorruption {
                 armorDamageTakenMult.unmodify(id)
                 hullDamageTakenMult.unmodify(id)
                 shieldDamageTakenMult.unmodify(id)
+            }
+        }
+    }
+
+    class Level1c: ShipSkillEffect {
+        override fun getEffectDescription(level: Float): String {
+            return Utils.txt("CorruptionLevel1c")
+        }
+
+        override fun getEffectPerLevelDescription(): String? {
+            return null
+        }
+
+        override fun getScopeDescription(): LevelBasedEffect.ScopeDescription {
+            return LevelBasedEffect.ScopeDescription.PILOTED_SHIP
+        }
+
+        override fun apply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize, id: String, level: Float) {
+            stats.apply {
+                when (hullSize) {
+                    ShipAPI.HullSize.CRUISER -> {
+                        damageToCapital.modifyMult(id, 1f + SCALE_MULT)
+                    }
+                    ShipAPI.HullSize.DESTROYER -> {
+                        damageToCapital.modifyMult(id, 1f + SCALE_MULT*2f)
+                        damageToCruisers.modifyMult(id, 1f + SCALE_MULT)
+                    }
+                    ShipAPI.HullSize.FRIGATE -> {
+                        damageToCapital.modifyMult(id, 1f + SCALE_MULT*3f)
+                        damageToCruisers.modifyMult(id, 1f + SCALE_MULT*2f)
+                        damageToDestroyers.modifyMult(id, 1f + SCALE_MULT)
+                    }
+                }
+            }
+        }
+
+        override fun unapply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize, id: String) {
+            stats.apply {
+                damageToCapital.unmodify(id)
+                damageToCruisers.unmodify(id)
+                damageToDestroyers.unmodify(id)
             }
         }
     }
