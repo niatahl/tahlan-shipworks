@@ -11,6 +11,7 @@ class CampaignPluginImpl: BaseCampaignPlugin() {
     override fun pickAICoreOfficerPlugin(commodityId: String): PluginPick<AICoreOfficerPlugin>? {
         return when (commodityId) {
             TahlanPeople.CORE_DAEMON, TahlanPeople.CORE_ARCHDAEMON -> PluginPick<AICoreOfficerPlugin>(DaemonOfficerPlugin(), CampaignPlugin.PickPriority.MOD_SET)
+            "tahlan_neurallink" -> PluginPick<AICoreOfficerPlugin>(NeuralLinkOfficerPlugin(), CampaignPlugin.PickPriority.MOD_SET)
             else -> null
         }
     }

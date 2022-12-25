@@ -25,6 +25,7 @@ import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel
+import org.niatahl.tahlan.listeners.NeuralLinkReplacer
 import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
@@ -128,9 +129,16 @@ class TahlanModPlugin : BaseModPlugin() {
 
     override fun onGameLoad(newGame: Boolean) {
         val sector = Global.getSector()
-        TahlanPeople.synchronise()
-        sector.addTransientScript(CieveScript())
         sector.registerPlugin(CampaignPluginImpl())
+
+        TahlanPeople.synchronise()
+
+        // register nonsense
+        CieveScript.register()
+        DigitalSoulScript.register()
+        CargoUIOpenChecker.register()
+        NeuralLinkReplacer.register()
+
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
             sector.getFaction("remnant").apply {
                 removeKnownShip("tahlan_Timeless")

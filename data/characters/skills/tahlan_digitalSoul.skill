@@ -1,0 +1,25 @@
+{
+	"id":"tahlan_digitalSoul",
+	"governingAptitude":"technology",
+	"compressHullmods":false,
+	"elite": true,
+	"scope":"PILOTED_SHIP",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DigitalSoul$Level1a"},
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DigitalSoul$Level1b"},
+			]
+		},
+		{
+			"name":"Elite",
+			"requiredSkillLevel":2,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DigitalSoul$Level2"},
+			]
+		},
+	],
+}

@@ -39,7 +39,7 @@ public class HelCrusherDriveStats extends BaseShipSystemScript {
                 ship.setMass(mass * MASS_MULT);
             }
             stats.getMaxSpeed().modifyFlat(id, SPEED_BOOST);
-            stats.getAcceleration().modifyFlat(id, SPEED_BOOST * 3);
+            stats.getAcceleration().modifyFlat(id, SPEED_BOOST);
             stats.getEmpDamageTakenMult().modifyMult(id, DAMAGE_MULT);
             stats.getArmorDamageTakenMult().modifyMult(id, DAMAGE_MULT);
             stats.getHullDamageTakenMult().modifyMult(id, DAMAGE_MULT);

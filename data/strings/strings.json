@@ -89,15 +89,19 @@
 		"hmcievetext": "When no human officer is assigned to this ship, CIEVE will be assigned command instead.",
 		"hmcieveunknown": "The device is clearly meant for installation on ship command systems, but its actual purpose is unknown.",
 
-		"CorruptionLevel1a": "Increases all weapon damage by 20%",
-		"CorruptionLevel1b": "Increases damage taken by 20%",
-		"CorruptionLevel1c": "Increases damage to larger ships by 5% per tier difference in class",
-		"CorruptionLevel2a": "Increases missile ammo by 50%",
-		"CorruptionLevel2b": "Increases all weapon rates of fire by 10%",
-		"CorruptionLevel2c": "Increases all weapon ranges by 10%",
+		"CorruptionLevel1a": "+20% all weapon damage",
+		"CorruptionLevel1b": "+20% all damage taken",
+		"CorruptionLevel1c": "+5% damage to larger ships per tier of class difference",
+		"CorruptionLevel2a": "+50% missile weapon ammo capacity",
+		"CorruptionLevel2b": "+10% all weapons rate of fire",
+		"CorruptionLevel2c": "+10% all weapons range",
 
 		"defFormation":"Fighter damage taken reduced by 50%",
-		"droneOverdrive":"Drones overcharged"
+		"droneOverdrive":"Drones overcharged",
+
+		"digitalSoulLevel1a":"Allows the piloting of automated ships",
+		"digitalSoulLevel1b":"-15% maximum Combat Readiness when piloting an automated ship",
+		"digitalSoulLevel2":"Combat Readiness is no longer reduced"
 
 	}
 }

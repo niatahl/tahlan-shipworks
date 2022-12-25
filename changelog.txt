@@ -7,6 +7,7 @@
 - Improved Legio Tyranny description
 - Hel Hound
 	- Top speed 200 -> 180
+	- Reduced system acceleration buff
 - Nirvana
 	- Burn 9 -> 7
 	- PPT 660 -> 600

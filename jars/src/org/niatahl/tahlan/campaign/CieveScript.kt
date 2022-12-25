@@ -27,4 +27,12 @@ class CieveScript : EveryFrameScript {
     override fun runWhilePaused(): Boolean {
         return true
     }
+
+    companion object {
+        fun register() {
+            if (!Global.getSector().hasTransientScript(CieveScript::class.java)) {
+                Global.getSector().addTransientScript(CieveScript())
+            }
+        }
+    }
 }

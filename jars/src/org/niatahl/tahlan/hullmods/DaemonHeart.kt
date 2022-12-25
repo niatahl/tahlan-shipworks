@@ -22,7 +22,7 @@ import java.util.*
 import kotlin.math.roundToInt
 
 // There was some fun here. It was silly indeed.
-class DaemonCore : BaseHullMod() {
+class DaemonHeart : BaseHullMod() {
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {
         stats.projectileSpeedMult.modifyMult(id, 1f + ACC_BUFF)
         stats.maxRecoilMult.modifyMult(id, 1f - ACC_BUFF)

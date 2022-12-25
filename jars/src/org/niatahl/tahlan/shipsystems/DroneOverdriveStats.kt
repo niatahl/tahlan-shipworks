@@ -27,7 +27,7 @@ class DroneOverdriveStats : BaseShipSystemScript() {
 
         if (effectLevel > 0) {
             getFighters(ship).forEach {
-                if (interval.intervalElapsed() && Math.random() > 0.5f) zap(it)
+                if (interval.intervalElapsed() && Math.random() > 0.5f) zap(it, ship)
                 it.mutableStats.apply {
                     energyRoFMult.modifyMult(id, EFFECT_MULT)
                     energyWeaponFluxCostMod.modifyMult(id, 1f / EFFECT_MULT)
@@ -71,7 +71,8 @@ class DroneOverdriveStats : BaseShipSystemScript() {
         return result
     }
 
-    private fun zap(fighter: ShipAPI) {
+    private fun zap(fighter: ShipAPI, ship: ShipAPI) {
+        if (!fighter.isAlive || fighter.isHulk || fighter.isPiece) return
         //Finds a target, in case we are going to overkill our current one
 
         //Finds a target, in case we are going to overkill our current one
@@ -82,7 +83,7 @@ class DroneOverdriveStats : BaseShipSystemScript() {
             //Checks for dissallowed targets, and ignores them
             if (potentialTarget !is ShipAPI && potentialTarget !is MissileAPI) continue
 
-            if (potentialTarget.owner == fighter.owner) continue
+            if (potentialTarget.owner == ship.owner) continue
 
             if (potentialTarget is ShipAPI && potentialTarget.isPhased) continue
 
