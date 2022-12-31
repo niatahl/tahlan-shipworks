@@ -204,12 +204,12 @@
 	],
 	"music":{
 		"theme":"music_pirates_market_neutral",
-		"market_neutral":"music_pirates_market_neutral",
-		"market_hostile":"music_pirates_market_hostile",
-		"market_friendly":"music_pirates_market_friendly",
-		"encounter_neutral":"music_pirates_encounter_neutral",
-		"encounter_hostile":"music_pirates_encounter_hostile",
-		"encounter_friendly":"music_pirates_encounter_friendly",
+		"market_neutral":"tahlan_legio_neutral",
+		"market_hostile":"tahlan_legio_hostile",
+		"market_friendly":"tahlan_legio_friendly",
+		"encounter_neutral":"tahlan_legio_neutral",
+		"encounter_hostile":"tahlan_legio_hostile",
+		"encounter_friendly":"tahlan_legio_friendly",
 	},
 	"internalComms":"legio_internal",
 	"portraits":{

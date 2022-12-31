@@ -164,7 +164,7 @@ Dirge Lance,tahlan_dirge_lance,3,0.2,2000,500,200,,,0,20,12,,,,ENERGY,,0,0.1,0.3
 Valdes,tahlan_valdes_r,1,,250,500,,25,20,0,50,5,,,,ENERGY,25,,0.2,0,,,,,,,,1000,,,,"SYSTEM, SHOW_IN_CODEX",,,,,General,,,,,,,,,
 Valdes,tahlan_valdes_l,1,,250,500,,25,20,0,50,5,,,,ENERGY,25,,0.2,0,,,,,,,,1000,,,,SYSTEM,,,,,General,,,,,,,,,
 Rakaton-class Guided Torpedo,tahlan_heraton,3,0.5,300,1000,,500,500,30,10,2,1,,,HIGH_EXPLOSIVE,0,,0,1,1,,0,0,0,0,,300,150,4.5,250,"GUIDED_POOR,SYSTEM,SHOW_IN_CODEX",,,,,Torpedo,Fast,Good,,,Deals an additional %s energy damage on impact,300,,,TRUE
-Capacitor Velvet,tahlan_velvet_fighter,3,0.2,4000,600,,100,100,10,14,15,15,,,ENERGY,120,,0.2,1,99999,0.2,0,5,0.2,2,,900,,,30,SYSTEM,,,[database_error],,General,,,,,Flux cost per shot %s over time but saved flux is discharged violently as EMP arcs against the ship itself.,halves,,,
+Capacitor Velvet,tahlan_velvet_fighter,3,0.2,4000,600,,100,100,10,14,15,15,0.2,5,ENERGY,120,,0.2,1,99999,0.2,0,5,0.2,2,,900,,,30,SYSTEM,,,[database_error],,General,,,,,Flux cost per shot %s over time but saved flux is discharged violently as EMP arcs against the ship itself.,halves,,,
 Hel Pulse Laser,tahlan_irpulse_miasma,1,,250,500,,40,,0,50,5,,,,ENERGY,40,,0.2,0,,,,,,,,1500,,,,"SYSTEM, PD, PD_ALSO, ANTI_FTR",,,Legio Infernalis,,General,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #script weapons,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

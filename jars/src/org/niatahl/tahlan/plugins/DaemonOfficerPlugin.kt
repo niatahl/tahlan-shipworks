@@ -9,7 +9,8 @@ import com.fs.starfarer.api.impl.campaign.ids.Personalities
 import com.fs.starfarer.api.ui.Alignment
 import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.util.Misc
-import org.niatahl.tahlan.utils.TahlanPeople
+import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
+import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import java.awt.Color
 import java.text.DecimalFormat
 import java.util.*
@@ -19,8 +20,8 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
 
     override fun createPerson(aiCoreId: String, factionId: String, random: Random?): PersonAPI? {
         return when (aiCoreId) {
-            TahlanPeople.CORE_DAEMON -> createDaemon(factionId)
-            TahlanPeople.CORE_ARCHDAEMON -> createArchdaemon(factionId)
+            CORE_DAEMON -> createDaemon(factionId)
+            CORE_ARCHDAEMON -> createArchdaemon(factionId)
             else -> null
         }
     }
@@ -30,7 +31,7 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
         person.stats.skillsCopy.last().skill.id.also { person.stats.setSkillLevel(it,0f) }
         person.apply {
             setFaction(factionId)
-            aiCoreId = TahlanPeople.CORE_DAEMON
+            aiCoreId = CORE_DAEMON
             name.first = "Daemon Core"
             stats.level = 6
             stats.setSkillLevel("tahlan_daemonicCorruption", 1f)
@@ -44,7 +45,7 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
         person.stats.skillsCopy.last().skill.id.also { person.stats.setSkillLevel(it,0f) }
         person.apply {
             setFaction(factionId)
-            aiCoreId = TahlanPeople.CORE_DAEMON
+            aiCoreId = CORE_ARCHDAEMON
             name.first = "Archdaemon Core"
             stats.level = 7
             stats.setSkillLevel("tahlan_daemonicCorruption", 2f)

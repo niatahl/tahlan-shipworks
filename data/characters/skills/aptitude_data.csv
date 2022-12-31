@@ -1,0 +1,2 @@
+id,name,color,description,order,effect_skill_id,sound1,sound2,sound3,sound4,sound5,sound_story,elite_overlay,elite_overlay_medium,elite_overlay_small
+tahlan_special,Unique,"200,200,200,255",Skills that are unique to unusual individuals,10,tahlan_aptitude_special,technology1,technology2,technology3,technology4,technology5,ui_char_spent_story_point_technology,graphics/tahlan/icons/skills/elite_special.png,graphics/tahlan/icons/skills/elite_special48.png,graphics/tahlan/icons/skills/elite_special32.png

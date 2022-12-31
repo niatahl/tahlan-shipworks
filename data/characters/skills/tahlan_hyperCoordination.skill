@@ -1,6 +1,6 @@
 {
 	"id":"tahlan_hyperCoordination",
-	"governingAptitude":"technology",
+	"governingAptitude":"tahlan_special",
 	"compressHullmods":false,
 	"elite": true,
 	"scope":"PILOTED_SHIP",

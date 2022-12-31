@@ -15,7 +15,8 @@ import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
-import org.niatahl.tahlan.utils.TahlanPeople
+import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
+import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import org.niatahl.tahlan.utils.Utils
 import java.awt.Color
 import java.util.*
@@ -160,10 +161,10 @@ class DaemonHeart : BaseHullMod() {
         if (die <= 1) {
             person = Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
         } else if (die == 2) {
-            person = DaemonOfficerPlugin().createPerson(TahlanPeople.CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
+            person = DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
             member.stats.dynamic.getMod("individual_ship_recovery_mod").modifyFlat("tahlan_daemoncore", -100f)
         } else {
-            person = DaemonOfficerPlugin().createPerson(TahlanPeople.CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
+            person = DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
             member.stats.dynamic.getMod("individual_ship_recovery_mod").modifyFlat("tahlan_archdaemoncore", -1000f)
         }
         member.captain = person

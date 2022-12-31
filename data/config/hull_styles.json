@@ -261,8 +261,8 @@
 		"explosionShipSet":"explosion_ship",			# id of entry in sounds.json
 		"damageDecalSheet":"graphics/damage/damage_decal_sheet_base.png",
 		"damageDecalGlowSheet":"graphics/damage/damage_decal_sheet_glow.png",
-		"fluxVentTextureSheet":"graphics/fx/fx_clouds01.png", # optional, this is the default value
-		"fluxVentRadialTexture":"graphics/fx/radial_fx.png", # optional, this is the default value
+		"fluxVentTextureSheet":"graphics/fx/fx_clouds01.png", 
+		"fluxVentRadialTexture":"graphics/fx/radial_fx.png", 
 		
 		#"colorShiftCovers":true,
 		"coversColorShiftAmount":1,  # 0 to 1

@@ -1,0 +1,40 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 3,
+    "fluxVents": 3,
+    "hullId": "tahlan_melusia",
+    "hullMods": [
+        "autorepair",
+        "safetyoverrides"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_melusia_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "phasebeam",
+                "WS0004": "phasebeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavymg",
+                "WS0002": "heavymg"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "pdlaser",
+                "WS0006": "pdlaser"
+            }
+        }
+    ]
+}

@@ -90,7 +90,7 @@ class PenetrationDriveStats : BaseShipSystemScript() {
                 .filter { CollisionUtils.isPointWithinCollisionCircle(point, it) && !collided.contains(it) && it != ship }
                 .forEach { target ->
                     var hit = CollisionUtils.isPointWithinBounds(point,target)
-                    if (!hit && target.shield.isOn) {
+                    if (!hit && target.shield != null && target.shield.isOn) {
                         val delta = Vector2f.sub(point,target.location,Vector2f())
                         val angle = VectorUtils.getFacing(delta)
                         val distance = MathUtils.getDistance(target.location,point)

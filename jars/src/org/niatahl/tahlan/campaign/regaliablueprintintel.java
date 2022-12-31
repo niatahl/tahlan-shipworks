@@ -111,7 +111,7 @@ public class regaliablueprintintel extends BaseIntelPlugin {
         if (stage != QUEST_STAGE.END_OF_BLUEPRINTS) {
             info.addPara("Keep the %s in your fleet to continue decrypting its databanks", initPad, h, "Halbmond");
         } else {
-            info.addPara("You've succesfully recovered all intact data from the %s databanks. Furthermore you have found information that an object of interest might be hidden in the " + Global.getSector().getMemoryWithoutUpdate().getString("$traum_location") + " constellation", initPad, h, "Halbmond's", Global.getSector().getMemory().getString("$tahlan_traum_location"));
+            info.addPara("You've succesfully recovered all intact data from the %s databanks. Furthermore you have found information that an object of interest might be hidden in the " + Global.getSector().getMemoryWithoutUpdate().getString("$tahlan_traum_location") + " constellation", initPad, h, "Halbmond's", Global.getSector().getMemory().getString("$tahlan_traum_location"));
         }
 
         unindent(info);

@@ -7,11 +7,7 @@ import com.fs.starfarer.api.campaign.BaseCampaignEventListener
 import com.fs.starfarer.api.campaign.CampaignPlugin
 import com.fs.starfarer.api.campaign.RepLevel
 import com.fs.starfarer.api.campaign.SectorAPI
-import com.fs.starfarer.api.combat.MissileAIPlugin
-import com.fs.starfarer.api.combat.MissileAPI
-import com.fs.starfarer.api.combat.ShipAIConfig
-import com.fs.starfarer.api.combat.ShipAIPlugin
-import com.fs.starfarer.api.combat.ShipAPI
+import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.GateEntityPlugin
 import com.fs.starfarer.api.impl.campaign.shared.SharedData
@@ -25,7 +21,6 @@ import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel
-import org.niatahl.tahlan.listeners.NeuralLinkReplacer
 import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
@@ -133,11 +128,8 @@ class TahlanModPlugin : BaseModPlugin() {
 
         TahlanPeople.synchronise()
 
-        // register nonsense
         CieveScript.register()
         DigitalSoulScript.register()
-        CargoUIOpenChecker.register()
-        NeuralLinkReplacer.register()
 
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
             sector.getFaction("remnant").apply {

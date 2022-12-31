@@ -1,0 +1,64 @@
+{
+    "displayName": "Assault",
+    "fluxCapacitors": 13,
+    "fluxVents": 50,
+    "hullId": "tahlan_asria",
+    "hullMods": [
+        "unstable_injector",
+        "heavyarmor",
+        "reinforcedhull"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_asria_assault",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "mjolnir",
+                "WS0002": "mjolnir"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "hammerrack"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_velvet",
+                "WS0004": "tahlan_velvet"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "phasecl",
+                "WS0010": "phasecl"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "pdlaser",
+                "WS0014": "pdlaser",
+                "WS0015": "pdlaser",
+                "WS0016": "pdlaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "dualflak",
+                "WS0008": "dualflak"
+            }
+        }
+    ]
+}

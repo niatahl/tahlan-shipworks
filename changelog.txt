@@ -3,6 +3,7 @@
 - Daemons
 	- Renamed Daemon Core hullmod
 	- Removed innate damage bonus to cruisers and capitals
+- Made some updates to Legio Rising bounty
 - Added Daemon AI Cores
 - Improved Legio Tyranny description
 - Hel Hound
@@ -14,6 +15,8 @@
 	- System duration 15s -> 10s
 	- System cooldown 30s -> 25s
 	- Hidden post-vent effect removed
+- Providence
+	- DP 45 -> 40
 - Samsara / Karma
 	- Burn 9 -> 8
 - Rigveda

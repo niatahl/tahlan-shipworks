@@ -1,0 +1,60 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 6,
+    "fluxVents": 50,
+    "hullId": "tahlan_nirvana",
+    "hullMods": [
+        "missleracks",
+        "autorepair",
+        "heavyarmor",
+        "targetingunit"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_nirvana_brawler",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "mjolnir",
+                "WS0002": "mjolnir"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "locust"}
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "phasecl",
+                "WS0005": "phasecl"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "dualflak",
+                "WS0007": "dualflak",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0019": "vulcan"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "dualflak",
+                "WS0009": "dualflak"
+            }
+        }
+    ],
+    "wings": []
+}

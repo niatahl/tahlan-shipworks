@@ -1,0 +1,67 @@
+{
+    "displayName": "Combat",
+    "fluxCapacitors": 2,
+    "fluxVents": 50,
+    "hullId": "tahlan_asria",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor",
+        "autorepair",
+        "armoredweapons",
+        "pointdefenseai",
+        "insulatedengine"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_asria_combat",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "mark9",
+                "WS0002": "mark9"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "sabotpod",
+                "WS0010": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "tahlan_amboss"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_taffeta",
+                "WS0004": "tahlan_taffeta"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "mininglaser",
+                "WS0014": "mininglaser",
+                "WS0015": "mininglaser",
+                "WS0016": "mininglaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "dualflak",
+                "WS0008": "dualflak"
+            }
+        }
+    ]
+}

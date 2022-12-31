@@ -1,20 +1,21 @@
 package org.niatahl.tahlan.skills
 
 import com.fs.starfarer.api.Global
-import com.fs.starfarer.api.characters.FleetStatsSkillEffect
+import com.fs.starfarer.api.characters.CharacterStatsSkillEffect
 import com.fs.starfarer.api.characters.LevelBasedEffect
+import com.fs.starfarer.api.characters.MutableCharacterStatsAPI
 import com.fs.starfarer.api.characters.ShipSkillEffect
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
-import com.fs.starfarer.api.fleet.MutableFleetStatsAPI
-import org.niatahl.tahlan.campaign.DigitalSoulScript
+import org.niatahl.tahlan.listeners.NeuralLinkReplacer
+import org.niatahl.tahlan.utils.TahlanIDs.NEURALLINK_COMM
 import org.niatahl.tahlan.utils.Utils.txt
 
 object DigitalSoul {
 
     val MAX_CR_MOD = 15f
 
-    class Level1a : ShipSkillEffect {
+    class Level1a : CharacterStatsSkillEffect {
         override fun getEffectDescription(level: Float): String {
             return txt("digitalSoulLevel1a")
         }
@@ -27,12 +28,14 @@ object DigitalSoul {
             return LevelBasedEffect.ScopeDescription.PILOTED_SHIP
         }
 
-        override fun apply(stats: MutableShipStatsAPI?, hullSize: ShipAPI.HullSize?, id: String?, level: Float) {
-            return
+        override fun apply(stats: MutableCharacterStatsAPI, id: String?, level: Float) {
+            val player = if (stats.isPlayerStats) Global.getSector().playerPerson else return
+            player.aiCoreId = NEURALLINK_COMM
         }
 
-        override fun unapply(stats: MutableShipStatsAPI?, hullSize: ShipAPI.HullSize?, id: String?) {
-            return
+        override fun unapply(stats: MutableCharacterStatsAPI, id: String?) {
+            val player = if (stats.isPlayerStats) Global.getSector().playerPerson else return
+            player.aiCoreId = null
         }
     }
 

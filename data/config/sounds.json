@@ -1,4 +1,17 @@
 {
+  "music":{
+				
+		"tahlan_legio_neutral":[
+			{"file":"legio_neutral.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+		],
+		"tahlan_legio_friendly":[
+			{"file":"legio_friendly.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+		],
+		"tahlan_legio_hostile":[
+			{"file":"legio_hostile.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+		],
+  },
+
   "tahlan_rrskimmer_use": [
     {
       "file": "sounds/tahlan/systems/tahlan_rrskimmer.ogg",

@@ -11,6 +11,9 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 313.5,
   "viewOffset": 0,
+  "builtInMods":[
+    "tahlan_stealthplating"
+  ],
   "builtInWeapons": {
     "WS0029": "tahlan_blinker_red",
     "WS0030": "tahlan_blinker_red",

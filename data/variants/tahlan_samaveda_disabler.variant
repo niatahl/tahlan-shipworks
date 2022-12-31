@@ -1,0 +1,44 @@
+{
+    "displayName": "Disabler",
+    "fluxCapacitors": 0,
+    "fluxVents": 20,
+    "hullId": "tahlan_samaveda",
+    "hullMods": [
+        "missleracks",
+        "autorepair",
+        "unstable_injector"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_samaveda_disabler",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "ionpulser",
+                "WS0003": "ionpulser"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0004": "sabotpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "sabot",
+                "WS0006": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "dualflak"}
+        }
+    ],
+    "wings": []
+}

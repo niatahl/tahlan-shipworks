@@ -1,0 +1,77 @@
+{
+    "displayName": "Lancer",
+    "fluxCapacitors": 2,
+    "fluxVents": 50,
+    "hullId": "tahlan_nirvana",
+    "hullMods": [
+        "targetingunit",
+        "advancedoptics",
+        "fluxdistributor",
+        "armoredweapons",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_nirvana_lancer",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "gauss"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "hil",
+                "WS0002": "hil"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "ionbeam",
+                "WS0005": "ionbeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "shredder",
+                "WS0009": "shredder"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0010": "pdlaser",
+                "WS0011": "pdlaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0014": "mininglaser",
+                "WS0015": "mininglaser",
+                "WS0018": "mininglaser",
+                "WS0019": "mininglaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "flak",
+                "WS0007": "flak",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

@@ -74,7 +74,10 @@
 		"tahlan_sunder_dmn_reaper":3,
 		"tahlan_flare_lancer":3,
 		"tahlan_flare_disabler":3,
-		"tahlan_flare_striker":4
+		"tahlan_flare_striker":4,
+		"tahlan_samaveda_disabler":3,
+		"tahlan_melusia_burster":3,
+		"tahlan_melusia_overdriven":3,
 	},
 	"combatLarge": {
 		"tahlan_Castigator_standard": 5,
@@ -131,7 +134,7 @@
 		"tahlan_kodai_dmn_sniper":3,
 		"tahlan_raba_brawler":4,
 		"tahlan_raba_elite":3,
-		"tahlan_raba_overdriven":3
+		"tahlan_raba_overdriven":3,
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,
@@ -162,6 +165,12 @@
 		"tahlan_DunScaith_dmn_fury": 2,
 		"tahlan_DunScaith_dmn_brawler": 2,
 		"tahlan_DunScaith_dmn_heavy": 2,
+		"tahlan_nirvana_relic":4,
+		"tahlan_nirvana_brawler":3,
+		"tahlan_nirvana_lancer":3,
+		"tahlan_asria_artillery":3,
+		"tahlan_asria_assault":3,
+		"tahlan_asria_combat":4,
 	},
 	
 	

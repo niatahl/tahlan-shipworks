@@ -14,10 +14,6 @@ object TahlanPeople {
     const val CIEVE = "tahlan_cieve"
     const val CHILD = "tahlan_child"
 
-    //AICore IDs
-    const val CORE_DAEMON = "tahlan_daemoncore"
-    const val CORE_ARCHDAEMON = "tahlan_archdaemoncore"
-
     // For fake fearless
     const val FEARLESS = "\$tahlan_persFearless"
 

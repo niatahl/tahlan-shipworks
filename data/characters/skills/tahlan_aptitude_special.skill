@@ -1,0 +1,12 @@
+{
+	"id":"tahlan_aptitude_special",
+	"governingAptitude":"tahlan_special",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":0,
+			"effects":[
+				{"type":"DESCRIPTION", "script":"org.niatahl.tahlan.skills.AptitudeSpecial$Level0"},
+			]
+		},
+	],
+}

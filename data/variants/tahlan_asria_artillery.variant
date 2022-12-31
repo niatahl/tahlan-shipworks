@@ -1,0 +1,70 @@
+{
+    "displayName": "Artillery",
+    "fluxCapacitors": 21,
+    "fluxVents": 50,
+    "hullId": "tahlan_asria",
+    "hullMods": [
+        "missleracks",
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_asria_artillery",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0012": "hil"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "harpoonpod",
+                "WS0010": "harpoonpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_efreet",
+                "WS0002": "tahlan_efreet"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "ionbeam",
+                "WS0004": "ionbeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0014": "lrpdlaser",
+                "WS0015": "lrpdlaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "mininglaser",
+                "WS0016": "mininglaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "dualflak",
+                "WS0008": "dualflak"
+            }
+        }
+    ]
+}
