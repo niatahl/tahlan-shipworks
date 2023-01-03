@@ -6,10 +6,10 @@ import com.fs.starfarer.api.combat.listeners.DamageTakenModifier
 import org.lazywizard.lazylib.combat.DefenseUtils
 import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.utils.Utils
+import kotlin.math.roundToInt
 
 class DaemonArmor : BaseHullMod() {
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {
-//        stats.getEffectiveArmorBonus().modifyPercent(id,CALC_PERCENT);
         stats.effectiveArmorBonus.modifyFlat(id, CALC_FLAT)
     }
 
@@ -18,7 +18,6 @@ class DaemonArmor : BaseHullMod() {
             ship.addListener(DaemonArmorListener())
         }
         if (!DefenseUtils.hasArmorDamage(ship)) {
-//            ship.clearDamageDecals();
             return
         }
         if (ship.isHulk) return
@@ -31,7 +30,7 @@ class DaemonArmor : BaseHullMod() {
         val grid = armorGrid.grid
         val max = armorGrid.maxArmorInCell
         val statusMult = if (ship.fluxTracker.isOverloaded) 0.5f else 1f
-        val baseCell = armorGrid.maxArmorInCell * Math.min(ship.hullSpec.armorRating, ARMOR_CAP) / armorGrid.armorRating
+        val baseCell = armorGrid.maxArmorInCell * ship.hullSpec.armorRating.coerceAtMost(ARMOR_CAP) / armorGrid.armorRating
         val repairAmount = baseCell * (REGEN_PER_SEC_PERCENT / 100f) * statusMult * amount
 
         // Iterate through all armor cells and find any that aren't at max
@@ -51,17 +50,16 @@ class DaemonArmor : BaseHullMod() {
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize): String? {
-        if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + Utils.txt("%")
-        if (index == 1) return "" + Math.round(ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT) + "/s"
-        //        if (index == 2) return "" + Math.round(CALC_PERCENT) + txt("%");
-        if (index == 2) return "" + Math.round(CALC_FLAT)
+        if (index == 0) return "" + REGEN_PER_SEC_PERCENT.roundToInt() + Utils.txt("%")
+        if (index == 1) return "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
+        if (index == 2) return "" + CALC_FLAT.roundToInt()
         if (index == 3) return Utils.txt("halved")
         if (index == 4) return Utils.txt("disabled")
-        return if (index == 5) "" + Math.round(DISUPTION_TIME) + "s" else null
+        return if (index == 5) "" + DISUPTION_TIME.roundToInt() + "s" else null
     }
 
     internal class DaemonArmorListener : DamageTakenModifier {
-        override fun modifyDamageTaken(param: Any, target: CombatEntityAPI, damage: DamageAPI, point: Vector2f, shieldHit: Boolean): String? {
+        override fun modifyDamageTaken(param: Any?, target: CombatEntityAPI, damage: DamageAPI, point: Vector2f, shieldHit: Boolean): String? {
             if (shieldHit) return null
             if (target !is ShipAPI) return null
             if (target.variant.hasHullMod("tahlan_daemonarmor") || target.variant.hasHullMod("tahlan_daemonplating")) {
@@ -76,7 +74,6 @@ class DaemonArmor : BaseHullMod() {
     companion object {
         private const val ARMOR_CAP = 2000f
         private const val REGEN_PER_SEC_PERCENT = 10f
-        private const val CALC_PERCENT = 50f
         private const val CALC_FLAT = 200f
         private const val DISUPTION_TIME = 2f
     }

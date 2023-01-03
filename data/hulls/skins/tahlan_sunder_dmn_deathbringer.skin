@@ -1,0 +1,21 @@
+{
+	"baseHullId":"tahlan_sunder_dmn",
+	"skinHullId":"tahlan_sunder_dmn_deathbringer",
+	"hullName":"Hel Worldsunder",
+	"descriptionId":"tahlan_sunder_dmn",
+	"descriptionPrefix":"A unique experimental model of the Hel Sunder, equipped with the devastating Manannan.",
+	"tags":["no_sell", "no_dealer", "no_bp_drop", "restricted"],
+	"tech":"Legio Infernalis",
+	"baseValueMult":1.75,
+	"removeWeaponSlots":[], 		# ids
+	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
+	"removeBuiltInMods":[], 		# hullmod ids
+	"builtInWeapons":{
+		"WS0001":"tahlan_manannan",
+    },
+	"weaponSlotChanges":{
+		"WS0001":{
+      		"type": "BUILT_IN",
+    	},
+    },
+}

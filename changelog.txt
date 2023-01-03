@@ -1,7 +1,7 @@
 0.9
 - Added secrets
 - Daemons
-	- Renamed Daemon Core hullmod
+	- Renamed "Daemon Core" hullmod to "Daemonic Heart"
 	- Removed innate damage bonus to cruisers and capitals
 - Made some updates to Legio Rising bounty
 - Added Daemon AI Cores

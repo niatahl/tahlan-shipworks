@@ -19,7 +19,7 @@ import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import org.niatahl.tahlan.utils.Utils
 import java.awt.Color
-import java.util.*
+import kotlin.collections.HashMap
 import kotlin.math.roundToInt
 
 // There was some fun here. It was silly indeed.
@@ -79,6 +79,13 @@ class DaemonHeart : BaseHullMod() {
                     if (bote.hullSpec.hullId.contains("tahlan_DunScaith_dmn") && Math.random() > 0.75f
                         && bote.fleetMember.fleetCommander.faction.id.contains("legioinfernalis")
                     ) {
+                        // player ship "just" gets overloaded for 20s. Good luck lmao.
+                        if (ship.captain.isPlayer) {
+                            engine.addFloatingText(ship.location, "DIRECT CONTROL ATTEMPT AVERTED", 40f, Color.RED, ship, 0.5f, 3f)
+                            ship.fluxTracker.forceOverload(20f)
+                            return
+                        }
+
                         engine.addFloatingText(ship.location, "ASSUMING DIRECT CONTROL", 40f, Color.RED, ship, 0.5f, 3f)
                         ship.owner = bote.owner
 
@@ -184,7 +191,8 @@ class DaemonHeart : BaseHullMod() {
     }
 
     companion object {
-        private val MAG: MutableMap<HullSize, Int> = EnumMap(HullSize::class.java)
+        //        private val MAG: MutableMap<HullSize, Int> = EnumMap(HullSize::class.java)
+        private val MAG = HashMap<HullSize, Int>()
 
         init {
             MAG[HullSize.FRIGATE] = 2

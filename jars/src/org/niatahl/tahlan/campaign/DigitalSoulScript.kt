@@ -28,7 +28,7 @@ class DigitalSoulScript : EveryFrameScript {
         if (!digitalSoul) return
 
         // add core if we aren't in a cargo tab
-        if (!Global.getSector().campaignUI.isShowingDialog || Global.getSector().campaignUI.currentCoreTab != CoreUITabId.CARGO) addCore(cargo)
+        if (Global.getSector().campaignUI.currentCoreTab == CoreUITabId.FLEET || Global.getSector().campaignUI.currentCoreTab == CoreUITabId.REFIT) addCore(cargo)
 
         // AI core restoration cause it goes poof if you move the player to a ship that already has an AI core installed
         aiBoats.forEach { member ->

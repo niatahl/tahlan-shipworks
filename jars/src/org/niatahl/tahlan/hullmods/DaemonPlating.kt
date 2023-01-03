@@ -11,6 +11,7 @@ import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.combat.DefenseUtils
 import org.niatahl.tahlan.hullmods.DaemonArmor.DaemonArmorListener
 import org.niatahl.tahlan.utils.Utils
+import kotlin.math.roundToInt
 
 class DaemonPlating : BaseHullMod() {
     override fun isApplicableToShip(ship: ShipAPI): Boolean {
@@ -27,7 +28,6 @@ class DaemonPlating : BaseHullMod() {
             ship.addListener(DaemonArmorListener())
         }
         if (!DefenseUtils.hasArmorDamage(ship)) {
-//            ship.clearDamageDecals();
             return
         }
         if (ship.isHulk) return
@@ -35,7 +35,7 @@ class DaemonPlating : BaseHullMod() {
         ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifyFlat("nuller", -1f)
         val timer = ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifiedValue + amount
         ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifyFlat("tracker", timer)
-        if (timer < DISUPTION_TIME) return
+        if (timer < DISRUPTION_TIME) return
         val armorGrid = ship.armorGrid
         val grid = armorGrid.grid
         val max = armorGrid.maxArmorInCell
@@ -44,7 +44,7 @@ class DaemonPlating : BaseHullMod() {
         if (ship.variant.sMods.contains("tahlan_daemonplating") || ship.variant.hullSpec.isBuiltInMod("tahlan_daemonplating")) {
             regenPercent = REGEN_PER_SEC_PERCENT_SMOD
         }
-        val baseCell = armorGrid.maxArmorInCell * Math.min(ship.hullSpec.armorRating, ARMOR_CAP) / armorGrid.armorRating
+        val baseCell = armorGrid.maxArmorInCell * ship.hullSpec.armorRating.coerceAtMost(ARMOR_CAP) / armorGrid.armorRating
         val repairAmount = baseCell * (regenPercent / 100f) * statusMult * amount
 
         // Iterate through all armor cells and find any that aren't at max
@@ -61,7 +61,7 @@ class DaemonPlating : BaseHullMod() {
 
     override fun addPostDescriptionSection(tooltip: TooltipMakerAPI, hullSize: HullSize, ship: ShipAPI, width: Float, isForModSpec: Boolean) {
         if (isForModSpec) {
-            tooltip.addPara(Utils.txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + Math.round((1f - ARMOR_MULT_SMOD) * 100f) + Utils.txt("%"), "" + Math.round(REGEN_PER_SEC_PERCENT_SMOD) + Utils.txt("%"))
+            tooltip.addPara(Utils.txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + Utils.txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + Utils.txt("%"))
             return
         } else if (ship.variant.sMods.contains("tahlan_daemonplating") || ship.hullSpec.isBuiltInMod("tahlan_daemonplating")) {
             tooltip.addPara(
@@ -69,22 +69,22 @@ class DaemonPlating : BaseHullMod() {
                 10f,
                 Misc.getPositiveHighlightColor(),
                 Misc.getHighlightColor(),
-                "" + Math.round((1f - ARMOR_MULT_SMOD) * 100f) + Utils.txt("%"),
-                "" + Math.round(REGEN_PER_SEC_PERCENT_SMOD) + Utils.txt("%")
+                "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + Utils.txt("%"),
+                "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + Utils.txt("%")
             )
         } else {
-            tooltip.addPara(Utils.txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + Math.round((1f - ARMOR_MULT_SMOD) * 100f) + Utils.txt("%"), "" + Math.round(REGEN_PER_SEC_PERCENT_SMOD) + Utils.txt("%"))
+            tooltip.addPara(Utils.txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + Utils.txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + Utils.txt("%"))
         }
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {
-        if (index == 0) return "" + Math.round(REGEN_PER_SEC_PERCENT) + Utils.txt("%")
-        if (index == 1) return "" + Math.round(ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT) + "/s"
-        if (index == 2) return "" + Math.round(CALC_FLAT)
+        if (index == 0) return "" + REGEN_PER_SEC_PERCENT.roundToInt() + Utils.txt("%")
+        if (index == 1) return "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
+        if (index == 2) return "" + CALC_FLAT.roundToInt()
         if (index == 3) return Utils.txt("halved")
         if (index == 4) return Utils.txt("disabled")
-        if (index == 5) return "" + Math.round(DISUPTION_TIME) + "s"
-        if (index == 6) return "" + Math.round((1f - ARMOR_MULT) * 100f) + Utils.txt("%")
+        if (index == 5) return "" + DISRUPTION_TIME.roundToInt() + "s"
+        if (index == 6) return "" + ((1f - ARMOR_MULT) * 100f).roundToInt() + Utils.txt("%")
         return if (index == 7) Utils.txt("heavyarmor") else null
     }
 
@@ -98,12 +98,12 @@ class DaemonPlating : BaseHullMod() {
     }
 
     companion object {
-        private const val ARMOR_MULT = 0.3014275134f
-        private const val ARMOR_MULT_SMOD = 0.49815742465f
+        private const val ARMOR_MULT = 0.3014275f
+        private const val ARMOR_MULT_SMOD = 0.4981574f
         private const val CALC_FLAT = 200f
         private const val ARMOR_CAP = 2000f
         private const val REGEN_PER_SEC_PERCENT = 5f
         private const val REGEN_PER_SEC_PERCENT_SMOD = 3f
-        private const val DISUPTION_TIME = 2f
+        private const val DISRUPTION_TIME = 2f
     }
 }
