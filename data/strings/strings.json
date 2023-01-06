@@ -105,6 +105,8 @@
 		"digitalSoulLevel2a":"Fully negates automated ship CR penalty for piloted ship",
 		"digitalSoulLevel2b":"Piloted ship no longer counts for automated ship points calculation",
 
-		"skill_suffix":" skill"
+		"skill_suffix":" skill",
+		"sModBonus":"S-mod bonus",
+		"sModPenalty":"S-mod penalty"
 	}
 }

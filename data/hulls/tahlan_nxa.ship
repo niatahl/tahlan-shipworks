@@ -40,18 +40,18 @@
       "size": "MEDIUM",
       "type": "SYNERGY",
       "mount": "HARDPOINT",
-      "arc": 5,
+      "arc": 8,
       "angle": 0,
-      "locations": [76, 51]
+      "locations": [65, 51]
     },
     {
       "id": "WS0002",
       "size": "MEDIUM",
       "type": "SYNERGY",
       "mount": "HARDPOINT",
-      "arc": 5,
+      "arc": 8,
       "angle": -0,
-      "locations": [76, -51]
+      "locations": [65, -51]
     },
     {
       "id": "WS0003",
@@ -293,7 +293,7 @@
       "location": [-63, 37],
       "length": 71,
       "width": 24,
-      "angle": 180,
+      "angle": 179.5,
       "contrailSize": 24,
       "style": "TAHLAN_NXA_ENGINE"
     },
@@ -301,7 +301,7 @@
       "location": [-63, -37],
       "length": 71,
       "width": 24,
-      "angle": -180,
+      "angle": -179.5,
       "contrailSize": 24,
       "style": "TAHLAN_NXA_ENGINE"
     },
@@ -309,7 +309,7 @@
       "location": [-76, 52.5],
       "length": 67,
       "width": 16,
-      "angle": 177,
+      "angle": 176,
       "contrailSize": 16,
       "style": "TAHLAN_NXA_ENGINE"
     },
@@ -317,7 +317,7 @@
       "location": [-76, -52.5],
       "length": 67,
       "width": 16,
-      "angle": -177,
+      "angle": -176,
       "contrailSize": 16,
       "style": "TAHLAN_NXA_ENGINE"
     },
@@ -325,7 +325,7 @@
       "location": [-63.5, 42],
       "length": 30,
       "width": 4,
-      "angle": 180,
+      "angle": 179,
       "contrailSize": 4,
       "style": "TAHLAN_NXA_ENGINE"
     },
@@ -333,7 +333,7 @@
       "location": [-63.5, -42],
       "length": 30,
       "width": 4,
-      "angle": -180,
+      "angle": -179,
       "contrailSize": 4,
       "style": "TAHLAN_NXA_ENGINE"
     },

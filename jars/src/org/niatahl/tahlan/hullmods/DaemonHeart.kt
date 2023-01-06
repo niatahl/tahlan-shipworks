@@ -17,6 +17,9 @@ import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_NIGHTINGALE
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
+import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
 import org.niatahl.tahlan.utils.Utils
 import java.awt.Color
 import kotlin.collections.HashMap
@@ -75,34 +78,53 @@ class DaemonHeart : BaseHullMod() {
             yoinkTimer.advance(amount)
             if (yoinkTimer.intervalElapsed()) {
                 // Legio-owned Hel Scaiths can hijack enemy Daemons
-                for (bote in CombatUtils.getShipsWithinRange(ship.location, 2000f)) {
+
+                var scaithPresent = false
+                var counterPresent = false
+
+                CombatUtils.getShipsWithinRange(ship.location, 2000f).forEach { bote ->
                     if (bote.hullSpec.hullId.contains("tahlan_DunScaith_dmn") && Math.random() > 0.75f
                         && bote.fleetMember.fleetCommander.faction.id.contains("legioinfernalis")
+                        && bote.owner == 1
                     ) {
-                        // player ship "just" gets overloaded for 20s. Good luck lmao.
-                        if (ship.captain.isPlayer) {
-                            engine.addFloatingText(ship.location, "DIRECT CONTROL ATTEMPT AVERTED", 40f, Color.RED, ship, 0.5f, 3f)
-                            ship.fluxTracker.forceOverload(20f)
-                            return
-                        }
-
-                        engine.addFloatingText(ship.location, "ASSUMING DIRECT CONTROL", 40f, Color.RED, ship, 0.5f, 3f)
-                        ship.owner = bote.owner
-
-                        // yoinked from Xhan
-                        if (ship.shipAI != null) {
-
-                            //cancel orders so the AI doesn't get confused
-                            val member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
-                            if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false)
-                            val member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
-                            if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false)
-                            val member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship)
-                            if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false)
-                            ship.shipAI.forceCircumstanceEvaluation()
-                        }
+                        scaithPresent = true
                     }
+                    if (bote.captain.stats.hasSkill("sotf_cyberwarfare")) counterPresent = true
                 }
+
+                if (scaithPresent) {
+
+                    // some captains can counter attempt if controlling the ship currently
+                    if (counterPresent || ship.captain.id in immuneCaptains) {
+                        engine.addFloatingText(ship.location, "EWAR ATTACK INTERCEPTED", 40f, Color.RED, ship, 0.5f, 3f)
+                        ship.fluxTracker.forceOverload(5f)
+                        return
+                    }
+
+                    // player gets an overload instead of being yoinked
+                    if (ship.captain.isPlayer) {
+                        engine.addFloatingText(ship.location, "DIRECT CONTROL ATTEMPT AVERTED", 40f, Color.RED, ship, 0.5f, 3f)
+                        ship.fluxTracker.forceOverload(15f)
+                        return
+                    }
+
+                    engine.addFloatingText(ship.location, "ASSUMING DIRECT CONTROL", 40f, Color.RED, ship, 0.5f, 3f)
+                    ship.owner = 1
+
+                    // yoinked from Xhan
+                    if (ship.shipAI != null) {
+                        //cancel orders so the AI doesn't get confused
+                        val member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
+                        if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false)
+                        val member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
+                        if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false)
+                        val member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship)
+                        if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false)
+                        ship.shipAI.forceCircumstanceEvaluation()
+                    }
+
+                }
+
             }
         } else {
             if (!ship.isAlive || ship.isHulk || ship.isPiece) {
@@ -200,6 +222,14 @@ class DaemonHeart : BaseHullMod() {
             MAG[HullSize.CRUISER] = 0
             MAG[HullSize.CAPITAL_SHIP] = 0
         }
+
+        private val immuneCaptains = listOf(
+            CIEVE
+        )
+
+        private val counterCaptains = listOf(
+            SOTF_NIGHTINGALE
+        )
 
         private const val SUPPLIES_PERCENT = 100f
         private const val ACC_BUFF = 0.25f

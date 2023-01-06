@@ -6,11 +6,13 @@ import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
+import com.fs.starfarer.api.ui.Alignment
 import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.combat.DefenseUtils
 import org.niatahl.tahlan.hullmods.DaemonArmor.DaemonArmorListener
 import org.niatahl.tahlan.utils.Utils
+import org.niatahl.tahlan.utils.Utils.txt
 import kotlin.math.roundToInt
 
 class DaemonPlating : BaseHullMod() {
@@ -61,31 +63,34 @@ class DaemonPlating : BaseHullMod() {
 
     override fun addPostDescriptionSection(tooltip: TooltipMakerAPI, hullSize: HullSize, ship: ShipAPI, width: Float, isForModSpec: Boolean) {
         if (isForModSpec) {
-            tooltip.addPara(Utils.txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + Utils.txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + Utils.txt("%"))
+            tooltip.addSectionHeading(txt("sModBonus"),Misc.getStoryBrightColor(),Misc.getStoryDarkColor(),Alignment.MID,10f)
+            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
             return
         } else if (ship.variant.sMods.contains("tahlan_daemonplating") || ship.hullSpec.isBuiltInMod("tahlan_daemonplating")) {
+            tooltip.addSectionHeading(txt("sModBonus"),Misc.getStoryBrightColor(),Misc.getStoryDarkColor(),Alignment.MID,10f)
             tooltip.addPara(
-                Utils.txt("daemonPlatingSmod"),
+                txt("daemonPlatingSmod"),
                 10f,
                 Misc.getPositiveHighlightColor(),
                 Misc.getHighlightColor(),
-                "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + Utils.txt("%"),
-                "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + Utils.txt("%")
+                "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"),
+                "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%")
             )
         } else {
-            tooltip.addPara(Utils.txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + Utils.txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + Utils.txt("%"))
+            tooltip.addSectionHeading(txt("sModBonus"),Misc.getStoryBrightColor(),Misc.getStoryDarkColor(),Alignment.MID,10f)
+            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
         }
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {
-        if (index == 0) return "" + REGEN_PER_SEC_PERCENT.roundToInt() + Utils.txt("%")
+        if (index == 0) return "" + REGEN_PER_SEC_PERCENT.roundToInt() + txt("%")
         if (index == 1) return "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
         if (index == 2) return "" + CALC_FLAT.roundToInt()
-        if (index == 3) return Utils.txt("halved")
-        if (index == 4) return Utils.txt("disabled")
+        if (index == 3) return txt("halved")
+        if (index == 4) return txt("disabled")
         if (index == 5) return "" + DISRUPTION_TIME.roundToInt() + "s"
-        if (index == 6) return "" + ((1f - ARMOR_MULT) * 100f).roundToInt() + Utils.txt("%")
-        return if (index == 7) Utils.txt("heavyarmor") else null
+        if (index == 6) return "" + ((1f - ARMOR_MULT) * 100f).roundToInt() + txt("%")
+        return if (index == 7) txt("heavyarmor") else null
     }
 
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {
