@@ -6,9 +6,9 @@
   "style": "TAHLAN_DAEMON",
   "height": 234,
   "width": 214,
-  "center": [107, 126.5],
+  "center": [107, 126],
   "collisionRadius": 155,
-  "shieldCenter": [0, -0],
+  "shieldCenter": [0.5, -0],
   "shieldRadius": 139,
   "viewOffset": 0,
   "builtInMods": [
@@ -30,7 +30,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": 0,
-      "locations": [48.5, 72]
+      "locations": [49, 72]
     },
     {
       "id": "WS0002",
@@ -39,7 +39,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": -0,
-      "locations": [48.5, -72]
+      "locations": [49, -72]
     },
     {
       "id": "WS0003",
@@ -48,7 +48,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": 0,
-      "locations": [77.5, 34]
+      "locations": [78, 34]
     },
     {
       "id": "WS0004",
@@ -57,7 +57,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": -0,
-      "locations": [77.5, -34]
+      "locations": [78, -34]
     },
     {
       "id": "WS0005",
@@ -66,7 +66,7 @@
       "mount": "TURRET",
       "arc": 129,
       "angle": -37,
-      "locations": [32.5, -26]
+      "locations": [33, -26]
     },
     {
       "id": "WS0006",
@@ -75,7 +75,7 @@
       "mount": "TURRET",
       "arc": 129,
       "angle": 37,
-      "locations": [32.5, 26]
+      "locations": [33, 26]
     },
     {
       "id": "WS0007",
@@ -84,7 +84,7 @@
       "mount": "TURRET",
       "arc": 169,
       "angle": -131,
-      "locations": [-9.5, -56]
+      "locations": [-9, -56]
     },
     {
       "id": "WS0008",
@@ -93,7 +93,7 @@
       "mount": "TURRET",
       "arc": 169,
       "angle": 131,
-      "locations": [-9.5, 56]
+      "locations": [-9, 56]
     },
     {
       "id": "WS0009",
@@ -102,12 +102,12 @@
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
-      "locations": [85.5, -0]
+      "locations": [86, -0]
     }
   ],
   "engineSlots": [
     {
-      "location": [-37.5, 84],
+      "location": [-37, 84],
       "length": 57,
       "width": 19,
       "angle": 180,
@@ -115,7 +115,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-37.5, -84],
+      "location": [-37, -84],
       "length": 57,
       "width": 19,
       "angle": -180,
@@ -123,7 +123,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-37.5, 73],
+      "location": [-37, 73],
       "length": 57,
       "width": 19,
       "angle": 180,
@@ -131,7 +131,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-37.5, -73],
+      "location": [-37, -73],
       "length": 57,
       "width": 19,
       "angle": -180,
@@ -139,7 +139,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-77.5, 22],
+      "location": [-77, 22],
       "length": 94.5,
       "width": 36,
       "angle": 180,
@@ -147,7 +147,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-77.5, -22],
+      "location": [-77, -22],
       "length": 94.5,
       "width": 36,
       "angle": -180,
@@ -155,7 +155,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-25, 94],
+      "location": [-24.5, 94],
       "length": 41.0298,
       "width": 16.131397,
       "angle": 150,
@@ -163,7 +163,7 @@
       "style": "TAHLAN_PIRATE_ENGINE"
     },
     {
-      "location": [-25, -94],
+      "location": [-24.5, -94],
       "length": 41.0298,
       "width": 16.131397,
       "angle": -150,
@@ -172,26 +172,26 @@
     }
   ],
   "bounds": [
-    -75.5, -11.5,
-    -76.5, -28.5,
-    -17, -37,
-    -48, -44,
-    -18.5, -102.5,
-    59, -103,
-    61.5, -61,
-    19.5, -36.5,
-    67, -41,
-    97, -23.5,
-    97, 23.5,
-    67, 41,
-    19.5, 36.5,
-    61.5, 61,
-    59, 103,
-    -18.5, 102.5,
-    -48, 44,
-    -17, 37,
-    -76.5, 28.5,
-    -75.5, 11.5,
-    -124.5, -0
+    -75, -11.5,
+    -76, -28.5,
+    -16.5, -37,
+    -47.5, -44,
+    -18, -102.5,
+    59.5, -103,
+    62, -61,
+    20, -36.5,
+    67.5, -41,
+    97.5, -23.5,
+    97.5, 23.5,
+    67.5, 41,
+    20, 36.5,
+    62, 61,
+    59.5, 103,
+    -18, 102.5,
+    -47.5, 44,
+    -16.5, 37,
+    -76, 28.5,
+    -75, 11.5,
+    -124, -0
   ]
 }

@@ -6,9 +6,9 @@
   "style": "TAHLAN_GH_TECH",
   "height": 206,
   "width": 208,
-  "center": [104, 92.5],
+  "center": [104, 92],
   "collisionRadius": 148,
-  "shieldCenter": [0, -0],
+  "shieldCenter": [0.5, -0],
   "shieldRadius": 137,
   "viewOffset": 0,
   "builtInMods": [
@@ -29,7 +29,7 @@
       "mount": "TURRET",
       "arc": 80,
       "angle": 30,
-      "locations": [-38, 37.5]
+      "locations": [-37.5, 37.5]
     },
     {
       "id": "WS0002",
@@ -38,7 +38,7 @@
       "mount": "TURRET",
       "arc": 80,
       "angle": -30,
-      "locations": [-38, -37.5]
+      "locations": [-37.5, -37.5]
     },
     {
       "id": "WS0003",
@@ -47,7 +47,7 @@
       "mount": "TURRET",
       "arc": 128,
       "angle": 30,
-      "locations": [-9.5, 32]
+      "locations": [-9, 32]
     },
     {
       "id": "WS0004",
@@ -56,7 +56,7 @@
       "mount": "TURRET",
       "arc": 128,
       "angle": -30,
-      "locations": [-9.5, -32]
+      "locations": [-9, -32]
     },
     {
       "id": "WS0005",
@@ -65,7 +65,7 @@
       "mount": "TURRET",
       "arc": 81,
       "angle": 15,
-      "locations": [26.5, 18],
+      "locations": [27, 18],
       "renderOrderMod": 100
     },
     {
@@ -75,7 +75,7 @@
       "mount": "TURRET",
       "arc": 81,
       "angle": -15,
-      "locations": [26.5, -18],
+      "locations": [27, -18],
       "renderOrderMod": 100
     },
     {
@@ -85,7 +85,7 @@
       "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
-      "locations": [69.5, -0]
+      "locations": [70, -0]
     },
     {
       "id": "WS0008",
@@ -94,7 +94,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [67.5, -0]
+      "locations": [68, -0]
     },
     {
       "id": "WS0009",
@@ -103,7 +103,7 @@
       "mount": "TURRET",
       "arc": 128,
       "angle": 135,
-      "locations": [-36.5, 62]
+      "locations": [-36, 62]
     },
     {
       "id": "WS0010",
@@ -112,7 +112,7 @@
       "mount": "TURRET",
       "arc": 128,
       "angle": -135,
-      "locations": [-36.5, -62]
+      "locations": [-36, -62]
     },
     {
       "id": "WS0013",
@@ -121,7 +121,7 @@
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": 0,
-      "locations": [-20, 68.5]
+      "locations": [-19.5, 68.5]
     },
     {
       "id": "WS0014",
@@ -130,7 +130,7 @@
       "mount": "HARDPOINT",
       "arc": 0,
       "angle": -0,
-      "locations": [-20, -68.5]
+      "locations": [-19.5, -68.5]
     },
     {
       "id": "WS0011",
@@ -139,12 +139,12 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [10.5, -0]
+      "locations": [11, -0]
     }
   ],
   "engineSlots": [
     {
-      "location": [-89.5, 13.5],
+      "location": [-89, 13.5],
       "length": 45,
       "width": 17,
       "angle": 180,
@@ -152,7 +152,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-89.5, -13.5],
+      "location": [-89, -13.5],
       "length": 45,
       "width": 17,
       "angle": -180,
@@ -160,7 +160,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-56, 65],
+      "location": [-55.5, 65],
       "length": 1,
       "width": 10,
       "angle": 171,
@@ -168,7 +168,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-56, -65],
+      "location": [-55.5, -65],
       "length": 1,
       "width": 10,
       "angle": -171,
@@ -176,7 +176,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-60, 49],
+      "location": [-59.5, 49],
       "length": 1,
       "width": 10,
       "angle": 168,
@@ -184,7 +184,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-60, -49],
+      "location": [-59.5, -49],
       "length": 1,
       "width": 10,
       "angle": -168,
@@ -192,7 +192,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-58, 57],
+      "location": [-57.5, 57],
       "length": 1,
       "width": 10,
       "angle": 171,
@@ -200,7 +200,7 @@
       "style": "TAHLAN_GH_WIDE_ENGINE"
     },
     {
-      "location": [-58, -57],
+      "location": [-57.5, -57],
       "length": 1,
       "width": 10,
       "angle": -171,
@@ -209,31 +209,31 @@
     }
   ],
   "bounds": [
-    -65.5, -3.5,
-    -88, -7,
-    -90, -30,
-    -62, -39.5,
-    -55, -70,
-    -48, -74.5,
-    -44.5, -87.5,
-    -20.5, -102,
-    -6.5, -58,
-    21, -45,
-    112, -23,
-    83, -3.5,
-    72, -2.5,
-    72, 2.5,
-    83, 3.5,
-    112, 23,
-    21, 45,
-    -6.5, 58,
-    -20.5, 102,
-    -44.5, 87.5,
-    -48, 74.5,
-    -55, 70,
-    -62, 39.5,
-    -90, 30,
-    -88, 7,
-    -65.5, 3.5
+    -65, -3.5,
+    -87.5, -7,
+    -89.5, -30,
+    -61.5, -39.5,
+    -54.5, -70,
+    -47.5, -74.5,
+    -44, -87.5,
+    -20, -102,
+    -6, -58,
+    21.5, -45,
+    112.5, -23,
+    83.5, -3.5,
+    72.5, -2.5,
+    72.5, 2.5,
+    83.5, 3.5,
+    112.5, 23,
+    21.5, 45,
+    -6, 58,
+    -20, 102,
+    -44, 87.5,
+    -47.5, 74.5,
+    -54.5, 70,
+    -61.5, 39.5,
+    -89.5, 30,
+    -87.5, 7,
+    -65, 3.5
   ]
 }
