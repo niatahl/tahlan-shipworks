@@ -74,7 +74,7 @@
 		"heavyarmor": "Heavy Armor",
 		"phaseBreaker": "Phase Breaker",
 		"timeflow": "Timeflow altered",
-		"daemonPlatingSmod": "When built-in, armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",
+		"daemonPlatingSmod": "Armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",
 		
 		"cieve": "CIEVE",
 		"hypercoordination": "Unique Skill - Hypercoordination",
