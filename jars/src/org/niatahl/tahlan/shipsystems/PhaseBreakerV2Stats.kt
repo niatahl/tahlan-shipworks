@@ -7,7 +7,10 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
+import com.fs.starfarer.api.util.IntervalUtil
+import org.niatahl.tahlan.utils.Afterimage
 import org.niatahl.tahlan.utils.Utils.txt
+import org.niatahl.tahlan.utils.modify
 import java.awt.Color
 
 class PhaseBreakerV2Stats : BaseShipSystemScript() {
@@ -15,6 +18,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
     private var runOnce = false
     private var levelForAlpha = 1f
     private var statuskey = Any()
+    private val timer = IntervalUtil(0.2f,0.2f)
 
     fun maintainStatus(playerShip: ShipAPI, effectLevel: Float) {
         val cloak = playerShip.phaseCloak ?: playerShip.system ?: return
@@ -56,8 +60,11 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
                 Global.getSoundPlayer().playLoop("system_temporalshell_loop", ship, 1f, 1f, ship.location, ship.velocity)
                 ship.isPhased = false
                 levelForAlpha = (levelForAlpha - 2f * engine.elapsedInLastFrame).coerceAtLeast(0f)
-                ship.setJitterUnder(id, Color(239, 40, 110, 80), 1f - levelForAlpha, 10, 8f)
+                ship.setJitterUnder(id, EFFECT_COLOR, 1f - levelForAlpha, 10, 8f)
                 level = if (ship.fluxTracker.isVenting || ship.fluxTracker.isOverloaded) 0f else 1f
+                timer.advance(Global.getCombatEngine().elapsedInLastFrame)
+                if (timer.intervalElapsed())
+                    Afterimage.renderCustomAfterimage(ship, EFFECT_COLOR.modify(alpha = 40), 1f)
             }
             else -> {}
         }
@@ -102,6 +109,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
         const val SHIP_ALPHA_MULT = 0.25f
         const val VULNERABLE_FRACTION = 0f
         const val MAX_TIME_MULT = 3f
+        val EFFECT_COLOR = Color(239, 40, 110, 80)
         fun getMaxTimeMult(stats: MutableShipStatsAPI): Float {
             return 1f + (MAX_TIME_MULT - 1f) * stats.dynamic.getValue(Stats.PHASE_TIME_BONUS_MULT)
         }

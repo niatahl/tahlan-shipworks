@@ -2,10 +2,9 @@ package org.niatahl.tahlan.utils
 
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.plugins.derelicts.IndEvo_ArtilleryStationPlacer
+import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 
 object IndEvoIntegrations {
-
-    val LEGIO = "tahlan_legioinfernalis"
     @JvmStatic
     fun addDefenses() {
         val sector = Global.getSector()

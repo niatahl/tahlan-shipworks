@@ -11,6 +11,7 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.util.Misc
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
+import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 import java.awt.Color
 import java.text.DecimalFormat
 import java.util.*
@@ -36,6 +37,7 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
             stats.level = 6
             stats.setSkillLevel("tahlan_daemonicCorruption", 1f)
             portraitSprite = Global.getSettings().getSpriteName("portraits","tahlan_daemon")
+            setFaction(LEGIO)
         }
         return person
     }
@@ -50,6 +52,7 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
             stats.level = 7
             stats.setSkillLevel("tahlan_daemonicCorruption", 2f)
             portraitSprite = Global.getSettings().getSpriteName("portraits","tahlan_archdaemon")
+            setFaction(LEGIO)
         }
         return person
     }

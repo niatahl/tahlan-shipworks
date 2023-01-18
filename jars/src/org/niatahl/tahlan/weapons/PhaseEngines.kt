@@ -25,6 +25,7 @@ class PhaseEngines : EveryFrameWeaponEffectPlugin {
 
         // we calculate our alpha every frame since we smoothly shift it
         val ship = weapon.ship ?: return
+        if (ship.isPhased) return
         val ec = ship.engineController
         alphaMult = if (ec.isAccelerating) {
             alphaMult.adjustToward(1f, amount * 2f)

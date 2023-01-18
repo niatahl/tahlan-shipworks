@@ -83,6 +83,7 @@ class DaemonHeart : BaseHullMod() {
                 var counterPresent = false
 
                 CombatUtils.getShipsWithinRange(ship.location, 2000f).forEach { bote ->
+                    if (bote.isFighter || bote.captain == null) return@forEach
                     if (bote.hullSpec.hullId.contains("tahlan_DunScaith_dmn") && Math.random() > 0.75f
                         && bote.fleetMember.fleetCommander.faction.id.contains("legioinfernalis")
                         && bote.owner == 1

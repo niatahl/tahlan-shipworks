@@ -79,14 +79,14 @@ The Adlerauge will also automatically link with any %s Regalia within a %s radiu
 Regalia Gantry,tahlan_regaliagantry,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaGantry,This vessel is equipped with the necessary equipment for servicing and maintaining Regalia.,Regalia maintenance,graphics/tahlan/hullmods/tahlan_regaliagantry.png
 Artillery Interface,tahlan_traummounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.TraumMounts,Enhanced mounts reduce the ordnance point cost of large ballistic and energy weapons by %s.,Reduces OP cost of large ballistic and energy weapons.,graphics/hullmods/ballistics_integration.png
 ,,,,,,,,,,,,,,,,,,
-Temporal Armor,tahlan_outcast_engineering,2,,,"special, defensive",Special,9999,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OutcastEngineering,"A rare ship constructed by the Great Houses.
+Temporal Armor,tahlan_outcast_engineering,2,,,"special, defensive",,9999,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OutcastEngineering,"A rare ship constructed by the Great Houses.
 
 Equipped with a highly advanced %s of unknown design, permanently accelerating the ship's timeflow by %s.
 
 Unlike most Kassadari vessels, the Metafalica carries an experimental variant of this circuit grid, replacing the standard overdrive functionality with a unique defensive system that utilizes built-up flux. The ship's armor and hull takes up to %s less damage, and %s less EMP damage, based on the ship's flux. This bonus increases the higher the ship's flux gets, starting at %s and maxing out at %s.
 
 Monthly supply cost is increased by %s. Furthermore the delicate machinery causes CR to decrease at doubled rate after peak performance time has passed.",Increases speed when traveling in a straight line. Bonus armor damage reduction at high flux. Damages anything nearby when overloading.,graphics/tahlan/hullmods/tahlan_knightrefit.png
-Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,Weapons,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
+Variable Ammo Loader,tahlan_variable_ammo_loader,,,,offensive,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.VariableAmmoLoader,"The Metafalica has advanced ammo-switchers built into its main batteries, allowing the three Phira cannons on the ship to swap between different modes via the ship's shipsystem.",Main cannons can switch ammo types,graphics/tahlan/hullmods/tahlan_variable_ammo.png
 ,,,,,,,,,,,,,,,,,,
 Legio Engineering,tahlan_chmlegio,,,Legio Infernalis,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.CHMLegio,"Legio Infernalis engineers have a hand for tuning drives for maximum performance, increasing top speed by %s/%s/%s/%s su/second based on hull size and increasing the zero flux speed boost by %s.",Boosts speed,graphics/tahlan/hullmods/tahlan_chmlegio.png
 ,,,,,,,,,,,,,,,,,,
@@ -111,11 +111,11 @@ Hel Carapace,tahlan_daemonarmor,,,,defensive,,,,TRUE,,0,0,0,0,org.niatahl.tahlan
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the low durability makes it vulnerable to focused fire.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",,,,,,8,15,20,40,org.niatahl.tahlan.hullmods.DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
+Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",Defenses,,,,,8,15,20,40,org.niatahl.tahlan.hullmods.DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
 While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,defensive,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.",Allows Cieve to control ship,graphics/tahlan/hullmods/cieve_link.png
+Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",Special,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.",Allows Cieve to control ship,graphics/tahlan/hullmods/cieve_link.png
 Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,graphics/tahlan/hullmods/tahlan_stealthplating.png

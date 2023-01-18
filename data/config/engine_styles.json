@@ -199,5 +199,18 @@
 		"glowSizeMult":0,
 		"type":"GLOW" # GLOW or SMOKE
 	},
+
+	"TAHLAN_REDGLOW_ENGINE":{
+		"engineColor":[255,100,100,255],
+		"contrailParticleSizeMult":8,
+		"contrailParticleDuration":2,
+		"contrailParticleFinalSizeMult":1,
+		"contrailMaxSpeedMult":0.5f,
+		"contrailAngularVelocityMult":0f,
+		"contrailColor":[255,100,100,25],
+		"glowSizeMult":3.5,
+		"glowAlternateColor":[255,0,0,175],
+		"type":"GLOW" # GLOW or SMOKE
+	},
 }
 

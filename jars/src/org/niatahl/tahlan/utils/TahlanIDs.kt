@@ -1,6 +1,7 @@
 package org.niatahl.tahlan.utils
 
 object TahlanIDs {
+    const val LEGIO = "tahlan_legioinfernalis"
     const val NEURALLINK_COMM = "tahlan_neurallink"
 
     const val CORE_DAEMON = "tahlan_daemoncore"
