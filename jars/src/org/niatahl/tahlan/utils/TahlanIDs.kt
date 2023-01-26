@@ -10,4 +10,5 @@ object TahlanIDs {
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
     const val SOTF_SIERRA = "sotf_sierra"
+    const val SOTF_CYWAR = "sotf_cyberwarfare"
 }

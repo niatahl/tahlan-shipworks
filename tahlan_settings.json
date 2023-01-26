@@ -19,7 +19,7 @@
 	"enableHardMode": false,
 	
 	#enables Legio Infernalis to learn every blueprint that pirates learn. 
-	"enableLegioBlueprintLearning": true,
+	"enableLegioBlueprintLearning": false,
 	
 	#enables Timeless and Nameless type ships spawning in remnant fleets.
 	"enableLifelessShips": false,

@@ -6,6 +6,9 @@
 - Made some updates to Legio Rising bounty
 - Added Daemon AI Cores
 - Improved Legio Tyranny description
+- Hel Scaith
+	- Can turn a little better again
+	- Shield arc 120 -> 270
 - Hel Hound
 	- Top speed 200 -> 180
 	- Reduced system acceleration buff

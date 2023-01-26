@@ -16,7 +16,7 @@ public class DaemonBoost extends BaseHullMod {
         SUPPLYMALUS.put(ShipAPI.HullSize.FRIGATE, -5f);
         SUPPLYMALUS.put(ShipAPI.HullSize.DESTROYER, -8f);
         SUPPLYMALUS.put(ShipAPI.HullSize.CRUISER, -10f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.CAPITAL_SHIP, -15f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.CAPITAL_SHIP, -20f);
     }
 
     @Override

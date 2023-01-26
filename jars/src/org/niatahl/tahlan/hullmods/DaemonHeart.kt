@@ -17,6 +17,7 @@ import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_NIGHTINGALE
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
 import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
@@ -90,7 +91,7 @@ class DaemonHeart : BaseHullMod() {
                     ) {
                         scaithPresent = true
                     }
-                    if (bote.captain.stats.hasSkill("sotf_cyberwarfare")) counterPresent = true
+                    if (bote.captain.stats.hasSkill(SOTF_CYWAR)) counterPresent = true
                 }
 
                 if (scaithPresent) {
@@ -214,22 +215,17 @@ class DaemonHeart : BaseHullMod() {
     }
 
     companion object {
-        //        private val MAG: MutableMap<HullSize, Int> = EnumMap(HullSize::class.java)
-        private val MAG = HashMap<HullSize, Int>()
-
-        init {
-            MAG[HullSize.FRIGATE] = 2
-            MAG[HullSize.DESTROYER] = 1
-            MAG[HullSize.CRUISER] = 0
-            MAG[HullSize.CAPITAL_SHIP] = 0
-        }
-
-        private val immuneCaptains = listOf(
-            CIEVE
+        private val MAG = mapOf(
+            HullSize.FRIGATE to 2,
+            HullSize.DESTROYER to 1,
+            HullSize.CRUISER to 0,
+            HullSize.CAPITAL_SHIP to 0,
+            HullSize.FIGHTER to 0
         )
 
-        private val counterCaptains = listOf(
-            SOTF_NIGHTINGALE
+        private val immuneCaptains = listOf(
+            CIEVE,
+            SOTF_SIERRA
         )
 
         private const val SUPPLIES_PERCENT = 100f

@@ -25,7 +25,7 @@ object IndEvoIntegrations {
             melchi.addIndustry("IndEvo_Artillery_railgun")
             adra.addCondition("IndEvo_ArtilleryStationCondition")
             adra.addIndustry("IndEvo_Artillery_missile")
-            IndEvo_ArtilleryStationPlacer.placeWatchtowers(Global.getSector().getStarSystem("Rubicon"), "tahlan_legioinfernalis")
+            //IndEvo_ArtilleryStationPlacer.placeWatchtowers(Global.getSector().getStarSystem("Rubicon"), "tahlan_legioinfernalis")
         }
 
     }

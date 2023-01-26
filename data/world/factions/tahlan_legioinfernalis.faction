@@ -207,9 +207,9 @@
 		"market_neutral":"tahlan_legio_neutral",
 		"market_hostile":"tahlan_legio_hostile",
 		"market_friendly":"tahlan_legio_friendly",
-		"encounter_neutral":"tahlan_legio_neutral",
-		"encounter_hostile":"tahlan_legio_hostile",
-		"encounter_friendly":"tahlan_legio_friendly",
+		"encounter_neutral":"tahlan_legio_fleet_neutral",
+		"encounter_hostile":"tahlan_legio_fleet_hostile",
+		"encounter_friendly":"tahlan_legio_fleet_friendly",
 	},
 	"internalComms":"legio_internal",
 	"portraits":{
