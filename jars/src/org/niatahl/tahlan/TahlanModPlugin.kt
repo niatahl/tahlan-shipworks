@@ -20,7 +20,6 @@ import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
-import org.niatahl.tahlan.campaign.siege.LegioSiegeBaseIntel
 import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
@@ -112,7 +111,6 @@ class TahlanModPlugin : BaseModPlugin() {
 
         //Rosenritter Blueprint Script
         Global.getSector().addScript(regaliablueprintscript())
-        LegioSiegeBaseIntel.log.info("added Rosenritter Blueprint script")
 
     }
 
