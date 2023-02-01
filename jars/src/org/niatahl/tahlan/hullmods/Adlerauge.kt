@@ -27,10 +27,13 @@ class Adlerauge : BaseHullMod() {
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize): String? {
-        if (index == 0) return "" + RANGE_BOOST.roundToInt() + Utils.txt("su")
-        if (index == 1) return "" + SPEED_BOOST.roundToInt() + Utils.txt("%")
-        if (index == 2) return Utils.txt("hmd_adler1")
-        return if (index == 3) "" + EFFECT_RANGE.roundToInt() + Utils.txt("su") else null
+        return when (index) {
+            0 -> "" + RANGE_BOOST.roundToInt() + Utils.txt("su")
+            1 -> "" + SPEED_BOOST.roundToInt() + Utils.txt("%")
+            2 -> Utils.txt("hmd_adler1")
+            3 -> "" + EFFECT_RANGE.roundToInt() + Utils.txt("su")
+            else -> null
+        }
     }
 
     companion object {

@@ -190,7 +190,6 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
     internal class CustomRenderer
         (private val parentPlugin: CustomRender) : BaseCombatLayeredRenderingPlugin() {
         override fun render(layer: CombatEngineLayers, view: ViewportAPI) {
-            val engine = Global.getCombatEngine() ?: return
             parentPlugin.render(layer, view)
         }
 

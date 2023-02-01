@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier
 import org.lazywizard.lazylib.combat.DefenseUtils
 import org.lwjgl.util.vector.Vector2f
-import org.niatahl.tahlan.utils.Utils
+import org.niatahl.tahlan.utils.Utils.txt
 import kotlin.math.roundToInt
 
 class DaemonArmor : BaseHullMod() {
@@ -25,7 +25,7 @@ class DaemonArmor : BaseHullMod() {
         ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifyFlat("nuller", -1f)
         val timer = ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifiedValue + amount
         ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifyFlat("tracker", timer)
-        if (timer < DISUPTION_TIME) return
+        if (timer < DISRUPTION_TIME) return
         val armorGrid = ship.armorGrid
         val grid = armorGrid.grid
         val max = armorGrid.maxArmorInCell
@@ -50,12 +50,15 @@ class DaemonArmor : BaseHullMod() {
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize): String? {
-        if (index == 0) return "" + REGEN_PER_SEC_PERCENT.roundToInt() + Utils.txt("%")
-        if (index == 1) return "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
-        if (index == 2) return "" + CALC_FLAT.roundToInt()
-        if (index == 3) return Utils.txt("halved")
-        if (index == 4) return Utils.txt("disabled")
-        return if (index == 5) "" + DISUPTION_TIME.roundToInt() + "s" else null
+        return when (index) {
+            0 -> "" + REGEN_PER_SEC_PERCENT.roundToInt() + txt("%")
+            1 -> "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
+            2 -> "" + CALC_FLAT.roundToInt()
+            3 -> txt("halved")
+            4 -> txt("disabled")
+            5 -> "" + DISRUPTION_TIME.roundToInt() + " " + txt("seconds")
+            else -> null
+        }
     }
 
     internal class DaemonArmorListener : DamageTakenModifier {
@@ -75,6 +78,6 @@ class DaemonArmor : BaseHullMod() {
         private const val ARMOR_CAP = 2000f
         private const val REGEN_PER_SEC_PERCENT = 10f
         private const val CALC_FLAT = 200f
-        private const val DISUPTION_TIME = 2f
+        private const val DISRUPTION_TIME = 2f
     }
 }

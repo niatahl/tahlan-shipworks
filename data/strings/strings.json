@@ -6,6 +6,7 @@
 		"/": "/",
 		"-": "-",
 		"+": "+",
+		"seconds": "seconds",
 		"hmd_adler1": "Silberherz-equipped",
 		"hmd_AftermPhCoils1": "doubled",
 		"hmd_FluxCatalyst1": "200%",
@@ -107,6 +108,7 @@
 
 		"skill_suffix":" skill",
 		"sModBonus":"S-mod bonus",
-		"sModPenalty":"S-mod penalty"
+		"sModPenalty":"S-mod penalty",
+		"notable": "notable"
 	}
 }

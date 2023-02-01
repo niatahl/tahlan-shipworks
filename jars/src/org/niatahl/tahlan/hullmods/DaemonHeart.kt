@@ -20,7 +20,7 @@ import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
 import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
-import org.niatahl.tahlan.utils.Utils
+import org.niatahl.tahlan.utils.Utils.txt
 import java.awt.Color
 import kotlin.math.roundToInt
 
@@ -51,9 +51,6 @@ class DaemonHeart : BaseHullMod() {
             if (member.variant.hullVariantId == ship.variant.hullVariantId) {
                 isPlayerFleet = true
             }
-        }
-        if (!ship.variant.hasTag(Tags.SHIP_UNIQUE_SIGNATURE)) {
-            ship.variant.addTag(Tags.SHIP_UNIQUE_SIGNATURE)
         }
         if (ship.variant.hasHullMod("tahlan_daemonboost")) {
             ship.variant.removeMod("tahlan_daemonboost")
@@ -223,12 +220,15 @@ class DaemonHeart : BaseHullMod() {
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize): String? {
-        if (index == 0) return "" + (ACC_BUFF * 100f).roundToInt() + Utils.txt("%")
-        if (index == 1) return "" + (MSSL_DAMAGE * 100f).roundToInt() + Utils.txt("%")
-        if (index == 2) return "" + (SPEED_CAP * 100f).roundToInt() + Utils.txt("%")
-        if (index == 3) return "" + (SPEED_BUFF * 100f).roundToInt() + Utils.txt("%")
-        if (index == 4) return "" + (PLAYER_NERF * 100f).roundToInt() + Utils.txt("%")
-        return if (index == 5) "" + SUPPLIES_PERCENT.roundToInt() + Utils.txt("%") else null
+        return when (index) {
+            0 -> "" + (ACC_BUFF * 100f).roundToInt() + txt("%")
+            1 -> "" + (MSSL_DAMAGE * 100f).roundToInt() + txt("%")
+            2 -> "" + (SPEED_CAP * 100f).roundToInt() + txt("%")
+            3 -> "" + (SPEED_BUFF * 100f).roundToInt() + txt("%")
+            4 -> "" + (PLAYER_NERF * 100f).roundToInt() + txt("%")
+            5 -> "" + SUPPLIES_PERCENT.roundToInt() + txt("%")
+            else -> null
+        }
     }
 
     companion object {

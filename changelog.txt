@@ -24,6 +24,8 @@
 	- Burn 9 -> 8
 - Rigveda
 	- Burn 10 -> 9
+- Kupferflug Regalia
+	- Micro Strahlfaust rate of fire greatly increased, ammo limitation added
 
 	
 

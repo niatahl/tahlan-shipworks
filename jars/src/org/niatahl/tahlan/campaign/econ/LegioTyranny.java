@@ -6,7 +6,10 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
+import java.util.Objects;
+
 import static org.niatahl.tahlan.TahlanModPlugin.ENABLE_HARDMODE;
+import static org.niatahl.tahlan.utils.TahlanIDs.LEGIO;
 import static org.niatahl.tahlan.utils.Utils.txt;
 
 public class LegioTyranny extends BaseMarketConditionPlugin {
@@ -21,7 +24,7 @@ public class LegioTyranny extends BaseMarketConditionPlugin {
         if (market.getFaction() == null) {
             return;
         }
-        if (market.getFaction().getId().contains("tahlan_legioinfernalis")) {
+        if (market.getFactionId().contains(LEGIO)) {
             int marketMult = Misc.getFactionMarkets(market.getFactionId()).size();
             market.getStability().modifyFlat(id, STAB_BONUS * marketMult, txt("tyranny"));
 
@@ -64,7 +67,7 @@ public class LegioTyranny extends BaseMarketConditionPlugin {
             return;
         }
 
-        int marketMult = Misc.getFactionMarkets(market.getFactionId()).size();
+        int marketMult = Misc.getFactionMarkets(LEGIO).size();
         tooltip.addPara(txt("fleetsize"),
                 10f, Misc.getHighlightColor(),
                 "+" + (int) FLEET_PERCENT);
@@ -74,5 +77,10 @@ public class LegioTyranny extends BaseMarketConditionPlugin {
         tooltip.addPara(txt("tyranny2"), 10f);
         tooltip.addPara(txt("tyranny5"), 10f);
         tooltip.addPara(txt("tyranny3"), 10f, Misc.getHighlightColor(), txt("tyranny4"));
+    }
+
+    @Override
+    public boolean showIcon() {
+        return market.getFactionId().equals(LEGIO);
     }
 }
