@@ -18,12 +18,10 @@ import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
-import org.niatahl.tahlan.utils.TahlanIDs.SOTF_NIGHTINGALE
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
 import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
 import org.niatahl.tahlan.utils.Utils
 import java.awt.Color
-import kotlin.collections.HashMap
 import kotlin.math.roundToInt
 
 // There was some fun here. It was silly indeed.
@@ -71,7 +69,7 @@ class DaemonHeart : BaseHullMod() {
         val engine = Global.getCombatEngine() ?: return
         val speedBoost = 1f - Math.min(1f, ship.fluxLevel / SPEED_CAP)
         ship.mutableStats.maxSpeed.modifyMult(dc_id, 1f + speedBoost * SPEED_BUFF)
-        if (engine.getFleetManager(ship.owner) === engine.getFleetManager(FleetSide.PLAYER)) {
+        if (engine.getFleetManager(ship.owner) == engine.getFleetManager(FleetSide.PLAYER)) {
             //Only run this in campaign context, not missions
             if (!engine.isInCampaign) {
                 return
@@ -105,7 +103,15 @@ class DaemonHeart : BaseHullMod() {
 
                     // player gets an overload instead of being yoinked
                     if (ship.captain.isPlayer) {
-                        engine.addFloatingText(ship.location, "DIRECT CONTROL ATTEMPT AVERTED", 40f, Color.RED, ship, 0.5f, 3f)
+                        engine.addFloatingText(
+                            ship.location,
+                            "DIRECT CONTROL ATTEMPT AVERTED",
+                            40f,
+                            Color.RED,
+                            ship,
+                            0.5f,
+                            3f
+                        )
                         ship.fluxTracker.forceOverload(15f)
                         return
                     }
@@ -116,12 +122,18 @@ class DaemonHeart : BaseHullMod() {
                     // yoinked from Xhan
                     if (ship.shipAI != null) {
                         //cancel orders so the AI doesn't get confused
-                        val member_a = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
-                        if (member_a != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(false).orderSearchAndDestroy(member_a, false)
-                        val member_aa = Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
-                        if (member_aa != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getTaskManager(true).orderSearchAndDestroy(member_aa, false)
-                        val member_b = Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship)
-                        if (member_b != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getTaskManager(false).orderSearchAndDestroy(member_b, false)
+                        val memberA =
+                            Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
+                        if (memberA != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER)
+                            .getTaskManager(false).orderSearchAndDestroy(memberA, false)
+                        val memberB =
+                            Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
+                        if (memberB != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER)
+                            .getTaskManager(true).orderSearchAndDestroy(memberB, false)
+                        val memberC =
+                            Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship)
+                        if (memberC != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY)
+                            .getTaskManager(false).orderSearchAndDestroy(memberC, false)
                         ship.shipAI.forceCircumstanceEvaluation()
                     }
 
@@ -166,12 +178,17 @@ class DaemonHeart : BaseHullMod() {
 
         // Daemons are self-repairing so...
         // basically just making sure they never spawn with D-mods
+        val toRepair = ArrayList<String>()
         member.variant.hullMods.forEach { hm ->
             if (Global.getSettings().getHullModSpec(hm).hasTag(Tags.HULLMOD_DMOD)) {
-                member.variant.removePermaMod(hm)
-                member.variant.removeMod(hm)
+                toRepair.add(hm)
             }
         }
+        toRepair.forEach {
+            member.variant.removePermaMod(it)
+            member.variant.removeMod(it)
+        }
+
 
         // Now we make a new captain if we don't have an AI captain already
         if (member.captain != null) {
