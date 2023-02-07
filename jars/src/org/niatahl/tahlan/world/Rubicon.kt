@@ -249,7 +249,7 @@ class Rubicon {
 
         //Jump point for Lucifron
         val jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_rubicon_lucifron_jump", "Lucifron Jump Point")
-        jumpPoint1.setCircularOrbit(rubicon_star, angle + 15f, 7400f, 380f)
+        jumpPoint1.setCircularOrbit(rubicon_star, angle + 25f, 7400f, 380f)
         jumpPoint1.relatedPlanet = rubicon_3
         system.addEntity(jumpPoint1)
 

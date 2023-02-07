@@ -123,14 +123,17 @@ class DaemonHeart : BaseHullMod() {
                             Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
                         if (memberA != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER)
                             .getTaskManager(false).orderSearchAndDestroy(memberA, false)
+
                         val memberB =
                             Global.getCombatEngine().getFleetManager(FleetSide.PLAYER).getDeployedFleetMember(ship)
                         if (memberB != null) Global.getCombatEngine().getFleetManager(FleetSide.PLAYER)
                             .getTaskManager(true).orderSearchAndDestroy(memberB, false)
+
                         val memberC =
                             Global.getCombatEngine().getFleetManager(FleetSide.ENEMY).getDeployedFleetMember(ship)
                         if (memberC != null) Global.getCombatEngine().getFleetManager(FleetSide.ENEMY)
                             .getTaskManager(false).orderSearchAndDestroy(memberC, false)
+
                         ship.shipAI.forceCircumstanceEvaluation()
                     }
 
