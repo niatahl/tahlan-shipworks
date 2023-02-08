@@ -30,7 +30,8 @@ object IndEvoIntegrations {
             //IndEvo_ArtilleryStationPlacer.placeWatchtowers(Global.getSector().getStarSystem("Rubicon"), "tahlan_legioinfernalis") // Fuck you, Hartley :V
         }
         sector.getStarSystem("Rubicon").jumpPoints.forEach { point ->
-            MineBeltTerrainPlugin.addMineBelt(point, 500f, 100f, 30f, 40f, point.name + " Minefield")
+            val belt = MineBeltTerrainPlugin.addMineBelt(point, 500f, 100f, 30f, 40f, point.name + " Minefield")
+            belt.memoryWithoutUpdate.set("\$IndEvo_PlanetMinefieldKey",lucifron.primaryEntity)
         }
     }
 

@@ -6,10 +6,11 @@ import com.fs.starfarer.api.campaign.CargoAPI
 import com.fs.starfarer.api.campaign.CoreUITabId
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import org.niatahl.tahlan.utils.TahlanIDs.NEURALLINK_COMM
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
 
 class DigitalSoulScript : EveryFrameScript {
 
-    val aiBoats = HashMap<FleetMemberAPI, String>()
+    private val aiBoats = HashMap<FleetMemberAPI, String>()
 
     override fun isDone(): Boolean {
         return false
@@ -36,7 +37,14 @@ class DigitalSoulScript : EveryFrameScript {
         }
         aiBoats.clear()
         Global.getSector().playerFleet.membersWithFightersCopy.forEach { member ->
-            if (!member.isFighterWing && member.captain != null && member.captain.isAICore && !member.captain.isPlayer) aiBoats.put(member, member.captain.aiCoreId)
+            if (!member.isFighterWing
+                && member.captain != null
+                && member.captain.isAICore
+                && !member.captain.isPlayer
+                && member.captain.id != SOTF_SIERRA
+            ) {
+                aiBoats[member] = member.captain.aiCoreId
+            }
         }
     }
 
