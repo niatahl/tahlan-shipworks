@@ -3,6 +3,7 @@ package org.niatahl.tahlan.hullmods
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier
+import com.fs.starfarer.combat.entities.Ship
 import org.lazywizard.lazylib.combat.DefenseUtils
 import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.utils.Utils.txt
@@ -65,6 +66,7 @@ class DaemonArmor : BaseHullMod() {
         override fun modifyDamageTaken(param: Any?, target: CombatEntityAPI, damage: DamageAPI, point: Vector2f, shieldHit: Boolean): String? {
             if (shieldHit) return null
             if (target !is ShipAPI) return null
+
             if (target.variant.hasHullMod("tahlan_daemonarmor") || target.variant.hasHullMod("tahlan_daemonplating")) {
                 if (damage.damage > 0) {
                     target.mutableStats.dynamic.getStat("tahlan_daemonarmor").unmodify("tracker")
