@@ -27,11 +27,6 @@ import kotlin.math.roundToInt
 // There was some fun here. It was silly indeed.
 class DaemonHeart : BaseHullMod() {
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {
-        stats.projectileSpeedMult.modifyMult(id, 1f + ACC_BUFF)
-        stats.maxRecoilMult.modifyMult(id, 1f - ACC_BUFF)
-        stats.recoilDecayMult.modifyMult(id, 1f + ACC_BUFF)
-        stats.recoilPerShotMult.modifyMult(id, 1f - ACC_BUFF)
-        stats.damageToMissiles.modifyMult(id, 1f + MSSL_DAMAGE)
         stats.suppliesPerMonth.modifyPercent(id, SUPPLIES_PERCENT)
     }
 
@@ -217,12 +212,10 @@ class DaemonHeart : BaseHullMod() {
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize): String? {
         return when (index) {
-            0 -> "" + (ACC_BUFF * 100f).roundToInt() + txt("%")
-            1 -> "" + (MSSL_DAMAGE * 100f).roundToInt() + txt("%")
-            2 -> "" + (SPEED_CAP * 100f).roundToInt() + txt("%")
-            3 -> "" + (SPEED_BUFF).roundToInt() + txt("su")
-            4 -> "" + (PLAYER_NERF * 100f).roundToInt() + txt("%")
-            5 -> "" + SUPPLIES_PERCENT.roundToInt() + txt("%")
+            0 -> "" + (SPEED_CAP * 100f).roundToInt() + txt("%")
+            1 -> "" + (SPEED_BUFF).roundToInt() + txt("su")
+            2 -> "" + (PLAYER_NERF * 100f).roundToInt() + txt("%")
+            3 -> "" + SUPPLIES_PERCENT.roundToInt() + txt("%")
             else -> null
         }
     }
