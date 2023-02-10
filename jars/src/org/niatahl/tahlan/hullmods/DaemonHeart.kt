@@ -64,8 +64,9 @@ class DaemonHeart : BaseHullMod() {
 
     override fun advanceInCombat(ship: ShipAPI, amount: Float) {
         val engine = Global.getCombatEngine() ?: return
-        val speedBoost = 1f - Math.min(1f, ship.fluxLevel / SPEED_CAP)
-        ship.mutableStats.maxSpeed.modifyMult(dc_id, 1f + speedBoost * SPEED_BUFF)
+        val speedBoost = 1f - (ship.fluxLevel / SPEED_CAP).coerceIn(0f, 1f)
+        ship.mutableStats.maxSpeed.modifyFlat(dc_id, speedBoost * SPEED_BUFF)
+
         if (engine.getFleetManager(ship.owner) == engine.getFleetManager(FleetSide.PLAYER)) {
             //Only run this in campaign context, not missions
             if (!engine.isInCampaign) {
@@ -150,6 +151,8 @@ class DaemonHeart : BaseHullMod() {
             // Enrage function
             val enrage = 1f - ship.hullLevel
             ship.mutableStats.timeMult.modifyMult(dc_id, 1f + enrage * 0.25f)
+            ship.mutableStats.energyWeaponRangeBonus.modifyMult(dc_id, 1f - enrage * 0.25f)
+            ship.mutableStats.ballisticWeaponRangeBonus.modifyMult(dc_id, 1f - enrage * 0.25f)
             ship.setJitter(dc_id, JITTER_COLOR, enrage, 3, 5f)
             ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, enrage, 20, 15f)
         }
@@ -178,16 +181,12 @@ class DaemonHeart : BaseHullMod() {
 
         // Daemons are self-repairing so...
         // basically just making sure they never spawn with D-mods
-        val toRepair = ArrayList<String>()
-        member.variant.hullMods.forEach { hm ->
-            if (Global.getSettings().getHullModSpec(hm).hasTag(Tags.HULLMOD_DMOD)) {
-                toRepair.add(hm)
+        member.variant.hullMods
+            .filter { hm -> Global.getSettings().getHullModSpec(hm).hasTag(Tags.HULLMOD_DMOD) }
+            .forEach { hm ->
+                member.variant.removePermaMod(hm)
+                member.variant.removeMod(hm)
             }
-        }
-        toRepair.forEach {
-            member.variant.removePermaMod(it)
-            member.variant.removeMod(it)
-        }
 
 
         // Now we make a new captain if we don't have an AI captain already
@@ -205,17 +204,11 @@ class DaemonHeart : BaseHullMod() {
         if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn")) {
             die = 3 // Hel Scaith always gets an alpha
         }
-        val person: PersonAPI // yes, a "person"
-        if (die <= 1) {
-            person = Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
-        } else if (die == 2) {
-            person = DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
-            member.stats.dynamic.getMod("individual_ship_recovery_mod").modifyFlat("tahlan_daemoncore", -100f)
-        } else {
-            person = DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
-            member.stats.dynamic.getMod("individual_ship_recovery_mod").modifyFlat("tahlan_archdaemoncore", -1000f)
+        member.captain = when (die) {
+            1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
+            2 -> DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
+            else -> DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
         }
-        member.captain = person
     }
 
     override fun isApplicableToShip(ship: ShipAPI): Boolean {
@@ -227,7 +220,7 @@ class DaemonHeart : BaseHullMod() {
             0 -> "" + (ACC_BUFF * 100f).roundToInt() + txt("%")
             1 -> "" + (MSSL_DAMAGE * 100f).roundToInt() + txt("%")
             2 -> "" + (SPEED_CAP * 100f).roundToInt() + txt("%")
-            3 -> "" + (SPEED_BUFF * 100f).roundToInt() + txt("%")
+            3 -> "" + (SPEED_BUFF).roundToInt() + txt("su")
             4 -> "" + (PLAYER_NERF * 100f).roundToInt() + txt("%")
             5 -> "" + SUPPLIES_PERCENT.roundToInt() + txt("%")
             else -> null
@@ -251,7 +244,7 @@ class DaemonHeart : BaseHullMod() {
         private const val SUPPLIES_PERCENT = 100f
         private const val ACC_BUFF = 0.25f
         private const val MSSL_DAMAGE = 0.5f
-        private const val SPEED_BUFF = 0.2f
+        private const val SPEED_BUFF = 30f
         private const val SPEED_CAP = 0.6f
         private const val PLAYER_NERF = 0.9f
         private val JITTER_COLOR = Color(255, 0, 0, 30)
