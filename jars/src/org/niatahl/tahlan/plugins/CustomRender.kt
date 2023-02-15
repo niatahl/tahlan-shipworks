@@ -5,9 +5,9 @@ import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.input.InputEventAPI
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
-import org.lwjgl.opengl.GL11.*
 import org.lwjgl.opengl.GL14.*
 import org.lwjgl.util.vector.Vector2f
+import org.magiclib.kotlin.interpolateColor
 import org.niatahl.tahlan.utils.Utils.lerp
 import org.niatahl.tahlan.utils.modify
 import org.niatahl.tahlan.utils.random
@@ -17,7 +17,6 @@ import java.util.*
 import kotlin.math.floor
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
-
 
 class CustomRender : BaseEveryFrameCombatPlugin() {
 
@@ -112,12 +111,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
         val lifeFraction = nebula.lifetime / nebula.duration
         cloudSprite.apply {
-            color = Color(
-                lerp(nebula.color.red.toFloat(), nebula.outColor.red.toFloat(),lifeFraction).roundToInt().coerceIn(0..255),
-                lerp(nebula.color.green.toFloat(), nebula.outColor.green.toFloat(),lifeFraction).roundToInt().coerceIn(0..255),
-                lerp(nebula.color.blue.toFloat(), nebula.outColor.blue.toFloat(),lifeFraction).roundToInt().coerceIn(0..255),
-                alpha
-            )
+            color = nebula.color.interpolateColor(nebula.outColor,lifeFraction).modify(alpha = alpha)
             setAdditiveBlend()
             angle = nebula.angle
             setSize(actualSize * 4f, actualSize * 4f)
@@ -187,11 +181,10 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             type: NebulaType = NebulaType.NORMAL,
             negative: Boolean = false,
             expandAsSqrt: Boolean = false,
-            outColor: Color? = null
+            outColor: Color = color
         ) {
-            val actualOutColor = outColor ?: color
             val newNebula =
-                Nebula(Vector2f(location), Vector2f(velocity), size, endSizeMult * size, duration, inFraction, outFraction, color, layer, type, negative, expandAsSqrt, actualOutColor)
+                Nebula(Vector2f(location), Vector2f(velocity), size, endSizeMult * size, duration, inFraction, outFraction, color, layer, type, negative, expandAsSqrt, outColor)
             nebulaData.add(newNebula)
         }
     }

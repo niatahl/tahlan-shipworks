@@ -5,6 +5,7 @@ import com.fs.starfarer.api.campaign.PersonImportance
 import com.fs.starfarer.api.characters.FullName
 import com.fs.starfarer.api.characters.ImportantPeopleAPI
 import com.fs.starfarer.api.characters.PersonAPI
+import com.fs.starfarer.api.impl.campaign.ids.Factions
 import com.fs.starfarer.api.impl.campaign.ids.Personalities
 import com.fs.starfarer.api.impl.campaign.ids.Skills
 import org.niatahl.tahlan.TahlanModPlugin.Companion.WEEB_MODE
@@ -13,6 +14,7 @@ object TahlanPeople {
     // Person IDs
     const val CIEVE = "tahlan_cieve"
     const val CHILD = "tahlan_child"
+    const val HENRIETTA = "tahlan_henrietta"
 
     // For fake fearless
     const val FEARLESS = "\$tahlan_persFearless"
@@ -48,6 +50,30 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
                 stats.setSkillLevel("tahlan_hyperCoordination", 1f)
                 memoryWithoutUpdate.set("\$chatterChar", "cieve")
+            }
+            ip.addPerson(person)
+        }
+
+        // Henrietta
+        if (getPerson(HENRIETTA) == null) {
+            val person = Global.getFactory().createPerson().apply {
+                id = HENRIETTA
+                setFaction(Factions.INDEPENDENT)
+                gender = FullName.Gender.FEMALE
+                rankId = "tahlan_henrietta"
+                postId = "tahlan_henrietta"
+                name.first = "Henrietta"
+                name.last = "von Regenfels"
+                importance = PersonImportance.VERY_HIGH
+                portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_henrietta")
+                setPersonality(Personalities.AGGRESSIVE)
+                stats.level = 5
+                stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
+                stats.setSkillLevel(Skills.MISSILE_SPECIALIZATION, 1f)
+                stats.setSkillLevel(Skills.HELMSMANSHIP, 1f)
+                stats.setSkillLevel(Skills.SYSTEMS_EXPERTISE, 1f)
+                stats.setSkillLevel("tahlan_raketentanz", 1f)
+//                memoryWithoutUpdate.set("\$chatterChar", "henrietta")
             }
             ip.addPerson(person)
         }
