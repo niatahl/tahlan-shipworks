@@ -7,7 +7,7 @@ import kotlin.random.Random
  * Toys Wisp forgot
  */
 
-fun ClosedFloatingPointRange<Float>.random(): Float =
+fun ClosedFloatingPointRange<Float>.random() =
     Random.nextDouble(this.start.toDouble(), this.endInclusive.toDouble()).toFloat()
 
 fun Color.modify(red: Int = this.red, green: Int = this.green, blue: Int = this.blue, alpha: Int = this.alpha) =
