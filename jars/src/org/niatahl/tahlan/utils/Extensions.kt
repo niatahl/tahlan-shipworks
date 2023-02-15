@@ -1,21 +1,14 @@
 package org.niatahl.tahlan.utils
 
-import com.fs.starfarer.api.campaign.*
-import com.fs.starfarer.api.campaign.events.CampaignEventTarget
-import com.fs.starfarer.api.campaign.rules.MemoryAPI
-import com.fs.starfarer.api.util.Misc
-import com.fs.starfarer.api.util.Misc.FleetFilter
-import org.lwjgl.util.vector.Vector2f
 import java.awt.Color
-import java.util.*
+import kotlin.random.Random
 
 /**
- * Original by Wisp
- * Additions by Nia Tahl
+ * Toys Wisp forgot
  */
 
 fun ClosedFloatingPointRange<Float>.random(): Float =
-    (this.start + (this.endInclusive - this.start) * kotlin.random.Random.nextFloat())
+    Random.nextDouble(this.start.toDouble(), this.endInclusive.toDouble()).toFloat()
 
 fun Color.modify(red: Int = this.red, green: Int = this.green, blue: Int = this.blue, alpha: Int = this.alpha) =
     Color(red, green, blue, alpha)
