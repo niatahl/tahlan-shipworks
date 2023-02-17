@@ -17,5 +17,6 @@
     <orderEntry type="library" name="IndEvo" level="application" />
     <orderEntry type="library" name="MagicLib-Kotlin" level="application" />
     <orderEntry type="library" name="LazyLib-Kotlin" level="application" />
+    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
   </component>
 </module>
