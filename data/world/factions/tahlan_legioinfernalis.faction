@@ -244,7 +244,16 @@
 			"graphics/portraits/portrait32.png",
 			"graphics/portraits/portrait37.png",
 			"graphics/portraits/portrait39.png",
-			#"graphics/portraits/characters/old_spacer01.png",
+			"graphics/tahlan/portraits/legio/legio_f01.png",
+			"graphics/tahlan/portraits/legio/legio_f02.png",
+			"graphics/tahlan/portraits/legio/legio_f03.png",
+			"graphics/tahlan/portraits/legio/legio_f04.png",
+			"graphics/tahlan/portraits/legio/legio_f05.png",
+			"graphics/tahlan/portraits/legio/legio_f06.png",
+			"graphics/tahlan/portraits/legio/legio_f07.png",
+			"graphics/tahlan/portraits/legio/legio_f08.png",
+			"graphics/tahlan/portraits/legio/legio_f09.png",
+			"graphics/tahlan/portraits/legio/legio_f10.png"
 		],
 	},
 	"ranks":{

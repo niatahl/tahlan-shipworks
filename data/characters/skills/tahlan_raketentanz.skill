@@ -1,0 +1,18 @@
+{
+	"id":"tahlan_raketentanz",
+	"governingAptitude":"combat",
+	"compressHullmods":false,
+	"elite": false,
+	"scope":"PILOTED_SHIP",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.Raketentanz$Level1a"},
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.Raketentanz$Level1b"},
+				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.Raketentanz$Level1c"},
+			]
+		}
+	],
+}
