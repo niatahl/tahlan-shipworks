@@ -29,9 +29,12 @@ object IndEvoIntegrations {
             adra.addIndustry("IndEvo_Artillery_missile")
             //IndEvo_ArtilleryStationPlacer.placeWatchtowers(Global.getSector().getStarSystem("Rubicon"), "tahlan_legioinfernalis") // Fuck you, Hartley :V
         }
-        sector.getStarSystem("Rubicon").jumpPoints.forEach { point ->
-            val belt = MineBeltTerrainPlugin.addMineBelt(point, 500f, 100f, 30f, 40f, point.name + " Minefield")
-            belt.memoryWithoutUpdate.set("\$IndEvo_PlanetMinefieldKey",lucifron.primaryEntity)
+        if (!sector.memoryWithoutUpdate.getBoolean("\$tahlan_minesDeployed")) {
+            sector.memoryWithoutUpdate["\$tahlan_minesDeployed"] = true
+            sector.getStarSystem("Rubicon").jumpPoints.forEach { point ->
+                val belt = MineBeltTerrainPlugin.addMineBelt(point, 300f, 150f, 30f, 40f, point.name + " Minefield")
+                belt.memoryWithoutUpdate.set("\$IndEvo_PlanetMinefieldKey", lucifron.primaryEntity)
+            }
         }
     }
 

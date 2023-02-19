@@ -21,6 +21,7 @@ import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.plugins.CampaignPluginImpl
+import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
@@ -59,6 +60,8 @@ class TahlanModPlugin : BaseModPlugin() {
             isGraphicsLibAvailable = false
         }
         HAS_INDEVO = Global.getSettings().modManager.isModEnabled("IndEvo")
+        HAS_EXILED = Global.getSettings().modManager.isModEnabled("pt_exiledSpace")
+
         try {
             loadTahlanSettings()
         } catch (e: IOException) {
@@ -167,6 +170,10 @@ class TahlanModPlugin : BaseModPlugin() {
             if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
                 addDaemons(sector)
             }
+            // Daemon subfaction for ES maps
+            if (HAS_EXILED) {
+                ToggleDaemons(Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered"))
+            }
 
             val legio = Global.getSector().getFaction(LEGIO)
             DAEMON_SHIPS.run { if (ENABLE_HARDMODE) forEach { legio.addPriorityShip(it) } else forEach { legio.removePriorityShip(it) } }
@@ -264,6 +271,9 @@ class TahlanModPlugin : BaseModPlugin() {
                 }
                 addDaemons(sector)
                 upgradeDefenses()
+                if (HAS_EXILED) {
+                    ToggleDaemons(true)
+                }
             }
         }
     }
@@ -322,6 +332,7 @@ class TahlanModPlugin : BaseModPlugin() {
         @JvmField
         var HAS_NEX = false
         var HAS_INDEVO = false
+        var HAS_EXILED = false
         val LOGGER = Global.getLogger(TahlanModPlugin::class.java)
 
         val DAEMON_SHIPS = listOf(

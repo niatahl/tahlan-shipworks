@@ -167,7 +167,7 @@ class LegioHQ : BaseIndustry(), RouteFleetSpawner, FleetEventListener {
 
     fun getCount(vararg types: PatrolType): Int {
         var count = 0
-        for (data in RouteManager.getInstance().getRoutesForSource(routeSourceId)) {
+        for (data in getInstance().getRoutesForSource(routeSourceId)) {
             if (data.custom is MilitaryBase.PatrolFleetData) {
                 val custom = data.custom as MilitaryBase.PatrolFleetData
                 for (type in types) {
@@ -198,10 +198,10 @@ class LegioHQ : BaseIndustry(), RouteFleetSpawner, FleetEventListener {
     }
 
     override fun reportBattleOccurred(fleet: CampaignFleetAPI, primaryWinner: CampaignFleetAPI, battle: BattleAPI) {}
-    override fun reportFleetDespawnedToListener(fleet: CampaignFleetAPI, reason: FleetDespawnReason, param: Any) {
+    override fun reportFleetDespawnedToListener(fleet: CampaignFleetAPI, reason: FleetDespawnReason, param: Any?) {
         if (!isFunctional) return
         if (reason == FleetDespawnReason.REACHED_DESTINATION) {
-            val route = RouteManager.getInstance().getRoute(routeSourceId, fleet)
+            val route = getInstance().getRoute(routeSourceId, fleet)
             if (route.custom is MilitaryBase.PatrolFleetData) {
                 val custom = route.custom as MilitaryBase.PatrolFleetData
                 if (custom.spawnFP > 0) {

@@ -1,0 +1,4 @@
+id,weight,FPMulti,lootMulti,averageSmod,quality,effectPlugin,countsAs
+tahlan_legioinfernalis,1,1,1,,1,data.world.systems.ptes_genericSystem,
+#sub factions,,,,,,,
+tahlan_legiodaemons,0,1,1,,1,data.world.systems.ptes_genericSystem,tahlan_legioinfernalis
