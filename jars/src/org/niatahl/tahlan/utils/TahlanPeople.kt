@@ -7,14 +7,17 @@ import com.fs.starfarer.api.characters.ImportantPeopleAPI
 import com.fs.starfarer.api.characters.PersonAPI
 import com.fs.starfarer.api.impl.campaign.ids.Factions
 import com.fs.starfarer.api.impl.campaign.ids.Personalities
+import com.fs.starfarer.api.impl.campaign.ids.Ranks
 import com.fs.starfarer.api.impl.campaign.ids.Skills
 import org.niatahl.tahlan.TahlanModPlugin.Companion.WEEB_MODE
+import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 
 object TahlanPeople {
     // Person IDs
     const val CIEVE = "tahlan_cieve"
     const val CHILD = "tahlan_child"
     const val HENRIETTA = "tahlan_henrietta"
+    const val DEVIL = "tahlan_devil"
 
     // For fake fearless
     const val FEARLESS = "\$tahlan_persFearless"
@@ -89,7 +92,6 @@ object TahlanPeople {
                 postId = "tahlan_offspring"
                 name.first = "VOIDCHILD"
                 name.last = ""
-                aiCoreId
                 importance = PersonImportance.LOW
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_offspring")
                 setPersonality(Personalities.RECKLESS)
@@ -98,6 +100,18 @@ object TahlanPeople {
                 stats.setSkillLevel("impact_mitigation", 2f)
                 stats.setSkillLevel("point_defense", 2f)
                 memoryWithoutUpdate.set(FEARLESS, true)
+            }
+            ip.addPerson(person)
+        }
+
+        if (getPerson(DEVIL) == null) {
+            val person = Global.getFactory().createPerson().apply {
+                id = DEVIL
+                setFaction(LEGIO)
+                gender = FullName.Gender.FEMALE
+                rankId = Ranks.SPACE_CAPTAIN
+                postId = Ranks.POST_SPECIAL_AGENT
+                importance = PersonImportance.HIGH
             }
             ip.addPerson(person)
         }
