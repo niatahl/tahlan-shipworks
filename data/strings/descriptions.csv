@@ -126,6 +126,17 @@ Combining a powerful fighter complement with effective shipborne weaponry, this 
 tahlan_flare,SHIP,"A remnant of the autonomous AI fleets developed by the Tri-Tachyon Corporation. Illegal under Domain (and Hegemony) law, and an abomination to the Church of Galactic Redemption, the First AI War saw these creations purged from the Sector. So the official histories say.
 
 Playing host to two wings of Terminator drones, the Flare is a point defense powerhouse that does not have to compromise on firepower.",,,
+tahlan_imperator,SHIP,"In the pre-collapse era it was common knowledge that every once in a while the mighty Domain navy would proudly present a new latest and greatest warship to the galaxy at large, an act of both audacity and calculated propaganda to remind all under the Domain's rule of its absolute power. The Imperator is one such warship, massive in scale and capable of fielding a truly staggering amount of firepower, a prestige project like many before it.
+
+Far less commonly known is the fact that a number of Imperator-class battleships were built to the specs of the Nightwatch, covered in stealth plating and equipped with state-of-the-art command and control suites, sensor arrays and electronic warfare suits alike. Coated in the black and red colors of the Nightwatch, these massive vessels served as mobile headquarters for the shadowy organisation's many branches across the vastness of Domain space.
+
+Had one asked before the collapse, noone would've thought a Nightwatch branch might possibly be operating in the backwater that was the Persean Sector, not that the name would've meant anything to anyone but high-ranking Domain officials and those working on the edges of Domain law.
+
+According to recovered logs, this particular Imperator served as command headquarters of Bureau 83 of the Nightwatch, tasked with investigating and persecuting a number of concerning individuals within the XIVth Battlegroup, an assignment that would never go fulfilled when the gate network shut down. Their objective seemingly lost well out of reach, Nightwatch leadership quickly descended into infighting as moderate and radical elements of the group collided over the question what the group's course of action should be.
+
+While moderate elements wished to lend their assets to stabilising the sector in cooperation with local leaderships, the more radical elements saw only one correct choice, the subjugation of the sector under the only true successor to the Domain government. Disagreements continued for many years as small detachments of Nightwatch forces toom independent action to clear the paths for the respective goals, but no consensus could be found and struggles for power within the organisation began turning to violence.
+
+It wasn't until the arrival of the XIVth Battlegroup that matters escalated, setting in motion a path of events that would spell the end of the Nightwatch and the birth of what is now known as the Legio Infernalis.",,,
 ,,,,,
 ,,,,,
 #LosTech,,,,,
@@ -255,7 +266,7 @@ tahlan_dominator_dmn,SHIP,"#> Ship Classification: Unknown
 tahlan_sunder_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest match.
 #> Match found.
-#> >> Sunder-class Cruiser : 62% match
+#> >> Sunder-class Destroyer : 62% match
 #> WARNING: Analysis shows sign of [REDACTED]
 #> >> Target capabilities: Unknown
 #> .
@@ -266,7 +277,18 @@ tahlan_sunder_dmn,SHIP,"#> Ship Classification: Unknown
 tahlan_hound_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest match.
 #> Match found.
-#> >> Hound-class Cruiser : 81% match
+#> >> Hound-class Frigate : 81% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_kodai_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Kodai-class Cruiser : 84% match
 #> WARNING: Analysis shows sign of [REDACTED]
 #> >> Target capabilities: Unknown
 #> .
@@ -539,7 +561,7 @@ tahlan_strahlfaust_l,WEAPON,"A heavily charged plasma beam that branched off the
 ,,,,,
 ,,,,,
 tahlan_daemoncore,RESOURCE,"Just how exactly the Legio Infernalis has modified this AI core is uncertain, but it houses a Beta-level AI that has been twisted into a pure machine of war. Terrifying in command of any ship, it is no longer capable of performing other tasks.",,,
-tahlan_archdaemoncore,RESOURCE,"The design of this AI core can only be described as arcane, seemingly the product of lost Domain-era technology. The machine mind contained in the device exists solely to destroy, an Alpha-level intellect focused solely on war.",,,
+tahlan_archdaemoncore,RESOURCE,"The design of this AI core can only be described as arcane, seemingly the product of lost Domain-era technology. The machine mind contained in the device exists solely to destroy, an Alpha-level intellect made to revel in violence alone.",,,
 tahlan_neurallink,RESOURCE,[This should never be visible],,,
 ,,,,,
 # Ship Systems,,,,,
@@ -604,7 +626,9 @@ tahlan_rubicon_p01,CUSTOM,"Host to a considerable slave population, Melchiresa s
 tahlan_rubicon_p03,CUSTOM,The presumed headquarters of the Legio Infernalis are buried deep into the surface of Lucifron. The toxic atmosphere of this world has bred a hardened population that eagerly enters the Legio's service in hopes of claiming a greener world for themselves.,,"Just seeing the toxic atmosphere of the planet, you can almost smell the sulphurous stench that you know permeates every corner of Lucifron and look forward to your departure already.",
 tahlan_rubicon_outpost,CUSTOM,A small military outpost at the edge of the system. Extensively used as a training facility for the crews of some of the more advanced Legio vessels.,,"The heavily armed station is barely visible before the red nebula, coated in black metal, its many armaments on full display. In the far distance behind it you behold the black hole at the heart of the system. You have yet to truly decide which of the two is more frightening to behold.",
 ,,,,,
-tahlan_legioinfernalis,FACTION,"The Legio Infernalis are an odd breed of pirates with great ambitions that has recently come to greater prominence. While most of them are no different from the average pirate, their leadership appears significantly more sophisticated with a well-established military hierarchy.
+tahlan_legioinfernalis,FACTION,"Pirate groups are aplenty in the post-collapse sector, so it is of little surprise in retrospect that the ambitious Legio Infernalis was seen as just one of many for a great many years. Often better equipped than their contemporaries, they were nonetheless often overlooked due to laying relatively low and greater events keeping the attention of the Sector's primary powers. While Loke ran rampant across the sector, the Legio stuck to its backwater worlds at the very edge of the core. When the AI wars raged, few paid attention to Legio raids on Tri-Tachyon research facilities, and when they did, most appreciated the acts against the power-hungry corporation.
 
-Legio Infernalis fleets are feared for their far superior equipment when compared to regular pirates and it is assumed they receive considerable backing from an unknown organization.",,,
+When the dust of the AI wars settled, curious eyes finally cared to take a closer look at the shadowy pirate group which had persisted for longer than one would expected from a band of murderers and thieves. Legio fleets had recently become fighting forces of concerning power and the infamous Rubicon system had made a name for itself as a place of no return among independent starfarers.
+
+The Legio's true ambitions remain hidden to this day, but as more of the brighter minds in the sector have made efforts to dig deeper, one name in particular has surfaced on more occasions than coincidence would permit: The Nightwatch.",,,
 ,,,,,

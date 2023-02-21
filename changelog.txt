@@ -5,6 +5,7 @@
 	- Removed innate damage bonus to cruisers and capitals
 	- Enrage function now reduces range 
 - Made some updates to Legio Rising bounty
+- Made Legio a little less invasion-happy
 - Added Daemon AI Cores
 - Improved Legio Tyranny description
 - Hel Scaith

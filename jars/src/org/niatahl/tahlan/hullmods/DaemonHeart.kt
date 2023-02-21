@@ -170,7 +170,7 @@ class DaemonHeart : BaseHullMod() {
         }
 
         // and another
-        if (!member.fleetCommander.faction.id.contains("legioinfernalis")) {
+        if (!member.fleetCommander.faction.id.contains("legioinfernalis") && !member.fleetCommander.faction.id.contains("unknown")) {
             return
         }
 

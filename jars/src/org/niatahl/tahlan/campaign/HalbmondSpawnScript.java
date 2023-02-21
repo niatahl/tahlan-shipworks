@@ -13,6 +13,7 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySp
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.Pair;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
+import com.fs.starfarer.campaign.CampaignEntity;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.lazywizard.lazylib.MathUtils;
@@ -67,6 +68,8 @@ public class HalbmondSpawnScript {
         WEIGHTS.put(LocationType.NEAR_STAR, 1f);
     }
 
+
+
     // Functions
 
     /**
@@ -100,6 +103,7 @@ public class HalbmondSpawnScript {
                 numberOfSpawns++;
             }
         }
+
     }
 
 
