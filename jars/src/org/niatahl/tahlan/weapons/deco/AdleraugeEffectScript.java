@@ -82,7 +82,7 @@ public class AdleraugeEffectScript implements EveryFrameWeaponEffectPlugin {
             final float radius = (EFFECT_RANGE * 2f) * scale / view.getViewMult();
             sprite.setSize(radius, radius);
             sprite.setColor(COLOR);
-            sprite.setAlphaMult(0.1f);
+            sprite.setAlphaMult((float) (0.1 / Math.ceil(ship.getMutableStats().getTimeMult().getModifiedValue())));
             sprite.renderAtCenter(view.convertWorldXtoScreenX(loc.x) * scale, view.convertWorldYtoScreenY(loc.y) * scale);
             sprite.setAngle(rotation);
             glPopMatrix();

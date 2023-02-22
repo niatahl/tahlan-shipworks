@@ -117,6 +117,13 @@ Regeneration is %s while overloaded and %s while actively venting flux and for %
 
 While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,defensive,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Hel Altar Device,tahlan_helaltar,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.HelAltar,"This ships serves a command and control unit for all Daemons within %s range.
+
+All allied ships with the %s hullmod within range receive %s less damage and deal %s more damage to missiles and fighters.
+
+Also affects this ship itself.
+
+Effects from multiple Altars do not stack.",Buffs self and allies,graphics/tahlan/hullmods/tahlan_adlerauge.png
 Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",Special,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.",Allows Cieve to control ship,graphics/tahlan/hullmods/cieve_link.png
 Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,graphics/tahlan/hullmods/tahlan_stealthplating.png
 Unique,tahlan_notorious,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Notorious,"This ship is %s for being of a unique design, easily identified even with fleet transponder disabled.",Makes ship notable,

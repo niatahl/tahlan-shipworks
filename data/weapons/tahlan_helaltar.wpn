@@ -1,0 +1,31 @@
+{
+  "animationType": "NONE",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.deco.HelAltarEffectScript",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "tahlan_helaltar",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "",
+  "renderAboveAllWeapons": 0,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "",
+  "type": "DECORATIVE"
+}
