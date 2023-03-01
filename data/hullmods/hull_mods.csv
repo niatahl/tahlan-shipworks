@@ -108,14 +108,16 @@ Increases supply use for maintenance and recovery by %s.",Enhances targeting,gra
 Daemon Boost,tahlan_daemonboost,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonBoost,(Hidden) Dumb workaround,(Hidden) Dumb workaround,graphics/tahlan/hullmods/tahlan_lirefit.png
 Hel Carapace,tahlan_daemonarmor,,,,defensive,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.DaemonArmor,"The unusual armor used on this ship possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
-Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
+Dampens particularly heavy impacts exceeding %s points of damage. The portion exceeding the threshold is reduced by %s.
 
-While easily negating chip damage, the low durability makes it vulnerable to focused fire.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",Defenses,,,,,8,15,20,40,org.niatahl.tahlan.hullmods.DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
+Dampens particularly heavy impacts exceeding %s points of damage. The portion exceeding the threshold is reduced by %s.
+
 Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.
 
-While easily negating chip damage, the armor is far less resistant than standard plating, reducing total armor rating by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+The heavy modifications result in total armor rating being reduced by %s, including increases from hullmods such as %s.",Regenerates Armor,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,defensive,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Altar Device,tahlan_helaltar,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.HelAltar,"This ships serves a command and control unit for all Daemons within %s range.
 

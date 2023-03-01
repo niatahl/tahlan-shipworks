@@ -10,6 +10,8 @@ import com.fs.starfarer.api.ui.Alignment
 import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.combat.DefenseUtils
+import org.niatahl.tahlan.hullmods.DaemonArmor.Companion.DAMAGE_CAP
+import org.niatahl.tahlan.hullmods.DaemonArmor.Companion.DAMAGE_CAP_REDUCTION
 import org.niatahl.tahlan.hullmods.DaemonArmor.DaemonArmorListener
 import org.niatahl.tahlan.utils.Utils
 import org.niatahl.tahlan.utils.Utils.txt
@@ -53,7 +55,7 @@ class DaemonPlating : BaseHullMod() {
         for (x in grid.indices) {
             for (y in grid[0].indices) {
                 if (grid[x][y] < max) {
-                    val regen = grid[x][y] + repairAmount
+                    val regen = (grid[x][y] + repairAmount).coerceAtMost(max)
                     armorGrid.setArmorValue(x, y, regen)
                 }
             }
@@ -84,14 +86,20 @@ class DaemonPlating : BaseHullMod() {
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI?): String? {
-        if (index == 0) return "" + REGEN_PER_SEC_PERCENT.roundToInt() + txt("%")
-        if (index == 1) return "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
-        if (index == 2) return "" + CALC_FLAT.roundToInt()
-        if (index == 3) return txt("halved")
-        if (index == 4) return txt("disabled")
-        if (index == 5) return "" + DISRUPTION_TIME.roundToInt() + "s"
-        if (index == 6) return "" + ((1f - ARMOR_MULT) * 100f).roundToInt() + txt("%")
-        return if (index == 7) txt("heavyarmor") else null
+
+        return when (index) {
+            0 -> "" + REGEN_PER_SEC_PERCENT.roundToInt() + txt("%")
+            1 -> "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
+            2 -> "" + CALC_FLAT.roundToInt()
+            3 -> "" + DAMAGE_CAP.roundToInt()
+            4 -> "" + ((1f - DAMAGE_CAP_REDUCTION) * 100f).roundToInt() + txt("%")
+            5 -> txt("halved")
+            6 -> txt("disabled")
+            7 -> "" + DISRUPTION_TIME.roundToInt() + " " + txt("seconds")
+            8 -> "" + ((1f - ARMOR_MULT) * 100f).roundToInt() + txt("%")
+            9 -> txt("heavyarmor")
+            else -> null
+        }
     }
 
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {

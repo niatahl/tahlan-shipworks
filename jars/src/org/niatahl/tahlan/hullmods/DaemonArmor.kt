@@ -38,7 +38,7 @@ class DaemonArmor : BaseHullMod() {
         for (x in grid.indices) {
             for (y in grid[0].indices) {
                 if (grid[x][y] < max) {
-                    val regen = grid[x][y] + repairAmount
+                    val regen = (grid[x][y] + repairAmount).coerceAtMost(max)
                     armorGrid.setArmorValue(x, y, regen)
                 }
             }
@@ -55,9 +55,11 @@ class DaemonArmor : BaseHullMod() {
             0 -> "" + REGEN_PER_SEC_PERCENT.roundToInt() + txt("%")
             1 -> "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
             2 -> "" + CALC_FLAT.roundToInt()
-            3 -> txt("halved")
-            4 -> txt("disabled")
-            5 -> "" + DISRUPTION_TIME.roundToInt() + " " + txt("seconds")
+            3 -> "" + DAMAGE_CAP.roundToInt()
+            4 -> "" + ((1f - DAMAGE_CAP_REDUCTION) * 100f).roundToInt() + txt("%")
+            5 -> txt("halved")
+            6 -> txt("disabled")
+            7 -> "" + DISRUPTION_TIME.roundToInt() + " " + txt("seconds")
             else -> null
         }
     }
@@ -66,6 +68,10 @@ class DaemonArmor : BaseHullMod() {
         override fun modifyDamageTaken(param: Any?, target: CombatEntityAPI, damage: DamageAPI, point: Vector2f, shieldHit: Boolean): String? {
             if (shieldHit) return null
             if (target !is ShipAPI) return null
+
+            if (damage.damage > DAMAGE_CAP) {
+                damage.damage = DAMAGE_CAP + (damage.damage - DAMAGE_CAP) * DAMAGE_CAP_REDUCTION
+            }
 
             if (target.variant.hasHullMod("tahlan_daemonarmor") || target.variant.hasHullMod("tahlan_daemonplating")) {
                 if (damage.damage > 0) {
@@ -81,5 +87,7 @@ class DaemonArmor : BaseHullMod() {
         private const val REGEN_PER_SEC_PERCENT = 10f
         private const val CALC_FLAT = 200f
         private const val DISRUPTION_TIME = 2f
+        const val DAMAGE_CAP = 2000f
+        const val DAMAGE_CAP_REDUCTION = 0.5f
     }
 }

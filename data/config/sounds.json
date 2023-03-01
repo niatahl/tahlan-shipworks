@@ -2,23 +2,23 @@
   "music":{
 				
 		"tahlan_legio_neutral":[
-			{"file":"legio_neutral.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+			{"file":"MesoTroniK_-_legio_neutral.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
 		],
 		"tahlan_legio_friendly":[
-			{"file":"legio_friendly.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+			{"file":"MesoTroniK_-_legio_friendly.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
 		],
 		"tahlan_legio_hostile":[
-			{"file":"legio_hostile.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+			{"file":"MesoTroniK_-_legio_hostile.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
 		],
     "tahlan_legio_fleet_neutral":[
-			{"file":"legio_fleet_neutral.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+			{"file":"Haploygynae_-_legio_fleet_neutral.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
 		],
 		"tahlan_legio_fleet_friendly":[
-			{"file":"legio_fleet_friendly.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
+			{"file":"Haploygynae_-_legio_fleet_friendly.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
 		],
 		"tahlan_legio_fleet_hostile":[
-			{"file":"legio_fleet_hostile.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false},
-		],
+			{"file":"Haploygynae_-_legio_fleet_hostile.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
+		]
   },
 
   "tahlan_rrskimmer_use": [
