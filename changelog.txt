@@ -4,10 +4,12 @@
 	- Renamed "Daemon Core" hullmod to "Daemonic Heart"
 	- Removed innate damage bonus to cruisers and capitals
 	- Enrage function now reduces range 
+	- Reworked the effects of Daemonic Heart and Hel Carapace/Plating
 - Made some updates to Legio Rising bounty
 - Made Legio a little less invasion-happy
 - Added Daemon AI Cores
 - Improved Legio Tyranny description
+- Reduced minimum cycle for most HVBs
 - Hel Scaith
 	- Can turn a little better again
 	- Shield arc 120 -> 270
@@ -43,6 +45,8 @@
 	- Burn 9 -> 8
 - Rigveda
 	- Burn 10 -> 9
+- Cordite
+	- DP 25 -> 20
 - Karion battery
 	- Ammo, regen and burst size doubled
 - Kupferflug Regalia

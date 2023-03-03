@@ -109,7 +109,7 @@ class PenetrationDriveAI : ShipSystemAIScript {
         return flankingScore
     }
 
-    override fun advance(amount: Float, missileDangerDir: Vector2f?, collisionDangerDir: Vector2f?, target: ShipAPI) {
+    override fun advance(amount: Float, missileDangerDir: Vector2f?, collisionDangerDir: Vector2f?, target: ShipAPI?) {
 
         // don't check if paused
         if (engine!!.isPaused) return
@@ -178,6 +178,8 @@ class PenetrationDriveAI : ShipSystemAIScript {
             }
         }
 
+        if (target == null) return
+
         // if we have an assignment, set our target loc to it
         // otherwise, if we have a hostile target, set our target loc to intercept it
         if (assignment != null && assignment.target != null) {
@@ -202,14 +204,7 @@ class PenetrationDriveAI : ShipSystemAIScript {
             }
         }
 
-        /*
-        for (AIFlags f : AWAY) {
-            if (flags.hasFlag(f) && !rightDirection(ship, targetLocation)) {
-                useMe = true;
-                //spawnText("away",0f);
-            }
-        }
-        */if (useMe) {
+        if (useMe) {
             ship!!.useSystem()
             if (targetShip) {
                 neededDur = (MathUtils.getDistance(ship!!.location, targetLocation) + (ship!!.collisionRadius + target.collisionRadius)) / speed

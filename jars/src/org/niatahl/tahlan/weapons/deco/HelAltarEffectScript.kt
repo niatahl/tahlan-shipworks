@@ -57,7 +57,7 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
             val radius = EFFECT_RANGE * 2f * scale / view.viewMult
             sprite!!.setSize(radius, radius)
             sprite!!.color = COLOR
-            sprite!!.alphaMult = (0.1f / ceil(ship.mutableStats.timeMult.modifiedValue))
+            sprite!!.alphaMult = (0.15f / ceil(ship.mutableStats.timeMult.modifiedValue))
             sprite!!.renderAtCenter(
                 view.convertWorldXtoScreenX(loc.x) * scale,
                 view.convertWorldYtoScreenY(loc.y) * scale
@@ -113,7 +113,7 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
 
         // sprite path - necessary if loaded here and not in settings.json
         const val SPRITE_PATH = "graphics/tahlan/fx/tahlan_tempshield_ring_b.png"
-        val COLOR = Color(186, 47, 52, 185)
+        val COLOR = Color(186, 47, 52)
         const val ROTATION_SPEED = 20f
     }
 }

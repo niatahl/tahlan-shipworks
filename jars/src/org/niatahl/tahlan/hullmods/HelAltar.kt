@@ -28,8 +28,8 @@ class HelAltar : BaseHullMod() {
         return when (index) {
             0 -> "" + HelAltarEffectScript.EFFECT_RANGE.roundToInt() + Utils.txt("su")
             1 -> Global.getSettings().getHullModSpec(DAEMONIC_HEART).displayName
-            2 -> "" + ((1f - HelAltarEffectScript.DAMAGE_MULT)*100f).roundToInt() + Utils.txt("%")
-            3 -> "" + ((1f - HelAltarEffectScript.PDDMG_MULT)*100f).roundToInt() + Utils.txt("%")
+            2 -> "" + ((1f - HelAltarEffectScript.DAMAGE_MULT) * 100f).roundToInt() + Utils.txt("%")
+            3 -> "" + ((HelAltarEffectScript.PDDMG_MULT - 1f) * 100f).roundToInt() + Utils.txt("%")
             else -> null
         }
     }

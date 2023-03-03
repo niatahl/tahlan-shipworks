@@ -18,6 +18,7 @@ import org.lazywizard.lazylib.combat.CombatUtils
 import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.utils.modify
 import java.awt.Color
+import kotlin.math.abs
 
 class PenetrationDriveStats : BaseShipSystemScript() {
     private val FLICKER_COLOR = Color(129, 110, 99, 131)
@@ -38,8 +39,8 @@ class PenetrationDriveStats : BaseShipSystemScript() {
         }
         val engine = Global.getCombatEngine()
 
-        val TimeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel
-        stats.timeMult.modifyMult(id, TimeMult)
+        val timeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel
+        stats.timeMult.modifyMult(id, timeMult)
         ship.engineController.fadeToOtherColor(this, ENGINE_COLOR, Color(0, 0, 0, 0), effectLevel, 0.67f)
         val driftamount = engine.elapsedInLastFrame
         interval.advance(engine.elapsedInLastFrame)
@@ -94,7 +95,7 @@ class PenetrationDriveStats : BaseShipSystemScript() {
                         val delta = Vector2f.sub(point,target.location,Vector2f())
                         val angle = VectorUtils.getFacing(delta)
                         val distance = MathUtils.getDistance(target.location,point)
-                        hit = ( ( Math.abs(angle - target.shield.facing) < target.shield.activeArc/2f ) && distance < target.shield.radius )
+                        hit = ( ( abs(angle - target.shield.facing) < target.shield.activeArc/2f ) && distance < target.shield.radius )
                     }
                     if (hit) {
                         collided.add(target)

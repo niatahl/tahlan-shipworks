@@ -301,7 +301,7 @@
       "locations": [-90, 101]
     },
     {
-      "id: "ALTAR",
+      "id": "ALTAR",
       "size": "MEDIUM",
       "type": "DECORATIVE",
       "mount": "TURRET",
