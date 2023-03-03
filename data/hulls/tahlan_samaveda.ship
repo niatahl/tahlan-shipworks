@@ -15,8 +15,7 @@
     "automated"
   ],
   "builtInWings": [
-    "terminator_wing",
-    "terminator_wing"
+    "tahlan_sutra_drone_wing"
   ],
   "builtInWeapons": {
     "WS0014": "tahlan_samaveda_cover_l",

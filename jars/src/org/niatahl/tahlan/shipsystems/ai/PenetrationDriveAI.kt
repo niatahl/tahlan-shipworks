@@ -109,7 +109,7 @@ class PenetrationDriveAI : ShipSystemAIScript {
         return flankingScore
     }
 
-    override fun advance(amount: Float, missileDangerDir: Vector2f, collisionDangerDir: Vector2f, target: ShipAPI) {
+    override fun advance(amount: Float, missileDangerDir: Vector2f?, collisionDangerDir: Vector2f?, target: ShipAPI) {
 
         // don't check if paused
         if (engine!!.isPaused) return
