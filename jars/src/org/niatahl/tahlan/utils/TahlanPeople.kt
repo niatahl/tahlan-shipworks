@@ -96,9 +96,9 @@ object TahlanPeople {
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_offspring")
                 setPersonality(Personalities.RECKLESS)
                 stats.level = 3
-                stats.setSkillLevel("combat_endurance", 2f)
-                stats.setSkillLevel("impact_mitigation", 2f)
-                stats.setSkillLevel("point_defense", 2f)
+                stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
+                stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
+                stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
                 memoryWithoutUpdate.set(FEARLESS, true)
             }
             ip.addPerson(person)
@@ -108,10 +108,21 @@ object TahlanPeople {
             val person = Global.getFactory().createPerson().apply {
                 id = DEVIL
                 setFaction(LEGIO)
+                name.first = "Louisa"
+                name.last = "Ferre"
                 gender = FullName.Gender.FEMALE
                 rankId = Ranks.SPACE_CAPTAIN
                 postId = Ranks.POST_SPECIAL_AGENT
                 importance = PersonImportance.HIGH
+                portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_devil")
+                stats.level = 7
+                stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
+                stats.setSkillLevel(Skills.MISSILE_SPECIALIZATION, 1f)
+                stats.setSkillLevel(Skills.HELMSMANSHIP, 1f)
+                stats.setSkillLevel(Skills.SYSTEMS_EXPERTISE, 1f)
+                stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
+                stats.setSkillLevel(Skills.POLARIZED_ARMOR, 2f)
+                stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
             }
             ip.addPerson(person)
         }

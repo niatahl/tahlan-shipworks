@@ -62,38 +62,66 @@ OR
 # LEGIO_BLACKWATCH_BAR,,,,,,
 legioBlackwatchBarEventAdd,AddBarEvents,"$faction.id == pirates
 $global.tahlan_metLegioAtBar == false
-RollProbability 0","AddBarEvent legioBlackwatchBarEvent ""Approach the Legio officer"" ""A young woman in a uniform bearing the Legio sigil is sitting in a secluded corner of the bar, seemingly annoyed and waiting for someone and staring daggers at anyone who dares approach.""",,,
+RollProbability 0.5","AddBarEvent legioBlackwatchBarEvent ""Approach the Legio officer"" ""A young woman in a uniform bearing the Legio sigil is sitting in a secluded corner of the bar, seemingly annoyed and waiting for someone, staring daggers at anyone who dares approach.""",,,
 ,,,,,,
-legiobareventencounter_intro1,DialogOptionSelected,"$option == tahlanlegiobareventnightwatch","$global.tahlan_metLegioAtBar = true
+legiobareventencounter_intro1,DialogOptionSelected,"$option == legioBlackwatchBarEvent","$global.tahlan_metLegioAtBar = true
 BeginConversation ""tahlan_devil"" true true","The woman looks you over dismissively then raises an eyebrow as it is clear you aren't just walking past.
+
 ""You are clearly not my contact here, but none of the usual pirate rabble either. What do you want?""","legiobareventencounter_intro1res1: ""Just thought I'd have a little chat.""
 legiobareventencounter_intro1res2:""Apologies, I must have mistaken you for someone else.""",
 legiobareventencounter_intro2,DialogOptionSelected,"$option == legiobareventencounter_intro1res1",,"""Just a chat?""
+
 She looks at you, bemused.
+
 ""Sure, why not, I suppose. My contact seems to be running late anyhow and none of the inbred human refuse usually frequenting these is going to offer me much entertainment while I wait anyhow.""","legiobareventencounter_intro2res1:Take a seat",
 legiobareventencounter_intro3,DialogOptionSelected,"$option == legiobareventencounter_intro1res2",,"The woman chuckles.
+
 ""Like I would believe that. Don't think I don't know how much I stand out among the .. scenery, I suppose. Please, do take a seat, entertain me a little while I wait here.""","legiobareventencounter_intro2res1:Take a seat
 legiobareventencounter_exit:""No thanks""",
 legiobareventencounter_intro4,DialogOptionSelected,"$option == legiobareventencounter_intro2res1",,"""Well then, Captain, I presume that's what you are, yes? Commander of the independent fleet that just arrived? We do keep eyes on such things.""
+
 She smirks, not bothering to wait for you to confirm what she clearly already believes to be facts, and you get the feeling she quite likes the sound of her own voice.
+
 ""Now, I can only guess what drove you my way, but I'm guessing it is this fashionable uniform of mine.""
 ","legiobareventencounter_intro4res1:""It does stand out, yes""",
 legiobareventencounter_intro5,DialogOptionSelected,"$option == legiobareventencounter_intro4res1",,"""So I can only assume that since I don't know you, you have some business with our great Legion. I could see why you'd be eager to join our cause, but I'm not the one to talk to, you know.""
+
 She pauses for a moment.
+
 ""Or is there something else you want? Do tell, if so.""","legiobareventencounter_hub1:""Do you always just hang around seedy bars all by yourself?""
 legiobareventencounter_hub2:""Why would I ever wish to join you?""
 legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
 legiobareventencounter_exit:""I think that'll be all""",
 legiobareventencounter_introexit,DialogOptionSelected,"$option == legiobareventencounter_exit",,"""Suit yourself""","backToBar:Return to the bar",
 ,,,,,,
-legiobareventencounter_black1,,,,,,
+legiobareventencounter_black1,DialogOptionSelected,"$option == legiobareventencounter_hub1",,"""Clearly not""
+
+She scoffs at the insinuation.
+
+""I'm here on Blackwatch business, but clearly my contact is incapable of reading a basic timekeeper. We should just get rid of these pirate buffoons already.""","legiobareventencounter_black1res1:Blackwatch, yes? The infamous Legio elite corps, is it?",
+legiobareventencounter_black2,DialogOptionSelected,"$option == legiobareventencounter_black1res1",,"""I suppose that's an accurate enough description for the likes of you. We are the ones carrying on the legacy of the glorious Nightwatch. Not that I think you've ever heard of our great progenitors, but it's of little importance to you.""
+
+Her eyes tell you clearly, she has no interest to further discuss this topic.
+
+""So, anything else?""","legiobareventencounter_hub2:""Why would I ever wish to join you?""
+legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
+legiobareventencounter_exit:""I think that'll be all""",
 ,,,,,,
-legiobareventencounter_uber1,,"$option == legiobareventencounter_hub3",,,,
+legiobareventencounter_uber1,DialogOptionSelected,"$option == legiobareventencounter_hub3",,"She raises an eyebrow at the question.
+
+""Implants, actually. What an odd question to ask, though, I must say. Don't you have plenty of cybermods yourself? Not to mention those abominations watching your back, more machine than man by the looks of it.""","legiobareventencounter_uber1res1:Blackwatch standard issue, are they?",
+legiobareventencounter_uber2,DialogOptionSelected,"$option == legiobareventencounter_uber1res1",,"""An astute observation, I'll give you that. You wouldn't understand but the crimson eyes that see the truth are a great honor bestowed only upon our best. Not to praise myself, but that is how it is.""","legiobareventencounter_uber1res2:I see",
+legiobareventencounter_uber3,DialogOptionSelected,"$option == legiobareventencounter_uber1res2",,"""So, anything else then?""","legiobareventencounter_hub1:""Do you always just hang around seedy bars all by yourself?""
+legiobareventencounter_hub2:""Why would I ever wish to join you?""
+legiobareventencounter_exit:""I think that'll be all""",
 ,,,,,,
-legiobareventencounter_rant1,DialogOptionSelected,"$option == legiobareventencounter_hub2",,"#rant start","legiobareventencounter_rant1res1:""It does stand out, yes""",
-legiobareventencounter_rant2,DialogOptionSelected,"$option == legiobareventencounter_rant1res1",,"""You don't see it, do you? Is your mind really so tiny that you can't understand what we are doing? We are the future, a better mankind, actual worthy successors of the great Domain. You should be happy to be a part of our rise, revel in the joy of having been witness to the day humanity ascended to to its true potential. The process will require sacrifice, no doubt, but isn't that a fine price to pay for the boundless prosperity we can bring to the people of this sector and the worlds beyond? Once our work here is done, we will reopen the gates and bring about a new era, a beautiful new order of things, grander than anything even the old Domain had achieved.""","legiobareventencounter_rant2res1:Do you even hear yourself talking?",
-legiobareventencounter_rant3,DialogOptionSelected,"$option == legiobareventencounter_rant2res1",,"""Of course, and clearly at that. People like you just fail to see the big picture and it makes me sad. We could have this beautiful future with no need for bloodshed if you and your like could just LISTEN, but no, you have to resist and force our hand. We only seek to bring about an age of prosperity, progress and peace, but you oppose us at every turn, put yourselves in front of the blade we did not wish to bear against you. All this pain, all this suffering, it is entirely on you. You chose this, your feeble little minds drag us all down and so we must resort to the one language you understand."" ","legiobareventencounter_rant3res1:Do you even hear yourself talking?",
-legiobareventencounter_rant4,DialogOptionSelected,"$option == legiobareventencounter_rant3res1",,"#Insert dialog here","#If final part, will return back to bar.
-backToBar:Return to the bar",
+legiobareventencounter_rant1,DialogOptionSelected,"$option == legiobareventencounter_hub2",,"""Because we are the sector's only genuine hope at becoming something great?""","legiobareventencounter_rant1res1:Last I checked, your people were going around murdering anyone they come across.",
+legiobareventencounter_rant2,DialogOptionSelected,"$option == legiobareventencounter_rant1res1",,"""You don't see it, do you? Is your mind really so tiny that you can't understand what we are doing? We are the future, a better mankind, actual worthy successors of the great Domain. You should be happy to be a part of our rise, revel in the joy of having been witness to the day humanity ascended to its true potential. The process will require sacrifice, no doubt, but isn't that a fine price to pay for the boundless prosperity we can bring to the people of this sector and the worlds beyond? Once our work here is done, we will reopen the gates and bring about a new era, a beautiful new order of things, grander than anything even the old Domain had achieved.""","legiobareventencounter_rant2res1:Do you even hear yourself talking?",
+legiobareventencounter_rant3,DialogOptionSelected,"$option == legiobareventencounter_rant2res1",,"""Of course, and clearly at that. People like you just fail to see the big picture and it makes me sad. We could have this beautiful future with no need for bloodshed if you and your like could just LISTEN, but no, you have to resist and force our hand. We only seek to bring about an age of prosperity, progress and peace, but you oppose us at every turn, put yourselves in front of the blade we did not wish to bear against you. All this pain, all this suffering, it is entirely on you. You chose this, your feeble little minds drag us all down and so we must resort to the one language you understand."" ","legiobareventencounter_rant3res1:You are insane, that's what you are.",
+legiobareventencounter_rant4,DialogOptionSelected,"$option == legiobareventencounter_rant3res1",,"The woman sighs heavily, then leans back again, a look of disappointment in her eyes.
+
+""Forget it. I was clearly foolish to think you could ever see the great picture like we do. I won't waste my breath arguing such misguided opinions. You'll come around to it in due time. Now, was there anything else?""","legiobareventencounter_hub1:""Do you always just hang around seedy bars all by yourself?""
+legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
+legiobareventencounter_exit:""I think that'll be all""",
 "#END LEGIO_BLACKWATCH_BAR",,,,,,
 

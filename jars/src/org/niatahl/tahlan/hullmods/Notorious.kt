@@ -21,6 +21,6 @@ class Notorious : BaseHullMod() {
     }
 
     override fun getNameColor(): Color {
-        return Color.decode("F3BD7AFF")
+        return Color(243, 189, 122)
     }
 }

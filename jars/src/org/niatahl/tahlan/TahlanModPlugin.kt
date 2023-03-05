@@ -24,6 +24,7 @@ import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
+import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 import org.niatahl.tahlan.utils.TahlanPeople
 import org.niatahl.tahlan.weapons.ai.FountainAI
@@ -357,13 +358,25 @@ class TahlanModPlugin : BaseModPlugin() {
         )
 
         private fun addDaemons(sector: SectorAPI) {
-            DAEMON_SHIPS.forEach { sector.getFaction(LEGIO).addKnownShip(it, false) }
-            DAEMON_WINGS.forEach { sector.getFaction(LEGIO).addKnownFighter(it, false) }
+            DAEMON_SHIPS.forEach {
+                sector.getFaction(LEGIO).addKnownShip(it, false)
+                sector.getFaction(BLACKWATCH).addKnownShip(it, false)
+            }
+            DAEMON_WINGS.forEach {
+                sector.getFaction(LEGIO).addKnownFighter(it, false)
+                sector.getFaction(BLACKWATCH).addKnownFighter(it, false)
+            }
         }
 
         private fun removeDaemons(sector: SectorAPI) {
-            DAEMON_SHIPS.forEach { sector.getFaction(LEGIO).removeKnownShip(it) }
-            DAEMON_WINGS.forEach { sector.getFaction(LEGIO).removeKnownFighter(it) }
+            DAEMON_SHIPS.forEach {
+                sector.getFaction(LEGIO).removeKnownShip(it)
+                sector.getFaction(BLACKWATCH).removeKnownShip(it)
+            }
+            DAEMON_WINGS.forEach {
+                sector.getFaction(LEGIO).removeKnownFighter(it)
+                sector.getFaction(BLACKWATCH).removeKnownFighter(it)
+            }
         }
 
         @Throws(IOException::class, JSONException::class)

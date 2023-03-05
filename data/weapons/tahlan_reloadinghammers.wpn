@@ -25,5 +25,5 @@
 				 "blowbackSpread":15.0,
 				 "particleColor":[100,100,100,200]},	
 	"projectileSpecId":"hammer_torp",
-	"fireSoundTwo":"harpoon_fire",
+	"fireSoundTwo":"hammer_fire",
 }
