@@ -3,6 +3,8 @@ package org.niatahl.tahlan.hullmods
 import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
+import com.fs.starfarer.api.impl.campaign.ids.HullMods
+import data.scripts.util.MagicIncompatibleHullmods
 import org.niatahl.tahlan.utils.Utils
 import kotlin.math.roundToInt
 
@@ -26,6 +28,10 @@ class phaseHarmonics : BaseHullMod() {
     }
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
+        if (ship.variant.hasHullMod(HullMods.PHASE_ANCHOR)) {
+            MagicIncompatibleHullmods.removeHullmodWithWarning(ship.variant, HullMods.PHASE_ANCHOR, Utils.txt("phaseHarmonics"))
+        }
+
         val shield = ship.shield ?: return
         shield.setRadius(ship.shieldRadiusEvenIfNoShield,"graphics/tahlan/fx/tahlan_nxashield.png","graphics/tahlan/fx/tahlan_tempshield_ring.png")
     }
@@ -35,8 +41,13 @@ class phaseHarmonics : BaseHullMod() {
             0 -> Utils.txt("phaseBreaker")
             1 -> "${((1f - DAMAGE_MOD) * 100f).roundToInt()}${Utils.txt("%")}"
             2 -> "${((VENT_MOD - 1f) * 100f).roundToInt()}${Utils.txt("%")}"
+            3 -> Utils.txt("phaseAnchor")
             else -> null
         }
+    }
+
+    override fun isApplicableToShip(ship: ShipAPI): Boolean {
+        return false
     }
 
     companion object {

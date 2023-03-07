@@ -73,7 +73,9 @@
 		"halved": "halved",
 		"pi": "Pi",
 		"heavyarmor": "Heavy Armor",
+		"phaseHarmonics": "Phase Harmonics",
 		"phaseBreaker": "Phase Breaker",
+		"phaseAnchor": "Phase Anchor",
 		"timeflow": "Timeflow altered",
 		"daemonPlatingSmod": "Armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",
 		
