@@ -16,7 +16,7 @@
     <orderEntry type="library" name="LazyLib" level="application" />
     <orderEntry type="library" name="IndEvo" level="application" />
     <orderEntry type="library" name="MagicLib-Kotlin" level="application" />
-    <orderEntry type="library" name="LazyLib-Kotlin" level="application" />
     <orderEntry type="library" name="ExiledSpace" level="project" />
+    <orderEntry type="library" name="LazyLib-Kotlin" level="application" />
   </component>
 </module>

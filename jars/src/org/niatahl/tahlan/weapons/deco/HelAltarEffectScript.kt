@@ -43,6 +43,7 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
             }
             sprite = Global.getSettings().getSprite(SPRITE_PATH)
         }
+
         val loc = ship.location
         val view = Global.getCombatEngine().viewport
         if (view.isNearViewport(loc, EFFECT_RANGE)) {
@@ -57,7 +58,7 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
             val radius = EFFECT_RANGE * 2f * scale / view.viewMult
             sprite!!.setSize(radius, radius)
             sprite!!.color = COLOR
-            sprite!!.alphaMult = (0.15f / ceil(ship.mutableStats.timeMult.modifiedValue))
+            sprite!!.alphaMult = (0.25f / ceil(ship.mutableStats.timeMult.modifiedValue))
             sprite!!.renderAtCenter(
                 view.convertWorldXtoScreenX(loc.x) * scale,
                 view.convertWorldYtoScreenY(loc.y) * scale
