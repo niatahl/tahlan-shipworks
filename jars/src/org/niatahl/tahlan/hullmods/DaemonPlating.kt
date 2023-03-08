@@ -88,15 +88,15 @@ class DaemonPlating : BaseHullMod() {
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI?): String? {
 
         return when (index) {
-            0 -> "" + REGEN_PER_SEC_PERCENT.roundToInt() + txt("%")
-            1 -> "" + (ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt() + "/s"
-            2 -> "" + CALC_FLAT.roundToInt()
-            3 -> "" + DAMAGE_CAP.roundToInt()
-            4 -> "" + ((1f - DAMAGE_CAP_REDUCTION) * 100f).roundToInt() + txt("%")
+            0 -> "${REGEN_PER_SEC_PERCENT.roundToInt()}${txt("%")}"
+            1 -> "${(ARMOR_CAP / 100 * REGEN_PER_SEC_PERCENT).roundToInt()}/s"
+            2 -> "${CALC_FLAT.roundToInt()}"
+            3 -> "${DAMAGE_CAP.roundToInt()}"
+            4 -> "${((1f - DAMAGE_CAP_REDUCTION) * 100f).roundToInt()}${txt("%")}"
             5 -> txt("halved")
             6 -> txt("disabled")
-            7 -> "" + DISRUPTION_TIME.roundToInt() + " " + txt("seconds")
-            8 -> "" + ((1f - ARMOR_MULT) * 100f).roundToInt() + txt("%")
+            7 -> "${DISRUPTION_TIME.roundToInt()}${txt("seconds")}"
+            8 -> "${((1f - ARMOR_MULT) * 100f).roundToInt()}${txt("%")}"
             9 -> txt("heavyarmor")
             else -> null
         }
