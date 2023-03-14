@@ -74,10 +74,8 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
             rotation -= 360f
         }
         for (target in CombatUtils.getShipsWithinRange(ship.location, EFFECT_RANGE)) {
-            if (target.owner == ship.owner) {
-                if (target.owner == ship.owner && !targetList.contains(target) && target.variant.hullMods.contains(DAEMONIC_HEART)) {
-                    targetList.add(target)
-                }
+            if (target.owner == ship.owner && !targetList.contains(target) && target.variant.hullMods.contains(DAEMONIC_HEART)) {
+                targetList.add(target)
             }
         }
         val purgeList = ArrayList<ShipAPI>()

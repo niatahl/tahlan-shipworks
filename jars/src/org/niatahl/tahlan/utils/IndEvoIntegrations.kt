@@ -27,7 +27,6 @@ object IndEvoIntegrations {
             melchi.addIndustry("IndEvo_Artillery_railgun")
             adra.addCondition("IndEvo_ArtilleryStationCondition")
             adra.addIndustry("IndEvo_Artillery_missile")
-            //IndEvo_ArtilleryStationPlacer.placeWatchtowers(Global.getSector().getStarSystem("Rubicon"), "tahlan_legioinfernalis") // Fuck you, Hartley :V
         }
         if (!sector.memoryWithoutUpdate.getBoolean("\$tahlan_minesDeployed")) {
             sector.memoryWithoutUpdate["\$tahlan_minesDeployed"] = true
@@ -41,13 +40,18 @@ object IndEvoIntegrations {
 
     fun upgradeDefenses() {
         val sector = Global.getSector()
+        if (!sector.memoryWithoutUpdate.getBoolean("\$tahlan_indEvoUpgraded")) return
         val lucifron = sector.economy.getMarket("tahlan_rubicon_p03_market") ?: return
         val melchi = sector.economy.getMarket("tahlan_rubicon_p01_market") ?: return
         val adra = sector.economy.getMarket("tahlan_rubicon_outpost_market") ?: return
         if (lucifron.hasCondition("IndEvo_ArtilleryStationCondition")) {
-            if (lucifron.factionId == LEGIO) lucifron.getIndustry("IndEvo_Artillery_mortar").isImproved = true
-            if (melchi.factionId == LEGIO) melchi.getIndustry("IndEvo_Artillery_railgun").isImproved = true
-            if (adra.factionId == LEGIO) adra.getIndustry("IndEvo_Artillery_missile").isImproved = true
+            if (lucifron.factionId == LEGIO && lucifron.getIndustry("IndEvo_Artillery_mortar") != null)
+                lucifron.getIndustry("IndEvo_Artillery_mortar").isImproved = true
+            if (melchi.factionId == LEGIO && melchi.getIndustry("IndEvo_Artillery_railgun") != null)
+                melchi.getIndustry("IndEvo_Artillery_railgun").isImproved = true
+            if (adra.factionId == LEGIO && adra.getIndustry("IndEvo_Artillery_missile") != null)
+                adra.getIndustry("IndEvo_Artillery_missile").isImproved = true
+            sector.memoryWithoutUpdate.set("\$tahlan_indEvoUpgraded", true)
         }
     }
 }
