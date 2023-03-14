@@ -44,30 +44,10 @@
 			"tahlan_legio":6,
 			"tahlan_daemon":30,
 			"rare_bp":3,
+			"pirates":0.5,
+			"tahlan_knights":0.1
 		},
 		"hulls":{		
-			"paragon":2,
-			"astral":2,
-			"istl_jeannedarc":2,
-			"diableavionics_pandemonium":2,
-			"ii_caesar":2,
-			"ii_matriarch":2,
-			"ii_olympus":2,
-			"onslaught_GMHQ":3,
-			"vayra_prophet":2,
-			"MSS_Javanicus_B":2,
-			
-			"SKR_clipper_d":0.1,
-            "SKR_poisonivy":0.1,
-            "SKR_cassowaryRH":0.1,
-            "SKR_guardian":0.05,
-            "SKR_guardian_atc":0.05,
-            "SKR_guardian_broadside":0.05,
-			
-			"SKR_foray_pirate":0.5,
-            "SKR_hightide_pirate":0.5,
-            "SKR_bonnethead_pirate":0.5,
-            "CIV_crane_pirate":0.5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -79,14 +59,20 @@
 		],
 	},
 	"knownShips":{
-		"tags":["base_bp", "pirate_bp", "pirates", "lowtech_bp", "tahlan_legio"],
+		"tags":["base_bp", "pirate_bp", "pirates", "lowtech_bp", "tahlan_legio", "tahlan_knights"],
 		"hulls":[
 			"falcon_p",
 			"atlas2",
 			"tahlan_Eagle_P",
 			"tahlan_Tempest_P",
 			"atlas",
-			"prometheus"
+			"prometheus",
+			"vanguard",
+			"tahlan_tower",
+			"dominator",
+			"manticore",
+			"tahlan_throne",
+			"tahlan_providence"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -95,11 +81,12 @@
 		"hulls":[],
 	},
 	"knownFighters":{
-		"tags":["pirates", "tahlan_legio"],
+		"tags":["pirates", "tahlan_legio", "lowtech_bp"],
 		"fighters":[
 			"broadsword_wing",
 			"talon_wing",
 			"piranha_wing",
+			"perdition_wing"
 		],
 	},
 	"priorityFighters":{

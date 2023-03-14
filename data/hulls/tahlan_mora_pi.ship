@@ -17,7 +17,7 @@
   "weaponSlots": [
     {
       "id": "WS 003",
-      "size": "MEDIUM",
+      "size": "LARGE",
       "type": "MISSILE",
       "mount": "TURRET",
       "arc": 5,

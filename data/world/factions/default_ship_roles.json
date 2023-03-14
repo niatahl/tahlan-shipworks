@@ -187,6 +187,9 @@
 	"carrierMedium": {
 		"tahlan_Bungalow_bomber": 7,
 		"tahlan_Bungalow_elite": 3,
+		"tahlan_mora_pi_strike": 4,
+		"tahlan_mora_pi_reaper": 3,
+		"tahlan_mora_pi_pressure": 3
 	},
 	"carrierLarge": {
 		"tahlan_Castella_standard": 7,

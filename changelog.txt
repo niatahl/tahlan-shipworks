@@ -5,8 +5,13 @@
 	- Removed innate damage bonus to cruisers and capitals
 	- Enrage function now reduces range 
 	- Reworked the effects of Daemonic Heart and Hel Carapace/Plating
+	- Redid some of the paintjobs
 - Made some updates to Legio Rising bounty
 - Made Legio a little less invasion-happy
+- Updated Legio fleet doctrine
+	- Fleets should now feature fewer pirate-grade ships
+	- Added a number of additional lowtech blueprints
+	- Blackwatch now has limited access to GH hulls
 - Added Daemon AI Cores
 - Improved Legio Tyranny description
 - Reduced minimum cycle for most HVBs
