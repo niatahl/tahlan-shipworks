@@ -10,8 +10,7 @@
 			"tahlan_providence":0.5,
 			"tahlan_throne":0.5,
 			"tahlan_skyrend":0.5,
-			"tahlan_raba":0.2,
-			"tahlan_Ingress":0.4
+			"tahlan_raba":0.2
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -23,7 +22,6 @@
 		#"tags":[],
 		"hulls":[
 			"tahlan_Kodai",
-			"tahlan_Ingress",
 			"tahlan_Defiance",
 			"tahlan_Castella",
 			"tahlan_providence",

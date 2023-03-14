@@ -1,0 +1,199 @@
+{
+  "hullName": "Mora (LI)",
+  "hullId": "tahlan_mora_pi",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_mora_pi.png",
+  "style": "LOW_TECH",
+  "height": 190,
+  "width": 220,
+  "center": [111, 88],
+  "collisionRadius": 150,
+  "shieldCenter": [1, 1],
+  "shieldRadius": 140,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_lirefit"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS 003",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [45, 74]
+    },
+    {
+      "id": "WS 004",
+      "size": "MEDIUM",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -50,
+      "locations": [20, -80]
+    },
+    {
+      "id": "WS 005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 20,
+      "locations": [50, 44]
+    },
+    {
+      "id": "WS 007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 200,
+      "angle": -20,
+      "locations": [68, -42]
+    },
+    {
+      "id": "WS 008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": -80,
+      "locations": [1, -101]
+    },
+    {
+      "id": "WS 011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 210,
+      "angle": 80,
+      "locations": [2, 103]
+    },
+    {
+      "id": "WS 012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 160,
+      "angle": -45,
+      "locations": [51, -68]
+    },
+    {
+      "id": "WS 013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 45,
+      "locations": [33, 46]
+    },
+    {
+      "id": "WS 014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 180,
+      "locations": [-58, -2]
+    },
+    {
+      "id": "WS 015",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 300,
+      "angle": 0,
+      "locations": [
+        43, 2,
+        -34, 17,
+        -50, -21,
+        56, 15
+      ]
+    },
+    {
+      "id": "WS 016",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 300,
+      "angle": 0,
+      "locations": [
+        -47, 26,
+        33, 14,
+        78, -10,
+        55, -10
+      ]
+    },
+    {
+      "id": "WS 017",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 300,
+      "angle": 0,
+      "locations": [
+        -35, -17,
+        -48, 13,
+        66, 3,
+        27, -6
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-62, 77],
+      "length": 64,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-63, 66],
+      "length": 64,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-63, -64],
+      "length": 64,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-63, -75],
+      "length": 64,
+      "width": 32,
+      "angle": 180,
+      "contrailSize": 64,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    50, 87,
+    59, 36,
+    72, 33,
+    96, -17,
+    95, -38,
+    50, -66,
+    24, -101,
+    -22, -102,
+    -57, -81,
+    -54, -55,
+    -35, -48,
+    -80, -32,
+    -59, -25,
+    -57, 25,
+    -81, 34,
+    -44, 43,
+    -34, 54,
+    -57, 59,
+    -58, 88,
+    -20, 104,
+    23, 105
+  ]
+}

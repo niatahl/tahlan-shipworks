@@ -8,15 +8,13 @@
 		#"tags":{},
 		"hulls":{
 			"tahlan_Hresvelgr":0.5,
-			"tahlan_skyrend":0.5,
-			"tahlan_Ingress":0.3
+			"tahlan_skyrend":0.5
 		},
 	},
 
 	"knownShips":{
 		"hulls":[
 			"tahlan_Kodai",
-			"tahlan_Ingress",
 			"tahlan_Defiance",
 			"tahlan_Hresvelgr",
 			"tahlan_skyrend",
@@ -26,8 +24,7 @@
 	
 	"priorityShips":{
 		"hulls":[
-			"tahlan_skyrend",
-			"tahlan_Ingress"
+			"tahlan_skyrend"
 		],
 	},
 	

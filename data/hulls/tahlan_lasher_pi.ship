@@ -1,150 +1,108 @@
 {
-  "bounds": [
-    -29.5,
-    -23,
-    10,
-    -44,
-    30,
-    -37,
-    11,
-    -34.5,
-    60,
-    -0,
-    11,
-    34.5,
-    30,
-    37,
-    10,
-    44,
-    -29.5,
-    23
-  ],
-  "center": [
-    44,
-    35
-  ],
-  "builtInMods":[
-	"tahlan_lirefit",
-  ],
-  "collisionRadius": 81.5,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 16,
-      "length": 64,
-      "location": [
-        -35,
-        -0
-      ],
-      "style": "TAHLAN_PIRATE_ENGINE",
-      "width": 16
-    },
-    {
-      "angle": 180,
-      "contrailSize": 11,
-      "length": 35.5,
-      "location": [
-        -31,
-        21
-      ],
-      "style": "TAHLAN_PIRATE_ENGINE",
-      "width": 11
-    },
-    {
-      "angle": -180,
-      "contrailSize": 11,
-      "length": 35.5,
-      "location": [
-        -31,
-        -21
-      ],
-      "style": "TAHLAN_PIRATE_ENGINE",
-      "width": 11
-    },
-    {
-      "angle": 180,
-      "contrailSize": 8,
-      "length": 31.5,
-      "location": [
-        -30,
-        14.5
-      ],
-      "style": "TAHLAN_PIRATE_ENGINE",
-      "width": 8
-    },
-    {
-      "angle": -180,
-      "contrailSize": 8,
-      "length": 31.5,
-      "location": [
-        -30,
-        -14.5
-      ],
-      "style": "TAHLAN_PIRATE_ENGINE",
-      "width": 8
-    }
-  ],
-  "height": 100,
-  "hullId": "tahlan_lasher_pi",
   "hullName": "Lasher (LI)",
+  "hullId": "tahlan_lasher_pi",
   "hullSize": "FRIGATE",
-  "shieldCenter": [
-    15,
-    0
-  ],
-  "shieldRadius": 66,
   "spriteName": "graphics/tahlan/ships/legio/tahlan_lasher_pi.png",
   "style": "LOW_TECH",
+  "height": 100,
+  "width": 88,
+  "center": [44, 35],
+  "collisionRadius": 81.5,
+  "shieldCenter": [15, 0],
+  "shieldRadius": 66,
   "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_lirefit"
+  ],
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 0,
       "id": "WS0001",
-      "locations": [
-        26,
-        21
-      ],
-      "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "BALLISTIC"
-    },
-    {
-      "angle": -0,
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
       "arc": 0,
-      "id": "WS0002",
-      "locations": [
-        26,
-        -21
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": 60,
-      "arc": 270,
-      "id": "WS0003",
-      "locations": [
-        3,
-        10
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "BALLISTIC"
-    },
-    {
       "angle": 0,
-      "arc": 270,
-      "id": "WS0004",
-      "locations": [
-        36,
-        -0
-      ],
-      "mount": "TURRET",
+      "locations": [26, 21]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": -0,
+      "locations": [26, -21]
+    },
+    {
+      "id": "WS0003",
       "size": "SMALL",
-      "type": "BALLISTIC"
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 60,
+      "locations": [3, 10]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [36, -0]
     }
   ],
-  "width": 88
+  "engineSlots": [
+    {
+      "location": [-35, -0],
+      "length": 64,
+      "width": 16,
+      "angle": 180,
+      "contrailSize": 16,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-32, 22],
+      "length": 51.5,
+      "width": 22,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-32, -22],
+      "length": 51.5,
+      "width": 22,
+      "angle": -180,
+      "contrailSize": 22,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-28.5, 10.5],
+      "length": 14.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-28.5, -10.5],
+      "length": 14.5,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -29.5, -23,
+    10, -44,
+    30, -37,
+    11, -34.5,
+    60, -0,
+    11, 34.5,
+    30, 37,
+    10, 44,
+    -29.5, 23
+  ]
 }

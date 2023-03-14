@@ -30,6 +30,10 @@
 	- Turn rate 30 -> 25
 - Hel Champion
 	- Top speed 70 -> 60
+- Hel Sunder
+	- Hitpoints 4000 -> 5000
+- Hel Manticore
+	- Hitpoints 5000 -> 6000
 - Miasma
 	- Wing size 4 -> 3
 	- HP 200 -> 250
