@@ -56,6 +56,9 @@
 	- Burn 10 -> 9
 - Cordite
 	- DP 25 -> 20
+- Kupferflug Regalia
+	- Lichtkanone damage per shot 60 -> 50
+	- Same efficiency and RoF
 - Karion battery
 	- Ammo, regen and burst size doubled
 - Kupferflug Regalia
