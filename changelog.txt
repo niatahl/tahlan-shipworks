@@ -1,5 +1,9 @@
 0.9
 - Added secrets
+- Added Legio Nightmare Mode
+    - Optional
+    - Can be combined with Hardmode or used separately
+    - Gives Daemons various enhancements like S-mods and better officers
 - Daemons
 	- Renamed "Daemon Core" hullmod to "Daemonic Heart"
 	- Removed innate damage bonus to cruisers and capitals

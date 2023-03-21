@@ -8,12 +8,14 @@ import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.ids.Commodities
+import com.fs.starfarer.api.impl.campaign.ids.HullMods
 import com.fs.starfarer.api.impl.campaign.ids.Tags
 import com.fs.starfarer.api.mission.FleetSide
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
+import org.niatahl.tahlan.TahlanModPlugin.Companion.ENABLE_NIGHTMAREMODE
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
@@ -191,12 +193,29 @@ class DaemonHeart : BaseHullMod() {
             }
         }
 
+        // Also do Nightmare mode S-mod upgrades here, so we only run this once
+        if (ENABLE_NIGHTMAREMODE) {
+            val sMods = Global.getSector().playerFleet.membersWithFightersCopy
+                .filter { !it.isFighterWing }
+                .sumOf { it.variant.sMods.count() }
+
+            val avgSMods = sMods.div(Global.getSector().playerFleet.fleetSizeCount)
+
+            for (i in 0 until avgSMods) {
+                val pick = SMOD_OPTIONS.filter { !member.variant.hasHullMod(it) }.randomOrNull()
+                if (pick != null) {
+                    member.variant.addMod(pick)
+                    member.variant.addPermaMod(pick, true)
+                }
+            }
+        }
+
         // Apparently this can be the case
         if (Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE) == null) {
             return
         }
         var die = MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!
-        if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn")) {
+        if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn") || ENABLE_NIGHTMAREMODE) {
             die = 3 // Hel Scaith always gets an alpha
         }
         member.captain = when (die) {
@@ -232,6 +251,18 @@ class DaemonHeart : BaseHullMod() {
         private val immuneCaptains = listOf(
             CIEVE,
             SOTF_SIERRA
+        )
+
+        private val SMOD_OPTIONS = listOf(
+            HullMods.HEAVYARMOR,
+            HullMods.HARDENED_SHIELDS,
+            HullMods.MISSLERACKS,
+            HullMods.UNSTABLE_INJECTOR,
+            HullMods.EXTENDED_SHIELDS,
+            HullMods.ACCELERATED_SHIELDS,
+            HullMods.ECCM,
+            HullMods.ARMOREDWEAPONS,
+            HullMods.HARDENED_SUBSYSTEMS
         )
 
         private const val SUPPLIES_PERCENT = 100f

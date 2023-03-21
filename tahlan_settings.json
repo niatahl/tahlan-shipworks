@@ -12,11 +12,16 @@
 	#enables Legio droneships.
 	"enableDaemons": true,
 
+	#Legio special modes can be combined freely at will and aren't dependent on one another
+
 	#lowers Daemon spawn threshold, causing them to appear (much) sooner
 	"enableFastmode": false,
 	
-	#makes Legio even more dangerous after a certain point.
+	#greatly increases the proportions of Daemons in Legio fleets
 	"enableHardMode": false,
+
+	#enhances Daemons
+	"enableNightmareMode": false,
 	
 	#enables Legio Infernalis to learn every blueprint that pirates learn. 
 	"enableLegioBlueprintLearning": false,
@@ -25,5 +30,5 @@
 	"enableLifelessShips": false,
 
 	#WIP
-	"enableWaifu": true,
+	"enableWaifu": true
 }
