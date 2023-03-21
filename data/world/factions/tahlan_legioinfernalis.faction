@@ -47,6 +47,7 @@
 			"pirates":0.5
 		},
 		"hulls":{			
+			"atlas2": 0 #NO
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction

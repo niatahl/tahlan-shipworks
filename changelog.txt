@@ -19,6 +19,7 @@
 - Added Daemon AI Cores
 - Improved Legio Tyranny description
 - Reduced minimum cycle for most HVBs
+- Removed some HVBs to reduce bounty clutter
 - Hel Scaith
 	- Can turn a little better again
 	- Shield arc 120 -> 270

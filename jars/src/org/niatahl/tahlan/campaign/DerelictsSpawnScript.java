@@ -42,6 +42,7 @@ public class DerelictsSpawnScript {
         SHIP_SPAWNS.add(new Pair<>("tahlan_Castigator_xiv_elite", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_throne_admech_derelict", 1));
         SHIP_SPAWNS.add(new Pair<>("tahlan_providence_admech_derelict", 1));
+        SHIP_SPAWNS.add(new Pair<>("tahlan_Glint_b_boss", 1));
     }
 
     //Systems that can never get a teaser ship spawned in them

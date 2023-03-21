@@ -48,6 +48,9 @@
 			"tahlan_knights":0.1
 		},
 		"hulls":{		
+			"tahlan_eagle_nw":0.2,
+			"tahlan_falcon_nw":0.2,
+			"atlas2": 0 #NO
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -72,7 +75,9 @@
 			"dominator",
 			"manticore",
 			"tahlan_throne",
-			"tahlan_providence"
+			"tahlan_providence",
+			"tahlan_eagle_nw",
+			"tahlan_falcon_nw"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
