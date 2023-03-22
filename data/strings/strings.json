@@ -60,6 +60,7 @@
 		"econ_claim2": "%s population growth (based on market size).",
 		"access": "%s accessibility",
 		"stab": "%s stability",
+		"hazard": "%s hazard",
 		"fleetsize": "%s fleet size",
 		"tyranny": "Legio Tyranny",
 		"tyranny2": "Increased fleet sizes and ground defenses",
