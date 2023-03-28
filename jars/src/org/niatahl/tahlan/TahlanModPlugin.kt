@@ -25,7 +25,11 @@ import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
 import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
+import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
+import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMONIZE
+import org.niatahl.tahlan.utils.TahlanIDs.HEL_CARAPACE
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
+import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMON
 import org.niatahl.tahlan.utils.TahlanPeople
 import org.niatahl.tahlan.weapons.ai.FountainAI
 import org.niatahl.tahlan.weapons.ai.KriegsmesserAI
@@ -80,6 +84,23 @@ class TahlanModPlugin : BaseModPlugin() {
                 SHIELD_HULLMODS.add("swp_shieldbypass") //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
             }
         }
+
+        Global.getSettings().allShipHullSpecs
+            .filter { it.hasTag(TAG_DAEMONIZE) && it.hullSize != ShipAPI.HullSize.FIGHTER }
+            .forEach { ship ->
+                ship.addBuiltInMod(DAEMONIC_HEART)
+                ship.addBuiltInMod(HEL_CARAPACE)
+            }
+
+        Global.getSettings().allShipHullSpecs
+            .filter { it.hasTag(TAG_DAEMON) && it.hullSize != ShipAPI.HullSize.FIGHTER }
+            .filter { !DAEMON_SHIPS.contains(it.baseHullId) }
+            .forEach { DAEMON_SHIPS.add(it.baseHullId) }
+
+        Global.getSettings().allFighterWingSpecs
+            .filter { it.hasTag(TAG_DAEMON) }
+            .filter { !DAEMON_WINGS.contains(it.id) }
+            .forEach { DAEMON_WINGS.add(it.id) }
     }
 
     //New game stuff
@@ -338,7 +359,7 @@ class TahlanModPlugin : BaseModPlugin() {
         var HAS_EXILED = false
         val LOGGER = Global.getLogger(TahlanModPlugin::class.java)
 
-        val DAEMON_SHIPS = listOf(
+        val DAEMON_SHIPS = mutableListOf(
             "tahlan_dominator_dmn",
             "tahlan_champion_dmn",
             "tahlan_manticore_dmn",
@@ -350,7 +371,7 @@ class TahlanModPlugin : BaseModPlugin() {
             "tahlan_sunder_dmn",
             "tahlan_kodai_dmn"
         )
-        val DAEMON_WINGS = listOf(
+        val DAEMON_WINGS = mutableListOf(
             "tahlan_miasma_drone_wing",
             "tahlan_flash_dmn_wing",
             "tahlan_spark_dmn_wing",

@@ -9,6 +9,10 @@ object TahlanIDs {
     const val CORE_DAEMON = "tahlan_daemoncore"
     const val CORE_ARCHDAEMON = "tahlan_archdaemoncore"
     const val DAEMONIC_HEART = "tahlan_daemoncore"
+    const val HEL_CARAPACE = "tahlan_daemonarmor"
+
+    const val TAG_DAEMON = "tahlan_daemon"
+    const val TAG_DAEMONIZE = "tahlan_daemonize"
 
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
