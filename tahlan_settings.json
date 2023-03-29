@@ -17,11 +17,11 @@
 	#lowers Daemon spawn threshold, causing them to appear (much) sooner
 	"enableFastmode": false,
 	
-	#greatly increases the proportions of Daemons in Legio fleets
+	#greatly increases the proportions of Daemons in Legio fleets and increases core quality
 	"enableHardMode": false,
 
-	#enhances Daemons
-	"enableNightmareMode": false,
+	#enables adaptive performance scaling effects for Daemons, like gaining S-mods to match player fleet
+	"enableAdaptiveMode": false,
 	
 	#enables Legio Infernalis to learn every blueprint that pirates learn. 
 	"enableLegioBlueprintLearning": false,
@@ -29,6 +29,6 @@
 	#enables Timeless and Nameless type ships spawning in remnant fleets.
 	"enableLifelessShips": false,
 
-	#WIP
+	#WIP - This does nothing yet
 	"enableWaifu": true
 }

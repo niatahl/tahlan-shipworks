@@ -1,7 +1,6 @@
 package org.niatahl.tahlan.hullmods
 
 import com.fs.starfarer.api.Global
-import com.fs.starfarer.api.characters.PersonAPI
 import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
@@ -15,7 +14,8 @@ import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
-import org.niatahl.tahlan.TahlanModPlugin.Companion.ENABLE_NIGHTMAREMODE
+import org.niatahl.tahlan.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
+import org.niatahl.tahlan.TahlanModPlugin.Companion.ENABLE_HARDMODE
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
@@ -194,7 +194,7 @@ class DaemonHeart : BaseHullMod() {
         }
 
         // Also do Nightmare mode S-mod upgrades here, so we only run this once
-        if (ENABLE_NIGHTMAREMODE) {
+        if (ENABLE_ADAPTIVEMODE) {
             val sMods = Global.getSector().playerFleet.membersWithFightersCopy
                 .filter { !it.isFighterWing }
                 .sumOf { it.variant.sMods.count() }
@@ -214,10 +214,17 @@ class DaemonHeart : BaseHullMod() {
         if (Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE) == null) {
             return
         }
-        var die = MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!
-        if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn") || ENABLE_NIGHTMAREMODE) {
-            die = 3 // Hel Scaith always gets an alpha
+
+        val min = if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn")) {
+            3
+        } else if (ENABLE_HARDMODE) {
+            Global.getSector().playerPerson.stats.level.div(3).coerceAtLeast(1)
+        } else {
+            1
         }
+
+        var die = (MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!).coerceAtLeast(min)
+
         member.captain = when (die) {
             1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
             2 -> DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!

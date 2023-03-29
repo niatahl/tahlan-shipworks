@@ -8,7 +8,6 @@ import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.opengl.GL14.*
 import org.lwjgl.util.vector.Vector2f
 import org.magiclib.kotlin.interpolateColor
-import org.niatahl.tahlan.utils.Utils.lerp
 import org.niatahl.tahlan.utils.modify
 import org.niatahl.tahlan.utils.random
 import org.niatahl.tahlan.weapons.SpearOnFireEffect
@@ -56,12 +55,13 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         // projectile effects
         if (layer == CombatEngineLayers.ABOVE_SHIPS_LAYER) effectProjectiles.forEach { proj ->
             when (proj.projectileSpecId) {
-                "tahlan_novaspear_shot", "tahlan_sunspear_shot" -> renderSpear(proj)
+                "tahlan_novaspear_shot", "tahlan_sunspear_shot" -> renderSpear(proj, view)
             }
         }
     }
 
-    private fun renderSpear(proj: DamagingProjectileAPI) {
+    private fun renderSpear(proj: DamagingProjectileAPI, view: ViewportAPI) {
+        if (!view.isNearViewport(proj.location, view.visibleWidth)) return
         val flare1 = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
         val flare2 = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
         val scale = if (proj.weapon.size == WeaponAPI.WeaponSize.LARGE) 1f else 0.6f

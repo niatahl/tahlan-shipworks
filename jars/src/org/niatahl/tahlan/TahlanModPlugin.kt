@@ -350,7 +350,7 @@ class TahlanModPlugin : BaseModPlugin() {
         @JvmField
         var ENABLE_HARDMODE = false
         @JvmField
-        var ENABLE_NIGHTMAREMODE = false
+        var ENABLE_ADAPTIVEMODE = false
         var WEEB_MODE = false
 
         @JvmField
@@ -410,7 +410,7 @@ class TahlanModPlugin : BaseModPlugin() {
             ENABLE_LIFELESS = setting.getBoolean("enableLifelessShips")
             ENABLE_LEGIOBPS = setting.getBoolean("enableLegioBlueprintLearning")
             ENABLE_HARDMODE = setting.getBoolean("enableHardMode")
-            ENABLE_NIGHTMAREMODE = setting.getBoolean("enableNightmareMode")
+            ENABLE_ADAPTIVEMODE = setting.getBoolean("enableAdaptiveMode")
             ENABLE_DAEMONS = setting.getBoolean("enableDaemons")
             DAEMON_FASTMODE = setting.getBoolean("enableFastmode")
             WEEB_MODE = setting.getBoolean("enableWaifu")
