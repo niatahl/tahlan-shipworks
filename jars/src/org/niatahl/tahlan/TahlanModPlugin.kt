@@ -376,7 +376,7 @@ class TahlanModPlugin : BaseModPlugin() {
         var HAS_INDEVO = false
         var HAS_EXILED = false
         var HAS_LUNA = false
-        val LOGGER = Global.getLogger(TahlanModPlugin::class.java)
+        val LOGGER = Global.getLogger(TahlanModPlugin::class.java)!!
 
         val DAEMON_SHIPS = mutableListOf(
             "tahlan_dominator_dmn",
