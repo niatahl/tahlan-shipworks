@@ -14,6 +14,7 @@ import com.fs.starfarer.api.impl.campaign.shared.SharedData
 import com.fs.starfarer.api.util.Misc
 import exerelin.campaign.SectorManager
 import exerelin.utilities.NexConfig
+import lunalib.lunaSettings.LunaSettings
 import org.apache.log4j.Level
 import org.dark.shaders.light.LightData
 import org.dark.shaders.util.ShaderLib
@@ -66,6 +67,7 @@ class TahlanModPlugin : BaseModPlugin() {
         }
         HAS_INDEVO = Global.getSettings().modManager.isModEnabled("IndEvo")
         HAS_EXILED = Global.getSettings().modManager.isModEnabled("pt_exiledSpace")
+        HAS_LUNA = Global.getSettings().modManager.isModEnabled("lunalib")
 
         try {
             loadTahlanSettings()
@@ -106,6 +108,8 @@ class TahlanModPlugin : BaseModPlugin() {
     //New game stuff
     override fun onNewGame() {
         val sector = Global.getSector()
+
+        if (HAS_LUNA) loadLunaSettings()
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         HAS_NEX = Global.getSettings().modManager.isModEnabled("nexerelin")
@@ -148,6 +152,9 @@ class TahlanModPlugin : BaseModPlugin() {
 
     override fun onGameLoad(newGame: Boolean) {
         val sector = Global.getSector()
+
+        if (HAS_LUNA) loadLunaSettings()
+
         sector.registerPlugin(CampaignPluginImpl())
 
         TahlanPeople.synchronise()
@@ -277,7 +284,7 @@ class TahlanModPlugin : BaseModPlugin() {
                 iLegioStartingCondition++
                 LOGGER.info("Daemonic Incursion - Officers")
             }
-            val trigger = if (DAEMON_FASTMODE) 2 else 4
+            val trigger = if (ENABLE_FASTMODE) 2 else 4
             if (iLegioStartingCondition >= trigger) {
                 Global.getSector().memoryWithoutUpdate["\$tahlan_triggered"] = true
                 LOGGER.info("The Daemonic horde awakens")
@@ -327,6 +334,17 @@ class TahlanModPlugin : BaseModPlugin() {
         return null
     }
 
+    fun loadLunaSettings() {
+        ENABLE_LETHIA = LunaSettings.getBoolean("tahlan", "tahlan_enable_lethia") ?: true
+        ENABLE_LEGIO = LunaSettings.getBoolean("tahlan", "tahlan_enable_legio") ?: true
+        ENABLE_FASTMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_fastmode") ?: false
+        ENABLE_DAEMONS = LunaSettings.getBoolean("tahlan", "tahlan_enable_daemons") ?: true
+        ENABLE_HARDMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_hardmode") ?: false
+        ENABLE_ADAPTIVEMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_adaptivemode") ?: false
+        ENABLE_LEGIOBPS = LunaSettings.getBoolean("tahlan", "tahlan_enable_legiobps") ?: false
+        ENABLE_LIFELESS = LunaSettings.getBoolean("tahlan", "tahlan_enable_lifeless") ?: false
+    }
+
     companion object {
         @JvmField
         var isGraphicsLibAvailable = false
@@ -342,7 +360,7 @@ class TahlanModPlugin : BaseModPlugin() {
         var ENABLE_LETHIA = false
         var ENABLE_LEGIO = false
 
-        var DAEMON_FASTMODE = false
+        var ENABLE_FASTMODE = false
         var ENABLE_LIFELESS = false
         var ENABLE_LEGIOBPS = false
         var ENABLE_DAEMONS = false
@@ -357,6 +375,7 @@ class TahlanModPlugin : BaseModPlugin() {
         var HAS_NEX = false
         var HAS_INDEVO = false
         var HAS_EXILED = false
+        var HAS_LUNA = false
         val LOGGER = Global.getLogger(TahlanModPlugin::class.java)
 
         val DAEMON_SHIPS = mutableListOf(
@@ -412,7 +431,7 @@ class TahlanModPlugin : BaseModPlugin() {
             ENABLE_HARDMODE = setting.getBoolean("enableHardMode")
             ENABLE_ADAPTIVEMODE = setting.getBoolean("enableAdaptiveMode")
             ENABLE_DAEMONS = setting.getBoolean("enableDaemons")
-            DAEMON_FASTMODE = setting.getBoolean("enableFastmode")
+            ENABLE_FASTMODE = setting.getBoolean("enableFastmode")
             WEEB_MODE = setting.getBoolean("enableWaifu")
         }
     }
