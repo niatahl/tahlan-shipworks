@@ -59,7 +59,7 @@ class DaemonArmor : BaseHullMod() {
             4 -> "${((1f - DAMAGE_CAP_REDUCTION) * 100f).roundToInt()}${txt("%")}"
             5 -> txt("halved")
             6 -> txt("disabled")
-            7 -> "${DISRUPTION_TIME.roundToInt()}${txt("seconds")}"
+            7 -> "${DISRUPTION_TIME.roundToInt()} ${txt("seconds")}"
             else -> null
         }
     }
