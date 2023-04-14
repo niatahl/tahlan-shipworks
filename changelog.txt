@@ -1,15 +1,18 @@
 0.9
 - Added secrets
 - Added Legio Nightmare Mode
-    - Optional
-    - Can be combined with Hardmode or used separately
-    - Gives Daemons various enhancements like S-mods and better officers
+    	- Optional
+    	- Can be combined with Hardmode or used separately
+	- Gives Daemons various enhancements like S-mods and better officers
 - Daemons
 	- Renamed "Daemon Core" hullmod to "Daemonic Heart"
 	- Removed innate damage bonus to cruisers and capitals
 	- Enrage function now reduces range 
 	- Reworked the effects of Daemonic Heart and Hel Carapace/Plating
 	- Redid some of the paintjobs
+	- Reduced all Daemon top speeds by 10-20
+	- Increased Daemonic Heart low flux speed boost by 20
+	- This will result in Daemons retaining their current speed while at low flux but moving slower at high flux
 - Made some updates to Legio Rising bounty
 - Made Legio a little less invasion-happy
 - Updated Legio fleet doctrine

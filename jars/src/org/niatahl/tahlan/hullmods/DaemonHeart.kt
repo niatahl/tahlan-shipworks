@@ -275,7 +275,7 @@ class DaemonHeart : BaseHullMod() {
         private const val SUPPLIES_PERCENT = 100f
         private const val ACC_BUFF = 0.25f
         private const val MSSL_DAMAGE = 0.5f
-        private const val SPEED_BUFF = 30f
+        private const val SPEED_BUFF = 50f
         private const val SPEED_CAP = 0.6f
         private const val PLAYER_NERF = 0.9f
         private val JITTER_COLOR = Color(255, 0, 0, 30)
