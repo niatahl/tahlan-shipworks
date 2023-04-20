@@ -56,7 +56,7 @@
       "width": 18,
       "angle": 180,
       "contrailSize": 18,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-36, -22],
@@ -64,7 +64,23 @@
       "width": 18,
       "angle": -180,
       "contrailSize": 18,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-37, 22],
+      "length": 19,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-37, -22],
+      "length": 19,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 10,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
     }
   ],
   "bounds": [

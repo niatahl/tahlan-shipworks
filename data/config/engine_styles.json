@@ -107,21 +107,36 @@
 	"TAHLAN_DAEMON_ENGINE":{
 		"mode":"QUAD_STRIP",
 		"engineColor":[255,60,40,255],
-		"contrailDuration":1.5,
+		"contrailDuration":2,
 		"contrailWidthMult":1,
-		"contrailWidthAddedFractionAtEnd":-1f,  # can be negative. makes trail spread out/narrow at the end
+		"contrailWidthAddedFractionAtEnd":-0.5,  # can be negative. makes trail spread out/narrow at the end
 		"contrailMinSeg":5, # min segment length, in pixels
-		"contrailMaxSpeedMult":1f,
-		"contrailAngularVelocityMult":0f,
-		"contrailColor":[255,60,40,100],
-		"contrailCampaignColor":[255,60,40,240],
+		"contrailMaxSpeedMult":1,
+		"contrailAngularVelocityMult":0,
+		"contrailColor":[255,0,0,70],
+		"contrailCampaignColor":[255,0,0,240],
 		"glowAlternateColor":[255,90,20,235],
-		#"glowSprite":"graphics/tahlan/fx/tahlan_dmn_engineflame_motion.png",
-		#"glowOutline":"graphics/tahlan/fx/tahlan_dmn_engineflame.png",
+		"glowSprite":"graphics/tahlan/fx/tahlan_daemon_engine_scroll.png",
+		"glowOutline":"graphics/tahlan/fx/tahlan_daemon_engine_outline.png",
 		"type":"SMOKE"
 	},
 
-		"TAHLAN_NXA_ENGINE":{
+	"TAHLAN_DAEMON_CORE_ENGINE":{				
+		"engineColor":[255,240,240,70],
+		"contrailParticleSizeMult":4,
+		"contrailParticleDuration":3,
+		"contrailParticleFinalSizeMult":2.5,
+		"contrailMaxSpeedMult":0.6,
+		"contrailAngularVelocityMult":0.6,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[255,60,40,240],
+		"glowAlternateColor":[255,255,255,10],
+		"glowSprite":"graphics/tahlan/fx/tahlan_daemon_engine_scroll.png",
+		"glowOutline":"graphics/tahlan/fx/tahlan_daemon_engine_outline.png",
+		"type":"GLOW", # GLOW or SMOKE
+	},
+
+	"TAHLAN_NXA_ENGINE":{
 		"engineColor":[255,100,150,255],
 		"contrailParticleSizeMult":2,
 		"contrailParticleDuration":0,
@@ -130,9 +145,8 @@
 		"contrailAngularVelocityMult":0.5,
 		"contrailColor":[205,60,210,0],
 		"contrailCampaignColor":[255,80,120,240],
-		#"glowSprite":"graphics/tahlan/fx/tahlan_nxa_engineflame_motion.png",
-		#"glowOutline":"graphics/tahlan/fx/tahlan_nxa_engineflame.png",
-		#"omegaMode":true,
+		"glowSprite":"graphics/tahlan/fx/tahlan_nxa_engineflame_motion.png",
+		"glowOutline":"graphics/tahlan/fx/tahlan_daemon_engine_outline.png",
 		"type":"GLOW" # GLOW or SMOKE
 	},
 	

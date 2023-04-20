@@ -48,7 +48,7 @@
       "width": 5,
       "angle": 180,
       "contrailSize": 5,
-      "style": "TAHLAN_PIRATE_ENGINE_FIGHTER"
+      "style": "TAHLAN_DAEMON_ENGINE_FIGHTER"
     },
     {
       "location": [-14, -13],
@@ -56,7 +56,7 @@
       "width": 5,
       "angle": -180,
       "contrailSize": 5,
-      "style": "TAHLAN_PIRATE_ENGINE_FIGHTER"
+      "style": "TAHLAN_DAEMON_ENGINE_FIGHTER"
     }
   ],
   "bounds": [

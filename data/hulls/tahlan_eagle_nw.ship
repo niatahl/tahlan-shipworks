@@ -11,7 +11,7 @@
   "shieldCenter": [0, -0],
   "shieldRadius": 157.5,
   "viewOffset": 0,
-  "builtInMods":[
+  "builtInMods": [
     "tahlan_stealthplating"
   ],
   "weaponSlots": [
@@ -46,7 +46,7 @@
       "id": "WS0004",
       "size": "MEDIUM",
       "type": "ENERGY",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [92, -0]
@@ -55,7 +55,7 @@
       "id": "WS0005",
       "size": "MEDIUM",
       "type": "BALLISTIC",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [103, -26]
@@ -64,7 +64,7 @@
       "id": "WS0006",
       "size": "MEDIUM",
       "type": "BALLISTIC",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [103, 26]

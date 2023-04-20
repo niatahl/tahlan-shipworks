@@ -82,7 +82,7 @@
       "width": 18,
       "angle": 180,
       "contrailSize": 18,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-77.5, 17],
@@ -90,7 +90,7 @@
       "width": 20,
       "angle": 180,
       "contrailSize": 20,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-77.5, -17],
@@ -98,7 +98,7 @@
       "width": 20,
       "angle": -180,
       "contrailSize": 20,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-74, 30.5],
@@ -106,7 +106,7 @@
       "width": 12,
       "angle": 180,
       "contrailSize": 12,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-74, -30.5],
@@ -114,7 +114,7 @@
       "width": 12,
       "angle": -180,
       "contrailSize": 12,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-68, 39],
@@ -122,7 +122,7 @@
       "width": 10,
       "angle": 180,
       "contrailSize": 10,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
     },
     {
       "location": [-68, -39],
@@ -130,7 +130,63 @@
       "width": 10,
       "angle": -180,
       "contrailSize": 10,
-      "style": "TAHLAN_PIRATE_ENGINE"
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-69, 39],
+      "length": 12,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-69, -39],
+      "length": 12,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-75, -30.5],
+      "length": 15,
+      "width": 7,
+      "angle": -180,
+      "contrailSize": 7,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-75, 30.5],
+      "length": 15,
+      "width": 7,
+      "angle": 180,
+      "contrailSize": 7,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-78, -17],
+      "length": 17,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-78, 17],
+      "length": 17,
+      "width": 9,
+      "angle": 180,
+      "contrailSize": 9,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-75, -0],
+      "length": 17,
+      "width": 9,
+      "angle": -180,
+      "contrailSize": 9,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
     }
   ],
   "bounds": [

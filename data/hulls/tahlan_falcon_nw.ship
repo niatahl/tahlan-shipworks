@@ -37,7 +37,7 @@
       "id": "WS0003",
       "size": "MEDIUM",
       "type": "HYBRID",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": 0,
       "locations": [108, 22]
@@ -46,7 +46,7 @@
       "id": "WS0004",
       "size": "MEDIUM",
       "type": "HYBRID",
-      "mount": "TURRET",
+      "mount": "HARDPOINT",
       "arc": 5,
       "angle": -0,
       "locations": [108, -22]

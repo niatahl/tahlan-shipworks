@@ -1,11 +1,11 @@
-modID,fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
-tahlan,tahlan_campaignHeader,Campaign Header,Header,Campaign settings - Only apply to new saves,,,,,Examples
-tahlan,tahlan_enable_lethia,Enable Lethia,Boolean,true,,"Enables the Lethia system in a corner of the map, home to the planet Kassadar.",,,Examples
-tahlan,tahlan_enable_legio,Enable Legio Infernalis,Boolean,true,,Enables a challenging Boss Faction.,,,Examples
-tahlan,tahlan_dynamicHeader,Save Header,Header,Dynamic settings - Applied on save load,,,,,Examples
-tahlan,tahlan_enable_daemons,Enable Daemons,Boolean,true,,Enables powerful automated ships that will spawn in Legio Infernalis fleets once the player has reached certain milestones.,,,Examples
-tahlan,tahlan_enable_adaptivemode,Enable Adaptive Mode,Boolean,true,,Gives Daemons adaptive enhancement scaling with player fleet power like gaining additional S-mods.,,,Examples
-tahlan,tahlan_enable_fastmode,Enable Fast Mode,Boolean,true,,Lowers milestone requirements for Daemons to start spawning.,,,Examples
-tahlan,tahlan_enable_hardmode,Enable Hard Mode,Boolean,true,,Greatly increases the number of Daemons in Legio fleets and the quality of their AI cores.,,,Examples
-tahlan,tahlan_enable_legiobps,Enable Legio black market blueprints,Boolean,true,,Lets Legio learn all blueprints known to pirates.,,,Examples
-tahlan,tahlan_enable_lifeless,Enable The Lifeless,Boolean,true,,Adds unusual drone ships to Remnant fleets.,,,Examples
+fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
+tahlan_campaignHeader,Campaign Header,Header,Campaign settings - Only apply to new saves,,,,,Settings
+tahlan_enable_lethia,Enable Lethia,Boolean,true,,"Enables the Lethia system in a corner of the map, home to the planet Kassadar.",,,Settings
+tahlan_enable_legio,Enable Legio Infernalis,Boolean,true,,Enables a challenging Boss Faction.,,,Settings
+tahlan_dynamicHeader,Save Header,Header,Dynamic settings - Applied on save load,,,,,Settings
+tahlan_enable_daemons,Enable Daemons,Boolean,true,,Enables powerful automated ships that will spawn in Legio Infernalis fleets once the player has reached certain milestones.,,,Settings
+tahlan_enable_adaptivemode,Enable Adaptive Mode,Boolean,false,,Gives Daemons adaptive enhancement scaling with player fleet power like gaining additional S-mods.,,,Settings
+tahlan_enable_fastmode,Enable Fast Mode,Boolean,false,,Lowers milestone requirements for Daemons to start spawning.,,,Settings
+tahlan_enable_hardmode,Enable Hard Mode,Boolean,false,,Greatly increases the number of Daemons in Legio fleets and the quality of their AI cores.,,,Settings
+tahlan_enable_legiobps,Enable Legio black market blueprints,Boolean,false,,Lets Legio learn all blueprints known to pirates.,,,Settings
+tahlan_enable_lifeless,Enable The Lifeless,Boolean,false,,Adds unusual drone ships to Remnant fleets.,,,Settings

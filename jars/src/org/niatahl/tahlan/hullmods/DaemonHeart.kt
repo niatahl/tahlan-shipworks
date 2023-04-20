@@ -172,9 +172,9 @@ class DaemonHeart : BaseHullMod() {
         }
 
         // and another
-        if (!member.fleetCommander.faction.id.contains("legioinfernalis") && !member.fleetCommander.faction.id.contains("unknown")) {
-            return
-        }
+//        if (!member.fleetCommander.faction.id.contains("legioinfernalis") && !member.fleetCommander.faction.id.contains("unknown")) {
+//            return
+//        }
 
         // Daemons are self-repairing so...
         // basically just making sure they never spawn with D-mods
@@ -269,7 +269,9 @@ class DaemonHeart : BaseHullMod() {
             HullMods.ACCELERATED_SHIELDS,
             HullMods.ECCM,
             HullMods.ARMOREDWEAPONS,
-            HullMods.HARDENED_SUBSYSTEMS
+            HullMods.HARDENED_SUBSYSTEMS,
+            HullMods.FLUXBREAKERS,
+            HullMods.STABILIZEDSHIELDEMITTER
         )
 
         private const val SUPPLIES_PERCENT = 100f

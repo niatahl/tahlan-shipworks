@@ -527,6 +527,7 @@ tahlan_helrazer,WEAPON,"The massive spinal gun of the Hel Scaith fires a large s
 tahlan_manannan,WEAPON,"A weapon of last resort, the Manannan is only ever deployed in the face of equivalent escalation of firepower, an act quite unusual of Legio leadership and testament to the sheer devastating power of this weapon.",,,
 tahlan_novaspear,WEAPON,"""If she is to be the allmother, we must grant her the blade with which to defend her children until the day they can take up their own arms.""",- [Source unknown],,
 tahlan_sunspear,WEAPON,"""Did they seriously get the approval for this? You know as much as I that all of it goes against standing law, even if high command signed off on it.""",- [Source unknown],,
+tahlan_mortarbattery,WEAPON,"Essentially a pair of heavy mortars in a shared mounting. While otherwise unremarkable, the more spacious housing allows for better autoloaders, improving the rate of fire over that of two individual heavy mortars, and a slight increase in range.",,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,

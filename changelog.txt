@@ -65,6 +65,8 @@
 	- Burn 10 -> 9
 - Cordite
 	- DP 25 -> 20
+- Equinox
+	- System duration 10s -> 6s
 - Kupferflug Regalia
 	- Lichtkanone damage per shot 60 -> 50
 	- Same efficiency and RoF
@@ -72,6 +74,9 @@
 	- Ammo, regen and burst size doubled
 - Kupferflug Regalia
 	- Micro Strahlfaust rate of fire greatly increased, ammo limitation added
+- Condand
+	- Efficiency 1.0 -> 0.9
+	- Slightly reduced maximum spread
 
 	
 
