@@ -18,6 +18,9 @@
 		],
 		"tahlan_legio_fleet_hostile":[
 			{"file":"Haploygynae_-_legio_fleet_hostile.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
+		],
+    "tahlan_legio_rising":[
+			{"file":"Haplogynae_-_legio_rising.ogg","source":"sounds/tahlan/music/","volume":0.5,"randomStart":false}
 		]
   },
 

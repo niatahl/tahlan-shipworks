@@ -1,4 +1,4 @@
 name,id,demand class,base price,export value,price variability,utility,origin,tags,stack size,cargo space,icon,sound id,sound id drop,order,economyTier,econUnit,iconWidthMult,plugin,desc
-Daemon Core,tahlan_daemoncore,ship_weapons,,,,50,,"nonecon, no_loss_from_combat",1000,1,graphics/tahlan/icons/cargo/daemoncore.png,ai_core_pickup,ui_beta_core_drop,41,,,1,,
-Archdaemon Core,tahlan_archdaemoncore,ship_weapons,,,,200,,"nonecon, no_loss_from_combat",1000,1,graphics/tahlan/icons/cargo/archdaemoncore.png,ai_core_pickup,ui_alpha_core_drop,42,,,1,,
+Daemon Core,tahlan_daemoncore,ai_cores,,,,50,,"nonecon, no_loss_from_combat",1000,1,graphics/tahlan/icons/cargo/daemoncore.png,ai_core_pickup,ui_beta_core_drop,41,,,1,,
+Archdaemon Core,tahlan_archdaemoncore,ai_cores,,,,200,,"nonecon, no_loss_from_combat",1000,1,graphics/tahlan/icons/cargo/archdaemoncore.png,ai_core_pickup,ui_alpha_core_drop,42,,,1,,
 Neural Link,tahlan_neurallink,ship_weapons,,,,0,,"nonecon, no_loss_from_combat, restricted, no_drop, no_sell, meta",1,1,graphics/tahlan/icons/cargo/archdaemoncore.png,ai_core_pickup,ui_alpha_core_drop,43,,,1,,

@@ -35,6 +35,7 @@
         "fleet_flagship_name":"Lady Cassandra",
         "fleet_flagship_recoverable": true,
         "fleet_flagship_autofit": false,
+        "fleet_musicSetId": "tahlan_legio_rising",
         "fleet_preset_ships": {
             "tahlan_dominator_dmn_sloth":1,
             "tahlan_dominator_dmn_combat":1,

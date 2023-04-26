@@ -8,6 +8,7 @@ import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.ids.Commodities
 import com.fs.starfarer.api.impl.campaign.ids.HullMods
+import com.fs.starfarer.api.impl.campaign.ids.Skills
 import com.fs.starfarer.api.impl.campaign.ids.Tags
 import com.fs.starfarer.api.mission.FleetSide
 import com.fs.starfarer.api.util.IntervalUtil
@@ -158,23 +159,12 @@ class DaemonHeart : BaseHullMod() {
     override fun advanceInCampaign(member: FleetMemberAPI, amount: Float) {
 
         // Don't do this if we're in player fleet
-        if (member.fleetCommander.isPlayer || member.fleetCommander.isDefault) {
-            return
-        }
+        if (member.fleetCommander.isPlayer || member.fleetCommander.isDefault || member.fleetCommander.faction.id.contains("player")) return
 
         // Another check, I guess
         if (Global.getSector() != null && Global.getSector().playerFleet != null) {
-            for (mem in Global.getSector().playerFleet.membersWithFightersCopy) {
-                if (mem.id == member.id) {
-                    return
-                }
-            }
+            if (member.fleetData.fleet != null && member.fleetData.fleet == Global.getSector().playerFleet) return
         }
-
-        // and another
-//        if (!member.fleetCommander.faction.id.contains("legioinfernalis") && !member.fleetCommander.faction.id.contains("unknown")) {
-//            return
-//        }
 
         // Daemons are self-repairing so...
         // basically just making sure they never spawn with D-mods
@@ -187,11 +177,7 @@ class DaemonHeart : BaseHullMod() {
 
 
         // Now we make a new captain if we don't have an AI captain already
-        if (member.captain != null) {
-            if (member.captain.isAICore) {
-                return
-            }
-        }
+        if (member.captain != null && member.captain.isAICore) return
 
         // Also do Nightmare mode S-mod upgrades here, so we only run this once
         if (ENABLE_ADAPTIVEMODE) {
@@ -223,12 +209,23 @@ class DaemonHeart : BaseHullMod() {
             1
         }
 
-        var die = (MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!).coerceAtLeast(min)
+        val die = (MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!).coerceAtLeast(min)
 
         member.captain = when (die) {
             1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
             2 -> DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
             else -> DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
+        }
+
+        if (member.variant.hasHullMod(HullMods.SAFETYOVERRIDES)) {
+            if (!member.captain.stats.hasSkill(Skills.POINT_DEFENSE)) {
+                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.COMBAT_ENDURANCE }.random().skill.id,0f)
+                member.captain.stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
+            }
+            if (!member.captain.stats.hasSkill(Skills.COMBAT_ENDURANCE)) {
+                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.POINT_DEFENSE }.random().skill.id,0f)
+                member.captain.stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
+            }
         }
     }
 
@@ -253,7 +250,7 @@ class DaemonHeart : BaseHullMod() {
             HullSize.CRUISER to 0,
             HullSize.CAPITAL_SHIP to 0,
             HullSize.FIGHTER to 0
-        )
+        ).withDefault { 0 }
 
         private val immuneCaptains = listOf(
             CIEVE,
