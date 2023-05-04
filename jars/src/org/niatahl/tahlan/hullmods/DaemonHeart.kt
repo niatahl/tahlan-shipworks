@@ -185,7 +185,8 @@ class DaemonHeart : BaseHullMod() {
                 .filter { !it.isFighterWing }
                 .sumOf { it.variant.sMods.count() }
 
-            val avgSMods = sMods.div(Global.getSector().playerFleet.numMembersFast)
+            val numShips = Global.getSector().playerFleet.numShips.coerceAtLeast(1)
+            val avgSMods = sMods.div(numShips)
 
             for (i in 0 until avgSMods) {
                 val pick = SMOD_OPTIONS.filter { !member.variant.hasHullMod(it) }.randomOrNull()
