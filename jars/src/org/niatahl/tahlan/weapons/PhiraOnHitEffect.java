@@ -4,7 +4,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
-import data.scripts.plugins.MagicTrailPlugin;
+import org.magiclib.plugins.MagicTrailPlugin;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -43,7 +43,7 @@ public class PhiraOnHitEffect implements OnHitEffectPlugin {
                 //This is for "end fizzle"
                 float fizzleConstantSpeed = MathUtils.getRandomNumberInRange(-20f, 20f);
                 float fizzleConstantAngle = MathUtils.getRandomNumberInRange(-35f, 35f);
-                MagicTrailPlugin.AddTrailMemberAdvanced(null, id, spriteToUse, projectile.getLocation(),
+                MagicTrailPlugin.addTrailMemberAdvanced(null, id, spriteToUse, projectile.getLocation(),
                         startSpeed * ((float)i2 / 70f), fizzleConstantSpeed * (1f - (float)i2 / 70f),
                         angle, startAngularVelocity * ((float)i2 / 70f), fizzleConstantAngle * (1f - (float)i2 / 70f), startSize, 0f,
                         colorToUse, colorToUse,0.45f, 0f, 0.5f * ((float)i2 / 70f) * lifetimeMult, 1.1f * ((float)i2 / 70f) * lifetimeMult,

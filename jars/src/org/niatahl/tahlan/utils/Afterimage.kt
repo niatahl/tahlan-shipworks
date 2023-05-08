@@ -3,8 +3,7 @@ package org.niatahl.tahlan.utils
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.CombatEngineLayers
 import com.fs.starfarer.api.combat.ShipAPI
-import com.fs.starfarer.api.graphics.SpriteAPI
-import data.scripts.util.MagicRender
+import org.magiclib.util.MagicRender
 import org.lazywizard.lazylib.FastTrig
 import org.lwjgl.util.vector.Vector2f
 import java.awt.Color

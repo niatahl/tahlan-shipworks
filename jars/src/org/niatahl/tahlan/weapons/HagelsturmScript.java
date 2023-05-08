@@ -2,7 +2,7 @@ package org.niatahl.tahlan.weapons;
 
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.util.IntervalUtil;
-import data.scripts.plugins.MagicFakeBeamPlugin;
+import org.magiclib.plugins.MagicFakeBeamPlugin;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 

@@ -3,7 +3,7 @@ package org.niatahl.tahlan.weapons;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
-import data.scripts.util.MagicLensFlare;
+import org.magiclib.util.MagicLensFlare;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.awt.*;

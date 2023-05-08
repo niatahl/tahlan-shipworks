@@ -2,7 +2,7 @@ package org.niatahl.tahlan.weapons;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import data.scripts.util.MagicLensFlare;
+import org.magiclib.util.MagicLensFlare;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;

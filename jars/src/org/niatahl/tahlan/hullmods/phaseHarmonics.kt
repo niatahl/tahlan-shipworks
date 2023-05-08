@@ -4,7 +4,7 @@ import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.impl.campaign.ids.HullMods
-import data.scripts.util.MagicIncompatibleHullmods
+import org.magiclib.util.MagicIncompatibleHullmods
 import org.niatahl.tahlan.utils.Utils
 import kotlin.math.roundToInt
 

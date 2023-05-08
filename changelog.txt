@@ -1,3 +1,7 @@
+0.9.3
+- Updated for Starsector 0.96a
+- Removed Ingress
+
 0.9
 - Added secrets
 - Added Legio Adaptive Mode

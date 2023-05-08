@@ -2,10 +2,10 @@
 	#SAVE-LOCKED SETTINGS - Changes only apply to new campaigns
 
 	#enables the Lethia system housing Kassadar.
-	"enableLethia": true,
+	"enableLethia": false,
 	
 	#enables the Legio Infernalis, an elite pirate faction.
-	"enableLegio": true,
+	"enableLegio": false,
 
     #TOGGLES - Apply to existing saves on save load (but can take some time to fully take effect)
 

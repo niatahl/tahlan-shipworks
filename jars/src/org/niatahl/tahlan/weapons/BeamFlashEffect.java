@@ -19,7 +19,8 @@ public class BeamFlashEffect implements BeamEffectPlugin {
             float dur = MathUtils.getRandomNumberInRange(0.2f,0.25f);
             engine.addHitParticle(beam.getFrom(), beam.getSource().getVelocity(), beam.getWidth(), 0.8f, dur, beam.getCoreColor());
             engine.addHitParticle(beam.getFrom(), beam.getSource().getVelocity(), size, 0.8f, dur, beam.getFringeColor().brighter());
-            engine.addHitParticle(beam.getTo(), beam.getSource().getVelocity(), size * 3f, 0.8f, dur, beam.getFringeColor());
+            if (beam.didDamageThisFrame())
+                engine.addHitParticle(beam.getTo(), beam.getSource().getVelocity(), size * 3f, 0.8f, dur, beam.getFringeColor());
         }
 
     }

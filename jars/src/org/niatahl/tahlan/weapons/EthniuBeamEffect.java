@@ -7,7 +7,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 
 import java.awt.Color;
 
-import data.scripts.util.MagicLensFlare;
+import org.magiclib.util.MagicLensFlare;
 import org.apache.log4j.Logger;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.entities.SimpleEntity;

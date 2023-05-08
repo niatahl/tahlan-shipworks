@@ -8,14 +8,14 @@
 		#"tags":{
 		#},
 		"hulls":{
-			"tahlan_Yukikaze":3,
-			"tahlan_Korikaze":6,
-			"tahlan_Yosei":8,
-			"tahlan_Haelequin":8,
-			"tahlan_Glint":8,
-			"tahlan_Trill":4,
-			"tahlan_Nightingale":2,
-			"tahlan_Cobalt":8
+			"tahlan_Yukikaze":0.3,
+			"tahlan_Korikaze":0.6,
+			"tahlan_Yosei":0.8,
+			"tahlan_Haelequin":0.8,
+			"tahlan_Glint":0.8,
+			"tahlan_Trill":0.4,
+			"tahlan_Nightingale":0.2,
+			"tahlan_Cobalt":0.8
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction

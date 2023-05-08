@@ -45,7 +45,7 @@ class DaemonPlating : BaseHullMod() {
         val max = armorGrid.maxArmorInCell
         val statusMult = if (ship.fluxTracker.isOverloaded) 0.5f else 1f
         var regenPercent = REGEN_PER_SEC_PERCENT
-        if (ship.variant.sMods.contains("tahlan_daemonplating") || ship.variant.hullSpec.isBuiltInMod("tahlan_daemonplating")) {
+        if (isSMod(ship)) {
             regenPercent = REGEN_PER_SEC_PERCENT_SMOD
         }
         val baseCell = armorGrid.maxArmorInCell * ship.hullSpec.armorRating.coerceAtMost(ARMOR_CAP) / armorGrid.armorRating
@@ -63,27 +63,27 @@ class DaemonPlating : BaseHullMod() {
         ship.syncWithArmorGridState()
     }
 
-    override fun addPostDescriptionSection(tooltip: TooltipMakerAPI?, hullSize: HullSize?, ship: ShipAPI?, width: Float, isForModSpec: Boolean) {
-        if (tooltip == null) return
-        if (isForModSpec) {
-            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
-            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
-            return
-        } else if (ship != null && (ship.variant.sMods.contains("tahlan_daemonplating") || ship.hullSpec.isBuiltInMod("tahlan_daemonplating"))) {
-            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
-            tooltip.addPara(
-                txt("daemonPlatingSmod"),
-                10f,
-                Misc.getPositiveHighlightColor(),
-                Misc.getHighlightColor(),
-                "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"),
-                "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%")
-            )
-        } else {
-            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
-            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
-        }
-    }
+//    override fun addPostDescriptionSection(tooltip: TooltipMakerAPI?, hullSize: HullSize?, ship: ShipAPI?, width: Float, isForModSpec: Boolean) {
+//        if (tooltip == null) return
+//        if (isForModSpec) {
+//            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
+//            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
+//            return
+//        } else if (ship != null && (ship.variant.sMods.contains("tahlan_daemonplating") || ship.hullSpec.isBuiltInMod("tahlan_daemonplating"))) {
+//            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
+//            tooltip.addPara(
+//                txt("daemonPlatingSmod"),
+//                10f,
+//                Misc.getPositiveHighlightColor(),
+//                Misc.getHighlightColor(),
+//                "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"),
+//                "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%")
+//            )
+//        } else {
+//            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
+//            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
+//        }
+//    }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI?): String? {
 
@@ -102,8 +102,16 @@ class DaemonPlating : BaseHullMod() {
         }
     }
 
+    override fun getSModDescriptionParam(index: Int, hullSize: HullSize?): String? {
+        return when (index) {
+            0 -> "${((1f - ARMOR_MULT_SMOD) * 100f).roundToInt()}${txt("%")}"
+            1 -> "${REGEN_PER_SEC_PERCENT_SMOD.roundToInt()}${txt("%")}"
+            else -> null
+        }
+    }
+
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {
-        if (stats.variant.sMods.contains("tahlan_daemonplating") || stats.variant.hullSpec.isBuiltInMod("tahlan_daemonplating")) {
+        if (isSMod(stats)) {
             stats.armorBonus.modifyMult(id, ARMOR_MULT_SMOD)
         } else {
             stats.armorBonus.modifyMult(id, ARMOR_MULT)

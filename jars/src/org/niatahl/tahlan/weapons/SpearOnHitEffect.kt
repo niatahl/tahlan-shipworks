@@ -4,7 +4,7 @@ import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI
 import com.fs.starfarer.api.util.Misc
-import data.scripts.plugins.MagicTrailPlugin
+import org.magiclib.plugins.MagicTrailPlugin
 import org.lazywizard.lazylib.MathUtils
 import org.lwjgl.opengl.GL11
 import org.lwjgl.util.vector.Vector2f
@@ -44,7 +44,7 @@ class SpearOnHitEffect : OnHitEffectPlugin {
                 //This is for "end fizzle"
                 val fizzleConstantSpeed = (-20f..20f).random()
                 val fizzleConstantAngle = (-40f..40f).random()
-                MagicTrailPlugin.AddTrailMemberAdvanced(
+                MagicTrailPlugin.addTrailMemberAdvanced(
                     null, id, spriteToUse, projectile.location,
                     startSpeed * (i2.toFloat() / 70f), fizzleConstantSpeed * (1f - i2.toFloat() / 70f),
                     angle, startAngularVelocity * (i2.toFloat() / 70f), fizzleConstantAngle * (1f - i2.toFloat() / 70f), startSize, 0f,

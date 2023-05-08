@@ -4,8 +4,8 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
-import data.scripts.util.MagicInterference;
-import data.scripts.util.MagicLensFlare;
+import org.magiclib.util.MagicInterference;
+import org.magiclib.util.MagicLensFlare;
 
 import java.awt.*;
 

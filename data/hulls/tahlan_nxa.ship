@@ -30,7 +30,7 @@
     "WS0023": "tahlan_blinker_red",
     "WS0024": "tahlan_blinker_red",
     "WS0025": "tahlan_blinker_red",
-    "WS0026": "tahlan_phaseEngines",
+    #"WS0026": "tahlan_phaseEngines",
     "WS0028": "tahlan_blinker_red",
     "WS0029": "tahlan_blinker_red"
   },
