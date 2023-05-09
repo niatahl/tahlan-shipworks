@@ -34,7 +34,7 @@ public class FactionRelationPlugin implements SectorGeneratorPlugin {
         legio.setRelationship("pirates",0.50f);
         legio.setRelationship("diableavionics", 0.10f);
         legio.setRelationship("hegemony", -1f);
-        legio.setRelationship("persean_league", -0.6f);
+        legio.setRelationship("persean", -0.6f);
         legio.setRelationship("luddic_path", -1f);
         legio.setRelationship("luddic_church", -1f);
         legio.setRelationship("player", -0.6f);
