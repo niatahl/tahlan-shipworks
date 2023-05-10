@@ -11,6 +11,10 @@ import static org.niatahl.tahlan.utils.Utils.txt;
 
 
 public class ForcedOverdrive extends BaseHullMod {
+    @Override
+    public boolean showInRefitScreenModPickerFor(ShipAPI ship) {
+        return ship.getVariant().hasHullMod("tahlan_knightrefit");
+    }
 
     @Override
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {

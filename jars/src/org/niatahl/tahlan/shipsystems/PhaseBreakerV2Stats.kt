@@ -1,13 +1,17 @@
 package org.niatahl.tahlan.shipsystems
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.combat.BeamAPI
+import com.fs.starfarer.api.combat.DamagingProjectileAPI
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
+import com.fs.starfarer.api.combat.WeaponAPI
 import com.fs.starfarer.api.impl.campaign.ids.Stats
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
 import com.fs.starfarer.api.util.IntervalUtil
+import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.utils.Afterimage
 import org.niatahl.tahlan.utils.Utils.txt
 import org.niatahl.tahlan.utils.modify
@@ -19,6 +23,8 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
     private var levelForAlpha = 1f
     private var statuskey = Any()
     private val timer = IntervalUtil(0.2f,0.2f)
+    private val projTracker = ArrayList<DamagingProjectileAPI>()
+    private val beamTracker = ArrayList<BeamAPI>()
 
     fun maintainStatus(playerShip: ShipAPI, effectLevel: Float) {
         val cloak = playerShip.phaseCloak ?: playerShip.system ?: return
@@ -28,6 +34,27 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
                 cloak.specAPI.iconSpriteName, cloak.displayName, txt("timeflow"), false
             )
         }
+    }
+
+    fun handleProjectiles(ship: ShipAPI) {
+        CombatUtils.getProjectilesWithinRange(ship.location, 500f)
+            .filter { proj -> proj.source == ship }
+            .forEach { proj ->
+                projTracker.add(proj)
+                if (proj.weapon.slot.isHardpoint && proj.weapon.slot.weaponType == WeaponAPI.WeaponType.ENERGY) {
+                    proj.damage.damage *= 1.5f
+                }
+            }
+        ship.allWeapons
+            .filter { weapon -> weapon.isBeam && weapon.slot.isHardpoint && weapon.slot.weaponType == WeaponAPI.WeaponType.ENERGY }
+            .forEach { weapon ->
+                if (weapon.isFiring) {
+                    weapon.beams.forEach { beam ->
+                        beamTracker.add(beam)
+                        beam.damage.damage *= 1.5f
+                    }
+                }
+            }
     }
 
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
@@ -50,11 +77,11 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
 
         when (state) {
             ShipSystemStatsScript.State.IN -> {
-                levelForAlpha = effectLevel
+                levelForAlpha = level
             }
             ShipSystemStatsScript.State.ACTIVE -> {
                 ship.isPhased = true
-                levelForAlpha = effectLevel
+                levelForAlpha = level
             }
             ShipSystemStatsScript.State.OUT -> {
                 Global.getSoundPlayer().playLoop("system_temporalshell_loop", ship, 1f, 1f, ship.location, ship.velocity)
@@ -62,6 +89,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
                 levelForAlpha = (levelForAlpha - 2f * engine.elapsedInLastFrame).coerceAtLeast(0f)
                 ship.setJitterUnder(id, EFFECT_COLOR, 1f - levelForAlpha, 10, 8f)
                 level = if (ship.fluxTracker.isVenting || ship.fluxTracker.isOverloaded) 0f else 1f
+                if (level > 0f) handleProjectiles(ship)
                 timer.advance(Global.getCombatEngine().elapsedInLastFrame)
                 if (timer.intervalElapsed())
                     Afterimage.renderCustomAfterimage(ship, EFFECT_COLOR.modify(alpha = 40), 1f)
@@ -99,12 +127,15 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
         ship.isPhased = false
         ship.extraAlphaMult = 1f
         activeTime = 0f
+
+        // clear lists
+        projTracker.clear()
+        beamTracker.clear()
     }
 
     override fun getStatusData(index: Int, state: ShipSystemStatsScript.State, effectLevel: Float): StatusData? {
         return null
     }
-
     companion object {
         const val SHIP_ALPHA_MULT = 0.25f
         const val VULNERABLE_FRACTION = 0f
