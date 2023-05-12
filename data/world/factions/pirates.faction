@@ -57,7 +57,6 @@
 	"knownWeapons":{
 		#"tags":["base_bp", "lowtech_bp", "midline_bp", "missile_bp", "hightech_bp", "pirates", "tahlan_legio_bp"],
 		"weapons":[
-			"tahlan_armiger",
 			"tahlan_eradicator",
 			"tahlan_amboss",
 			"tahlan_breaker",

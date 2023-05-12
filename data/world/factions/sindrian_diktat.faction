@@ -15,7 +15,6 @@
 	"knownShips":{
 		"hulls":[
 			"tahlan_Kodai",
-			"tahlan_Defiance",
 			"tahlan_Hresvelgr",
 			"tahlan_skyrend",
 			"tahlan_nelson",
@@ -24,10 +23,7 @@
 	
 	"knownWeapons":{
 		"weapons":[
-			"tahlan_armiger",
-			"tahlan_efreet",
-			"tahlan_amboss",
-			"tahlan_vesuvio",
+		
 		],
 	}
 

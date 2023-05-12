@@ -47,9 +47,6 @@
 	"knownWeapons":{
 		#"tags":[],
 		"weapons":[
-			"tahlan_armiger",
-			"tahlan_efreet",
-			"tahlan_breaker",
 			"tahlan_vesuvio",
 		],
 	},

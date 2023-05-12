@@ -53,14 +53,13 @@
 	"knownWeapons":{
 		"tags":["tahlan_knights"],
 		"weapons":[
-			"tahlan_armiger",
-			"tahlan_efreet",
 			"tahlan_amboss",
 			"tahlan_titanomachy",
 			"tahlan_breaker",
 			"tahlan_ryza",
 			"tahlan_mezoa",
 			"tahlan_vesuvio",
+			"tahlan_eradicator",
 		],
 	},
 	"priorityWeapons":{

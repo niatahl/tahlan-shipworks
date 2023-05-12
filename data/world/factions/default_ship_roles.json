@@ -233,10 +233,10 @@
 	"freighterSmall": {},
 	"freighterMedium": {},
 	"freighterLarge": {},
-	"tankerSmall": {},
-	"tankerMedium": {
-		"tahlan_Bento_standard": 10,
+	"tankerSmall": {
+		"tahlan_Bento_standard": 10
 	},
+	"tankerMedium": {},
 	"tankerLarge": {},
 	"personnelSmall": {},
 	"personnelMedium": {},
