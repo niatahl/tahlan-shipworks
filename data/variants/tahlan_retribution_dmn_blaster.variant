@@ -1,0 +1,66 @@
+{
+    "displayName": "Blaster",
+    "fluxCapacitors": 18,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "tahlan_retribution_dmn",
+    "hullMods": [
+        "targetingunit",
+        "auxiliarythrusters",
+        "stabilizedshieldemitter",
+        "advancedshieldemitter",
+        "magazines",
+        "missleracks",
+        "tahlan_daemonboost"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_retribution_dmn_blaster",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "autopulse",
+                "WS0004": "autopulse"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "locust",
+                "WS0002": "locust"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "miningblaster",
+                "WS0006": "miningblaster",
+                "WS0007": "miningblaster",
+                "WS0008": "miningblaster"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "flak",
+                "WS0010": "flak",
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0019": "vulcan",
+                "WS0020": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

@@ -1,3 +1,17 @@
+1.0
+- wow, 1.0, woooow
+- 0.96a compatibility
+- reworked ship distribution among vanilla factions in accordance with new doctrines
+- Removed Ingress for good
+- Removed Defiance (you don't even remember what that is)
+- Fixes and tweaks and shit
+- Added Hel Retribution
+- Skysplitter resprited
+	- Lowered survivability
+	- Added 2 medium missile mounts
+- Other stuff I forgot
+
+
 0.9.3
 - Updated for Starsector 0.96a
 - Removed Ingress

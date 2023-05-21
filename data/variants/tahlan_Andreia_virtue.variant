@@ -1,11 +1,12 @@
 {
     "displayName": "Virtue",
-    "fluxCapacitors": 4,
+    "fluxCapacitors": 6,
     "fluxVents": 20,
+    "goalVariant": true,
     "hullId": "tahlan_Andreia",
     "hullMods": ["hardenedshieldemitter"],
     "permaMods": [],
-	"goalVariant": true,
+    "sMods": [],
     "variantId": "tahlan_Andreia_virtue",
     "weaponGroups": [
         {

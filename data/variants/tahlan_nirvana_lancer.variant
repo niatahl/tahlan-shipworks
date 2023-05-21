@@ -1,7 +1,8 @@
 {
     "displayName": "Lancer",
-    "fluxCapacitors": 2,
+    "fluxCapacitors": 6,
     "fluxVents": 50,
+    "goalVariant": true,
     "hullId": "tahlan_nirvana",
     "hullMods": [
         "targetingunit",
@@ -12,7 +13,6 @@
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_nirvana_lancer",
     "weaponGroups": [
         {

@@ -1,21 +1,21 @@
 {
     "displayName": "Rage",
-    "fluxCapacitors": 6,
-    "fluxVents": 0,
+    "fluxCapacitors": 8,
+    "fluxVents": 20,
+    "goalVariant": true,
     "hullId": "tahlan_sunder_dmn",
     "hullMods": [
         "missleracks",
-        "safetyoverrides"
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_sunder_dmn_rage",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0001": "hammerrack"}
+            "weapons": {"WS0001": "dragonpod"}
         },
         {
             "autofire": false,

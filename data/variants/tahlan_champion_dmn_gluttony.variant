@@ -1,15 +1,16 @@
 {
     "displayName": "Gluttony",
-    "fluxCapacitors": 15,
+    "fluxCapacitors": 9,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_champion_dmn",
     "hullMods": [
         "targetingunit",
-        "heavyarmor"
+        "heavyarmor",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true;
     "variantId": "tahlan_champion_dmn_gluttony",
     "weaponGroups": [
         {
@@ -20,7 +21,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0012": "hammerrack"}
+            "weapons": {"WS0012": "cyclone"}
         },
         {
             "autofire": false,

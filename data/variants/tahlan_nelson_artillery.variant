@@ -1,7 +1,8 @@
 {
     "displayName": "Artillery",
-    "fluxCapacitors": 6,
+    "fluxCapacitors": 8,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_nelson",
     "hullMods": [
         "targetingunit",
@@ -9,7 +10,6 @@
     ],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_nelson_artillery",
     "weaponGroups": [
         {

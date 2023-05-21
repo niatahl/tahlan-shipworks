@@ -2,9 +2,9 @@
 	"id":"tahlan", # internal id
 	"name":"Tahlan Shipworks", # displayed to the player
 	"author":"Nia Tahl",
-	"version":"0.9.2",
+	"version":"1.0",
 	"description":"A ship pack that suffers from feature creep",
-	"gameVersion":"0.96a-RC6",
+	"gameVersion":"0.96a-RC10",
 	"jars":["jars/TahlanShipworks.jar"],
 	"modPlugin":"org.niatahl.tahlan.TahlanModPlugin",
 	"dependencies": [

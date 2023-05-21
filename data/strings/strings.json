@@ -105,13 +105,27 @@
 
 		"digitalSoulLevel1a":"Allows the piloting of automated ships",
 		"digitalSoulLevel1b":"Reduces automated ship CR penalty for piloted ship to 15%%",
-		"digitalSoulLevel1b_hl":"15%%",
+		"digitalSoulLevel1b_hl":"15%",
 		"digitalSoulLevel2a":"Fully negates automated ship CR penalty for piloted ship",
 		"digitalSoulLevel2b":"Piloted ship no longer counts for automated ship points calculation",
 
 		"skill_suffix":" skill",
 		"sModBonus":"S-mod bonus",
 		"sModPenalty":"S-mod penalty",
-		"notable": "notable"
+		"notable": "notable",
+
+		"pharm_weapon": "Weaponry Enhancements",
+		"pharm_weapontext1": "Energy hardpoints in the central trench are directly linked to the Phase Breaker",
+		"pharm_weapontext1_hl1": "Phase Breaker",
+		"pharm_weapontext2": "During time dilation period, damage of these mounts is increased by 50%%",
+		"pharm_weapontext2_hl1": "50%",
+		"pharm_defense": "Defensive Enhancements",
+		"pharm_defensetext1": "Maintains a partial phase field while Phase Breaker is out of charges",
+		"pharm_defensetext1_hl1": "Phase Breaker",
+		"pharm_defensetext1_hl2": "out of charges",
+		"pharm_defensetext2": "Damage taken is reduced by 10%%",
+		"pharm_defensetext2_hl1": "10%",
+		"pharm_defensetext3": "Active vent rate is increased by 20%%",
+		"pharm_defensetext3_hl1": "20%"
 	}
 }

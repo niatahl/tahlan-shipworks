@@ -1,21 +1,21 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 6,
-    "fluxVents": 10,
+    "fluxCapacitors": 2,
+    "fluxVents": 20,
+    "goalVariant": true,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": [
         "safetyoverrides",
-        "ballistic_rangefinder"
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_hammerhead_dmn_combat",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0003": "mark9"}
+            "weapons": {"WS0003": "multineedler"}
         },
         {
             "autofire": false,
@@ -34,8 +34,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0006": "lightneedler",
-                "WS0007": "lightneedler"
+                "WS0006": "lightdualmg",
+                "WS0007": "lightdualmg"
             }
         },
         {

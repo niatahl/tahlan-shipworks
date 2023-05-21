@@ -1,0 +1,69 @@
+{
+    "displayName": "Giga",
+    "fluxCapacitors": 8,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "tahlan_retribution_dmn",
+    "hullMods": [
+        "targetingunit",
+        "missleracks",
+        "hardenedshieldemitter",
+        "tahlan_daemonboost"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_retribution_dmn_giga",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "gigacannon",
+                "WS0004": "gigacannon"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "dragonpod",
+                "WS0002": "dragonpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "heavyneedler",
+                "WS0006": "heavyneedler",
+                "WS0007": "heavyneedler",
+                "WS0008": "heavyneedler"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "irautolance",
+                "WS0010": "irautolance"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0019": "vulcan",
+                "WS0020": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

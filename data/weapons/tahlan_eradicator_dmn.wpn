@@ -6,6 +6,7 @@
   "fireSoundTwo": "tahlan_eradicator_loop",
   "everyFrameEffect":"org.niatahl.tahlan.weapons.EradicatorSmokeScript",
   "beamEffect":"org.niatahl.tahlan.weapons.EradicatorBeamEffect",
+  "skipIdleFrameIfZeroBurstDelay":true,
   "coreColor": [
     255,
     255,

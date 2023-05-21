@@ -38,7 +38,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
 
     fun handleProjectiles(ship: ShipAPI) {
         CombatUtils.getProjectilesWithinRange(ship.location, 500f)
-            .filter { proj -> proj.source == ship }
+            .filter { proj -> proj.source == ship && !projTracker.contains(proj) }
             .forEach { proj ->
                 projTracker.add(proj)
                 if (proj.weapon.slot.isHardpoint && proj.weapon.slot.weaponType == WeaponAPI.WeaponType.ENERGY) {
@@ -50,8 +50,10 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
             .forEach { weapon ->
                 if (weapon.isFiring) {
                     weapon.beams.forEach { beam ->
-                        beamTracker.add(beam)
-                        beam.damage.damage *= 1.5f
+                        if (!beamTracker.contains(beam)) {
+                            beamTracker.add(beam)
+                            beam.damage.damage *= 1.5f
+                        }
                     }
                 }
             }
@@ -103,7 +105,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
         val shipTimeMult = 1f + (getMaxTimeMult(stats) - 1f) * level
         stats.timeMult.modifyMult(id, shipTimeMult)
         if (player) {
-            Global.getCombatEngine().timeMult.modifyMult(id, 1f / shipTimeMult)
+            Global.getCombatEngine().timeMult.modifyMult(id, (1f / (shipTimeMult / 2f)).coerceAtMost(1f) )
         } else {
             Global.getCombatEngine().timeMult.unmodify(id)
         }

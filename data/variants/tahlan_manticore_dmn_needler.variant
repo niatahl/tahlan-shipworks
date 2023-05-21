@@ -1,15 +1,16 @@
 {
     "displayName": "Needler",
-    "fluxCapacitors": 10,
+    "fluxCapacitors": 11,
     "fluxVents": 20,
+    "goalVariant": true,
     "hullId": "tahlan_manticore_dmn",
     "hullMods": [
         "hardenedshieldemitter",
-        "frontemitter"
+        "frontemitter",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_manticore_dmn_needler",
     "weaponGroups": [
         {

@@ -1,12 +1,12 @@
 {
     "displayName": "Standard",
-    "fluxCapacitors": 8,
+    "fluxCapacitors": 12,
     "fluxVents": 0,
+    "goalVariant": true,
     "hullId": "tahlan_Poltergeist",
     "hullMods": ["missleracks"],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_Poltergeist_standard",
     "weaponGroups": [
         {

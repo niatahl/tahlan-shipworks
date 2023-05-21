@@ -41,7 +41,7 @@ public class AmbossMuzzleFlashScript implements EveryFrameWeaponEffectPlugin {
     //  -For beam weapons, this is when the beam has reached maximum brightness
     private static final Map<String, Integer> ON_SHOT_PARTICLE_COUNT = new HashMap<>();
     static {
-        ON_SHOT_PARTICLE_COUNT.put("default", 10);
+        ON_SHOT_PARTICLE_COUNT.put("default", 5);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_FRINGE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("FLASH_CORE_1", 1);
         ON_SHOT_PARTICLE_COUNT.put("SMOKE_5", 5);

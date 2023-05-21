@@ -3,7 +3,6 @@ tahlan_Castigator,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Cas
 tahlan_Castigator_knight,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Castigator_knight_Normal.png
 tahlan_Yukikaze,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Yukikaze_Normal.png
 tahlan_Korikaze,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Korikaze_Normal.png
-tahlan_Alva,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Alva_Normal.png
 tahlan_Exa_Pico,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Exa_Pico_Normal.png
 tahlan_Kodai,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Kodai_Normal.png
 tahlan_Vale,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Vale_Normal.png
@@ -74,7 +73,6 @@ tahlan_blockhead,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_bloc
 tahlan_skyrend,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_skyrend_Normal.png
 tahlan_nelson,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_Normal.png
 tahlan_nelson_xiv,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_xiv_Normal.png
-tahlan_nelson_fpe,ship,,2,normal,graphics/tahlan/maps/ships_normals/tahlan_nelson_xiv_Normal.png
 tahlan_nxa,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_nxa_Normal.png
 tahlan_centurion_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_centurion_dmn_Normal.png
 tahlan_vanguard_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_vanguard_dmn_Normal.png
@@ -88,6 +86,7 @@ tahlan_hound_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_houn
 tahlan_raba,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_raba_Normal.png
 tahlan_flare,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_flare_Normal.png
 tahlan_imperator_nw,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_imperator_nw_Normal.png
+tahlan_retribution_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_retribution_dmn_Normal.png
 ,,,,,
 ,,,,,
 tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png

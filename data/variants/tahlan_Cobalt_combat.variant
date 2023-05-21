@@ -1,7 +1,8 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 11,
+    "fluxCapacitors": 12,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_Cobalt",
     "hullMods": [
         "targetingunit",
@@ -9,7 +10,6 @@
     ],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_Cobalt_combat",
     "weaponGroups": [
         {

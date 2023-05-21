@@ -1,0 +1,344 @@
+{
+  "hullName": "Hel Retribution",
+  "hullId": "tahlan_retribution_dmn",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_retribution_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 316,
+  "width": 222,
+  "center": [111, 158],
+  "collisionRadius": 223.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 212.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "tahlan_daemonarmor",
+    "automated"
+  ],
+  "builtInWings": [
+    "tahlan_miasma_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [22, 73]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [22, -73]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [125, 73]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [125, -73]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [150, 37]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [150, -37]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [138, 17]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [138, -17]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 116,
+      "angle": 33.5,
+      "locations": [72, 22]
+    },
+    {
+      "id": "WS0010",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 116,
+      "angle": -33.5,
+      "locations": [72, -22]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 154,
+      "angle": 50.5,
+      "locations": [84, 59]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 154,
+      "angle": -50.5,
+      "locations": [84, -59]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": -50.5,
+      "locations": [-28, -91]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": 50.5,
+      "locations": [-28, 91]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": -76,
+      "locations": [-47, -91]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": 76,
+      "locations": [-47, 91]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": -90,
+      "locations": [-68, -94]
+    },
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": 90,
+      "locations": [-68, 94]
+    },
+    {
+      "id": "WS0019",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": -145,
+      "locations": [-111.5, -86]
+    },
+    {
+      "id": "WS0020",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 123,
+      "angle": 145,
+      "locations": [-111.5, 86]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-155, 68],
+      "length": 105.5,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-155, -68],
+      "length": 105.5,
+      "width": 30,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-148, 88],
+      "length": 76.5,
+      "width": 22,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-148, -88],
+      "length": 76.5,
+      "width": 22,
+      "angle": -180,
+      "contrailSize": 22,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-116, -0],
+      "length": 121,
+      "width": 55,
+      "angle": 180,
+      "contrailSize": 55,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-115, -0],
+      "length": 64,
+      "width": 38,
+      "angle": 180,
+      "contrailSize": 38,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-154, 68],
+      "length": 37.5,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-154, -68],
+      "length": 37.5,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-147, 88],
+      "length": 26,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-147, -88],
+      "length": 26,
+      "width": 14,
+      "angle": -180,
+      "contrailSize": 14,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -115.5, 14,
+    -96.5, 19,
+    -110, 34.5,
+    -99, 43.5,
+    -74.5, 43,
+    -77.5, 53,
+    -134.5, 46,
+    -154, 57.5,
+    -155.5, 77.5,
+    -147, 81,
+    -148, 96.5,
+    -91, 106,
+    32, 87.5,
+    33, 58,
+    19.5, 56,
+    25, 46,
+    61.5, 53,
+    74.5, 81.5,
+    93, 84.5,
+    95.5, 78.5,
+    100, 87.5,
+    138.5, 88.5,
+    137, 62,
+    152, 46.5,
+    154, 29.5,
+    142, 29,
+    142, 8.5,
+    114, 8,
+    114, -8,
+    142, -8.5,
+    142, -29,
+    154, -29.5,
+    152, -46.5,
+    137, -62,
+    138.5, -88.5,
+    100, -87.5,
+    95.5, -78.5,
+    93, -84.5,
+    74.5, -81.5,
+    61.5, -53,
+    25, -46,
+    19.5, -56,
+    33, -58,
+    32, -87.5,
+    -91, -106,
+    -148, -96.5,
+    -147, -81,
+    -155.5, -77.5,
+    -154, -57.5,
+    -134.5, -46,
+    -77.5, -53,
+    -74.5, -43,
+    -99, -43.5,
+    -110, -34.5,
+    -96.5, -19,
+    -115.5, -14
+  ]
+}

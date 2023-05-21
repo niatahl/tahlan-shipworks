@@ -1,16 +1,16 @@
 {
     "displayName": "Lancer",
-    "fluxCapacitors": 29,
+    "fluxCapacitors": 26,
     "fluxVents": 50,
+    "goalVariant": true,
     "hullId": "tahlan_skyrend",
     "hullMods": [
+        "advancedoptics",
         "targetingunit",
-        "hardenedshieldemitter",
-        "stabilizedshieldemitter"
+        "missleracks"
     ],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_skyrend_lancer",
     "weaponGroups": [
         {
@@ -22,11 +22,25 @@
             }
         },
         {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "gazerpod",
+                "WS0012": "gazerpod"
+            }
+        },
+        {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
                 "WS0003": "gravitonbeam",
-                "WS0004": "gravitonbeam",
+                "WS0004": "gravitonbeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
                 "WS0005": "hveldriver",
                 "WS0006": "hveldriver"
             }
@@ -35,33 +49,17 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0013": "railgun",
-                "WS0014": "railgun"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
                 "WS0007": "lrpdlaser",
                 "WS0008": "lrpdlaser",
-                "WS0009": "lrpdlaser",
-                "WS0010": "lrpdlaser",
-                "WS0011": "lrpdlaser",
-                "WS0012": "lrpdlaser"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
+                "WS0013": "lrpdlaser",
+                "WS0014": "lrpdlaser",
                 "WS0015": "pdlaser",
                 "WS0016": "pdlaser"
             }
         }
     ],
     "wings": [
-        "thunder_wing",
-        "thunder_wing"
+        "broadsword_wing",
+        "broadsword_wing"
     ]
 }

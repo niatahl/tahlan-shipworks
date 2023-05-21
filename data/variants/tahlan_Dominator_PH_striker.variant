@@ -1,14 +1,13 @@
 {
     "displayName": "Striker",
-    "fluxCapacitors": 0,
-    "fluxVents": 28,
+    "fluxCapacitors": 2,
+    "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_Dominator_PH",
-    "hullMods": [
-        "missleracks"
-    ],
+    "hullMods": ["missleracks"],
     "permaMods": [],
+    "sMods": [],
     "variantId": "tahlan_Dominator_PH_striker",
-	"goalVariant": true,
     "weaponGroups": [
         {
             "autofire": false,

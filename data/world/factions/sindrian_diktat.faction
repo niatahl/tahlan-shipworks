@@ -7,17 +7,15 @@
 	"hullFrequency":{
 		#"tags":{},
 		"hulls":{
-			"tahlan_Hresvelgr":0.5,
-			"tahlan_skyrend":0.5
+			"tahlan_skyrend":0.25
 		},
 	},
 
 	"knownShips":{
 		"hulls":[
 			"tahlan_Kodai",
-			"tahlan_Hresvelgr",
-			"tahlan_skyrend",
 			"tahlan_nelson",
+			"tahlan_skyrend"
 		],
 	},
 	

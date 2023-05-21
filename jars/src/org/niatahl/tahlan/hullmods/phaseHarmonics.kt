@@ -4,8 +4,12 @@ import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.impl.campaign.ids.HullMods
+import com.fs.starfarer.api.ui.Alignment
+import com.fs.starfarer.api.ui.TooltipMakerAPI
+import com.fs.starfarer.api.util.Misc
 import org.magiclib.util.MagicIncompatibleHullmods
 import org.niatahl.tahlan.utils.Utils
+import org.niatahl.tahlan.utils.Utils.txt
 import kotlin.math.roundToInt
 
 class phaseHarmonics : BaseHullMod() {
@@ -34,6 +38,21 @@ class phaseHarmonics : BaseHullMod() {
 
         val shield = ship.shield ?: return
         shield.setRadius(ship.shieldRadiusEvenIfNoShield,"graphics/tahlan/fx/tahlan_nxashield.png","graphics/tahlan/fx/tahlan_tempshield_ring.png")
+    }
+
+    override fun addPostDescriptionSection(tooltip: TooltipMakerAPI, hullSize: HullSize?, ship: ShipAPI?, width: Float, isForModSpec: Boolean) {
+        val pad = 10f
+        tooltip.addSectionHeading(txt("pharm_weapon"),Alignment.MID,pad)
+        val section_wep = tooltip.beginImageWithText("graphics/icons/hullsys/high_energy_focus.png",64f)
+        section_wep.addPara(txt("pharm_weapontext1"),pad, Misc.getHighlightColor(), txt("pharm_weapontext1_hl1"))
+        section_wep.addPara(txt("pharm_weapontext2"),pad, Misc.getHighlightColor(), txt("pharm_weapontext2_hl1"))
+        tooltip.addImageWithText(pad)
+        tooltip.addSectionHeading(txt("pharm_defense"),Alignment.MID,pad)
+        val section_def = tooltip.beginImageWithText("graphics/icons/hullsys/damper_field.png",64f)
+        section_def.addPara(txt("pharm_defensetext1"),pad, Misc.getHighlightColor(), txt("pharm_defensetext1_hl1"), txt("pharm_defensetext1_hl2"))
+        section_def.addPara(txt("pharm_defensetext2"),pad, Misc.getHighlightColor(), txt("pharm_defensetext2_hl1"))
+        section_def.addPara(txt("pharm_defensetext3"),pad, Misc.getHighlightColor(), txt("pharm_defensetext3_hl1"))
+        tooltip.addImageWithText(pad)
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {

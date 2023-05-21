@@ -1,7 +1,8 @@
 {
     "displayName": "Disabler",
-    "fluxCapacitors": 15,
+    "fluxCapacitors": 17,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_Cobalt",
     "hullMods": [
         "fluxbreakers",
@@ -10,7 +11,6 @@
     ],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_Cobalt_disabler",
     "weaponGroups": [
         {

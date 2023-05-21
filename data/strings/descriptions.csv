@@ -298,6 +298,17 @@ tahlan_kodai_dmn,SHIP,"#> Ship Classification: Unknown
 #> .
 #> .
 #> .",,,
+tahlan_retribution_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Retribution-class Battlecruiser : 73% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
 tahlan_DunScaith_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest mat5##6sf...
 #> .
@@ -461,6 +472,9 @@ tahlan_disparax,WEAPON,"A heavy plasma cannon of unknown origin. Boasting solid 
 tahlan_relparax,WEAPON,A medium energy blaster of unknown origin. A versatile and flexible weapon that is effective against most targets.,,,
 tahlan_nenparax,WEAPON,"A small energy beam emitter of unknown origin. Fires a powerful and high-impact beam that is highly effective against small targets. While potent as a PD weapon, it lacks the internal targeting systems to act as a PD weapon without an external PD system.",,,
 tahlan_eradicator,WEAPON,"An icon of pirate hubris, the Deathgaze is a heavily modified asteroid mining laser, supercharged to dangerous levels and about as likely to blow out the flux grid of whatever ship it is mounted on with a feedback spike as it is to cut its prey apart. When it functions, however, it does so quite well and to devastating effect.",,,
+tahlan_eradicator_dmn,WEAPON,"Fully integrated and supplied by the ship's reactor, this variant of the Deathgaze features an enhanced capacitor charge rate over its modular cousin.
+
+An icon of pirate hubris, the Deathgaze is a heavily modified asteroid mining laser, supercharged to dangerous levels and about as likely to blow out the flux grid of whatever ship it is mounted on with a feedback spike as it is to cut its prey apart. When it functions, however, it does so quite well and to devastating effect.",,,
 tahlan_fray,WEAPON,"Based on the hellbore, this upscaled heavy cannon is fully integrated into the ship's hull and outfitted with numerous recoil stabilizers to prevent it from ripping the ship apart when firing. Despite the major upscaling, its actual performance isn't that much superior to a standard hellbore, but the psychological impact of such a massive weapon pointing at a lightly-armored freighter is exceedingly useful in piracy actions.",,,
 tahlan_pendragon,WEAPON,"Designed for long-range engagements, the Pendragon is a unique MIRV launcher that utilizes a fast but barely maneuverable carrier missile to deliver a swarm of agile micromissiles into effective range.",,,
 tahlan_efreet,WEAPON,"A somewhat outdated design, the Efreet fires a constant barrage of kinetic impact shells over long ranges. While generally effective, the simple design lacks adequate recoil compensation for its massive propelling charge and suffers from subpar projectile velocity and bad accuracy during extended firing.",,,

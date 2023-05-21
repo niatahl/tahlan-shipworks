@@ -32,7 +32,8 @@
 			"tahlan_Vale",
 			"tahlan_darnus",
 			"tahlan_tower",
-			"tahlan_raba"
+			"tahlan_raba",
+			"tahlan_Phoca"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

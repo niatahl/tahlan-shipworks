@@ -25,13 +25,13 @@
 	
 	"startRelationships":{
 		"default": -0.4,
-		"player": -1.0,
-		"hegemony": -1.0, 
+		"player": -0.6,
+		"hegemony": -0.6, 
 		"tritachyon": 0.0,
 		"pirates": 0.80, 
 		"independent": -0.10,
-		"luddic_church": -1.00,
-		"luddic_path": -1.00,
+		"luddic_church": -0.40,
+		"luddic_path": -0.40,
 		"sindrian_diktat": -0.10,
 		"remnant": -0.50,
 		"new_galactic_order": -0.60,

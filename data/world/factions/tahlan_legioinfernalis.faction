@@ -41,7 +41,7 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"tahlan_legio":2,
+			"tahlan_legio":4,
 			"tahlan_daemon":10,
 			"rare_bp":2,
 			"pirates":0.5
@@ -116,6 +116,11 @@
 			"tahlan_armiger",
 			"tahlan_efreet",
 			"tahlan_pastel",
+			"gorgon",
+			"gorgonpod",
+			"dragonpod",
+			"dragon",
+			"irautolance"
 		],
 	},
 	"priorityWeapons":{

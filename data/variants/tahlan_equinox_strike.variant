@@ -1,7 +1,8 @@
 {
     "displayName": "Strike",
-    "fluxCapacitors": 2,
+    "fluxCapacitors": 6,
     "fluxVents": 50,
+    "goalVariant": true,
     "hullId": "tahlan_equinox",
     "hullMods": [
         "targetingunit",
@@ -9,7 +10,6 @@
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_equinox_strike",
     "weaponGroups": [
         {

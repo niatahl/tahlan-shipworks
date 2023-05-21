@@ -1,0 +1,68 @@
+{
+    "displayName": "Pressure",
+    "fluxCapacitors": 15,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "tahlan_retribution_dmn",
+    "hullMods": [
+        "targetingunit",
+        "missleracks",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_retribution_dmn_pressure",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_eradicator",
+                "WS0004": "tahlan_eradicator"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "squall",
+                "WS0002": "squall"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "tahlan_conand",
+                "WS0006": "tahlan_conand",
+                "WS0007": "tahlan_conand",
+                "WS0008": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0009": "tahlan_tethra",
+                "WS0010": "tahlan_tethra"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "vulcan",
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0019": "vulcan",
+                "WS0020": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}

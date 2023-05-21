@@ -154,7 +154,7 @@
 		"contrailParticleFinalSizeMult":2.5,
 		"contrailMaxSpeedMult":0.5,
 		"contrailAngularVelocityMult":0,
-		"contrailColor":[205,60,210,40],
+		"contrailColor":[205,60,210,20],
 		"contrailCampaignColor":[255,80,120,240],
 		"type":"GLOW" # GLOW or SMOKE
 	},

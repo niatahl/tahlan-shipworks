@@ -88,8 +88,6 @@
 		"tahlan_Kodai_standard": 7,
 		"tahlan_dominator_gh_knight": 10,
 		"tahlan_Izanami_prototype": 10,
-		"tahlan_Defiance_elite": 7,
-		"tahlan_Defiance_overdriven": 3,
 		"tahlan_Eagle_P_raider": 10,
 		"tahlan_Castigator_P_raider": 5,
 		"tahlan_Castigator_P_lancer": 3,
@@ -171,6 +169,12 @@
 		"tahlan_asria_artillery":3,
 		"tahlan_asria_assault":3,
 		"tahlan_asria_combat":4,
+		"tahlan_retribution_dmn_aggressor":2,
+		"tahlan_retribution_dmn_pressure":2,
+		"tahlan_retribution_dmn_strike":2,
+		"tahlan_retribution_dmn_artillery":2,
+		"tahlan_retribution_dmn_blaster":2,
+		"tahlan_retribution_dmn_giga":2, # Sum of 12, meant to be slightly more common than Hel Scaith
 	},
 	
 	

@@ -10,6 +10,7 @@ import com.fs.starfarer.api.campaign.SectorAPI
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.GateEntityPlugin
+import com.fs.starfarer.api.impl.campaign.ids.Factions
 import com.fs.starfarer.api.impl.campaign.shared.SharedData
 import com.fs.starfarer.api.util.Misc
 import exerelin.campaign.SectorManager
@@ -20,6 +21,7 @@ import org.dark.shaders.light.LightData
 import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
+import org.magiclib.kotlin.getFactionMarkets
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
@@ -191,7 +193,7 @@ class TahlanModPlugin : BaseModPlugin() {
 
             // Add our listener for stuff
             if (ENABLE_DAEMONS) {
-                Global.getSector().addTransientListener(TahlanTrigger())
+                sector.addTransientListener(TahlanTrigger())
             } else {
                 removeDaemons(sector)
             }
@@ -388,7 +390,8 @@ class TahlanModPlugin : BaseModPlugin() {
             "tahlan_DunScaith_dmn",
             "tahlan_hound_dmn",
             "tahlan_sunder_dmn",
-            "tahlan_kodai_dmn"
+            "tahlan_kodai_dmn",
+            "tahlan_retribution_dmn"
         )
 
         val DAEMON_WINGS = mutableListOf(
@@ -400,6 +403,12 @@ class TahlanModPlugin : BaseModPlugin() {
             "tahlan_gaze_dmn_wing"
         )
 
+        val DAEMON_WEAPONS = mutableListOf(
+            "kineticblaster",
+            "gigacannon"
+        )
+
+
         private fun addDaemons(sector: SectorAPI) {
             DAEMON_SHIPS.forEach {
                 sector.getFaction(LEGIO).addKnownShip(it, false)
@@ -409,6 +418,11 @@ class TahlanModPlugin : BaseModPlugin() {
                 sector.getFaction(LEGIO).addKnownFighter(it, false)
                 sector.getFaction(BLACKWATCH).addKnownFighter(it, false)
             }
+            DAEMON_WEAPONS.forEach {
+                sector.getFaction(LEGIO).addKnownWeapon(it, false)
+                sector.getFaction(BLACKWATCH).addKnownWeapon(it, false)
+            }
+
         }
 
         private fun removeDaemons(sector: SectorAPI) {

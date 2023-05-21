@@ -21,11 +21,11 @@
 		#"tags":[],
 		"hulls":[
 			"tahlan_Kodai",
-			"tahlan_Defiance",
 			"tahlan_Castella",
 			"tahlan_providence",
 			"tahlan_throne",
-			"tahlan_skyrend"
+			"tahlan_skyrend",
+			"tahlan_Phoca"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

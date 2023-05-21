@@ -1,12 +1,12 @@
 {
     "displayName": "Overdriven",
     "fluxCapacitors": 0,
-    "fluxVents": 25,
+    "fluxVents": 28,
+    "goalVariant": true,
     "hullId": "tahlan_nelson",
     "hullMods": ["safetyoverrides"],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_nelson_overdriven",
     "weaponGroups": [
         {

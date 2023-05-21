@@ -1,7 +1,8 @@
 {
     "displayName": "Overdriven",
-    "fluxCapacitors": 20,
+    "fluxCapacitors": 21,
     "fluxVents": 0,
+    "goalVariant": true,
     "hullId": "tahlan_Cobalt",
     "hullMods": [
         "high_scatter_amp",
@@ -9,7 +10,6 @@
     ],
     "permaMods": [],
     "sMods": [],
-	"goalVariant": true,
     "variantId": "tahlan_Cobalt_overdriven",
     "weaponGroups": [
         {

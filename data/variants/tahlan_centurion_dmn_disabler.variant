@@ -1,12 +1,15 @@
 {
     "displayName": "Disabler",
-    "fluxCapacitors": 4,
+    "fluxCapacitors": 6,
     "fluxVents": 10,
+    "goalVariant": true,
     "hullId": "tahlan_centurion_dmn",
-    "hullMods": ["missleracks"],
+    "hullMods": [
+        "missleracks",
+        "tahlan_daemonboost"
+    ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_centurion_dmn_disabler",
     "weaponGroups": [
         {

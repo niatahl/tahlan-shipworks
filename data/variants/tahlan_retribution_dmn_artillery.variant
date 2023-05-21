@@ -1,67 +1,69 @@
 {
-    "displayName": "Overdriven",
-    "fluxCapacitors": 0,
-    "fluxVents": 13,
+    "displayName": "Artillery",
+    "fluxCapacitors": 22,
+    "fluxVents": 50,
     "goalVariant": true,
-    "hullId": "tahlan_dominator_dmn",
+    "hullId": "tahlan_retribution_dmn",
     "hullMods": [
-        "safetyoverrides",
-        "stabilizedshieldemitter",
+        "targetingunit",
+        "missleracks",
         "hardenedshieldemitter",
         "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "variantId": "tahlan_dominator_dmn_overdriven",
+    "variantId": "tahlan_retribution_dmn_artillery",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "chaingun",
-                "WS0006": "chaingun"
+                "WS0003": "hil",
+                "WS0004": "hil"
             }
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0001": "hammerrack",
-                "WS0002": "hammerrack"
+                "WS0001": "hurricane",
+                "WS0002": "hurricane"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "hveldriver",
+                "WS0006": "hveldriver",
+                "WS0007": "hveldriver",
+                "WS0008": "hveldriver"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0004": "heavymg",
-                "WS0005": "heavymg",
-                "WS0007": "heavymg"
+                "WS0009": "hveldriver",
+                "WS0010": "hveldriver"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0008": "tahlan_conand",
-                "WS0011": "tahlan_conand"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0010": "vulcan",
+                "WS0011": "vulcan",
                 "WS0012": "vulcan",
                 "WS0013": "vulcan",
                 "WS0014": "vulcan",
                 "WS0015": "vulcan",
-                "WS0016": "vulcan"
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0019": "vulcan",
+                "WS0020": "vulcan"
             }
         }
     ],
-    "wings": [
-        "tahlan_thunder_dmn_wing",
-        "tahlan_lux_dmn_wing"
-    ]
+    "wings": []
 }

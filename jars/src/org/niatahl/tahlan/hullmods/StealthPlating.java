@@ -12,7 +12,7 @@ public class StealthPlating extends BaseHullMod {
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize, ShipAPI ship) {
-        if (index == 1) return "" + Math.round((1f-SENSOR_MULT)*100f) + txt("%");
+        if (index == 0) return "" + Math.round((1f-SENSOR_MULT)*100f) + txt("%");
         return null;
     }
 

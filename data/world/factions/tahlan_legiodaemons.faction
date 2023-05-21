@@ -95,6 +95,11 @@
 			"tahlan_armiger",
 			"tahlan_efreet",
 			"tahlan_pastel",
+			"gorgon",
+			"gorgonpod",
+			"dragonpod",
+			"dragon",
+			"irautolance"
 		],
 	},
 	"priorityWeapons":{
