@@ -342,7 +342,7 @@ class TahlanModPlugin : BaseModPlugin() {
         ENABLE_FASTMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_fastmode") ?: false
         ENABLE_DAEMONS = LunaSettings.getBoolean("tahlan", "tahlan_enable_daemons") ?: true
         ENABLE_HARDMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_hardmode") ?: false
-        ENABLE_ADAPTIVEMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_adaptivemode") ?: false
+        ENABLE_ADAPTIVEMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_adaptivemode") ?: true
         ENABLE_LEGIOBPS = LunaSettings.getBoolean("tahlan", "tahlan_enable_legiobps") ?: false
         ENABLE_LIFELESS = LunaSettings.getBoolean("tahlan", "tahlan_enable_lifeless") ?: false
     }

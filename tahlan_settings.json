@@ -2,10 +2,10 @@
 	#SAVE-LOCKED SETTINGS - Changes only apply to new campaigns
 
 	#enables the Lethia system housing Kassadar.
-	"enableLethia": false,
+	"enableLethia": true,
 	
 	#enables the Legio Infernalis, an elite pirate faction.
-	"enableLegio": false,
+	"enableLegio": true,
 
     #TOGGLES - Apply to existing saves on save load (but can take some time to fully take effect)
 
@@ -21,7 +21,7 @@
 	"enableHardMode": false,
 
 	#enables adaptive performance scaling effects for Daemons, like gaining S-mods to match player fleet
-	"enableAdaptiveMode": false,
+	"enableAdaptiveMode": true,
 	
 	#enables Legio Infernalis to learn every blueprint that pirates learn. 
 	"enableLegioBlueprintLearning": false,

@@ -182,7 +182,7 @@ class DaemonHeart : BaseHullMod() {
         // Also do Nightmare mode S-mod upgrades here, so we only run this once
         if (ENABLE_ADAPTIVEMODE) {
             val sMods = Global.getSector().playerFleet.membersWithFightersCopy
-                .filter { !it.isFighterWing }
+                .filter { !it.isFighterWing && !it.isCivilian }
                 .sumOf { it.variant.sMods.count() }
 
             val numShips = Global.getSector().playerFleet.numShips.coerceAtLeast(1)

@@ -10,6 +10,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Personalities
 import com.fs.starfarer.api.impl.campaign.ids.Ranks
 import com.fs.starfarer.api.impl.campaign.ids.Skills
 import org.niatahl.tahlan.TahlanModPlugin.Companion.WEEB_MODE
+import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 
 object TahlanPeople {
@@ -107,7 +108,7 @@ object TahlanPeople {
         if (getPerson(DEVIL) == null) {
             val person = Global.getFactory().createPerson().apply {
                 id = DEVIL
-                setFaction(LEGIO)
+                setFaction(BLACKWATCH)
                 name.first = "Louisa"
                 name.last = "Ferre"
                 gender = FullName.Gender.FEMALE
@@ -123,6 +124,7 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
                 stats.setSkillLevel(Skills.POLARIZED_ARMOR, 2f)
                 stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
+                tags.add("tahlan_devil")
             }
             ip.addPerson(person)
         }
