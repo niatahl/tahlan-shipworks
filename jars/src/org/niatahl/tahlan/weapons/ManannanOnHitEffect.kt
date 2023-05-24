@@ -5,11 +5,14 @@ import com.fs.starfarer.api.campaign.AsteroidAPI
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI
 import com.fs.starfarer.api.util.Misc
+import com.fs.starfarer.api.util.Misc.ZERO
 import org.magiclib.util.MagicRender
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.TahlanModPlugin.Companion.isGraphicsLibAvailable
+import org.niatahl.tahlan.utils.GraphicLibEffects
 import org.niatahl.tahlan.utils.random
 import java.awt.Color
 import kotlin.random.Random
@@ -139,6 +142,24 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
                 10f,  // thickness of the lightning bolt
                 ARC_CORE_COLOR,  //Central color
                 ARC_FRINGE_COLOR //Fringe Color
+            )
+        }
+
+        if (isGraphicsLibAvailable) {
+            GraphicLibEffects.CustomRippleDistortion(
+                point,
+                ZERO,
+                500f,
+                1f,
+                false,
+                projectile.facing,
+                360f,
+                1f,
+                0.1f,
+                0.5f,
+                0.5f,
+                2f,
+                0f
             )
         }
 

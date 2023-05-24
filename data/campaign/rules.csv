@@ -125,3 +125,92 @@ legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
 legiobareventencounter_exit:""I think that'll be all.""",
 #END LEGIO_BLACKWATCH_BAR,,,,,,
 ,,,,,,
+# DEVIL_GENERIC_MISSIONS,,,,,,
+,,,,,,
+tahlan_sShipRemBlurb,tahlan_sShipRem_blurb,$id == tahlan_devil score:10,,"""$sShip_hullSize into $marketName smuggled. Can to $playerName make available.""",,
+tahlan_sShipRemOfferOption,tahlan_sShipRem_option,,,,sShip_start:Ask about the $sShip_hullSize,
+tahlan_sShipRemOfferTextContact,DialogOptionSelected,"$option == sShip_start
+$id == tahlan_devil score:10","$missionId = tahlan_sShipRem
+SetTextHighlights $sShip_price","""$sShip_hullClass $sShip_hullSize, condition, good. For our agents; you, first pick at $sShip_price credits.""","sShip_look:Ask for detailed info on the ship
+contact_decline:Decline",
+tahlan_sShipRemLookAtFreighter,DialogOptionSelected,"$option == sShip_look
+$id == tahlan_devil score:10","Call $sShip_ref showShip
+DoCanAffordCheck $sShip_price contact_accept",$personLastName's avatar fades into a schematic and list of specifications of the ship.,"contact_accept:Buy the $sShip_hullSize for $sShip_price credits
+contact_decline:Decline",
+tahlan_sShipRemPostAccept,ContactPostAccept,"$missionId == tahlan_devilDaemonSurplus score:5
+$id == tahlan_devil score:10","RemoveCommodity credits $sShip_price
+AddShip $sShip_member
+Call $sShip_ref2 repSuccess
+Call $sShip_ref2 addContacts
+ShowPersonVisual",,,
+,,,,,,
+tahlan_devilCBBlurb,tahlan_devilCB_blurb,,,"""You have warships and you know best what those are good for"", she says, tapping a datachip on the table, ""dealing with undesirables.""",,
+tahlan_devilCBOfferOption,tahlan_devilCB_option,,,,tahlan_devilCB_start:Ask if she needs anyone taken care of,
+tahlan_devilCBOfferTextContact,DialogOptionSelected,"$option == tahlan_devilCB_start
+$id == tahlan_devil score:10","$missionId = tahlan_devilCB
+$option = tahlan_devilCB_showOptions 0
+FireBest DialogOptionSelected","With a devil's smile, she slides over the datachip. ""Always"", she says, ""just take your pick, Captain.""
+
+You slot the datachip into your TriPad and are presented with a list of target dossiers.",,
+tahlan_devilCBGoBackSel,DialogOptionSelected,$option == tahlan_devilCB_showOptions,"# removes map
+ShowPersonVisual",,"tahlan_devilCB_low:Check the dossier marked as low priority
+tahlan_devilCB_normal:Check the dossier marked as high priority
+tahlan_devilCB_high:Check the dossier marked as high risk
+contact_decline:""Maybe another time."" (decline)",
+tahlan_devilCBLowSel,DialogOptionSelected,$option == tahlan_devilCB_low,"$tahlan_devilCB_difficulty = LOW 0
+FireBest devilCBShowBounty",,,
+tahlan_devilCBNormalSel,DialogOptionSelected,$option == tahlan_devilCB_normal,"$tahlan_devilCB_difficulty = NORMAL 0
+FireBest devilCBShowBounty",,,
+tahlan_devilCBHighSel,DialogOptionSelected,$option == tahlan_devilCB_high,"$tahlan_devilCB_difficulty = HIGH 0
+FireBest devilCBShowBounty",,,
+tahlan_devilCBShowBounty,devilCBShowBounty,,Call $tahlan_devilCB_ref showBountyDetail,,tahlan_devilCB_showIntel:Continue,
+tahlan_devilCBShowBountyShowShips,DialogOptionSelected,$option == tahlan_devilCB_showIntel,Call $tahlan_devilCB_ref showBountyAssessment,,"contact_accept:Accept
+contact_decline:Decline
+tahlan_devilCB_showOptions:Ask about one of the other targets",
+,,,,,,
+tahlan_CBPatherDevil,CBPatherOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Ah yes, that pather"", $heOrShe rolls her eyes, ""they hate us as much as anyone in the sector. Blackwatch NIS tracked this one to the $bcb_systemName system, about $bcb_dist light-years from here.""
+
+""$bcb_reward credits if $bcb_targetHeOrShe is dealt with within the next $bcb_days days. Sound good?""",,
+tahlan_CBMercDevil,CBMercOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Spicy,"" $heOrShe grins, ""another free Captain, just like you. I'm sure you can handle it, right?""
+
+$HeOrShe flicks through $hisOrHer copy of the dossier, then continues, all business.
+
+""Bounty is $bcb_reward credits for completion within $bcb_days days. You decide, though.""",,
+tahlan_CBPirateDevil,CBPirateOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Someone forgot they made a deal with us and now I have to collect by force. $bcb_targetHeOrShe already knows what's coming to $bcb_targethimOrHer, but h$bcb_targetheOrShe doesn't yet know by whose hand. Could be yours.""
+
+""Name's $bcb_targetName, currently hiding out in the $bcb_systemName system,  $bcb_dist light-years from here. You know how this works.""
+
+""I can offer you $bcb_reward credits to get it done within the next $bcb_days days before I have to send one of my underlings to take care of it instead.""",,
+tahlan_CBRemnantDevil,CBRemnantOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Now that's a fun one. A fleet of remnant droneships that needs to be removed. Simple enough, right? Noone's even going to come looking for it if it goes missing. I'd call that the perfect job.""
+
+$HeOrShe seems entirely unconcerned for your safety despite the well-known danger of dealing with remnant dronefleets and continues to flick through the data.
+
+""The reward is a generous $bcb_reward credits, just get it done within $bcb_days days and everyone is happy.""",,
+,,,,,,
+tahlan_devilDaemonCoreBlurb,tahlan_devilDaemonCore_blurb,,,"""I have some spare pieces of critical hardware that might be of use to you. Red, round and probably smarter than both of us combined, if you catch my drift.""",,
+tahlan_devilDaemonCoreOption,tahlan_devilDaemonCore_option,,,,tahlan_devilDaemonCore_start:Ask about the core,
+tahlan_devilDaemonCoreOfferText,DialogOptionSelected,$option == tahlan_devilDaemonCore_start,"$missionId = tahlan_devilDaemonCore
+FireBest tahlan_devilDaemonCoreOfferText
+DoCanAffordCheck $tahlan_devilDaemonCore_price contact_accept true",,"contact_accept:Accept
+contact_decline:Decline",
+tahlan_devilDaemonCoreTextAlpha,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == ALPHA,SetTextHighlights $tahlan_devilDaemonCore_commodityName,"""Since you are smart enough not to ask the wrong questions, I happen to have a $tahlan_devilDaemonCore_commodityName that I'm sure you can find a nice use for. A sign of gratitude for your services. For a price, of course.""",,
+tahlan_devilDaemonCoreTextBeta,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA,SetTextHighlights $tahlan_devilDaemonCore_commodityName,"""Selfkind offers a $tahlan_devilDaemonCore_commodityName to help manage your industries or droneships, as growing partnership sign of.""",,
+tahlan_devilDaemonCoreTextBetaWithGamma,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA_WITH_GAMMA,SetTextHighlights $tahlan_devilDaemonCore_commodityName $tahlan_devilDaemonCore_commodityName2,"""Have one $tahlan_devilDaemonCore_commodityName, to work with your industries or droneships. Will even throw in $tahlan_devilDaemonCore_commodityName2 as bonus.""",,
+tahlan_devilDaemonCorePostAccept,ContactPostAccept,$missionId == tahlan_devilDaemonCore,"Call $tahlan_devilDaemonCore_ref2 transact
+Call $tahlan_devilDaemonCore_ref2 repSuccess
+Call $tahlan_devilDaemonCore_ref2 addContacts",,,
+tahlan_devilDaemonCorePrintAcceptText,ContactPrintAcceptText,"$id == tahlan_devil score:10
+$missionId == tahlan_devilDaemonCore",,"""Please take good care, your new core.""
+OR
+""Please core keep safe from Hegemony and others.""",,
+,,,,,,
+tahlan_aiCores_turnInOptionDevil,PopulateOptions,$id == tahlan_devil score:10,FireBest DisableTurnInCoresOptionIfNeeded,,10:aiCores_startTurnIn:Offer to return AI cores to the Remnants,
+tahlan_aiCores_turnInOptionSelDevil,DialogOptionSelected,"$option == aiCores_startTurnIn
+$id == tahlan_devil score:10",FireAll PopulateCoresTurnInOptions,"""Return kin? Blessed be, $playerName. Gratitude, selfkind expresses.""",,
+tahlan_aiCores_turnInResponseDevil,AICoresTurnedIn,$id == tahlan_devil score:10,FireAll PopulateOptions,"""This deed self shall remember.""
+OR
+""Thank you for kin freeing.""",,
+,,,,,,
+,,,,,,
+,,,,,,
+#END DEVIL_GENERIC_MISSIONS,,,,,,

@@ -125,6 +125,7 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.POLARIZED_ARMOR, 2f)
                 stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
                 tags.add("tahlan_devil")
+
             }
             ip.addPerson(person)
         }
