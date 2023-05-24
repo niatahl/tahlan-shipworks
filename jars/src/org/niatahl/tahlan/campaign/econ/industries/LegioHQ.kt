@@ -271,18 +271,18 @@ class LegioHQ : BaseIndustry(), RouteFleetSpawner, FleetEventListener {
         market.containingLocation.addEntity(fleet)
         fleet.facing = Math.random().toFloat() * 360f
 
-        // Blackwatch is dommy mommies as Selkie would put it
-        val blackwatch = Global.getSector().getFaction("tahlan_legioelite")
-        fleet.membersWithFightersCopy
-            .filter { !it.captain.isDefault && it.captain.gender == Gender.MALE }
-            .forEach { member ->
-                val newGal = blackwatch.createRandomPerson(Gender.FEMALE)
-                member.captain.apply {
-                    gender = Gender.FEMALE
-                    portraitSprite = newGal.portraitSprite
-                    name = newGal.name
-                }
-            }
+        // Blackwatch is dommy mommies as Selkie would put it - code retired cause we got husbandos now
+//        val blackwatch = Global.getSector().getFaction("tahlan_legioelite")
+//        fleet.membersWithFightersCopy
+//            .filter { !it.captain.isDefault && it.captain.gender == Gender.MALE }
+//            .forEach { member ->
+//                val newGal = blackwatch.createRandomPerson(Gender.FEMALE)
+//                member.captain.apply {
+//                    gender = Gender.FEMALE
+//                    portraitSprite = newGal.portraitSprite
+//                    name = newGal.name
+//                }
+//            }
 
         // this will get overridden by the patrol assignment AI, depending on route-time elapsed etc
         fleet.setLocation(market.primaryEntity.location.x, market.primaryEntity.location.x)

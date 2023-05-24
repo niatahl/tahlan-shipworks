@@ -3,6 +3,7 @@ package org.niatahl.tahlan.hullmods
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
+import com.fs.starfarer.api.combat.ShieldAPI
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.fleet.FleetMemberAPI
@@ -189,7 +190,13 @@ class DaemonHeart : BaseHullMod() {
             val avgSMods = sMods.div(numShips)
 
             for (i in 0 until avgSMods) {
-                val pick = SMOD_OPTIONS.filter { !member.variant.hasHullMod(it) }.randomOrNull()
+                val pick = SMOD_OPTIONS
+                    .filter { hm -> !member.variant.hasHullMod(hm) }
+                    .filter { hm ->
+                        !(member.variant.hullSpec.shieldType in setOf(ShieldAPI.ShieldType.NONE, ShieldAPI.ShieldType.PHASE)
+                                        && Global.getSettings().getHullModSpec(hm).hasTag(Tags.HULLMOD_REQ_SHIELDS))
+                    }
+                    .randomOrNull()
                 if (pick != null) {
                     member.variant.addMod(pick)
                     member.variant.addPermaMod(pick, true)
@@ -220,11 +227,11 @@ class DaemonHeart : BaseHullMod() {
 
         if (member.variant.hasHullMod(HullMods.SAFETYOVERRIDES)) {
             if (!member.captain.stats.hasSkill(Skills.POINT_DEFENSE)) {
-                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.COMBAT_ENDURANCE }.random().skill.id,0f)
+                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.COMBAT_ENDURANCE }.random().skill.id, 0f)
                 member.captain.stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
             }
             if (!member.captain.stats.hasSkill(Skills.COMBAT_ENDURANCE)) {
-                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.POINT_DEFENSE }.random().skill.id,0f)
+                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.POINT_DEFENSE }.random().skill.id, 0f)
                 member.captain.stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
             }
         }

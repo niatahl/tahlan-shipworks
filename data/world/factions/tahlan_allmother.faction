@@ -1,7 +1,7 @@
 {
 	"id":"tahlan_allmother",
-	"color":[160,150,150,255],
-	"secondaryUIColor":[160,140,50,255],
+	"color":[100,150,150,255],
+	"secondaryUIColor":[100,140,50,255],
 	"secondarySegments":2,
 	"displayName":"ALLMOTHER",
 	"displayNameLong":"ALLMOTHER",

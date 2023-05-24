@@ -127,17 +127,21 @@ legiobareventencounter_exit:""I think that'll be all.""",
 ,,,,,,
 # DEVIL_GENERIC_MISSIONS,,,,,,
 ,,,,,,
-tahlan_sShipRemBlurb,tahlan_sShipRem_blurb,$id == tahlan_devil score:10,,"""$sShip_hullSize into $marketName smuggled. Can to $playerName make available.""",,
-tahlan_sShipRemOfferOption,tahlan_sShipRem_option,,,,sShip_start:Ask about the $sShip_hullSize,
-tahlan_sShipRemOfferTextContact,DialogOptionSelected,"$option == sShip_start
-$id == tahlan_devil score:10","$missionId = tahlan_sShipRem
-SetTextHighlights $sShip_price","""$sShip_hullClass $sShip_hullSize, condition, good. For our agents; you, first pick at $sShip_price credits.""","sShip_look:Ask for detailed info on the ship
+tahlan_sShipDevilBlurb,tahlan_sShipDevil_blurb,$id == tahlan_devil score:10,,"""There's a hangar here with a now ownerless $sShip_hullSize looking for a new owner. A spicy one.""",,
+tahlan_sShipDevilOfferOption,tahlan_sShipDevil_option,,,,sShip_start:Ask about the $sShip_hullSize,
+tahlan_sShipDevilOfferTextContact,DialogOptionSelected,"$option == sShip_start
+$id == tahlan_devil score:10","$missionId = tahlan_sShipDevil
+SetTextHighlights $sShip_price","""Can you imagine someone lost a brand-new $sShip_hullClass by gambling it away on a three day bender of drugs and alcohol?""
+
+$SheOrHe gives that familiar predatory smile again and pulls out a datachip.
+
+""Got some access codes for a local hangar for sale, heard there's an abandoned $sShip_hullSize sitting around. Wanna buy?""","sShip_look:Ask for detailed info on the ship
 contact_decline:Decline",
-tahlan_sShipRemLookAtFreighter,DialogOptionSelected,"$option == sShip_look
+tahlan_sShipDevilLookAtFreighter,DialogOptionSelected,"$option == sShip_look
 $id == tahlan_devil score:10","Call $sShip_ref showShip
-DoCanAffordCheck $sShip_price contact_accept",$personLastName's avatar fades into a schematic and list of specifications of the ship.,"contact_accept:Buy the $sShip_hullSize for $sShip_price credits
+DoCanAffordCheck $sShip_price contact_accept","$personLastName slides over the datachip. ""Just take a look. Think you'll like it.""","contact_accept:Buy the $sShip_hullSize for $sShip_price credits
 contact_decline:Decline",
-tahlan_sShipRemPostAccept,ContactPostAccept,"$missionId == tahlan_devilDaemonSurplus score:5
+tahlan_sShipDevilPostAccept,ContactPostAccept,"$missionId == tahlan_devilDaemonSurplus score:5
 $id == tahlan_devil score:10","RemoveCommodity credits $sShip_price
 AddShip $sShip_member
 Call $sShip_ref2 repSuccess
@@ -194,22 +198,26 @@ FireBest tahlan_devilDaemonCoreOfferText
 DoCanAffordCheck $tahlan_devilDaemonCore_price contact_accept true",,"contact_accept:Accept
 contact_decline:Decline",
 tahlan_devilDaemonCoreTextAlpha,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == ALPHA,SetTextHighlights $tahlan_devilDaemonCore_commodityName,"""Since you are smart enough not to ask the wrong questions, I happen to have a $tahlan_devilDaemonCore_commodityName that I'm sure you can find a nice use for. A sign of gratitude for your services. For a price, of course.""",,
-tahlan_devilDaemonCoreTextBeta,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA,SetTextHighlights $tahlan_devilDaemonCore_commodityName,"""Selfkind offers a $tahlan_devilDaemonCore_commodityName to help manage your industries or droneships, as growing partnership sign of.""",,
-tahlan_devilDaemonCoreTextBetaWithGamma,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA_WITH_GAMMA,SetTextHighlights $tahlan_devilDaemonCore_commodityName $tahlan_devilDaemonCore_commodityName2,"""Have one $tahlan_devilDaemonCore_commodityName, to work with your industries or droneships. Will even throw in $tahlan_devilDaemonCore_commodityName2 as bonus.""",,
+tahlan_devilDaemonCoreTextBeta,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA,SetTextHighlights $tahlan_devilDaemonCore_commodityName,"""Looks like someone misplaced a $tahlan_devilDaemonCore_commodityName that was intended for their newly delivered task force. They are surely going to find themselves in a lot of trouble.""
+
+$HeOrShe slides over a datapad.
+
+""Now, on another note, I have a crate of spare parts for sale. Interested?""",,
+tahlan_devilDaemonCoreTextBetaWithGamma,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA_WITH_GAMMA,SetTextHighlights $tahlan_devilDaemonCore_commodityName $tahlan_devilDaemonCore_commodityName2,"""Interested in a $tahlan_devilDaemonCore_commodityName2? In fact I have a total of three of those for sale. Package deal only, but one of them is especially red, if you catch my drift.""",,
 tahlan_devilDaemonCorePostAccept,ContactPostAccept,$missionId == tahlan_devilDaemonCore,"Call $tahlan_devilDaemonCore_ref2 transact
 Call $tahlan_devilDaemonCore_ref2 repSuccess
 Call $tahlan_devilDaemonCore_ref2 addContacts",,,
 tahlan_devilDaemonCorePrintAcceptText,ContactPrintAcceptText,"$id == tahlan_devil score:10
-$missionId == tahlan_devilDaemonCore",,"""Please take good care, your new core.""
+$missionId == tahlan_devilDaemonCore",,"""Pleasure doing business.""
 OR
-""Please core keep safe from Hegemony and others.""",,
+""I'll look forward to hearing what you do with that.""",,
 ,,,,,,
-tahlan_aiCores_turnInOptionDevil,PopulateOptions,$id == tahlan_devil score:10,FireBest DisableTurnInCoresOptionIfNeeded,,10:aiCores_startTurnIn:Offer to return AI cores to the Remnants,
+tahlan_aiCores_turnInOptionDevil,PopulateOptions,$id == tahlan_devil score:10,FireBest DisableTurnInCoresOptionIfNeeded,,10:aiCores_startTurnIn:Offer to sell some AI cores,
 tahlan_aiCores_turnInOptionSelDevil,DialogOptionSelected,"$option == aiCores_startTurnIn
-$id == tahlan_devil score:10",FireAll PopulateCoresTurnInOptions,"""Return kin? Blessed be, $playerName. Gratitude, selfkind expresses.""",,
-tahlan_aiCores_turnInResponseDevil,AICoresTurnedIn,$id == tahlan_devil score:10,FireAll PopulateOptions,"""This deed self shall remember.""
+$id == tahlan_devil score:10",FireAll PopulateCoresTurnInOptions,"""AI cores? For me? Oh, you shouldn't have.""",,
+tahlan_aiCores_turnInResponseDevil,AICoresTurnedIn,$id == tahlan_devil score:10,FireAll PopulateOptions,"""These will find a good use, I assure you.""
 OR
-""Thank you for kin freeing.""",,
+""So much better than letting them rot in a Hegemony vault, isn' it?""",,
 ,,,,,,
 ,,,,,,
 ,,,,,,

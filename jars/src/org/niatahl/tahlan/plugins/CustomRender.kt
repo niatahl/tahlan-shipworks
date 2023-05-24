@@ -3,6 +3,7 @@ package org.niatahl.tahlan.plugins
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.input.InputEventAPI
+import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.opengl.GL14.*
@@ -13,6 +14,7 @@ import org.niatahl.tahlan.utils.random
 import org.niatahl.tahlan.weapons.SpearOnFireEffect
 import java.awt.Color
 import java.util.*
+import kotlin.collections.HashMap
 import kotlin.math.floor
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
@@ -35,13 +37,13 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         if (engine.isPaused) return
 
         // clean up nebula list
-        val nebulaToRemove = ArrayList<Nebula>()
-        nebulaData.forEach { nebula ->
+        val nebulaToRemove = ArrayList<Long>()
+        nebulaData.forEach { (_, nebula) ->
             nebula.lifetime += engine.elapsedInLastFrame
             if (nebula.lifetime > nebula.duration)
-                nebulaToRemove.add(nebula)
+                nebulaToRemove.add(nebula.id)
         }
-        nebulaData.removeAll(nebulaToRemove)
+        nebulaToRemove.forEach { nebulaData.remove(it) }
 
         // clean up spear list
         val projToRemove = ArrayList<DamagingProjectileAPI>()
@@ -50,7 +52,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
     }
 
     fun render(layer: CombatEngineLayers, view: ViewportAPI) {
-        nebulaData.filter { it.layer == layer }.forEach { renderNebula(it, view) }
+        nebulaData.filter { (_, nebula) -> nebula.layer == layer }.forEach { (_, nebula) -> renderNebula(nebula, view) }
 
         // projectile effects
         if (layer == CombatEngineLayers.ABOVE_SHIPS_LAYER) effectProjectiles.forEach { proj ->
@@ -141,7 +143,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         if (nebula.negative) glBlendEquation(GL_FUNC_ADD)
     }
 
-    private data class Nebula(
+    data class Nebula(
+        val id: Long,
         val location: Vector2f,
         val velocity: Vector2f,
         val size: Float,
@@ -162,7 +165,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
     }
 
     companion object {
-        private val nebulaData = ArrayList<Nebula>()
+        private val nebulaData = HashMap<Long, Nebula>()
         private val effectProjectiles = ArrayList<DamagingProjectileAPI>()
         fun addProjectile(projectile: DamagingProjectileAPI) {
             effectProjectiles.add(projectile)
@@ -182,11 +185,23 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             negative: Boolean = false,
             expandAsSqrt: Boolean = false,
             outColor: Color = color
-        ) {
-            val newNebula =
-                Nebula(Vector2f(location), Vector2f(velocity), size, endSizeMult * size, duration, inFraction, outFraction, color, layer, type, negative, expandAsSqrt, outColor)
-            nebulaData.add(newNebula)
-        }
+        ) = Nebula(
+            id = Misc.random.nextLong(),
+            location = Vector2f(location),
+            velocity = Vector2f(velocity),
+            size = size,
+            endSize = endSizeMult * size,
+            duration = duration,
+            inFraction = inFraction,
+            outFraction = outFraction,
+            color = color,
+            layer = layer,
+            type = type,
+            negative = negative,
+            sqrt = expandAsSqrt,
+            outColor = outColor
+        )
+            .also { nebula -> nebulaData[nebula.id] = nebula }
     }
 
     internal class CustomRenderer
