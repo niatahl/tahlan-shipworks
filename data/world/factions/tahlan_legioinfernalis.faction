@@ -12,8 +12,8 @@
 	"displayName":"Legio Infernalis",
 	"displayNameWithArticle":"the Legio Infernalis",
 	"displayNameIsOrAre":"is",
-	"logo":"graphics/tahlan/factions/tahlan_greatorder.png",
-	"crest":"graphics/tahlan/factions/tahlan_greatorder_crest.png",
+	"logo":"graphics/tahlan/factions/tahlan_legio.png",
+	"crest":"graphics/tahlan/factions/tahlan_legio_crest.png",
 	"showInIntelTab":true,
 	"shipNamePrefix":"LIV", 
 	"shipNameSources":{
@@ -215,7 +215,16 @@
 			"graphics/portraits/portrait33.png",
 			"graphics/portraits/portrait36.png",
 			"graphics/portraits/portrait40.png",
-			#"graphics/portraits/characters/old_spacer02.png",
+			"graphics/tahlan/portraits/legio/legio_m01.png",
+			"graphics/tahlan/portraits/legio/legio_m02.png",
+			"graphics/tahlan/portraits/legio/legio_m03.png",
+			"graphics/tahlan/portraits/legio/legio_m04.png",
+			"graphics/tahlan/portraits/legio/legio_m05.png",
+			"graphics/tahlan/portraits/legio/legio_m06.png",
+			"graphics/tahlan/portraits/legio/legio_m07.png",
+			"graphics/tahlan/portraits/legio/legio_m08.png",
+			"graphics/tahlan/portraits/legio/legio_m09.png",
+			"graphics/tahlan/portraits/legio/legio_m10.png"
 		],
 		"standard_female":[
 			"graphics/portraits/portrait_mercenary02.png",

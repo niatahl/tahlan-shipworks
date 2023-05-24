@@ -12,8 +12,8 @@
 	"displayName":"Daemonic Horde",
 	"displayNameWithArticle":"the Daemonic Horde",
 	"displayNameIsOrAre":"is",
-	"logo":"graphics/tahlan/factions/tahlan_greatorder.png",
-	"crest":"graphics/tahlan/factions/tahlan_greatorder_crest.png",
+	"logo":"graphics/tahlan/factions/tahlan_legio.png",
+	"crest":"graphics/tahlan/factions/tahlan_legio_crest.png",
 	"showInIntelTab":false,
 	"shipNamePrefix":"LIV", 
 	"shipNameSources":{

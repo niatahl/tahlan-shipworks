@@ -12,8 +12,8 @@
 	"displayName":"Blackwatch",
 	"displayNameWithArticle":"the Blackwatch",
 	"displayNameIsOrAre":"is",
-	"logo":"graphics/tahlan/factions/tahlan_greatorder.png",
-	"crest":"graphics/tahlan/factions/tahlan_greatorder_crest.png",
+	"logo":"graphics/tahlan/factions/tahlan_blackwatch.png",
+	"crest":"graphics/tahlan/factions/tahlan_blackwatch_crest.png",
 	"showInIntelTab":false,
 	"shipNamePrefix":"BW", 
 	"shipNameSources":{
