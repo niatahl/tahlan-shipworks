@@ -19,6 +19,7 @@ object TahlanPeople {
     const val CHILD = "tahlan_child"
     const val HENRIETTA = "tahlan_henrietta"
     const val DEVIL = "tahlan_devil"
+    const val QUEEN = "tahlan_queen"
 
     // For fake fearless
     const val FEARLESS = "\$tahlan_persFearless"
@@ -126,6 +127,30 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
                 tags.add("tahlan_devil")
 
+            }
+            ip.addPerson(person)
+        }
+
+        if (getPerson(QUEEN) == null) {
+            val person = Global.getFactory().createPerson().apply {
+                id = QUEEN
+                setFaction(BLACKWATCH)
+                name.first = "Sarah"
+                name.last = "Tannis"
+                gender = FullName.Gender.FEMALE
+                rankId = Ranks.SPACE_ADMIRAL
+                postId = Ranks.POST_FACTION_LEADER
+                importance = PersonImportance.VERY_HIGH
+                portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_queen")
+                stats.level = 7
+                stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
+                stats.setSkillLevel(Skills.MISSILE_SPECIALIZATION, 1f)
+                stats.setSkillLevel(Skills.HELMSMANSHIP, 1f)
+                stats.setSkillLevel(Skills.SYSTEMS_EXPERTISE, 1f)
+                stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
+                stats.setSkillLevel(Skills.POLARIZED_ARMOR, 2f)
+                stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
+                tags.add("tahlan_queen")
             }
             ip.addPerson(person)
         }

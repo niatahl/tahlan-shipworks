@@ -73,7 +73,8 @@
 			"tahlan_daemon":"graphics/tahlan/portraits/daemon.png",
 			"tahlan_archdaemon":"graphics/tahlan/portraits/archdaemon.png",
 			"tahlan_henrietta":"graphics/tahlan/portraits/characters/henrietta.png",
-			"tahlan_devil":"graphics/tahlan/portraits/legio/devil.png"
+			"tahlan_devil":"graphics/tahlan/portraits/legio/devil.png",
+			"tahlan_queen":"graphics/tahlan/portraits/legio/queen.png"
 		},
 		"tahlan_intel":{			
 			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png", # 20x20
