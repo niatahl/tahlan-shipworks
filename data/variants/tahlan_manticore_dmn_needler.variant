@@ -1,6 +1,6 @@
 {
-    "displayName": "Needler",
-    "fluxCapacitors": 11,
+    "displayName": "Sniper",
+    "fluxCapacitors": 17,
     "fluxVents": 20,
     "goalVariant": true,
     "hullId": "tahlan_manticore_dmn",
@@ -16,19 +16,19 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0003": "multineedler"}
+            "weapons": {"WS0003": "tahlan_balor"}
         },
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0001": "annihilatorpod"}
+            "weapons": {"WS0001": "tahlan_omna"}
         },
         {
             "autofire": false,
             "mode": "LINKED",
             "weapons": {
-                "WS0002": "tahlan_tethra",
-                "WS0004": "tahlan_tethra"
+                "WS0002": "hveldriver",
+                "WS0004": "hveldriver"
             }
         },
         {

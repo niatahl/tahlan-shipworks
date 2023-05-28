@@ -19,16 +19,18 @@
 		"tahlan_glanzwurf_knappe": 10,
 		"tahlan_glanzwurf_b_soldner": 10,
 		"tahlan_darnus_killer": 10,
-		"tahlan_vanguard_dmn_envy": 5,
-		"tahlan_vanguard_dmn_assault": 5,
+		"tahlan_vanguard_dmn_envy": 3,
+		"tahlan_vanguard_dmn_assault": 3,
+		"tahlan_vanguard_dmn_overdriven": 4,
 		"tahlan_centurion_dmn_lust": 2,
 		"tahlan_centurion_dmn_disabler": 2,
 		"tahlan_centurion_dmn_deva": 2,
 		"tahlan_centurion_dmn_sniper": 2,
 		"tahlan_centurion_dmn_heavy": 2,
-		"tahlan_hound_dmn_blaster":4,
-		"tahlan_hound_dmn_rampager":3,
-		"tahlan_hound_dmn_skirmisher":3
+		"tahlan_hound_dmn_blaster":3,
+		"tahlan_hound_dmn_rampager":2,
+		"tahlan_hound_dmn_skirmisher":2,
+		"tahlan_hound_dmn_suppressor":3
 	},
 	"combatMedium": {
 		"tahlan_Vale_crusader": 10,

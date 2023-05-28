@@ -1,7 +1,7 @@
 {
     "displayName": "Overdriven",
     "fluxCapacitors": 0,
-    "fluxVents": 13,
+    "fluxVents": 15,
     "goalVariant": true,
     "hullId": "tahlan_dominator_dmn",
     "hullMods": [
@@ -26,8 +26,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0001": "hammerrack",
-                "WS0002": "hammerrack"
+                "WS0001": "locust",
+                "WS0002": "locust"
             }
         },
         {
@@ -43,8 +43,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0008": "tahlan_conand",
-                "WS0011": "tahlan_conand"
+                "WS0008": "dualflak",
+                "WS0011": "dualflak"
             }
         },
         {
@@ -52,8 +52,8 @@
             "mode": "LINKED",
             "weapons": {
                 "WS0010": "vulcan",
-                "WS0012": "vulcan",
-                "WS0013": "vulcan",
+                "WS0012": "lightdualmg",
+                "WS0013": "lightdualmg",
                 "WS0014": "vulcan",
                 "WS0015": "vulcan",
                 "WS0016": "vulcan"

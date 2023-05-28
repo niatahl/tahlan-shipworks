@@ -1,11 +1,12 @@
 {
     "displayName": "Raider",
-    "fluxCapacitors": 5,
+    "fluxCapacitors": 1,
     "fluxVents": 50,
+    "goalVariant": true,
     "hullId": "tahlan_Castella_pirates",
-	"goalVariant": true,
     "hullMods": ["targetingunit"],
     "permaMods": [],
+    "sMods": [],
     "variantId": "tahlan_Castella_pirates_standard",
     "weaponGroups": [
         {
@@ -17,8 +18,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0001": "annihilatorpod",
-                "WS0002": "annihilatorpod"
+                "WS0001": "tahlan_dreadsabotpod",
+                "WS0002": "tahlan_dreadsabotpod"
             }
         },
         {

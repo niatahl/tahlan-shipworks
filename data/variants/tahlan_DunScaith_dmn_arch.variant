@@ -1,6 +1,6 @@
 {
     "displayName": "Arch",
-    "fluxCapacitors": 16,
+    "fluxCapacitors": 12,
     "fluxVents": 50,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
@@ -30,8 +30,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0029": "sabotpod",
-                "WS0030": "sabotpod"
+                "WS0029": "tahlan_dreadsabotpod",
+                "WS0030": "tahlan_dreadsabotpod"
             }
         },
         {

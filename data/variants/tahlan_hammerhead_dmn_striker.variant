@@ -1,16 +1,17 @@
 {
     "displayName": "Striker",
-    "fluxCapacitors": 4,
+    "fluxCapacitors": 2,
     "fluxVents": 20,
+    "goalVariant": true,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": [
         "stabilizedshieldemitter",
         "missleracks",
-        "fluxbreakers"
+        "fluxbreakers",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_hammerhead_dmn_striker",
     "weaponGroups": [
         {
@@ -25,8 +26,8 @@
             "autofire": false,
             "mode": "LINKED",
             "weapons": {
-                "WS0004": "sabot",
-                "WS0005": "sabot"
+                "WS0004": "tahlan_dreadsabot",
+                "WS0005": "tahlan_dreadsabot"
             }
         },
         {

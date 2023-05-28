@@ -6,7 +6,7 @@
 	"description":"A ship pack that suffers from feature creep",
 	"gameVersion":"0.96a-RC10",
 	"jars":["jars/TahlanShipworks.jar"],
-	"modPlugin":"org.niatahl.tahlan.TahlanModPlugin",
+	"modPlugin":"org.niatahl.tahlan.plugins.TahlanModPlugin",
 	"dependencies": [
 		{
 			"id": "lw_lazylib",

@@ -544,6 +544,12 @@ tahlan_manannan,WEAPON,"A weapon of last resort, the Manannan is only ever deplo
 tahlan_novaspear,WEAPON,"""If she is to be the allmother, we must grant her the blade with which to defend her children until the day they can take up their own arms.""",- [Source unknown],,
 tahlan_sunspear,WEAPON,"""Did they seriously get the approval for this? You know as much as I that all of it goes against standing law, even if high command signed off on it.""",- [Source unknown],,
 tahlan_mortarbattery,WEAPON,"Essentially a pair of heavy mortars in a shared mounting. While otherwise unremarkable, the more spacious housing allows for better autoloaders, improving the rate of fire over that of two individual heavy mortars, and a slight increase in range.",,,
+tahlan_dreadsabot,WEAPON,"Based on an older Domain-era variant of the Sabot SRM, this Legio-built version of the weapon uses a single submunition for enhanced performance against small craft and armor at cost of reduced total kinetic payload.",,,
+tahlan_dreadsabotpod,WEAPON,"Based on an older Domain-era variant of the Sabot SRM, this Legio-built version of the weapon uses a single submunition for enhanced performance against small craft and armor at cost of reduced total kinetic payload.",,,
+tahlan_hellspitter,WEAPON,"A variant of the common Plasma Cannon modified for close combat, the Hellspitter sacrifices range to greatly reduce its strain on the flux grid, allowing it to unleash a relentless barrage of plasma fire.
+
+The workings of the modification are ultimately incredibly simple, as reducing the strength of the plasma containment field inherently makes the firing process less demanding and allows for more rapid capacitor recharge, negating the need for burst fire.",,,
+tahlan_omna,WEAPON,"While lightweight, the Omna's missiles carry a surprisingly potent EMP warhead for their size and employ a fanning attack pattern to strike targets from multiple angles.",,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,

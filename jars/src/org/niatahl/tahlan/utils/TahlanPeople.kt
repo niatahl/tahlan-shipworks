@@ -9,9 +9,8 @@ import com.fs.starfarer.api.impl.campaign.ids.Factions
 import com.fs.starfarer.api.impl.campaign.ids.Personalities
 import com.fs.starfarer.api.impl.campaign.ids.Ranks
 import com.fs.starfarer.api.impl.campaign.ids.Skills
-import org.niatahl.tahlan.TahlanModPlugin.Companion.WEEB_MODE
+import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.WEEB_MODE
 import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
-import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 
 object TahlanPeople {
     // Person IDs
@@ -72,11 +71,13 @@ object TahlanPeople {
                 importance = PersonImportance.VERY_HIGH
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_henrietta")
                 setPersonality(Personalities.AGGRESSIVE)
-                stats.level = 5
+                stats.level = 7
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
                 stats.setSkillLevel(Skills.MISSILE_SPECIALIZATION, 1f)
                 stats.setSkillLevel(Skills.HELMSMANSHIP, 1f)
                 stats.setSkillLevel(Skills.SYSTEMS_EXPERTISE, 1f)
+                stats.setSkillLevel(Skills.ORDNANCE_EXPERTISE, 1f)
+                stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
                 stats.setSkillLevel("tahlan_raketentanz", 1f)
 //                memoryWithoutUpdate.set("\$chatterChar", "henrietta")
             }

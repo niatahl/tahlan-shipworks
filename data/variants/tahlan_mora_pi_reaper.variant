@@ -1,7 +1,7 @@
 {
     "displayName": "Reaper",
     "fluxCapacitors": 0,
-    "fluxVents": 20,
+    "fluxVents": 18,
     "hullId": "tahlan_mora_pi",
     "hullMods": ["missleracks"],
     "permaMods": [],
@@ -17,7 +17,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS 004": "sabotpod"}
+            "weapons": {"WS 004": "tahlan_dreadsabotpod"}
         },
         {
             "autofire": true,

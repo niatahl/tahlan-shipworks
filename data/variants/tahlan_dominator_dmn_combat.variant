@@ -1,12 +1,12 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 13,
+    "fluxCapacitors": 3,
     "fluxVents": 30,
     "hullId": "tahlan_dominator_dmn",
     "hullMods": [
-        "hardenedshieldemitter",
         "targetingunit",
-        "armoredweapons"
+        "missleracks",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
@@ -24,16 +24,16 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0001": "locust",
-                "WS0002": "locust"
+                "WS0001": "dragonpod",
+                "WS0002": "dragonpod"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0004": "heavyneedler",
-                "WS0005": "heavyneedler"
+                "WS0004": "tahlan_conand",
+                "WS0005": "tahlan_conand"
             }
         },
         {

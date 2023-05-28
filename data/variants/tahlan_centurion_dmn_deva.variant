@@ -1,11 +1,12 @@
 {
     "displayName": "Devastator",
-    "fluxCapacitors": 1,
-    "fluxVents": 0,
+    "fluxCapacitors": 0,
+    "fluxVents": 5,
     "hullId": "tahlan_centurion_dmn",
     "hullMods": [
         "safetyoverrides",
-        "missleracks"
+        "missleracks",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
@@ -20,16 +21,16 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0003": "sabot",
-                "WS0004": "sabot"
+                "WS0003": "tahlan_dreadsabot",
+                "WS0004": "tahlan_dreadsabot"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0002": "vulcan",
-                "WS0007": "vulcan"
+                "WS0002": "mininglaser",
+                "WS0007": "mininglaser"
             }
         },
         {

@@ -1,24 +1,25 @@
 {
     "displayName": "Overdriven",
-    "fluxCapacitors": 23,
-    "fluxVents": 0,
+    "fluxCapacitors": 0,
+    "fluxVents": 13,
+    "goalVariant": true,
     "hullId": "tahlan_Castigator_P",
     "hullMods": ["safetyoverrides"],
-	"goalVariant": true,
     "permaMods": [],
+    "sMods": [],
     "variantId": "tahlan_Castigator_P_overdriven",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0012": "hephag"}
+            "weapons": {"WS0012": "tahlan_hellspitter"}
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0013": "sabotpod",
-                "WS0014": "sabotpod"
+                "WS0013": "tahlan_dreadsabotpod",
+                "WS0014": "tahlan_dreadsabotpod"
             }
         },
         {

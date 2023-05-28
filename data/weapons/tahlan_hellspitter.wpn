@@ -1,0 +1,51 @@
+{
+  "id": "tahlan_hellspitter",
+  "specClass": "projectile",
+  "projectileSpecId": "tahlan_hellspitter_shot",
+  "type": "ENERGY",
+  "size": "LARGE",
+  "turretSprite": "graphics/tahlan/weapons/tahlan_hellspitter_turret_base.png",
+  "turretGlowSprite": "graphics/tahlan/weapons/tahlan_hellspitter_turret_glow.png",
+  "hardpointSprite": "graphics/tahlan/weapons/tahlan_hellspitter_hp_base.png",
+  "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_hellspitter_hp_glow.png",
+  "renderAboveAllWeapons": 0,
+  "glowColor": [
+    255,
+    100,
+    50,
+    255
+  ],
+  "turretOffsets": [
+    10.5,
+    0
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    15,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "muzzleFlashSpec": {
+    "length": 50,
+    "spread": 20,
+    "particleSizeMin": 20,
+    "particleSizeRange": 60,
+    "particleDuration": 0.05,
+    "particleCount": 15,
+    "particleColor": [
+      255,
+      100,
+      50,
+      205
+    ]
+  },
+  "textureType": ROUGH,
+  "fireSoundTwo": "tahlan_hellspitter_fire"
+}

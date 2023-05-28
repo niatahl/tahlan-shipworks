@@ -1,0 +1,29 @@
+{
+    "displayName": "Suppressor",
+    "fluxCapacitors": 4,
+    "fluxVents": 10,
+    "goalVariant": true,
+    "hullId": "tahlan_hound_dmn",
+    "hullMods": [
+        "heavyarmor",
+        "reinforcedhull",
+        "tahlan_daemonboost"
+    ],
+    "modules": [{"ARMOR": "tahlan_hound_dmn_armor_a"}],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_hound_dmn_suppressor",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_omna"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "hveldriver"}
+        }
+    ],
+    "wings": []
+}

@@ -5,16 +5,9 @@ package org.niatahl.tahlan.campaign;
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.FactionAPI;
-import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.util.IntervalUtil;
-import com.fs.starfarer.api.util.Misc;
-import exerelin.campaign.fleets.InvasionFleetManager;
-import exerelin.utilities.NexConfig;
 import org.apache.log4j.Logger;
-
-import static org.niatahl.tahlan.TahlanModPlugin.ENABLE_HARDMODE;
-import static org.niatahl.tahlan.TahlanModPlugin.HAS_NEX;
 
 public class LegioStealingHomework implements EveryFrameScript {
 

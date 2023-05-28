@@ -37,11 +37,10 @@ public class FountainAI implements MissileAIPlugin, GuidedMissileAI{
     private CombatEngineAPI engine;
     private final MissileAPI missile;
     private CombatEntityAPI target=null;
-    private Vector2f lead = new Vector2f();
     private boolean launch=true;
     private float timer=0, check=0f, scatter=0, random, correctAngle;
 
-    private IntervalUtil interval = new IntervalUtil(0.15f, 0.2f);
+    private final IntervalUtil interval = new IntervalUtil(0.15f, 0.2f);
 
     public FountainAI(MissileAPI missile, ShipAPI launchingShip){
         
@@ -118,13 +117,13 @@ public class FountainAI implements MissileAIPlugin, GuidedMissileAI{
                             0.1f,
                             dist)
             );
-            lead = target.getLocation();
+            Vector2f lead = target.getLocation();
             scatter = Math.min(1, dist) * ECCM * MAX_SCATTER * random;        
         
             //best velocity vector angle for interception
             correctAngle = VectorUtils.getAngle(
                             missile.getLocation(),
-                            lead
+                    lead
                     );
 
             //scatter

@@ -1,0 +1,57 @@
+{
+    "displayName": "Deranged",
+    "fluxCapacitors": 16,
+    "fluxVents": 0,
+    "goalVariant": true,
+    "hullId": "tahlan_Dominator_PH",
+    "hullMods": ["safetyoverrides"],
+    "permaMods": [
+        "missleracks",
+        "heavyarmor",
+        "armoredweapons"
+        ],
+    "sMods": [
+        "missleracks",
+        "heavyarmor",
+        "armoredweapons"
+    ],
+    "variantId": "tahlan_Dominator_PH_deranged",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "devastator",
+                "WS0002": "devastator"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabot",
+                "WS0004": "sabot",
+                "WS0005": "sabot",
+                "WS0006": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "vulcan",
+                "WS0012": "vulcan"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "heavymg",
+                "WS0008": "lightdualmg",
+                "WS0009": "lightdualmg",
+                "WS0010": "lightdualmg"
+            }
+        }
+    ]
+}

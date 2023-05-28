@@ -1202,6 +1202,12 @@
       }
     ]
   },
+  "tahlan_hellspitter_fire":
+	[
+		{"file":"sounds/sfx_wpn_energy/plasma_cannon_fire_01.ogg","pitch":1.3,"volume":0.75},
+		{"file":"sounds/sfx_wpn_energy/plasma_cannon_fire_02.ogg","pitch":1.3,"volume":0.75},
+		{"file":"sounds/sfx_wpn_energy/plasma_cannon_fire_03.ogg","pitch":1.3,"volume":0.75},
+	],	
   "tahlan_ammo_switch": [
     {
       "file": "sounds/tahlan/systems/tahlan_ammo_switch.ogg",

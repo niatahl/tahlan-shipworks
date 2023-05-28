@@ -1,4 +1,4 @@
-package org.niatahl.tahlan
+package org.niatahl.tahlan.plugins
 
 import com.fs.starfarer.api.BaseModPlugin
 import com.fs.starfarer.api.Global
@@ -10,7 +10,6 @@ import com.fs.starfarer.api.campaign.SectorAPI
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.GateEntityPlugin
-import com.fs.starfarer.api.impl.campaign.ids.Factions
 import com.fs.starfarer.api.impl.campaign.shared.SharedData
 import com.fs.starfarer.api.util.Misc
 import exerelin.campaign.SectorManager
@@ -21,9 +20,7 @@ import org.dark.shaders.light.LightData
 import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
-import org.magiclib.kotlin.getFactionMarkets
 import org.niatahl.tahlan.campaign.*
-import org.niatahl.tahlan.plugins.CampaignPluginImpl
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
@@ -36,6 +33,7 @@ import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMON
 import org.niatahl.tahlan.utils.TahlanPeople
 import org.niatahl.tahlan.weapons.ai.FountainAI
 import org.niatahl.tahlan.weapons.ai.KriegsmesserAI
+import org.niatahl.tahlan.weapons.ai.OmnaAI
 import org.niatahl.tahlan.weapons.ai.TwoStageMissileAI
 import org.niatahl.tahlan.world.FactionRelationPlugin
 import org.niatahl.tahlan.world.Lethia
@@ -116,12 +114,18 @@ class TahlanModPlugin : BaseModPlugin() {
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
         HAS_NEX = Global.getSettings().modManager.isModEnabled("nexerelin")
         if (!HAS_NEX || SectorManager.getManager().isCorvusMode) {
-            if (ENABLE_LETHIA) Lethia().generate(sector)
-            if (ENABLE_LEGIO) Rubicon().generate(sector)
+            if (ENABLE_LETHIA) {
+                Lethia().generate(sector)
+                sector.memoryWithoutUpdate["\$tahlan_haslethia"] = true
+            }
+            if (ENABLE_LEGIO) {
+                Rubicon().generate(sector)
+            }
         }
 
         //Legio things
         if (ENABLE_LEGIO) {
+            sector.getFaction(LEGIO).isShowInIntelTab = true
 
             //Legio Infernalis relations
             FactionRelationPlugin.initFactionRelationships(sector)
@@ -185,6 +189,34 @@ class TahlanModPlugin : BaseModPlugin() {
         if (sector.economy.getMarket("tahlan_rubicon_p03_market") != null) {
             sector.memoryWithoutUpdate["\$tahlan_haslegio"] = true
         }
+
+        // fallback - Check for Kassadar market for older saves etc
+        if (sector.economy.getMarket("tahlan_lethia_p05_market") != null) {
+            sector.memoryWithoutUpdate["\$tahlan_haslethia"] = true
+        }
+
+        if (ENABLE_LETHIA && !sector.memoryWithoutUpdate.getBoolean("\$tahlan_haslethia")) {
+            if (!HAS_NEX || SectorManager.getManager().isCorvusMode) {
+                Lethia().generate(sector)
+            }
+        }
+
+        if (ENABLE_LEGIO && !sector.memoryWithoutUpdate.getBoolean("\$tahlan_haslegio")) {
+            sector.getFaction(LEGIO).isShowInIntelTab = true
+
+            if (!HAS_NEX || SectorManager.getManager().isCorvusMode) {
+                Rubicon().generate(sector)
+            }
+
+            //Legio Infernalis relations
+            FactionRelationPlugin.initFactionRelationships(sector)
+
+            //Adding Legio to bounty system
+            SharedData.getData().personBountyEventData.addParticipatingFaction(LEGIO)
+
+            sector.memoryWithoutUpdate["\$tahlan_haslegio"] = true
+        }
+
         if (sector.memoryWithoutUpdate.getBoolean("\$tahlan_haslegio")) {
             // Legio stealing pirates homework
             if (ENABLE_LEGIOBPS) {
@@ -314,6 +346,7 @@ class TahlanModPlugin : BaseModPlugin() {
             FOUNTAIN_MISSILE_ID -> PluginPick(FountainAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
             KRIEGSMESSER_MISSILE_ID -> PluginPick(KriegsmesserAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
             DOLCH_MISSILE_ID -> PluginPick(TwoStageMissileAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
+            OMNA_MISSILE_ID -> PluginPick(OmnaAI(missile, launchingShip), CampaignPlugin.PickPriority.MOD_SPECIFIC)
             else -> null
         }
     }
@@ -357,6 +390,7 @@ class TahlanModPlugin : BaseModPlugin() {
         const val FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl"
         const val KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl"
         const val DOLCH_MISSILE_ID = "tahlan_dolch_msl"
+        const val OMNA_MISSILE_ID = "tahlan_omna_msl"
 
         private const val SETTINGS_FILE = "tahlan_settings.json"
         var ENABLE_LETHIA = false

@@ -4,7 +4,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShieldAPI.ShieldType;
 import com.fs.starfarer.api.combat.ShipAPI;
-import org.niatahl.tahlan.TahlanModPlugin;
+import org.niatahl.tahlan.plugins.TahlanModPlugin;
 
 import static org.niatahl.tahlan.hullmods.KnightRefit.*;
 import static org.niatahl.tahlan.utils.Utils.txt;

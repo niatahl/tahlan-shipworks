@@ -1,14 +1,15 @@
 {
     "displayName": "Strike",
-    "fluxCapacitors": 18,
+    "fluxCapacitors": 16,
     "fluxVents": 20,
+    "goalVariant": true,
     "hullId": "tahlan_Flagellator_pi",
     "hullMods": [
         "missleracks",
-        "fluxbreakers"
+        "eccm"
     ],
     "permaMods": [],
-	"goalVariant": true,
+    "sMods": [],
     "variantId": "tahlan_Flagellator_pi_strike",
     "weaponGroups": [
         {

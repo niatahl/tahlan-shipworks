@@ -93,7 +93,7 @@ Bento (RG),tahlan_Bento_rg,Gunship,Red Guards,ammofeed,8,3000,800,8000,,150,80,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Legio Infernalis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Doominator,tahlan_Dominator_PH,Phase Cruiser,Legio Infernalis,tahlan_weaponsoverdrive,15,14000,1500,12000,,700,150,,60,20,10,12,12,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,540,0.25,25,25,PHASE,"rare_bp, hist2t",0.2,0.4,2,3,404
+Doominator,tahlan_Dominator_PH,Phase Cruiser,Legio Infernalis,tahlan_weaponsoverdrive,15,14000,1500,14000,,700,150,,60,20,10,15,15,2000,PHASE,tahlan_heavyphase,,,1,0.05,0.1,200,300,150,150,5,30,8,250000,4,12,720,0.25,25,25,"PHASE, HIDE_IN_CODEX","no_bp_drop, no_dealer",0.2,0.4,2,3,404
 Flagellator (LI),tahlan_Flagellator_pi,Destroyer,Legio Infernalis,tahlan_crusherdrive,10,6000,800,4000,,300,100,,90,100,60,40,40,450,FRONT,,90,0.4,1,,,50,90,70,70,3,28,9,35000,5,12,420,0.25,9,9,,"tahlan_legio_bp, tahlan_legio",,0.4,2,3,13464
 Bronco (LI),tahlan_Bronco_p,Destroyer,Legio Infernalis,ammofeed,10,4000,600,3500,,200,80,,70,50,20,30,20,500,OMNI,,120,0.4,1.1,,,50,90,120,80,3,28,9,35000,5,12,420,0.25,10,10,,"tahlan_legio_bp, tahlan_legio",,0.5,2,3,1134
 Lasher (LI),tahlan_lasher_pi,Frigate,Legio Infernalis,ammofeed,5,1750,250,2100,,140,50,,130,110,90,60,90,200,FRONT,,210,0.4,1,,,25,50,40,25,1,25,10,9000,8,10,240,0.25,4,4,,"tahlan_legio_bp, tahlan_legio",,0.4,2,2,204

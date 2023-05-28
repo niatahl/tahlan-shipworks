@@ -1,9 +1,9 @@
 {
 	"id":"tahlan_temporaldrift",
 	"type":"STAT_MOD",
-	#"aiType":"TEMPORAL_SHELL",
-	"aiType":"CUSTOM",
-    "aiScript":"org.niatahl.tahlan.shipsystems.ai.TemporalDriftAI",
+	"aiType":"TEMPORAL_SHELL",
+	#"aiType":"CUSTOM",
+    #"aiScript":"org.niatahl.tahlan.shipsystems.ai.TemporalDriftAI",
 	
 	"statsScript":"org.niatahl.tahlan.shipsystems.TemporalDriftStats",
 	

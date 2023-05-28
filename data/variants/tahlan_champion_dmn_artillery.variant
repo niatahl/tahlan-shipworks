@@ -1,16 +1,17 @@
 {
     "displayName": "Artillery",
-    "fluxCapacitors": 11,
+    "fluxCapacitors": 13,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_champion_dmn",
     "hullMods": [
         "targetingunit",
         "hardenedshieldemitter",
-        "fluxdistributor"
+        "fluxdistributor",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_champion_dmn_artillery",
     "weaponGroups": [
         {
@@ -21,14 +22,14 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0012": "locust"}
+            "weapons": {"WS0012": "squall"}
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "ionpulser",
-                "WS0002": "ionpulser"
+                "WS0001": "gravitonbeam",
+                "WS0002": "gravitonbeam"
             }
         },
         {

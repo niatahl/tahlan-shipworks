@@ -1,7 +1,7 @@
 {
     "displayName": "Overdriven",
     "fluxCapacitors": 12,
-    "fluxVents": 8,
+    "fluxVents": 6,
     "hullId": "tahlan_manticore_dmn",
     "hullMods": [
         "safetyoverrides",
@@ -20,7 +20,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0001": "sabotpod"}
+            "weapons": {"WS0001": "tahlan_dreadsabotpod"}
         },
         {
             "autofire": true,

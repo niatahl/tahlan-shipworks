@@ -1,7 +1,7 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 2,
-    "fluxVents": 20,
+    "fluxCapacitors": 0,
+    "fluxVents": 18,
     "goalVariant": true,
     "hullId": "tahlan_hammerhead_dmn",
     "hullMods": [
@@ -15,7 +15,7 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0003": "multineedler"}
+            "weapons": {"WS0003": "tahlan_hellspitter"}
         },
         {
             "autofire": false,
@@ -28,7 +28,7 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0002": "tahlan_amboss"}
+            "weapons": {"WS0002": "tahlan_hellspitter"}
         },
         {
             "autofire": true,

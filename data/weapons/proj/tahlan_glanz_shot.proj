@@ -11,7 +11,6 @@
 	"coreColor":[255,255,255,200],
 	"hitGlowRadius":30,
 	"textureType":"SMOOTH",  # only needed for BEAM spawnType
-	#"textureType":["graphics/fx/emp_arcs.png","graphics/fx/emp_arcs.png"],
 	"textureScrollSpeed":-256.0,
 	"pixelsPerTexel":1.0
 }

@@ -63,13 +63,13 @@
 	
 	"maxRelationships":{ 
 		"default":0, 
-		"hegemony":-0.5, 
+		"hegemony":-0.4, 
 		"diableavionics":1,
 		"pirates":1,
 		"player":1,
 		"junk_pirates":1,
 		"syndicate_asp":1,
-		"vic":1
+		"vic":0.5
 	},
 	
 	"diplomacyPositiveChance":{

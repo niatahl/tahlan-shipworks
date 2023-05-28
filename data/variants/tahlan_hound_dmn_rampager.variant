@@ -1,17 +1,18 @@
 {
     "displayName": "Rampager",
-    "fluxCapacitors": 3,
+    "fluxCapacitors": 1,
     "fluxVents": 0,
+    "goalVariant": true,
     "hullId": "tahlan_hound_dmn",
     "hullMods": [
         "safetyoverrides",
-        "magazines",
-        "missleracks"
+        "missleracks",
+        "eccm",
+        "tahlan_daemonboost"
     ],
     "modules": [{"ARMOR": "tahlan_hound_dmn_armor_a"}],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_hound_dmn_rampager",
     "weaponGroups": [
         {

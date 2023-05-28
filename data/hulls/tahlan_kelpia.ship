@@ -15,6 +15,10 @@
     "WS0005": "tahlan_kelpia_cover_l",
     "WS0006": "tahlan_kelpia_cover_r"
   },
+  "builtInMods": [
+    "tahlan_heavyconduits",
+    "tahlan_realityglitch"
+  ],
   "weaponSlots": [
     {
       "id": "WS0001",

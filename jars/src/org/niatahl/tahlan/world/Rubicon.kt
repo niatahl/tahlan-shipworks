@@ -20,7 +20,8 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.MagneticFieldParams
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
-import org.niatahl.tahlan.TahlanModPlugin
+import org.magiclib.kotlin.getMarketsInLocation
+import org.niatahl.tahlan.plugins.TahlanModPlugin
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.random
 import java.awt.Color
@@ -329,6 +330,8 @@ class Rubicon {
             rubicon_1_market.addIndustry(Industries.PLANETARYSHIELD)
             rubicon_3_market.addIndustry(Industries.PLANETARYSHIELD)
         }
+
+        Misc.setAllPlanetsSurveyed(system, true)
 
         //Finally cleans up hyperspace
         cleanup(system)

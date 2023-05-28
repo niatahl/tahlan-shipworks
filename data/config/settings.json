@@ -27,6 +27,8 @@
 			"tahlan_trail_beam":"graphics/tahlan/fx/Xhan_beam_trail.png",
 			"tahlan_trail_foam":"graphics/tahlan/fx/Xhan_foam_trail.png",
 			"tahlan_trail_innerfoam":"graphics/tahlan/fx/Xhan_innerfoam_trail.png",
+			"tahlan_trail_spatter":"graphics/tahlan/fx/trails_spatter.png",
+			"tahlan_trail_stream":"graphics/tahlan/fx/trails_stream.png",
 			"tahlan_cashmere_blast":"graphics/tahlan/fx/tahlan_cashmere_blastwave.png",
 			"tahlan_tempshieldIN":"graphics/tahlan/fx/tahlan_tempshield.png",   
 			"tahlan_nxashield":"graphics/tahlan/fx/tahlan_nxashield.png",   
@@ -75,6 +77,10 @@
 			"tahlan_henrietta":"graphics/tahlan/portraits/characters/henrietta.png",
 			"tahlan_devil":"graphics/tahlan/portraits/legio/devil.png",
 			"tahlan_queen":"graphics/tahlan/portraits/legio/queen.png"
+		},
+		"characters":{
+			"tahlan_notLoyse":"graphics/tahlan/portraits/legio/notLoyse.png",
+			"tahlan_idris":"graphics/tahlan/portraits/legio/idris.png"
 		},
 		"tahlan_intel":{			
 			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png", # 20x20

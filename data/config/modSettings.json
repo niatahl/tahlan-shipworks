@@ -1,16 +1,18 @@
 {
-    "MagicLib":{
-        "interferences_weapons":{
-            # List weapons that can "interfere" with each-other reducing the ship's dissipation when several are mounted on the same hull.
-            # "id" : "intensity",
-            # id = weapon.csv id
-            # intensity = interferences_rates id in MagicLib's settings. By default it can be WEAK MILD STRONG.
-            # "sample_weapon1":"WEAK",
-            # "sample_weapon2":"MILD",
-            # "sample_weapon3":"STRONG",
-            # To prevent breaking other mods these weapons are temporarily added to the default list
-            "tahlan_titanomachy":"MILD",
-            "tahlan_pastel":"MILD",
-        },
+    "MagicLib": {
+        "interferences_weapons": {
+            "tahlan_titanomachy": "MILD",
+            "tahlan_pastel": "MILD"
+        }
     },
+    "MoreMilitaryMissions": {
+        "DmReinforcementFactionBlacklist": [
+            "tahlan_greathouses",
+            "tahlan_legioinfernalis",
+            "tahlan_legioelite",
+            "tahlan_legiodaemons",
+            "tahlan_cieveFaction",
+            "tahlan_allmother"
+        ]
+    }
 }

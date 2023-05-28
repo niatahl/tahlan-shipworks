@@ -12,12 +12,11 @@ import org.dark.shaders.post.PostProcessShader;
 import org.lazywizard.lazylib.FastTrig;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
-import org.niatahl.tahlan.TahlanModPlugin;
 
 import java.awt.*;
 import java.util.Arrays;
 
-import static org.niatahl.tahlan.TahlanModPlugin.isGraphicsLibAvailable;
+import static org.niatahl.tahlan.plugins.TahlanModPlugin.isGraphicsLibAvailable;
 
 /**
  * First comes the time-mult, then comes the reversal.

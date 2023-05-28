@@ -33,10 +33,10 @@ public class FactionRelationPlugin implements SectorGeneratorPlugin {
         //but not pirates and dabble
         legio.setRelationship("pirates",0.50f);
         legio.setRelationship("diableavionics", 0.10f);
-        legio.setRelationship("hegemony", -0.6f);
-        legio.setRelationship("persean", -0.5f);
-        legio.setRelationship("luddic_path", -0.5f);
-        legio.setRelationship("luddic_church", -0.5f);
+        legio.setRelationship("hegemony", -0.5f);
+        legio.setRelationship("persean", -0.4f);
+        legio.setRelationship("luddic_path", -0.4f);
+        legio.setRelationship("luddic_church", -0.4f);
         legio.setRelationship("player", -0.8f);
         legio.setRelationship("tritachyon", 0f);
         legio.setRelationship("vic", 0.1f);

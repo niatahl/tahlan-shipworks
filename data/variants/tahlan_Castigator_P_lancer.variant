@@ -2,10 +2,11 @@
     "displayName": "Lancer",
     "fluxCapacitors": 13,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_Castigator_P",
     "hullMods": ["targetingunit"],
-	"goalVariant": true,
     "permaMods": [],
+    "sMods": [],
     "variantId": "tahlan_Castigator_P_lancer",
     "weaponGroups": [
         {
@@ -20,8 +21,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0013": "harpoonpod",
-                "WS0014": "harpoonpod"
+                "WS0013": "tahlan_omna",
+                "WS0014": "tahlan_omna"
             }
         },
         {
@@ -46,9 +47,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {
-				"WS0012": "tahlan_eradicator"
-			}
+            "weapons": {"WS0012": "tahlan_eradicator"}
         }
     ]
 }

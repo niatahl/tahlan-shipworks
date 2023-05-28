@@ -12,7 +12,8 @@
   "shieldRadius": 105.5,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "tahlan_heavyconduits",
+    "tahlan_realityglitch"
   ],
   "builtInWings": [
     "tahlan_sutra_drone_wing"

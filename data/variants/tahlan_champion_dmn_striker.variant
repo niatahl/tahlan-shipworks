@@ -1,28 +1,27 @@
 {
     "displayName": "Striker",
-    "fluxCapacitors": 14,
+    "fluxCapacitors": 13,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "tahlan_champion_dmn",
     "hullMods": [
         "ML_interferenceWarning",
-        "fluxbreakers",
-        "targetingunit",
-        "fluxdistributor"
+        "safetyoverrides",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_champion_dmn_striker",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0011": "multineedler"}
+            "weapons": {"WS0011": "devastator"}
         },
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0012": "hammerrack"}
+            "weapons": {"WS0012": "locust"}
         },
         {
             "autofire": true,
@@ -36,8 +35,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0004": "heavyac",
-                "WS0005": "heavyac"
+                "WS0004": "heavymg",
+                "WS0005": "heavymg"
             }
         },
         {
@@ -45,8 +44,8 @@
             "mode": "LINKED",
             "weapons": {
                 "WS0003": "vulcan",
-                "WS0006": "vulcan",
-                "WS0007": "vulcan",
+                "WS0006": "lightdualmg",
+                "WS0007": "lightdualmg",
                 "WS0008": "vulcan",
                 "WS0009": "vulcan",
                 "WS0010": "vulcan"

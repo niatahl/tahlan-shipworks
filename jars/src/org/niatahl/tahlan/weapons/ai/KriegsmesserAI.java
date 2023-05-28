@@ -178,6 +178,10 @@ public class KriegsmesserAI implements MissileAIPlugin, GuidedMissileAI {
             return;
         }
 
+        if (target instanceof ShipAPI && ((ShipAPI) target).isPhased()) {
+            return;
+        }
+
         timer += amount;
         //finding lead point to aim to        
         if (launch || timer >= check) {

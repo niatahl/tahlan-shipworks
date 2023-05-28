@@ -1,5 +1,5 @@
 fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
-tahlan_campaignHeader,Campaign Header,Header,Campaign settings - Only apply to new saves,,,,,Settings
+tahlan_campaignHeader,Campaign Header,Header,Campaign settings - Can be enabled on existing saves but not disabled,,,,,Settings
 tahlan_enable_lethia,Enable Lethia,Boolean,true,,"Enables the Lethia system in a corner of the map, home to the planet Kassadar.",,,Settings
 tahlan_enable_legio,Enable Legio Infernalis,Boolean,true,,Enables a challenging Boss Faction.,,,Settings
 tahlan_dynamicHeader,Save Header,Header,Dynamic settings - Applied on save load,,,,,Settings

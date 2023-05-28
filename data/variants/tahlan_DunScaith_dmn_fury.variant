@@ -1,7 +1,8 @@
 {
     "displayName": "Fury",
-    "fluxCapacitors": 6,
+    "fluxCapacitors": 0,
     "fluxVents": 50,
+    "goalVariant": true,
     "hullId": "tahlan_DunScaith_dmn",
     "hullMods": [
         "heavyarmor",
@@ -9,17 +10,17 @@
         "fluxbreakers",
         "autorepair",
         "stabilizedshieldemitter",
-        "missleracks"
+        "missleracks",
+        "tahlan_daemonboost"
     ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true,
     "variantId": "tahlan_DunScaith_dmn_fury",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0001": "tahlan_fray"}
+            "weapons": {"WS0001": "tahlan_helrazer"}
         },
         {
             "autofire": false,
@@ -71,8 +72,8 @@
                 "WS0017": "vulcan",
                 "WS0018": "vulcan",
                 "WS0028": "devastator",
-                "WS0029": "pilum",
-                "WS0030": "pilum"
+                "WS0029": "tahlan_omna",
+                "WS0030": "tahlan_omna"
             }
         }
     ],

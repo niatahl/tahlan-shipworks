@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import org.magiclib.util.MagicIncompatibleHullmods
-import org.niatahl.tahlan.TahlanModPlugin
+import org.niatahl.tahlan.plugins.TahlanModPlugin
 import org.niatahl.tahlan.utils.Utils
 
 class HeavyConduits : BaseHullMod() {

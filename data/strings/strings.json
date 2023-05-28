@@ -126,6 +126,10 @@
 		"pharm_defensetext2": "Damage taken is reduced by 10%%",
 		"pharm_defensetext2_hl1": "10%",
 		"pharm_defensetext3": "Active vent rate is increased by 20%%",
-		"pharm_defensetext3_hl1": "20%"
+		"pharm_defensetext3_hl1": "20%",
+
+		"RaketentanzL1a":"All missile ammo doubled",
+		"RaketentanzL1b":"Missile rate of fire doubled",
+		"RaketentanzL1c":"Missile damage reduced by 30%",
 	}
 }

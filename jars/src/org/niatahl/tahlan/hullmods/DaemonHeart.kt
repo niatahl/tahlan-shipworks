@@ -1,10 +1,7 @@
 package org.niatahl.tahlan.hullmods
 
 import com.fs.starfarer.api.Global
-import com.fs.starfarer.api.combat.BaseHullMod
-import com.fs.starfarer.api.combat.MutableShipStatsAPI
-import com.fs.starfarer.api.combat.ShieldAPI
-import com.fs.starfarer.api.combat.ShipAPI
+import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.ids.Commodities
@@ -16,9 +13,9 @@ import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
-import org.niatahl.tahlan.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
-import org.niatahl.tahlan.TahlanModPlugin.Companion.ENABLE_HARDMODE
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
+import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
+import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_HARDMODE
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
@@ -175,6 +172,7 @@ class DaemonHeart : BaseHullMod() {
                 member.variant.removePermaMod(hm)
                 member.variant.removeMod(hm)
             }
+        restoreToNonDHull(member.variant)
 
 
         // Now we make a new captain if we don't have an AI captain already
@@ -248,6 +246,20 @@ class DaemonHeart : BaseHullMod() {
             2 -> "" + (PLAYER_NERF * 100f).roundToInt() + txt("%")
             3 -> "" + SUPPLIES_PERCENT.roundToInt() + txt("%")
             else -> null
+        }
+    }
+
+    private fun restoreToNonDHull(v: ShipVariantAPI) {
+        var base = v.hullSpec.dParentHull
+
+        // so that a skin with dmods can be "restored" - i.e. just dmods suppressed w/o changing to
+        // actual base skin
+        if (!v.hullSpec.isDefaultDHull && !v.hullSpec.isRestoreToBase) base = v.hullSpec
+        if (base == null && v.hullSpec.isRestoreToBase) {
+            base = v.hullSpec.baseHull
+        }
+        if (base != null) {
+            v.setHullSpecAPI(base)
         }
     }
 

@@ -235,7 +235,11 @@
 			"graphics/tahlan/portraits/legio/legio_m12.png",
 			"graphics/tahlan/portraits/legio/legio_m13.png",
 			"graphics/tahlan/portraits/legio/legio_m14.png",
-			"graphics/tahlan/portraits/legio/legio_m15.png"
+			"graphics/tahlan/portraits/legio/legio_m15.png",
+			"graphics/tahlan/portraits/legio/pirate_m01.png",
+			"graphics/tahlan/portraits/legio/pirate_m02.png",
+			"graphics/tahlan/portraits/legio/pirate_m03.png",
+			"graphics/tahlan/portraits/legio/pirate_m04.png",
 		],
 		"standard_female":[
 			"graphics/portraits/portrait_mercenary02.png",
@@ -274,7 +278,11 @@
 			"graphics/tahlan/portraits/legio/legio_f16.png",
 			"graphics/tahlan/portraits/legio/legio_f17.png",
 			"graphics/tahlan/portraits/legio/legio_f18.png",
-			"graphics/tahlan/portraits/legio/legio_f19.png"
+			"graphics/tahlan/portraits/legio/legio_f19.png",
+			"graphics/tahlan/portraits/legio/pirate_f01.png",
+			"graphics/tahlan/portraits/legio/pirate_f02.png",
+			"graphics/tahlan/portraits/legio/pirate_f03.png",
+			"graphics/tahlan/portraits/legio/pirate_f04.png",
 		],
 	},
 	"ranks":{
