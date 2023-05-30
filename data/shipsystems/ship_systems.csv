@@ -48,4 +48,5 @@ Phase Breaker,tahlan_phasebreaker,,,,,,0.2,,2,0.05,0.25,2,3.75,1,,,,TRUE,TRUE,,,
 Coordinated Strike,tahlan_coordinatedstrike,1,,,,,,,2,0.03,0.25,6,0.25,,,,,,,,,,,,,,graphics/icons/hullsys/high_energy_focus.png
 Penetration Drive,tahlan_penetrationDrive,,,,,,,,,0.25,0.1,1.6,0.1,10,,,,,TRUE,TRUE,TRUE,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
 Drone Overdrive,tahlan_droneoverdrive,,,,,,0.2,,,,0.5,10,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
+Orion Device Mk2,tahlan_orion_device_mk2,,,,,,,,3,0.2,0,0.001,0,1,,,,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

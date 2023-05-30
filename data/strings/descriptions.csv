@@ -125,17 +125,9 @@ Combining a powerful fighter complement with effective shipborne weaponry, this 
 tahlan_flare,SHIP,"A remnant of the autonomous AI fleets developed by the Tri-Tachyon Corporation. Illegal under Domain (and Hegemony) law, and an abomination to the Church of Galactic Redemption, the First AI War saw these creations purged from the Sector. So the official histories say.
 
 Playing host to two wings of Terminator drones, the Flare is a point defense powerhouse that does not have to compromise on firepower.",,,
-tahlan_imperator,SHIP,"In the pre-collapse era it was common knowledge that every once in a while the mighty Domain navy would proudly present a new latest and greatest warship to the galaxy at large, an act of both audacity and calculated propaganda to remind all under the Domain's rule of its absolute power. The Imperator is one such warship, massive in scale and capable of fielding a truly staggering amount of firepower, a prestige project like many before it.
+tahlan_landsknecht,SHIP,"An ill-fated attempt to revive the concept of the Retribution-class battlecruiser in a more compact package to fit within the cruiser school line of thinking. Trying to improve on the failings of the Retribution, the Landsknecht's designers created a ship that was to be less fragile for its size while retaining the outstanding mobility the Orion Device conveys. While these enhancements were achieved, they came at the cost of firepower, leaving the Landsknecht a somewhat confused design.
 
-Far less commonly known is the fact that a number of Imperator-class battleships were built to the specs of the Nightwatch, covered in stealth plating and equipped with state-of-the-art command and control suites, sensor arrays and electronic warfare suits alike. Coated in the black and red colors of the Nightwatch, these massive vessels served as mobile headquarters for the shadowy organisation's many branches across the vastness of Domain space.
-
-Had one asked before the collapse, noone would've thought a Nightwatch branch might possibly be operating in the backwater that was the Persean Sector, not that the name would've meant anything to anyone but high-ranking Domain officials and those working on the edges of Domain law.
-
-According to recovered logs, this particular Imperator served as command headquarters of Bureau 83 of the Nightwatch, tasked with investigating and persecuting a number of concerning individuals within the XIVth Battlegroup, an assignment that would never go fulfilled when the gate network shut down. Their objective seemingly lost well out of reach, Nightwatch leadership quickly descended into infighting as moderate and radical elements of the group collided over the question what the group's course of action should be.
-
-While moderate elements wished to lend their assets to stabilising the sector in cooperation with local leaderships, the more radical elements saw only one correct choice, the subjugation of the sector under the only true successor to the Domain government. Disagreements continued for many years as small detachments of Nightwatch forces toom independent action to clear the paths for the respective goals, but no consensus could be found and struggles for power within the organisation began turning to violence.
-
-It wasn't until the arrival of the XIVth Battlegroup that matters escalated, setting in motion a path of events that would spell the end of the Nightwatch and the birth of what is now known as the Legio Infernalis.",,,
+As part of the project, the Orion Device itself saw some modification to adapt it to the new hull. The updated antimatter charges possess a wider blast radius, making them particularly dangerous to fighter craft in the vicinity.",,,
 ,,,,,
 ,,,,,
 #LosTech,,,,,
@@ -200,6 +192,17 @@ It is said, the Nightwatch happened to be particularly fond of the Falcon, often
 tahlan_mora_pi,SHIP,"Common as the Mora is, it was only a matter of time before Legio engineers laid their hands on the hull to produce a variant that would better suit the faction's combat doctrine. The resulting variant is tuned towards offense, sacrificing the damper field, that gives its base model its renowned durability, to greatly augment the missile armament.
 
 With one of the medium missile turrets replaced by a large hardpoint and the addition of a missile loader system, the alpha strike potential of the carrier's combined missile and strike craft capacity is indeed terrifying.",,,
+tahlan_imperator,SHIP,"In the pre-collapse era it was common knowledge that every once in a while the mighty Domain navy would proudly present a new latest and greatest warship to the galaxy at large, an act of both audacity and calculated propaganda to remind all under the Domain's rule of its absolute power. The Imperator is one such warship, massive in scale and capable of fielding a truly staggering amount of firepower, a prestige project like many before it.
+
+Far less commonly known is the fact that a number of Imperator-class battleships were built to the specs of the Nightwatch, covered in stealth plating and equipped with state-of-the-art command and control suites, sensor arrays and electronic warfare suits alike. Coated in the black and red colors of the Nightwatch, these massive vessels served as mobile headquarters for the shadowy organisation's many branches across the vastness of Domain space.
+
+Had one asked before the collapse, noone would've thought a Nightwatch branch might possibly be operating in the backwater that was the Persean Sector, not that the name would've meant anything to anyone but high-ranking Domain officials and those working on the edges of Domain law.
+
+According to recovered logs, this particular Imperator served as command headquarters of Bureau 83 of the Nightwatch, tasked with investigating and persecuting a number of concerning individuals within the XIVth Battlegroup, an assignment that would never go fulfilled when the gate network shut down. Their objective seemingly lost well out of reach, Nightwatch leadership quickly descended into infighting as moderate and radical elements of the group collided over the question what the group's course of action should be.
+
+While moderate elements wished to lend their assets to stabilising the sector in cooperation with local leaderships, the more radical elements saw only one correct choice, the subjugation of the sector under the only true successor to the Domain government. Disagreements continued for many years as small detachments of Nightwatch forces toom independent action to clear the paths for the respective goals, but no consensus could be found and struggles for power within the organisation began turning to violence.
+
+It wasn't until the arrival of the XIVth Battlegroup that matters escalated, setting in motion a path of events that would spell the end of the Nightwatch and the birth of what is now known as the Legio Infernalis.",,,
 ,,,,,
 ,,,,,
 tahlan_vanguard_dmn,SHIP,"#> Ship Classification: Unknown
@@ -639,7 +642,7 @@ tahlan_phasebreaker,SHIP_SYSTEM,"Phases the ship for a short moment then enters 
 tahlan_coordinatedstrike,SHIP_SYSTEM,Increases the damage of energy weapons and all fighter weapons by 50%.,Fighters,,
 tahlan_penetrationDrive,SHIP_SYSTEM,Propels the ship forward at high velocity in a pseudo-phased state. Impacting with another ship during the charge inflicts 2000 Kinetic damage directly and another 1000 High-Explosive damage in blast around the point of impact.,Fighters,,
 tahlan_droneoverdrive,SHIP_SYSTEM,"Sends drone wing into overdrive, doubling their rate of fire and causing them to discharge EMP arcs at any nearby enemies.",,,
-,,,,,
+tahlan_orion_device_mk2,SHIP_SYSTEM,"Deploys a shaped antimatter charge behind the ship. The explosion applies force to a massive push-plate, which absorbs the shock and spreads the resulting acceleration over a timeframe where it can be handled by the ship's inertial compensators. The ship is briefly propelled forward at a rate very few more ""advanced"" technologies can hope to match.",Mobility,"Explodes a shaped antimatter charge behind the ship, propelling it forward at extreme speed.",
 ,,,,,
 # Campaign,,,,,
 ,,,,,

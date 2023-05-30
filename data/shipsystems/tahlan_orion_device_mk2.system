@@ -1,0 +1,26 @@
+{
+	"id":"tahlan_orion_device_mk2",
+	"type":"STAT_MOD",
+	#"aiType":"NONE",
+	"aiType":"BURN_DRIVE",
+	
+	"statsScript":"org.niatahl.tahlan.shipsystems.OrionDeviceMk2Stats",
+
+	"runScriptWhileIdle":true, # unapply() never gets called
+
+	#"fadeActivationSoundOnChargedown":true,
+	
+	"useSound":"system_orion_device_fire",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+		"activeSpeedIncrease":0,
+		"burstMovementPotential":400,
+		"averageSpeedIncrease":100,
+	}
+	
+}
+
+
+
+

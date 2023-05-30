@@ -40,6 +40,7 @@ Column,tahlan_tower,Heavy Cruiser,Low Tech,ammofeed,15,10000,1500,9000,,400,160,
 NX-A,tahlan_nxa,Cruiser,Unknown,tahlan_phasebreaker,20,5000,700,11000,,750,160,,80,80,50,50,70,1400,OMNI,,160,0.4,0.7,,,0,100,140,110,3,33,9,250000,3,12,420,0.25,30,30,"HIDE_IN_CODEX, PHASE",,0.5,0.5,2,3,59423
 Equinox,tahlan_equinox,Drone Battlecarrier,Remnant,tahlan_coordinatedstrike,30,20000,1400,22000,37500,1000,300,4,50,35,25,8,12,3400,OMNI,,270,0.4,0.6,,,0,0,250,400,10,40,8,480000,3,15,720,0.25,40,40,"UNBOARDABLE, HIDE_IN_CODEX","remnant, auto_rec",,,,,
 Flare,tahlan_flare,Droneship,Remnant,drone_strike,12,4500,400,5000,3750,300,100,2,100,80,60,35,55,500,OMNI,,200,0.4,0.6,,,0,0,90,70,2,30,10,55000,5,15,420,0.25,12,12,"UNBOARDABLE, HIDE_IN_CODEX","remnant, auto_rec",,,,,
+Landsknecht,tahlan_landsknecht,Heavy Cruiser,Midline,tahlan_orion_device_mk2,15,11000,800,12000,11000,700,160,,70,50,40,20,30,1500,OMNI,,90,0.3,1,,,250,350,150,150,4,38,8,140000,4,12,480,0.25,28,28,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Rosenritter,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
