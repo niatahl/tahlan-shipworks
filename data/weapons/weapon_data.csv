@@ -13,7 +13,7 @@ Ryza-type Plasma Cannon,tahlan_ryza,3,0.2,8000,700,,1200,,200,9,28,,,,ENERGY,162
 Mezoa-type Plasma Gun,tahlan_mezoa,3,0.2,5000,600,,800,,100,12,14,,,,ENERGY,1080,,0.5,3,,,0,5,1,2.5,,750,,,500,"STRIKE, USE_VS_FRIGATES","energy15, rare_bp",,Common,,Suppression,,,,,Causes an additional %s energy damage as area of effect explosion on impact.,80,,,
 Vesuvio Magcannon,tahlan_vesuvio,3,0.2,4000,800,,100,100,20,8,22,,,,KINETIC,110,,0,0.25,,,0,6,0.25,3,,1400,,,400,,"kinetic16, remnant, rare_bp",,Common,,Anti Shield,,,,,Direct hits to armor or hull have a %s chance of causing an additional %s arcing energy and emp damage,20% | 100,,,
 Novaspear,tahlan_novaspear,2,0.8,10000,700,,500,250,100,12,30,6,0.8,3,HIGH_EXPLOSIVE,600,,0,0.4,,,0,0,0,0,,1300,,,100,"STRIKE, USE_VS_FRIGATES","he18, restricted",,[database_error],,Anti Armor,,,,,,,,,
-Sunspear,tahlan_sunspear,2,0.8,6000,600,,300,150,100,12,15,6,0.8,3,HIGH_EXPLOSIVE,360,,0,0.4,,,0,0,0,0,,1300,,,100,"STRIKE, USE_VS_FRIGATES","he14, restricted",,[database_error],,Anti Armor,,,,,,,,,
+Novadart,tahlan_sunspear,2,0.8,6000,600,,300,150,100,12,15,6,0.8,3,HIGH_EXPLOSIVE,360,,0,0.4,,,0,0,0,0,,1300,,,100,"STRIKE, USE_VS_FRIGATES","he14, restricted",,[database_error],,Anti Armor,,,,,,,,,
 Mortar Battery,tahlan_mortarbattery,0,,2000,800,,110,,12,30,15,,,,HIGH_EXPLOSIVE,90,,0,0.8,2,0.3,0,20,5,5,,500,,,30,,"he16, base_bp, merc",,,,Anti Armor,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Lostech,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -25,6 +25,7 @@ class HeavyConduits : BaseHullMod() {
         if (ship.shield != null) {
             ship.shield.setRadius(ship.shieldRadiusEvenIfNoShield, INNERLARGE, OUTERLARGE)
         }
+
     }
 
     override fun applyEffectsBeforeShipCreation(hullSize: HullSize, stats: MutableShipStatsAPI, id: String) {
