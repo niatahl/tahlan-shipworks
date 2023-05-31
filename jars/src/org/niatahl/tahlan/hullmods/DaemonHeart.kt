@@ -184,7 +184,7 @@ class DaemonHeart : BaseHullMod() {
                 .filter { !it.isFighterWing && !it.isCivilian }
                 .sumOf { it.variant.sMods.count() }
 
-            val numShips = Global.getSector().playerFleet.numShips.coerceAtLeast(1)
+            val numShips = Global.getSector().playerFleet.membersWithFightersCopy.count { !it.isFighterWing && !it.isCivilian }
             val avgSMods = sMods.div(numShips)
 
             for (i in 0 until avgSMods) {
@@ -217,10 +217,18 @@ class DaemonHeart : BaseHullMod() {
 
         val die = (MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!).coerceAtLeast(min)
 
-        member.captain = when (die) {
-            1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
-            2 -> DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
-            else -> DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
+        if (member.fleetCommander.faction.id.contains("tahlan_legio")) { // Should catch all legio subfactions
+            member.captain = when (die) {
+                1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
+                2 -> DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
+                else -> DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
+            }
+        } else {
+            member.captain = when (die) {
+                1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, member.fleetCommander.faction.id, Misc.random)
+                2 -> Misc.getAICoreOfficerPlugin(Commodities.BETA_CORE).createPerson(Commodities.BETA_CORE, member.fleetCommander.faction.id, Misc.random)
+                else -> Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, member.fleetCommander.faction.id, Misc.random)
+            }
         }
 
         if (member.variant.hasHullMod(HullMods.SAFETYOVERRIDES)) {
@@ -288,12 +296,11 @@ class DaemonHeart : BaseHullMod() {
             HullMods.ARMOREDWEAPONS,
             HullMods.HARDENED_SUBSYSTEMS,
             HullMods.FLUXBREAKERS,
-            HullMods.STABILIZEDSHIELDEMITTER
+            HullMods.STABILIZEDSHIELDEMITTER,
+            HullMods.AUTOREPAIR
         )
 
         private const val SUPPLIES_PERCENT = 100f
-        private const val ACC_BUFF = 0.25f
-        private const val MSSL_DAMAGE = 0.5f
         private const val SPEED_BUFF = 50f
         private const val SPEED_CAP = 0.75f
         private const val PLAYER_NERF = 0.9f

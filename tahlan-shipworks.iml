@@ -18,7 +18,7 @@
     <orderEntry type="library" name="MagicLib-Kotlin" level="application" />
     <orderEntry type="library" name="ExiledSpace" level="project" />
     <orderEntry type="library" name="LazyLib-Kotlin" level="application" />
-    <orderEntry type="library" name="LunaLib-Kotlin" level="application" />
+    <orderEntry type="library" name="LunaLib" level="application" />
     <orderEntry type="library" name="LunaLib" level="application" />
   </component>
 </module>

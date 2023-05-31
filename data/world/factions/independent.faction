@@ -33,7 +33,11 @@
 			"tahlan_darnus",
 			"tahlan_tower",
 			"tahlan_raba",
-			"tahlan_Phoca"
+			"tahlan_Phoca",
+			"tahlan_nelson",
+			"tahlan_landsknecht",
+			"tahlan_Castigator"
+
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available
@@ -61,6 +65,8 @@
 			"tahlan_mezoa",
 			"tahlan_vesuvio",
 			"tahlan_eradicator",
+			"tahlan_armiger",
+			"tahlan_efreet"
 		],
 	},
 	"priorityWeapons":{
