@@ -28,7 +28,7 @@ public class LegioTyranny extends BaseMarketConditionPlugin {
 
             if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
                 if (ENABLE_HARDMODE) {
-                    FLEET_PERCENT = 10f;
+                    FLEET_PERCENT = 30f;
                 } else {
                     FLEET_PERCENT = 20f;
                 }
