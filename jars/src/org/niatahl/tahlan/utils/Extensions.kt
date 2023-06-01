@@ -1,5 +1,11 @@
 package org.niatahl.tahlan.utils
 
+import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.combat.ShipVariantAPI
+import com.fs.starfarer.api.fleet.FleetMemberAPI
+import com.fs.starfarer.api.loading.VariantSource
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 import java.awt.Color
 import kotlin.random.Random
 
@@ -15,3 +21,38 @@ fun Color.modify(red: Int = this.red, green: Int = this.green, blue: Int = this.
 
 fun Float.adjustToward(target: Float, byAmount: Float) =
     if (target > this) (this + byAmount).coerceAtMost(target) else (this - byAmount).coerceAtLeast(target)
+
+fun Any.logger(): Logger {
+    return Global.getLogger(this::class.java).apply { level = Level.ALL }
+}
+
+fun ShipVariantAPI.getRefitVariant(): ShipVariantAPI {
+    var shipVariant = this
+    if (shipVariant.isStockVariant || shipVariant.source != VariantSource.REFIT) {
+        shipVariant = shipVariant.clone()
+        shipVariant.originalVariant = null
+        shipVariant.source = VariantSource.REFIT
+    }
+    return shipVariant
+}
+
+fun FleetMemberAPI.fixVariant() {
+    val newVariant = this.variant.getRefitVariant()
+    if (newVariant != this.variant) {
+        this.setVariant(newVariant, false, false)
+    }
+
+    newVariant.fixModuleVariants()
+}
+
+fun ShipVariantAPI.fixModuleVariants() {
+    this.stationModules.forEach { (slotId, _) ->
+        val moduleVariant = this.getModuleVariant(slotId)
+        val newModuleVariant = moduleVariant.getRefitVariant()
+        if (newModuleVariant != moduleVariant) {
+            this.setModuleVariant(slotId, newModuleVariant)
+        }
+
+        newModuleVariant.fixModuleVariants()
+    }
+}

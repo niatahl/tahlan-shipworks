@@ -4,13 +4,12 @@ import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.fleet.FleetMemberAPI
-import com.fs.starfarer.api.impl.campaign.ids.Commodities
-import com.fs.starfarer.api.impl.campaign.ids.HullMods
-import com.fs.starfarer.api.impl.campaign.ids.Skills
-import com.fs.starfarer.api.impl.campaign.ids.Tags
+import com.fs.starfarer.api.impl.campaign.ids.*
+import com.fs.starfarer.api.loading.VariantSource
 import com.fs.starfarer.api.mission.FleetSide
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
+import org.apache.log4j.Priority
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
@@ -22,6 +21,7 @@ import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
 import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
 import org.niatahl.tahlan.utils.Utils.txt
+import org.niatahl.tahlan.utils.fixVariant
 import java.awt.Color
 import kotlin.math.roundToInt
 
@@ -174,73 +174,6 @@ class DaemonHeart : BaseHullMod() {
             }
         restoreToNonDHull(member.variant)
 
-
-        // Now we make a new captain if we don't have an AI captain already
-        if (member.captain != null && member.captain.isAICore) return
-
-        // Also do Nightmare mode S-mod upgrades here, so we only run this once
-        if (ENABLE_ADAPTIVEMODE) {
-            val sMods = Global.getSector().playerFleet.membersWithFightersCopy
-                .filter { !it.isFighterWing && !it.isCivilian }
-                .sumOf { it.variant.sMods.count() }
-
-            val numShips = Global.getSector().playerFleet.membersWithFightersCopy.count { !it.isFighterWing && !it.isCivilian }
-            val avgSMods = sMods.div(numShips)
-
-            for (i in 0 until avgSMods) {
-                val pick = SMOD_OPTIONS
-                    .filter { hm -> !member.variant.hasHullMod(hm) }
-                    .filter { hm ->
-                        !(member.variant.hullSpec.shieldType in setOf(ShieldAPI.ShieldType.NONE, ShieldAPI.ShieldType.PHASE)
-                                        && Global.getSettings().getHullModSpec(hm).hasTag(Tags.HULLMOD_REQ_SHIELDS))
-                    }
-                    .randomOrNull()
-                if (pick != null) {
-                    member.variant.addMod(pick)
-                    member.variant.addPermaMod(pick, true)
-                }
-            }
-        }
-
-        // Apparently this can be the case
-        if (Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE) == null) {
-            return
-        }
-
-        val min = if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn")) {
-            3
-        } else if (ENABLE_HARDMODE) {
-            Global.getSector().playerPerson.stats.level.div(3).coerceAtLeast(1)
-        } else {
-            1
-        }
-
-        val die = (MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!).coerceAtLeast(min)
-
-        if (member.fleetCommander.faction.id.contains("tahlan_legio")) { // Should catch all legio subfactions
-            member.captain = when (die) {
-                1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
-                2 -> DaemonOfficerPlugin().createPerson(CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
-                else -> DaemonOfficerPlugin().createPerson(CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
-            }
-        } else {
-            member.captain = when (die) {
-                1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, member.fleetCommander.faction.id, Misc.random)
-                2 -> Misc.getAICoreOfficerPlugin(Commodities.BETA_CORE).createPerson(Commodities.BETA_CORE, member.fleetCommander.faction.id, Misc.random)
-                else -> Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, member.fleetCommander.faction.id, Misc.random)
-            }
-        }
-
-        if (member.variant.hasHullMod(HullMods.SAFETYOVERRIDES)) {
-            if (!member.captain.stats.hasSkill(Skills.POINT_DEFENSE)) {
-                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.COMBAT_ENDURANCE }.random().skill.id, 0f)
-                member.captain.stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
-            }
-            if (!member.captain.stats.hasSkill(Skills.COMBAT_ENDURANCE)) {
-                member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.POINT_DEFENSE }.random().skill.id, 0f)
-                member.captain.stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
-            }
-        }
     }
 
     override fun isApplicableToShip(ship: ShipAPI): Boolean {
@@ -272,32 +205,9 @@ class DaemonHeart : BaseHullMod() {
     }
 
     companion object {
-        private val MAG = mapOf(
-            HullSize.FRIGATE to 2,
-            HullSize.DESTROYER to 1,
-            HullSize.CRUISER to 0,
-            HullSize.CAPITAL_SHIP to 0,
-            HullSize.FIGHTER to 0
-        ).withDefault { 0 }
-
         private val immuneCaptains = listOf(
             CIEVE,
             SOTF_SIERRA
-        )
-
-        private val SMOD_OPTIONS = listOf(
-            HullMods.HEAVYARMOR,
-            HullMods.HARDENED_SHIELDS,
-            HullMods.MISSLERACKS,
-            HullMods.UNSTABLE_INJECTOR,
-            HullMods.EXTENDED_SHIELDS,
-            HullMods.ACCELERATED_SHIELDS,
-            HullMods.ECCM,
-            HullMods.ARMOREDWEAPONS,
-            HullMods.HARDENED_SUBSYSTEMS,
-            HullMods.FLUXBREAKERS,
-            HullMods.STABILIZEDSHIELDEMITTER,
-            HullMods.AUTOREPAIR
         )
 
         private const val SUPPLIES_PERCENT = 100f
@@ -306,7 +216,7 @@ class DaemonHeart : BaseHullMod() {
         private const val PLAYER_NERF = 0.9f
         private val JITTER_COLOR = Color(255, 0, 0, 30)
         private val JITTER_UNDER_COLOR = Color(255, 0, 0, 80)
-        private const val dc_id = "tahlan_daemoncore"
+        const val dc_id = "tahlan_daemoncore"
         private val yoinkTimer = IntervalUtil(10f, 30f)
     }
 }

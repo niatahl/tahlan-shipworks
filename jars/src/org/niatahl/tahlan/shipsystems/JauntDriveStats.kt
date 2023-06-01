@@ -25,8 +25,8 @@ class JauntDriveStats : BaseShipSystemScript() {
         } else {
             return
         }
-        val TimeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel
-        stats.timeMult.modifyMult(id, TimeMult)
+        val timeMult = 1f + (MAX_TIME_MULT - 1f) * effectLevel
+        stats.timeMult.modifyMult(id, timeMult)
         ship.engineController.fadeToOtherColor(this, color, Color(0, 0, 0, 0), effectLevel, 0.67f)
         val driftamount = engine.elapsedInLastFrame
         interval.advance(engine.elapsedInLastFrame)

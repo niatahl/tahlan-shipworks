@@ -21,6 +21,7 @@ import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
+import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
@@ -162,6 +163,7 @@ class TahlanModPlugin : BaseModPlugin() {
         if (HAS_LUNA) loadLunaSettings()
 
         sector.registerPlugin(CampaignPluginImpl())
+        sector.listenerManager.addListener(LegioFleetInflationListener(), true)
 
         TahlanPeople.synchronise()
 
