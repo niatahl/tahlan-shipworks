@@ -1,3 +1,20 @@
+1.1.2
+- Fixed Adaptive Mode S-mod application
+- Volkite weapons
+	- Reduced max spread
+	- Increased projectile velocity
+	- Increased damage from 40 to 50
+	- Reduced flux cost from 15 to 10
+- Teltrite
+	- Reduced flux cost from 100 to 50
+- Ronka
+	- Increased damage from 70 to 100
+	- Increased flux cost from 70 to 80
+	- Increased refire delay from 0.4 to 0.5
+
+1.1.1
+- Crash hotfix
+
 1.1
 - Added Hellspitter Cannon
 - Added Monosabot (S and M variants)
