@@ -7,8 +7,8 @@ import org.lwjgl.util.vector.Vector2f
 import java.awt.Color
 
 class DreadSabotOnHitEffect : OnHitEffectPlugin {
-    override fun onHit(        projectile: DamagingProjectileAPI, target: CombatEntityAPI, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
-        if (!shieldHit && target is ShipAPI) {
+    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
+        if (target is ShipAPI && !shieldHit) {
             val emp = projectile.empAmount / 2f
             val dam = 0f
             val arcs = MathUtils.getRandomNumberInRange(0,3)

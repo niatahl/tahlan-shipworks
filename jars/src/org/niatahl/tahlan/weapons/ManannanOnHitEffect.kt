@@ -20,7 +20,7 @@ import kotlin.random.Random
 class ManannanOnHitEffect : OnHitEffectPlugin {
     override fun onHit(
         projectile: DamagingProjectileAPI,
-        target: CombatEntityAPI,
+        target: CombatEntityAPI?,
         point: Vector2f,
         shieldHit: Boolean,
         damageResult: ApplyDamageResultAPI,

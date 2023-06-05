@@ -24,10 +24,6 @@ public class StahlSystemOnHitEffect implements OnHitEffectPlugin {
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
-        //MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 8, 400, 0, new Color(186, 240, 255), new Color(255, 255, 255));
-
-        //engine.spawnExplosion(point, ZERO, PARTICLE_COLOR, 60f, 0.1f);
-
         float bonusDamage = projectile.getDamageAmount()*1.2f;
         DamagingExplosionSpec blast = new DamagingExplosionSpec(0.1f,
                 100f,

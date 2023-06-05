@@ -30,7 +30,7 @@ public class CashmereOnHitEffect implements OnHitEffectPlugin {
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
-        if (projectile.didDamage() && !(target instanceof MissileAPI)) {
+        if (projectile.didDamage() && target != null && !(target instanceof MissileAPI)) {
 
             // Blast visuals
             float CoreExplosionRadius = 70f;

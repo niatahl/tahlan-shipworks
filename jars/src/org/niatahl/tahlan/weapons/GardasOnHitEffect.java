@@ -29,7 +29,7 @@ public class GardasOnHitEffect implements OnHitEffectPlugin {
 
         //MagicLensFlare.createSharpFlare(engine,projectile.getSource(),projectile.getLocation(),10,500,0,new Color(100,215,255),new Color(255,255,255));
 
-        if (shieldHit || target == null || !(target instanceof ShipAPI) ) {
+        if (shieldHit || !(target instanceof ShipAPI)) {
             return;
         }
 

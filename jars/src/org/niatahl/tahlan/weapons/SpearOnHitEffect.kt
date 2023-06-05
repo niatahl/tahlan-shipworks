@@ -14,7 +14,7 @@ import java.awt.Color
 import kotlin.math.roundToInt
 
 class SpearOnHitEffect : OnHitEffectPlugin {
-    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
+    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
         engine.spawnExplosion(point, Misc.ZERO, projectile.projectileSpec.fringeColor, projectile.projectileSpec.length, 0.3f)
         for (i in 1..3) engine.addSwirlyNebulaParticle(
             projectile.location,

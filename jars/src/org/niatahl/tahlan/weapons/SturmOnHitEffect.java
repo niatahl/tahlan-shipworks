@@ -22,8 +22,6 @@ public class SturmOnHitEffect implements OnHitEffectPlugin {
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
-        //MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 8, 400, 0, new Color(186, 240, 255), new Color(255, 255, 255));
-
         engine.spawnExplosion(point, ZERO, PARTICLE_COLOR, 150f, 1f);
         engine.spawnExplosion(point, ZERO, CORE_COLOR, 75f, 1f);
 

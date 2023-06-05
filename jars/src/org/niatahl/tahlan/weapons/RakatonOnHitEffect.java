@@ -20,6 +20,8 @@ public class RakatonOnHitEffect implements OnHitEffectPlugin {
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 
+        if (target == null) return;
+
         float bonusDamage = projectile.getDamageAmount()*0.6f;
 
         Global.getCombatEngine().applyDamage(target, point, bonusDamage, DamageType.ENERGY, bonusDamage, false, false, projectile.getSource(), true);

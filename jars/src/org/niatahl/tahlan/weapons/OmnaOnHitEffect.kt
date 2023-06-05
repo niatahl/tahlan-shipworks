@@ -9,7 +9,7 @@ import java.awt.Color
 
 class OmnaOnHitEffect : OnHitEffectPlugin {
 
-    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI?, engine: CombatEngineAPI) {
+    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI?, engine: CombatEngineAPI) {
 
         if (target !is ShipAPI) return
 

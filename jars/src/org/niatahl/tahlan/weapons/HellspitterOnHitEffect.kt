@@ -11,7 +11,7 @@ import org.lwjgl.util.vector.Vector2f
 import java.awt.Color
 
 class HellspitterOnHitEffect : OnHitEffectPlugin {
-    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
+    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
         val effectCol = Color(
             projectile.projectileSpec.fringeColor.red,
             projectile.projectileSpec.fringeColor.green,

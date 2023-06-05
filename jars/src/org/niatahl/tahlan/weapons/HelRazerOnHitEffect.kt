@@ -12,7 +12,7 @@ import java.awt.Color
 import kotlin.math.absoluteValue
 
 class HelRazerOnHitEffect : OnHitEffectPlugin {
-    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
+    override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI, engine: CombatEngineAPI) {
 
         //MagicLensFlare.createSharpFlare(engine, projectile.getSource(), projectile.getLocation(), 8, 400, 0, new Color(186, 240, 255), new Color(255, 255, 255));
         engine.spawnExplosion(point, Misc.ZERO, PARTICLE_COLOR, 300f, 1f)

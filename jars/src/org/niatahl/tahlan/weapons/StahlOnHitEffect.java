@@ -13,10 +13,7 @@ import static com.fs.starfarer.api.util.Misc.ZERO;
 public class StahlOnHitEffect implements OnHitEffectPlugin {
 
     private static final Color PARTICLE_COLOR = new Color(67, 255, 221, 200);
-    private static final Color BLAST_COLOR = new Color(255, 16, 16, 0);
-    private static final Color CORE_COLOR = new Color(210, 245, 255);
     private static final Color FLASH_COLOR = new Color(234, 255, 253);
-    private static final int NUM_PARTICLES = 20;
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
