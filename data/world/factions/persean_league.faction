@@ -2,6 +2,7 @@
 	
 	# variantOverrides restricts hulls to listed variants and adjusts their probability
 	"variantOverrides":{
+		"tahlan_landsknecht_DEM":10
 	},
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
@@ -25,7 +26,8 @@
 			"tahlan_providence",
 			"tahlan_throne",
 			"tahlan_skyrend",
-			"tahlan_Phoca"
+			"tahlan_Phoca",
+			"tahlan_landsknecht"
 		],
 	},
 	# listing ships here will make the faction mostly use them even if other hulls become available

@@ -63,28 +63,6 @@ class DaemonPlating : BaseHullMod() {
         ship.syncWithArmorGridState()
     }
 
-//    override fun addPostDescriptionSection(tooltip: TooltipMakerAPI?, hullSize: HullSize?, ship: ShipAPI?, width: Float, isForModSpec: Boolean) {
-//        if (tooltip == null) return
-//        if (isForModSpec) {
-//            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
-//            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
-//            return
-//        } else if (ship != null && (ship.variant.sMods.contains("tahlan_daemonplating") || ship.hullSpec.isBuiltInMod("tahlan_daemonplating"))) {
-//            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
-//            tooltip.addPara(
-//                txt("daemonPlatingSmod"),
-//                10f,
-//                Misc.getPositiveHighlightColor(),
-//                Misc.getHighlightColor(),
-//                "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"),
-//                "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%")
-//            )
-//        } else {
-//            tooltip.addSectionHeading(txt("sModBonus"), Misc.getStoryBrightColor(), Misc.getStoryDarkColor(), Alignment.MID, 10f)
-//            tooltip.addPara(txt("daemonPlatingSmod"), 10f, Misc.getGrayColor(), Misc.getHighlightColor(), "" + ((1f - ARMOR_MULT_SMOD) * 100f).roundToInt() + txt("%"), "" + REGEN_PER_SEC_PERCENT_SMOD.roundToInt() + txt("%"))
-//        }
-//    }
-
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI?): String? {
 
         return when (index) {
@@ -120,11 +98,11 @@ class DaemonPlating : BaseHullMod() {
     }
 
     companion object {
-        private const val ARMOR_MULT = 0.3014275f
+        private const val ARMOR_MULT = 0.3967486f
         private const val ARMOR_MULT_SMOD = 0.4981574f
         private const val CALC_FLAT = 200f
         private const val ARMOR_CAP = 2000f
-        private const val REGEN_PER_SEC_PERCENT = 5f
+        private const val REGEN_PER_SEC_PERCENT = 6f
         private const val REGEN_PER_SEC_PERCENT_SMOD = 3f
         private const val DISRUPTION_TIME = 2f
     }

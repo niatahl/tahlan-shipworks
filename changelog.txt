@@ -1,4 +1,5 @@
-1.1.2
+1.2
+- Added Landsknecht cruiser
 - Fixed Adaptive Mode S-mod application
 - Volkite weapons
 	- Reduced max spread
@@ -11,6 +12,12 @@
 	- Increased damage from 70 to 100
 	- Increased flux cost from 70 to 80
 	- Increased refire delay from 0.4 to 0.5
+- Hel Plating
+	- Reduced OP cost to EMR levels
+	- Armor penalty reduced to 60%
+	- Armor regen increased to 6%
+- Vale
+	- DP cost 30 -> 22
 
 1.1.1
 - Crash hotfix
