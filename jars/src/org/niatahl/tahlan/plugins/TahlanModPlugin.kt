@@ -164,7 +164,7 @@ class TahlanModPlugin : BaseModPlugin() {
         if (HAS_LUNA) loadLunaSettings()
 
         sector.registerPlugin(CampaignPluginImpl())
-        sector.listenerManager.addListener(LegioFleetSpawnListener, true)
+        sector.listenerManager.addListener(LegioFleetSpawnListener(), true)
 
         if (ENABLE_ADAPTIVEMODE)
             sector.listenerManager.addListener(LegioFleetInflationListener(), true)
