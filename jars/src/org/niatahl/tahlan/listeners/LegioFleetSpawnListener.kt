@@ -18,8 +18,6 @@ class LegioFleetSpawnListener : FleetSpawnListener {
     override fun reportFleetSpawnedToListener(fleet: CampaignFleetAPI) {
         if (fleet.isPlayerFleet) return
 
-        if (!fleet.faction.id.contains("tahlan_legio")) return
-
         fleet.membersWithFightersCopy
             .filter { !it.isFighterWing && it.variant.hasHullMod(TahlanIDs.DAEMONIC_HEART) }
             .forEach { member ->
