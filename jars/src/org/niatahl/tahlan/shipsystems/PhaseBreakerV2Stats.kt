@@ -41,7 +41,7 @@ class PhaseBreakerV2Stats : BaseShipSystemScript() {
             .filter { proj -> proj.source == ship && !projTracker.contains(proj) }
             .forEach { proj ->
                 projTracker.add(proj)
-                if (proj.weapon.slot.isHardpoint && proj.weapon.slot.weaponType == WeaponAPI.WeaponType.ENERGY) {
+                if (proj.weapon != null && proj.weapon.slot.isHardpoint && proj.weapon.slot.weaponType == WeaponAPI.WeaponType.ENERGY) {
                     proj.damage.damage *= 1.5f
                 }
             }

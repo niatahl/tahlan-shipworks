@@ -1,6 +1,6 @@
 {
     "displayName": "Strike",
-    "fluxCapacitors": 6,
+    "fluxCapacitors": 29,
     "fluxVents": 50,
     "goalVariant": true,
     "hullId": "tahlan_equinox",
@@ -22,42 +22,36 @@
         },
         {
             "autofire": false,
-            "mode": "ALTERNATING",
+            "mode": "LINKED",
             "weapons": {
-                "WS0005": "harpoonpod",
-                "WS0006": "harpoonpod"
+                "WS0005": "pulselaser",
+                "WS0006": "pulselaser"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "heavyneedler",
-                "WS0004": "heavyneedler"
+                "WS0003": "pulselaser",
+                "WS0004": "pulselaser"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0007": "railgun",
-                "WS0008": "railgun"
+                "WS0007": "pdlaser",
+                "WS0008": "pdlaser",
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser",
+                "WS0011": "pdlaser",
+                "WS0012": "pdlaser"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {
-                "WS0009": "pdburst",
-                "WS0010": "pdburst",
-                "WS0011": "pdburst",
-                "WS0012": "pdburst"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0013": "flak"}
+            "weapons": {"WS0013": "heavyburst"}
         }
     ],
     "wings": [

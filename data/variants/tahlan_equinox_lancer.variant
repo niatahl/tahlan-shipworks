@@ -1,6 +1,6 @@
 {
     "displayName": "Lancer",
-    "fluxCapacitors": 7,
+    "fluxCapacitors": 8,
     "fluxVents": 50,
     "goalVariant": true,
     "hullId": "tahlan_equinox",
@@ -41,8 +41,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0009": "railgun",
-                "WS0010": "railgun"
+                "WS0009": "pdburst",
+                "WS0010": "pdburst"
             }
         },
         {
@@ -58,7 +58,7 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0013": "flak"}
+            "weapons": {"WS0013": "heavyburst"}
         }
     ],
     "wings": [

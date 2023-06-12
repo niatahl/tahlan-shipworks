@@ -135,8 +135,9 @@
 		"tahlan_raba_brawler":4,
 		"tahlan_raba_elite":3,
 		"tahlan_raba_overdriven":3,
-		"tahlan_landsknecht_combat":5,
-		"tahlan_landsknecht_brawler":5,
+		"tahlan_landsknecht_combat":3,
+		"tahlan_landsknecht_brawler":4,
+		"tahlan_landsknecht_elite":3,
 		"tahlan_landsknecht_DEM":0
 	},
 	"combatCapital": {

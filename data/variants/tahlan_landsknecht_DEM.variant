@@ -1,10 +1,13 @@
 {
     "displayName": "DEM",
-    "fluxCapacitors": 19,
+    "fluxCapacitors": 1,
     "fluxVents": 30,
     "goalVariant": true,
     "hullId": "tahlan_landsknecht",
-    "hullMods": ["eccm"],
+    "hullMods": [
+        "eccm",
+        "missleracks"
+    ],
     "permaMods": [],
     "sMods": [],
     "variantId": "tahlan_landsknecht_DEM",
@@ -13,8 +16,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "pulselaser",
-                "WS0006": "pulselaser"
+                "WS0003": "phasebeam",
+                "WS0006": "phasebeam"
             }
         },
         {
@@ -36,7 +39,7 @@
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0007": "heavymauler"}
+            "weapons": {"WS0007": "heavyac"}
         },
         {
             "autofire": true,

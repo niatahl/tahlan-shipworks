@@ -1,42 +1,38 @@
 {
-    "displayName": "Combat",
-    "fluxCapacitors": 18,
+    "displayName": "Elite",
+    "fluxCapacitors": 2,
     "fluxVents": 30,
     "goalVariant": true,
     "hullId": "tahlan_landsknecht",
     "hullMods": ["hardenedshieldemitter"],
     "permaMods": [],
     "sMods": [],
-    "variantId": "tahlan_landsknecht_combat",
+    "variantId": "tahlan_landsknecht_elite",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "irautolance",
-                "WS0006": "irautolance"
+                "WS0003": "heavyblaster",
+                "WS0006": "heavyblaster"
             }
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0004": "phasecl",
-                "WS0005": "phasecl"
+                "WS0004": "sabotpod",
+                "WS0005": "sabotpod"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0008": "heavyac",
-                "WS0009": "heavyac"
+                "WS0007": "heavyneedler",
+                "WS0008": "heavyneedler",
+                "WS0009": "heavyneedler"
             }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0007": "tahlan_aetnos"}
         },
         {
             "autofire": true,

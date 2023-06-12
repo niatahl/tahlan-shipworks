@@ -12,7 +12,8 @@
   "shieldRadius": 230.5,
   "viewOffset": 0,
   "builtInMods": [
-    "automated"
+    "automated",
+    "coherer"
   ],
   "weaponSlots": [
     {
@@ -72,7 +73,7 @@
     {
       "id": "WS0007",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 124,
       "angle": 38,
@@ -81,7 +82,7 @@
     {
       "id": "WS0008",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 124,
       "angle": -38,
@@ -90,7 +91,7 @@
     {
       "id": "WS0009",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 85,
       "angle": 18.5,
@@ -99,7 +100,7 @@
     {
       "id": "WS0010",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 85,
       "angle": -18.5,
@@ -108,7 +109,7 @@
     {
       "id": "WS0011",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 124,
       "angle": 144,
@@ -117,7 +118,7 @@
     {
       "id": "WS0012",
       "size": "SMALL",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 124,
       "angle": -144,
@@ -126,7 +127,7 @@
     {
       "id": "WS0013",
       "size": "MEDIUM",
-      "type": "HYBRID",
+      "type": "ENERGY",
       "mount": "TURRET",
       "arc": 217,
       "angle": 180,
