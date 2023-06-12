@@ -1,5 +1,5 @@
 {
-	"id":"orion_device_mk2_bomb",
+	"id":"tahlan_orion_device_mk2_bomb",
 	"specClass":"missile",
 	"missileType":"BOMB",
 	#"onFireEffect":"com.fs.starfarer.api.impl.combat.CanisterFlakPlugin",
