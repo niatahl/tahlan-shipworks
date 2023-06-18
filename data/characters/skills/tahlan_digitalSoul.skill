@@ -2,7 +2,7 @@
 	"id":"tahlan_digitalSoul",
 	"governingAptitude":"tahlan_special",
 	"compressHullmods":false,
-	"elite": true,
+	"elite": false,
 	"scope":"CUSTOM",
 	"scopeStr":"automated ships",
 	"effectGroups":[
@@ -12,14 +12,6 @@
 			"effects":[
 				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DigitalSoul$Level1a"},
 				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DigitalSoul$Level1b"},
-			]
-		},
-		{
-			"name":"Elite",
-			"requiredSkillLevel":2,
-			"effectBasedOnLevel":false,
-			"effects":[
-				{"type":"SHIP", "script":"org.niatahl.tahlan.skills.DigitalSoul$Level2a"},
 			]
 		},
 	],

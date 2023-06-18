@@ -30,10 +30,10 @@ public class PPAOnHitEffect implements OnHitEffectPlugin {
 
             float hitLevel = 0f;
             float emp = projectile.getEmpAmount();
-            float dam = projectile.getDamageAmount();
+            float dam = projectile.getDamageAmount() / 2f;
             for (int x = 0; x < 4; x++) {
-                float pierceChance = 0.1f;
-                boolean triggered = (float) Math.random() < pierceChance;
+                float arcChance = 0.2f;
+                boolean triggered = (float) Math.random() < arcChance;
                 if (!shieldHit && triggered) {
                     hitLevel += 0.25f;
                     ShipAPI empTarget = ship;
@@ -43,7 +43,6 @@ public class PPAOnHitEffect implements OnHitEffectPlugin {
             }
 
             if (hitLevel > 0f) {
-                //engine.addSmoothParticle(point, new Vector2f(0f, 0f), 300f * hitLevel, hitLevel, 0.75f, COLOR1);
                 Global.getSoundPlayer().playSound("tachyon_lance_emp_impact", 1f - (0.2f * hitLevel), hitLevel, point, new Vector2f(0f, 0f));
             }
         }

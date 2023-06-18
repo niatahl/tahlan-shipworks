@@ -4,7 +4,6 @@
   "projectileSpecId": "tahlan_ppa_shot",
   "type": "ENERGY",
   "size": "LARGE",
-  "everyFrameEffect": "org.niatahl.tahlan.weapons.PPAMuzzleFlashScript",
   "turretSprite": "graphics/tahlan/weapons/tahlan_ppa_turret_base.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_ppa_hp_base.png",
   "renderAboveAllWeapons": 0,

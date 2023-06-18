@@ -1,0 +1,72 @@
+{
+    "displayName": "Combat",
+    "fluxCapacitors": 17,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "tahlan_illustrious",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tahlan_illustrious_combat",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_eradicator",
+                "WS0002": "tahlan_eradicator"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "tahlan_dreadsabotpod",
+                "WS0005": "tahlan_dreadsabotpod",
+                "WS0011": "tahlan_dreadsabotpod",
+                "WS0012": "tahlan_dreadsabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_tethra",
+                "WS0006": "tahlan_tethra"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "tahlan_conand",
+                "WS0008": "tahlan_conand",
+                "WS0009": "tahlan_conand",
+                "WS0010": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "pdlaser",
+                "WS0014": "pdlaser",
+                "WS0015": "pdlaser",
+                "WS0016": "pdlaser",
+                "WS0017": "pdlaser",
+                "WS0018": "pdlaser",
+                "WS0019": "pdlaser",
+                "WS0020": "pdlaser",
+                "WS0021": "pdlaser",
+                "WS0022": "pdlaser"
+            }
+        }
+    ],
+    "wings": [
+        "sarissa_wing",
+        "sarissa_wing",
+        "sarissa_wing",
+        "sarissa_wing",
+        "sarissa_wing"
+    ]
+}

@@ -1,3 +1,14 @@
+1.2.2
+- Adjusted Legio Unchained again
+- Fixed Adaptive Mode not applying to special bounties
+- Inertialess drive system changed to charge-based
+- Shiva Disruptor Beamer
+	- Efficiency improved from 0.9 to 0.75
+- Peppa
+	- Doubled arc chance
+	- Halved energy portion of arc damage
+	
+
 1.2.1
 - Bugfixes
 - Equinox

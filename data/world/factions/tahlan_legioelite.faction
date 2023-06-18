@@ -91,7 +91,12 @@
 			"broadsword_wing",
 			"talon_wing",
 			"piranha_wing",
-			"perdition_wing"
+			"perdition_wing",
+			"dagger_wing",
+			"trident_wing",
+			"claw_wing",
+			"xyphos_wing",
+			"sarissa_wing"
 		],
 	},
 	"priorityFighters":{
@@ -127,7 +132,12 @@
 			"gorgonpod",
 			"dragonpod",
 			"dragon",
-			"irautolance"
+			"irautolance",
+			"hil",
+			"tachyonlance",
+			"multineedler",
+			"heavyneedler",
+			"lightneedler"
 		],
 	},
 	"priorityWeapons":{

@@ -181,6 +181,8 @@
 		"tahlan_retribution_dmn_artillery":2,
 		"tahlan_retribution_dmn_blaster":2,
 		"tahlan_retribution_dmn_giga":2, # Sum of 12, meant to be slightly more common than Hel Scaith
+		"tahlan_imperator_assault":5,
+		"tahlan_imperator_standard":5
 	},
 	
 	

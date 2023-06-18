@@ -39,7 +39,8 @@ Spatial Shift,tahlan_shiftdrive,,,,,,,,5,0.15,0.1,0.4,0.1,,,,TRUE,,TRUE,,,,TRUE,
 Spatial Jaunt,tahlan_jauntdrive,,,,,,,,3,0.25,0.1,0.6,0.1,,,,TRUE,,TRUE,TRUE,,,,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
 Flux Blast,tahlan_fluxblast,,,,,,,,,,0.5,0.1,0.1,10,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Reality Shell,tahlan_realityshell,,,,,,,,,,5,5,1,25,,,,,,,,,TRUE,,TRUE,,graphics/icons/hullsys/temporal_shell.png
-Inertialess Drive Mode,tahlan_inertialessdrive,,,,,,,,,,0.5,5,0.5,5,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Inertialess Drive Mode,tahlan_inertialessdrive,,,,,,,,3,0.15,0.25,1.5,0.25,1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
+Vector Shift,tahlan_vectorshift,,,,,,,,3,0.15,0.25,1.5,0.25,1,,,,,,,,,,,,,graphics/icons/hullsys/maneuvering_jets.png
 Induction Ammo Feeders,tahlan_fluxfeeder,1,,,,,,,,,1,3,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Wrath of the Machine,tahlan_machinespirit,1,,,,,,,,,1,3,1,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
 Hel-type Temporal Shell,tahlan_heltempshell,1,,,,,0.2,,,,3,15,2,15,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
@@ -49,4 +50,5 @@ Coordinated Strike,tahlan_coordinatedstrike,1,,,,,,,2,0.03,0.25,6,0.25,,,,,,,,,,
 Penetration Drive,tahlan_penetrationDrive,,,,,,,,,0.25,0.1,1.6,0.1,10,,,,,TRUE,TRUE,TRUE,,TRUE,,TRUE,,graphics/icons/hullsys/maneuvering_jets.png
 Drone Overdrive,tahlan_droneoverdrive,,,,,,0.2,,,,0.5,10,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/targeting_feed.png
 Orion Device Mk2,tahlan_orion_device_mk2,,,,,,,,3,0.2,0,0.001,0,1,,,,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
+EWAR Strike,tahlan_ewarstrike,,,,,,0.1,,,,0.5,15,1,15,,,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,

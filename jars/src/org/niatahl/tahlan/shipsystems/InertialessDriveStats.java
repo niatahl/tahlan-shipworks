@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class InertialessDriveStats extends BaseShipSystemScript {
 
-    private static final Color SHIMMER_COLOR = new Color(119, 226, 176, 117);
+    private static final Color SHIMMER_COLOR = new Color(96, 251, 171, 117);
 
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
@@ -31,7 +31,7 @@ public class InertialessDriveStats extends BaseShipSystemScript {
             stats.getMaxTurnRate().modifyMult(id, 1f + 2f * effectLevel);
         }
 
-        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 6, 2f, 6f);
+        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 6, 2f, 4f);
 
 
 

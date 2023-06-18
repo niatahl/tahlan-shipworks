@@ -5,23 +5,16 @@ import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.ids.*
-import com.fs.starfarer.api.loading.VariantSource
 import com.fs.starfarer.api.mission.FleetSide
 import com.fs.starfarer.api.util.IntervalUtil
-import com.fs.starfarer.api.util.Misc
-import org.apache.log4j.Priority
-import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
-import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
+import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.addDaemonCore
+import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.addSMods
 import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_HARDMODE
-import org.niatahl.tahlan.utils.TahlanIDs.CORE_ARCHDAEMON
-import org.niatahl.tahlan.utils.TahlanIDs.CORE_DAEMON
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
 import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
 import org.niatahl.tahlan.utils.Utils.txt
-import org.niatahl.tahlan.utils.fixVariant
 import java.awt.Color
 import kotlin.math.roundToInt
 
@@ -174,6 +167,12 @@ class DaemonHeart : BaseHullMod() {
             }
         restoreToNonDHull(member.variant)
 
+        if (!member.captain.isAICore) {
+            addDaemonCore(member)
+        }
+        if (ENABLE_ADAPTIVEMODE && member.variant.sMods.isEmpty()) {
+            addSMods(member)
+        }
     }
 
     override fun isApplicableToShip(ship: ShipAPI): Boolean {

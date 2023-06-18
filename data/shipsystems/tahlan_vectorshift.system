@@ -1,0 +1,26 @@
+{
+	"id":"tahlan_vectorshift",
+	"type":"ENGINE_MOD",
+	"aiType":"MANEUVERING_JETS",
+	
+	"statsScript":"org.niatahl.tahlan.shipsystems.VectorShiftStats",
+	
+	"engineGlowLengthMult":0.1,
+	"engineGlowWidthMult":1,
+	"engineGlowGlowMult":0.5,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":false,
+
+	"useSound":"system_maneuvering_jets",
+	"loopSound":"system_maneuvering_jets_loop",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"activeSpeedIncrease":100,
+		"burstMovementPotential":100,
+		"averageSpeedIncrease":50,
+	}
+}

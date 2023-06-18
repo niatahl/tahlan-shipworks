@@ -57,10 +57,10 @@ class phaseHarmonics : BaseHullMod() {
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {
         return when (index) {
-            0 -> Utils.txt("phaseBreaker")
-            1 -> "${((1f - DAMAGE_MOD) * 100f).roundToInt()}${Utils.txt("%")}"
-            2 -> "${((VENT_MOD - 1f) * 100f).roundToInt()}${Utils.txt("%")}"
-            3 -> Utils.txt("phaseAnchor")
+            0 -> txt("phaseBreaker")
+            1 -> "${((1f - DAMAGE_MOD) * 100f).roundToInt()}${txt("%")}"
+            2 -> "${((VENT_MOD - 1f) * 100f).roundToInt()}${txt("%")}"
+            3 -> txt("phaseAnchor")
             else -> null
         }
     }

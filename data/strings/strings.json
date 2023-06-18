@@ -104,10 +104,9 @@
 		"droneOverdrive":"Drones overcharged",
 
 		"digitalSoulLevel1a":"Allows the piloting of automated ships",
-		"digitalSoulLevel1b":"Reduces automated ship CR penalty for piloted ship to 15%%",
-		"digitalSoulLevel1b_hl":"15%",
-		"digitalSoulLevel2a":"Fully negates automated ship CR penalty for piloted ship",
-		"digitalSoulLevel2b":"Piloted ship no longer counts for automated ship points calculation",
+		"digitalSoulLevel1a_hl":"automated ships",
+		"digitalSoulLevel1b":"Negates automated ship CR penalty for piloted ship",
+		"digitalSoulLevel1b_hl":"Negates",
 
 		"skill_suffix":" skill",
 		"sModBonus":"S-mod bonus",

@@ -12,14 +12,9 @@ import java.awt.*;
 
 public class TrillGlowScript implements EveryFrameWeaponEffectPlugin {
     private static final float[] COLOR_NORMAL = {0f/255f, 255f/255f, 80f/255f};
-    private static final float[] COLOR_OVERDRIVE = {255f/255f, 100f/255f, 40f/255f};
     private static final float[] COLOR_SYSTEM = {60f/255f, 255f/255f, 245f/255f};
     private static final float MAX_JITTER_DISTANCE = 0.8f;
     private static final float MAX_OPACITY = 1f;
-    private static final float TRIGGER_PERCENTAGE = 0.3f;
-    private boolean overdrive = false;
-
-    private static final Color AFTERIMAGE_COLOR = new Color(133, 126, 116, 80);
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -36,9 +31,7 @@ public class TrillGlowScript implements EveryFrameWeaponEffectPlugin {
         float currentBrightness = ship.getFluxTracker().getFluxLevel() *  0.8f;
 
         //If we are in overdrive, we glow even more
-        if (ship.getVariant().hasHullMod("tahlan_knightrefit") && (ship.getHitpoints() <= ship.getMaxHitpoints()*TRIGGER_PERCENTAGE || ship.getVariant().hasHullMod("tahlan_forcedoverdrive"))) {
-            currentBrightness = 1f;
-        } else if (ship.getSystem().isActive()){
+        if (ship.getSystem().isActive()){
             currentBrightness = Math.max(currentBrightness, ship.getSystem().getEffectLevel());
         }
 
@@ -64,12 +57,6 @@ public class TrillGlowScript implements EveryFrameWeaponEffectPlugin {
 
         //Now, set the color to the one we want, and include opacity
         Color colorToUse = new Color(COLOR_NORMAL[0], COLOR_NORMAL[1], COLOR_NORMAL[2], currentBrightness*MAX_OPACITY);
-
-        //Change color if in overdrive
-        if (currentBrightness > 0.8) {
-            colorToUse = new Color(COLOR_OVERDRIVE[0], COLOR_OVERDRIVE[1], COLOR_OVERDRIVE[2], currentBrightness*MAX_OPACITY);
-        }
-
 
         //Change color again if system is active and set brightness to max
         if (ship.getSystem().isActive()) {

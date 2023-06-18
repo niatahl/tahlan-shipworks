@@ -17,12 +17,9 @@ import static com.fs.starfarer.api.util.Misc.ZERO;
 
 public class PastelScript implements EveryFrameWeaponEffectPlugin {
 
-    private static final Color PARTICLE_COLOR = new Color(41, 255, 150);
+    private static final Color PARTICLE_COLOR = new Color(41, 255, 150, 200);
     private static final Color GLOW_COLOR = new Color(50, 238, 255, 50);
-    private static final Color FLASH_COLOR = new Color(223, 255, 248);
-    private static final int NUM_PARTICLES = 30;
-
-    private final String CHARGE_SOUND_ID = "tahlan_virtue_loop";
+    private static final Color FLASH_COLOR = new Color(223, 255, 248, 160);
 
     private boolean hasFiredThisCharge = false;
     private IntervalUtil effectInterval = new IntervalUtil(0.05f, 0.1f);
@@ -73,10 +70,10 @@ public class PastelScript implements EveryFrameWeaponEffectPlugin {
             hasFiredThisCharge = true;
 
             Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), PARTICLE_COLOR, 80f, 0.1f);
-            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 40f, 0.1f);
-            engine.addSmoothParticle(point, ZERO, 100f, 0.5f, 0.04f, PARTICLE_COLOR);
-            engine.addSmoothParticle(point, ZERO, 150f, 0.5f, 0.03f, GLOW_COLOR);
-            engine.addHitParticle(point, ZERO, 200f, 0.8f, 0.02f, FLASH_COLOR);
+//            Global.getCombatEngine().spawnExplosion(point, new Vector2f(0f, 0f), FLASH_COLOR, 40f, 0.1f);
+            engine.addSmoothParticle(point, ZERO, 100f, 0.5f, 0.02f, PARTICLE_COLOR);
+//            engine.addSmoothParticle(point, ZERO, 150f, 0.5f, 0.02f, GLOW_COLOR);
+            engine.addHitParticle(point, ZERO, 200f, 0.8f, 0.01f, FLASH_COLOR);
         }
 
 

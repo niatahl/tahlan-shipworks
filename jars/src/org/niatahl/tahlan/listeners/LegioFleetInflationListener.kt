@@ -9,7 +9,6 @@ import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.ids.*
 import com.fs.starfarer.api.util.Misc
-import org.apache.log4j.Priority
 import org.lazywizard.lazylib.MathUtils
 import org.niatahl.tahlan.hullmods.DaemonHeart
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
@@ -18,7 +17,6 @@ import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
 import org.niatahl.tahlan.utils.fixVariant
-import org.niatahl.tahlan.utils.logger
 import kotlin.math.roundToInt
 
 class LegioFleetInflationListener : FleetInflationListener {
@@ -29,12 +27,24 @@ class LegioFleetInflationListener : FleetInflationListener {
 
         fleet.membersWithFightersCopy
             .filter { !it.isFighterWing && it.variant.hasHullMod(DAEMONIC_HEART) }
-            .forEach { member ->
-                addSMods(member)
+            .forEach {
+                addDaemonCore(it)
+                if (ENABLE_ADAPTIVEMODE) {
+                    clearSMods(it)
+                    addSMods(it)
+                }
             }
     }
 
     companion object {
+
+        private val MAG = mapOf(
+            ShipAPI.HullSize.FRIGATE to 2,
+            ShipAPI.HullSize.DESTROYER to 1,
+            ShipAPI.HullSize.CRUISER to 0,
+            ShipAPI.HullSize.CAPITAL_SHIP to 0,
+            ShipAPI.HullSize.FIGHTER to 0
+        ).withDefault { 0 }
 
         private val SMOD_OPTIONS = listOf(
             HullMods.HEAVYARMOR,
@@ -80,6 +90,58 @@ class LegioFleetInflationListener : FleetInflationListener {
             member.updateStats()
         }
 
+        fun clearSMods(member: FleetMemberAPI) {
+            member.fixVariant()
+            member.variant.sMods.toList().forEach{
+                member.variant.removePermaMod(it)
+                member.variant.removeMod(it)
+            }
+        }
+
+        fun addDaemonCore(member: FleetMemberAPI) {
+            // Now we make a new captain if we don't have an AI captain already
+            if (member.captain != null && member.captain.isAICore) return
+
+            // Apparently this can be the case
+            if (Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE) == null) {
+                return
+            }
+
+            val min = if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn")) {
+                3
+            } else if (TahlanModPlugin.ENABLE_HARDMODE) {
+                Global.getSector().playerPerson.stats.level.div(3).coerceAtLeast(1)
+            } else {
+                1
+            }
+
+            val die = (MathUtils.getRandomNumberInRange(1, 5) - MAG[member.hullSpec.hullSize]!!).coerceAtLeast(min)
+
+            if (member.fleetCommander.faction.id.contains("tahlan_legio")) { // Should catch all legio subfactions
+                member.captain = when (die) {
+                    1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, "tahlan_legioinfernalis", Misc.random)
+                    2 -> DaemonOfficerPlugin().createPerson(TahlanIDs.CORE_DAEMON, "tahlan_legioinfernalis", Misc.random)!!
+                    else -> DaemonOfficerPlugin().createPerson(TahlanIDs.CORE_ARCHDAEMON, "tahlan_legioinfernalis", Misc.random)!!
+                }
+            } else {
+                member.captain = when (die) {
+                    1 -> Misc.getAICoreOfficerPlugin(Commodities.GAMMA_CORE).createPerson(Commodities.GAMMA_CORE, member.fleetCommander.faction.id, Misc.random)
+                    2 -> Misc.getAICoreOfficerPlugin(Commodities.BETA_CORE).createPerson(Commodities.BETA_CORE, member.fleetCommander.faction.id, Misc.random)
+                    else -> Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, member.fleetCommander.faction.id, Misc.random)
+                }
+            }
+
+            if (member.variant.hasHullMod(HullMods.SAFETYOVERRIDES)) {
+                if (!member.captain.stats.hasSkill(Skills.POINT_DEFENSE)) {
+                    member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.COMBAT_ENDURANCE }.random().skill.id, 0f)
+                    member.captain.stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
+                }
+                if (!member.captain.stats.hasSkill(Skills.COMBAT_ENDURANCE)) {
+                    member.captain.stats.setSkillLevel(member.captain.stats.skillsCopy.filter { it.skill.id != Skills.POINT_DEFENSE }.random().skill.id, 0f)
+                    member.captain.stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
+                }
+            }
+        }
     }
 
 }

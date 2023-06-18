@@ -150,6 +150,12 @@ tahlan_yajurveda,SHIP,"Seemingly a hybrid of Lasher and Remnant hulls, this unus
 
 Who built this ship and for what purpose remains a mystery.",,,
 tahlan_sutra,SHIP,An unusual drone fitted with a capacitor-fed variant of the Project Velvet.,,,
+tahlan_samaveda,SHIP,"Clearly based on a remnant hull design, this unusual ship acts primarily as a host for Sutra-class attack drones.",,,
+tahlan_kelpia,SHIP,"A terrifyingly aggressive design, this unusual amalgamation of technologies features a strange semi-phased drive system, seemingly designed for the sole purpose of piercing through other ships.",,,
+tahlan_melusia,SHIP,"An offensive destroyer of unknown design, combining high speed with impressive firepower.",,,
+tahlan_asria,SHIP,"A battlecruiser with incredible mobility and strong firepower. Its inertialess drive system seems to defy all laws of physics, making it a terrifying foe to face.",,,
+tahlan_impia,SHIP,"An apparent modification of a Remnant droneship, this fast skimming frigate is a remarkable skirmisher.",,,
+,,,,,
 ,,,,,
 ,,,,,
 #Legio Infernalis,,,,,
@@ -192,9 +198,8 @@ It is said, the Nightwatch happened to be particularly fond of the Falcon, often
 tahlan_mora_pi,SHIP,"Common as the Mora is, it was only a matter of time before Legio engineers laid their hands on the hull to produce a variant that would better suit the faction's combat doctrine. The resulting variant is tuned towards offense, sacrificing the damper field, that gives its base model its renowned durability, to greatly augment the missile armament.
 
 With one of the medium missile turrets replaced by a large hardpoint and the addition of a missile loader system, the alpha strike potential of the carrier's combined missile and strike craft capacity is indeed terrifying.",,,
-tahlan_imperator,SHIP,"In the pre-collapse era it was common knowledge that every once in a while the mighty Domain navy would proudly present a new latest and greatest warship to the galaxy at large, an act of both audacity and calculated propaganda to remind all under the Domain's rule of its absolute power. The Imperator is one such warship, massive in scale and capable of fielding a truly staggering amount of firepower, a prestige project like many before it.
-
-Far less commonly known is the fact that a number of Imperator-class battleships were built to the specs of the Nightwatch, covered in stealth plating and equipped with state-of-the-art command and control suites, sensor arrays and electronic warfare suits alike. Coated in the black and red colors of the Nightwatch, these massive vessels served as mobile headquarters for the shadowy organisation's many branches across the vastness of Domain space.
+tahlan_imperator,SHIP,"In the pre-collapse era it was common knowledge that every once in a while the mighty Domain navy would proudly present a new latest and greatest warship to the galaxy at large, an act of both audacity and calculated propaganda to remind all under the Domain's rule of its absolute power. The Imperator is one such warship, massive in scale and capable of fielding a truly staggering amount of firepower, a prestige project like many before it.",,,
+tahlan_illustrious,SHIP,"The Illustrious-class battlestars were for the longest time regarded as a myth, massive starships built only secondarily for warfare, covered in stealth plating and equipped with state-of-the-art command and control suites, sensor arrays and electronic warfare suits alike. Coated in the black and red colors of the Nightwatch, these massive vessels served as mobile headquarters for the shadowy organisation's many branches across the vastness of Domain space.
 
 Had one asked before the collapse, noone would've thought a Nightwatch branch might possibly be operating in the backwater that was the Persean Sector, not that the name would've meant anything to anyone but high-ranking Domain officials and those working on the edges of Domain law.
 
@@ -643,6 +648,7 @@ tahlan_coordinatedstrike,SHIP_SYSTEM,Increases the damage of energy weapons and 
 tahlan_penetrationDrive,SHIP_SYSTEM,Propels the ship forward at high velocity in a pseudo-phased state. Impacting with another ship during the charge inflicts 2000 Kinetic damage directly and another 1000 High-Explosive damage in blast around the point of impact.,Fighters,,
 tahlan_droneoverdrive,SHIP_SYSTEM,"Sends drone wing into overdrive, doubling their rate of fire and causing them to discharge EMP arcs at any nearby enemies.",,,
 tahlan_orion_device_mk2,SHIP_SYSTEM,"Deploys a shaped antimatter charge behind the ship. The explosion applies force to a massive push-plate, which absorbs the shock and spreads the resulting acceleration over a timeframe where it can be handled by the ship's inertial compensators. The ship is briefly propelled forward at a rate very few more ""advanced"" technologies can hope to match.",Mobility,"Explodes a shaped antimatter charge behind the ship, propelling it forward at extreme speed.",
+tahlan_ewarstrike,SHIP_SYSTEM,"Directs the entirety of the ship's electronic warfare suite at the target, interfering with most systems of its system to open it up to attack.",Assault,"Launches an EWAR attack on the target, increasing damage taken and reducing top speed and weapon ranges.",
 ,,,,,
 # Campaign,,,,,
 ,,,,,

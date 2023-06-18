@@ -14,13 +14,12 @@ import org.lwjgl.util.vector.Vector2f
 import org.magiclib.util.MagicRender
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
 import java.awt.Color
-import java.io.IOException
 import kotlin.collections.ArrayList
 import kotlin.math.ceil
 
-class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
-    private var loaded = false
+class EWARSuiteEffectScript : EveryFrameWeaponEffectPlugin {
     private var rotation = 0f
+    private var sprite: SpriteAPI? = null
     private val targetList = ArrayList<ShipAPI>()
     override fun advance(amount: Float, engine: CombatEngineAPI, weapon: WeaponAPI) {
         if (engine.isPaused) return
@@ -34,24 +33,15 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
             return
         }
 
-        val sprite1 = Global.getSettings().getSprite("fx", "tahlan_altar_aura")
-        val sprite2 = Global.getSettings().getSprite("fx", "tahlan_altar_aura")
+        sprite = Global.getSettings().getSprite("fx", "tahlan_ewar_aura")
 
         val loc = ship.location
         MagicRender.singleframe(
-            sprite1,
+            sprite,
             loc,
-            Vector2f(EWARSuiteEffectScript.EFFECT_RANGE *2f, EWARSuiteEffectScript.EFFECT_RANGE *2f),
+            Vector2f(EFFECT_RANGE*2f, EFFECT_RANGE*2f),
             rotation,
-            Color(180,20,20,15),
-            true
-        )
-        MagicRender.singleframe(
-            sprite2,
-            loc,
-            Vector2f(EWARSuiteEffectScript.EFFECT_RANGE *2f, EWARSuiteEffectScript.EFFECT_RANGE *2f),
-            -rotation,
-            Color(180,20,20,15),
+            Color(255,0,0,30),
             true
         )
 
@@ -60,8 +50,9 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
         if (rotation > 360f) {
             rotation -= 360f
         }
+
         for (target in CombatUtils.getShipsWithinRange(ship.location, EFFECT_RANGE)) {
-            if (target.owner == ship.owner && !targetList.contains(target) && target.variant.hullMods.contains(DAEMONIC_HEART)) {
+            if (target.owner != ship.owner && !targetList.contains(target)) {
                 targetList.add(target)
             }
         }
@@ -69,19 +60,19 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
         for (target in targetList) {
             if (MathUtils.getDistance(target.location, ship.location) <= EFFECT_RANGE) {
                 target.mutableStats.apply {
-                    shieldDamageTakenMult.modifyMult(ALTAR_ID, DAMAGE_MULT)
-                    armorDamageTakenMult.modifyMult(ALTAR_ID, DAMAGE_MULT)
-                    hullDamageTakenMult.modifyMult(ALTAR_ID, DAMAGE_MULT)
-                    damageToMissiles.modifyMult(ALTAR_ID, PDDMG_MULT)
-                    damageToFighters.modifyMult(ALTAR_ID, PDDMG_MULT)
+                    shieldDamageTakenMult.modifyMult(EWAR_ID, DAMAGE_MULT)
+                    armorDamageTakenMult.modifyMult(EWAR_ID, DAMAGE_MULT)
+                    hullDamageTakenMult.modifyMult(EWAR_ID, DAMAGE_MULT)
+                    damageToMissiles.modifyMult(EWAR_ID, PDDMG_MULT)
+                    damageToFighters.modifyMult(EWAR_ID, PDDMG_MULT)
                 }
             } else {
                 target.mutableStats.apply {
-                    shieldDamageTakenMult.unmodify(ALTAR_ID)
-                    armorDamageTakenMult.unmodify(ALTAR_ID)
-                    hullDamageTakenMult.unmodify(ALTAR_ID)
-                    damageToMissiles.unmodify(ALTAR_ID)
-                    damageToFighters.unmodify(ALTAR_ID)
+                    shieldDamageTakenMult.unmodify(EWAR_ID)
+                    armorDamageTakenMult.unmodify(EWAR_ID)
+                    hullDamageTakenMult.unmodify(EWAR_ID)
+                    damageToMissiles.unmodify(EWAR_ID)
+                    damageToFighters.unmodify(EWAR_ID)
                 }
                 purgeList.add(target)
             }
@@ -92,14 +83,10 @@ class HelAltarEffectScript : EveryFrameWeaponEffectPlugin {
     }
 
     companion object {
-        private const val ALTAR_ID = "HelAltar_ID"
+        private const val EWAR_ID = "tahlan_ewar_ID"
         const val EFFECT_RANGE = 2000f
-        const val DAMAGE_MULT = 0.9f
-        const val PDDMG_MULT = 1.5f
-
-        // sprite path - necessary if loaded here and not in settings.json
-        const val SPRITE_PATH = "graphics/tahlan/fx/tahlan_tempshield_ring_b.png"
-        val COLOR = Color(186, 47, 52)
-        const val ROTATION_SPEED = 5f
+        const val DAMAGE_MULT = 1.1f
+        const val PDDMG_MULT = 0.67f
+        const val ROTATION_SPEED = 2f
     }
 }

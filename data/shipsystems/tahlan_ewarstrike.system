@@ -1,0 +1,20 @@
+{
+	"id":"tahlan_ewarstrike",
+	"type":"STAT_MOD",
+	"aiType":"ENTROPY_AMPLIFIER",
+	
+	"statsScript":"org.niatahl.tahlan.shipsystems.EWARStrikeStats",
+
+	"fadeActivationSoundOnChargedown":true,
+	"useSound":"system_entropy",
+	"loopSound":"system_entropy_loop",
+	"deactivateSound":"system_entropy_off",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}
+}
+
+
+
+
