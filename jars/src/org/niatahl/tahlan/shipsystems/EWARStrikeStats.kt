@@ -53,6 +53,7 @@ open class EWARStrikeStats : BaseShipSystemScript() {
                 val interval = IntervalUtil(0.5f, 0.5f)
                 override fun advance(amount: Float, events: List<InputEventAPI>) {
                     if (Global.getCombatEngine().isPaused) return
+                    if (!targetData.target.isAlive || targetData.target.isHulk) return
                     if (targetData.target === Global.getCombatEngine().playerShip) {
                         Global.getCombatEngine().maintainStatusForPlayerShip(
                             KEY_TARGET,

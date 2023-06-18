@@ -127,7 +127,7 @@ Effects from multiple Altars do not stack.",Buffs self and allies,,graphics/tahl
 Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",Special,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.",Allows Cieve to control ship,,graphics/tahlan/hullmods/cieve_link.png
 Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,,graphics/tahlan/hullmods/tahlan_stealthplating.png
 Unique,tahlan_notorious,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Notorious,"This ship is %s for being of a unique design, easily identified even with fleet transponder disabled.",Makes ship notable,,
-Nightwatch EWAR Suite,tahlan_ewarsuite,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.EWARSuite,"This ships ist host to an extensive electronic warfare suite, disrupting all enemies within a %s radius.
+Nightwatch EWAR Suite,tahlan_ewarsuite,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.EWARSuite,"This ships is host to an extensive electronic warfare suite, disrupting all enemies within a %s radius.
 
 Affected hostile ships receive %s more damage from all sources and deal %s less damage to missiles and fighters.
 

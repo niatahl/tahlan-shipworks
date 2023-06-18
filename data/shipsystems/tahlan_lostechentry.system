@@ -1,0 +1,35 @@
+{
+	"id":"tahlan_lostechentry",
+	"type":"ENGINE_MOD",
+	"aiType":"NONE",
+	
+	"statsScript":"org.niatahl.tahlan.shipsystems.LostechEntry",
+	
+	#"jitterColor":[255,255,255,35],
+	#"jitterCopies":4,
+	#"jitterRange":10,
+	#"jitterRangeRadiusFraction":0,
+	
+	"engineActivateHiddenNozzles":false,
+	"engineGlowColor":[255,255,255,255],
+	"engineGlowContrailColor":[0,0,0,0],
+	"engineGlowMaxBlend":0,
+	"engineGlowLengthMult":0.1,
+	"engineGlowWidthMult":1,
+	"engineGlowGlowMult":1,
+	
+	"flameoutOnImpactChance":0,
+
+	"clampTurnRateAfter":true,
+	"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+
+	#"useSound":"system_travel_drive_activate",
+	"loopSound":"system_travel_drive_loop",
+	#"deactivateSound":"system_travel_drive_deactivate",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"averageSpeedIncrease":600,
+	}
+}

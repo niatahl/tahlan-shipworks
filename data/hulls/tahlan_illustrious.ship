@@ -306,50 +306,50 @@
   "engineSlots": [
     {
       "location": [-200, 41],
-      "length": 89.5,
-      "width": 30,
+      "length": 89,
+      "width": 25,
       "angle": 180,
-      "contrailSize": 30,
+      "contrailSize": 25,
       "style": "MIDLINE"
     },
     {
       "location": [-200, -41],
-      "length": 89.5,
-      "width": 30,
+      "length": 89,
+      "width": 25,
       "angle": -180,
-      "contrailSize": 30,
+      "contrailSize": 25,
       "style": "MIDLINE"
     },
     {
       "location": [-182, 60.5],
       "length": 80.5,
-      "width": 30,
+      "width": 23,
       "angle": 180,
-      "contrailSize": 30,
+      "contrailSize": 23,
       "style": "MIDLINE"
     },
     {
       "location": [-182, -60.5],
       "length": 80.5,
-      "width": 30,
+      "width": 23,
       "angle": -180,
-      "contrailSize": 30,
+      "contrailSize": 23,
       "style": "MIDLINE"
     },
     {
       "location": [-214, 26],
-      "length": 82,
-      "width": 20,
+      "length": 85.5,
+      "width": 19,
       "angle": 180,
-      "contrailSize": 20,
+      "contrailSize": 19,
       "style": "MIDLINE"
     },
     {
       "location": [-214, -26],
-      "length": 82,
-      "width": 20,
+      "length": 85.5,
+      "width": 19,
       "angle": -180,
-      "contrailSize": 20,
+      "contrailSize": 19,
       "style": "MIDLINE"
     },
     {

@@ -34,7 +34,7 @@ class VectorShiftStats : BaseShipSystemScript() {
             stats.turnAcceleration.modifyFlat(id, 300f * effectLevel)
             stats.maxTurnRate.modifyMult(id, 1f + 2f * effectLevel)
         }
-        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 6, 2f, 4f)
+        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 10, 2f, 3f)
         interval.advance(Global.getCombatEngine().elapsedInLastFrame)
         if (interval.intervalElapsed()) {
             var target: CombatEntityAPI? = null
@@ -74,11 +74,11 @@ class VectorShiftStats : BaseShipSystemScript() {
                     ship,
                     target,
                     DamageType.ENERGY,  //Damage type
-                    100f,  //Damage
-                    200f,  //Emp
+                    0f,  //Damage
+                    100f,  //Emp
                     100000f,  //Max range
                     "tachyon_lance_emp_impact",  //Impact sound
-                    10f,  // thickness of the lightning bolt
+                    8f,  // thickness of the lightning bolt
                     LIGHTNING_CORE_COLOR,  //Central color
                     LIGHTNING_FRINGE_COLOR //Fringe Color
                 )
@@ -93,7 +93,7 @@ class VectorShiftStats : BaseShipSystemScript() {
                     0f,  //Emp
                     100000f,  //Max range
                     null,  //Impact sound
-                    10f,  // thickness of the lightning bolt
+                    8f,  // thickness of the lightning bolt
                     LIGHTNING_CORE_COLOR,  //Central color
                     LIGHTNING_FRINGE_COLOR //Fringe Color
                 )
@@ -116,7 +116,7 @@ class VectorShiftStats : BaseShipSystemScript() {
     }
 
     companion object {
-        private val SHIMMER_COLOR = Color(96, 231, 191, 117)
+        private val SHIMMER_COLOR = Color(66, 251, 221, 100)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }
