@@ -7,6 +7,10 @@
 - Peppa
 	- Doubled arc chance
 	- Halved energy portion of arc damage
+- Pastella
+	- Improved efficiency from 0.9 to 0.8
+	- Increased max spread
+	- Greatly increased spread buildup
 	
 
 1.2.1
@@ -41,6 +45,7 @@
 
 1.1.1
 - Crash hotfix
+- Izanami can no longer vent under time mult
 
 
 1.1

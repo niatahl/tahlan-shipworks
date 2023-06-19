@@ -5,10 +5,7 @@ import com.fs.starfarer.api.campaign.PersonImportance
 import com.fs.starfarer.api.characters.FullName
 import com.fs.starfarer.api.characters.ImportantPeopleAPI
 import com.fs.starfarer.api.characters.PersonAPI
-import com.fs.starfarer.api.impl.campaign.ids.Factions
-import com.fs.starfarer.api.impl.campaign.ids.Personalities
-import com.fs.starfarer.api.impl.campaign.ids.Ranks
-import com.fs.starfarer.api.impl.campaign.ids.Skills
+import com.fs.starfarer.api.impl.campaign.ids.*
 import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.WEEB_MODE
 import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
 
@@ -118,6 +115,7 @@ object TahlanPeople {
                 postId = Ranks.POST_SPECIAL_AGENT
                 importance = PersonImportance.HIGH
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_devil")
+                voice = Voices.SOLDIER
                 stats.level = 7
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
                 stats.setSkillLevel(Skills.MISSILE_SPECIALIZATION, 1f)
@@ -127,7 +125,6 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.POLARIZED_ARMOR, 2f)
                 stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
                 tags.add("tahlan_devil")
-
             }
             ip.addPerson(person)
         }
@@ -137,12 +134,13 @@ object TahlanPeople {
                 id = QUEEN
                 setFaction(BLACKWATCH)
                 name.first = "Sarah"
-                name.last = "Tannis"
+                name.last = "Tann"
                 gender = FullName.Gender.FEMALE
                 rankId = Ranks.SPACE_ADMIRAL
                 postId = Ranks.POST_FACTION_LEADER
                 importance = PersonImportance.VERY_HIGH
                 portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_queen")
+                voice = Voices.OFFICIAL
                 stats.level = 7
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 1f)
                 stats.setSkillLevel(Skills.MISSILE_SPECIALIZATION, 1f)

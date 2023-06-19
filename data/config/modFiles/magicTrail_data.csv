@@ -4,7 +4,7 @@ tahlan_utpc_splinter_trail_glow,tahlan_utpc_shot_splinter,tahlan_trail_zappy,10,
 tahlan_utpc_trail,tahlan_utpc_shot,tahlan_trail_contrail,10,0,0.1,0.6,16,24,"[150,120,110]","[50,50,50]",0.4,300,500,true,10,5,1,TRUE,FALSE,FALSE,30,50,0.3,0,75,100,true,false
 tahlan_utpc_splinter_trail,tahlan_utpc_shot_splinter,tahlan_trail_contrail,10,0,0.1,0.6,8,12,"[150,120,110]","[50,50,50]",0.3,300,500,true,10,5,1,TRUE,FALSE,FALSE,30,50,0.3,0,75,100,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#tahlan_aetnos_trail,tahlan_aetnos_shot,tahlan_trail_foam,10,0,0,0.4,10,1,"[255,150,80]","[150,0,0]",1,300,350,true,10,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,true,false
+#tahlan_aetnos_trail,tahlan_aetnos_shot,tahlan_trail_foam,10,0,0,0.4,5,2,"[255,150,80]","[150,0,0]",0.8,300,350,true,10,0,1,TRUE,FALSE,FALSE,0,0,0,0,0,0,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_porph_trail_1,tahlan_porph_shot,tahlan_trail_flame,10,0,0.1,0.4,20,10,"[255,30,0]","[150,10,0]",0.3,300,-300,true,10,0,1,TRUE,FALSE,TRUE,50,100,0.2,0,100,200,true,false
 tahlan_porph_trail_2,tahlan_porph_shot,tahlan_trail_flame,10,0,0.1,0.4,20,10,"[255,30,0]","[150,10,0]",0.3,300,-300,true,10,0,1,TRUE,FALSE,TRUE,40,80,0.2,0,80,160,true,false
@@ -47,7 +47,6 @@ tahlan_kriegsmesser_trail_1,tahlan_kriegsmesser_msl,tahlan_trail_contrail,10,0,0
 tahlan_kriegsmesser_trail_2,tahlan_kriegsmesser_msl,tahlan_trail_contrail,10,0,0.3,1,15,20,"[255,0,50]","[108,190,235]",0.5,300,500,true,0,0,0,TRUE,FALSE,TRUE,50,0,0.2,0,50,20,true,false
 tahlan_kriegsmesser_trail_3,tahlan_kriegsmesser_msl,tahlan_trail_contrail,10,0,0.2,0.8,20,30,"[108,190,235]","[78,190,235]",0.5,300,500,true,0,10,0,TRUE,FALSE,TRUE,10,10,0.2,0,10,30,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#tahlan_dolch_trail_glow,tahlan_dolch_dummy_msl,tahlan_trail_zappy,10,0,0.05,0.3,20,10,"[90,237,205]","[65,190,255]",0.2,300,500,true,0,0,1,TRUE,FALSE,TRUE,30,30,0,0,0,0,false,false
 tahlan_dolch_trail,tahlan_dolch_dummy_msl,tahlan_trail_zappy,10,0.05,0.5,0.8,10,6,"[90,237,205]","[90,237,255]",0.2,300,500,true,0,0,0,TRUE,FALSE,TRUE,30,30,0.1,0,0,50,true,false
 tahlan_dolch_trail_2,tahlan_dolch_dummy_msl,tahlan_trail_dhelix,10,0,0.2,0.8,10,15,"[255,240,150]","[65,190,255]",0.5,300,-200,true,0,0,0,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -196,7 +195,7 @@ tahlan_disparax_trail,tahlan_disparax_shot,tahlan_trail_zappy,10,0.05,0,0.6,25,1
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_velvet_trail,tahlan_velvet_shot,tahlan_trail_foggy,10,0.1,0,0.02,50,5,"[255,168,38]","[255,148,18]",0.7,200,1000,true,25,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-tahlan_pastel_trail,tahlan_pastel_shot,tahlan_trail_foggy,10,0.1,0,0.02,50,5,"[57,255,255]","[57,205,205]",0.7,200,1000,true,25,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+tahlan_pastel_trail,tahlan_pastel_shot,base_trail_zap,10,0,0,0.1,30,30,"[57,255,255]","[7,255,205]",0.7,200,100,true,10,5,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_vesuvio_trail1,tahlan_vesuvio_shot,tahlan_trail_zappy,5,0,0,0.25,5,1,"[255,255,255]","[0,100,255]",0.3,300,20,true,10,100,0,TRUE,TRUE,TRUE,20,40,0.4,0,0,150,true,false
 tahlan_vesuvio_trail2,tahlan_vesuvio_shot,tahlan_trail_twin,5,0,0,0.35,5,1,"[155,255,255]","[0,100,255]",0.3,300,20,true,10,100,0,TRUE,TRUE,TRUE,20,40,0.4,0,0,150,true,false

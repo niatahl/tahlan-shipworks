@@ -92,7 +92,11 @@ She pauses for a moment.
 legiobareventencounter_hub2:""Why would I ever wish to join you?""
 legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
 legiobareventencounter_exit:""I think that'll be all.""",
-legiobareventencounter_introexit,DialogOptionSelected,$option == legiobareventencounter_exit,,"""Suit yourself""",backToBar:Return to the bar,
+legiobareventencounter_introexit,DialogOptionSelected,$option == legiobareventencounter_exit,AddPotentialContact,"""Suit yourself.""
+
+As you are about to leave, she tosses you a data chip.
+
+""Whatever you think of me, you seem like a capable individual. I might have some work for you in the future.""",backToBar:Return to the bar,
 ,,,,,,
 legiobareventencounter_black1,DialogOptionSelected,$option == legiobareventencounter_hub1,,"""Clearly not""
 
@@ -116,11 +120,22 @@ legiobareventencounter_hub2:""Why would I ever wish to join you?""
 legiobareventencounter_exit:""I think that'll be all""",
 ,,,,,,
 legiobareventencounter_rant1,DialogOptionSelected,$option == legiobareventencounter_hub2,,"""Because we are the sector's only genuine hope at becoming something great?""","legiobareventencounter_rant1res1:""Last I checked, your people were going around murdering anyone they come across.""",
-legiobareventencounter_rant2,DialogOptionSelected,$option == legiobareventencounter_rant1res1,,"""You don't see it, do you? Is your mind really so tiny that you can't understand what we are doing? We are the future, a better mankind, actual worthy successors of the great Domain. You should be happy to be a part of our rise, revel in the joy of having been witness to the day humanity ascended to its true potential. The process will require sacrifice, no doubt, but isn't that a fine price to pay for the boundless prosperity we can bring to the people of this sector and the worlds beyond? Once our work here is done, we will reopen the gates and bring about a new era, a beautiful new order of things, grander than anything even the old Domain had achieved.""","legiobareventencounter_rant2res1:""Do you even hear yourself talking?""",
-legiobareventencounter_rant3,DialogOptionSelected,$option == legiobareventencounter_rant2res1,,"""Of course, and clearly at that. People like you just fail to see the big picture and it makes me sad. We could have this beautiful future with no need for bloodshed if you and your like could just LISTEN, but no, you have to resist and force our hand. We only seek to bring about an age of prosperity, progress and peace, but you oppose us at every turn, put yourselves in front of the blade we did not wish to bear against you. All this pain, all this suffering, it is entirely on you. You chose this, your feeble little minds drag us all down and so we must resort to the one language you understand."" ","legiobareventencounter_rant3res1:""You are insane, that's what you are.""",
+legiobareventencounter_rant2,DialogOptionSelected,$option == legiobareventencounter_rant1res1,,"She scoffs at you before clearing her continuing.
+
+""Do you not comprehend the magnitude of our vision? Perhaps your perspective is limited, preventing you from grasping the profound impact of our actions. We, the torchbearers of the future, are forging a path towards a superior mankind, destined to succeed the illustrious Domain. Embrace the privilege of participating in our ascent and rejoice in the marvel of witnessing humanity reach its true potential.
+
+As she continues her speech, you get the distinct feeling you are witnessing a well-practiced speech, not unlike what you are used to hearing on Sindrian Diktat broadcasts.
+
+Undeniably, this process necessitates sacrifices, but consider the remarkable rewards awaiting us. Can we not perceive the value of investing in boundless prosperity for the denizens of this sector and the worlds that lie beyond? The price we pay pales in comparison to the immense benefits we shall bestow. Once we conclude our endeavors here, a new era will dawn, a splendid new order surpassing even the achievements of the antiquated Domain.""","legiobareventencounter_rant2res1:""Do you even hear yourself talking?""
+legiobareventencounter_rant2res2:""I can't deny the decrepit state of the sector, but is this really the way?""",
+legiobareventencounter_rant3,DialogOptionSelected,$option == legiobareventencounter_rant2res1,,"""Of course, and clearly at that. Take it as you see fit, but don't think we are merely a band of murderous pirates like the wastes of oxygen that frequent these premises. We have a vision and the ability to bring it to fruition. Time will be our witness."" ","legiobareventencounter_rant3res1:""Sounds to me like the ramblings of madmen.""
+legiobareventencounter_uber1res2:""I suppose we will see.""",
+legiobareventencounter_rant3b,DialogOptionSelected,$option == legiobareventencounter_rant2res2,,"She chuckles at the question.
+
+""Only time will tell, won't it?"" ","legiobareventencounter_uber1res2:""So it will.""",
 legiobareventencounter_rant4,DialogOptionSelected,$option == legiobareventencounter_rant3res1,,"The woman sighs heavily, then leans back again, a look of disappointment in her eyes.
 
-""Forget it. I was clearly foolish to think you could ever see the great picture like we do. I won't waste my breath arguing such misguided opinions. You'll come around to it in due time. Now, was there anything else?""","legiobareventencounter_hub1:""Do you always just hang around seedy bars all by yourself?""
+""Forget it. Maybe you will see the light one day and maybe you won't.""","legiobareventencounter_hub1:""Do you always just hang around seedy bars all by yourself?""
 legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
 legiobareventencounter_exit:""I think that'll be all.""",
 #END LEGIO_BLACKWATCH_BAR,,,,,,
@@ -180,7 +195,7 @@ tahlan_CBMercDevil,CBMercOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_d
 $HeOrShe flicks through $hisOrHer copy of the dossier, then continues, all business.
 
 ""Bounty is $bcb_reward credits for completion within $bcb_days days. You decide, though.""",,
-tahlan_CBPirateDevil,CBPirateOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Someone forgot they made a deal with us and now I have to collect by force. $bcb_targetHeOrShe already knows what's coming to $bcb_targethimOrHer, but h$bcb_targetheOrShe doesn't yet know by whose hand. Could be yours.""
+tahlan_CBPirateDevil,CBPirateOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Someone forgot they made a deal with us and now I have to collect by force. $bcb_targetHeOrShe already knows what's coming to $bcb_targetHimOrHer, but $bcb_targetHeOrShe doesn't yet know by whose hand. Could be yours.""
 
 ""Name's $bcb_targetName, currently hiding out in the $bcb_systemName system,  $bcb_dist light-years from here. You know how this works.""
 
