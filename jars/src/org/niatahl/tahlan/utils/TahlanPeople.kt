@@ -29,6 +29,16 @@ object TahlanPeople {
         getPerson(CIEVE)?.portraitSprite =
             if (WEEB_MODE) Global.getSettings().getSpriteName("portraits", "tahlan_cieve_waifu")
             else Global.getSettings().getSpriteName("portraits", "tahlan_cieve")
+
+        // backwards compat stuff
+        val devil = getPerson(DEVIL) ?: return
+        if (!devil.hasTag(DEVIL)) {
+            devil.apply {
+                addTag(DEVIL)
+                voice = Voices.SOLDIER
+                setFaction(BLACKWATCH)
+            }
+        }
     }
 
     private fun createCharacters() {
@@ -124,7 +134,7 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
                 stats.setSkillLevel(Skills.POLARIZED_ARMOR, 2f)
                 stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 1f)
-                tags.add("tahlan_devil")
+                tags.add(DEVIL)
             }
             ip.addPerson(person)
         }
