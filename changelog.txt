@@ -1,5 +1,7 @@
 1.2.2
 - Adjusted Legio Unchained again
+- Reworked some of Louisa Ferre's dialogue
+- Louisa Ferre is now available as a contact with custom missions
 - Fixed Adaptive Mode not applying to special bounties
 - Inertialess drive system changed to charge-based
 - Shiva Disruptor Beamer
