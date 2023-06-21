@@ -4,6 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
+	"onHitEffect":"org.niatahl.tahlan.weapons.PastelOnHitEffect",
 	"length":60.0,
 	"hitGlowRadius":30,
 	"width":30.0,

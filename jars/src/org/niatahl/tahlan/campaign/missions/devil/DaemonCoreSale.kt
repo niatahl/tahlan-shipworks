@@ -101,16 +101,16 @@ class DaemonCoreSale : HubMissionWithBarEvent() {
     }
 
     override fun updateInteractionDataImpl() {
-        set("\$tahlan_DaemonCoreSale_ref2", this)
-        set("\$tahlan_DaemonCoreSale_commodityId", commodityId)
-        set("\$tahlan_DaemonCoreSale_commodityName", getSpec(commodityId).name)
+        set("\$tahlan_devilDaemonCore_ref2", this)
+        set("\$tahlan_devilDaemonCore_commodityId", commodityId)
+        set("\$tahlan_devilDaemonCore_commodityName", getSpec(commodityId).name)
         if (commodityId2 != null) {
-            set("\$tahlan_DaemonCoreSale_commodityId2", commodityId2)
-            set("\$tahlan_DaemonCoreSale_commodityName2", getSpec(commodityId2).name)
+            set("\$tahlan_devilDaemonCore_commodityId2", commodityId2)
+            set("\$tahlan_devilDaemonCore_commodityName2", getSpec(commodityId2).name)
         }
-        set("\$tahlan_DaemonCoreSale_price", price)
-        set("\$tahlan_DaemonCoreSale_variation", variation)
-        set("\$tahlan_DaemonCoreSale_manOrWoman", person.manOrWoman)
+        set("\$tahlan_devilDaemonCore_price", price)
+        set("\$tahlan_devilDaemonCore_variation", variation)
+        set("\$tahlan_devilDaemonCore_manOrWoman", person.manOrWoman)
     }
 
     override fun accept(dialog: InteractionDialogAPI, memoryMap: Map<String, MemoryAPI>) {

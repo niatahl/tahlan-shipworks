@@ -13,9 +13,9 @@ public class DaemonBoost extends BaseHullMod {
     public static final Map<ShipAPI.HullSize, Float> SUPPLYMALUS = new HashMap<>();
     static {
         SUPPLYMALUS.put(ShipAPI.HullSize.DEFAULT, 0f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.FRIGATE, -5f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.FRIGATE, -4f);
         SUPPLYMALUS.put(ShipAPI.HullSize.DESTROYER, -8f);
-        SUPPLYMALUS.put(ShipAPI.HullSize.CRUISER, -10f);
+        SUPPLYMALUS.put(ShipAPI.HullSize.CRUISER, -12f);
         SUPPLYMALUS.put(ShipAPI.HullSize.CAPITAL_SHIP, -20f);
     }
 

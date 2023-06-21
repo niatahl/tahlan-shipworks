@@ -15,8 +15,8 @@ import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
 public class PPAOnHitEffect implements OnHitEffectPlugin {
 
-    private static final Color COLOR1 = new Color(52, 255, 235);
-    private static final Color COLOR2 = new Color(237, 255, 246);
+    private static final Color COLOR1 = new Color(52, 255, 235, 150);
+    private static final Color COLOR2 = new Color(237, 255, 246, 200);
 
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
@@ -38,7 +38,7 @@ public class PPAOnHitEffect implements OnHitEffectPlugin {
                     hitLevel += 0.25f;
                     ShipAPI empTarget = ship;
                     EmpArcEntityAPI arc =  engine.spawnEmpArcPierceShields(projectile.getSource(), point, empTarget, empTarget,
-                            projectile.getDamageType(), dam, emp, 1000f * hitLevel, null, 20f, COLOR1, COLOR2);
+                            projectile.getDamageType(), dam, emp, 1000f * hitLevel, null, 10f, COLOR1, COLOR2);
                 }
             }
 
