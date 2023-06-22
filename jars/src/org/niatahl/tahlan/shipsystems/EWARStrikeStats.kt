@@ -142,7 +142,7 @@ open class EWARStrikeStats : BaseShipSystemScript() {
         val player = ship === Global.getCombatEngine().playerShip
         var target = ship.shipTarget
         if (ship.shipAI != null && ship.aiFlags.hasFlag(AIFlags.TARGET_FOR_SHIP_SYSTEM)) {
-            target = ship.aiFlags.getCustom(AIFlags.TARGET_FOR_SHIP_SYSTEM) as ShipAPI
+            target = ship.aiFlags.getCustom(AIFlags.TARGET_FOR_SHIP_SYSTEM) as? ShipAPI
         }
         if (target != null) {
             val dist = Misc.getDistance(ship.location, target.location)
