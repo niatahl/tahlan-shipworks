@@ -142,21 +142,21 @@ legiobareventencounter_exit:""I think that'll be all.""",
 ,,,,,,
 # DEVIL_GENERIC_MISSIONS,,,,,,
 ,,,,,,
-tahlan_sShipDevilBlurb,tahlan_devilDaemonSurplus_blurb,$id == tahlan_devil score:10,,"""There's a hangar here with a now ownerless $sShip_hullSize looking for a new owner. A spicy one.""",,
-tahlan_sShipDevilOfferOption,tahlan_devilDaemonSurplus_option,,,,sShip_start:Ask about the $sShip_hullSize,
-tahlan_sShipDevilOfferTextContact,DialogOptionSelected,"$option == sShip_start
-$id == tahlan_devil score:10","$missionId = tahlan_sShipDevil
+tahlan_devilDaemonSurplusBlurb,tahlan_devilDaemonSurplus_blurb,$id == tahlan_devil score:10,,"""There's a hangar here with a now ownerless $sShip_hullSize looking for a new owner. A spicy one.""",,
+tahlan_devilDaemonSurplusOfferOption,tahlan_devilDaemonSurplus_option,,,,sShip_start:Ask about the $sShip_hullSize,
+tahlan_devilDaemonSurplusOfferTextContact,DialogOptionSelected,"$option == sShip_start
+$id == tahlan_devil score:10","$missionId = tahlan_devilDaemonSurplus
 SetTextHighlights $sShip_price","""Can you imagine someone lost a brand-new $sShip_hullClass by gambling it away on a three day bender of drugs and alcohol?""
 
-$SheOrHe gives that familiar predatory smile again and pulls out a datachip.
+$HeOrShe gives that familiar predatory smile again and pulls out a datachip.
 
 ""Got some access codes for a local hangar for sale, heard there's an abandoned $sShip_hullSize sitting around. Wanna buy?""","sShip_look:Ask for detailed info on the ship
 contact_decline:Decline",
-tahlan_sShipDevilLookAtFreighter,DialogOptionSelected,"$option == sShip_look
+tahlan_devilDaemonSurplusLookAtFreighter,DialogOptionSelected,"$option == sShip_look
 $id == tahlan_devil score:10","Call $sShip_ref showShip
 DoCanAffordCheck $sShip_price contact_accept","$personLastName slides over the datachip. ""Just take a look. Think you'll like it.""","contact_accept:Buy the $sShip_hullSize for $sShip_price credits
 contact_decline:Decline",
-tahlan_sShipDevilPostAccept,ContactPostAccept,"$missionId == tahlan_devilDaemonSurplus score:5
+tahlan_devilDaemonSurplusPostAccept,ContactPostAccept,"$missionId == tahlan_devilDaemonSurplus score:5
 $id == tahlan_devil score:10","RemoveCommodity credits $sShip_price
 AddShip $sShip_member
 Call $sShip_ref2 repSuccess
