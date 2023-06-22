@@ -1,3 +1,7 @@
+1.2.3
+- Various bugfixes
+
+
 1.2.2
 - Adjusted Legio Unchained again
 - Reworked some of Louisa Ferre's dialogue
