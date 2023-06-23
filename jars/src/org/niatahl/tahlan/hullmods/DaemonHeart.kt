@@ -53,6 +53,7 @@ class DaemonHeart : BaseHullMod() {
 
     override fun advanceInCombat(ship: ShipAPI, amount: Float) {
         val engine = Global.getCombatEngine() ?: return
+        if (ship.originalOwner == -1) return
         val speedBoost = 1f - (ship.fluxLevel / SPEED_CAP).coerceIn(0f, 1f)
         ship.mutableStats.maxSpeed.modifyFlat(dc_id, speedBoost * SPEED_BUFF)
 
@@ -211,7 +212,7 @@ class DaemonHeart : BaseHullMod() {
 
         private const val SUPPLIES_PERCENT = 100f
         private const val SPEED_BUFF = 50f
-        private const val SPEED_CAP = 0.75f
+        private const val SPEED_CAP = 0.5f
         private const val PLAYER_NERF = 0.9f
         private val JITTER_COLOR = Color(255, 0, 0, 30)
         private val JITTER_UNDER_COLOR = Color(255, 0, 0, 80)
