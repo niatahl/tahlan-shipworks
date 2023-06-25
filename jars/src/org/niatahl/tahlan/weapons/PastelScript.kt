@@ -25,9 +25,9 @@ class PastelScript : EveryFrameWeaponEffectPlugin, OnFireEffectPlugin {
     }
 
     companion object {
-        val PARTICLE_COLOR = Color(41, 255, 150, 200)
-        val GLOW_COLOR = Color(50, 238, 255, 50)
-        val FLASH_COLOR = Color(223, 255, 248, 160)
+        val PARTICLE_COLOR = Color(255, 40, 210, 200)
+        val GLOW_COLOR = Color(255, 50, 185, 50)
+        val FLASH_COLOR = Color(255, 220, 240, 160)
     }
 
 

@@ -11,6 +11,7 @@ import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
+import com.fs.starfarer.api.util.Misc.ZERO
 import org.lwjgl.util.vector.Vector2f
 import org.magiclib.util.MagicRender
 import java.awt.Color
@@ -50,7 +51,6 @@ open class EWARStrikeStats : BaseShipSystemScript() {
         targetData.currDamMult = 1f + (DAM_MULT - 1f) * effectLevel
         if (targetData.targetEffectPlugin == null) {
             targetData.targetEffectPlugin = object : BaseEveryFrameCombatPlugin() {
-                val interval = IntervalUtil(0.5f, 0.5f)
                 override fun advance(amount: Float, events: List<InputEventAPI>) {
                     if (Global.getCombatEngine().isPaused) return
                     if (!targetData.target.isAlive || targetData.target.isHulk) return
@@ -63,31 +63,7 @@ open class EWARStrikeStats : BaseShipSystemScript() {
                         )
                     }
 
-                    interval.advance(amount)
-                    val fxSprite = Global.getSettings().getSprite("fx", "tahlan_ewar_target")
-                    if (fxSprite != null) {
-                        val radius = targetData.target.collisionRadius * 2.5f
-                        if (interval.intervalElapsed()) MagicRender.objectspace(
-                            fxSprite,
-                            targetData.target,
-                            Vector2f(),
-                            Vector2f(),
-                            Vector2f(radius, radius),
-                            Vector2f(),
-                            90f - targetData.target.facing,
-                            0f,
-                            true,
-                            Color(215, 0, 0, 100),
-                            true,
-                            .1f,
-                            .3f,
-                            .2f,
-                            true
-                        )
-                    }
-
-
-                    if (targetData.currDamMult <= 1f || !targetData.ship.isAlive) {
+                    if (targetData.currDamMult <= 1.01f || !targetData.ship.isAlive) {
                         targetData.target.mutableStats.apply {
                             hullDamageTakenMult.unmodify(id)
                             armorDamageTakenMult.unmodify(id)
@@ -107,7 +83,20 @@ open class EWARStrikeStats : BaseShipSystemScript() {
                             empDamageTakenMult.modifyMult(id, currMult)
                             maxSpeed.modifyMult(id, 2f - currMult)
                             energyWeaponRangeBonus.modifyMult(id, 2f - currMult)
-                            ballisticWeaponRangeBonus.modifyMult(id, 2f -currMult)
+                            ballisticWeaponRangeBonus.modifyMult(id, 2f - currMult)
+                        }
+                        Global.getCombatEngine().addFloatingText(targetData.target.location,targetData.currDamMult.toString(),20f,Color.RED,targetData.target,1f,1f)
+                        val fxSprite = Global.getSettings().getSprite("fx", "tahlan_ewar_target")
+                        if (fxSprite != null) {
+                            val radius = targetData.target.collisionRadius * 2.5f
+                            MagicRender.singleframe(
+                                fxSprite,
+                                targetData.target.location,
+                                Vector2f(radius, radius),
+                                0f,
+                                Color(215, 0, 0, 100),
+                                true,
+                            )
                         }
                     }
                 }

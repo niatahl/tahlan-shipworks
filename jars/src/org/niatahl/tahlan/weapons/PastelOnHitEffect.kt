@@ -36,7 +36,7 @@ class PastelOnHitEffect : OnHitEffectPlugin {
             0f,
             0.3f,
             MathUtils.getRandomNumberInRange(1.5f, 3f),
-            Color(197, 239, 246, 40),
+            Color(240, 200, 246, 40),
             true
         )
     }

@@ -31,12 +31,7 @@
     "particleSizeRange": 20,
     "particleDuration": 0.25,
     "particleCount": 20,
-    "particleColor": [
-      107,
-      218,
-      255,
-      155
-    ]
+    "particleColor": [227,50,180,155]
   },
   "textureType": ROUGH,
   "fireSoundTwo": "tahlan_pastel_fire"

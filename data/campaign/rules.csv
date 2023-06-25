@@ -218,7 +218,7 @@ tahlan_devilDaemonCoreTextBeta,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaem
 $HeOrShe slides over a datapad.
 
 ""Now, on another note, I have a crate of spare parts for sale. Interested?""",,
-tahlan_devilDaemonCoreTextBetaWithGamma,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA_WITH_GAMMA,SetTextHighlights $tahlan_devilDaemonCore_commodityName $tahlan_devilDaemonCore_commodityName2,"""Interested in a $tahlan_devilDaemonCore_commodityName2? In fact I have a total of three of those for sale. Package deal only, but one of them is especially red, if you catch my drift.""",,
+tahlan_devilDaemonCoreTextBetaWithGamma,tahlan_devilDaemonCoreOfferText,$tahlan_devilDaemonCore_variation == BETA_WITH_GAMMA,SetTextHighlights $tahlan_devilDaemonCore_commodityName $tahlan_devilDaemonCore_commodityName2,"""Interested in a $tahlan_devilDaemonCore_commodityName2? In fact I have two of those for sale. Package deal only, but one of them is especially red, if you catch my drift.""",,
 tahlan_devilDaemonCorePostAccept,ContactPostAccept,$missionId == tahlan_devilDaemonCore,"Call $tahlan_devilDaemonCore_ref2 transact
 Call $tahlan_devilDaemonCore_ref2 repSuccess
 Call $tahlan_devilDaemonCore_ref2 addContacts",,,
