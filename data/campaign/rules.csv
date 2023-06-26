@@ -61,6 +61,7 @@ OR
 ,,,,,,
 # LEGIO_BLACKWATCH_BAR,,,,,,
 legioBlackwatchBarEventAdd,AddBarEvents,"$faction.id == pirates
+!$market.isHidden
 $global.tahlan_metLegioAtBar == false
 RollProbability 0.5","AddBarEvent legioBlackwatchBarEvent ""Approach the Legio officer"" ""A young woman in a uniform bearing the Legio sigil is sitting in a secluded corner of the bar, seemingly annoyed and waiting for someone, staring daggers at anyone who dares approach.""",,,
 ,,,,,,
