@@ -27,15 +27,16 @@ class DaemonPlating : BaseHullMod() {
         return if (ship.variant.hasHullMod("tahlan_heavyconduits")) "Incompatible with LosTech" else null
     }
 
+    override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
+        ship.addListener(DaemonArmorListener())
+    }
+
     override fun advanceInCombat(ship: ShipAPI, amount: Float) {
-        if (!ship.hasListenerOfClass(DaemonArmorListener::class.java)) {
-            ship.addListener(DaemonArmorListener())
-        }
         if (!DefenseUtils.hasArmorDamage(ship)) {
             return
         }
         if (ship.isHulk) return
-        if (ship.fluxTracker.isVenting) return
+        if (ship.fluxTracker.isVenting || ship.isPhased) return
         ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifyFlat("nuller", -1f)
         val timer = ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifiedValue + amount
         ship.mutableStats.dynamic.getStat("tahlan_daemonarmor").modifyFlat("tracker", timer)

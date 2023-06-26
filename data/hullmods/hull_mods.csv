@@ -108,7 +108,7 @@ Hel Carapace,tahlan_daemonarmor,,,,defensive,,,,TRUE,,0,0,0,0,org.niatahl.tahlan
 
 Dampens particularly heavy impacts exceeding %s points of damage. The portion exceeding the threshold is reduced by %s.
 
-Regeneration is %s while overloaded and %s while actively venting flux and for %s after taking damage to armor.",Regenerates Armor,,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Regeneration is %s while overloaded and %s while actively venting flux or phased and for %s after taking damage to armor.",Regenerates Armor,,graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Plating,tahlan_daemonplating,,,,"no_drop, defensive",Defenses,,,,,8,12,20,30,org.niatahl.tahlan.hullmods.DaemonPlating,"A prototype armor system that possesses regenerative properties, being able to continuously restore %s of base armor value per second, capped at %s. Increases effective armor rating for damage calculation by %s.
 
 Dampens particularly heavy impacts exceeding %s points of damage. The portion exceeding the threshold is reduced by %s.
