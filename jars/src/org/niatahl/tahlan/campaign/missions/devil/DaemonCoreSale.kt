@@ -56,9 +56,12 @@ class DaemonCoreSale : HubMissionWithBarEvent() {
             RepLevel.COOPERATIVE -> {
                 picker.add(Variation.ALPHA, 1f)
                 picker.add(Variation.BETA_WITH_GAMMA, 2f)
+                picker.add(Variation.BETA, 1f)
             }
-
-            RepLevel.FRIENDLY -> picker.add(Variation.BETA_WITH_GAMMA, 1f)
+            RepLevel.FRIENDLY -> {
+                picker.add(Variation.BETA_WITH_GAMMA, 1f)
+                picker.add(Variation.BETA, 1f)
+            }
             RepLevel.WELCOMING -> picker.add(Variation.BETA, 1f)
             else -> return null
         }
