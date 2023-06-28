@@ -7,12 +7,15 @@ import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
+import com.fs.starfarer.api.util.IntervalUtil
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import java.awt.Color
 
 class LostechEntry : BaseShipSystemScript() {
+
+    val zapterval = IntervalUtil(0.05f, 0.1f)
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
         val ship: ShipAPI = if (stats.entity is ShipAPI) {
             stats.entity as ShipAPI
@@ -28,24 +31,27 @@ class LostechEntry : BaseShipSystemScript() {
         ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 6, 2f, 4f)
 
         //Choose a random vent port to send lightning from
-        val bounds = ship.exactBounds
-        bounds.update(ship.location, ship.facing)
-        val origin = bounds.segments.random().p1
-        val angle = VectorUtils.getAngle(ship.location,origin)
-        Global.getCombatEngine().spawnEmpArc(
-            ship,
-            origin,
-            ship,
-            SimpleEntity(MathUtils.getRandomPointInCone(origin,150f, angle - 45f, angle + 45f)),
-            DamageType.ENERGY,  //Damage type
-            0f,  //Damage
-            0f,  //Emp
-            100000f,  //Max range
-            null,  //Impact sound
-            8f,  // thickness of the lightning bolt
-            LIGHTNING_CORE_COLOR,  //Central color
-            LIGHTNING_FRINGE_COLOR //Fringe Color
-        )
+        zapterval.advance(Global.getCombatEngine().elapsedInLastFrame)
+        if (zapterval.intervalElapsed()) {
+            val bounds = ship.exactBounds
+            bounds.update(ship.location, ship.facing)
+            val origin = bounds.segments.random().p1
+            val angle = VectorUtils.getAngle(ship.location, origin)
+            Global.getCombatEngine().spawnEmpArc(
+                ship,
+                origin,
+                ship,
+                SimpleEntity(MathUtils.getRandomPointInCone(origin, 150f, angle - 45f, angle + 45f)),
+                DamageType.ENERGY,  //Damage type
+                0f,  //Damage
+                0f,  //Emp
+                100000f,  //Max range
+                null,  //Impact sound
+                8f,  // thickness of the lightning bolt
+                LIGHTNING_CORE_COLOR,  //Central color
+                LIGHTNING_FRINGE_COLOR //Fringe Color
+            )
+        }
     }
 
     override fun unapply(stats: MutableShipStatsAPI, id: String) {
