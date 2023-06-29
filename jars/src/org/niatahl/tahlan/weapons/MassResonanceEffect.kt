@@ -7,7 +7,7 @@ import kotlin.math.absoluteValue
 
 class MassResonanceEffect : OnHitEffectPlugin {
 
-    val DAMAGE = 4000f
+    val DAMAGE = 3000f
     override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI?, engine: CombatEngineAPI) {
         if (target !is ShipAPI) return
 
@@ -17,7 +17,7 @@ class MassResonanceEffect : OnHitEffectPlugin {
         }
         val area = if (toTest is ShipAPI) calculateArea(toTest) else return
 
-        val damageFactor = area / 100000
+        val damageFactor = area / 70000
 
         engine.applyDamage(target,point,DAMAGE*damageFactor,DamageType.HIGH_EXPLOSIVE,0f,false,false,projectile.source)
     }

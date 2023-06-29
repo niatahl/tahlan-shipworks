@@ -28,6 +28,8 @@ class DigitalSoulScript : EveryFrameScript {
         // if we don't have the skill, we're done here
         if (!digitalSoul) return
 
+        Global.getSector().playerPerson.aiCoreId = null
+
         // add core if we aren't in a cargo tab
         if (Global.getSector().campaignUI.currentCoreTab == CoreUITabId.FLEET || Global.getSector().campaignUI.currentCoreTab == CoreUITabId.REFIT) addCore(cargo)
 

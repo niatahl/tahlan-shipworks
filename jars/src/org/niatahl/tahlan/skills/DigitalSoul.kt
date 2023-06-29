@@ -35,7 +35,7 @@ object DigitalSoul {
         }
 
         override fun apply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String?, level: Float) {
-            Global.getSector().playerPerson.aiCoreId = NEURALLINK_COMM
+            //Global.getSector().playerPerson.aiCoreId = NEURALLINK_COMM
         }
 
         override fun unapply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String?) {
