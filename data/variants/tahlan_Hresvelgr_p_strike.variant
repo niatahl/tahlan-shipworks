@@ -13,10 +13,10 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0003": "typhoon",
-                "WS0004": "typhoon",
-                "WS0005": "typhoon",
-                "WS0006": "typhoon"
+                "WS0003": "tahlan_massresonance_med",
+                "WS0004": "tahlan_massresonance_med",
+                "WS0005": "tahlan_massresonance_med",
+                "WS0006": "tahlan_massresonance_med"
             }
         },
         {

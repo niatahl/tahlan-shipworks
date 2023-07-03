@@ -20,10 +20,10 @@ import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.MagneticFieldParams
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
-import org.magiclib.kotlin.getMarketsInLocation
 import org.niatahl.tahlan.plugins.TahlanModPlugin
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
 import org.niatahl.tahlan.utils.random
+import org.niatahl.tahlan.world.Lethia.Companion.addMarketplace
 import java.awt.Color
 import java.util.*
 
@@ -109,7 +109,7 @@ class Rubicon {
         )
         rubicon_1.customDescriptionId = "tahlan_rubicon_p01"
         rubicon_1.setInteractionImage("illustrations", "tahlan_melchiresa_illus")
-        val rubicon_1_market = Lethia.addMarketplace(
+        val rubicon_1_market = addMarketplace(
             "tahlan_legioinfernalis", rubicon_1, null,
             "Melchiresa",
             5,

@@ -60,6 +60,10 @@
       }
     ]
   },
+  "tahlan_hades_boom":
+	[
+		{"file":"sounds/tahlan/weapons/tahlan_hades_boom.ogg","pitch":0.9,"volume":1}
+	],
   "tahlan_silk_fire": [
     {
       "file": "sounds/tahlan/weapons/tahlan_silk_fire.ogg",

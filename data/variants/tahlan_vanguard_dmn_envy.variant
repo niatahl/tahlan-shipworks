@@ -2,17 +2,20 @@
     "displayName": "Envy",
     "fluxCapacitors": 2,
     "fluxVents": 10,
+    "goalVariant": true,
     "hullId": "tahlan_vanguard_dmn",
-    "hullMods": ["heavyarmor"],
+    "hullMods": [
+        "heavyarmor",
+        "tahlan_daemonboost"
+    ],
     "permaMods": [],
     "sMods": [],
-    "goalVariant": true;
     "variantId": "tahlan_vanguard_dmn_envy",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0006": "typhoon"}
+            "weapons": {"WS0006": "tahlan_massresonance_med"}
         },
         {
             "autofire": false,

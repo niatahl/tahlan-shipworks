@@ -18,8 +18,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0013": "harpoonpod",
-                "WS0014": "harpoonpod"
+                "WS0013": "tahlan_massresonance_med",
+                "WS0014": "tahlan_massresonance_med"
             }
         },
         {

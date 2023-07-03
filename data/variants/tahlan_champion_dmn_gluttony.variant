@@ -21,7 +21,7 @@
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0012": "cyclone"}
+            "weapons": {"WS0012": "tahlan_massresonance_lrg"}
         },
         {
             "autofire": false,

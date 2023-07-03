@@ -27,6 +27,7 @@ import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import com.fs.starfarer.api.util.Pair
 import com.fs.starfarer.api.util.WeightedRandomPicker
+import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 import kotlin.math.roundToInt
 
 class LegioHQ : BaseIndustry(), RouteFleetSpawner, FleetEventListener {
@@ -268,6 +269,7 @@ class LegioHQ : BaseIndustry(), RouteFleetSpawner, FleetEventListener {
         }
         fleet.commander.postId = postId
         fleet.commander.rankId = rankId
+        fleet.commander.setFaction(LEGIO)
         market.containingLocation.addEntity(fleet)
         fleet.facing = Math.random().toFloat() * 360f
 

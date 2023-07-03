@@ -5,9 +5,9 @@
 	
 	"statsScript":"org.niatahl.tahlan.shipsystems.VectorShiftStats",
 	
-	"engineGlowLengthMult":0.1,
-	"engineGlowWidthMult":1,
-	"engineGlowGlowMult":0.5,
+	"engineGlowLengthMult":1.1,
+	"engineGlowWidthMult":1.1,
+	"engineGlowGlowMult":1.1,
 	
 	"flameoutOnImpactChance":0,
 

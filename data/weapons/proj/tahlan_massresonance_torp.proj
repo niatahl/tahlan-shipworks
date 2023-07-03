@@ -19,8 +19,8 @@
 					 "particleSizeRange":3.0,
 					 "particleDuration":1,
 					 "particleCount":200,
-					 "particleColor":[255,155,155,255],
-					 "explosionColor":[255,100,100,255],
+					 "particleColor":[255,175,155,255],
+					 "explosionColor":[255,130,100,255],
 					 "detailedExplosionFlashColorFringe":[255,100,100,255],
 					 "detailedExplosionFlashRadius":500,
 					 "useDetailedExplosion":true
@@ -49,9 +49,9 @@
 						"contrailMaxSpeedMult":0f,
 						"contrailAngularVelocityMult":0.5f,
 						"contrailSpawnDistMult":0f, # how far away from engine it starts
-						"contrailColor":[255,100,100,50],
+						"contrailColor":[155,100,100,50],
 						"glowSizeMult":2.5,
-						"glowAlternateColor":[255,0,0,255],
+						"glowAlternateColor":[255,40,0,255],
 						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
 					},
 				    "width":10.0,

@@ -11,7 +11,6 @@
 	"turretAngleOffsets":[0, 0],
 	"barrelMode":"ALTERNATING",
 	"animationType":"SMOKE",
-	#"renderHints":[RENDER_LOADED_MISSILES],
 	"interruptibleBurst":false,
 	"displayArcRadius":1000,
 	"smokeSpec":{"particleSizeMin":10.0,
@@ -23,7 +22,7 @@
 				 "blowbackDuration":2.0,
 				 "blowbackLength":18.0,
 				 "blowbackSpread":10.0,
-				 "particleColor":[245, 65, 35,120]},
-	"projectileSpecId":"reaper_torp",
-	"fireSoundTwo":"tahlan_massresonance_torp",
+				 "particleColor":[80, 65, 35,120]},
+	"projectileSpecId":"tahlan_massresonance_torp",
+	"fireSoundTwo":"reaper_fire",
 }

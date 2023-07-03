@@ -43,7 +43,6 @@
 		"tags":{
 			"tahlan_legio":4,
 			"tahlan_daemon":10,
-			"rare_bp":2,
 			"pirates":0.5
 		},
 		"hulls":{			
@@ -169,7 +168,7 @@
 		"shipQuality":5,
 		"numShips":3,
 		
-		"shipSize":3,
+		"shipSize":2,
 		
 		"aggression":5,
 		

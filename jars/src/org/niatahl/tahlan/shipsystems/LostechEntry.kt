@@ -60,6 +60,30 @@ class LostechEntry : BaseShipSystemScript() {
         stats.turnAcceleration.unmodify(id)
         stats.acceleration.unmodify(id)
         stats.deceleration.unmodify(id)
+
+        val ship = stats.entity as ShipAPI
+        val bounds = ship.exactBounds
+        bounds.update(ship.location, ship.facing)
+
+        for (i in 0..20) {
+            val origin = bounds.segments.random().p1
+            val angle = VectorUtils.getAngle(ship.location, origin)
+            val target = SimpleEntity(MathUtils.getRandomPointInCone(origin, 150f, angle - 45f, angle + 45f))
+            Global.getCombatEngine().spawnEmpArc(
+                ship,
+                origin,
+                ship,
+                target,
+                DamageType.ENERGY,  //Damage type
+                0f,  //Damage
+                0f,  //Emp
+                100000f,  //Max range
+                null,  //Impact sound
+                8f,  // thickness of the lightning bolt
+                LIGHTNING_CORE_COLOR,  //Central color
+                LIGHTNING_FRINGE_COLOR //Fringe Color
+            )
+        }
     }
 
     override fun getStatusData(index: Int, state: ShipSystemStatsScript.State, effectLevel: Float): StatusData? {

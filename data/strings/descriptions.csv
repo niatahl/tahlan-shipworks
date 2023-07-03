@@ -561,6 +561,8 @@ tahlan_hellspitter,WEAPON,"A variant of the common Plasma Cannon modified for cl
 
 The workings of the modification are ultimately incredibly simple, as reducing the strength of the plasma containment field inherently makes the firing process less demanding and allows for more rapid capacitor recharge, negating the need for burst fire.",,,
 tahlan_omna,WEAPON,"While lightweight, the Omna's missiles carry a surprisingly potent EMP warhead for their size and employ a fanning attack pattern to strike targets from multiple angles.",,,
+tahlan_massresonance_lrg,WEAPON,The dreadful AM-warhead of a Reaper-class torpedo wed to a mass resonance field generator. A weapon designed for the sole purpose of bringing down even the largest of warships.,,,
+tahlan_massresonance_med,WEAPON,The dreadful AM-warhead of a Reaper-class torpedo wed to a mass resonance field generator. A weapon designed for the sole purpose of bringing down even the largest of warships.,,,
 ,,,,,
 ,,,,,
 # Rosenritter,,,,,

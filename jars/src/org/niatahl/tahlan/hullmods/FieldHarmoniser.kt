@@ -8,8 +8,8 @@ import kotlin.math.roundToInt
 
 class FieldHarmoniser : BaseHullMod() {
 
-    private val INNERLARGE = "graphics/tahlan/fx/tahlan_shellshield.png"
-    private val OUTERLARGE = "graphics/tahlan/fx/tahlan_tempshield_ring.png"
+    private val INNERLARGE = "graphics/tahlan/fx/tahlan_savshield.png"
+    private val OUTERLARGE = "graphics/tahlan/fx/tahlan_savshield.png"
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         ship.addListener(HarmoniserListener())

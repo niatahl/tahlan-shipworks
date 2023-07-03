@@ -11,7 +11,7 @@
   "renderAboveAllWeapons": 0,
   "glowColor": [
     255,
-    100,
+    50,
     50,
     255
   ],
@@ -41,7 +41,7 @@
     "particleCount": 15,
     "particleColor": [
       255,
-      100,
+      50,
       50,
       205
     ]
