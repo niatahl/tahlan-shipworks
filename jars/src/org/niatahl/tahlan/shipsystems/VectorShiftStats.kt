@@ -13,13 +13,14 @@ import org.lazywizard.lazylib.VectorUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.utils.Afterimage
 import java.awt.Color
 
 class VectorShiftStats : BaseShipSystemScript() {
     private val interval = IntervalUtil(0.05f, 0.1f)
+    private val imageval = IntervalUtil(0.05f, 0.05f)
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
-        val ship: ShipAPI?
-        ship = if (stats.entity is ShipAPI) {
+        val ship: ShipAPI = if (stats.entity is ShipAPI) {
             stats.entity as ShipAPI
         } else {
             return
@@ -35,7 +36,9 @@ class VectorShiftStats : BaseShipSystemScript() {
             stats.maxTurnRate.modifyMult(id, 1f + 2f * effectLevel)
         }
         ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 10, 2f, 3f)
+
         interval.advance(Global.getCombatEngine().elapsedInLastFrame)
+        imageval.advance(Global.getCombatEngine().elapsedInLastFrame)
         if (interval.intervalElapsed()) {
             var target: CombatEntityAPI? = null
             val targetList = CombatUtils.getEntitiesWithinRange(ship.location, 500f)
@@ -99,6 +102,23 @@ class VectorShiftStats : BaseShipSystemScript() {
                 )
             }
         }
+
+        if (imageval.intervalElapsed()) {
+            ship.addAfterimage(
+                AFTERIMAGE_COLOR,
+                MathUtils.getRandomNumberInRange(-1f,1f),
+                MathUtils.getRandomNumberInRange(-1f,1f),
+                -ship.velocity.x * 0.5f,
+                -ship.velocity.y * 0.5f,
+                2f,
+                0f,
+                0f,
+                0.5f,
+                true,
+                false,
+                false
+            )
+        }
     }
 
     override fun unapply(stats: MutableShipStatsAPI, id: String) {
@@ -117,6 +137,7 @@ class VectorShiftStats : BaseShipSystemScript() {
 
     companion object {
         private val SHIMMER_COLOR = Color(66, 251, 221, 100)
+        private val AFTERIMAGE_COLOR = Color(66, 251, 201, 100)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }
