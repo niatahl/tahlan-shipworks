@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Script to generate a whole bunch of teaser ships in random orbits throughout the sector
+ * Script to generate a whole bunch of ships in random orbits throughout the sector
  */
 public class DerelictsSpawnScript {
     public static final Logger LOGGER = Global.getLogger(DerelictsSpawnScript.class);
