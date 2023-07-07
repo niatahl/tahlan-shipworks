@@ -63,9 +63,15 @@ class LegioFleetInflationListener : FleetInflationListener {
 
         fun addSMods(member: FleetMemberAPI) {
 
+            if (Global.getSector() == null || Global.getSector().playerFleet == null) return
+
             val sMods = Global.getSector().playerFleet.membersWithFightersCopy
                 .filter { !it.isFighterWing && !it.isCivilian }
-                .sumOf { it.variant.sMods.count() }
+                .sumOf {
+                    if (it.variant != null) it.variant.sMods.count() else 0
+                }
+
+            if (sMods == 0) return
 
             val numShips = Global.getSector().playerFleet.membersWithFightersCopy.count { !it.isFighterWing && !it.isCivilian }.coerceAtLeast(1)
             val avgSMods = (sMods.toFloat() / numShips.toFloat()).roundToInt()

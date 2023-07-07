@@ -1,4 +1,5 @@
 1.2.4
+- Some visual updates
 - More bugfixes
 - Ristreza and variants
 	- DP lowered from 50 to 40
