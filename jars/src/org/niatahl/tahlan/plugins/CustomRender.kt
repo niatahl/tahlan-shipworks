@@ -2,8 +2,10 @@ package org.niatahl.tahlan.plugins
 
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.*
+import com.fs.starfarer.api.graphics.SpriteAPI
 import com.fs.starfarer.api.input.InputEventAPI
 import com.fs.starfarer.api.util.Misc
+import org.lazywizard.lazylib.FastTrig
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.opengl.GL14.*
@@ -14,6 +16,7 @@ import org.niatahl.tahlan.utils.random
 import org.niatahl.tahlan.weapons.SpearOnFireEffect
 import java.awt.Color
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 import kotlin.math.floor
 import kotlin.math.roundToInt
@@ -36,7 +39,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val engine = Global.getCombatEngine()
         if (engine.isPaused) return
 
-        // clean up nebula list
+        // tick and clean up nebula list
         val nebulaToRemove = ArrayList<Long>()
         nebulaData.forEach { (_, nebula) ->
             nebula.lifetime += engine.elapsedInLastFrame
@@ -45,6 +48,15 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         }
         nebulaToRemove.forEach { nebulaData.remove(it) }
 
+        // tick and clean up afterimage list
+        val afterimageToRemove = ArrayList<Long>()
+        afterimageData.forEach { (_, afterimage) ->
+            afterimage.lifetime += engine.elapsedInLastFrame
+            if (afterimage.lifetime > afterimage.duration)
+                afterimageToRemove.add(afterimage.id)
+        }
+        afterimageToRemove.forEach { afterimageData.remove(it) }
+
         // clean up spear list
         val projToRemove = ArrayList<DamagingProjectileAPI>()
         effectProjectiles.forEach { if (!engine.isEntityInPlay(it)) projToRemove.add(it) }
@@ -52,7 +64,14 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
     }
 
     fun render(layer: CombatEngineLayers, view: ViewportAPI) {
-        nebulaData.filter { (_, nebula) -> nebula.layer == layer }.forEach { (_, nebula) -> renderNebula(nebula, view) }
+        nebulaData.filter { (_, nebula) -> nebula.layer == layer }.forEach { (_, nebula) ->
+            renderNebula(nebula, view)
+        }
+
+        // afterimages
+        if (layer == CombatEngineLayers.BELOW_SHIPS_LAYER) afterimageData.forEach { (_,afterimage) ->
+            renderAfterimage(afterimage,view)
+        }
 
         // projectile effects
         if (layer == CombatEngineLayers.ABOVE_SHIPS_LAYER) effectProjectiles.forEach { proj ->
@@ -84,6 +103,24 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         }
         val pos = MathUtils.getRandomPointInCircle(proj.location, 5f)
         flare2.renderAtCenter(pos.x, pos.y)
+    }
+
+    private fun renderAfterimage(afterimage: Afterimage, view: ViewportAPI) {
+        if (!view.isNearViewport(afterimage.location, view.visibleWidth)) return
+
+        // Sprite offset fuckery - Don't you love trigonometry?
+        val sprite = afterimage.sprite
+
+        sprite.angle = afterimage.facing - 90f
+        sprite.color = afterimage.colorIn.interpolateColor(afterimage.colorOut, afterimage.lifetime / afterimage.duration)
+        sprite.alphaMult = 1 - afterimage.lifetime / afterimage.duration
+        sprite.setAdditiveBlend()
+
+        if (!Global.getCombatEngine().isPaused && afterimage.jitter > 0f) {
+           afterimage.actualLoc = MathUtils.getRandomPointInCircle(afterimage.location,afterimage.jitter)
+        }
+
+        sprite.renderAtCenter(afterimage.actualLoc.x, afterimage.actualLoc.y)
     }
 
     private fun renderNebula(nebula: Nebula, view: ViewportAPI) {
@@ -164,12 +201,59 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val angle = (0f..359f).random()
     }
 
+    data class Afterimage(
+        val id: Long,
+        val sprite: SpriteAPI,
+        val location: Vector2f,
+        val facing: Float,
+        val colorIn: Color,
+        val colorOut: Color,
+        val duration: Float,
+        val jitter: Float
+    ) {
+        var lifetime = 0f
+        var actualLoc = location
+    }
+
     companion object {
         private val nebulaData = HashMap<Long, Nebula>()
+        private val afterimageData = HashMap<Long, Afterimage>()
         private val effectProjectiles = ArrayList<DamagingProjectileAPI>()
         fun addProjectile(projectile: DamagingProjectileAPI) {
             effectProjectiles.add(projectile)
         }
+
+        fun addAfterimage(
+            ship: ShipAPI,
+            colorIn: Color,
+            colorOut: Color,
+            duration: Float,
+            jitter: Float = 0f,
+            location: Vector2f= Vector2f(ship.location)
+        ) = Afterimage(
+            id = Misc.random.nextLong(),
+            sprite = Global.getSettings().getSprite(ship.hullSpec.spriteName),
+            location = location,
+            facing = ship.facing,
+            colorIn = colorIn,
+            colorOut = colorOut,
+            duration = duration,
+            jitter = jitter
+        )
+            .also { afterimage ->
+
+                val sprite = ship.spriteAPI
+                val offsetX = sprite.width / 2 - sprite.centerX
+                val offsetY = sprite.height / 2 - sprite.centerY
+                val trueOffsetX = FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX - FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetY
+                val trueOffsetY = FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX + FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetY
+
+                afterimage.location.x += trueOffsetX
+                afterimage.location.y += trueOffsetY
+                afterimage.actualLoc = afterimage.location
+
+                afterimageData[afterimage.id] = afterimage
+            }
 
         fun addNebula(
             location: Vector2f,

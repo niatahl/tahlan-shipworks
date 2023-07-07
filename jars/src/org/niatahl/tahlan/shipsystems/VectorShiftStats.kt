@@ -13,6 +13,7 @@ import org.lazywizard.lazylib.VectorUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import org.lwjgl.util.vector.Vector2f
+import org.niatahl.tahlan.plugins.CustomRender
 import org.niatahl.tahlan.utils.Afterimage
 import java.awt.Color
 
@@ -104,19 +105,12 @@ class VectorShiftStats : BaseShipSystemScript() {
         }
 
         if (imageval.intervalElapsed()) {
-            ship.addAfterimage(
+            CustomRender.addAfterimage(
+                ship,
+                SHIMMER_COLOR,
                 AFTERIMAGE_COLOR,
-                MathUtils.getRandomNumberInRange(-1f,1f),
-                MathUtils.getRandomNumberInRange(-1f,1f),
-                -ship.velocity.x * 0.5f,
-                -ship.velocity.y * 0.5f,
-                2f,
-                0f,
-                0f,
                 0.5f,
-                true,
-                false,
-                false
+                2f
             )
         }
     }
@@ -136,8 +130,8 @@ class VectorShiftStats : BaseShipSystemScript() {
     }
 
     companion object {
-        private val SHIMMER_COLOR = Color(66, 251, 221, 100)
-        private val AFTERIMAGE_COLOR = Color(66, 251, 201, 100)
+        private val SHIMMER_COLOR = Color(0, 255, 201, 80)
+        private val AFTERIMAGE_COLOR = Color(0, 100, 255, 80)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }

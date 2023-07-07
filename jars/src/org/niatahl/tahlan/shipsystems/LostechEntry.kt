@@ -11,11 +11,13 @@ import com.fs.starfarer.api.util.IntervalUtil
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
+import org.niatahl.tahlan.plugins.CustomRender
 import java.awt.Color
 
 class LostechEntry : BaseShipSystemScript() {
 
-    val zapterval = IntervalUtil(0.05f, 0.1f)
+    private val zapterval = IntervalUtil(0.05f, 0.1f)
+    private val imageval = IntervalUtil(0.05f, 0.05f)
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
         val ship: ShipAPI = if (stats.entity is ShipAPI) {
             stats.entity as ShipAPI
@@ -28,7 +30,8 @@ class LostechEntry : BaseShipSystemScript() {
             stats.maxSpeed.modifyFlat(id, 600f * effectLevel)
             stats.acceleration.modifyFlat(id, 600f * effectLevel)
         }
-        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 6, 2f, 4f)
+        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 9, 2f, 6f)
+        ship.setJitter(ship, SHIMMER_COLOR, 1f, 3, 2f, 4f)
 
         //Choose a random vent port to send lightning from
         zapterval.advance(Global.getCombatEngine().elapsedInLastFrame)
@@ -50,6 +53,16 @@ class LostechEntry : BaseShipSystemScript() {
                 8f,  // thickness of the lightning bolt
                 LIGHTNING_CORE_COLOR,  //Central color
                 LIGHTNING_FRINGE_COLOR //Fringe Color
+            )
+        }
+
+        if (imageval.intervalElapsed()) {
+            CustomRender.addAfterimage(
+                ship,
+                SHIMMER_COLOR,
+                AFTERIMAGE_COLOR,
+                0.5f,
+                4f
             )
         }
     }
@@ -94,6 +107,7 @@ class LostechEntry : BaseShipSystemScript() {
 
     companion object {
         private val SHIMMER_COLOR = Color(96, 251, 171, 117)
+        private val AFTERIMAGE_COLOR = Color(255, 105, 0, 100)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }
