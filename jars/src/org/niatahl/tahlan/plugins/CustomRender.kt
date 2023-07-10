@@ -151,7 +151,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val lifeFraction = nebula.lifetime / nebula.duration
         cloudSprite.apply {
             color = nebula.color.interpolateColor(nebula.outColor,lifeFraction).modify(alpha = alpha)
-            setAdditiveBlend()
+            if (nebula.additive) setAdditiveBlend()
             angle = nebula.angle
             setSize(actualSize * 4f, actualSize * 4f)
         }
@@ -194,7 +194,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val type: NebulaType,
         val negative: Boolean,
         val sqrt: Boolean,
-        val outColor: Color
+        val outColor: Color,
+        val additive: Boolean
     ) {
         var lifetime = 0f
         val index = (0..11).random()
@@ -268,7 +269,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             type: NebulaType = NebulaType.NORMAL,
             negative: Boolean = false,
             expandAsSqrt: Boolean = false,
-            outColor: Color = color
+            outColor: Color = color,
+            additive: Boolean = false
         ) = Nebula(
             id = Misc.random.nextLong(),
             location = Vector2f(location),
@@ -283,7 +285,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             type = type,
             negative = negative,
             sqrt = expandAsSqrt,
-            outColor = outColor
+            outColor = outColor,
+            additive = additive
         )
             .also { nebula -> nebulaData[nebula.id] = nebula }
     }
