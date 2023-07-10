@@ -1,6 +1,7 @@
 package org.niatahl.tahlan.shipsystems
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.combat.CombatEngineLayers
 import com.fs.starfarer.api.combat.DamageType
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
@@ -8,10 +9,12 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
 import com.fs.starfarer.api.util.IntervalUtil
+import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import org.niatahl.tahlan.plugins.CustomRender
+import org.niatahl.tahlan.utils.modify
 import java.awt.Color
 
 class LostechEntry : BaseShipSystemScript() {
@@ -30,11 +33,12 @@ class LostechEntry : BaseShipSystemScript() {
             stats.maxSpeed.modifyFlat(id, 600f * effectLevel)
             stats.acceleration.modifyFlat(id, 600f * effectLevel)
         }
-        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 9, 2f, 6f)
+        ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 12, 2f, 6f)
         ship.setJitter(ship, SHIMMER_COLOR, 1f, 3, 2f, 4f)
 
         //Choose a random vent port to send lightning from
         zapterval.advance(Global.getCombatEngine().elapsedInLastFrame)
+        imageval.advance(Global.getCombatEngine().elapsedInLastFrame)
         if (zapterval.intervalElapsed()) {
             val bounds = ship.exactBounds
             bounds.update(ship.location, ship.facing)
@@ -61,7 +65,7 @@ class LostechEntry : BaseShipSystemScript() {
                 ship,
                 SHIMMER_COLOR,
                 AFTERIMAGE_COLOR,
-                0.5f,
+                0.8f,
                 4f
             )
         }
@@ -96,6 +100,18 @@ class LostechEntry : BaseShipSystemScript() {
                 LIGHTNING_CORE_COLOR,  //Central color
                 LIGHTNING_FRINGE_COLOR //Fringe Color
             )
+            CustomRender.addNebula(
+                location = origin,
+                velocity = Misc.ZERO,
+                size = 30f,
+                endSizeMult = 2f,
+                duration = 1f,
+                inFraction = 0.3f,
+                outFraction = 0.5f,
+                color = LIGHTNING_CORE_COLOR.modify(alpha = 80),
+                layer = CombatEngineLayers.ABOVE_SHIPS_LAYER,
+                expandAsSqrt = true
+            )
         }
     }
 
@@ -106,8 +122,8 @@ class LostechEntry : BaseShipSystemScript() {
     }
 
     companion object {
-        private val SHIMMER_COLOR = Color(96, 251, 171, 117)
-        private val AFTERIMAGE_COLOR = Color(255, 105, 0, 100)
+        private val SHIMMER_COLOR = Color(96, 251, 171, 70)
+        private val AFTERIMAGE_COLOR = Color(255, 105, 0, 70)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }
