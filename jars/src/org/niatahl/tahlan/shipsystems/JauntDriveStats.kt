@@ -10,18 +10,17 @@ import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
+import org.niatahl.tahlan.plugins.CustomRender
 import java.awt.Color
 
 class JauntDriveStats : BaseShipSystemScript() {
     private val color = Color(255, 179, 155, 255)
     private val interval = IntervalUtil(0.05f, 0.05f)
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
-        var id = id
-        var ship: ShipAPI? = null
+        var ship: ShipAPI?
         val engine = Global.getCombatEngine()
         if (stats.entity is ShipAPI) {
             ship = stats.entity as ShipAPI
-            id = id + "_" + ship.id
         } else {
             return
         }
@@ -31,13 +30,11 @@ class JauntDriveStats : BaseShipSystemScript() {
         val driftamount = engine.elapsedInLastFrame
         interval.advance(engine.elapsedInLastFrame)
         if (interval.intervalElapsed()) {
-            ship.addAfterimage(
-                AFTERIMAGE_COLOR,
-                0f,
-                0f,
-                ship.velocity.getX() * -1f,
-                ship.velocity.getY() * -1f,
-                5f, 0f, 0.1f, 0.5f, true, true, false
+            CustomRender.addAfterimage(
+                ship = ship,
+                colorIn = AFTERIMAGE_COLOR,
+                duration = 0.6f,
+                jitter = 5f
             )
             for (i in 0..9) {
                 engine.addNegativeNebulaParticle(
@@ -80,13 +77,9 @@ class JauntDriveStats : BaseShipSystemScript() {
     }
 
     override fun unapply(stats: MutableShipStatsAPI, id: String) {
-        var id = id
-        var ship: ShipAPI? = null
-        var player = false
+        var ship: ShipAPI?
         if (stats.entity is ShipAPI) {
             ship = stats.entity as ShipAPI
-            player = ship === Global.getCombatEngine().playerShip
-            id = id + "_" + ship.id
         } else {
             return
         }

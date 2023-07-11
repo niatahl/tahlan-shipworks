@@ -64,13 +64,13 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
     }
 
     fun render(layer: CombatEngineLayers, view: ViewportAPI) {
-        nebulaData.filter { (_, nebula) -> nebula.layer == layer }.forEach { (_, nebula) ->
-            renderNebula(nebula, view)
-        }
+        nebulaData
+            .filter { (_, nebula) -> nebula.layer == layer }
+            .forEach { (_, nebula) -> renderNebula(nebula, view) }
 
         // afterimages
-        if (layer == CombatEngineLayers.BELOW_SHIPS_LAYER) afterimageData.forEach { (_,afterimage) ->
-            renderAfterimage(afterimage,view)
+        if (layer == CombatEngineLayers.BELOW_SHIPS_LAYER) afterimageData.forEach { (_, afterimage) ->
+            renderAfterimage(afterimage, view)
         }
 
         // projectile effects
@@ -117,7 +117,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         sprite.setAdditiveBlend()
 
         if (!Global.getCombatEngine().isPaused && afterimage.jitter > 0f) {
-           afterimage.actualLoc = MathUtils.getRandomPointInCircle(afterimage.location,afterimage.jitter)
+            afterimage.actualLoc = MathUtils.getRandomPointInCircle(afterimage.location, afterimage.jitter)
         }
 
         sprite.renderAtCenter(afterimage.actualLoc.x, afterimage.actualLoc.y)
@@ -150,7 +150,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
         val lifeFraction = nebula.lifetime / nebula.duration
         cloudSprite.apply {
-            color = nebula.color.interpolateColor(nebula.outColor,lifeFraction).modify(alpha = alpha)
+            color = nebula.color.interpolateColor(nebula.outColor, lifeFraction).modify(alpha = alpha)
             if (nebula.additive) setAdditiveBlend()
             angle = nebula.angle
             setSize(actualSize * 4f, actualSize * 4f)
@@ -227,10 +227,10 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         fun addAfterimage(
             ship: ShipAPI,
             colorIn: Color,
-            colorOut: Color,
+            colorOut: Color = colorIn,
             duration: Float,
             jitter: Float = 0f,
-            location: Vector2f= Vector2f(ship.location)
+            location: Vector2f = Vector2f(ship.location)
         ) = Afterimage(
             id = Misc.random.nextLong(),
             sprite = Global.getSettings().getSprite(ship.hullSpec.spriteName),
