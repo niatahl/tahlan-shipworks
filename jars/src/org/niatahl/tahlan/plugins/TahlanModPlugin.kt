@@ -21,7 +21,6 @@ import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
-import org.niatahl.tahlan.listeners.CampaignEventListener
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
@@ -165,10 +164,8 @@ class TahlanModPlugin : BaseModPlugin() {
 
         sector.registerPlugin(CampaignPluginImpl())
 
-        if (ENABLE_ADAPTIVEMODE) {
-            sector.addTransientListener(CampaignEventListener())
+        if (ENABLE_ADAPTIVEMODE)
             sector.listenerManager.addListener(LegioFleetInflationListener(), true)
-        }
 
         TahlanPeople.synchronise()
 

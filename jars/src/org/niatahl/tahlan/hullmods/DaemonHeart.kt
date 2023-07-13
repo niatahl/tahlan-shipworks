@@ -175,12 +175,12 @@ class DaemonHeart : BaseHullMod() {
             }
         restoreToNonDHull(member.variant)
 
-//        if (!member.captain.isAICore) {
-//            addDaemonCore(member)
-//        }
-//        if (ENABLE_ADAPTIVEMODE && member.variant.sMods.isEmpty()) {
-//            addSMods(member)
-//        }
+        if (!member.captain.isAICore) {
+            addDaemonCore(member)
+        }
+        if (ENABLE_ADAPTIVEMODE && member.variant.sMods.isEmpty()) {
+            addSMods(member)
+        }
     }
 
     override fun isApplicableToShip(ship: ShipAPI): Boolean {
