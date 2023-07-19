@@ -1,24 +1,18 @@
 package org.niatahl.tahlan.hullmods.barcodes
 
 import com.fs.starfarer.api.combat.BaseHullMod
-import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
-import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import org.niatahl.tahlan.utils.Utils
 
-class Wrath : BaseHullMod() {
-
+class Pride : BaseHullMod() {
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         val cnt = ship.variant.sMods.count()
         ship.mutableStats.apply {
-            damageToCapital.modifyPercent(id, AMOUNT * cnt)
-            damageToCruisers.modifyPercent(id, AMOUNT * cnt)
-            damageToDestroyers.modifyPercent(id, AMOUNT * cnt)
-            damageToFrigates.modifyPercent(id, AMOUNT * cnt)
+            timeMult.modifyMult(id, 1f + cnt * AMOUNT)
         }
     }
 
-    override fun getDescriptionParam(index: Int, hullSize: HullSize?): String? {
+    override fun getDescriptionParam(index: Int, hullSize: ShipAPI.HullSize?): String? {
         return when (index) {
             0 -> "${AMOUNT * 100}${Utils.txt("%")}"
             else -> null
@@ -26,6 +20,6 @@ class Wrath : BaseHullMod() {
     }
 
     companion object {
-        const val AMOUNT = 0.03f
+        const val AMOUNT = 0.02f
     }
 }

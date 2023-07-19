@@ -4,14 +4,12 @@ import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
 import org.niatahl.tahlan.utils.Utils.txt
 
-class Sloth : BaseHullMod() {
-
+class Gluttony : BaseHullMod() {
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         val cnt = ship.variant.sMods.count()
         ship.mutableStats.apply {
-            hullDamageTakenMult.modifyMult(id, 1f - AMOUNT * cnt)
-            armorDamageTakenMult.modifyMult(id, 1f - AMOUNT * cnt)
-            shieldDamageTakenMult.modifyMult(id, 1f - AMOUNT * cnt)
+            fluxDissipation.modifyMult(id, AMOUNT * cnt + 1f)
+            fluxCapacity.modifyMult(id, AMOUNT * cnt + 1f)
         }
     }
 
