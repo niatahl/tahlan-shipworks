@@ -61,6 +61,16 @@ class LegioFleetInflationListener : FleetInflationListener {
             HullMods.AUTOREPAIR
         )
 
+        private val SIN_OPTIONS = listOf(
+            "tahlan_wrath",
+            "tahlan_gluttony",
+            "tahlan_lust",
+            "tahlan_pride",
+            "tahlan_greed",
+            "tahlan_sloth",
+            "tahlan_envy"
+        )
+
         fun addSMods(member: FleetMemberAPI) {
 
             if (Global.getSector() == null || Global.getSector().playerFleet == null) return
@@ -80,8 +90,12 @@ class LegioFleetInflationListener : FleetInflationListener {
 
             member.fixVariant()
 
+            val modOptions = SMOD_OPTIONS.toMutableList().also {
+                if (avgSMods > 3) it.addAll(SIN_OPTIONS)
+            }
+
             for (i in 0 until avgSMods) {
-                val pick = SMOD_OPTIONS
+                val pick = modOptions
                     .filter { hm -> !member.variant.hasHullMod(hm) }
                     .filter { hm ->
                         !(member.variant.hullSpec.shieldType in setOf(ShieldAPI.ShieldType.NONE, ShieldAPI.ShieldType.PHASE)
