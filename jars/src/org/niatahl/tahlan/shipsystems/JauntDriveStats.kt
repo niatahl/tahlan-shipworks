@@ -32,7 +32,7 @@ class JauntDriveStats : BaseShipSystemScript() {
         if (interval.intervalElapsed()) {
             CustomRender.addAfterimage(
                 ship = ship,
-                colorIn = AFTERIMAGE_COLOR,
+                colorIn = AFTERIMAGE_INCOLOR,
                 duration = 0.6f,
                 jitter = 5f
             )
@@ -128,7 +128,8 @@ class JauntDriveStats : BaseShipSystemScript() {
 
     companion object {
         private val FLICKER_COLOR = Color(129, 110, 99, 131)
-        private val AFTERIMAGE_COLOR = Color(129, 80, 64, 69)
+        private val AFTERIMAGE_INCOLOR = Color(159, 80, 64, 69)
+        private val AFTERIMAGE_OUTCOLOR = Color(69, 80, 154, 69)
         const val MAX_TIME_MULT = 5f
     }
 }
