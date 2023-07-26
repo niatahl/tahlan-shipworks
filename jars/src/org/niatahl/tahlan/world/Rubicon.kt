@@ -1,15 +1,13 @@
 package org.niatahl.tahlan.world
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.campaign.PlanetAPI
 import com.fs.starfarer.api.campaign.SectorAPI
 import com.fs.starfarer.api.campaign.SectorEntityToken
 import com.fs.starfarer.api.campaign.StarSystemAPI
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin.DerelictShipData
 import com.fs.starfarer.api.impl.campaign.ids.*
-import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor
-import com.fs.starfarer.api.impl.campaign.procgen.PlanetConditionGenerator
-import com.fs.starfarer.api.impl.campaign.procgen.StarAge
-import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator
+import com.fs.starfarer.api.impl.campaign.procgen.*
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner.ShipRecoverySpecialCreator
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial
@@ -18,6 +16,7 @@ import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin
 import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.DebrisFieldParams
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin
 import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.MagneticFieldParams
+import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin.CoronaParams
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.niatahl.tahlan.plugins.TahlanModPlugin
@@ -40,6 +39,7 @@ class Rubicon {
             300f
         )
         rubicon_star.name = "The Abyssal Maw"
+        setBlackHole(rubicon_star, system)
         system.lightColor = Color(255, 205, 205)
         system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 3, Color(68, 57, 56), 300f, 1000f, 200f)
         system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 2, Color(201, 77, 49), 600f, 700f, 200f)
@@ -66,6 +66,7 @@ class Rubicon {
                 Color(150, 0, 0)
             )
         )
+
 
         // Debris fields
         val params1 = DebrisFieldParams(
@@ -318,9 +319,9 @@ class Rubicon {
         ) // whether to use custom or system-name based names
 
         // add nightwatch derelicts in random spots
-        addDerelict(system,rubicon_star2,"tahlan_eagle_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random()<0.25)
-        addDerelict(system,rubicon_star2,"tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.BATTERED, (800f..radiusAfter2).random(), Math.random()<0.25)
-        addDerelict(system,rubicon_star2,"tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random()<0.25)
+        addDerelict(system, rubicon_star2, "tahlan_eagle_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random() < 0.25)
+        addDerelict(system, rubicon_star2, "tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.BATTERED, (800f..radiusAfter2).random(), Math.random() < 0.25)
+        addDerelict(system, rubicon_star2, "tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random() < 0.25)
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true)
@@ -361,5 +362,25 @@ class Rubicon {
             val creator = ShipRecoverySpecialCreator(null, 0, 0, false, null, null)
             Misc.setSalvageSpecial(ship, creator.createSpecial(ship, null))
         }
+    }
+
+    protected fun setBlackHole(star: PlanetAPI, system: StarSystemAPI) {
+        val coronaPlugin = Misc.getCoronaFor(star)
+        if (coronaPlugin != null) {
+            system.removeEntity(coronaPlugin.entity)
+        }
+        val starData = Global.getSettings().getSpec(StarGenDataSpec::class.java, star.spec.planetType, false) as StarGenDataSpec
+        var corona = star.radius * (starData.coronaMult + starData.coronaVar * (StarSystemGenerator.random.nextFloat() - 0.5f))
+        if (corona < starData.coronaMin) corona = starData.coronaMin
+        val eventHorizon: SectorEntityToken = system.addTerrain(
+            Terrain.EVENT_HORIZON,
+            CoronaParams(
+                star.radius + corona, (star.radius + corona) / 2f,
+                star, starData.solarWind,
+                (starData.minFlare + (starData.maxFlare - starData.minFlare) * StarSystemGenerator.random.nextFloat()),
+                starData.crLossMult
+            )
+        )
+        eventHorizon.setCircularOrbit(star, 0f, 0f, 100f)
     }
 }
