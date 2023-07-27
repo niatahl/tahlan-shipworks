@@ -17,12 +17,17 @@ public class TenPercentCritChance extends BaseHullMod {
     private static final float CRIT_CHANCE = 0.1f;
     private static final float CRIT_MULT = 3f;
 
-    private final List<DamagingProjectileAPI> toCrit = new ArrayList<DamagingProjectileAPI>();
-    private final List<DamagingProjectileAPI> hasHit = new ArrayList<DamagingProjectileAPI>();
-    private final List<DamagingProjectileAPI> toRemove = new ArrayList<DamagingProjectileAPI>();
+    private final List<DamagingProjectileAPI> toCrit = new ArrayList<>();
+    private final List<DamagingProjectileAPI> hasHit = new ArrayList<>();
 
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+
+        if (Global.getCombatEngine().isCombatOver()) {
+            toCrit.clear();
+            hasHit.clear();
+            return;
+        }
 
         if (!ship.isHulk() && !ship.isPiece()) {
 
@@ -47,7 +52,7 @@ public class TenPercentCritChance extends BaseHullMod {
                 }
             }
 
-
+            final List<DamagingProjectileAPI> toRemove = new ArrayList<>();
             for (DamagingProjectileAPI proj : hasHit) {
                 if (!Global.getCombatEngine().isEntityInPlay(proj)) {
                     toCrit.remove(proj);
