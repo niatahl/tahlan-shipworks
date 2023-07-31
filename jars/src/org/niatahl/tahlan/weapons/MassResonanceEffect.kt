@@ -85,8 +85,11 @@ class MassResonanceEffect : OnHitEffectPlugin {
     }
 
     private fun calculateArea(ship: ShipAPI): Float {
+
+        val bounds = ship.exactBounds ?: ship.visualBounds ?: return 0f
+
         var area = 0f
-        ship.exactBounds.segments.forEach{
+        bounds.segments.forEach{
             area += it.p1.x * it.p2.y - it.p2.x * it.p1.y
         }
         area = area.absoluteValue / 2
