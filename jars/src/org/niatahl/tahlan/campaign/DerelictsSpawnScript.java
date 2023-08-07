@@ -123,10 +123,25 @@ public class DerelictsSpawnScript {
                 if (spawnData.one.contains("tahlan_schneefall_traum_albtraum")) {
                     Global.getSector().getMemoryWithoutUpdate().set("$tahlan_traum_location", system.getConstellation().getName());
                     shipCondition = ShipRecoverySpecial.ShipCondition.BATTERED;
-                    actuallySpawn = true;
+                    DefenderDataOverride angryBois = new DefenderDataOverride(
+                            Factions.REMNANTS,
+                            1f,
+                            150f,
+                            300f
+                    );
+                    addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, angryBois);
+                    actuallySpawn = false;
                 }
-                if (spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals("tahlan_providence_admech_derelict"))
-                    recoverable = true;
+                if (spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals("tahlan_providence_admech_derelict")) {
+                    DefenderDataOverride angryBois = new DefenderDataOverride(
+                            Factions.DERELICT,
+                            1f,
+                            100f,
+                            200f
+                    );
+                    addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, angryBois);
+                    actuallySpawn = false;
+                }
 
                 if (actuallySpawn) {
                     addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, null);
