@@ -15,8 +15,8 @@
     "ballistic_rangefinder"
   ],
   "builtInWeapons": {
-    "WS0001": "flak",
-    "WS0004": "flak"
+    "WS0001": "dualflak",
+    "WS0004": "dualflak"
   },
   "weaponSlots": [
     {

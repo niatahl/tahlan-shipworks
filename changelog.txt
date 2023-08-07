@@ -1,3 +1,10 @@
+1.2.5
+- Bugfixes
+- Cardinal Sins
+- More Bugfixes
+- Undocumented changes that I forgot
+
+
 1.2.4
 - Some visual updates
 - More bugfixes

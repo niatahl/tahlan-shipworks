@@ -47,6 +47,10 @@ class KnightRefit : BaseHullMod() {
         if (!ship.isAlive || ship.isPiece) {
             return
         }
+        if (ship.hullSpec.hullId !in GH_HULLS) {
+            ship.mutableStats.peakCRDuration.modifyMult("lol_lmao_even", 0.1f)
+            return
+        }
         ship.isJitterShields = false
         if (ship.system != null) {
             if (!ship.system.isActive && !ship.fluxTracker.isOverloadedOrVenting) {
@@ -136,5 +140,20 @@ class KnightRefit : BaseHullMod() {
         private val OVERDRIVE_JITTER_UNDER_COLOR = Color(255, 63, 0, 80)
         private const val SO_MALFUNCTION_PROB = 0.03f
         private const val ke_id = "tahlan_KnightRefitID"
+        val GH_HULLS = listOf(
+            "tahlan_dominator_gh",
+            "tahlan_enforcer_gh",
+            "tahlan_onslaught_gh",
+            "tahlan_monitor_gh",
+            "tahlan_vendetta_gh",
+            "tahlan_legion_gh",
+            "tahlan_Ristreza_b",
+            "tahlan_Ristreza",
+            "tahlan_Exa_Pico",
+            "tahlan_Vale",
+            "tahlan_Izanami",
+            "tahlan_Metafalica",
+            "tahlan_Ristreza_g"
+        )
     }
 }

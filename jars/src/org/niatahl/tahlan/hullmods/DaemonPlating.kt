@@ -29,6 +29,7 @@ class DaemonPlating : BaseHullMod() {
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         ship.addListener(DaemonArmorListener())
+        ship.setNextHitHullDamageThresholdMult(DAMAGE_CAP, DAMAGE_CAP_REDUCTION)
     }
 
     override fun advanceInCombat(ship: ShipAPI, amount: Float) {

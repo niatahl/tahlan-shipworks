@@ -131,7 +131,7 @@ class VectorShiftStats : BaseShipSystemScript() {
 
     companion object {
         private val SHIMMER_COLOR = Color(0, 255, 201, 80)
-        private val AFTERIMAGE_COLOR = Color(0, 100, 255, 80)
+        private val AFTERIMAGE_COLOR = Color(255, 20, 0, 100)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }

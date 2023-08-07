@@ -3,13 +3,10 @@
     <CLASSES>
       <root url="jar://G:/Starsector/mods/ExiledSpace/jars/ExiledSpace.jar!/" />
       <root url="file://G:/Starsector/mods/ExiledSpace/src" />
-      <root url="jar://$PROJECT_DIR$/../ExiledSpace/jars/ExiledSpace.jar!/" />
-      <root url="file://$PROJECT_DIR$/../ExiledSpace/src" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="file://G:/Starsector/mods/ExiledSpace/src" />
-      <root url="file://$PROJECT_DIR$/../ExiledSpace/src" />
     </SOURCES>
   </library>
 </component>

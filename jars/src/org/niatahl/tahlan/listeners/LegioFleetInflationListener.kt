@@ -112,7 +112,7 @@ class LegioFleetInflationListener : FleetInflationListener {
 
         fun clearSMods(member: FleetMemberAPI) {
             member.fixVariant()
-            member.variant.sMods.toList().forEach{
+            member.variant.sMods.toList().forEach {
                 member.variant.removePermaMod(it)
                 member.variant.removeMod(it)
             }
@@ -121,6 +121,9 @@ class LegioFleetInflationListener : FleetInflationListener {
         fun addDaemonCore(member: FleetMemberAPI) {
             // Now we make a new captain if we don't have an AI captain already
             if (member.captain != null && member.captain.isAICore) return
+
+            // Don't remove from flagship for campaign reasons
+            if (member.isFlagship) return
 
             // Apparently this can be the case
             if (Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE) == null) {

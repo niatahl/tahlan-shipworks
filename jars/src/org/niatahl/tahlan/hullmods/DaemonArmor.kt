@@ -16,6 +16,7 @@ class DaemonArmor : BaseHullMod() {
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         ship.addListener(DaemonArmorListener())
+        ship.setNextHitHullDamageThresholdMult(DAMAGE_CAP, DAMAGE_CAP_REDUCTION)
     }
 
     override fun advanceInCombat(ship: ShipAPI, amount: Float) {
@@ -70,9 +71,7 @@ class DaemonArmor : BaseHullMod() {
             if (shieldHit) return null
             if (target !is ShipAPI) return null
 
-            if (damage.damage > DAMAGE_CAP) {
-                damage.damage = DAMAGE_CAP + (damage.damage - DAMAGE_CAP) * DAMAGE_CAP_REDUCTION
-            }
+            target.setNextHitHullDamageThresholdMult(DAMAGE_CAP, DAMAGE_CAP_REDUCTION)
 
             if (target.variant.hasHullMod("tahlan_daemonarmor") || target.variant.hasHullMod("tahlan_daemonplating")) {
                 if (damage.damage > 0) {

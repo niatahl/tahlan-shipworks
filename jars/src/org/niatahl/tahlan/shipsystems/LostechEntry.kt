@@ -19,7 +19,7 @@ import java.awt.Color
 
 class LostechEntry : BaseShipSystemScript() {
 
-    private val zapterval = IntervalUtil(0.05f, 0.1f)
+    private val zapterval = IntervalUtil(0.05f, 0.05f)
     private val imageval = IntervalUtil(0.05f, 0.05f)
     override fun apply(stats: MutableShipStatsAPI, id: String, state: ShipSystemStatsScript.State, effectLevel: Float) {
         val ship: ShipAPI = if (stats.entity is ShipAPI) {
@@ -82,10 +82,10 @@ class LostechEntry : BaseShipSystemScript() {
         val bounds = ship.exactBounds
         bounds.update(ship.location, ship.facing)
 
-        for (i in 0..20) {
+        for (i in 0..50) {
             val origin = bounds.segments.random().p1
             val angle = VectorUtils.getAngle(ship.location, origin)
-            val target = SimpleEntity(MathUtils.getRandomPointInCone(origin, 150f, angle - 45f, angle + 45f))
+            val target = SimpleEntity(MathUtils.getRandomPointInCone(origin, 200f, angle - 45f, angle + 45f))
             Global.getCombatEngine().spawnEmpArc(
                 ship,
                 origin,
