@@ -8,12 +8,10 @@ import kotlin.math.roundToInt
 
 class FieldHarmoniser : BaseHullMod() {
 
-    private val INNERLARGE = "graphics/tahlan/fx/tahlan_savshield.png"
-    private val OUTERLARGE = "graphics/tahlan/fx/tahlan_savshield.png"
+
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         ship.addListener(HarmoniserListener())
-        ship.shield.setRadius(ship.shieldRadiusEvenIfNoShield, INNERLARGE, OUTERLARGE)
     }
 
     override fun getDescriptionParam(index: Int, hullSize: ShipAPI.HullSize?): String? {

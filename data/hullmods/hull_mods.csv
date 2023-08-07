@@ -133,6 +133,7 @@ Affected hostile ships receive %s more damage from all sources and deal %s less 
 
 Effects from multiple EWAR Suites do not stack.",Debuffs nearby enemies,,graphics/tahlan/hullmods/tahlan_ewarsuite.png
 Bolt Field Harmoniser,tahlan_fieldharmoniser,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.FieldHarmoniser,Increases range of projectile energy weapons by %s for medium and %s for small mounts.,Increases energy projectile ranges,,graphics/hullmods/coherer.png
+Saveth Shield,tahlan_savethshield,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.SavethShield,,,,graphics/hullmods/coherer.png
 ,,,,,,,,,,,,,,,,,,,
 Sin of Wrath,tahlan_wrath,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barcodes.Wrath,Increases damage to shipy by %s per installed S-Mod.,Increases damage to ships,,graphics/tahlan/hullmods/tahlan_daemoncore.png
 Sin of Gluttony,tahlan_gluttony,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barcodes.Gluttony,Increases flux stats by %s per installed S-Mod.,Increases flux stats,,graphics/tahlan/hullmods/tahlan_daemoncore.png
