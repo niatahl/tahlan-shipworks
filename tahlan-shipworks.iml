@@ -20,5 +20,6 @@
     <orderEntry type="library" name="LunaLib" level="application" />
     <orderEntry type="library" name="LunaLib" level="application" />
     <orderEntry type="library" name="commons-compiler-jdk" level="application" />
+    <orderEntry type="library" name="starfarer-api" level="application" />
   </component>
 </module>
