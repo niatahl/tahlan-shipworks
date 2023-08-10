@@ -120,7 +120,11 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             afterimage.actualLoc = MathUtils.getRandomPointInCircle(afterimage.location, afterimage.jitter)
         }
 
+        if (afterimage.negative) glBlendEquation(GL_FUNC_REVERSE_SUBTRACT)
+
         sprite.renderAtCenter(afterimage.actualLoc.x, afterimage.actualLoc.y)
+        // NEVER FORGET TO TURN OFF FUNKY MODE
+        if (afterimage.negative) glBlendEquation(GL_FUNC_ADD)
     }
 
     private fun renderNebula(nebula: Nebula, view: ViewportAPI) {
@@ -210,7 +214,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val colorIn: Color,
         val colorOut: Color,
         val duration: Float,
-        val jitter: Float
+        val jitter: Float,
+        val negative: Boolean
     ) {
         var lifetime = 0f
         var actualLoc = location
@@ -230,7 +235,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             colorOut: Color = colorIn,
             duration: Float,
             jitter: Float = 0f,
-            location: Vector2f = Vector2f(ship.location)
+            location: Vector2f = Vector2f(ship.location),
+            negative: Boolean = false
         ) = Afterimage(
             id = Misc.random.nextLong(),
             sprite = Global.getSettings().getSprite(ship.hullSpec.spriteName),
@@ -239,7 +245,8 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             colorIn = colorIn,
             colorOut = colorOut,
             duration = duration,
-            jitter = jitter
+            jitter = jitter,
+            negative = negative
         )
             .also { afterimage ->
 

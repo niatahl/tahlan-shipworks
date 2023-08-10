@@ -32,27 +32,27 @@ class Rubicon {
         system.location[-28000f] = -4500f
         system.backgroundTextureFilename = "graphics/tahlan/backgrounds/tahlan_rubicon.jpg"
         system.addTag(Tags.THEME_CORE_POPULATED)
-        val rubicon_star = system.initStar(
+        val rubiconStar = system.initStar(
             "tahlan_rubicon_maw",
             "black_hole",
             140f,
             300f
         )
-        rubicon_star.name = "The Abyssal Maw"
-        setBlackHole(rubicon_star, system)
-        system.lightColor = Color(255, 205, 205)
-        system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 3, Color(68, 57, 56), 300f, 1000f, 200f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 2, Color(201, 77, 49), 600f, 700f, 200f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 3, Color(201, 49, 49), 300f, 300f, 200f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 3, Color.gray, 600f, 900f, 200f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 4, Color(119, 48, 48), 600f, 500f, 200f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 1, Color.gray, 600f, 700f, 200f)
+        rubiconStar.name = "The Abyssal Maw"
+        setBlackHole(rubiconStar, system)
+        system.lightColor = Color(200, 100, 90)
+        system.addRingBand(rubiconStar, "misc", "rings_asteroids0", 256f, 3, Color(68, 57, 56), 300f, 1000f, 200f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 2, Color(201, 77, 49), 600f, 700f, 200f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 3, Color(201, 49, 49), 300f, 300f, 200f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 3, Color.gray, 600f, 900f, 200f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 4, Color(119, 48, 48), 600f, 500f, 200f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 1, Color.gray, 600f, 700f, 200f)
         //        system.addAsteroidBelt(rubicon_star, 300, 1200f, 500, 120, 300, Terrain.ASTEROID_BELT,"");
         system.addTerrain(
             Terrain.MAGNETIC_FIELD, MagneticFieldParams(
                 1800f,  // terrain effect band width
                 1300f,  // terrain effect middle radius
-                rubicon_star,  // entity that it's around
+                rubiconStar,  // entity that it's around
                 190f,  // visual band start
                 600f,  // visual band end
                 Color(157, 28, 9, 150),  // base color
@@ -81,26 +81,25 @@ class Rubicon {
         val debrisRubicon1 = Misc.addDebrisField(system, params1, StarSystemGenerator.random)
         debrisRubicon1.sensorProfile = 1500f
         debrisRubicon1.isDiscoverable = true
-        debrisRubicon1.setCircularOrbit(rubicon_star, 360 * Math.random().toFloat(), 700f, 250f)
+        debrisRubicon1.setCircularOrbit(rubiconStar, 360 * Math.random().toFloat(), 700f, 250f)
         debrisRubicon1.id = "tahlan_lethia_debrisRubicon1"
         val debrisRubicon2 = Misc.addDebrisField(system, params1, StarSystemGenerator.random)
         debrisRubicon2.sensorProfile = 1500f
         debrisRubicon2.isDiscoverable = true
-        debrisRubicon2.setCircularOrbit(rubicon_star, 360 * Math.random().toFloat(), 1300f, 300f)
+        debrisRubicon2.setCircularOrbit(rubiconStar, 360 * Math.random().toFloat(), 1300f, 300f)
         debrisRubicon2.id = "tahlan_lethia_debrisRubicon2"
-        val rubicon_star2 = system.addPlanet("tahlan_rubicon_heart", rubicon_star, "The Infernal Heart", "star_red_dwarf", 90f, 200f, 2100f, 300f)
+        val rubicon_star2 = system.addPlanet("tahlan_rubicon_heart", rubiconStar, "The Infernal Heart", "star_red_dwarf", 90f, 200f, 2100f, 300f)
         system.addCorona(rubicon_star2, 200f, 5f, 0.2f, 2f)
 
-//        addDerelict(system,rubicon_star2,"tahlan_DunScaith_barrage", ShipRecoverySpecial.ShipCondition.WRECKED, 500f, Math.random()<0.1);
-        system.addAsteroidBelt(rubicon_star, 1000, 3000f, 1000f, 120f, 500f, Terrain.ASTEROID_BELT, "")
-        system.addRingBand(rubicon_star, "misc", "rings_asteroids0", 256f, 1, Color.gray, 500f, 3000f, 250f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 1, Color.gray, 500f, 3200f, 250f)
-        system.addRingBand(rubicon_star, "misc", "rings_dust0", 256f, 4, Color.gray, 500f, 2800f, 250f)
+        system.addAsteroidBelt(rubiconStar, 1000, 3000f, 1000f, 120f, 500f, Terrain.ASTEROID_BELT, "")
+        system.addRingBand(rubiconStar, "misc", "rings_asteroids0", 256f, 1, Color.gray, 500f, 3000f, 250f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 1, Color.gray, 500f, 3200f, 250f)
+        system.addRingBand(rubiconStar, "misc", "rings_dust0", 256f, 4, Color.gray, 500f, 2800f, 250f)
 
         // First Planet
-        val rubicon_1 = system.addPlanet(
+        val melchiresa = system.addPlanet(
             "tahlan_rubicon_p01",
-            rubicon_star,
+            rubiconStar,
             "Melchiresa",
             "cryovolcanic",
             360f * Math.random().toFloat(),
@@ -108,10 +107,10 @@ class Rubicon {
             4600f,
             320f
         )
-        rubicon_1.customDescriptionId = "tahlan_rubicon_p01"
-        rubicon_1.setInteractionImage("illustrations", "tahlan_melchiresa_illus")
-        val rubicon_1_market = addMarketplace(
-            "tahlan_legioinfernalis", rubicon_1, null,
+        melchiresa.customDescriptionId = "tahlan_rubicon_p01"
+        melchiresa.setInteractionImage("illustrations", "tahlan_melchiresa_illus")
+        val melchiresaMarket = addMarketplace(
+            "tahlan_legioinfernalis", melchiresa, null,
             "Melchiresa",
             5,
             ArrayList(
@@ -145,20 +144,20 @@ class Rubicon {
                 )
             ),
             0.3f,
-            true,
-            true
+            freePort = true,
+            withJunkAndChatter = true
         )
-        rubicon_1_market.getIndustry(Industries.MILITARYBASE).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_1_market.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_1_market.getIndustry(Industries.MEGAPORT).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_1_market.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
+        melchiresaMarket.getIndustry(Industries.MILITARYBASE).aiCoreId = Commodities.ALPHA_CORE
+        melchiresaMarket.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
+        melchiresaMarket.getIndustry(Industries.MEGAPORT).aiCoreId = Commodities.ALPHA_CORE
+        melchiresaMarket.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
         val stableLoc1: SectorEntityToken = system.addCustomEntity("tahlan_rubicon_stableloc_1", "Stable Location", "stable_location", Factions.NEUTRAL)
-        stableLoc1.setCircularOrbit(rubicon_star, MathUtils.getRandomNumberInRange(0f, 360f), 5400f, 520f)
+        stableLoc1.setCircularOrbit(rubiconStar, MathUtils.getRandomNumberInRange(0f, 360f), 5400f, 520f)
 
         // Second Planet
-        val rubicon_2 = system.addPlanet(
+        val ornias = system.addPlanet(
             "tahlan_rubicon_p02",
-            rubicon_star,
+            rubiconStar,
             "Ornias",
             "barren3",
             360f * Math.random().toFloat(),
@@ -166,20 +165,20 @@ class Rubicon {
             6000f,
             410f
         )
-        PlanetConditionGenerator.generateConditionsForPlanet(rubicon_2, StarAge.OLD)
+        PlanetConditionGenerator.generateConditionsForPlanet(ornias, StarAge.OLD)
         val relay: SectorEntityToken = system.addCustomEntity(
             "tahlan_rubicon_relay",  // unique id
             "Rubicon Relay",  // name - if null, defaultName from custom_entities.json will be used
             "comm_relay",  // type of object, defined in custom_entities.json
             "tahlan_legioinfernalis"
         ) // faction
-        relay.setCircularOrbitPointingDown(rubicon_star, 360f * Math.random().toFloat(), 6700f, MathUtils.getRandomNumberInRange(250, 410).toFloat())
+        relay.setCircularOrbitPointingDown(rubiconStar, 360f * Math.random().toFloat(), 6700f, MathUtils.getRandomNumberInRange(250, 410).toFloat())
 
         // Third Planet - Primary Legio base
         val angle = 360f * Math.random().toFloat()
-        val rubicon_3 = system.addPlanet(
+        val lucifron = system.addPlanet(
             "tahlan_rubicon_p03",
-            rubicon_star,
+            rubiconStar,
             "Lucifron",
             "toxic_cold",
             angle,
@@ -187,14 +186,14 @@ class Rubicon {
             7400f,
             380f
         )
-        rubicon_3.customDescriptionId = "tahlan_rubicon_p03"
-        rubicon_3.setInteractionImage("illustrations", "tahlan_lucifron_illus")
-        val rubicon_3_market = Lethia.addMarketplace(
-            "tahlan_legioinfernalis", rubicon_3, null,
+        lucifron.customDescriptionId = "tahlan_rubicon_p03"
+        lucifron.setInteractionImage("illustrations", "tahlan_lucifron_illus")
+        val lucifronMarket = addMarketplace(
+            "tahlan_legioinfernalis", lucifron, null,
             "Lucifron",
             7,
             ArrayList(
-                Arrays.asList(
+                listOf(
                     Conditions.POPULATION_7,
                     Conditions.ORE_SPARSE,
                     Conditions.RARE_ORE_SPARSE,
@@ -207,7 +206,7 @@ class Rubicon {
                 )
             ),
             ArrayList(
-                Arrays.asList(
+                listOf(
                     Submarkets.GENERIC_MILITARY,
                     Submarkets.SUBMARKET_OPEN,
                     Submarkets.SUBMARKET_STORAGE,
@@ -215,7 +214,7 @@ class Rubicon {
                 )
             ),
             ArrayList(
-                Arrays.asList(
+                listOf(
                     Industries.POPULATION,
                     Industries.MEGAPORT,
                     Industries.MINING,
@@ -228,36 +227,36 @@ class Rubicon {
                 )
             ),
             0.3f,
-            false,
-            true
+            freePort = false,
+            withJunkAndChatter = true
         )
-        rubicon_3_market.addIndustry(Industries.ORBITALWORKS, ArrayList(listOf(Items.PRISTINE_NANOFORGE)))
-        rubicon_3_market.getIndustry(Industries.HIGHCOMMAND).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_3_market.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_3_market.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
+        lucifronMarket.addIndustry(Industries.ORBITALWORKS, ArrayList(listOf(Items.PRISTINE_NANOFORGE)))
+        lucifronMarket.getIndustry(Industries.HIGHCOMMAND).aiCoreId = Commodities.ALPHA_CORE
+        lucifronMarket.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
+        lucifronMarket.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
 
 
         //debris of failed attacks
         val debrisRubicon3 = Misc.addDebrisField(system, params1, StarSystemGenerator.random)
         debrisRubicon3.sensorProfile = 1500f
         debrisRubicon3.isDiscoverable = true
-        debrisRubicon3.setCircularOrbit(rubicon_3, 360 * Math.random().toFloat(), 600f, 200f)
+        debrisRubicon3.setCircularOrbit(lucifron, 360 * Math.random().toFloat(), 600f, 200f)
         debrisRubicon3.id = "tahlan_lethia_debrisRubicon3"
         val debrisRubicon4 = Misc.addDebrisField(system, params1, StarSystemGenerator.random)
         debrisRubicon4.sensorProfile = 1500f
         debrisRubicon4.isDiscoverable = true
-        debrisRubicon4.setCircularOrbit(rubicon_3, 360 * Math.random().toFloat(), 800f, 250f)
+        debrisRubicon4.setCircularOrbit(lucifron, 360 * Math.random().toFloat(), 800f, 250f)
         debrisRubicon4.id = "tahlan_lethia_debrisRubicon4"
 
         //Jump point for Lucifron
         val jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_rubicon_lucifron_jump", "Lucifron Jump Point")
-        jumpPoint1.setCircularOrbit(rubicon_star, angle + 25f, 7400f, 380f)
-        jumpPoint1.relatedPlanet = rubicon_3
+        jumpPoint1.setCircularOrbit(rubiconStar, angle + 25f, 7400f, 380f)
+        jumpPoint1.relatedPlanet = lucifron
         system.addEntity(jumpPoint1)
 
         // Let's procgen some stuff here cause fuck doing that manually
         val radiusAfter = StarSystemGenerator.addOrbitingEntities(
-            system, rubicon_star, StarAge.OLD,
+            system, rubiconStar, StarAge.OLD,
             4, 6,  // min/max entities to add
             8000f,  // radius to start adding at
             3,  // name offset - next planet will be <system name> <roman numeral of this parameter + 1>
@@ -266,12 +265,12 @@ class Rubicon {
 
 
         // Small outpost at system edge
-        val rubicon_outpost: SectorEntityToken = system.addCustomEntity("tahlan_rubicon_outpost", "Adramelech Fortress", "station_side06", "tahlan_legioinfernalis")
-        rubicon_outpost.setCircularOrbitPointingDown(rubicon_star, 360 * Math.random().toFloat(), radiusAfter + 700f, 600f)
-        rubicon_outpost.customDescriptionId = "tahlan_rubicon_outpost"
-        rubicon_outpost.setInteractionImage("illustrations", "tahlan_adramelech_illus")
-        val rubicon_outpost_market = Lethia.addMarketplace(
-            "tahlan_legioinfernalis", rubicon_outpost, null,
+        val adramelech: SectorEntityToken = system.addCustomEntity("tahlan_rubicon_outpost", "Adramelech Fortress", "station_side06", "tahlan_legioinfernalis")
+        adramelech.setCircularOrbitPointingDown(rubiconStar, 360 * Math.random().toFloat(), radiusAfter + 700f, 600f)
+        adramelech.customDescriptionId = "tahlan_rubicon_outpost"
+        adramelech.setInteractionImage("illustrations", "tahlan_adramelech_illus")
+        val adramelechMarket = addMarketplace(
+            "tahlan_legioinfernalis", adramelech, null,
             "Adramelech Fortress",
             5,
             ArrayList(
@@ -301,17 +300,17 @@ class Rubicon {
                 )
             ),
             0.3f,
-            false,
-            true
+            freePort = false,
+            withJunkAndChatter = true
         )
-        rubicon_outpost_market.getIndustry(Industries.MILITARYBASE).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_outpost_market.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
-        rubicon_outpost_market.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
+        adramelechMarket.getIndustry(Industries.MILITARYBASE).aiCoreId = Commodities.ALPHA_CORE
+        adramelechMarket.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
+        adramelechMarket.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
 
 
         // Bit more procgen
         val radiusAfter2 = StarSystemGenerator.addOrbitingEntities(
-            system, rubicon_star, StarAge.OLD,
+            system, rubiconStar, StarAge.OLD,
             2, 3,  // min/max entities to add
             radiusAfter + 1500f,  // radius to start adding at
             3,  // name offset - next planet will be <system name> <roman numeral of this parameter + 1>
@@ -328,8 +327,8 @@ class Rubicon {
         if (TahlanModPlugin.HAS_INDEVO) {
             addDefenses()
         } else {
-            rubicon_1_market.addIndustry(Industries.PLANETARYSHIELD)
-            rubicon_3_market.addIndustry(Industries.PLANETARYSHIELD)
+            melchiresaMarket.addIndustry(Industries.PLANETARYSHIELD)
+            lucifronMarket.addIndustry(Industries.PLANETARYSHIELD)
         }
 
         Misc.setAllPlanetsSurveyed(system, true)

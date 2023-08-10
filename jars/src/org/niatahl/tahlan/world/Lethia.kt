@@ -20,7 +20,6 @@ import com.fs.starfarer.api.impl.campaign.terrain.DebrisFieldTerrainPlugin.Debri
 import com.fs.starfarer.api.impl.campaign.terrain.HyperspaceTerrainPlugin
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
-import org.magiclib.kotlin.getMarketsInLocation
 import java.awt.Color
 import java.util.*
 
@@ -43,19 +42,7 @@ class Lethia {
         )
         system.lightColor = Color(255, 255, 255)
 
-        /*
-        PlanetAPI lethia_1 = system.addPlanet("tahlan_lethia_p01",
-                lethia_star,
-                "Marandil",
-                "lava_minor",
-                360f*(float)Math.random(),
-                100,
-                2000,
-                130);
-
-        PlanetConditionGenerator.generateConditionsForPlanet(lethia_1, StarAge.AVERAGE);
-        */
-        val lethia_2 = system.addPlanet(
+        val atanor = system.addPlanet(
             "tahlan_lethia_p02",
             lethia_star,
             "Atanor",
@@ -65,9 +52,9 @@ class Lethia {
             2800f,
             170f
         )
-        PlanetConditionGenerator.generateConditionsForPlanet(lethia_2, StarAge.AVERAGE)
-        lethia_2.customDescriptionId = "tahlan_planet_atanor"
-        lethia_2.market.addCondition("tahlan_kassadariclaim")
+        PlanetConditionGenerator.generateConditionsForPlanet(atanor, StarAge.AVERAGE)
+        atanor.customDescriptionId = "tahlan_planet_atanor"
+        atanor.market.addCondition("tahlan_kassadariclaim")
 
         //debris field near Atanor
         val params1 = DebrisFieldParams(
@@ -82,7 +69,7 @@ class Lethia {
         val debrisLethia2 = Misc.addDebrisField(system, params1, StarSystemGenerator.random)
         debrisLethia2.sensorProfile = 1500f
         debrisLethia2.isDiscoverable = true
-        debrisLethia2.setCircularOrbit(lethia_2, 360 * Math.random().toFloat(), 300f, 250f)
+        debrisLethia2.setCircularOrbit(atanor, 360 * Math.random().toFloat(), 300f, 250f)
         debrisLethia2.id = "tahlan_lethia_debrisLethia2"
 
         //asteroid ring
@@ -91,7 +78,7 @@ class Lethia {
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 0, Color.gray, 256f, 3800f, 370f)
         system.addRingBand(lethia_star, "misc", "rings_asteroids0", 256f, 2, Color.gray, 256f, 4050f, 235f)
         addDerelict(system, lethia_star, "tahlan_onslaught_gh_knight", ShipCondition.BATTERED, 3900f, Math.random() < 0.05)
-        val lethia_3 = system.addPlanet(
+        val akrom = system.addPlanet(
             "tahlan_lethia_p03",
             lethia_star,
             "Akrom",
@@ -101,10 +88,10 @@ class Lethia {
             4500f,
             240f
         )
-        PlanetConditionGenerator.generateConditionsForPlanet(lethia_3, StarAge.AVERAGE)
+        PlanetConditionGenerator.generateConditionsForPlanet(akrom, StarAge.AVERAGE)
         val stableLoc1: SectorEntityToken = system.addCustomEntity("tahlan_lethia_stableloc_1", "Stable Location", "stable_location", Factions.NEUTRAL)
         stableLoc1.setCircularOrbit(lethia_star, MathUtils.getRandomNumberInRange(0f, 360f), 5100f, 460f)
-        val lethia_4 = system.addPlanet(
+        val heridal = system.addPlanet(
             "tahlan_lethia_p04",
             lethia_star,
             "Heridal",
@@ -114,9 +101,9 @@ class Lethia {
             5400f,
             190f
         )
-        PlanetConditionGenerator.generateConditionsForPlanet(lethia_4, StarAge.AVERAGE)
-        lethia_4.customDescriptionId = "tahlan_planet_heridal"
-        lethia_4.market.addCondition("tahlan_kassadariclaim")
+        PlanetConditionGenerator.generateConditionsForPlanet(heridal, StarAge.AVERAGE)
+        heridal.customDescriptionId = "tahlan_planet_heridal"
+        heridal.market.addCondition("tahlan_kassadariclaim")
 
         //debris field near Heridal
         val params2 = DebrisFieldParams(
@@ -131,7 +118,7 @@ class Lethia {
         val debrisLethia4 = Misc.addDebrisField(system, params2, StarSystemGenerator.random)
         debrisLethia4.sensorProfile = 1500f
         debrisLethia4.isDiscoverable = true
-        debrisLethia4.setCircularOrbit(lethia_4, 360 * Math.random().toFloat(), 350f, 280f)
+        debrisLethia4.setCircularOrbit(heridal, 360 * Math.random().toFloat(), 350f, 280f)
         debrisLethia4.id = "tahlan_lethia_debrisLethia4"
         val relay: SectorEntityToken = system.addCustomEntity(
             "tahlan_lethia_relay",  // unique id
@@ -140,7 +127,7 @@ class Lethia {
             "independent"
         ) // faction
         relay.setCircularOrbitPointingDown(lethia_star, 360f * Math.random().toFloat(), 5900f, MathUtils.getRandomNumberInRange(250, 410).toFloat())
-        val lethia_5 = system.addPlanet(
+        val kassadar = system.addPlanet(
             "tahlan_lethia_p05",
             lethia_star,
             "Kassadar",
@@ -150,11 +137,11 @@ class Lethia {
             6600f,
             260f
         )
-        lethia_5.customDescriptionId = "tahlan_planet_kassadar"
-        lethia_5.setInteractionImage("illustrations", "tahlan_kassadar_illus")
-        system.addRingBand(lethia_5, "misc", "rings_dust0", 256f, 1, Color.gray, 256f, 360f, 400f)
-        val lethia_5_market = addMarketplace(
-            "independent", lethia_5, null,
+        kassadar.customDescriptionId = "tahlan_planet_kassadar"
+        kassadar.setInteractionImage("illustrations", "tahlan_kassadar_illus")
+        system.addRingBand(kassadar, "misc", "rings_dust0", 256f, 1, Color.gray, 256f, 360f, 400f)
+        val kassadarMarket = addMarketplace(
+            "independent", kassadar, null,
             "Kassadar",
             7,
             ArrayList(
@@ -194,14 +181,14 @@ class Lethia {
             false,
             true
         )
-        lethia_5_market.addTag("magellan_indiemarket")
+        kassadarMarket.addTag("magellan_indiemarket")
         val stableLoc2: SectorEntityToken = system.addCustomEntity("tahlan_lethia_stableloc_2", "Stable Location", "stable_location", Factions.NEUTRAL)
         stableLoc2.setCircularOrbit(lethia_star, MathUtils.getRandomNumberInRange(0f, 360f), 8200f, 520f)
 
         //Jump point for Kassadar
         val jumpPoint1 = Global.getFactory().createJumpPoint("tahlan_lethia_kassadar_jump", "Kassadar Jump Point")
         jumpPoint1.setCircularOrbit(system.getEntityById("tahlan_lethia_p05"), 290f, 1400f, 120f)
-        jumpPoint1.relatedPlanet = lethia_5
+        jumpPoint1.relatedPlanet = kassadar
         system.addEntity(jumpPoint1)
 
         // Some procgen can go out here.
