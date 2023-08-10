@@ -116,13 +116,15 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         sprite.alphaMult = 1 - afterimage.lifetime / afterimage.duration
         sprite.setAdditiveBlend()
 
-        if (!Global.getCombatEngine().isPaused && afterimage.jitter > 0f) {
-            afterimage.actualLoc = MathUtils.getRandomPointInCircle(afterimage.location, afterimage.jitter)
+        val actualLocation = if (!Global.getCombatEngine().isPaused && afterimage.jitter > 0f) {
+            MathUtils.getRandomPointInCircle(afterimage.location, afterimage.jitter)
+        } else {
+            afterimage.location
         }
 
         if (afterimage.negative) glBlendEquation(GL_FUNC_REVERSE_SUBTRACT)
 
-        sprite.renderAtCenter(afterimage.actualLoc.x, afterimage.actualLoc.y)
+        sprite.renderAtCenter(actualLocation.x, actualLocation.y)
         // NEVER FORGET TO TURN OFF FUNKY MODE
         if (afterimage.negative) glBlendEquation(GL_FUNC_ADD)
     }
@@ -218,7 +220,6 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val negative: Boolean
     ) {
         var lifetime = 0f
-        var actualLoc = location
     }
 
     companion object {
