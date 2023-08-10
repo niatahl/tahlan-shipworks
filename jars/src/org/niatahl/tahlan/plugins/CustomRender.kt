@@ -258,7 +258,6 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
                 afterimage.location.x += trueOffsetX
                 afterimage.location.y += trueOffsetY
-                afterimage.actualLoc = afterimage.location
 
                 afterimageData[afterimage.id] = afterimage
             }
