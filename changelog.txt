@@ -2,7 +2,9 @@
 - Bugfixes
 - Cardinal Sins
 - More Bugfixes
-- Undocumented changes that I forgot
+- Updated normals
+- Updated some systems
+- Undocumented changes that I forgot to write down
 
 
 1.2.4
