@@ -1,11 +1,14 @@
 package org.niatahl.tahlan.utils
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipVariantAPI
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.loading.VariantSource
 import org.apache.log4j.Level
 import org.apache.log4j.Logger
+import org.lazywizard.lazylib.FastTrig
+import org.lwjgl.util.vector.Vector2f
 import java.awt.Color
 import kotlin.random.Random
 
@@ -43,6 +46,16 @@ fun FleetMemberAPI.fixVariant() {
     }
 
     newVariant.fixModuleVariants()
+}
+
+fun ShipAPI.getSpriteOffset(): Vector2f {
+    val sprite = this.spriteAPI
+    val spriteX = sprite.width / 2 - sprite.centerX
+    val spriteY = sprite.height / 2 - sprite.centerY
+    val offset = Vector2f()
+    offset.x = FastTrig.cos(Math.toRadians((this.facing - 90f).toDouble())).toFloat() * spriteX - FastTrig.sin(Math.toRadians((this.facing - 90f).toDouble())).toFloat() * spriteY
+    offset.y = FastTrig.sin(Math.toRadians((this.facing - 90f).toDouble())).toFloat() * spriteX + FastTrig.cos(Math.toRadians((this.facing - 90f).toDouble())).toFloat() * spriteY
+    return offset
 }
 
 fun ShipVariantAPI.fixModuleVariants() {

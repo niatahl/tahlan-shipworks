@@ -11,6 +11,7 @@ import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.opengl.GL14.*
 import org.lwjgl.util.vector.Vector2f
 import org.magiclib.kotlin.interpolateColor
+import org.niatahl.tahlan.utils.getSpriteOffset
 import org.niatahl.tahlan.utils.modify
 import org.niatahl.tahlan.utils.random
 import org.niatahl.tahlan.weapons.SpearOnFireEffect
@@ -250,16 +251,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
             negative = negative
         )
             .also { afterimage ->
-
-                val sprite = ship.spriteAPI
-                val offsetX = sprite.width / 2 - sprite.centerX
-                val offsetY = sprite.height / 2 - sprite.centerY
-                val trueOffsetX = FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX - FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetY
-                val trueOffsetY = FastTrig.sin(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetX + FastTrig.cos(Math.toRadians((ship.facing - 90f).toDouble())).toFloat() * offsetY
-
-                afterimage.location.x += trueOffsetX
-                afterimage.location.y += trueOffsetY
-
+                Vector2f.add(afterimage.location, ship.getSpriteOffset(), afterimage.location)
                 afterimageData[afterimage.id] = afterimage
             }
 

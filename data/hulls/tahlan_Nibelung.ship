@@ -18,10 +18,6 @@
   "builtInWeapons": {
     "WS0024": "tahlan_dragonslayer",
     "WS0025": "tahlan_dragonslayer",
-    "WS0026": "tahlan_NLthruster",
-    "WS0027": "tahlan_NLthruster",
-    "WS0028": "tahlan_NLthruster",
-    "WS0029": "tahlan_NLthruster",
     "WS0030": "tahlan_nibelung_cover_l",
     "WS0031": "tahlan_nibelung_cover_r"
   },
@@ -256,7 +252,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 103,
       "angle": 90,
       "locations": [116, 49]
     },
@@ -265,7 +261,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 103,
       "angle": -90,
       "locations": [116, -49]
     },
@@ -274,7 +270,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 119,
       "angle": 90,
       "locations": [-114.5, 75]
     },
@@ -283,7 +279,7 @@
       "size": "SMALL",
       "type": "DECORATIVE",
       "mount": "HARDPOINT",
-      "arc": 0,
+      "arc": 119,
       "angle": -90,
       "locations": [-114.5, -75]
     },
@@ -357,32 +353,32 @@
     },
     {
       "location": [116, 49],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": 90,
       "contrailSize": 128,
       "style": "LOW_TECH"
     },
     {
       "location": [116, -49],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": -90,
       "contrailSize": 128,
       "style": "LOW_TECH"
     },
     {
       "location": [-114.5, 75],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": 90,
       "contrailSize": 128,
       "style": "LOW_TECH"
     },
     {
       "location": [-114.5, -75],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": -90,
       "contrailSize": 128,
       "style": "LOW_TECH"

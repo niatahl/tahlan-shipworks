@@ -21,10 +21,6 @@
     "WS0003": "tahlan_fafnir",
     "WS0024": "tahlan_dragonslayer",
     "WS0025": "tahlan_dragonslayer",
-    "WS0026": "tahlan_NLthruster",
-    "WS0027": "tahlan_NLthruster",
-    "WS0028": "tahlan_NLthruster",
-    "WS0029": "tahlan_NLthruster",
     "WS0030": "tahlan_nibelung_cover_l_n",
     "WS0031": "tahlan_nibelung_cover_r_n"
   },
@@ -360,32 +356,32 @@
     },
     {
       "location": [116, 49],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": 90,
       "contrailSize": 128,
       "style": "LOW_TECH"
     },
     {
       "location": [116, -49],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": -90,
       "contrailSize": 128,
       "style": "LOW_TECH"
     },
     {
       "location": [-114.5, 75],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": 90,
       "contrailSize": 128,
       "style": "LOW_TECH"
     },
     {
       "location": [-114.5, -75],
-      "length": 1,
-      "width": 2,
+      "length": 35,
+      "width": 10,
       "angle": -90,
       "contrailSize": 128,
       "style": "LOW_TECH"

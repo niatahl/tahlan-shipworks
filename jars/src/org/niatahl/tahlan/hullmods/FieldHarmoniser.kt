@@ -1,14 +1,18 @@
 package org.niatahl.tahlan.hullmods
 
 import com.fs.starfarer.api.combat.BaseHullMod
+import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.WeaponAPI
 import com.fs.starfarer.api.combat.listeners.WeaponBaseRangeModifier
+import org.niatahl.tahlan.utils.Utils.txt
 import kotlin.math.roundToInt
 
 class FieldHarmoniser : BaseHullMod() {
 
-
+    override fun applyEffectsBeforeShipCreation(hullSize: ShipAPI.HullSize?, stats: MutableShipStatsAPI, id: String) {
+        stats.energyWeaponFluxCostMod.modifyMult(id,(100f - FLUX_REDUCTION) / 100f)
+    }
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
         ship.addListener(HarmoniserListener())
@@ -18,6 +22,7 @@ class FieldHarmoniser : BaseHullMod() {
         return when (index) {
             0 -> "${MEDIUM_BONUS.roundToInt()}"
             1 -> "${SMALL_BONUS.roundToInt()}"
+            2 -> "${FLUX_REDUCTION.roundToInt()}" + txt("%")
             else -> null
         }
     }
@@ -42,7 +47,8 @@ class FieldHarmoniser : BaseHullMod() {
     }
 
     companion object {
-        const val SMALL_BONUS = 100f
-        const val MEDIUM_BONUS = 200f
+        const val SMALL_BONUS = 200f
+        const val MEDIUM_BONUS = 100f
+        const val FLUX_REDUCTION = 10f
     }
 }

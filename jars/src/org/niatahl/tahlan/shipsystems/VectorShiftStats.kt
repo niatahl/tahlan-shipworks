@@ -6,15 +6,11 @@ import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData
 import com.fs.starfarer.api.util.IntervalUtil
-import com.fs.starfarer.api.util.Misc.ZERO
-import org.lazywizard.lazylib.CollisionUtils
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
-import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.plugins.CustomRender
-import org.niatahl.tahlan.utils.Afterimage
 import java.awt.Color
 
 class VectorShiftStats : BaseShipSystemScript() {
@@ -107,8 +103,8 @@ class VectorShiftStats : BaseShipSystemScript() {
         if (imageval.intervalElapsed()) {
             CustomRender.addAfterimage(
                 ship,
-                SHIMMER_COLOR,
-                AFTERIMAGE_COLOR,
+                AFTERIMAGE_IN_COLOR,
+                AFTERIMAGE_OUT_COLOR,
                 0.5f,
                 2f
             )
@@ -131,7 +127,8 @@ class VectorShiftStats : BaseShipSystemScript() {
 
     companion object {
         private val SHIMMER_COLOR = Color(0, 255, 201, 80)
-        private val AFTERIMAGE_COLOR = Color(255, 20, 0, 100)
+        private val AFTERIMAGE_IN_COLOR = Color(0, 255, 201, 80)
+        private val AFTERIMAGE_OUT_COLOR = Color(255, 20, 0, 100)
         private val LIGHTNING_CORE_COLOR = Color(195, 255, 230, 150)
         private val LIGHTNING_FRINGE_COLOR = Color(24, 156, 124, 200)
     }
