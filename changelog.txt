@@ -1,4 +1,14 @@
 1.2.5
+- Hades II
+	- Base damage 2000 -> 3000
+- Pastella
+	- Efficiency 0.8 -> 0.9
+- Daemons
+	- Daemonic Heart can now be S-modded to remove time mult penalty
+	- Installing ECM package now negates Hel Scaith takeover
+- Nibelung
+	- System duration 3s -> 5s
+	- System recharge rate doubled
 - Bugfixes
 - Cardinal Sins
 - More Bugfixes

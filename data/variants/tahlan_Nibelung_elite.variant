@@ -1,48 +1,46 @@
 {
     "displayName": "Elite",
-    "fluxCapacitors": 3,
+    "fluxCapacitors": 12,
     "fluxVents": 50,
     "hullId": "tahlan_Nibelung",
     "hullMods": [
         "targetingunit",
-        "heavyarmor"
+        "heavyarmor",
+        "armoredweapons"
     ],
     "permaMods": [],
+    "sMods": [],
 	"goalVariant": true,
-    "variantId": "tahlan_Nibelung_elite",
+    "variantId": "tahlan_Nibelung_brawler",
     "weaponGroups": [
         {
-            "autofire": true,
-            "mode": "LINKED",
+            "autofire": false,
+            "mode": "ALTERNATING",
             "weapons": {
-                "WS0001": "tahlan_armiger",
-                "WS0002": "tahlan_armiger",
-                "WS0003": "tahlan_armiger"
+                "WS0024": "tahlan_dragonslayer",
+                "WS0025": "tahlan_dragonslayer"
             }
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0022": "typhoon",
-                "WS0023": "typhoon",
-                "WS0024": "tahlan_dragonslayer",
-                "WS0025": "tahlan_dragonslayer"
+                "WS0022": "harpoonpod",
+                "WS0023": "harpoonpod"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0006": "railgun",
-                "WS0013": "railgun",
-                "WS0014": "railgun",
-                "WS0015": "railgun",
-                "WS0016": "railgun",
-                "WS0017": "railgun",
-                "WS0018": "railgun",
-                "WS0019": "railgun"
+                "WS0001": "tahlan_armiger",
+                "WS0002": "tahlan_armiger"
             }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "tahlan_armiger"}
         },
         {
             "autofire": true,
@@ -50,6 +48,20 @@
             "weapons": {
                 "WS0020": "hveldriver",
                 "WS0021": "hveldriver"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "lightac",
+                "WS0013": "lightac",
+                "WS0014": "lightac",
+                "WS0015": "lightac",
+                "WS0016": "lightac",
+                "WS0017": "lightac",
+                "WS0018": "lightac",
+                "WS0019": "lightac"
             }
         },
         {

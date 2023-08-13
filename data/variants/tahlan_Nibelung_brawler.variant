@@ -1,7 +1,7 @@
 {
     "displayName": "Brawler",
-    "fluxCapacitors": 0,
-    "fluxVents": 49,
+    "fluxCapacitors": 15,
+    "fluxVents": 50,
     "hullId": "tahlan_Nibelung",
     "hullMods": [
         "heavyarmor",
@@ -36,14 +36,14 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0006": "railgun",
-                "WS0013": "railgun",
-                "WS0014": "railgun",
-                "WS0015": "railgun",
-                "WS0016": "railgun",
-                "WS0017": "railgun",
-                "WS0018": "railgun",
-                "WS0019": "railgun"
+                "WS0006": "lightdualac",
+                "WS0013": "lightdualac",
+                "WS0014": "lightdualac",
+                "WS0015": "lightdualac",
+                "WS0016": "lightdualac",
+                "WS0017": "lightdualac",
+                "WS0018": "lightdualac",
+                "WS0019": "lightdualac"
             }
         },
         {

@@ -3,7 +3,6 @@ package org.niatahl.tahlan.hullmods
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier
-import com.fs.starfarer.combat.entities.Ship
 import org.lazywizard.lazylib.combat.DefenseUtils
 import org.lwjgl.util.vector.Vector2f
 import org.niatahl.tahlan.utils.Utils.txt

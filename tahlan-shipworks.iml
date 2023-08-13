@@ -21,5 +21,6 @@
     <orderEntry type="library" name="LunaLib" level="application" />
     <orderEntry type="library" name="commons-compiler-jdk" level="application" />
     <orderEntry type="library" name="starfarer-api" level="application" />
+    <orderEntry type="library" name="Starsector API" level="application" />
   </component>
 </module>

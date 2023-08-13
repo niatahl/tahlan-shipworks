@@ -46,7 +46,7 @@ class DaemonHeart : BaseHullMod() {
             ship.variant.removeMod("tahlan_daemonboost")
         }
         if (isPlayerFleet) {
-            ship.mutableStats.timeMult.modifyMult(id, PLAYER_NERF)
+            if (!isSMod(ship)) ship.mutableStats.timeMult.modifyMult(id, PLAYER_NERF)
         } else {
             ship.variant.addMod("tahlan_daemonboost")
         }
@@ -84,30 +84,14 @@ class DaemonHeart : BaseHullMod() {
                 if (scaithPresent) {
 
                     // some captains can counter attempt if controlling the ship currently
-                    if (counterPresent) {
+                    if (counterPresent || ship.variant.hasHullMod(HullMods.ECM)) {
                         engine.addFloatingText(ship.location, "EWAR ATTACK INTERCEPTED", 40f, Color.RED, ship, 0.5f, 3f)
-                        ship.fluxTracker.forceOverload(3f)
                         return
                     }
 
-                    if (ship.captain.id in immuneCaptains) {
+                    if (ship.captain.id in immuneCaptains || ship.captain.isPlayer) {
                         engine.addFloatingText(ship.location, "EWAR ATTACK RESISTED", 40f, Color.RED, ship, 0.5f, 3f)
-                        ship.fluxTracker.forceOverload(6f)
-                        return
-                    }
-
-                    // player gets an overload instead of being yoinked
-                    if (ship.captain.isPlayer) {
-                        engine.addFloatingText(
-                            ship.location,
-                            "DIRECT CONTROL ATTEMPT AVERTED",
-                            40f,
-                            Color.RED,
-                            ship,
-                            0.5f,
-                            3f
-                        )
-                        ship.fluxTracker.forceOverload(12f)
+                        ship.fluxTracker.forceOverload(5f)
                         return
                     }
 

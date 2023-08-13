@@ -37,29 +37,11 @@ class VectorShiftStats : BaseShipSystemScript() {
         interval.advance(Global.getCombatEngine().elapsedInLastFrame)
         imageval.advance(Global.getCombatEngine().elapsedInLastFrame)
         if (interval.intervalElapsed()) {
-            var target: CombatEntityAPI? = null
-            val targetList = CombatUtils.getEntitiesWithinRange(ship.location, 500f)
-            for (potentialTarget in targetList) {
-                //Checks for dissallowed targets, and ignores them
-                if (potentialTarget !is ShipAPI && potentialTarget !is MissileAPI) {
-                    continue
+            val target = CombatUtils.getEntitiesWithinRange(ship.location, 500f)
+                .filter { potential ->
+                    (potential is ShipAPI || potential is MissileAPI) && potential.owner != ship.owner
                 }
-                if (potentialTarget.owner == ship.owner) {
-                    continue
-                }
-                if (potentialTarget is ShipAPI) {
-                    if (potentialTarget.isPhased) {
-                        continue
-                    }
-                }
-
-                //If we found any applicable targets, pick the closest one
-                if (target == null) {
-                    target = potentialTarget
-                } else if (MathUtils.getDistance(target, ship) > MathUtils.getDistance(potentialTarget, ship)) {
-                    target = potentialTarget
-                }
-            }
+                .random()
 
             //Choose a random vent port to send lightning from
             val bounds = ship.exactBounds
