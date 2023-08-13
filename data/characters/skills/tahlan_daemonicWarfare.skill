@@ -1,0 +1,16 @@
+{
+	"id":"tahlan_daemonicWarfare",
+	"governingAptitude":"combat", # why not
+	"compressHullmods":false,
+	"scope":"GOVERNED_OUTPOST",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"GOVERNED_OUTPOST", "script":"org.niatahl.tahlan.skills.DaemonicWarfare$Level1"},
+				{"type":"GOVERNED_OUTPOST", "script":"org.niatahl.tahlan.skills.DaemonicWarfare$Level2"},
+			]
+		},
+	],
+}

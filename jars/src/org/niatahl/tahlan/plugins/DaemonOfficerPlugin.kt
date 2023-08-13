@@ -1,11 +1,13 @@
 package org.niatahl.tahlan.plugins
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.campaign.AICoreAdminPlugin
 import com.fs.starfarer.api.campaign.AICoreOfficerPlugin
 import com.fs.starfarer.api.characters.PersonAPI
 import com.fs.starfarer.api.impl.campaign.BaseAICoreOfficerPluginImpl
 import com.fs.starfarer.api.impl.campaign.ids.Commodities
 import com.fs.starfarer.api.impl.campaign.ids.Personalities
+import com.fs.starfarer.api.impl.campaign.ids.Skills
 import com.fs.starfarer.api.ui.Alignment
 import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.util.Misc
@@ -17,7 +19,7 @@ import java.text.DecimalFormat
 import java.util.*
 
 
-class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
+class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin, AICoreAdminPlugin {
 
     override fun createPerson(aiCoreId: String, factionId: String, random: Random?): PersonAPI? {
         return when (aiCoreId) {
@@ -31,7 +33,6 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
         val person = Misc.getAICoreOfficerPlugin(Commodities.BETA_CORE).createPerson(Commodities.BETA_CORE, factionId, Misc.random)
         person.stats.skillsCopy.last().skill.id.also { person.stats.setSkillLevel(it,0f) }
         person.apply {
-            setFaction(factionId)
             aiCoreId = CORE_DAEMON
             name.first = "Daemon Core"
             stats.level = 6
@@ -46,11 +47,24 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
         val person = Misc.getAICoreOfficerPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, factionId, Misc.random)
         person.stats.skillsCopy.last().skill.id.also { person.stats.setSkillLevel(it,0f) }
         person.apply {
-            setFaction(factionId)
             aiCoreId = CORE_ARCHDAEMON
             name.first = "Archdaemon Core"
             stats.level = 7
             stats.setSkillLevel("tahlan_daemonicCorruption", 2f)
+            portraitSprite = Global.getSettings().getSpriteName("portraits","tahlan_archdaemon")
+            setFaction(LEGIO)
+        }
+        return person
+    }
+
+    private fun createDaemonAdmin(factionId: String): PersonAPI {
+        val person = Misc.getAICoreAdminPlugin(Commodities.ALPHA_CORE).createPerson(Commodities.ALPHA_CORE, factionId, Misc.random.nextLong())
+        person.apply {
+            aiCoreId = CORE_ARCHDAEMON
+            name.first = "Archdaemon Core"
+            stats.level = 7
+            stats.setSkillLevel(Skills.INDUSTRIAL_PLANNING, 0f)
+            stats.setSkillLevel("tahlan_daemonicWarfare", 1f)
             portraitSprite = Global.getSettings().getSpriteName("portraits","tahlan_archdaemon")
             setFaction(LEGIO)
         }
@@ -95,6 +109,13 @@ class DaemonOfficerPlugin: BaseAICoreOfficerPluginImpl(), AICoreOfficerPlugin {
                 "In combat, this daemon will attempt to avoid direct engagements if at all " +
                         "possible, even if commanding a combat vessel.", opad
             )
+        }
+    }
+
+    override fun createPerson(aiCoreId: String, factionId: String, seed: Long): PersonAPI? {
+        return when (aiCoreId) {
+            CORE_ARCHDAEMON -> createDaemonAdmin(factionId)
+            else -> null
         }
     }
 }
