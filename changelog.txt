@@ -1,3 +1,8 @@
+1.2.5a
+- Fixed Daemonic Heart not being visible in S-mod menu
+- Fixed Daemonic Warfare bonuses being displayed as Hypercognition
+
+
 1.2.5
 - Hades II
 	- Base damage 2000 -> 3000

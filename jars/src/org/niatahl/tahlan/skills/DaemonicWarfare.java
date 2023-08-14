@@ -12,7 +12,7 @@ public class DaemonicWarfare {
 
     public static class Level1 implements MarketSkillEffect {
         public void apply(MarketAPI market, String id, float level) {
-            market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyFlat(id, FLEET_SIZE / 100f, "Hypercognition");
+            market.getStats().getDynamic().getMod(Stats.COMBAT_FLEET_SIZE_MULT).modifyFlat(id, FLEET_SIZE / 100f, "Daemonic Warfare");
         }
 
         public void unapply(MarketAPI market, String id) {
@@ -34,7 +34,7 @@ public class DaemonicWarfare {
 
     public static class Level2 implements MarketSkillEffect {
         public void apply(MarketAPI market, String id, float level) {
-            market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id, 1f + DEFEND_BONUS * 0.01f, "Hypercognition");
+            market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyMult(id, 1f + DEFEND_BONUS * 0.01f, "Daemonic Warfare");
         }
 
         public void unapply(MarketAPI market, String id) {
