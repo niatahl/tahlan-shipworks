@@ -47,7 +47,7 @@ class KnightRefit : BaseHullMod() {
         if (!ship.isAlive || ship.isPiece) {
             return
         }
-        if (ship.hullSpec.hullId !in GH_HULLS) {
+        if (ship.hullSpec.baseHullId !in GH_HULLS) {
             ship.mutableStats.peakCRDuration.modifyMult("lol_lmao_even", 0.1f)
             return
         }
