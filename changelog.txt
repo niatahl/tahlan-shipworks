@@ -1,3 +1,8 @@
+1.2.5b
+- Fixed heavily reduced PPT on D-modded GH hulls
+- Renamed Column back to Tower (cause Vayra's ship pack is dead as fuck)
+
+
 1.2.5a
 - Fixed Daemonic Heart not being visible in S-mod menu
 - Fixed Daemonic Warfare bonuses being displayed as Hypercognition
