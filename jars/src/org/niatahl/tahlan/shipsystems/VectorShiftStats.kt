@@ -41,7 +41,7 @@ class VectorShiftStats : BaseShipSystemScript() {
                 .filter { potential ->
                     (potential is ShipAPI || potential is MissileAPI) && potential.owner != ship.owner
                 }
-                .random()
+                .randomOrNull()
 
             //Choose a random vent port to send lightning from
             val bounds = ship.exactBounds
