@@ -296,7 +296,7 @@
 		},
 	},
 	"custom":{
-		"offersCommissions":true,		
+		"offersCommissions":false,		
 		"engagesInHostilities":true,
 		"engageWhenEvenStrength":true,
 		"buysAICores":true,
@@ -306,7 +306,7 @@
 		"willTradeWhenHostile":false,
 		"ignoreTradeWithEnemiesForReputation":false,
 		"postsNoBounties":false,
-		"offerMissionsWhenHostile":false,
+		"offerMissionsWhenHostile":true,
 		"allowsTransponderOffTrade":false,
 		#"makesPirateBases":true,
 		"fightToTheLast":true, # order a full assault instead of retreating, in most cases
