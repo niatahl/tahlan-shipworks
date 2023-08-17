@@ -9,7 +9,7 @@ import com.fs.starfarer.api.util.IntervalUtil
 import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.HAS_GRAPHICSLIB
 import org.niatahl.tahlan.utils.GraphicLibEffects.customLight
 
-class blinker : EveryFrameWeaponEffectPlugin {
+class Blinker : EveryFrameWeaponEffectPlugin {
 
     var runOnce = false
     override fun advance(amount: Float, engine: CombatEngineAPI, weapon: WeaponAPI) {

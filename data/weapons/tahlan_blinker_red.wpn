@@ -3,7 +3,7 @@
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"SMALL",
-	"everyFrameEffect":"org.niatahl.tahlan.weapons.deco.blinker",
+	"everyFrameEffect":"org.niatahl.tahlan.weapons.deco.Blinker",
 	"showDamageWhenDecorative":false,
 	"renderBelowAllWeapons":true,
 	"renderHints":["RENDER_ADDITIVE"],	
