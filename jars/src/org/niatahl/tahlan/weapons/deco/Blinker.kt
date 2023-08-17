@@ -29,7 +29,7 @@ class Blinker : EveryFrameWeaponEffectPlugin {
 
             if (!ship.isAlive || ship.fluxTracker.isOverloadedOrVenting) {
                 ship.allWeapons
-                    .filter { it.spec.weaponId.contains("blinker") }
+                    .filter { it.spec.weaponId.contains("tahlan_blinker") }
                     .forEach { it.animation.frame = 0 }
                 return
             }
@@ -45,7 +45,7 @@ class Blinker : EveryFrameWeaponEffectPlugin {
                 }
 
                 ship.allWeapons
-                    .filter { it.spec.weaponId.contains("blinker") }
+                    .filter { it.spec.weaponId.contains("tahlan_blinker") }
                     .forEach { blinker ->
                         blinker.animation.frame = frame
                         if (frame == 1 && HAS_GRAPHICSLIB)
