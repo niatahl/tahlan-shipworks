@@ -11,7 +11,7 @@ import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.combat.CombatUtils
 import org.lazywizard.lazylib.combat.entities.SimpleEntity
 import org.lwjgl.util.vector.Vector2f
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.isGraphicsLibAvailable
+import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.HAS_GRAPHICSLIB
 import org.niatahl.tahlan.utils.GraphicLibEffects
 import org.niatahl.tahlan.utils.random
 import java.awt.Color
@@ -145,7 +145,7 @@ class ManannanOnHitEffect : OnHitEffectPlugin {
             )
         }
 
-        if (isGraphicsLibAvailable) {
+        if (HAS_GRAPHICSLIB) {
             GraphicLibEffects.CustomRippleDistortion(
                 point,
                 ZERO,

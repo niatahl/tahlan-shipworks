@@ -59,12 +59,12 @@ class TahlanModPlugin : BaseModPlugin() {
         }
         val hasGraphicsLib = Global.getSettings().modManager.isModEnabled("shaderLib")
         if (hasGraphicsLib) {
-            isGraphicsLibAvailable = true
+            HAS_GRAPHICSLIB = true
             ShaderLib.init()
             LightData.readLightDataCSV("data/lights/tahlan_lights.csv")
             TextureData.readTextureDataCSV("data/lights/tahlan_texture.csv")
         } else {
-            isGraphicsLibAvailable = false
+            HAS_GRAPHICSLIB = false
         }
         HAS_INDEVO = Global.getSettings().modManager.isModEnabled("IndEvo")
         HAS_EXILED = Global.getSettings().modManager.isModEnabled("pt_exiledSpace")
@@ -386,7 +386,7 @@ class TahlanModPlugin : BaseModPlugin() {
 
     companion object {
         @JvmField
-        var isGraphicsLibAvailable = false
+        var HAS_GRAPHICSLIB = false
 
         @JvmField
         val SHIELD_HULLMODS: MutableList<String> = ArrayList()
