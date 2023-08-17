@@ -26,10 +26,14 @@ class Blinker : EveryFrameWeaponEffectPlugin {
 
     class BlinkerListener(val ship: ShipAPI) : AdvanceableListener {
 
-        val interval = IntervalUtil(0.5f,0.5f)
-        var frame = 0
+        private val intervalA = IntervalUtil(0.1f, 0.1f)
+        private val intervalB = IntervalUtil(0.5f, 0.5f)
+        private var frameA = 0
+        private var frameB = 0
+
         override fun advance(amount: Float) {
-            interval.advance(amount)
+            intervalA.advance(amount)
+            intervalB.advance(amount)
 
             if (!ship.isAlive || ship.fluxTracker.isOverloadedOrVenting) {
                 ship.allWeapons
@@ -38,34 +42,51 @@ class Blinker : EveryFrameWeaponEffectPlugin {
                 return
             }
 
-            if (interval.intervalElapsed()) {
+            if (intervalA.intervalElapsed()) {
 
-                frame = if (frame == 3) {
-                    interval.setInterval(1f,1f)
+                frameA = if (frameA == 3) {
+                    intervalA.setInterval(1.5f, 1.5f)
                     0
                 } else {
-                    interval.setInterval(0.2f,0.2f)
-                    frame + 1
+                    intervalA.setInterval(0.1f, 0.1f)
+                    frameA + 1
                 }
 
                 ship.allWeapons
-                    .filter { it.spec.weaponId.contains("tahlan_blinker") }
-                    .forEach { blinker ->
-                        blinker.animation.frame = frame
-                        if (frame == 1 && HAS_GRAPHICSLIB)
-                            customLight(
-                                blinker.location,
-                                ship,
-                                10f,
-                                1f,
-                                blinker.spec.glowColor,
-                                0f,
-                                0.5f,
-                                0f
-                            )
-                    }
+                    .filter { it.spec.weaponId.contains("tahlan_blinker_") }
+                    .forEach { blink(it, frameA) }
+            }
+
+            if (intervalB.intervalElapsed()) {
+
+                frameB = if (frameB == 3) {
+                    intervalB.setInterval(1.5f, 1.5f)
+                    0
+                } else {
+                    intervalB.setInterval(0.1f, 0.1f)
+                    frameB + 1
+                }
+
+                ship.allWeapons
+                    .filter { it.spec.weaponId.contains("tahlan_blinkerB_") }
+                    .forEach { blink(it, frameB) }
+
             }
         }
-    }
 
+        private fun blink(blinker: WeaponAPI, frame: Int) {
+            blinker.animation.frame = frame
+            if (HAS_GRAPHICSLIB && (frame == 1 || frame == 3))
+                customLight(
+                    blinker.location,
+                    ship,
+                    40f,
+                    0.5f,
+                    blinker.spec.glowColor,
+                    0f,
+                    0.5f,
+                    0f
+                )
+        }
+    }
 }
