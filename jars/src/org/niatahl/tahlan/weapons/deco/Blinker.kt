@@ -13,11 +13,15 @@ class Blinker : EveryFrameWeaponEffectPlugin {
 
     var runOnce = false
     override fun advance(amount: Float, engine: CombatEngineAPI, weapon: WeaponAPI) {
+        if (runOnce) return
+
         val ship = weapon.ship ?: return
 
         weapon.sprite.setAdditiveBlend()
 
         ship.addListener(BlinkerListener(ship))
+
+        runOnce = true
     }
 
     class BlinkerListener(val ship: ShipAPI) : AdvanceableListener {
