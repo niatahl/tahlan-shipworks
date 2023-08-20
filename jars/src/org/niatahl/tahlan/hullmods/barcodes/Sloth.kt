@@ -1,7 +1,9 @@
 package org.niatahl.tahlan.hullmods.barcodes
 
+import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.ShipAPI
+import com.fs.starfarer.api.fleet.FleetMemberAPI
 import org.niatahl.tahlan.utils.Utils.txt
 
 class Sloth : BaseHullMod() {
@@ -12,6 +14,13 @@ class Sloth : BaseHullMod() {
             hullDamageTakenMult.modifyMult(id, 1f - AMOUNT * cnt)
             armorDamageTakenMult.modifyMult(id, 1f - AMOUNT * cnt)
             shieldDamageTakenMult.modifyMult(id, 1f - AMOUNT * cnt)
+        }
+    }
+
+    override fun advanceInCampaign(member: FleetMemberAPI, amount: Float) {
+        if (member.fleetCommander == Global.getSector().playerPerson || member.fleetData.fleet.isPlayerFleet) {
+            member.variant.removePermaMod("tahlan_sloth")
+            member.variant.removeMod("tahlan_sloth")
         }
     }
 
