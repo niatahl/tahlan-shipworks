@@ -1,6 +1,8 @@
-1.2.5b
+1.2.6
 - Fixed heavily reduced PPT on D-modded GH hulls
 - Renamed Column back to Tower (cause Vayra's ship pack is dead as fuck)
+- Miscellaneous bugfixes
+- New graphicslib maps for just about everything
 
 
 1.2.5a
