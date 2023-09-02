@@ -7,7 +7,7 @@
     "tags":["revolutionary","vayra_red_army"],
     "tech":"Red Guards",
 	"ordnancePoints":320,
-    "spriteName":"graphics/tahlan/ships/rg/tahlan_Nibelung_rg.png",
+    "spriteName":"graphics/tahlan/ships/rg/tahlan_nibelung_rg.png",
     "baseValueMult":1,
     "removeWeaponSlots":[],         # ids
     "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file

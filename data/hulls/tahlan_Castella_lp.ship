@@ -2,7 +2,7 @@
   "hullName": "Castella (LP)",
   "hullId": "tahlan_Castella_lp",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/tahlan/ships/tahlan_Castella_ludd.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_castella_ludd.png",
   "style": "LOW_TECH",
   "height": 390,
   "width": 214,

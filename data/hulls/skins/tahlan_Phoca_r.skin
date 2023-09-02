@@ -7,7 +7,7 @@
 	"fleetPoints":14,
 	"ordnancePoints":150,
 	"tags":["no_bp_drop","no_dealer","no_sell"],
-    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Phoca_r.png",
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_phoca_r.png",
     "baseValueMult":1.5,
     "removeWeaponSlots":[],         # ids
     "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file

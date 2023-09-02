@@ -2,7 +2,7 @@
   "hullName": "Bento",
   "hullId": "tahlan_Bento",
   "hullSize": "DESTROYER",
-  "spriteName": "graphics/tahlan/ships/tahlan_Bento.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_bento.png",
   "style": "LOW_TECH",
   "height": 150,
   "width": 138,

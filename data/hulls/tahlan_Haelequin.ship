@@ -163,7 +163,7 @@
     0
   ],
   "shieldRadius": 90,
-  "spriteName": "graphics/tahlan/ships/tahlan_Haelequin.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_haelequin.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

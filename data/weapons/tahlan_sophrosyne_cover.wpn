@@ -42,7 +42,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Sophrosyne_cover.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_sophrosyne_cover.png",
   "type": "DECORATIVE",
   "width": 10
 }

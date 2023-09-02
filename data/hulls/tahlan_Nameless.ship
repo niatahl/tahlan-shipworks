@@ -2,7 +2,7 @@
   "hullName": "Namless",
   "hullId": "tahlan_Nameless",
   "hullSize": "DESTROYER",
-  "spriteName": "graphics/tahlan/ships/tahlan_Nameless.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_nameless.png",
   "style": "TAHLAN_NL_TECH",
   "height": 109,
   "width": 162,

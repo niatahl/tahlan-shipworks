@@ -200,7 +200,7 @@
     -0
   ],
   "shieldRadius": 202,
-  "spriteName": "graphics/tahlan/ships/tahlan_Timeless.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_timeless.png",
   "style": "TAHLAN_NL_TECH",
   "viewOffset": 0,
   "weaponSlots": [

@@ -157,7 +157,7 @@
     -0
   ],
   "shieldRadius": 129,
-  "spriteName": "graphics/tahlan/ships/tahlan_Yukikaze.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_yukikaze.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

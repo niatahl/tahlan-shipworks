@@ -24,9 +24,9 @@
 			"tahlan_trail_foggy":"graphics/tahlan/fx/trails_foggy.png",
 			"tahlan_trail_twin":"graphics/tahlan/fx/trails_twin.png",
 			"tahlan_trail_flow":"graphics/tahlan/fx/trails_flow.png",
-			"tahlan_trail_beam":"graphics/tahlan/fx/Xhan_beam_trail.png",
-			"tahlan_trail_foam":"graphics/tahlan/fx/Xhan_foam_trail.png",
-			"tahlan_trail_innerfoam":"graphics/tahlan/fx/Xhan_innerfoam_trail.png",
+			"tahlan_trail_beam":"graphics/tahlan/fx/xhan_beam_trail.png",
+			"tahlan_trail_foam":"graphics/tahlan/fx/xhan_foam_trail.png",
+			"tahlan_trail_innerfoam":"graphics/tahlan/fx/xhan_innerfoam_trail.png",
 			"tahlan_trail_spatter":"graphics/tahlan/fx/trails_spatter.png",
 			"tahlan_trail_stream":"graphics/tahlan/fx/trails_stream.png",
 			"tahlan_trail_electric":"graphics/tahlan/fx/trails_electric.png",
@@ -85,7 +85,7 @@
 			"tahlan_queen":"graphics/tahlan/portraits/legio/queen.png"
 		},
 		"characters":{
-			"tahlan_notLoyse":"graphics/tahlan/portraits/legio/notLoyse.png",
+			"tahlan_notLoyse":"graphics/tahlan/portraits/legio/notloyse.png",
 			"tahlan_idris":"graphics/tahlan/portraits/legio/idris.png"
 		},
 		"tahlan_intel":{			

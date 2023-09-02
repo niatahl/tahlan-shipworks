@@ -2,7 +2,7 @@
   "hullName": "Bungalow",
   "hullId": "tahlan_Bungalow",
   "hullSize": "CRUISER",
-  "spriteName": "graphics/tahlan/ships/tahlan_Bungalow.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_bungalow.png",
   "style": "LOW_TECH",
   "height": 196,
   "width": 208,

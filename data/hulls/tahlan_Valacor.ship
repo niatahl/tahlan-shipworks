@@ -77,7 +77,7 @@
     -0
   ],
   "shieldRadius": 24.5,
-  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Valacor.png",
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_valacor.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

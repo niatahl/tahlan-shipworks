@@ -7,7 +7,7 @@
     "tags":["no_bp_drop","no_dealer","no_sell"],
 	"addHints":["HIDE_IN_CODEX"],
     #"tech":"High Tech",
-    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Nibelung_crg.png",
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_nibelung_crg.png",
     "baseValueMult":1.5,
     "removeWeaponSlots":[],         # ids
     "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file

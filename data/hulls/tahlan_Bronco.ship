@@ -114,7 +114,7 @@
     0
   ],
   "shieldRadius": 115,
-  "spriteName": "graphics/tahlan/ships/tahlan_Bronco.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_bronco.png",
   "style": "LOW_TECH",
   "viewOffset": 0,
   "weaponSlots": [

@@ -165,7 +165,7 @@
     -0
   ],
   "shieldRadius": 105,
-  "spriteName": "graphics/tahlan/ships/tahlan_Torii.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_torii.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

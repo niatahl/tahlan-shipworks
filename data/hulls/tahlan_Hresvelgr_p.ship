@@ -2,7 +2,7 @@
   "hullName": "Hresvelgr (P)",
   "hullId": "tahlan_Hresvelgr_p",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/tahlan/ships/legio/tahlan_Hresvelgr_p.png",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_hresvelgr_p.png",
   "style": "LOW_TECH",
   "height": 207,
   "width": 474,

@@ -43,7 +43,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/ships/fighters/tahlan_Valacor.png",
+  "turretSprite": "graphics/tahlan/ships/fighters/tahlan_valacor.png",
   "type": "DECORATIVE",
   "width": 10
 }

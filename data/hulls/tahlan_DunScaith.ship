@@ -2,7 +2,7 @@
   "hullName": "Dun Scaith",
   "hullId": "tahlan_DunScaith",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/tahlan/ships/legio/tahlan_DunScaith.png",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_dunscaith.png",
   "style": "LOW_TECH",
   "height": 484,
   "width": 268,

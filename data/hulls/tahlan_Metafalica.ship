@@ -2,7 +2,7 @@
   "hullName": "Metafalica",
   "hullId": "tahlan_Metafalica",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/tahlan/ships/Metafalica/tahlan_Metafalica.png",
+  "spriteName": "graphics/tahlan/ships/Metafalica/tahlan_metafalica.png",
   "style": "TAHLAN_GH_TECH",
   "height": 414,
   "width": 184,

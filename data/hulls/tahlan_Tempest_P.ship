@@ -2,7 +2,7 @@
   "hullName": "Tempest (P)",
   "hullId": "tahlan_Tempest_P",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/tahlan/ships/tahlan_Tempest_P.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_tempest_p.png",
   "style": "HIGH_TECH",
   "height": 93,
   "width": 63,

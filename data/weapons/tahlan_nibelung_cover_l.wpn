@@ -29,7 +29,7 @@
     0,
     0
   ],
-  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_Nibelung_cover_L_00.png",
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_nibelung_cover_l_00.png",
   "hitGlowRadius": 0,
   "id": "tahlan_nibelung_cover_l",
   "showDamageWhenDecorative": True,
@@ -45,7 +45,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Nibelung_cover_L_00.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_nibelung_cover_l_00.png",
   "type": "DECORATIVE",
   "width": 10
 }

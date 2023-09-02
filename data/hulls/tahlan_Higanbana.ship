@@ -170,7 +170,7 @@
     0
   ],
   "shieldRadius": 280.5,
-  "spriteName": "graphics/tahlan/ships/tahlan_Higanbana.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_higanbana.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

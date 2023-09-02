@@ -2,7 +2,7 @@
   "hullName": "Flagellator (LI)",
   "hullId": "tahlan_Flagellator_pi",
   "hullSize": "DESTROYER",
-  "spriteName": "graphics/tahlan/ships/legio/tahlan_Flagellator_pi.png",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_flagellator_pi.png",
   "style": "LOW_TECH",
   "height": 174,
   "width": 182,

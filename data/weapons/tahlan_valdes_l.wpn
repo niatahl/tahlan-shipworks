@@ -40,6 +40,6 @@
     9.5,
     2
   ],
-  "turretSprite": "graphics/tahlan/weapons/ftr/tahlan_Valdes_l.png",
+  "turretSprite": "graphics/tahlan/weapons/ftr/tahlan_valdes_l.png",
   "type": "ENERGY"
 }

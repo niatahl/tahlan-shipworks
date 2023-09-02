@@ -2,7 +2,7 @@
   "hullName": "Hresvelgr (RG)",
   "hullId": "tahlan_Hresvelgr_rg",
   "hullSize": "CAPITAL_SHIP",
-  "spriteName": "graphics/tahlan/ships/rg/tahlan_Hresvelgr_rg.png",
+  "spriteName": "graphics/tahlan/ships/rg/tahlan_hresvelgr_rg.png",
   "style": "LOW_TECH",
   "height": 207,
   "width": 474,

@@ -2,7 +2,7 @@
   "hullName": "Trill",
   "hullId": "tahlan_Trill",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/tahlan/ships/tahlan_Trill.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_trill.png",
   "style": "TAHLAN_NL_TECH",
   "height": 111,
   "width": 72,

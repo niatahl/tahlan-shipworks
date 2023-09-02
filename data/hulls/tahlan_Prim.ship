@@ -2,7 +2,7 @@
   "hullName": "Prim",
   "hullId": "tahlan_Prim",
   "hullSize": "FIGHTER",
-  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Prim.png",
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_prim.png",
   "style": "HIGH_TECH",
   "height": 19,
   "width": 22,

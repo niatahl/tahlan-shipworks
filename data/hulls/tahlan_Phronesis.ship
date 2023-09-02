@@ -171,7 +171,7 @@
     -2
   ],
   "shieldRadius": 120,
-  "spriteName": "graphics/tahlan/ships/tahlan_Phronesis.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_phronesis.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

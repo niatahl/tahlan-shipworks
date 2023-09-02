@@ -58,7 +58,7 @@
     -0
   ],
   "shieldRadius": 25.5,
-  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Caliver.png",
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_caliver.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

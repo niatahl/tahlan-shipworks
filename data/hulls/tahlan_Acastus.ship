@@ -63,7 +63,7 @@
     0
   ],
   "shieldRadius": 18,
-  "spriteName": "graphics/tahlan/ships/fighters/tahlan_Acastus.png",
+  "spriteName": "graphics/tahlan/ships/fighters/tahlan_acastus.png",
   "style": "TAHLAN_GH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

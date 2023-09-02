@@ -26,7 +26,7 @@
     0,
     0
   ],
-  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_nelson_xiv_shield_L2.png",
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_nelson_xiv_shield_l2.png",
   "hitGlowRadius": 0,
   "id": "tahlan_nelson_xiv_shield_L2",
   "showDamageWhenDecorative": True,
@@ -42,7 +42,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_nelson_xiv_shield_L2.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_nelson_xiv_shield_l2.png",
   "type": "DECORATIVE",
   "width": 10
 }

@@ -99,7 +99,7 @@
     0
   ],
   "shieldRadius": 77,
-  "spriteName": "graphics/tahlan/ships/tahlan_Yosei.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_yosei.png",
   "style": "HIGH_TECH",
   "viewOffset": 0,
   "weaponSlots": [

@@ -2,7 +2,7 @@
   "hullName": "Izanami",
   "hullId": "tahlan_Izanami",
   "hullSize": "CRUISER",
-  "spriteName": "graphics/tahlan/ships/tahlan_Izanami.png",
+  "spriteName": "graphics/tahlan/ships/tahlan_izanami.png",
   "style": "TAHLAN_GH_TECH",
   "height": 206,
   "width": 208,

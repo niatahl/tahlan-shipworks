@@ -46,8 +46,8 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Sophrosyne_halo_00.png",
-  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_Sophrosyne_halo_00.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_sophrosyne_halo_00.png",
+  "hardpointSprite": "graphics/tahlan/weapons/deco/tahlan_sophrosyne_halo_00.png",
   "type": "DECORATIVE",
   "width": 10
 }

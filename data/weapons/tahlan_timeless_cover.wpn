@@ -43,7 +43,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_Timeless_cover.png",
+  "turretSprite": "graphics/tahlan/weapons/deco/tahlan_timeless_cover.png",
   "type": "DECORATIVE",
   "width": 10
 }

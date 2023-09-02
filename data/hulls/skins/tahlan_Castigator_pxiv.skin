@@ -7,7 +7,7 @@
 	#"fleetPoints":28,
 	"tags":["no_bp_drop","no_dealer","no_sell"],
 	"addHints":["HIDE_IN_CODEX"],
-    "spriteName":"graphics/tahlan/ships/oddities/tahlan_Castigator_pxiv.png",
+    "spriteName":"graphics/tahlan/ships/oddities/tahlan_castigator_pxiv.png",
     "baseValueMult":1.25,
     "removeWeaponSlots":[],         # ids
     "removeEngineSlots":[],         # indices, as engine slots have no id in the .ship file
