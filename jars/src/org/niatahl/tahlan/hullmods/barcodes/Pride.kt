@@ -15,6 +15,7 @@ class Pride : BaseHullMod() {
     }
 
     override fun advanceInCampaign(member: FleetMemberAPI, amount: Float) {
+        if (member.fleetCommander == null || member.fleetData?.fleet == null) return
         if (member.fleetCommander == Global.getSector().playerPerson || member.fleetData.fleet.isPlayerFleet) {
             member.variant.removePermaMod("tahlan_pride")
             member.variant.removeMod("tahlan_pride")
