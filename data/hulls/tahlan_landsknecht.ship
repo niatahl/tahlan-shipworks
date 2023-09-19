@@ -15,7 +15,15 @@
     "distributed_fire_control"
   ],
   "builtInWeapons": {
-    "WS0001": "tahlan_lansknecht_pusher"
+    "WS0001": "tahlan_lansknecht_pusher",
+    "WS0016": "tahlan_blinker_red",
+    "WS0017": "tahlan_blinker_green",
+    "WS0018": "tahlan_blinkerB_green",
+    "WS0019": "tahlan_blinkerB_red",
+    "WS0020": "tahlan_blinker_red",
+    "WS0021": "tahlan_blinker_green",
+    "WS0022": "tahlan_blinkerB_red",
+    "WS0023": "tahlan_blinkerB_green"
   },
   "weaponSlots": [
     {
@@ -152,6 +160,78 @@
       "arc": 102,
       "angle": -158,
       "locations": [-63, -27]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-13, 51]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [-13, -51]
+    },
+    {
+      "id": "WS0018",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [2, -56]
+    },
+    {
+      "id": "WS0019",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [2, 56]
+    },
+    {
+      "id": "WS0020",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [107, 54]
+    },
+    {
+      "id": "WS0021",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [107, -54]
+    },
+    {
+      "id": "WS0022",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-49.5, 98.5]
+    },
+    {
+      "id": "WS0023",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [-49.5, -98.5]
     }
   ],
   "engineSlots": [
