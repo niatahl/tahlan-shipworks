@@ -107,6 +107,8 @@ class LegioFleetInflationListener : FleetInflationListener {
                 }
             }
 
+            member.variant.removeTag(Tags.TAG_RETAIN_SMODS_ON_RECOVERY)
+
             member.updateStats()
         }
 
