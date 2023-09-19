@@ -16,11 +16,7 @@ class Adlerauge : BaseHullMod() {
         stats.autofireAimAccuracy.modifyFlat(id, AUTOAIM_BONUS * 0.01f)
     }
 
-    override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
-        if (!ship.variant.hasTag(Tags.SHIP_UNIQUE_SIGNATURE)) {
-            ship.variant.addTag(Tags.SHIP_UNIQUE_SIGNATURE)
-        }
-    }
+
 
     override fun isApplicableToShip(ship: ShipAPI): Boolean {
         return false

@@ -34,6 +34,9 @@ object IndEvoIntegrations {
                 val belt = MineBeltTerrainPlugin.addMineBelt(point, 300f, 150f, 30f, 40f, point.name + " Minefield")
                 belt.memoryWithoutUpdate.set("\$IndEvo_PlanetMinefieldKey", lucifron.primaryEntity)
             }
+            val star = sector.getStarSystem("Rubicon").star
+            val belt = MineBeltTerrainPlugin.addMineBelt(star, 600f, 300f, 60f, 120f, star.name + " Minefield")
+            belt.memoryWithoutUpdate.set("\$IndEvo_PlanetMinefieldKey", lucifron.primaryEntity)
         }
     }
 
