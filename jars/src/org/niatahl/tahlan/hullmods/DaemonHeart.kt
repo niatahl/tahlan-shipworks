@@ -8,6 +8,7 @@ import com.fs.starfarer.api.impl.campaign.ids.*
 import com.fs.starfarer.api.mission.FleetSide
 import com.fs.starfarer.api.util.IntervalUtil
 import org.lazywizard.lazylib.combat.CombatUtils
+import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.SIN_OPTIONS
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.addDaemonCore
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.addSMods
 import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
@@ -143,7 +144,15 @@ class DaemonHeart : BaseHullMod() {
     override fun advanceInCampaign(member: FleetMemberAPI, amount: Float) {
 
         // Don't do this if we're in player fleet
-        if (member.fleetCommander.isPlayer || member.fleetCommander.isDefault || member.fleetCommander.faction.id.contains("player")) return
+        if (member.fleetCommander.isPlayer || member.fleetCommander.isDefault || member.fleetCommander.faction.id.contains("player")) {
+            member.variant.hullMods
+                .filter { SIN_OPTIONS.contains(it) }
+                .forEach {
+                    member.variant.removePermaMod(it)
+                    member.variant.removeMod(it)
+                }
+            return
+        }
 
         // Another check, I guess
         if (Global.getSector() != null && Global.getSector().playerFleet != null) {
@@ -169,7 +178,7 @@ class DaemonHeart : BaseHullMod() {
     }
 
     override fun isApplicableToShip(ship: ShipAPI): Boolean {
-        return false
+        return ship.variant.hasHullMod(DAEMONIC_HEART)
     }
 
     override fun getDescriptionParam(index: Int, hullSize: HullSize): String? {

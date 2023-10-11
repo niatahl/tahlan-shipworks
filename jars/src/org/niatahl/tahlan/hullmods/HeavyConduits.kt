@@ -4,6 +4,10 @@ import com.fs.starfarer.api.combat.BaseHullMod
 import com.fs.starfarer.api.combat.MutableShipStatsAPI
 import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
+import com.fs.starfarer.api.combat.WeaponAPI
+import com.fs.starfarer.api.combat.listeners.WeaponOPCostModifier
+import com.fs.starfarer.api.impl.campaign.ids.HullMods
+import com.fs.starfarer.api.loading.WeaponSpecAPI
 import org.magiclib.util.MagicIncompatibleHullmods
 import org.niatahl.tahlan.plugins.TahlanModPlugin
 import org.niatahl.tahlan.utils.Utils
@@ -45,6 +49,28 @@ class HeavyConduits : BaseHullMod() {
         if (index == 4) return Utils.txt("hmd_HeavyCond1")
         return if (index == 5) Utils.txt("hmd_HeavyCond2") else null
     }
+
+   /*
+   class WeaponMod : WeaponOPCostModifier {
+        override fun getWeaponOPCost(stats: MutableShipStatsAPI, weapon: WeaponSpecAPI, currCost: Int): Int {
+            val ship = if (stats.entity is ShipAPI) {
+                stats.entity as ShipAPI
+            } else {
+                return currCost
+            }
+
+            if (ship.variant.hasHullMod("ballistic_rangefinder") && weapon.mountType == WeaponAPI.WeaponType.HYBRID) {
+                return when (weapon.size) {
+                    WeaponAPI.WeaponSize.SMALL -> (currCost - 1).coerceAtLeast(1)
+                    WeaponAPI.WeaponSize.MEDIUM -> (currCost - 2).coerceAtLeast(1)
+                    WeaponAPI.WeaponSize.LARGE -> (currCost - 3).coerceAtLeast(1)
+                }
+            } else {
+                return currCost
+            }
+        }
+    }
+    */
 
     companion object {
         const val FLUX_RESISTANCE = 50f

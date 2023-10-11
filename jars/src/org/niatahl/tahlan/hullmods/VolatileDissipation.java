@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class VolatileDissipation extends BaseHullMod {
 
-    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_RANGE_MAP = new HashMap<ShipAPI.HullSize, Float>();
+    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_RANGE_MAP = new HashMap<>();
 
     static {
         LIGHTNING_RANGE_MAP.put(ShipAPI.HullSize.FRIGATE, 350f);
@@ -30,7 +30,7 @@ public class VolatileDissipation extends BaseHullMod {
         LIGHTNING_RANGE_MAP.put(ShipAPI.HullSize.CAPITAL_SHIP, 500f);
     }
 
-    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_DAMAGE = new HashMap<ShipAPI.HullSize, Float>();
+    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_DAMAGE = new HashMap<>();
 
     static {
         LIGHTNING_DAMAGE.put(ShipAPI.HullSize.FRIGATE, 10f);
@@ -39,7 +39,7 @@ public class VolatileDissipation extends BaseHullMod {
         LIGHTNING_DAMAGE.put(ShipAPI.HullSize.CAPITAL_SHIP, 80f);
     }
 
-    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_EMP = new HashMap<ShipAPI.HullSize, Float>();
+    public static final Map<ShipAPI.HullSize, Float> LIGHTNING_EMP = new HashMap<>();
 
     static {
         LIGHTNING_EMP.put(ShipAPI.HullSize.FRIGATE, 20f);

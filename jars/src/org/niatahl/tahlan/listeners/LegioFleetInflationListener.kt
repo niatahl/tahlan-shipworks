@@ -61,7 +61,7 @@ class LegioFleetInflationListener : FleetInflationListener {
             HullMods.AUTOREPAIR
         )
 
-        private val SIN_OPTIONS = listOf(
+        val SIN_OPTIONS = listOf(
             "tahlan_wrath",
             "tahlan_gluttony",
             "tahlan_lust",
