@@ -62,6 +62,7 @@ OR
 # LEGIO_BLACKWATCH_BAR,,,,,,
 legioBlackwatchBarEventAdd,AddBarEvents,"$faction.id == pirates
 !$market.isHidden
+$global.tahlan_haslegio == true
 $global.tahlan_metLegioAtBar == false
 RollProbability 0.5","AddBarEvent legioBlackwatchBarEvent ""Approach the Legio officer"" ""A young woman in a uniform bearing the Legio sigil is sitting in a secluded corner of the bar, seemingly annoyed and waiting for someone, staring daggers at anyone who dares approach.""",,,
 ,,,,,,
@@ -121,7 +122,7 @@ legiobareventencounter_hub2:""Why would I ever wish to join you?""
 legiobareventencounter_exit:""I think that'll be all""",
 ,,,,,,
 legiobareventencounter_rant1,DialogOptionSelected,$option == legiobareventencounter_hub2,,"""Because we are the sector's only genuine hope at becoming something great?""","legiobareventencounter_rant1res1:""Last I checked, your people were going around murdering anyone they come across.""",
-legiobareventencounter_rant2,DialogOptionSelected,$option == legiobareventencounter_rant1res1,,"She scoffs at you before clearing her continuing.
+legiobareventencounter_rant2,DialogOptionSelected,$option == legiobareventencounter_rant1res1,,"She scoffs at you before clearing her throat and continuing.
 
 ""Do you not comprehend the magnitude of our vision? Perhaps your perspective is limited, preventing you from grasping the profound impact of our actions. We, the torchbearers of the future, are forging a path towards a superior mankind, destined to succeed the illustrious Domain. Embrace the privilege of participating in our ascent and rejoice in the marvel of witnessing humanity reach its true potential.
 

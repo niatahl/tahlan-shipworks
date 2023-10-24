@@ -103,7 +103,7 @@ public class AdleraugeEffectScript implements EveryFrameWeaponEffectPlugin {
                 }
             }
         }
-        List<ShipAPI> purgeList = new ArrayList<ShipAPI>();
+        List<ShipAPI> purgeList = new ArrayList<>();
         for (ShipAPI target : targetList) {
             if (MathUtils.getDistance(target.getLocation(), ship.getLocation()) <= EFFECT_RANGE) {
 

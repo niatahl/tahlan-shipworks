@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="LazyLib">
+    <CLASSES>
+      <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib.jar!/" />
+      <root url="file://G:/Starsector/mods/LazyLib/jars/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://G:/Starsector/mods/LazyLib/jars/lib" recursive="false" />
+  </library>
+</component>

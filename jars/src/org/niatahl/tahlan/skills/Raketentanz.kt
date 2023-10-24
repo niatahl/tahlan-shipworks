@@ -22,10 +22,12 @@ object Raketentanz   {
 
         override fun apply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String, level: Float) {
             stats.missileAmmoBonus.modifyMult(id,2f)
+            stats.missileAmmoRegenMult.modifyMult(id,2f)
         }
 
         override fun unapply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String) {
             stats.missileAmmoBonus.unmodify(id)
+            stats.missileAmmoRegenMult.unmodify(id)
         }
     }
 

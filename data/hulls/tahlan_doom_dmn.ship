@@ -1,0 +1,287 @@
+{
+  "hullName": "Hel Doom",
+  "hullId": "tahlan_doom_dmn",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_doom_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 230,
+  "width": 198,
+  "center": [99, 115],
+  "collisionRadius": 166,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 162,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [53, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [105, 30]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [105, -30]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 104,
+      "angle": 16.5,
+      "locations": [78, 68]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 104,
+      "angle": -16.5,
+      "locations": [78, -68]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -63.5,
+      "locations": [37, -77]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 63.5,
+      "locations": [37, 77]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [99, 70]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -0,
+      "locations": [99, -70]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -0,
+      "locations": [104, -47]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [104, 47]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 132,
+      "angle": 70,
+      "locations": [-45, 80]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 132,
+      "angle": -70,
+      "locations": [-45, -80]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 132,
+      "angle": -123,
+      "locations": [-71, -67]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 132,
+      "angle": 123,
+      "locations": [-71, 67]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-105, 22],
+      "length": 97.5,
+      "width": 36,
+      "angle": 180,
+      "contrailSize": 36,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-105, -22],
+      "length": 97.5,
+      "width": 36,
+      "angle": -180,
+      "contrailSize": 36,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-114, 41],
+      "length": 95,
+      "width": 26,
+      "angle": 180,
+      "contrailSize": 26,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-114, -41],
+      "length": 95,
+      "width": 26,
+      "angle": -180,
+      "contrailSize": 26,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-114, 59.5],
+      "length": 95,
+      "width": 26,
+      "angle": 180,
+      "contrailSize": 26,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-114, -59.5],
+      "length": 95,
+      "width": 26,
+      "angle": -180,
+      "contrailSize": 26,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-115.5, 59.5],
+      "length": 35,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-115.5, -59.5],
+      "length": 35,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-115, -41],
+      "length": 35,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-115, 41],
+      "length": 35,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-106, -22],
+      "length": 35,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-106, 22],
+      "length": 35,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -62.5, -6,
+    -103, -13.5,
+    -108.5, -69.5,
+    -79, -65.5,
+    -58.5, -96,
+    -33, -97,
+    -33.5, -69.5,
+    -22, -57.5,
+    16.5, -55.5,
+    13, -43.5,
+    -20, -42.5,
+    -14, -31,
+    11, -36.5,
+    26.5, -95.5,
+    69, -96.5,
+    101, -79.5,
+    102, -15.5,
+    62, -21,
+    62, 21,
+    102, 15.5,
+    101, 79.5,
+    69, 96.5,
+    26.5, 95.5,
+    11, 36.5,
+    -14, 31,
+    -20, 42.5,
+    13, 43.5,
+    16.5, 55.5,
+    -22, 57.5,
+    -33.5, 69.5,
+    -33, 97,
+    -58.5, 96,
+    -79, 65.5,
+    -108.5, 69.5,
+    -103, 13.5,
+    -62.5, 6
+  ]
+}

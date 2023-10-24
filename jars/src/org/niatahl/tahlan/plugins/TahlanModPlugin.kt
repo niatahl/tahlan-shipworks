@@ -429,7 +429,8 @@ class TahlanModPlugin : BaseModPlugin() {
             "tahlan_hound_dmn",
             "tahlan_sunder_dmn",
             "tahlan_kodai_dmn",
-            "tahlan_retribution_dmn"
+            "tahlan_retribution_dmn",
+            "tahlan_mudskipper_dmn"
         )
 
         val DAEMON_WINGS = mutableListOf(

@@ -14,25 +14,25 @@ class MassResonanceEffect : OnHitEffectPlugin {
 
     override fun onHit(projectile: DamagingProjectileAPI, target: CombatEntityAPI?, point: Vector2f, shieldHit: Boolean, damageResult: ApplyDamageResultAPI?, engine: CombatEngineAPI) {
 
-        engine.spawnExplosion(point, Misc.ZERO, PARTICLE_COLOR, 500f, 1.2f)
-        engine.spawnExplosion(point, Misc.ZERO, CORE_COLOR, 300f, 0.8f)
+        engine.spawnExplosion(point, Misc.ZERO, Color(30,0,30,20), 1000f, 1.2f)
+//        engine.spawnExplosion(point, Misc.ZERO, CORE_COLOR, 300f, 0.8f)
         engine.addSmoothParticle(point, Misc.ZERO, 1000f, 1f, 0.1f, FLASH_COLOR)
-        engine.addSmoothParticle(point, Misc.ZERO, 1300f, 1f, 0.2f, FLASH_COLOR)
+//        engine.addSmoothParticle(point, Misc.ZERO, 1300f, 1f, 0.2f, FLASH_COLOR)
         engine.addSmoothParticle(point, Misc.ZERO, 400f, 0.5f, 0.1f, PARTICLE_COLOR)
-        engine.addHitParticle(point, Misc.ZERO, 200f, 0.5f, 0.25f, FLASH_COLOR)
-        engine.addNegativeSwirlyNebulaParticle(point, Misc.ZERO, 100f, 2f, 0.2f, 0.2f, 1f, NEG_COLOR)
-        engine.addNegativeSwirlyNebulaParticle(point, Misc.ZERO, 150f, 2f, 0.2f, 0.2f, 1f, NEG_COLOR)
-        engine.addNegativeSwirlyNebulaParticle(point, Misc.ZERO, 200f, 2f, 0.2f, 0.2f, 1f, NEG_COLOR)
+//        engine.addHitParticle(point, Misc.ZERO, 200f, 0.5f, 0.25f, FLASH_COLOR)
+//        engine.addNegativeSwirlyNebulaParticle(point, Misc.ZERO, 100f, 2f, 0.2f, 0.2f, 1f, NEG_COLOR)
+//        engine.addNegativeSwirlyNebulaParticle(point, Misc.ZERO, 150f, 2f, 0.2f, 0.2f, 1f, NEG_COLOR)
+//        engine.addNegativeSwirlyNebulaParticle(point, Misc.ZERO, 200f, 2f, 0.2f, 0.2f, 1f, NEG_COLOR)
 
         MagicRender.battlespace(
             Global.getSettings().getSprite("fx", "tahlan_tempshieldIN"),
             point,
             Misc.ZERO,
-            Vector2f(100f, 100f),   // initial size
+            Vector2f(400f, 400f),   // initial size
             Vector2f(600f, 600f),  // expansion
             360 * Math.random().toFloat(),
             0f,
-            Color(255, 50, 30, 120),
+            Color(30,0,30,50),
             true,
             0f,
             0.1f,
@@ -43,11 +43,11 @@ class MassResonanceEffect : OnHitEffectPlugin {
             Global.getSettings().getSprite("fx", "tahlan_tempshieldIN"),
             point,
             Misc.ZERO,
-            Vector2f(200f, 200f),   // initial size
+            Vector2f(350f, 350f),   // initial size
             Vector2f(400f, 400f),  // expansion
             360 * Math.random().toFloat(),
             0f,
-            Color(255, 50, 30, 120),
+            Color(30,0,30,50),
             true,
             0f,
             0.1f,
@@ -62,12 +62,30 @@ class MassResonanceEffect : OnHitEffectPlugin {
             Vector2f(200f, 200f),  // expansion
             360 * Math.random().toFloat(),
             0f,
-            Color(255, 50, 30, 120),
+            Color(30,0,30,50),
             true,
             0f,
             0.1f,
             0.4f
         )
+
+        for (i in 0..2) {
+            MagicRender.battlespace(
+                Global.getSettings().getSprite("fx", "tahlan_lens_flare2"),
+                point,
+                Misc.ZERO,
+                Vector2f(700f + i * 100f, 10f + i * 5f),   // initial size
+                Vector2f(100f, 0f),  // expansion
+                360 * Math.random().toFloat(),
+                0f,
+                Color(255, 50, 30, 120),
+                true,
+                0f,
+                0.1f,
+                0.6f + 0.1f * i
+            )
+        }
+
 
 
 
@@ -105,7 +123,7 @@ class MassResonanceEffect : OnHitEffectPlugin {
         private val PARTICLE_COLOR = Color(255, 41, 21, 150)
         private val CORE_COLOR = Color(255, 54, 34)
         private val FLASH_COLOR = Color(255, 175, 175)
-        private val NEG_COLOR = Color(34,254,255, 120)
+        private val NEG_COLOR = Color(34,254,255, 50)
         private const val DAMAGE = 2000f
     }
 }

@@ -30,7 +30,10 @@
 		"tahlan_hound_dmn_blaster":3,
 		"tahlan_hound_dmn_rampager":2,
 		"tahlan_hound_dmn_skirmisher":2,
-		"tahlan_hound_dmn_suppressor":3
+		"tahlan_hound_dmn_suppressor":3,
+		"tahlan_mudskipper_dmn_overdriven":3,
+		"tahlan_mudskipper_dmn_sniper":3,
+		"tahlan_mudskipper_dmn_storm":4
 	},
 	"combatMedium": {
 		"tahlan_Vale_crusader": 10,

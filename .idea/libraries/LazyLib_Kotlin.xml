@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="LazyLib-Kotlin">
+    <CLASSES>
+      <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib-Kotlin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib-Kotlin.jar!/" />
+    </SOURCES>
+  </library>
+</component>

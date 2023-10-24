@@ -1,0 +1,135 @@
+{
+  "hullName": "Hel Skipper",
+  "hullId": "tahlan_mudskipper_dmn",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_mudskipper_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 122,
+  "width": 120,
+  "center": [60, 51],
+  "collisionRadius": 94,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 90.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "tahlan_daemonarmor",
+    "automated"
+  ],
+  "builtInWings": [
+    "tahlan_miasma_drone_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [38, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [22, -0],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 71.5,
+      "locations": [3, 25]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -71.5,
+      "locations": [3, -25]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-50, 27.5],
+      "length": 34,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-50, -27.5],
+      "length": 34,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-49, 27.5],
+      "length": 74.5,
+      "width": 30,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-49, -27.5],
+      "length": 74.5,
+      "width": 30,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-37, 0.5],
+      "length": 22.5,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-38, 0.5],
+      "length": 35.5,
+      "width": 19,
+      "angle": 180,
+      "contrailSize": 19,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    }
+  ],
+  "bounds": [
+    -36, -11,
+    -45.5, -14.5,
+    -47, -34,
+    -38.5, -43,
+    2.5, -36.5,
+    -23, -49.5,
+    12.5, -45.5,
+    -7.5, -58,
+    29.5, -53,
+    67.5, -24.5,
+    50, -11.5,
+    50, 11.5,
+    67.5, 24.5,
+    29.5, 53,
+    -7.5, 58,
+    12.5, 45.5,
+    -23, 49.5,
+    2.5, 36.5,
+    -38.5, 43,
+    -47, 34,
+    -45.5, 14.5,
+    -36, 11
+  ]
+}

@@ -77,6 +77,10 @@ tahlan_conand_trail,tahlan_conand_shot,tahlan_trail_contrail,30,0.05,0,0.4,5,5,"
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_dreadsabot_wh_trail,tahlan_dreadsabot_warhead,tahlan_trail_stream,30,0.05,0,0.4,10,5,"[255,255,255]","[255,10,10]",1,300,-300,true,20,20,1,TRUE,FALSE,TRUE,20,20,0.3,0,30,0,true,false
 tahlan_dreadsabot_trail,tahlan_dreadsabot_msl,tahlan_trail_contrail,30,0.05,0,3,10,30,"[255,255,255]","[255,10,10]",0.5,128,0,true,-10,10,0,TRUE,FALSE,TRUE,20,20,0.3,0,30,0,true,false
+tahlan_dreadsabot_trail2,tahlan_dreadsabot_msl,tahlan_trail_spatter,10,0,0,2,30,120,"[255,0,0]","[255,0,0]",1,200,20,TRUE,0,0,0,TRUE,FALSE,TRUE,20,20,0,0,0,0,false,false
+tahlan_dreadsabot_trail3,tahlan_dreadsabot_msl,tahlan_trail_spatter,10,0,0,2,30,140,"[255,0,0]","[255,0,0]",1,200,20,TRUE,0,0,0,TRUE,FALSE,TRUE,20,20,0,0,0,0,false,false
+tahlan_dreadsabot_trail4,tahlan_dreadsabot_msl,tahlan_trail_spatter,10,0,0,2,30,160,"[255,0,0]","[255,0,0]",1,200,20,TRUE,0,0,0,TRUE,FALSE,TRUE,20,20,0,0,0,0,false,false
+tahlan_dreadsabot_trail,tahlan_dreadsabot_msl,tahlan_trail_zappy,30,0.05,0,1,10,5,"[255,255,255]","[255,255,255]",0.5,300,0,true,-10,10,0,TRUE,FALSE,TRUE,20,20,0.3,0,30,0,true,false
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_panzerfaust_trail,tahlan_panzerfaust_shot,tahlan_trail_contrail,10,0.05,0.2,0.2,18,12,"[255,175,65]","[255,0,150]",0.3,300,-300,true,20,10,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,80,true,false
 tahlan_panzerfaust_trail_2,tahlan_panzerfaust_shot,tahlan_trail_contrail,10,0.05,0.4,0.6,15,20,"[150,150,150]","[50,50,50]",0.4,300,-300,true,20,10,1,TRUE,FALSE,TRUE,10,30,0.3,0,0,80,true,false
@@ -154,6 +158,14 @@ tahlan_helrazer_trail_1,tahlan_helrazer_shot,base_trail_heavySmoke,10,0.1,0,1,40
 tahlan_helrazer_trail_2,tahlan_helrazer_shot,base_trail_zap,10,0,0,1,90,40,"[255,0,20]","[204,0,0]",0.4,350,5,TRUE,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_helrazer_trail_3,tahlan_helrazer_shot,base_trail_zap,10,0,0,1.5,80,35,"[255,20,0]","[204,0,0]",0.4,400,5,TRUE,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
 tahlan_helrazer_trail_4,tahlan_helrazer_shot,tahlan_trail_contrail,10,0,1,3,80,50,"[100,60,50]","[50,10,10]",0.4,200,5,TRUE,0,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+tahlan_mass_trail_1,tahlan_massresonance_torp,base_trail_zap,10,0,0,0.8,30,60,"[255,50,50]","{40,20,120]",0.4,500,50,TRUE,5,0,0,TRUE,FALSE,TRUE,50,50,0,0,0,0,false,false
+tahlan_mass_trail_2,tahlan_massresonance_torp,tahlan_trail_zappy,10,0,0,0.8,20,30,"[255,0,0]","{40,30,100]",0.5,100,50,TRUE,5,5,0,TRUE,FALSE,TRUE,50,50,0,0,0,0,false,false
+tahlan_mass_trail_3,tahlan_massresonance_torp,tahlan_trail_contrail,10,0,0,1,50,70,"[50,50,50]","[50,50,50]",0.4,300,50,true,5,15,0,TRUE,FALSE,TRUE,50,50,0,0,0,0,false,false
+tahlan_mass_trail_4,tahlan_massresonance_torp,tahlan_trail_spatter,10,0,0,1.3,50,160,"[255,0,0]","[255,0,0]",1,200,50,TRUE,0,0,0,TRUE,FALSE,TRUE,50,50,0,0,0,0,false,false
+tahlan_mass_trail_5,tahlan_massresonance_torp,tahlan_trail_spatter,10,0,0,1.3,50,200,"[255,0,0]","[255,0,0]",1,200,50,TRUE,0,0,0,TRUE,FALSE,TRUE,50,50,0,0,0,0,false,false
+tahlan_mass_trail_6,tahlan_massresonance_torp,tahlan_trail_spatter,10,0,0,1.3,50,240,"[255,0,0]","[255,0,0]",1,200,50,TRUE,0,0,0,TRUE,FALSE,TRUE,50,50,0,0,0,0,false,false
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 tahlan_gleipnir_trail_glow,tahlan_gleipnir_shot,tahlan_trail_zappy,10,0,0.05,0.2,50,10,"[140,215,255]","[140,215,255]",0.5,300,500,true,30,0,0,TRUE,TRUE,TRUE,0,0,0,0,0,0,false,false
 tahlan_gleipnir_trail,tahlan_gleipnir_shot,tahlan_trail_zappy,10,0.05,0,0.8,20,4,"[140,190,255]","[150,150,205]",0.4,300,500,true,30,0,0,TRUE,TRUE,TRUE,0,0,0,0,0,0,false,false

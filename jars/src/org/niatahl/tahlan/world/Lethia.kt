@@ -145,7 +145,7 @@ class Lethia {
             "Kassadar",
             7,
             ArrayList(
-                Arrays.asList(
+                listOf(
                     Conditions.POPULATION_7,
                     Conditions.HABITABLE,
                     Conditions.FARMLAND_POOR,
@@ -157,15 +157,16 @@ class Lethia {
                 )
             ),
             ArrayList(
-                Arrays.asList(
+                listOf(
                     Submarkets.GENERIC_MILITARY,
                     Submarkets.SUBMARKET_OPEN,
                     Submarkets.SUBMARKET_STORAGE,
-                    "tahlan_kassadarmarket"
+                    "tahlan_kassadarmarket",
+                    Submarkets.SUBMARKET_BLACK
                 )
             ),
             ArrayList(
-                Arrays.asList(
+                listOf(
                     Industries.POPULATION,
                     Industries.MEGAPORT,
                     Industries.LIGHTINDUSTRY,
