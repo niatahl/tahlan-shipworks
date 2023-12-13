@@ -1,7 +1,7 @@
 {
 	"baseHullId":"tahlan_tower",
 	"skinHullId":"tahlan_tower_xiv",
-	"hullName":"Column (XIV)",
+	"hullName":"Tower (XIV)",
 	"descriptionId":"tahlan_tower",
 	"descriptionPrefix":"Built to the specifications of the 14th Domain Battlegroup which founded the Hegemony, this vessel is a prime example of the Domain Navy's 'decisive battle' doctrine, particularly exhibited by a series of radical structural modifications performed using pre-Collapse industrial technology.",
 	"tags":[],
