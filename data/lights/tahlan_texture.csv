@@ -97,6 +97,11 @@ tahlan_Torii,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Torii_no
 tahlan_Trill,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_Trill_normal.png
 tahlan_tower,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_tower_normal.png
 ,,,,,
+tahlan_afflictor_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_afflictor_dmn_normal.png
+tahlan_doom_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_doom_dmn_normal.png
+tahlan_mudskipper_dmn,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_mudskipper_dmn_normal.png
+tahlan_scathach,ship,,1.5,normal,graphics/tahlan/maps/ships_normals/tahlan_scathach_normal.png
+,,,,,
 tahlan_nibelung_cover_l,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png
 tahlan_nibelung_cover_l,hardpoint,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_L_Normal.png
 tahlan_nibelung_cover_r,turret,,1.5,normal,graphics/tahlan/maps/weapon_normals/tahlan_nibelung_cover_R_Normal.png
@@ -288,6 +293,10 @@ tahlan_Torii,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_Torii_materi
 tahlan_Trill,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_Trill_material.png
 tahlan_tower,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_tower_material.png
 ,,,,,
+tahlan_afflictor_dmn,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_afflictor_dmn_material.png
+tahlan_doom_dmn,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_doom_dmn_material.png
+tahlan_mudskipper_dmn,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_mudskipper_dmn_material.png
+tahlan_scathach,ship,,,material,graphics/tahlan/maps/ships_glib/tahlan_scathach_material.png
 ,,,,,
 tahlan_nibelung_cover_l,turret,,,material,graphics/tahlan/maps/weapon_glib/tahlan_nibelung_cover_L_material.png
 tahlan_nibelung_cover_l,hardpoint,,,material,graphics/tahlan/maps/weapon_glib/tahlan_nibelung_cover_L_material.png
@@ -400,6 +409,11 @@ tahlan_glanzwurf,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_glanzwurf
 tahlan_Torii,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_Torii_surface.png
 tahlan_Trill,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_Trill_surface.png
 tahlan_tower,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_tower_surface.png
+,,,,,
+tahlan_afflictor_dmn,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_afflictor_dmn_surface.png
+tahlan_doom_dmn,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_doom_dmn_surface.png
+tahlan_mudskipper_dmn,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_mudskipper_dmn_surface.png
+tahlan_scathach,ship,,,surface,graphics/tahlan/maps/ships_glib/tahlan_scathach_surface.png
 ,,,,,
 ,,,,,
 tahlan_nibelung_cover_l,turret,,,surface,graphics/tahlan/maps/weapon_glib/tahlan_nibelung_cover_L_surface.png

@@ -1,7 +1,7 @@
 {
   "id": "tahlan_silk",
   "specClass": "projectile",
-  "projectileSpecId": "tahlan_prismcoil_dummy",
+  "projectileSpecId": "tahlan_silk_dummy",
   "everyFrameEffect": "org.niatahl.tahlan.weapons.SilkBoltScript",
   "type": "ENERGY",
   "mountTypeOverride":"HYBRID",

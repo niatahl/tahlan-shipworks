@@ -1,0 +1,19 @@
+{
+	"id":"tahlan_silk_dummy",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":1,
+	"width":1,
+	"fadeTime":0.1,
+	"fringeColor":[185,45,255,0],
+	"coreColor":[200,100,255,0],
+	#"glowColor":[185,65,255,0],
+	#"glowRadius":30,
+	"hitGlowRadius":0,	
+	"textureType":"WEAVE",  # now also used for "BALLISTIC_AS_BEAM", if specified
+	#"textureType":["graphics/sylphon/fx/beam_laser_fringe.png","graphics/sylphon/fx/FOB_strombel_beam_core.png"],
+	"textureScrollSpeed":-64,
+	"pixelsPerTexel":1.0,
+}
