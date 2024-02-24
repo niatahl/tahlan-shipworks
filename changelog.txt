@@ -11,6 +11,46 @@
 	- DP 10 -> 8
 - Mondlicht
 	- DP 22 -> 18
+- Nelson (both variants)
+	- DP 30 -> 26
+	- Top speed 50 -> 60
+	- Increased turn rate a bit
+- Yukikaze
+	- DP 28 -> 25
+- Korikaze
+	- DP 8 -> 5
+- Throne
+	- Top speed 70 -> 90
+	- Shield efficiency 1.1 -> 1.0
+	- Dissipation 450 -> 500
+- Providence
+	- Top speed 50 -> 70
+	- Armor 1500 -> 1600
+	- Shield efficiency 1.1 -> 1.0
+- Skysplitter
+	- DP 40 -> 35
+- Hresvelgr
+	- Armor 1200 -> 1600
+- Hresvelgr X
+	- DP 55 -> 45  :DDDD
+- Prototype Timeless 
+	- DP 60 -> 50
+- Dun Scaith
+	- System can now be interrupted like burn drive
+- Castigator (ALL Variants)
+	- DP 30 -> 28
+	- Yeah it's a different world now, thx Alex
+- Thermal Pulse Blaster (Cinderblade built-ins)
+	- Damage 150 -> 200
+	- Flux/shot 120 -> 150
+- Titanomachy
+	- Range 900 -> 1000
+	- Efficiency 1.0 -> 0.9
+- Project Taffeta
+	- Efficiency 1.2 -> 1.0
+	- Damage 400 -> 500
+- Pendragon
+	- Ammo 10 -> 6
 	
 
 1.2.7

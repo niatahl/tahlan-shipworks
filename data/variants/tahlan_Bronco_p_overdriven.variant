@@ -17,8 +17,8 @@
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0004": "reaper",
-                "WS0005": "reaper"
+                "WS0004": "tahlan_massresonance_sml",
+                "WS0005": "tahlan_massresonance_sml"
             }
         },
         {
