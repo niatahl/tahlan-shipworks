@@ -2,11 +2,8 @@
   <library name="ExiledSpace">
     <CLASSES>
       <root url="jar://G:/Starsector/mods/ExiledSpace/jars/ExiledSpace.jar!/" />
-      <root url="file://G:/Starsector/mods/ExiledSpace/src" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="file://G:/Starsector/mods/ExiledSpace/src" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

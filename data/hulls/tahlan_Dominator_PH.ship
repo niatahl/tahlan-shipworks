@@ -13,7 +13,8 @@
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_lirefit",
-    "tahlan_aftermarketphasecoils"
+    "tahlan_aftermarketphasecoils",
+    "neural_interface"
   ],
   "weaponSlots": [
     {

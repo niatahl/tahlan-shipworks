@@ -4,6 +4,9 @@
       <root url="jar://G:/Starsector/mods/Nexerelin/jars/ExerelinCore.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://G:/Starsector/mods/Nexerelin/jars/ExerelinCore.jar!/" />
+      <root url="jar://G:/Starsector/mods/Nexerelin/jars/ExerelinCore.jar!/" />
+    </SOURCES>
   </library>
 </component>

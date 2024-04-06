@@ -20,7 +20,10 @@ import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin.Corona
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.niatahl.tahlan.plugins.TahlanModPlugin
-import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
+import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.INDEVO_ARTY
+import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.INDEVO_MINES
+import org.niatahl.tahlan.utils.IndEvoIntegrations.addArtillery
+import org.niatahl.tahlan.utils.IndEvoIntegrations.addMines
 import org.niatahl.tahlan.utils.random
 import org.niatahl.tahlan.world.Lethia.Companion.addMarketplace
 import java.awt.Color
@@ -325,7 +328,8 @@ class Rubicon {
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true)
         if (TahlanModPlugin.HAS_INDEVO) {
-            addDefenses()
+            if (INDEVO_MINES) addMines()
+            if (INDEVO_ARTY) addArtillery()
         } else {
             melchiresaMarket.addIndustry(Industries.PLANETARYSHIELD)
             lucifronMarket.addIndustry(Industries.PLANETARYSHIELD)

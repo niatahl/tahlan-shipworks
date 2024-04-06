@@ -11,15 +11,15 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Graphics" level="project" />
     <orderEntry type="library" name="MagicLib" level="project" />
-    <orderEntry type="library" name="ExerelinCore" level="project" />
     <orderEntry type="library" name="LazyLib" level="project" />
     <orderEntry type="library" name="IndEvo" level="project" />
     <orderEntry type="library" name="MagicLib-Kotlin" level="project" />
-    <orderEntry type="library" name="ExiledSpace" level="project" />
     <orderEntry type="library" name="LazyLib-Kotlin" level="project" />
-    <orderEntry type="library" name="LunaLib" level="application" />
     <orderEntry type="library" name="commons-compiler-jdk" level="application" />
     <orderEntry type="library" name="starfarer-api" level="application" />
     <orderEntry type="library" name="Starsector API" level="project" />
+    <orderEntry type="library" name="ExerelinCore" level="project" />
+    <orderEntry type="library" name="ExiledSpace" level="project" />
+    <orderEntry type="library" name="LunaLib" level="project" />
   </component>
 </module>

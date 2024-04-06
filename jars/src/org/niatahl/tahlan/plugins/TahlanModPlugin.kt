@@ -23,7 +23,8 @@ import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
-import org.niatahl.tahlan.utils.IndEvoIntegrations.addDefenses
+import org.niatahl.tahlan.utils.IndEvoIntegrations.addArtillery
+import org.niatahl.tahlan.utils.IndEvoIntegrations.addMines
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
 import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
@@ -247,7 +248,8 @@ class TahlanModPlugin : BaseModPlugin() {
 
             // Adding new fun(tm) to existing saves
             if (HAS_INDEVO) {
-                addDefenses()
+                if (INDEVO_ARTY) addArtillery()
+                if (INDEVO_MINES) addMines()
                 // Daemon upgrade now also upgrades defenses
                 if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered"))
                     upgradeDefenses()
@@ -382,6 +384,8 @@ class TahlanModPlugin : BaseModPlugin() {
         ENABLE_ADAPTIVEMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_adaptivemode") ?: true
         ENABLE_LEGIOBPS = LunaSettings.getBoolean("tahlan", "tahlan_enable_legiobps") ?: false
         ENABLE_LIFELESS = LunaSettings.getBoolean("tahlan", "tahlan_enable_lifeless") ?: false
+        INDEVO_MINES = LunaSettings.getBoolean("IndEvo", "IndEvo_Enable_minefields") ?: true
+        INDEVO_ARTY = LunaSettings.getBoolean("IndEvo", "IndEvo_Enable_Artillery") ?: true
     }
 
     companion object {
@@ -404,6 +408,9 @@ class TahlanModPlugin : BaseModPlugin() {
         var ENABLE_LIFELESS = false
         var ENABLE_LEGIOBPS = false
         var ENABLE_DAEMONS = false
+
+        var INDEVO_MINES = true
+        var INDEVO_ARTY = true
 
         @JvmField
         var ENABLE_HARDMODE = false
