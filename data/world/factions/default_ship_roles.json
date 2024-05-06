@@ -33,7 +33,10 @@
 		"tahlan_hound_dmn_suppressor":3,
 		"tahlan_mudskipper_dmn_overdriven":3,
 		"tahlan_mudskipper_dmn_sniper":3,
-		"tahlan_mudskipper_dmn_storm":4
+		"tahlan_mudskipper_dmn_storm":4,
+		"tahlan_afflictor_dmn_brawler":3,
+		"tahlan_afflictor_dmn_strike":4,
+		"tahlan_afflictor_dmn_harasser":3
 	},
 	"combatMedium": {
 		"tahlan_Vale_crusader": 10,
@@ -141,7 +144,9 @@
 		"tahlan_landsknecht_combat":3,
 		"tahlan_landsknecht_brawler":4,
 		"tahlan_landsknecht_elite":3,
-		"tahlan_landsknecht_DEM":0
+		"tahlan_landsknecht_DEM":0,
+		"tahlan_doom_dmn_strike":5,
+		"tahlan_doom_dmn_brawler":5
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,

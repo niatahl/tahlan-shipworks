@@ -1,0 +1,132 @@
+{
+  "hullName": "Hel Afflictor",
+  "hullId": "tahlan_afflictor_dmn",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/tahlan/ships/legio/daemons/tahlan_afflictor_dmn.png",
+  "style": "TAHLAN_DAEMON",
+  "height": 132,
+  "width": 96,
+  "center": [48, 66],
+  "collisionRadius": 96.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 91,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_daemoncore",
+    "tahlan_daemonphasearmor",
+    "automated"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [53, 0]
+    },
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 102,
+      "angle": 40,
+      "locations": [48, 22]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 102,
+      "angle": -40,
+      "locations": [48, -22]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": 90,
+      "locations": [27, 29]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 150,
+      "angle": -90,
+      "locations": [27, -29]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-51.5, 18.5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "TAHLAN_DAEMON_PHASE_ENGINE"
+    },
+    {
+      "location": [-51.5, -18.5],
+      "length": 30,
+      "width": 10,
+      "angle": -180,
+      "contrailSize": 30,
+      "style": "TAHLAN_DAEMON_PHASE_ENGINE"
+    },
+    {
+      "location": [-65, -0],
+      "length": 45.5,
+      "width": 26,
+      "angle": 180,
+      "contrailSize": 26,
+      "style": "TAHLAN_DAEMON_PHASE_ENGINE"
+    },
+    {
+      "location": [-52.5, 18.5],
+      "length": 12,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-52.5, -18.5],
+      "length": 12,
+      "width": 6,
+      "angle": -180,
+      "contrailSize": 6,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    },
+    {
+      "location": [-66, -0],
+      "length": 20.5,
+      "width": 12,
+      "angle": -180,
+      "contrailSize": 12,
+      "style": "TAHLAN_DAEMON_CORE_ENGINE"
+    }
+  ],
+  "bounds": [
+    -62.5, -7,
+    -51.5, -9.5,
+    -49.5, -25,
+    -11.5, -29,
+    2, -17,
+    13.5, -46.5,
+    58.5, -41,
+    58.5, 41,
+    13.5, 46.5,
+    2, 17,
+    -11.5, 29,
+    -49.5, 25,
+    -51.5, 9.5,
+    -62.5, 7
+  ]
+}

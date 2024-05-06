@@ -68,6 +68,9 @@ public class FountainAI implements MissileAIPlugin, GuidedMissileAI{
         if(missile.isFizzling() || missile.isFading()){
             engine.applyDamage(missile, missile.getLocation(), missile.getHitpoints()*2, DamageType.FRAGMENTATION, 0, true, false, missile.getSource());
         }
+
+        //to deal with idiots who spawn missiles with nulled weapon reference
+        int range = Math.round(missile.getMaxFlightTime() * missile.getMaxSpeed());
         
         //assigning a target if there is none or it got destroyed
         if (target == null
@@ -78,7 +81,7 @@ public class FountainAI implements MissileAIPlugin, GuidedMissileAI{
             if(Math.random()<0.75){
                 setTarget(MagicTargeting.pickTarget(missile,
                             MagicTargeting.targetSeeking.NO_RANDOM,
-                            (int)missile.getWeapon().getRange(),
+                            range,
                             SEARCH_CONE,
                             1,1,1,1,1,
                             true
@@ -87,7 +90,7 @@ public class FountainAI implements MissileAIPlugin, GuidedMissileAI{
             } else {                
                 setTarget(MagicTargeting.pickTarget(missile,
                                 MagicTargeting.targetSeeking.LOCAL_RANDOM,
-                                (int)missile.getWeapon().getRange()/2,
+                                range/2,
                                 SEARCH_CONE,
                                 0,1,2,3,4,
                                 true

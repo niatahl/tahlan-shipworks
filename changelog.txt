@@ -51,6 +51,10 @@
 	- Damage 400 -> 500
 - Pendragon
 	- Ammo 10 -> 6
+- Ramun
+	- Range 800 -> 900
+- Gallant
+	- Range 800 -> 900
 	
 
 1.2.7

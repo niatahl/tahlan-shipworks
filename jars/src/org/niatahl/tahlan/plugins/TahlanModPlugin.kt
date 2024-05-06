@@ -272,12 +272,15 @@ class TahlanModPlugin : BaseModPlugin() {
 
     private class TahlanTrigger : BaseCampaignEventListener(false) {
         override fun reportEconomyMonthEnd() {
+            val sector = Global.getSector()
             if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
                 LOGGER.info("Daemons lurk")
+                addDaemons(sector)  // retroactively add new daemons for mid-campaign updates
                 return
             }
-            val sector = Global.getSector()
+
             var iLegioStartingCondition = 0
+
             if (Global.getSector().clock.cycle >= 210) {
                 iLegioStartingCondition++
                 LOGGER.info("Daemonic Incursion - Cycle")
@@ -440,6 +443,12 @@ class TahlanModPlugin : BaseModPlugin() {
             "tahlan_mudskipper_dmn"
         )
 
+        // to be added to blackwatch only
+        val BLACKWATCH_DAEMONS = mutableListOf(
+            "tahlan_doom_dmn",
+            "tahlan_afflictor_dmn"
+        )
+
         val DAEMON_WINGS = mutableListOf(
             "tahlan_miasma_drone_wing",
             "tahlan_flash_dmn_wing",
@@ -467,6 +476,9 @@ class TahlanModPlugin : BaseModPlugin() {
             DAEMON_WEAPONS.forEach {
                 sector.getFaction(LEGIO).addKnownWeapon(it, false)
                 sector.getFaction(BLACKWATCH).addKnownWeapon(it, false)
+            }
+            BLACKWATCH_DAEMONS.forEach {
+                sector.getFaction(BLACKWATCH).addKnownShip(it, false)
             }
 
         }

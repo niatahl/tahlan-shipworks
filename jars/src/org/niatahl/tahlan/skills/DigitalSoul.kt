@@ -57,7 +57,7 @@ object DigitalSoul {
                 val skill = Global.getSettings().getSkillSpec(SKILL_ID)
                 val automatedShipsBonus: Float = computeAndCacheThresholdBonus(stats, "auto_cr", AutomatedShips.MAX_CR_BONUS, ThresholdBonusType.AUTOMATED_POINTS) // We subtract the automated ship points bonus to not double dip on that
                 val eliteBonus = if (Global.getSector().playerPerson.stats.getSkillLevel(SKILL_ID) > 1f) ELITE_CR else 0f
-                stats.maxCombatReadiness.modifyFlat(id, (BASE_CR + eliteBonus - automatedShipsBonus) * 0.01f, skill.name + txt("skill_suffix"))
+                stats.maxCombatReadiness.modifyFlat(id, (BASE_CR + eliteBonus - automatedShipsBonus).coerceAtLeast(0f) * 0.01f, skill.name + txt("skill_suffix"))
             }
         }
 

@@ -1,0 +1,56 @@
+{
+    "displayName": "Brawler",
+    "fluxCapacitors": 30,
+    "fluxVents": 2,
+    "hullId": "tahlan_doom_dmn",
+    "hullMods": ["heavyarmor"],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_doom_dmn_brawler",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0008": "tahlan_dreadsabot",
+                "WS0009": "tahlan_dreadsabot",
+                "WS0010": "tahlan_dreadsabot",
+                "WS0011": "tahlan_dreadsabot"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_hellspitter"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0002": "tahlan_dreadsabotpod",
+                "WS0003": "tahlan_dreadsabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "tahlan_conand",
+                "WS0005": "tahlan_conand",
+                "WS0006": "tahlan_tethra",
+                "WS0007": "tahlan_tethra"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0012": "vulcan",
+                "WS0013": "vulcan",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan"
+            }
+        }
+    ]
+}

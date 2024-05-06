@@ -50,7 +50,7 @@
 					"spreadInaccuracy":5,
 					"spreadSpeed":1000,
 					"spreadSpeedRange":500,
-					"projectileRange":600, # only needed if not a missile
+					"projectileRange":1000, # only needed if not a missile
 					"projectileSpec":"tahlan_dreadsabot_warhead",
 					"smokeSpec":{"particleSizeMin":20.0,
 								 "particleSizeRange":20.0,

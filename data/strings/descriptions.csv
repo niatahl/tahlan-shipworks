@@ -309,6 +309,28 @@ tahlan_kodai_dmn,SHIP,"#> Ship Classification: Unknown
 #> .
 #> .
 #> .",,,
+tahlan_afflictor_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Afflictor-class Frigate: 68% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
+tahlan_doom_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Doom-class Frigate: 84% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
 tahlan_retribution_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest match.
 #> Match found.
@@ -617,6 +639,7 @@ tahlan_temporalcoordinator,SHIP_SYSTEM,Accelerates timeflow of ship and its figh
 tahlan_raiderjets,SHIP_SYSTEM,Grants a strong boost to maneuverability that decays over time.,Mobility,,
 tahlan_raidestjets,SHIP_SYSTEM,Grants a massive but short boost to maneuverability and top speed. More effective when moving forward.,Mobility,,
 tahlan_weaponsoverdrive,SHIP_SYSTEM,Increases damage of all non-missile weapons by 50%.,Weapons,,
+tahlan_weaponsoverdrive_phase,SHIP_SYSTEM,Increases damage of all non-missile weapons by 50%. Can be activated while phased but blocks phase cloak while active.,Weapons,,
 tahlan_absolutevirtue,SHIP_SYSTEM,"Doubles dissipation and allows dissipations of hard flux with active shields at half the normal rate, halves, shield damage taken, boosts mobility and accelerates timeflow by 20%. Prevents firing and shield deactivation while active.",Defense,,
 tahlan_divinemight,SHIP_SYSTEM,"Grants a short boost to ballistic and energy weapon damage, dissipation and mobility.",Boost,,
 tahlan_divinemight_nc,SHIP_SYSTEM,"Grants a short boost to ballistic and energy weapon damage, dissipation and mobility while accelerating timeflow by 200%.",Boost,,

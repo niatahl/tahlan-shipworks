@@ -21,7 +21,7 @@
 	"clampMaxSpeedAfter":true,
 	
 	"engineGlowColor":[255,0,0,50],
-	"engineGlowContrailColor":[255,0,0,50],
+	"engineGlowContrailColor":[255,0,0,0],
 	"engineGlowLengthMult":1.2,
 	"engineGlowWidthMult":1,
 	"engineGlowGlowMult":0.8,
