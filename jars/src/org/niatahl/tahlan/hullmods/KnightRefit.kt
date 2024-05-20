@@ -21,6 +21,7 @@ class KnightRefit : BaseHullMod() {
             HullSize.DESTROYER -> stats.armorBonus.modifyFlat(ke_id, -ARMOR_MALUS_DESTROYER)
             HullSize.CRUISER -> stats.armorBonus.modifyFlat(ke_id, -ARMOR_MALUS_CRUISER)
             HullSize.CAPITAL_SHIP -> stats.armorBonus.modifyFlat(ke_id, -ARMOR_MALUS_CAPITAL)
+            else -> stats.armorBonus.modifyFlat(ke_id, -ARMOR_MALUS_FRIGATE)
         }
         stats.suppliesPerMonth.modifyPercent(ke_id, SUPPLIES_MULT)
         stats.crLossPerSecondPercent.modifyMult(ke_id, 2f)

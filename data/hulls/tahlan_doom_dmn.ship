@@ -14,7 +14,8 @@
   "builtInMods": [
     "tahlan_daemoncore",
     "tahlan_daemonphasearmor",
-    "automated"
+    "automated",
+    "tahlan_spookyFog"
   ],
   "weaponSlots": [
     {

@@ -1,0 +1,82 @@
+{
+    "displayName": "Wrathbringer",
+    "fluxCapacitors": 14,
+    "fluxVents": 50,
+    "hullId": "tahlan_scathach",
+    "hullMods": [
+        "targetingunit",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_scathach_wrathbringer",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0006": "tahlan_helrazer",
+                "WS0007": "tahlan_massresonance_lrg",
+                "WS0008": "tahlan_massresonance_lrg"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0009": "tahlan_dreadsabotpod",
+                "WS0010": "tahlan_dreadsabotpod",
+                "WS0011": "tahlan_dreadsabotpod",
+                "WS0012": "tahlan_dreadsabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "tahlan_ryza",
+                "WS0002": "tahlan_ryza"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "tahlan_balor",
+                "WS0004": "tahlan_balor"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "tahlan_conand",
+                "WS0014": "tahlan_conand"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "guardian",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan",
+                "WS0018": "vulcan",
+                "WS0019": "vulcan",
+                "WS0020": "vulcan",
+                "WS0021": "vulcan",
+                "WS0022": "vulcan",
+                "WS0023": "vulcan",
+                "WS0024": "vulcan",
+                "WS0025": "vulcan",
+                "WS0026": "vulcan",
+                "WS0027": "vulcan",
+                "WS0028": "vulcan",
+                "WS0029": "vulcan"
+            }
+        }
+    ],
+    "wings": []
+}
