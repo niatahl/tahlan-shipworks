@@ -320,10 +320,21 @@ tahlan_afflictor_dmn,SHIP,"#> Ship Classification: Unknown
 #> .
 #> .
 #> .",,,
+tahlan_mudskipper_dmn,SHIP,"#> Ship Classification: Unknown
+#> Query closest match.
+#> Match found.
+#> >> Mudskipper-class Frigate: 74% match
+#> WARNING: Analysis shows sign of [REDACTED]
+#> >> Target capabilities: Unknown
+#> .
+#> ALERT. System intrusion attempt detected.
+#> .
+#> .
+#> .",,,
 tahlan_doom_dmn,SHIP,"#> Ship Classification: Unknown
 #> Query closest match.
 #> Match found.
-#> >> Doom-class Frigate: 84% match
+#> >> Doom-class Cruiser: 84% match
 #> WARNING: Analysis shows sign of [REDACTED]
 #> >> Target capabilities: Unknown
 #> .
