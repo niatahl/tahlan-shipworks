@@ -250,5 +250,38 @@
 		"glowAlternateColor":[255,0,0,175],
 		"type":"GLOW" # GLOW or SMOKE
 	},
+
+	"TAHLAN_SAVETH_ENGINE":{
+		"mode":"QUAD_STRIP",
+		"engineColor":[14,237,174,255],
+		"engineCampaignColor":[14,237,174,255],
+		"contrailDuration":2,
+		"contrailWidthMult":1,
+		"contrailWidthAddedFractionAtEnd":-1,  # can be negative. makes trail spread out/narrow at the end
+		"contrailMinSeg":5, # min segment length, in pixels
+		"contrailMaxSpeedMult":1,
+		"contrailAngularVelocityMult":0,
+		"contrailColor":[34,187,194,35],
+		"contrailCampaignColor":[34,187,194,65],
+		"glowAlternateColor":[14,215,184,205],
+		"glowSprite":"graphics/tahlan/fx/tahlan_nxa_engineflame_motion.png",
+		"glowOutline":"graphics/tahlan/fx/tahlan_diamond_engineflame.png",
+		"type":"GLOW" # GLOW or SMOKE
+	},
+
+	"TAHLAN_SAVETH_ENGINE2":{				
+		"engineColor":[100,165,255,255],
+		"contrailParticleSizeMult":20,
+		"contrailParticleDuration":3,
+		"contrailParticleFinalSizeMult":1.5,
+		"contrailMaxSpeedMult":0.6,
+		"contrailAngularVelocityMult":0.6,
+		"contrailColor":[50,50,50,50],
+		"contrailCampaignColor":[255,60,40,0],
+		"glowAlternateColor":[100,165,255,0],
+		"glowSprite":"graphics/tahlan/fx/tahlan_nxa_engineflame_motion.png",
+		"glowOutline":"graphics/tahlan/fx/tahlan_diamond_engineflame.png",
+		"type":"GLOW" # GLOW or SMOKE
+	}
 }
 

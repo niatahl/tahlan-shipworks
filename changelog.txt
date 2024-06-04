@@ -3,6 +3,7 @@
 - Fixed Hel Skipper missing description
 - Fixed some DP adjustments from previous changelog missing
 - Hel Doom DP 40 -> 35
+- Added Scathach bounty
 
 
 1.3

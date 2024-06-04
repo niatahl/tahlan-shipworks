@@ -49,7 +49,7 @@
 		},
 		"fx_projectiles":{
 			"tahlan_utpc_shot":"graphics/tahlan/missiles/tahlan_utpc_shot.png",
-			"tahlan_utpc_shot_splinter":"graphics/tahlan/missiles/tahlan_utpc_shot_splinter.png",	
+			"tahlan_utpc_shot_splinter":"graphics/tahlan/missiles/tahlan_utpc_shot_splinter.png"
 		},
 		"misc":{
 			"tahlan_cooperative_protocols_icon":"graphics/tahlan/icons/hullsys/cooperative_protocols.png",
@@ -58,7 +58,7 @@
 			"tahlan_lens_flare":"graphics/tahlan/fx/tahlan_lens_flare.png",
 			"tahlan_shockcannon_icon":"graphics/tahlan/hullmods/ammo_shockcannon_icon.png",
 			"tahlan_ammo_impactdriver_icon":"graphics/tahlan/hullmods/ammo_impactdriver_icon.png",
-			"tahlan_type3_icon":"graphics/tahlan/hullmods/ammo_type3_icon.png",
+			"tahlan_type3_icon":"graphics/tahlan/hullmods/ammo_type3_icon.png"
 		},
 		"blueprint_packages":{
 			"tahlan_kaze_package":"graphics/tahlan/icons/cargo/tahlan_package_kaze.png",
@@ -71,7 +71,7 @@
 			"tahlan_jagdregalia_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
 			"tahlan_silberblut_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
 			"tahlan_halbmond_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
-			"tahlan_schneefall_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png",
+			"tahlan_schneefall_package":"graphics/tahlan/icons/cargo/tahlan_package_rosenritter.png"
 		},
 		"portraits":{
 			"tahlan_portrait_maus":"graphics/tahlan/portraits/characters/tahlan_portrait_maus.png",
@@ -82,20 +82,21 @@
 			"tahlan_archdaemon":"graphics/tahlan/portraits/archdaemon.png",
 			"tahlan_henrietta":"graphics/tahlan/portraits/characters/henrietta.png",
 			"tahlan_devil":"graphics/tahlan/portraits/legio/devil.png",
-			"tahlan_queen":"graphics/tahlan/portraits/legio/queen.png"
+			"tahlan_queen":"graphics/tahlan/portraits/legio/queen.png",
+			"tahlan_scathach":"graphics/tahlan/portraits/legio/scathach.png"
 		},
 		"characters":{
 			"tahlan_notLoyse":"graphics/tahlan/portraits/legio/notLoyse.png",
 			"tahlan_idris":"graphics/tahlan/portraits/legio/idris.png"
 		},
 		"tahlan_intel":{			
-			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png", # 20x20
+			"tahlan_halbmond":"graphics/tahlan/factions/tahlan_rosenritter_crest.png"
 		},
 		"illustrations":{
 			"tahlan_kassadar_illus":"graphics/tahlan/illustrations/tahlan_kassadar_illus.png",
 			"tahlan_lucifron_illus":"graphics/tahlan/illustrations/tahlan_lucifron_illus.png",
 			"tahlan_melchiresa_illus":"graphics/tahlan/illustrations/tahlan_melchiresa_illus.png",
-			"tahlan_adramelech_illus":"graphics/tahlan/illustrations/tahlan_adramelech_illus.png",
+			"tahlan_adramelech_illus":"graphics/tahlan/illustrations/tahlan_adramelech_illus.png"
 		},
 	},
 

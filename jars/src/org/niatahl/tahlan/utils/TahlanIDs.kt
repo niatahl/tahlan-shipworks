@@ -6,6 +6,7 @@ object TahlanIDs {
     const val DAEMONS = "tahlan_legiodaemons"
     const val NEURALLINK_COMM = "tahlan_neurallink"
     const val DIGITAL_SOUL = "tahlan_digitalSoul"
+    const val ALLMOTHER = "tahlan_allmother"
 
     const val CORE_DAEMON = "tahlan_daemoncore"
     const val CORE_ARCHDAEMON = "tahlan_archdaemoncore"

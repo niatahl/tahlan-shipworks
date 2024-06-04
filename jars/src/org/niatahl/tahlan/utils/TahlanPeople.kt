@@ -7,7 +7,9 @@ import com.fs.starfarer.api.characters.ImportantPeopleAPI
 import com.fs.starfarer.api.characters.PersonAPI
 import com.fs.starfarer.api.impl.campaign.ids.*
 import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.WEEB_MODE
+import org.niatahl.tahlan.utils.TahlanIDs.ALLMOTHER
 import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
+import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 
 object TahlanPeople {
     // Person IDs
@@ -16,6 +18,7 @@ object TahlanPeople {
     const val HENRIETTA = "tahlan_henrietta"
     const val DEVIL = "tahlan_devil"
     const val QUEEN = "tahlan_queen"
+    const val SCATHACH = "tahlan_scathach"
 
     // For fake fearless
     const val FEARLESS = "\$tahlan_persFearless"
@@ -96,7 +99,7 @@ object TahlanPeople {
         if (getPerson(CHILD) == null) {
             val person = Global.getFactory().createPerson().apply {
                 id = CHILD
-                setFaction("tahlan_allmother")
+                setFaction(ALLMOTHER)
                 gender = FullName.Gender.ANY
                 rankId = "tahlan_offspring"
                 postId = "tahlan_offspring"
@@ -109,6 +112,31 @@ object TahlanPeople {
                 stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
                 stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
                 stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
+                memoryWithoutUpdate.set(FEARLESS, true)
+            }
+            ip.addPerson(person)
+        }
+
+        if (getPerson(SCATHACH) == null) {
+            val person = Global.getFactory().createPerson().apply {
+                id = SCATHACH
+                setFaction(LEGIO)
+                gender = FullName.Gender.ANY
+                rankId = "tahlan_scathach"
+                postId = "tahlan_scathach"
+                name.first = "Scathach"
+                name.last = ""
+                importance = PersonImportance.VERY_HIGH
+                portraitSprite = Global.getSettings().getSpriteName("portraits", "tahlan_scathach")
+                setPersonality(Personalities.RECKLESS)
+                stats.level = 7
+                stats.setSkillLevel("tahlan_daemonicCorruption", 2f)
+                stats.setSkillLevel(Skills.COMBAT_ENDURANCE, 2f)
+                stats.setSkillLevel(Skills.IMPACT_MITIGATION, 2f)
+                stats.setSkillLevel(Skills.POINT_DEFENSE, 2f)
+                stats.setSkillLevel(Skills.TARGET_ANALYSIS, 2f)
+                stats.setSkillLevel(Skills.GUNNERY_IMPLANTS, 2f)
+                stats.setSkillLevel(Skills.HELMSMANSHIP, 2f)
                 memoryWithoutUpdate.set(FEARLESS, true)
             }
             ip.addPerson(person)

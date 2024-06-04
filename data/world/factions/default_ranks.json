@@ -6,13 +6,15 @@
 		"tahlan_unit":{"name":"Experimental Unit"},
 		"tahlan_cieve":{"name":"Coordinator"},
 		"tahlan_offspring":{"name":"Offspring"},
-		"tahlan_henrietta":{"name":"Knight-Captain"}
+		"tahlan_henrietta":{"name":"Knight-Captain"},
+		"tahlan_scathach":{"name":"Sovereign of Hel"}
 	},
 	
 	"posts":{
 		"tahlan_cieve":{"name":"Coordinator"},
 		"tahlan_offspring":{"name":"Offspring"},
-		"tahlan_henrietta":{"name":"Knight-Captain"}
+		"tahlan_henrietta":{"name":"Knight-Captain"},
+		"tahlan_scathach":{"name":"Sovereign of Hel"}
 	},
 }
 

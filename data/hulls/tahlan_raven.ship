@@ -1,0 +1,255 @@
+{
+  "hullName": "Raven",
+  "hullId": "tahlan_raven",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/tahlan/ships/legio/tahlan_raven.png",
+  "style": "MIDLINE",
+  "height": 240,
+  "width": 206,
+  "center": [103, 120],
+  "collisionRadius": 156,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 148.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "tahlan_stealthplating",
+    "tahlan_ewarsuite",
+    "tahlan_overclockedmounts",
+    "operations_center",
+    "tahlan_savethshield"
+  ],
+  "builtInWeapons": {
+    "EWAR_SYS": "tahlan_ewarsuite"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [12, 0]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-37, 0]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 0,
+      "locations": [52, 0]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 118,
+      "angle": 43.5,
+      "locations": [-21, 50]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 118,
+      "angle": -43.5,
+      "locations": [-21, -50]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 118,
+      "angle": 141,
+      "locations": [-55, 21]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 118,
+      "angle": -141,
+      "locations": [-55, -21]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -9, 34,
+        -10, 29,
+        -2.5, 25.5
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -2.5, -25.5,
+        -11, -28.5,
+        -9, -33.5
+      ]
+    },
+    {
+      "id": "EWAR_SYS",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-88, -18],
+      "length": 40,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-88, 18],
+      "length": 40,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-70.5, 40.5],
+      "length": 62,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-70.5, -40.5],
+      "length": 62,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-85.5, 22.5],
+      "length": 62,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-85.5, -22.5],
+      "length": 62,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-85.5, -13.5],
+      "length": 62,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-85.5, 13.5],
+      "length": 62,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-70.5, -31.5],
+      "length": 62,
+      "width": 4,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-70.5, 31.5],
+      "length": 62,
+      "width": 4,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "TAHLAN_PIRATE_ENGINE"
+    },
+    {
+      "location": [-73, 36],
+      "length": 40,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    },
+    {
+      "location": [-73, -36],
+      "length": 40,
+      "width": 15,
+      "angle": -180,
+      "contrailSize": 15,
+      "style": "TAHLAN_DAEMON_ENGINE"
+    }
+  ],
+  "bounds": [
+    -85.5, -11.5,
+    -100, -17,
+    -71.5, -27,
+    -88.5, -35.5,
+    -45, -54.5,
+    -53.5, -61,
+    -25.5, -75.5,
+    -48.5, -80.5,
+    -10.5, -86.5,
+    9.5, -82.5,
+    -11.5, -57.5,
+    17.5, -23,
+    53, -18,
+    46, -29,
+    117, -5,
+    117, 5,
+    46, 29,
+    53, 18,
+    17.5, 23,
+    -11.5, 57.5,
+    9.5, 82.5,
+    -10.5, 86.5,
+    -48.5, 80.5,
+    -25.5, 75.5,
+    -53.5, 61,
+    -45, 54.5,
+    -88.5, 35.5,
+    -71.5, 27,
+    -100, 17,
+    -85.5, 11.5,
+    -118, 0
+  ]
+}

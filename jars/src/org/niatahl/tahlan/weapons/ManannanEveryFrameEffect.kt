@@ -91,6 +91,9 @@ class ManannanEveryFrameEffect : EveryFrameWeaponEffectPlugin, OnFireEffectPlugi
     override fun onFire(projectile: DamagingProjectileAPI, weapon: WeaponAPI, engine: CombatEngineAPI) {
         projectiles.add(projectile)
 
+        // Beating scathach removes the self-destruct
+        if (Global.getSector().memoryWithoutUpdate.contains("tahlan_daemons_scathach")) return
+
         if ( engine.isInCampaign && engine.getFleetManager(weapon.ship.owner) == engine.getFleetManager(FleetSide.PLAYER) ) {
             weapon.disable(true)
             engine.spawnExplosion(projectile.location,Misc.ZERO,Color.RED,10000f,20f)
