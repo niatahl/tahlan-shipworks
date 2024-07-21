@@ -120,6 +120,9 @@ Regeneration is %s while overloaded and %s while actively venting flux and for %
 
 The heavy modifications result in total armor rating being reduced by %s, including increases from hullmods such as %s.",Regenerates Armor,"Armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,defensive,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,,graphics/tahlan/hullmods/tahlan_daemonarmor.png
+Overclocked Mounts,tahlan_overclockedmounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OverclockedMounts,"All ballistic and energy weapons are overclocked, allowing ballistic weapons to fire %s faster and increasing energy weapon damage by %s. Flux generation is increased proportionally.
+
+Additional strain from extended operation above design specs makes all weapons %s more susceptible to damage.",Boosts rate of fire.,,
 Hel Altar Device,tahlan_helaltar,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.HelAltar,"This ships serves a command and control unit for all Daemons within %s range.
 
 All allied ships with the %s hullmod within range receive %s less damage and deal %s more damage to missiles and fighters.
@@ -127,6 +130,7 @@ All allied ships with the %s hullmod within range receive %s less damage and dea
 Also affects this ship itself.
 
 Effects from multiple Altars do not stack.",Buffs self and allies,,graphics/tahlan/hullmods/tahlan_helaltar.png
+Scathach's Soul,tahlan_scathach,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.Scathach,Applies Scathach,Applies Scathach,,graphics/tahlan/hullmods/tahlan_helaltar.png
 Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",Special,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.",Allows Cieve to control ship,,graphics/tahlan/hullmods/cieve_link.png
 Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,,graphics/tahlan/hullmods/tahlan_stealthplating.png
 Unique,tahlan_notorious,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Notorious,"This ship is %s for being of a unique design, easily identified even with fleet transponder disabled.",Makes ship notable,,
