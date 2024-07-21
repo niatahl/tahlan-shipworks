@@ -17,7 +17,6 @@
 		"tahlan_lasher_pi_support": 3,
 		"tahlan_lasher_pi_elite": 4,
 		"tahlan_glanzwurf_knappe": 10,
-		"tahlan_glanzwurf_b_soldner": 10,
 		"tahlan_darnus_killer": 10,
 		"tahlan_vanguard_dmn_envy": 3,
 		"tahlan_vanguard_dmn_assault": 3,
@@ -61,13 +60,6 @@
 		"tahlan_Flagellator_pi_overdriven": 3,
 		"tahlan_Flagellator_pi_strike": 4,
 		"tahlan_stahlherz_paladin": 10,
-		"tahlan_stahlherz_b_vanguard": 10,
-		"tahlan_stahlherz_c_longbowman": 10,
-		"tahlan_stahlherz_d_smiter": 10,
-		"tahlan_stahlherz_e_paladin": 10,
-		"tahlan_stahlherz_f_paladin": 10,
-		"tahlan_stahlherz_g_paladin": 10,
-		"tahlan_stahlherz_h_paladin": 10,
 		"tahlan_manticore_dmn_wrath": 4,
 		"tahlan_manticore_dmn_hammer": 2,
 		"tahlan_manticore_dmn_overdriven": 2,
@@ -146,9 +138,7 @@
 		"tahlan_landsknecht_elite":3,
 		"tahlan_landsknecht_DEM":0,
 		"tahlan_doom_dmn_strike":5,
-		"tahlan_doom_dmn_brawler":5,
-		"tahlan_eagle_nw_enforcer":10,
-		"tahlan_falcon_nw_enforcer":10
+		"tahlan_doom_dmn_brawler":5
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,

@@ -1,14 +1,12 @@
 {
     "baseHullId":"tahlan_stahlherz",
     "skinHullId":"tahlan_stahlherz_d",
-    "hullName":"Silberblut Regalia Kfg.D",
+    "hullName":"Silberblut Regalia",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration D. Specialized for fire support",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_silberherz_bp"],
 	"systemId":"tahlan_plasmarounds",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids

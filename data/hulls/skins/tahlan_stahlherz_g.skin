@@ -1,14 +1,12 @@
 {
     "baseHullId":"tahlan_stahlherz",
     "skinHullId":"tahlan_stahlherz_g",
-    "hullName":"Silberblut Regalia Kfg.G",
+    "hullName":"Silberblut Regalia",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration G. Stalwart defender.",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_silberherz_bp"],
 	"systemId":"tahlan_explosiverounds",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids
@@ -18,7 +16,6 @@
 		"WEAPON_L",
 		"WEAPON_R",
 	],
-    "builtInMods":["fluxshunt"],
     "builtInWeapons":{
         "WEAPON_L": "tahlan_stahlhagel_l",
 		"WEAPON_R": "tahlan_stahlhagel_r",

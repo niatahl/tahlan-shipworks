@@ -120,9 +120,6 @@ Regeneration is %s while overloaded and %s while actively venting flux and for %
 
 The heavy modifications result in total armor rating being reduced by %s, including increases from hullmods such as %s.",Regenerates Armor,"Armor rating penalty is reduced to %s, but regeneration is also reduced to %s per second.",graphics/tahlan/hullmods/tahlan_daemonarmor.png
 Hel Hound Armor,tahlan_helhoundarmor,,,,defensive,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.helHoundArmor,Mirrors damper effects of main ship,Mirrors damper effects of main ship,,graphics/tahlan/hullmods/tahlan_daemonarmor.png
-Overclocked Mounts,tahlan_overclockedmounts,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.OverclockedMounts,"All ballistic and energy weapons are overclocked, allowing ballistic weapons to fire %s faster and increasing energy weapon damage by %s. Flux generation is increased proportionally.
-
-Additional strain from extended operation above design specs makes all weapons %s more susceptible to damage.",Boosts rate of fire.,,
 Hel Altar Device,tahlan_helaltar,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.HelAltar,"This ships serves a command and control unit for all Daemons within %s range.
 
 All allied ships with the %s hullmod within range receive %s less damage and deal %s more damage to missiles and fighters.
@@ -130,7 +127,6 @@ All allied ships with the %s hullmod within range receive %s less damage and dea
 Also affects this ship itself.
 
 Effects from multiple Altars do not stack.",Buffs self and allies,,graphics/tahlan/hullmods/tahlan_helaltar.png
-Scathach's Soul,tahlan_scathach,,,,,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.Scathach,Applies Scathach,Applies Scathach,,graphics/tahlan/hullmods/tahlan_helaltar.png
 Quantum Link Device,tahlan_cieveLink,,,,"no_drop, special, no_build_in",Special,,,,,10,15,20,30,org.niatahl.tahlan.hullmods.CieveLink,"Similar in functionality to a standard neural link, this device contains a quantum entanglement transmitter, allowing for real-time communication at any distance.",Allows Cieve to control ship,,graphics/tahlan/hullmods/cieve_link.png
 Stealth Plating,tahlan_stealthplating,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.StealthPlating,Reduces the ship's sensor profile by %s.,Reduces sensor profile,,graphics/tahlan/hullmods/tahlan_stealthplating.png
 Unique,tahlan_notorious,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.Notorious,"This ship is %s for being of a unique design, easily identified even with fleet transponder disabled.",Makes ship notable,,
@@ -150,3 +146,16 @@ Sin of Greed,tahlan_greed,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barco
 Sin of Sloth,tahlan_sloth,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barcodes.Sloth,Reduces damage taken by %s per installed S-Mod.,Reduces damage taken,,graphics/tahlan/hullmods/tahlan_daemoncore.png
 Sin of Envy,tahlan_envy,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barcodes.Envy,Increases maximum Combat Readiness by %s.,Increases maximum Combat Readiness,,graphics/tahlan/hullmods/tahlan_daemoncore.png
 ,,,,,,,,,,,,,,,,,,,
+Glanzwurf Swap,tahlan_glanzwurf_swap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.GlanzwurfSwap,(Hidden) Allows skin swapping,(Hidden) Allows skin swapping,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.A - Standard,tahlan_glanzwurf_selectorA,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Standard configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.B - Support,tahlan_glanzwurf_selectorB,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Support and escort configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_b.png
+,,,,,,,,,,,,,,,,,,,
+Stahlherz Swap,tahlan_stahlherz_swap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.StahlherzSwap,(Hidden) Allows skin swapping,(Hidden) Allows skin swapping,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.A - Standard,tahlan_stahlherz_selectorA,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Standard configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.B - Ballistic,tahlan_stahlherz_selectorB,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Ballistic weaponry configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_b.png
+Kfg.C - Long-range,tahlan_stahlherz_selectorC,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Long-range combat configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_c.png
+Kfg.D - Support,tahlan_stahlherz_selectorD,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Fire support configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_d.png
+Kfg.E - Burst,tahlan_stahlherz_selectorE,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Burst configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_e.png
+Kfg.F - Sniper,tahlan_stahlherz_selectorF,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Heavy sniper configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_f.png
+Kfg.G - Defender,tahlan_stahlherz_selectorG,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Stalwart defender configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_g.png
+Kfg.H - Experimental,tahlan_stahlherz_selectorH,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Experimental configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_h.png

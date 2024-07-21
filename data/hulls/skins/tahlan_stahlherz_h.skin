@@ -1,14 +1,12 @@
 {
     "baseHullId":"tahlan_stahlherz",
     "skinHullId":"tahlan_stahlherz_h",
-    "hullName":"Silberblut Regalia Kfg.H",
+    "hullName":"Silberblut Regalia",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration H. Experimental variant",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_silberherz_bp"],
 	"systemId":"temporalshell",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids

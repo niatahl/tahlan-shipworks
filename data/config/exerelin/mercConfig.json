@@ -41,9 +41,9 @@
 			"minRep":"SUSPICIOUS",
 			"minLevel":5,
 			"ships":[
-				["tahlan_stahlherz_b_vanguard","tahlan_stahlherz_c_longbowman","tahlan_stahlherz_paladin"],
-				["tahlan_glanzwurf_knappe","tahlan_glanzwurf_b_soldner"],
-				["tahlan_glanzwurf_knappe","tahlan_glanzwurf_b_soldner"],
+				["tahlan_stahlherz_paladin","tahlan_stahlherz_paladin","tahlan_stahlherz_paladin"],
+				["tahlan_glanzwurf_knappe","tahlan_glanzwurf_knappe"],
+				["tahlan_glanzwurf_knappe","tahlan_glanzwurf_knappe"],
 			],
 			"officers":[
 				{
