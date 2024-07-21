@@ -1,14 +1,12 @@
 {
     "baseHullId":"tahlan_stahlherz",
     "skinHullId":"tahlan_stahlherz_f",
-    "hullName":"Silberblut Regalia Kfg.F",
+    "hullName":"Silberblut Regalia",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration F. Heavy Sniper.",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_silberherz_bp"],
 	"systemId":"ammofeed",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids

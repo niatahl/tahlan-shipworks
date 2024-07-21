@@ -1,14 +1,13 @@
 {
     "baseHullId":"tahlan_glanzwurf",
     "skinHullId":"tahlan_glanzwurf_b",
-    "hullName":"Glanzwurf Regalia Kfg.B",
+    "hullName":"Glanzwurf Regalia",
     "descriptionId":"tahlan_glanzwurf",
-    "descriptionPrefix":"Alternate configuration B. Focused on support and escort duty.",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_jagd_bp","no_dealer"],
+    "tags":["no_dealer"],
 	"systemId":"tahlan_weaponstabilization",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids

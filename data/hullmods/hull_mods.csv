@@ -150,3 +150,16 @@ Sin of Greed,tahlan_greed,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barco
 Sin of Sloth,tahlan_sloth,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barcodes.Sloth,Reduces damage taken by %s per installed S-Mod.,Reduces damage taken,,graphics/tahlan/hullmods/tahlan_daemoncore.png
 Sin of Envy,tahlan_envy,,,,,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.barcodes.Envy,Increases maximum Combat Readiness by %s.,Increases maximum Combat Readiness,,graphics/tahlan/hullmods/tahlan_daemoncore.png
 ,,,,,,,,,,,,,,,,,,,
+Glanzwurf Swap,tahlan_glanzwurf_swap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.GlanzwurfSwap,(Hidden) Allows skin swapping,(Hidden) Allows skin swapping,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.A - Standard,tahlan_glanzwurf_selectorA,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Standard configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.B - Support,tahlan_glanzwurf_selectorB,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Support and escort configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_b.png
+,,,,,,,,,,,,,,,,,,,
+Stahlherz Swap,tahlan_stahlherz_swap,,,,no_build_in,,,,TRUE,TRUE,0,0,0,0,org.niatahl.tahlan.hullmods.StahlherzSwap,(Hidden) Allows skin swapping,(Hidden) Allows skin swapping,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.A - Standard,tahlan_stahlherz_selectorA,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Standard configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_a.png
+Kfg.B - Ballistic,tahlan_stahlherz_selectorB,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Ballistic weaponry configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_b.png
+Kfg.C - Long-range,tahlan_stahlherz_selectorC,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Long-range combat configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_c.png
+Kfg.D - Support,tahlan_stahlherz_selectorD,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Fire support configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_d.png
+Kfg.E - Burst,tahlan_stahlherz_selectorE,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Burst configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_e.png
+Kfg.F - Sniper,tahlan_stahlherz_selectorF,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Heavy sniper configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_f.png
+Kfg.G - Defender,tahlan_stahlherz_selectorG,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Stalwart defender configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_g.png
+Kfg.H - Experimental,tahlan_stahlherz_selectorH,,,,no_build_in,,,,TRUE,,0,0,0,0,org.niatahl.tahlan.hullmods.RegaliaSelector,Experimental configuration.,,,graphics/tahlan/hullmods/swap/tahlan_swap_h.png
