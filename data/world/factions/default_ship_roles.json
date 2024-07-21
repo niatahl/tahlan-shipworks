@@ -138,7 +138,9 @@
 		"tahlan_landsknecht_elite":3,
 		"tahlan_landsknecht_DEM":0,
 		"tahlan_doom_dmn_strike":5,
-		"tahlan_doom_dmn_brawler":5
+		"tahlan_doom_dmn_brawler":5,
+		"tahlan_eagle_nw_enforcer":10,
+		"tahlan_falcon_nw_enforcer":10
 	},
 	"combatCapital": {
 		"tahlan_Castella_lp_standard": 10,
