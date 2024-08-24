@@ -686,6 +686,7 @@ tahlan_penetrationDrive,SHIP_SYSTEM,Propels the ship forward at high velocity in
 tahlan_droneoverdrive,SHIP_SYSTEM,"Sends drone wing into overdrive, doubling their rate of fire and causing them to discharge EMP arcs at any nearby enemies.",,,
 tahlan_orion_device_mk2,SHIP_SYSTEM,"Deploys a shaped antimatter charge behind the ship. The explosion applies force to a massive push-plate, which absorbs the shock and spreads the resulting acceleration over a timeframe where it can be handled by the ship's inertial compensators. The ship is briefly propelled forward at a rate very few more ""advanced"" technologies can hope to match.",Mobility,"Explodes a shaped antimatter charge behind the ship, propelling it forward at extreme speed.",
 tahlan_ewarstrike,SHIP_SYSTEM,"Directs the entirety of the ship's electronic warfare suite at the target, interfering with most systems of its system to open it up to attack.",Assault,"Launches an EWAR attack on the target, increasing damage taken and reducing top speed and weapon ranges.",
+tahlan_vectorshift,SHIP_SYSTEM,Modifies spacetime relativity to enhance ship performance. Spacetime interference additionally discharges harmful EMP arcs.,Assault,Boosts ship performance and discharges EMP arcs.,
 ,,,,,
 # Campaign,,,,,
 ,,,,,

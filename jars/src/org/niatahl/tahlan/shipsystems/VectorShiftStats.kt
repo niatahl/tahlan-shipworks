@@ -25,13 +25,14 @@ class VectorShiftStats : BaseShipSystemScript() {
         if (state == ShipSystemStatsScript.State.OUT) {
             stats.maxSpeed.unmodify(id)
             stats.maxTurnRate.unmodify(id)
-        } else {
-            stats.maxSpeed.modifyFlat(id, 100f * effectLevel)
-            stats.acceleration.modifyFlat(id, 1000f * effectLevel)
-            stats.deceleration.modifyFlat(id, 1000f * effectLevel)
-            stats.turnAcceleration.modifyFlat(id, 300f * effectLevel)
-            stats.maxTurnRate.modifyMult(id, 1f + 2f * effectLevel)
         }
+        stats.maxSpeed.modifyFlat(id, 100f * effectLevel)
+        stats.acceleration.modifyFlat(id, 1000f * effectLevel)
+        stats.deceleration.modifyFlat(id, 1000f * effectLevel)
+        stats.turnAcceleration.modifyFlat(id, 300f * effectLevel)
+        stats.maxTurnRate.modifyMult(id, 1f + 2f * effectLevel)
+        stats.timeMult.modifyMult(id, 1f + 0.2f * effectLevel)
+
         ship.setJitterUnder(ship, SHIMMER_COLOR, 1f, 10, 2f, 3f)
 
         interval.advance(Global.getCombatEngine().elapsedInLastFrame)
@@ -47,7 +48,7 @@ class VectorShiftStats : BaseShipSystemScript() {
             val bounds = ship.exactBounds
             bounds.update(ship.location, ship.facing)
             val origin = bounds.segments.random().p1
-            val angle = VectorUtils.getAngle(ship.location,origin)
+            val angle = VectorUtils.getAngle(ship.location, origin)
 
             if (target != null) {
                 Global.getCombatEngine().spawnEmpArc(
@@ -69,7 +70,7 @@ class VectorShiftStats : BaseShipSystemScript() {
                     ship,
                     origin,
                     ship,
-                    SimpleEntity(MathUtils.getRandomPointInCone(origin,150f, angle - 45f, angle + 45f)),
+                    SimpleEntity(MathUtils.getRandomPointInCone(origin, 150f, angle - 45f, angle + 45f)),
                     DamageType.ENERGY,  //Damage type
                     0f,  //Damage
                     0f,  //Emp

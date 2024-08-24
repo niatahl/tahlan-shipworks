@@ -5,8 +5,8 @@
   "spriteName": "graphics/tahlan/ships/legio/tahlan_raven_phantom.png",
   "style": "TAHLAN_SAVETH_TECH",
   "height": 240,
-  "width": 206,
-  "center": [103, 120],
+  "width": 180,
+  "center": [90, 120],
   "collisionRadius": 156,
   "shieldCenter": [0, -0],
   "shieldRadius": 148.5,
@@ -25,7 +25,7 @@
       "mount": "TURRET",
       "arc": 270,
       "angle": 0,
-      "locations": [12, 0]
+      "locations": [11, 0]
     },
     {
       "id": "WS0002",
@@ -34,7 +34,7 @@
       "mount": "TURRET",
       "arc": 360,
       "angle": 0,
-      "locations": [-37, 0]
+      "locations": [-38, 0]
     },
     {
       "id": "WS0003",
@@ -43,7 +43,7 @@
       "mount": "TURRET",
       "arc": 270,
       "angle": 0,
-      "locations": [52, 0]
+      "locations": [51, 0]
     },
     {
       "id": "WS0004",
@@ -52,7 +52,7 @@
       "mount": "TURRET",
       "arc": 118,
       "angle": 43.5,
-      "locations": [-21, 50]
+      "locations": [-22, 50]
     },
     {
       "id": "WS0005",
@@ -61,7 +61,7 @@
       "mount": "TURRET",
       "arc": 118,
       "angle": -43.5,
-      "locations": [-21, -50]
+      "locations": [-22, -50]
     },
     {
       "id": "WS0006",
@@ -70,7 +70,7 @@
       "mount": "TURRET",
       "arc": 118,
       "angle": 141,
-      "locations": [-55, 21]
+      "locations": [-56, 21]
     },
     {
       "id": "WS0007",
@@ -79,7 +79,7 @@
       "mount": "TURRET",
       "arc": 118,
       "angle": -141,
-      "locations": [-55, -21]
+      "locations": [-56, -21]
     },
     {
       "id": "LB 1",
@@ -89,9 +89,9 @@
       "arc": 360,
       "angle": 0,
       "locations": [
-        -9, 34,
-        -10, 29,
-        -2.5, 25.5
+        -10, 33.5,
+        -11, 28.5,
+        -3.5, 25
       ]
     },
     {
@@ -102,9 +102,9 @@
       "arc": 360,
       "angle": 0,
       "locations": [
-        -2.5, -25.5,
-        -11, -28.5,
-        -9, -33.5
+        -3.5, -26,
+        -12, -29,
+        -10, -34
       ]
     },
     {
@@ -114,12 +114,12 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [0, 0]
+      "locations": [-1, 0]
     }
   ],
   "engineSlots": [
     {
-      "location": [-88, -18],
+      "location": [-89, -18],
       "length": 40,
       "width": 15,
       "angle": -180,
@@ -127,7 +127,7 @@
       "style": "TAHLAN_SAVETH_ENGINE"
     },
     {
-      "location": [-88, 18],
+      "location": [-89, 18],
       "length": 40,
       "width": 15,
       "angle": 180,
@@ -135,7 +135,7 @@
       "style": "TAHLAN_SAVETH_ENGINE"
     },
     {
-      "location": [-70.5, 40.5],
+      "location": [-71.5, 40.5],
       "length": 12,
       "width": 4,
       "angle": 180,
@@ -143,7 +143,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-70.5, -40.5],
+      "location": [-71.5, -40.5],
       "length": 12,
       "width": 4,
       "angle": -180,
@@ -151,7 +151,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-85.5, 22.5],
+      "location": [-86.5, 22.5],
       "length": 12,
       "width": 4,
       "angle": 180,
@@ -159,7 +159,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-85.5, -22.5],
+      "location": [-86.5, -22.5],
       "length": 12,
       "width": 4,
       "angle": -180,
@@ -167,7 +167,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-85.5, -13.5],
+      "location": [-86.5, -13.5],
       "length": 12,
       "width": 4,
       "angle": -180,
@@ -175,7 +175,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-85.5, 13.5],
+      "location": [-86.5, 13.5],
       "length": 12,
       "width": 4,
       "angle": 180,
@@ -183,7 +183,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-70.5, -31.5],
+      "location": [-71.5, -31.5],
       "length": 12,
       "width": 4,
       "angle": -180,
@@ -191,7 +191,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-70.5, 31.5],
+      "location": [-71.5, 31.5],
       "length": 12,
       "width": 4,
       "angle": 180,
@@ -199,7 +199,7 @@
       "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-73, 36],
+      "location": [-74, 36],
       "length": 40,
       "width": 15,
       "angle": 180,
@@ -207,7 +207,7 @@
       "style": "TAHLAN_SAVETH_ENGINE"
     },
     {
-      "location": [-73, -36],
+      "location": [-74, -36],
       "length": 40,
       "width": 15,
       "angle": -180,
@@ -217,34 +217,38 @@
   ],
   "bounds": [
     -85.5, -11.5,
-    -100, -17,
+    -101, -19,
     -71.5, -27,
     -88.5, -35.5,
     -45, -54.5,
-    -53.5, -61,
+    -49.5, -63.5,
     -25.5, -75.5,
     -48.5, -80.5,
     -10.5, -86.5,
     9.5, -82.5,
     -11.5, -57.5,
-    17.5, -23,
+    13.5, -50.5,
+    2.5, -40,
+    17.5, -22,
     53, -18,
     46, -29,
     117, -5,
     117, 5,
     46, 29,
     53, 18,
-    17.5, 23,
+    17.5, 22,
+    2.5, 40,
+    13.5, 50.5,
     -11.5, 57.5,
     9.5, 82.5,
     -10.5, 86.5,
     -48.5, 80.5,
     -25.5, 75.5,
-    -53.5, 61,
+    -49.5, 63.5,
     -45, 54.5,
     -88.5, 35.5,
     -71.5, 27,
-    -100, 17,
+    -101, 19,
     -85.5, 11.5,
     -118, 0
   ]

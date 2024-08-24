@@ -28,6 +28,7 @@ public class TemporalTravelDrive extends BaseHullMod {
     //Activates a pseudo-hacked periodic breaker while the ship is using its travel drive
     @Override
     public void advanceInCombat(ShipAPI ship, float amount) {
+        if (ship.getTravelDrive() == null) return;
         if (ship.getTravelDrive().isActive() && !ship.getSystem().isActive() && !ship.isHulk()) {
             //Sets the effectLevel and state variables
             float effectLevel = ship.getTravelDrive().getEffectLevel();
