@@ -3,7 +3,7 @@
     
       
         "trigger_marketFaction_none": ["tahlan_legioinfernalis"],
-        "trigger_memKeys_all": {"$tahlan_triggered":true,},
+        "trigger_memKeys_all": {"$tahlan_triggered":true},
         "job_name": "Legio rising",
         "job_description": "After recent unsettling reports of increased $faction activity, the Hegemony has put out a number of bounties on key Legio officers, with the intent of curbing their ambitions. The target offered to you is a former pirate warlord going by the name of Idris the Great, a grandstanding but crude example of a man.\nThe exact capabilities of your target's fleet seem to be unknown, but as rumor has it, the Legio is testing some new weaponry, god knows how they get their hands on that kind of tech, and Idris is involved in that program, so his ship is bound to be heavily armed.\nGo take that bastard out and make sure his fleet is crippled.",
         "job_comm_reply": "Ha! You're the third little bounty hunter bitch trying to take my head and you won't be the last! The eggheads are going to love all that fancy combat data I'll deliver to them. I hope you enjoy dancing with my lovely Demons.",
@@ -86,7 +86,7 @@
     "tahlan_daemons_unchained":{
     
         "trigger_marketFaction_none": ["tahlan_legioinfernalis"],
-        "trigger_memKeys_all": {"$tahlan_daemons":true,},
+        "trigger_memKeys_all": {"$tahlan_daemons":true},
         "job_name": "Legio unchained",
         "job_description": "$firstName $lastName used to be a Blackwatch officer from what we know, but has fallen out of grace with that elite organisation. The reports imply, that $heSheThey went what can only be described as insane due to extended use of an experimental ==neural link== device to control one of his Daemon-type ships and is now on a rampage destroying anything in his path.\n\nWe believe his fleet is primarily comprised of Daemons with ==safety overrides==, caution is advised.",
         "job_comm_reply": "DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH! DEATH!",
@@ -148,8 +148,8 @@
 
     "tahlan_daemons_scathach":{
       
-        "trigger_marketFaction_none": ["tahlan_blackwatch"],
-        "trigger_memKeys_all": {"$tahlan_daemons":true,},
+        "trigger_marketFaction_none": ["tahlan_legioinfernalis"],
+        "trigger_memKeys_all": {"$tahlan_daemons":true},
         "job_name": "Sovereign of Hel",
         "job_description": "Human, you have defeated Idris and caught our interest. Come, seek an audience with us, that we may judge your potential. Do come prepared for we will not show you mercy.",
         "job_comm_reply": "So you have come. Show us your worth. Preveil and you shall be our champion. Fall and you shall be but dust among the stars. Prepare for immediate combat.",
@@ -167,7 +167,7 @@
         "job_pick_option": "Accept the invitation.",
         "target_importantPersonId": "tahlan_scathach",
         "fleet_name":"Royal Entourage",
-        "fleet_faction": "tahlan_blackwatch",
+        "fleet_faction": "tahlan_legioelite",
         "fleet_flagship_variant":"tahlan_scathach_wrathbringer",
         "fleet_flagship_name":"Scathach",
         "fleet_flagship_recoverable": true,
@@ -185,7 +185,6 @@
             "tahlan_manticore_dmn_hammer":2,
             "tahlan_manticore_dmn_needler":2,
             "tahlan_vanguard_dmn_assault":4,
-            "tahlan_centurion_dmn_deva":4,
             "tahlan_hound_dmn_blaster":3,
             "tahlan_hound_dmn_rampager":3,
             "tahlan_hound_dmn_skirmisher":3,
@@ -204,5 +203,5 @@
         "location_themes_blacklist": ["theme_already_occupied", "theme_already_colonized", "theme_hidden", "no_pulsar_blackhole"],
         "location_prioritizeUnexplored": true,
         "location_defaultToAnyEntity": true,
-    },
+    }
 }

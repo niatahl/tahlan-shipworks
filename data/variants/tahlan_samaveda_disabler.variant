@@ -17,27 +17,30 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0002": "ionpulser",
-                "WS0003": "ionpulser"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0004": "sabotpod"}
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0005": "sabot",
-                "WS0006": "sabot"
+                "WS0001": "ionpulser",
+                "WS0002": "ionpulser"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0001": "dualflak"}
+            "weapons": {
+                "WS0006": "lrpdlaser",
+                "WS0007": "lrpdlaser"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0004": "sabot",
+                "WS0005": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "dualflak"}
         }
     ],
     "wings": []

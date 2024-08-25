@@ -41,8 +41,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0005": "railgun",
-                "WS0006": "railgun"
+                "WS0005": "heavyac",
+                "WS0006": "heavyac"
             }
         },
         {

@@ -89,8 +89,8 @@ Numistri,tahlan_Ristreza_g,Battlecruiser,The Great Houses,tahlan_assaultmode,25,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Vayra nonsense,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Hresvelgr (RG),tahlan_Hresvelgr_rg,Battlecarrier,Red Guards,damper,28,14000,1200,11000,,500,260,4,45,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","revolutionary, vayra_red_army",,0.4,2,4,,507
-Bento (RG),tahlan_Bento_rg,Gunship,Red Guards,ammofeed,8,3000,800,8000,,150,80,,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,18,30,30,50,1,240,9,16000,6,20,240,0.25,8,8,,"revolutionary, vayra_red_army",,0.5,2,4,,209
+Hresvelgr (RG),tahlan_Hresvelgr_rg,Battlecarrier,Red Guards,damper,28,14000,1200,11000,,500,260,4,45,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"HIDE_IN_CODEX, CARRIER, COMBAT, NO_AUTO_ESCORT","revolutionary, vayra_red_army",,0.4,2,4,,507
+Bento (RG),tahlan_Bento_rg,Gunship,Red Guards,ammofeed,8,3000,800,8000,,150,80,,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,18,30,30,50,1,240,9,16000,6,20,240,0.25,8,8,HIDE_IN_CODEX,"revolutionary, vayra_red_army",,0.5,2,4,,209
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Legio Infernalis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -138,7 +138,7 @@ Hel Gaze,tahlan_gaze_dmn,Drone,Legio Infernalis,flarelauncher_single,,400,70,350
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Uniques,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Hresvelgr X,tahlan_Hresvelgr_X,Fleetcarrier,High Tech,fortressshield,28,14000,1000,11000,,400,260,6,35,20,20,8,10,3100,FRONT,,360,0.4,0.9,,,200,400,300,300,15,20,7,600000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","no_bp_drop, no_dealer",,0.4,2,4,,507
+Hresvelgr X,tahlan_Hresvelgr_X,Fleetcarrier,High Tech,fortressshield,28,14000,1000,11000,,400,260,6,35,20,20,8,10,3100,FRONT,,360,0.4,0.9,,,200,400,300,300,15,20,7,600000,3,12,720,0.25,45,45,"HIDE_IN_CODEX, CARRIER, COMBAT, NO_AUTO_ESCORT","no_bp_drop, no_dealer",,0.4,2,4,,507
 Cuchulainn,tahlan_Cuchulainn,Weapons Platform,High Tech,highenergyfocus,20,7000,700,12000,,700,100,,80,70,60,30,40,1200,FRONT,,120,0.4,0.8,,,150,300,120,120,4,30,9,250000,3,12,480,0.25,30,30,HIDE_IN_CODEX,"no_bp_drop, no_dealer",0.5,0.5,2,3,,59423
 Kriemhild,tahlan_Nibelung_n,Battleship,Low Tech,tahlan_auxthrusters,25,15000,1600,24000,,900,250,,50,30,20,12,15,3300,OMNI,,200,0.4,1,,,600,1000,300,400,12,33,7,320000,3,15,720,0.25,45,45,HIDE_IN_CODEX,"no_bp_drop, no_dealer",0.8,0.5,2,5,,2202
 Phronesis,tahlan_Phronesis,Heretic Destroyer,Unknown,tahlan_divinemight,12,5000,450,8000,,550,120,1,90,75,50,30,50,500,OMNI,,150,0.4,0.6,,,1,20,70,50,2,30,10,300000,5,15,420,0.25,15,15,HIDE_IN_CODEX,"no_bp_drop, no_dealer",0.2,0.5,2,3,,4444
