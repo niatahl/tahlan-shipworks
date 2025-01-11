@@ -44,12 +44,12 @@ Landsknecht,tahlan_landsknecht,Heavy Cruiser,Midline,tahlan_orion_device_mk2,16,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Rosenritter,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Silberblut Regalia Kfg.A,tahlan_stahlherz,Mobile Armor,Rosenritter,tahlan_rrskimmer,15,5000,1100,8000,,500,60,,65,80,80,40,60,450,FRONT,,360,0.3,0.9,,,20,40,70,70,3,28,9,200000,5,15,420,0.25,22,22,HIDE_IN_CODEX,"tahlan_silberherz_bp, no_dealer",,0.4,2,3,,13464
+Silberblut Regalia,tahlan_stahlherz,Mobile Armor,Rosenritter,tahlan_rrskimmer,15,5000,1100,8000,,500,60,,65,80,80,40,60,450,FRONT,,360,0.3,0.9,,,20,40,70,70,3,28,9,200000,5,15,420,0.25,22,22,HIDE_IN_CODEX,"tahlan_silberherz_bp, no_dealer",,0.4,2,3,,13464
 Halbmond,tahlan_halbmond,Support Carrier,Rosenritter,targetingfeed,24,12000,800,11000,,400,220,4,40,30,24,10,10,3200,OMNI,,180,0.3,1,,,500,1200,600,600,9,50,8,400000,5,15,720,0.25,40,40,"CARRIER, NO_AUTO_ESCORT, HIDE_IN_CODEX","tahlan_halbmond_bp, no_dealer",,0.4,2,4,,12121
 Mondlicht,tahlan_mondlicht,Cruiser,Rosenritter,tahlan_weaponstabilization,14,8000,900,10000,,400,150,2,70,50,30,16,25,1200,OMNI,,180,0.3,0.9,,,170,380,150,100,3,33,8,150000,3,12,480,0.25,18,18,HIDE_IN_CODEX,"tahlan_schneefall_bp, no_dealer",,0.5,2,3,,401
 Traumtänzer,tahlan_schneefall_traum,Battlecruiser,Rosenritter,tahlan_rrskimmer,26,13000,900,16000,,900,320,,60,90,60,13,20,2800,OMNI,,180,0.3,1,,,600,1000,300,400,12,33,8,900000,3,15,600,0.25,60,60,"HIDE_IN_CODEX, WEAPONS_FRONT_TO_BACK",no_dealer,,0.5,2,5,,11311
 Dorn,tahlan_dorn,Funnel,Rosenritter,,,200,50,100,,10,,,500,500,500,100,200,10,NONE,,90,0,1,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,no_dealer,,0,,,,454
-Glanzwurf Regalia Kfg.A,tahlan_glanzwurf,Mobile Armor,Rosenritter,tahlan_plasmarounds,8,2000,500,3500,,300,30,1,100,120,100,70,90,200,OMNI,,360,0.3,0.8,,,10,20,30,20,1,20,10,38000,10,20,240,0.25,8,8,HIDE_IN_CODEX,"tahlan_jagd_bp, no_dealer",,0.5,2,2,,206
+Glanzwurf Regalia,tahlan_glanzwurf,Mobile Armor,Rosenritter,tahlan_plasmarounds,8,2000,500,3500,,300,30,1,100,120,100,70,90,200,OMNI,,360,0.3,0.8,,,10,20,30,20,1,20,10,38000,10,20,240,0.25,8,8,HIDE_IN_CODEX,"tahlan_jagd_bp, no_dealer",,0.5,2,2,,206
 Nachtgesang,tahlan_schneefall,Battlecruiser,Rosenritter,tahlan_weaponstabilization,26,13000,1200,18000,,900,320,2,60,90,60,13,20,2800,OMNI,,180,0.3,0.9,,,600,1000,300,400,12,33,8,600000,3,15,720,0.25,45,45,"HIDE_IN_CODEX, WEAPONS_FRONT_TO_BACK","tahlan_schneefall_bp, no_dealer",,0.5,2,5,,11311
 Kupferflug,tahlan_kupferflug,Mobile Armor,Rosenritter,,,300,150,400,,100,,,140,90,90,60,100,30,OMNI,,360,0,1,,,3,3,,,,,,,,,,,,,HIDE_IN_CODEX,no_dealer,,0,,,,454
 Eisenflug,tahlan_eisenflug,Mobile Armor,Rosenritter,tahlan_rrskimmer,,300,150,500,,100,,,160,100,100,60,100,30,OMNI,,360,0,1,,,3,3,,,,,,,,,,,,,HIDE_IN_CODEX,no_dealer,,0,,,,454
@@ -89,8 +89,8 @@ Numistri,tahlan_Ristreza_g,Battlecruiser,The Great Houses,tahlan_assaultmode,25,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Vayra nonsense,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Hresvelgr (RG),tahlan_Hresvelgr_rg,Battlecarrier,Red Guards,damper,28,14000,1200,11000,,500,260,4,45,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","revolutionary, vayra_red_army",,0.4,2,4,,507
-Bento (RG),tahlan_Bento_rg,Gunship,Red Guards,ammofeed,8,3000,800,8000,,150,80,,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,18,30,30,50,1,240,9,16000,6,20,240,0.25,8,8,,"revolutionary, vayra_red_army",,0.5,2,4,,209
+Hresvelgr (RG),tahlan_Hresvelgr_rg,Battlecarrier,Red Guards,damper,28,14000,1200,11000,,500,260,4,45,20,20,8,10,3100,FRONT,,180,0.4,1,,,800,1600,300,300,15,20,7,400000,3,12,720,0.25,45,45,"HIDE_IN_CODEX, CARRIER, COMBAT, NO_AUTO_ESCORT","revolutionary, vayra_red_army",,0.4,2,4,,507
+Bento (RG),tahlan_Bento_rg,Gunship,Red Guards,ammofeed,8,3000,800,8000,,150,80,,60,40,30,30,40,400,FRONT,,90,0.5,1.2,,,18,30,30,50,1,240,9,16000,6,20,240,0.25,8,8,HIDE_IN_CODEX,"revolutionary, vayra_red_army",,0.5,2,4,,209
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Legio Infernalis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -138,7 +138,7 @@ Hel Gaze,tahlan_gaze_dmn,Drone,Legio Infernalis,flarelauncher_single,,400,70,350
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #Uniques,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Hresvelgr X,tahlan_Hresvelgr_X,Fleetcarrier,High Tech,fortressshield,28,14000,1000,11000,,400,260,6,35,20,20,8,10,3100,FRONT,,360,0.4,0.9,,,200,400,300,300,15,20,7,600000,3,12,720,0.25,45,45,"CARRIER, COMBAT, NO_AUTO_ESCORT","no_bp_drop, no_dealer",,0.4,2,4,,507
+Hresvelgr X,tahlan_Hresvelgr_X,Fleetcarrier,High Tech,fortressshield,28,14000,1000,11000,,400,260,6,35,20,20,8,10,3100,FRONT,,360,0.4,0.9,,,200,400,300,300,15,20,7,600000,3,12,720,0.25,45,45,"HIDE_IN_CODEX, CARRIER, COMBAT, NO_AUTO_ESCORT","no_bp_drop, no_dealer",,0.4,2,4,,507
 Cuchulainn,tahlan_Cuchulainn,Weapons Platform,High Tech,highenergyfocus,20,7000,700,12000,,700,100,,80,70,60,30,40,1200,FRONT,,120,0.4,0.8,,,150,300,120,120,4,30,9,250000,3,12,480,0.25,30,30,HIDE_IN_CODEX,"no_bp_drop, no_dealer",0.5,0.5,2,3,,59423
 Kriemhild,tahlan_Nibelung_n,Battleship,Low Tech,tahlan_auxthrusters,25,15000,1600,24000,,900,250,,50,30,20,12,15,3300,OMNI,,200,0.4,1,,,600,1000,300,400,12,33,7,320000,3,15,720,0.25,45,45,HIDE_IN_CODEX,"no_bp_drop, no_dealer",0.8,0.5,2,5,,2202
 Phronesis,tahlan_Phronesis,Heretic Destroyer,Unknown,tahlan_divinemight,12,5000,450,8000,,550,120,1,90,75,50,30,50,500,OMNI,,150,0.4,0.6,,,1,20,70,50,2,30,10,300000,5,15,420,0.25,15,15,HIDE_IN_CODEX,"no_bp_drop, no_dealer",0.2,0.5,2,3,,4444

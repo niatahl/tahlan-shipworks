@@ -1,14 +1,12 @@
 {
     "baseHullId":"tahlan_stahlherz",
     "skinHullId":"tahlan_stahlherz_c",
-    "hullName":"Silberblut Regalia Kfg.C",
+    "hullName":"Silberblut Regalia",
     "descriptionId":"tahlan_stahlherz",
-    "descriptionPrefix":"Alternate configuration C. Specialized for long-range combat",
     #"spriteName":"graphics/tahlan/ships/ma/tahlan_stahlherz.png",
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
-    "tags":["tahlan_silberherz_bp"],
 	"systemId":"tahlan_weaponstabilization",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids
