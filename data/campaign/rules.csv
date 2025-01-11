@@ -189,7 +189,7 @@ tahlan_devilCBShowBountyShowShips,DialogOptionSelected,$option == tahlan_devilCB
 contact_decline:Decline
 tahlan_devilCB_showOptions:Ask about one of the other targets",
 ,,,,,,
-tahlan_CBPatherDevil,CBPatherOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Ah yes, that pather"", $heOrShe rolls her eyes, ""they hate us as much as anyone in the sector. Blackwatch NIS tracked this one to the $bcb_systemName system, about $bcb_dist light-years from here.""
+tahlan_CBPatherDevil,CBPatherOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Ah yes, that Pather"", $heOrShe rolls her eyes, ""they hate us as much as anyone in the sector. Blackwatch NIS tracked this one to the $bcb_systemName system, about $bcb_dist light-years from here.""
 
 ""$bcb_reward credits if $bcb_targetHeOrShe is dealt with within the next $bcb_days days. Sound good?""",,
 tahlan_CBMercDevil,CBMercOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Spicy,"" $heOrShe grins, ""another free Captain, just like you. I'm sure you can handle it, right?""
@@ -202,7 +202,7 @@ tahlan_CBPirateDevil,CBPirateOfferDesc,$id == tahlan_devil score:10,Highlight $b
 ""Name's $bcb_targetName, currently hiding out in the $bcb_systemName system,  $bcb_dist light-years from here. You know how this works.""
 
 ""I can offer you $bcb_reward credits to get it done within the next $bcb_days days before I have to send one of my underlings to take care of it instead.""",,
-tahlan_CBRemnantDevil,CBRemnantOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Now that's a fun one. A fleet of remnant droneships that needs to be removed. Simple enough, right? Noone's even going to come looking for it if it goes missing. I'd call that the perfect job.""
+tahlan_CBRemnantDevil,CBRemnantOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Now that's a fun one. A fleet of remnant droneships that needs to be removed. Simple enough, right? No-one's even going to come looking for it if it goes missing. I'd call that the perfect job.""
 
 $HeOrShe seems entirely unconcerned for your safety despite the well-known danger of dealing with remnant dronefleets and continues to flick through the data.
 
