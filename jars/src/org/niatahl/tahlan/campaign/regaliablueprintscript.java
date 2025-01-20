@@ -7,6 +7,10 @@ import com.fs.starfarer.api.campaign.SpecialItemData;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import org.lazywizard.lazylib.MathUtils;
+import second_in_command.SCData;
+import second_in_command.SCUtils;
+import second_in_command.specs.SCOfficer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,6 +18,22 @@ import java.util.List;
 import java.util.Map;
 
 public class regaliablueprintscript implements EveryFrameScript {
+
+
+    private static final boolean secondInCommandMode = Global.getSettings().getModManager().isModEnabled("second_in_command");
+    //ID/Tech Level
+    private static final Map<String, Integer> VALID_APTITUDES = new HashMap<>();
+    static {
+        VALID_APTITUDES.put("sc_technology", 2);
+        VALID_APTITUDES.put("sc_automated", 1);
+        VALID_APTITUDES.put("rat_exotech", 1);
+        VALID_APTITUDES.put("rat_abyssal", 1);
+        VALID_APTITUDES.put("sc_dustkeeper", 1);
+        VALID_APTITUDES.put("xo_synthesis", 1);
+    }
+
+
+
     //This is the hull ID string the ship has to contain to trigger the script
     private final static String HULL_ID = "tahlan_halbmond";
 
@@ -108,13 +128,36 @@ public class regaliablueprintscript implements EveryFrameScript {
                     }
 
                     //If our tech aptitude is higher now than it was earlier, alert the player of this and increase the stored tech aptitude
+
+
                     if (newTechAptitude != currentTechAptitude) {
-                        Global.getSector().getCampaignUI().addMessage(
-                                "Thanks to your heightened aptitude with Technology, decrypting the Carrier's databanks should now take notably less time.",
-                                Global.getSettings().getColor("standardTextColor"),
-                                "Technology","notably less time",
-                                Global.getSettings().getColor("mountBlueColor"),
-                                Global.getSettings().getColor("yellowTextColor"));
+
+                        if (secondInCommandMode) {
+                            if (newTechAptitude < currentTechAptitude) {
+                                Global.getSector().getCampaignUI().addMessage(
+                                        "Your new arrangement of executive officers has a lower technical aptitude than the previous lineup, " +
+                                                "decrypting the Carrier's databanks will now take more time.",
+                                        Global.getSettings().getColor("standardTextColor"),
+                                        "technical aptitude","take more time",
+                                        Global.getSettings().getColor("mountBlueColor"),
+                                        Global.getSettings().getColor("yellowTextColor"));
+                            }
+                            if (newTechAptitude > currentTechAptitude) {
+                                Global.getSector().getCampaignUI().addMessage(
+                                        "Your new arrangement of executive officers has a higher technical aptitude than before, decrypting the Carrier's databanks should now take notably less time.",
+                                        Global.getSettings().getColor("standardTextColor"),
+                                        "technical aptitude","notably less time",
+                                        Global.getSettings().getColor("mountBlueColor"),
+                                        Global.getSettings().getColor("yellowTextColor"));
+                            }
+                        } else {
+                            Global.getSector().getCampaignUI().addMessage(
+                                    "Thanks to your heightened aptitude with Technology, decrypting the Carrier's databanks should now take notably less time.",
+                                    Global.getSettings().getColor("standardTextColor"),
+                                    "Technology","notably less time",
+                                    Global.getSettings().getColor("mountBlueColor"),
+                                    Global.getSettings().getColor("yellowTextColor"));
+                        }
                         currentTechAptitude = newTechAptitude;
                     }
 
@@ -189,6 +232,22 @@ public class regaliablueprintscript implements EveryFrameScript {
 
     //Function for getting the player's aptitude in technology (as 0, 1, 2 or 3)
     private int getTechAptitude () {
+
+        if (secondInCommandMode) {
+            int level = 0;
+            SCData data = SCUtils.getPlayerData();
+
+            for (SCOfficer officer : data.getActiveOfficers()) {
+                if (VALID_APTITUDES.containsKey(officer.getAptitudeId())) {
+                    level += VALID_APTITUDES.get(officer.getAptitudeId());
+                }
+            }
+
+            level = MathUtils.clamp(level, 0, 3);
+
+            return level;
+        }
+
         if (Global.getSector().getPlayerStats().getSkillLevel("special_modifications")>0 || Global.getSector().getPlayerStats().getSkillLevel("automated_ships")>0) {
             return 3;
         } else if (Global.getSector().getPlayerStats().getSkillLevel("electronic_warfare")>0 || Global.getSector().getPlayerStats().getSkillLevel("fighter_uplink")>0) {
@@ -211,13 +270,26 @@ public class regaliablueprintscript implements EveryFrameScript {
         }
 
         //Spawns a message to tell the player all they need to know about the new acquiring
-        Global.getSector().getCampaignUI().addMessage(
-                "Initial examinations of the Halbmond-class carrier you recently recovered have revealed a well-encrypted but intact Rosenritter blueprint database stored on the ship's mainframe. Recovery is likely to be a complicated process, but the rewards should prove worth the wait. With your current aptitude in Technology, decrypting it " +
-                        LENGTH_DESCRIPTIONS.get(currentTechAptitude) + ".",
-                Global.getSettings().getColor("standardTextColor"),
-                "Technology",LENGTH_DESCRIPTIONS.get(currentTechAptitude),
-                Global.getSettings().getColor("mountBlueColor"),
-                Global.getSettings().getColor("yellowTextColor"));
+        if (secondInCommandMode) {
+            Global.getSector().getCampaignUI().addMessage(
+                    "Initial examinations of the Halbmond-class carrier you recently recovered have revealed a well-encrypted but intact Rosenritter blueprint database stored on the ship's mainframe. " +
+                            "Recovery is likely to be a complicated process, but the rewards should prove worth the wait. An executive officer with technical proficiency may improve recovery, though officers with adjacent aptitudes will also be of help. With your decks current aptitude, decrypting it " +
+                            LENGTH_DESCRIPTIONS.get(currentTechAptitude) + ".",
+                    Global.getSettings().getColor("standardTextColor"),
+                     "executive officer with technical proficiency",LENGTH_DESCRIPTIONS.get(currentTechAptitude),
+                    Global.getSettings().getColor("mountBlueColor"),
+                    Global.getSettings().getColor("yellowTextColor"));
+        } else {
+            Global.getSector().getCampaignUI().addMessage(
+                    "Initial examinations of the Halbmond-class carrier you recently recovered have revealed a well-encrypted but intact Rosenritter blueprint database stored on the ship's mainframe. Recovery is likely to be a complicated process, but the rewards should prove worth the wait. With your current aptitude in Technology, decrypting it " +
+                            LENGTH_DESCRIPTIONS.get(currentTechAptitude) + ".",
+                    Global.getSettings().getColor("standardTextColor"),
+                    "Technology",LENGTH_DESCRIPTIONS.get(currentTechAptitude),
+                    Global.getSettings().getColor("mountBlueColor"),
+                    Global.getSettings().getColor("yellowTextColor"));
+        }
+
+
         stateOfScript = 1;
     }
 
