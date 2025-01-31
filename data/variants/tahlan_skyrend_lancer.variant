@@ -1,7 +1,7 @@
 {
     "displayName": "Lancer",
-    "fluxCapacitors": 26,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 44,
     "goalVariant": true,
     "hullId": "tahlan_skyrend",
     "hullMods": [

@@ -1,8 +1,14 @@
 1.3.1
+- Added Raven
 - Fixed Eagle and Falcon nightwatch variants not spawning
 - Fixed Hel Skipper missing description
 - Fixed some DP adjustments from previous changelog missing
+- Fixed Heavy Karion on Ristreza-class ships lacking their ammo regen (idk how that happened)
+- Gleipnir
+	- Damage 1500 -> 3000 for both variants
 - Hel Doom DP 40 -> 35
+- Skysplitter
+	- OP 300 -> 270
 - Added Scathach bounty
 
 

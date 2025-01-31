@@ -1,7 +1,7 @@
 {
     "displayName": "Combat",
-    "fluxCapacitors": 15,
-    "fluxVents": 50,
+    "fluxCapacitors": 0,
+    "fluxVents": 35,
     "goalVariant": true,
     "hullId": "tahlan_skyrend",
     "hullMods": [
