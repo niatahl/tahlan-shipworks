@@ -10,7 +10,7 @@
 - Skysplitter
 	- OP 300 -> 270
 - Added Scathach bounty
-
+- Adjusted Digital Soul effects
 
 1.3
 - Added Hel Skipper

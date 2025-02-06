@@ -208,7 +208,10 @@ According to recovered logs, this particular Illustrious served as command headq
 While moderate elements wished to lend their assets to stabilising the sector in cooperation with local leaderships, the more radical elements saw only one correct choice, the subjugation of the sector under the only true successor to the Domain government. Disagreements continued for many years as small detachments of Nightwatch forces took independent action to clear the paths for the respective goals, but no consensus could be found and struggles for power within the organisation began turning to violence.
 
 It wasn't until the arrival of the XIVth Battlegroup that matters escalated, setting in motion a path of events that would spell the end of the Nightwatch and the birth of what is now known as the Legio Infernalis.",,,
-tahlan_raven,SHIP,,,,
+tahlan_raven,SHIP,"Fast, decently armed and carrying its own fighter complement, the Raven is a ship built to be self-sufficient and capable of handling any situation it is likely to find itself in, capabilities further bolstered by the Domain-era electronic warfare suite it carries.
+
+The Raven was, without doubt, designed and built directly to the specifications of Nightwatch BlackOps command, intended primarily as primary hub and base of operations for agents in the field, far away from core Domain military infrastructure. It is therefore little surprise, that the Nightwatch detachment in the Persean Sector had a good number of these vessels to their avail. Sadly, despite their excellent performance, these ships have become quite rare due to intermittent losses and difficulty in constructing replacements.",,,
+tahlan_raven_phantom,SHIP,"This ship of unknown origins is clearly a variant of the Raven, heavily upgraded with what appears to be salvaged experimental tech, possibly taken from one of the Tri-Tachyon Corporation's all too many secret blacksites. Who exactly assembled the final product remains a mystery.",,,
 ,,,,,
 ,,,,,
 tahlan_vanguard_dmn,SHIP,"#> Ship Classification: Unknown

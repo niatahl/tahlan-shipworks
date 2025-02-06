@@ -17,9 +17,9 @@ import org.niatahl.tahlan.utils.Utils.txt
 
 object DigitalSoul {
 
-    val ELITE_CR = 15f
-    val BASE_CR = 85f
-    val SKILL_ID = "tahlan_digitalSoul"
+    const val BASE_CR = 15f
+    const val CR_DEPLOYMENT_MULT = 0.5f
+    const val SKILL_ID = "tahlan_digitalSoul"
 
     class Level1a : ShipSkillEffect {
         override fun getEffectDescription(level: Float): String? {
@@ -52,16 +52,15 @@ object DigitalSoul {
             return LevelBasedEffect.ScopeDescription.CUSTOM
         }
 
-        override fun apply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String?, level: Float) {
+        override fun apply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String, level: Float) {
             if (Misc.isAutomated(stats)) {
                 val skill = Global.getSettings().getSkillSpec(SKILL_ID)
-                val automatedShipsBonus: Float = computeAndCacheThresholdBonus(stats, "auto_cr", AutomatedShips.MAX_CR_BONUS, ThresholdBonusType.AUTOMATED_POINTS) // We subtract the automated ship points bonus to not double dip on that
-                val eliteBonus = if (Global.getSector().playerPerson.stats.getSkillLevel(SKILL_ID) > 1f) ELITE_CR else 0f
-                stats.maxCombatReadiness.modifyFlat(id, (BASE_CR + eliteBonus - automatedShipsBonus).coerceAtLeast(0f) * 0.01f, skill.name + txt("skill_suffix"))
+                stats.maxCombatReadiness.modifyFlat(id, BASE_CR, skill.name + txt("skill_suffix"))
+
             }
         }
 
-        override fun unapply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String?) {
+        override fun unapply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String) {
             stats.maxCombatReadiness.unmodify(id)
         }
 
@@ -70,9 +69,10 @@ object DigitalSoul {
         }
     }
 
-    class Level2a : ShipSkillEffect {
-        override fun getEffectDescription(level: Float): String {
-            return txt("digitalSoulLevel2a")
+    class Level2a : ShipSkillEffect, BaseSkillEffectDescription() {
+
+        override fun createCustomDescription(stats: MutableCharacterStatsAPI?, skill: SkillSpecAPI?, info: TooltipMakerAPI, width: Float) {
+            info.addPara(txt("digitalSoulLevel2a"), 0f, Misc.getHighlightColor(), Misc.getHighlightColor(), txt("digitalSoulLevel2a_hl"))
         }
 
         override fun getEffectPerLevelDescription(): String? {
@@ -84,11 +84,13 @@ object DigitalSoul {
         }
 
         override fun apply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String?, level: Float) {
-            return
+            if (Misc.isAutomated(stats)) {
+                stats.crPerDeploymentPercent.modifyMult(id, CR_DEPLOYMENT_MULT)
+            }
         }
 
         override fun unapply(stats: MutableShipStatsAPI, hullSize: ShipAPI.HullSize?, id: String?) {
-            return
+            stats.crPerDeploymentPercent.unmodify(id)
         }
     }
 
