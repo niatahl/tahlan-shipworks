@@ -1,9 +1,12 @@
 <component name="libraryTable">
   <library name="SecondInCommand">
     <CLASSES>
-      <root url="jar://G:/Starsector/mods/Second-in-Command-1.2.13/jars/SecondInCommand.jar!/" />
+      <root url="file://G:/Starsector/mods/Second-in-Command/jars" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://G:/Starsector/mods/Second-in-Command/src" />
+    </SOURCES>
+    <jarDirectory url="file://G:/Starsector/mods/Second-in-Command/jars" recursive="false" />
   </library>
 </component>

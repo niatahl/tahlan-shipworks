@@ -1,20 +1,22 @@
 {
-	"id":"tahlan", # internal id
-	"name":"Tahlan Shipworks", # displayed to the player
-	"author":"Nia Tahl",
-	"version":"1.3",
-	"description":"A ship pack that suffers from feature creep",
-	"gameVersion":"0.97a",
-	"jars":["jars/TahlanShipworks.jar"],
-	"modPlugin":"org.niatahl.tahlan.plugins.TahlanModPlugin",
-	"dependencies": [
-		{
-			"id": "lw_lazylib",
-			"name": "LazyLib",
-		},
-		{
-			"id": "MagicLib",
-			"name": "MagicLib",
-		}
-	]
+  "id": "tahlan",
+  "name": "Tahlan Shipworks",
+  "author": "Nia Tahl",
+  "version": "1.4",
+  "description": "A ship pack that suffers from feature creep",
+  "gameVersion": "0.98a-RC5",
+  "jars": [
+    "jars/TahlanShipworks.jar"
+  ],
+  "modPlugin": "org.niatahl.tahlan.plugins.TahlanModPlugin",
+  "dependencies": [
+    {
+      "id": "lw_lazylib",
+      "name": "LazyLib"
+    },
+    {
+      "id": "MagicLib",
+      "name": "MagicLib"
+    }
+  ]
 }

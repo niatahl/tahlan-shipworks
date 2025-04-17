@@ -2,6 +2,7 @@
   <library name="LazyLib-Kotlin">
     <CLASSES>
       <root url="jar://G:/Starsector/mods/LazyLib/jars/LazyLib-Kotlin.jar!/" />
+      <root url="jar://G:/Starsector/mods/LazyLib/jars/internal/Kotlin-Runtime.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

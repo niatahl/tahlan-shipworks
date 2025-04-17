@@ -29,6 +29,7 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         NORMAL, SWIRLY, SPLINTER, DUST
     }
 
+    @Deprecated("On a technicality")
     override fun init(engine: CombatEngineAPI) {
         nebulaData.clear()
         val layerRenderer: CombatLayeredRenderingPlugin = CustomRenderer(this)

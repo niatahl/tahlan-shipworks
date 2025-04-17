@@ -1238,5 +1238,8 @@
       "pitch": 1.09,
       "volume": 0.6
     }
-  ]
+  ],
+  "tahlan_system_jaunt":[ 
+		{"file":"sounds/sfx_systems/energy_lash_extraction_protocol.ogg","pitch":1,"volume":0.6},
+	],
 }

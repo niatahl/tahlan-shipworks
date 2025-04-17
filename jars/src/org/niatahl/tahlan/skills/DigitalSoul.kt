@@ -17,7 +17,7 @@ import org.niatahl.tahlan.utils.Utils.txt
 
 object DigitalSoul {
 
-    const val BASE_CR = 15f
+    const val BASE_CR = 0.15f
     const val CR_DEPLOYMENT_MULT = 0.5f
     const val SKILL_ID = "tahlan_digitalSoul"
 

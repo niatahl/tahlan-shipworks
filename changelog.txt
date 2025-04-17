@@ -1,4 +1,4 @@
-1.3.1
+1.4
 - Added Raven
 - Fixed Eagle and Falcon nightwatch variants not spawning
 - Fixed Hel Skipper missing description
@@ -6,9 +6,14 @@
 - Fixed Heavy Karion on Ristreza-class ships lacking their ammo regen (idk how that happened)
 - Gleipnir
 	- Damage 1500 -> 3000 for both variants
+- Pastella
+	- Flux per shot 270 -> 240
 - Hel Doom DP 40 -> 35
 - Skysplitter
 	- OP 300 -> 270
+- Imperator
+	- dissipation 1000 -> 1200
+	- top speed 25 -> 30
 - Added Scathach bounty
 - Adjusted Digital Soul effects
 

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="LunaLib">
+  <library name="LunaLib-Kotlin">
     <CLASSES>
-      <root url="jar://G:/Starsector/mods/LunaLib/jars/LunaLib.jar!/" />
+      <root url="jar://G:/Starsector/mods/LunaLib/jars/LunaLib-Kotlin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

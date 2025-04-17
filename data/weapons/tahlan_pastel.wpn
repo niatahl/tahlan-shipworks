@@ -8,6 +8,7 @@
   "turretSprite": "graphics/tahlan/weapons/tahlan_pastel_turret.png",
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_pastel_hp.png",
   "renderAboveAllWeapons": 0,
+  "autocharge":true,
   "turretOffsets": [
     14.5,
     0

@@ -14,8 +14,8 @@
 	"clampTurnRateAfter":true,
 	"clampMaxSpeedAfter":true,
 
-	"useSound":"system_maneuvering_jets",
-	"loopSound":"system_maneuvering_jets_loop",
+	"useSound":"tahlan_system_jaunt",
+	#"loopSound":"system_maneuvering_jets_loop",
 	"outOfUsesSound":"engine_disabled",
 	
 	"aiHints":{

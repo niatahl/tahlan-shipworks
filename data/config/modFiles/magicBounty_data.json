@@ -173,11 +173,12 @@
         "fleet_flagship_recoverable": true,
         "fleet_flagship_autofit": false,
         "fleet_musicSetId": "tahlan_legio_rising",
+        "job_item_reward": {"tahlan_manannan":2},
         "fleet_preset_ships": {
             "tahlan_retribution_dmn_aggressor":2,
             "tahlan_kodai_dmn_carnage":4,
             "tahlan_doom_dmn_strike":4,
-            "tahlan_centurion_dmn_deva":4,
+            "tahlan_centurion_dmn_deva":6,
             "tahlan_dominator_dmn_barrage":2,
             "tahlan_champion_dmn_brawler":4,
             "tahlan_hammerhead_dmn_combat":2,

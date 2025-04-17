@@ -10,6 +10,7 @@
   "hardpointSprite": "graphics/tahlan/weapons/tahlan_ryza_hp_base.png",
   "hardpointGlowSprite": "graphics/tahlan/weapons/tahlan_ryza_hp_glow.png",
   "renderAboveAllWeapons": 0,
+  "autocharge":true,
   "glowColor": [
     255,
     255,
