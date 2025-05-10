@@ -246,10 +246,10 @@
 		"fighterRepairFlickerColor":[100,165,255,255],
 		"fighterChipIconColor":[100,165,255,255],
 		"weaponDisabledExplosionColor":[100,165,255,255],
-		"shieldRingColor":[185,175,255,205],
-		"shieldInnerColor":[255,70,160,180],
-		"fluxVentCoreColor":[255,255,255,255],
-		"fluxVentFringeColor":[205,0,155,255],
+		"shieldRingColor":[60,70,80,30],
+		"shieldInnerColor":[185,245,255,40],
+		"fluxVentCoreColor":[255,255,255,100],
+		"fluxVentFringeColor":[200,235,255,100],
 		"engineLoopSet":"engine_loop", 					# id of entry in sounds.json
 		"engineAccelerateSet":"engine_accelerate",		# id of entry in sounds.json
 		"empLoopSet":"emp_loop",						# id of entry in sounds.json

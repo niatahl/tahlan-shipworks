@@ -3,6 +3,9 @@
 		"TahlanRenderer":"org.niatahl.tahlan.plugins.CustomRender",
 		"TahlanCampaignPluginImpl":"org.niatahl.tahlan.plugins.CampaignPluginImpl"
 	},  
+	"ruleCommandPackages":[
+		"org.niatahl.tahlan.campaign.rulecmd",
+    ],
 	"designTypeColors":{
             "Unknown":[255,255,255,255],
             "The Great Houses":[160,150,140,255],
@@ -43,6 +46,7 @@
 			"tahlan_novaspear_glow":"graphics/tahlan/fx/tahlan_novaspear_glow.png",
 			"tahlan_tineola_blast1":"graphics/tahlan/fx/tahlan_pinshield.png",
 			"tahlan_nxa_phantom":"graphics/tahlan/ships/oddities/tahlan_nxa_glow1.png",
+			"tahlan_nxa_phantom2":"graphics/tahlan/ships/oddities/tahlan_nxa_glow2.png",
 			"tahlan_ewar_target":"graphics/tahlan/fx/tahlan_ewar_target.png",
 			"tahlan_ewar_aura":"graphics/tahlan/fx/tahlan_ewar_aura.png",
 			"tahlan_altar_aura":"graphics/tahlan/fx/tahlan_tempshield_ring_b.png"

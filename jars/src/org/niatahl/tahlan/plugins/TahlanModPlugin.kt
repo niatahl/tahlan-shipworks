@@ -7,9 +7,11 @@ import com.fs.starfarer.api.campaign.BaseCampaignEventListener
 import com.fs.starfarer.api.campaign.CampaignPlugin
 import com.fs.starfarer.api.campaign.RepLevel
 import com.fs.starfarer.api.campaign.SectorAPI
+import com.fs.starfarer.api.characters.FullName
 import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.fleet.FleetMemberAPI
 import com.fs.starfarer.api.impl.campaign.GateEntityPlugin
+import com.fs.starfarer.api.impl.campaign.ids.Factions.PLAYER
 import com.fs.starfarer.api.impl.campaign.shared.SharedData
 import com.fs.starfarer.api.util.Misc
 import exerelin.campaign.SectorManager
@@ -22,6 +24,7 @@ import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
+import org.niatahl.tahlan.listeners.SuccListener
 import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addArtillery
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addMines
@@ -266,6 +269,19 @@ class TahlanModPlugin : BaseModPlugin() {
                 NexConfig.getFactionConfig(LEGIO).diplomacyTraits.remove("monstrous")
                 NexConfig.getFactionConfig(LEGIO).diplomacyPositiveChance["default"] = 0.5f
                 NexConfig.getFactionConfig(LEGIO).diplomacyNegativeChance["default"] = 1f
+            }
+        }
+
+        // Just for me :)
+        if (Global.getSettings().modManager.isModEnabled("portrait_nia")) {
+            sector.getFaction(PLAYER).getPortraits(FullName.Gender.FEMALE).also {
+                it.remove("graphics/portraits/npp_001.png")
+                it.remove("graphics/portraits/npp_002.png")
+                it.remove("graphics/portraits/npp_003.png")
+                it.remove("graphics/portraits/npp_004.png")
+                it.remove("graphics/portraits/npp_005.png")
+                it.remove("graphics/portraits/npp_006.png")
+                it.remove("graphics/portraits/npp_cieve.png")
             }
         }
     }

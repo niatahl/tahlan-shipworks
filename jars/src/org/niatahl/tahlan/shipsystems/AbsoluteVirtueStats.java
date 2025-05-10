@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import org.niatahl.tahlan.campaign.DevilTravel;
 
 public class AbsoluteVirtueStats extends BaseShipSystemScript {
 
@@ -36,7 +37,6 @@ public class AbsoluteVirtueStats extends BaseShipSystemScript {
             if (ship.getShield().isOff()){
                 ship.getShield().toggleOn();
             }
-
         }
 
         ship.blockCommandForOneFrame(ShipCommand.TOGGLE_SHIELD_OR_PHASE_CLOAK);

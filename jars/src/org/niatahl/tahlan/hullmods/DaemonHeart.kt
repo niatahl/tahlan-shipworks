@@ -15,7 +15,10 @@ import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_BARROW
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_REVERIE
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIERRA
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIRIUS
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIRIUS_MIMIC
 import org.niatahl.tahlan.utils.TahlanPeople.CIEVE
 import org.niatahl.tahlan.utils.Utils.txt
 import java.awt.Color
@@ -58,7 +61,7 @@ class DaemonHeart : BaseHullMod() {
         val engine = Global.getCombatEngine() ?: return
         if (ship.originalOwner == -1) return
         val speedBoost = 1f - (ship.fluxLevel / SPEED_CAP).coerceIn(0f, 1f)
-        ship.mutableStats.maxSpeed.modifyFlat(dc_id, speedBoost * SPEED_BUFF)
+        ship.mutableStats.maxSpeed.modifyFlat(DC_ID, speedBoost * SPEED_BUFF)
 
         if (engine.getFleetManager(ship.owner) == engine.getFleetManager(FleetSide.PLAYER)) {
             //Only run this in campaign context, not missions
@@ -91,7 +94,7 @@ class DaemonHeart : BaseHullMod() {
                         return
                     }
 
-                    if (ship.captain.id in immuneCaptains || ship.captain.isPlayer) {
+                    if (ship.captain.id in IMMUNE_CAPTAINS || ship.captain.isPlayer) {
                         engine.addFloatingText(ship.location, "EWAR ATTACK RESISTED", 40f, Color.RED, ship, 0.5f, 3f)
                         ship.fluxTracker.forceOverload(5f)
                         return
@@ -126,18 +129,18 @@ class DaemonHeart : BaseHullMod() {
             }
         } else {
             if (!ship.isAlive || ship.isHulk || ship.isPiece) {
-                ship.setJitter(dc_id, JITTER_COLOR, 0f, 0, 0f)
-                ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, 0f, 0, 0f)
+                ship.setJitter(DC_ID, JITTER_COLOR, 0f, 0, 0f)
+                ship.setJitterUnder(DC_ID, JITTER_UNDER_COLOR, 0f, 0, 0f)
                 return
             }
 
             // Enrage function
             val enrage = 1f - ship.hullLevel
-            ship.mutableStats.timeMult.modifyMult(dc_id, 1f + enrage * 0.25f)
-            ship.mutableStats.energyWeaponRangeBonus.modifyMult(dc_id, 1f - enrage * 0.25f)
-            ship.mutableStats.ballisticWeaponRangeBonus.modifyMult(dc_id, 1f - enrage * 0.25f)
-            ship.setJitter(dc_id, JITTER_COLOR, enrage, 3, 5f)
-            ship.setJitterUnder(dc_id, JITTER_UNDER_COLOR, enrage, 20, 15f)
+            ship.mutableStats.timeMult.modifyMult(DC_ID, 1f + enrage * 0.25f)
+            ship.mutableStats.energyWeaponRangeBonus.modifyMult(DC_ID, 1f - enrage * 0.25f)
+            ship.mutableStats.ballisticWeaponRangeBonus.modifyMult(DC_ID, 1f - enrage * 0.25f)
+            ship.setJitter(DC_ID, JITTER_COLOR, enrage, 3, 5f)
+            ship.setJitterUnder(DC_ID, JITTER_UNDER_COLOR, enrage, 20, 15f)
         }
     }
 
@@ -210,10 +213,13 @@ class DaemonHeart : BaseHullMod() {
     }
 
     companion object {
-        private val immuneCaptains = listOf(
+        private val IMMUNE_CAPTAINS = listOf(
             CIEVE,
             SOTF_SIERRA,
-            SOTF_BARROW
+            SOTF_BARROW,
+            SOTF_SIRIUS_MIMIC,
+            SOTF_SIRIUS,
+            SOTF_REVERIE
         )
 
         private const val SUPPLIES_PERCENT = 100f
@@ -222,7 +228,7 @@ class DaemonHeart : BaseHullMod() {
         private const val PLAYER_NERF = 0.9f
         private val JITTER_COLOR = Color(255, 0, 0, 30)
         private val JITTER_UNDER_COLOR = Color(255, 0, 0, 80)
-        const val dc_id = "tahlan_daemoncore"
+        const val DC_ID = "tahlan_daemoncore"
         private val yoinkTimer = IntervalUtil(10f, 30f)
     }
 }

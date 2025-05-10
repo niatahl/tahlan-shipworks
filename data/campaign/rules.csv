@@ -94,7 +94,8 @@ She pauses for a moment.
 legiobareventencounter_hub2:""Why would I ever wish to join you?""
 legiobareventencounter_hub3:""Actually, those eyes, genemods or implants?""
 legiobareventencounter_exit:""I think that'll be all.""",
-legiobareventencounter_introexit,DialogOptionSelected,$option == legiobareventencounter_exit,AddPotentialContact,"""Suit yourself.""
+legiobareventencounter_introexit,DialogOptionSelected,$option == legiobareventencounter_exit,"AddPotentialContact
+StartDevilTravel","""Suit yourself.""
 
 As you are about to leave, she tosses you a data chip.
 

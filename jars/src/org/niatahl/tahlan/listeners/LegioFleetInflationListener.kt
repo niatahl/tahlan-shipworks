@@ -16,6 +16,9 @@ import org.niatahl.tahlan.plugins.TahlanModPlugin
 import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_REVERIE
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIRIUS
+import org.niatahl.tahlan.utils.TahlanIDs.SOTF_SIRIUS_MIMIC
 import org.niatahl.tahlan.utils.fixVariant
 import kotlin.math.roundToInt
 
@@ -71,6 +74,12 @@ class LegioFleetInflationListener : FleetInflationListener {
             "tahlan_envy"
         )
 
+        val SPECIAL_OFFICERS = listOf(
+            SOTF_SIRIUS_MIMIC,
+            SOTF_SIRIUS,
+            SOTF_REVERIE
+        )
+
         fun addSMods(member: FleetMemberAPI) {
 
             if (Global.getSector() == null || Global.getSector().playerFleet == null) return
@@ -86,7 +95,7 @@ class LegioFleetInflationListener : FleetInflationListener {
             val numShips = Global.getSector().playerFleet.membersWithFightersCopy.count { !it.isFighterWing && !it.isCivilian }.coerceAtLeast(1)
             val avgSMods = (sMods.toFloat() / numShips.toFloat()).roundToInt()
 
-            member.stats.dynamic.getMod(Stats.MAX_PERMANENT_HULLMODS_MOD).modifyFlat(DaemonHeart.dc_id, avgSMods.toFloat())
+            member.stats.dynamic.getMod(Stats.MAX_PERMANENT_HULLMODS_MOD).modifyFlat(DaemonHeart.DC_ID, avgSMods.toFloat())
 
             member.fixVariant()
 
@@ -123,6 +132,9 @@ class LegioFleetInflationListener : FleetInflationListener {
         fun addDaemonCore(member: FleetMemberAPI) {
             // Now we make a new captain if we don't have an AI captain already
             if (member.captain != null && member.captain.isAICore) return
+
+            // Failsafe for Sirius
+            if (member.captain != null && member.captain.id in SPECIAL_OFFICERS) return
 
             // Don't remove from flagship for campaign reasons
             if (member.isFlagship) return

@@ -371,6 +371,7 @@ tahlan_miasma,SHIP,"#> Object Classification: Unknown
 #> Query predictive capabilities.
 #> >> Autonomous fighter craft
 #> >> Capabilities: unknown",,,
+tahlan_scathach,SHIP,,,,
 ,,,,,
 tahlan_spark_dmn,SHIP,"A variant of the Spark-class interceptor drone, trading its burst laser for a pair of standard PD lasers.",,,
 tahlan_lux_dmn,SHIP,"A variant of the Lux-class fighter drone, armed with a needler for shield suppression.",,,

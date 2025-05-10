@@ -1,0 +1,34 @@
+{
+  "animationType": "NONE",
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect":"org.niatahl.tahlan.weapons.WingTrailScript",
+  #startSize, endSize, duration, opacityMult
+  "hardpointAngleOffsets": [5,1,2,0.3],
+  #used for trail color
+  "glowColor": [64,187,194,255],
+  "hardpointOffsets": [
+    0,0,0,0,0,0,0,0
+
+  ],
+  "renderHints":["RENDER_ADDITIVE"],
+  "hardpointSprite": "",
+  "id": "tahlan_saveth_trail",
+  "noImpactSounds": false,
+  "noNonShieldImpactSounds": false,
+  "noShieldImpactSounds": false,
+  "projectileSpecId": "",
+  "renderAboveAllWeapons": 1,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureType": ROUGH,
+  
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "",
+  "type": "DECORATIVE"
+}

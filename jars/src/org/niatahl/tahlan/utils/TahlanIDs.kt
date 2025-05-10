@@ -21,4 +21,7 @@ object TahlanIDs {
     const val SOTF_SIERRA = "sotf_sierra"
     const val SOTF_CYWAR = "sotf_cyberwarfare"
     const val SOTF_BARROW = "sotf_barrow"
+    const val SOTF_SIRIUS = "sotf_sirius"
+    const val SOTF_REVERIE = "sotf_reverie"
+    const val SOTF_SIRIUS_MIMIC = "sotf_sirius_mimic"
 }

@@ -13,8 +13,7 @@
   "viewOffset": 0,
   "builtInMods": [
     "tahlan_phaseharmonics",
-    "phasefield",
-    "tahlan_spookyFog"
+    "phasefield"
   ],
   "builtInWeapons": {
     "WS0012": "tahlan_blinker_red",
@@ -37,7 +36,9 @@
     "WS0030": "tahlan_blinker_red",
     "WS0031": "tahlan_blinker_red",
     "WS0032": "tahlan_blinker_red",
-    "WS0033": "tahlan_blinker_red"
+    "WS0033": "tahlan_blinker_red",
+    "WS0034": "tahlan_saveth_trail",
+    "WS0035": "tahlan_saveth_trail"
   },
   "weaponSlots": [
     {
@@ -47,7 +48,7 @@
       "mount": "HARDPOINT",
       "arc": 8,
       "angle": 0,
-      "locations": [65, 49]
+      "locations": [63, 48]
     },
     {
       "id": "WS0002",
@@ -56,7 +57,7 @@
       "mount": "HARDPOINT",
       "arc": 8,
       "angle": -0,
-      "locations": [65, -49]
+      "locations": [63, -48]
     },
     {
       "id": "WS0003",
@@ -155,7 +156,7 @@
       "mount": "TURRET",
       "arc": 0,
       "angle": 0,
-      "locations": [34.5, 0.5]
+      "locations": [33.5, -0]
     },
     {
       "id": "WS0014",
@@ -336,88 +337,90 @@
       "arc": 0,
       "angle": -0,
       "locations": [20, -52]
+    },
+    {
+      "id": "WS0034",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-43.5, 85.5]
+    },
+    {
+      "id": "WS0035",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": -0,
+      "locations": [-43.5, -85.5]
     }
   ],
   "engineSlots": [
     {
-      "location": [-63.5, 35.5],
-      "length": 105.631241,
-      "width": 29.15752,
+      "location": [-63.5, 35],
+      "length": 89.614403,
+      "width": 25.436922,
       "angle": 179.5,
-      "contrailSize": 29.15752,
+      "contrailSize": 25.436922,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
-      "location": [-63.5, -35.5],
-      "length": 105.631241,
-      "width": 29.15752,
+      "location": [-63.5, -35],
+      "length": 89.614403,
+      "width": 25.436922,
       "angle": -179.5,
-      "contrailSize": 29.15752,
+      "contrailSize": 25.436922,
       "style": "TAHLAN_NXA_ENGINE"
     },
     {
-      "location": [-75.5, 48.5],
-      "length": 34.974014,
-      "width": 11.147829,
-      "angle": 172.5,
-      "contrailSize": 11.147829,
-      "style": "TAHLAN_NXA_ENGINE"
+      "location": [-71.5, 49],
+      "length": 30.5,
+      "width": 9,
+      "angle": 176,
+      "contrailSize": 9,
+      "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-75.5, -48.5],
-      "length": 34.974014,
-      "width": 11.147829,
-      "angle": -172.5,
-      "contrailSize": 11.147829,
-      "style": "TAHLAN_NXA_ENGINE"
+      "location": [-71.5, -49],
+      "length": 30.5,
+      "width": 9,
+      "angle": -176,
+      "contrailSize": 9,
+      "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-63.5, 39.5],
-      "length": 30,
-      "width": 4,
-      "angle": 179,
-      "contrailSize": 4,
-      "style": "TAHLAN_NXA_ENGINE"
+      "location": [-66.5, 59.5],
+      "length": 24,
+      "width": 9,
+      "angle": 169,
+      "contrailSize": 9,
+      "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-63.5, -39.5],
-      "length": 30,
-      "width": 4,
-      "angle": -179,
-      "contrailSize": 4,
-      "style": "TAHLAN_NXA_ENGINE"
+      "location": [-66.5, -59.5],
+      "length": 24,
+      "width": 9,
+      "angle": -169,
+      "contrailSize": 9,
+      "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-63.5, 31],
-      "length": 30,
-      "width": 4,
+      "location": [-66.5, 35],
+      "length": 38,
+      "width": 12,
       "angle": 180,
-      "contrailSize": 4,
-      "style": "TAHLAN_NXA_ENGINE"
+      "contrailSize": 12,
+      "style": "TAHLAN_SAVETH_ENGINE2"
     },
     {
-      "location": [-63.5, -31],
-      "length": 30,
-      "width": 4,
+      "location": [-66.5, -35],
+      "length": 38,
+      "width": 12,
       "angle": -180,
-      "contrailSize": 4,
-      "style": "TAHLAN_NXA_ENGINE"
-    },
-    {
-      "location": [-71.5, 58],
-      "length": 29.18395,
-      "width": 9.496761,
-      "angle": 170.5,
-      "contrailSize": 9.496761,
-      "style": "TAHLAN_NXA_ENGINE"
-    },
-    {
-      "location": [-71.5, -58],
-      "length": 29.18395,
-      "width": 9.496761,
-      "angle": -170.5,
-      "contrailSize": 9.496761,
-      "style": "TAHLAN_NXA_ENGINE"
+      "contrailSize": 12,
+      "style": "TAHLAN_SAVETH_ENGINE2"
     }
   ],
   "bounds": [

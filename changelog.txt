@@ -1,3 +1,9 @@
+1.4.1
+- Louisa Ferre will now periodically change market
+- Added Scathach codex description
+- Ristreza variants
+	- Fixed built-in missiles having wrong stat block
+
 1.4
 - Added Raven
 - Fixed Eagle and Falcon nightwatch variants not spawning

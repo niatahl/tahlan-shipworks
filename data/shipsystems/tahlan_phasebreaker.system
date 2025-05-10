@@ -13,8 +13,8 @@
 	"phaseHighlight":"_glow1",
 	"phaseDiffuse":"_glow2",
 	
-	"effectColor1":[255,73,159,255],
-	"effectColor2":[186,0,111,150],
+	"effectColor1":[245,255,255,80],
+	"effectColor2":[133,193,230,80],
 	
 	"clampTurnRateAfter":true,
 	"clampMaxSpeedAfter":true,
