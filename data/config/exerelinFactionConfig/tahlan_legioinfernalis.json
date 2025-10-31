@@ -122,12 +122,5 @@
 	],
 	"startSpecialItems":[
         [["tahlan_legio_full_package",""]]
-    ],
-
-	"defenceStations":[
-	    {"ids":["orbitalstation","battlestation","starfortress"]},
-	    {"ids":["orbitalstation_mid","battlestation_mid","starfortress_mid"]},
-	    {"ids":["orbitalstation_high","battlestation_high","starfortress_high"]}
-	],
-    
+    ],    
 }
