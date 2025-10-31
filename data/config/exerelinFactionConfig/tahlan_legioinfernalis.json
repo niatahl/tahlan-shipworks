@@ -85,8 +85,11 @@
 	},
 	
 	"industrySeeds":[
-        {"id":"orbitalworks", "mult":0.1}
-    ],
+	    {"id":"orbitalworks","mult":0.1},
+	    {"id":"lightindustry","mult":0.1},
+	    {"id":"refining","mult":0.1},
+	    {"id":"fuelprod","mult":0.1}
+	],
 	
     "diplomacyTraits":["selfrighteous", "irredentist", "foreverwar", "envious", "lowprofile"],
 	"morality":"evil",
@@ -99,9 +102,11 @@
     "vengeanceFleetNames":["Enforcers", "Executors", "Crusaders"],
     "vengeanceFleetNamesSingle":["an Enforcer fleet", "an Executor fleet", "a Crusade"],
     
-    "defenceStations":[
-        {"ids":["orbitalstation", "battlestation", "starfortress"]},
-    ],
+   "defenceStations":[
+	    {"ids":["orbitalstation","battlestation","starfortress"]},
+	    {"ids":["orbitalstation_mid","battlestation_mid","starfortress_mid"]},
+	    {"ids":["orbitalstation_high","battlestation_high","starfortress_high"]}
+	],
 	
 	"startShipsCombatSmall":[
 		["tahlan_Eagle_P_raider"]
@@ -118,5 +123,11 @@
 	"startSpecialItems":[
         [["tahlan_legio_full_package",""]]
     ],
+
+	"defenceStations":[
+	    {"ids":["orbitalstation","battlestation","starfortress"]},
+	    {"ids":["orbitalstation_mid","battlestation_mid","starfortress_mid"]},
+	    {"ids":["orbitalstation_high","battlestation_high","starfortress_high"]}
+	],
     
 }
