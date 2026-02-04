@@ -1,0 +1,34 @@
+{
+  "exoticChance": 0.6,
+  "upgradeChance": 1.0,
+  "bandwidthMult": 1.33,
+  "allowedExotics": {
+    "PlasmaFluxCatalyst": 0.2,
+    "HackedMissileForge": 0.5,
+    "SpooledFeeders": 0.7,
+    "FullMetalSalvo": 0.25,
+    "ReactiveDamperField": 0.9,
+    "PhasedFighterTether": 0.25,
+    "HyperspecLPC": 0.3,
+    "EqualizerCore": 0.3,
+    "DaemonCore": 0.9
+  },
+  "allowedUpgrades": {
+    "OverchargedShields": 0.5,
+    "TracerRecoilCalculator": 1.2,
+    "WeldedArmor": 0.66,
+    "AssaultWings": 0.75,
+    "VelocityInjectors": 0.66,
+    "HyperactiveCapacitors": 1,
+    "GuidanceComputers": 1,
+    "HelDrives": 1.66
+  },
+  "exoticTurnIn": {
+    "PlasmaFluxCatalyst": {"credit": 1.0, "rep": 1.0},
+    "HackedMissileForge": {"credit": 1.0, "rep": 1.0},
+    "SpooledFeeders":  {"credit": 1.0, "rep": 1.0},
+    "PhasedFighterTether": {"credit": 1.0, "rep": 1.0},
+    "AlphaSubcore": {"credit": 1.0, "rep": 1.0},
+    "EqualizerCore": {"credit": 1.0, "rep": 1.0}
+  }
+}
