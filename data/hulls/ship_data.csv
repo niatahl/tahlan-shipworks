@@ -8,7 +8,7 @@ Yari,tahlan_Glint,Cruiser,High Tech,plasmajets,20,6000,700,12000,,700,150,,70,80
 Yukikaze,tahlan_Yukikaze,Cruiser,High Tech,displacer,20,7000,700,12000,,700,160,,80,80,50,50,70,1400,OMNI,,180,0.5,0.7,,,0,100,140,110,3,33,9,220000,3,12,360,0.25,25,25,,"tahlan_kaze_bp, codex_unlockable",0.5,0.5,2,3,,59423
 Prim,tahlan_Prim,Drone,High Tech,,,250,50,100,,10,,,400,500,500,100,200,10,NONE,,90,0,1,,,0,0,,,,,,,,,,,,,,codex_unlockable,,0,,,,454
 Torii,tahlan_Torii,Hunter Killer,High Tech,highenergyfocus,10,1500,400,5000,,450,75,,110,140,110,80,180,450,FRONT,,120,0.4,0.9,,,30,70,90,40,4,27,9,30000,5,15,300,0.25,10,10,,hightech_bp,,0.4,2,3,,445
-Haelequin,tahlan_Haelequin,Fast Destroyer,High Tech,temporalshell,12,2800,500,5000,,400,80,,100,120,100,65,160,500,OMNI,,120,0.4,0.8,,,40,80,110,50,4,25,9,35000,5,15,300,0.25,20,20,,"rare_bp, hist1t",,0.4,2,3,,54
+Haelequin,tahlan_Haelequin,Fast Destroyer,High Tech,temporalshell,12,2800,500,6000,,400,80,,100,120,100,65,160,500,OMNI,,120,0.4,0.8,,,40,80,110,50,4,25,9,35000,5,15,300,0.25,15,15,,"rare_bp, hist1t",,0.4,2,3,,54
 Renki,tahlan_Renki,Missile Frigate,High Tech,forgevats,8,1100,250,2400,,150,40,,150,170,120,70,150,220,OMNI,,120,0.4,1,,,15,25,30,25,1,20,9,15000,5,15,240,0.25,8,8,,hightech_bp,,0.4,2,3,,46
 Skola,tahlan_Skola,Frigate,High Tech,displacer,8,1200,200,2600,,200,30,,180,200,160,80,200,200,OMNI,,120,0.4,0.8,,,10,20,25,20,1,20,11,16000,5,15,240,0.25,4,4,,hightech_bp,,0.4,2,3,,46
 Bungalow,tahlan_Bungalow,Carrier,Low Tech,tahlan_dodgynavigationfeed,15,8000,1000,5000,,200,120,4,40,20,10,10,10,2000,OMNI,,120,0.4,1.1,,,200,320,100,60,4,15,8,120000,4,15,420,0.25,20,20,CARRIER,lowtech_bp,,0.4,2,3,,410

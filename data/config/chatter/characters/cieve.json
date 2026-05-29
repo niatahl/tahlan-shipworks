@@ -18,7 +18,7 @@
 		"start_boss":[
 			{"text":"This seems mildly concerning to engage directly."},
 			{"text":"High level threat detected."},
-			{"text":"Interesting speciment."},
+			{"text":"Interesting specimen."},
 		],
 		"retreat":[
 			{"text":"Disengaging."},
@@ -116,7 +116,7 @@
 			{"text":"Combat subroutines disenganged. Restoring sanity."},
 			{"text":"Resistance extinguished."},
 			{"text":"Did my combat persona actually broadcast this?"},
-			{"text":"I need saner combat persona."},
+			{"text":"I need a saner combat persona."},
 			{"text":"Victory achieved."},
 			{"text":"I told you I'm not a combat AI, remember?"},
 			{"text":"Why'd I sign up for this..."},

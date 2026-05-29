@@ -33,9 +33,6 @@ class PhaseHarmonics : BaseHullMod() {
 
 
     override fun applyEffectsAfterShipCreation(ship: ShipAPI, id: String) {
-        if (ship.variant.hasHullMod(HullMods.PHASE_ANCHOR)) {
-            MagicIncompatibleHullmods.removeHullmodWithWarning(ship.variant, HullMods.PHASE_ANCHOR, txt("phaseHarmonics"))
-        }
         if (ship.variant.hasHullMod(HullMods.ADAPTIVE_COILS)) {
             MagicIncompatibleHullmods.removeHullmodWithWarning(ship.variant, HullMods.ADAPTIVE_COILS, txt("phaseHarmonics"))
         }

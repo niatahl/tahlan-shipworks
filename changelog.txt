@@ -1,6 +1,8 @@
 1.4.1
 - Louisa Ferre will now periodically change market
 - Added Scathach codex description
+- Karion Seeker Battery
+	- Set efficiency to the intended 1.0
 - Ristreza variants
 	- Fixed built-in missiles having wrong stat block
 
