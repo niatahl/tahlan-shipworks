@@ -25,7 +25,6 @@ import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.listeners.SuccListener
-import org.niatahl.tahlan.utils.ExiledSpaceIntegrations.ToggleDaemons
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addArtillery
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addMines
 import org.niatahl.tahlan.utils.IndEvoIntegrations.upgradeDefenses
@@ -71,7 +70,6 @@ class TahlanModPlugin : BaseModPlugin() {
             HAS_GRAPHICSLIB = false
         }
         HAS_INDEVO = Global.getSettings().modManager.isModEnabled("IndEvo")
-        HAS_EXILED = Global.getSettings().modManager.isModEnabled("pt_exiledSpace")
         HAS_LUNA = Global.getSettings().modManager.isModEnabled("lunalib")
 
         try {
@@ -241,11 +239,6 @@ class TahlanModPlugin : BaseModPlugin() {
             if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
                 addDaemons(sector)
             }
-            // Daemon subfaction for ES maps
-            if (HAS_EXILED) {
-                ToggleDaemons(Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered"))
-            }
-
             val legio = Global.getSector().getFaction(LEGIO)
             DAEMON_SHIPS.run { if (ENABLE_HARDMODE) forEach { legio.addPriorityShip(it) } else forEach { legio.removePriorityShip(it) } }
 
@@ -359,9 +352,6 @@ class TahlanModPlugin : BaseModPlugin() {
                 }
                 addDaemons(sector)
                 upgradeDefenses()
-                if (HAS_EXILED) {
-                    ToggleDaemons(true)
-                }
             }
         }
     }
@@ -440,7 +430,6 @@ class TahlanModPlugin : BaseModPlugin() {
         @JvmField
         var HAS_NEX = false
         var HAS_INDEVO = false
-        var HAS_EXILED = false
         var HAS_LUNA = false
         val LOGGER = Global.getLogger(TahlanModPlugin::class.java)!!
 
