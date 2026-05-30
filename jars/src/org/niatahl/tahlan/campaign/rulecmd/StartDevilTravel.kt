@@ -6,7 +6,6 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI
 import com.fs.starfarer.api.impl.campaign.rulecmd.BaseCommandPlugin
 import com.fs.starfarer.api.util.Misc
 import org.niatahl.tahlan.campaign.DevilTravel
-import java.util.logging.Logger
 
 class StartDevilTravel : BaseCommandPlugin() {
     override fun execute(
@@ -15,7 +14,11 @@ class StartDevilTravel : BaseCommandPlugin() {
         params: List<Misc.Token?>,
         memoryMap: Map<String, MemoryAPI>
     ): Boolean {
-        Global.getSector().addScript(DevilTravel(dialog.interactionTarget.market))
+        val mem = Global.getSector().memoryWithoutUpdate
+        if (!mem.getBoolean("\$tahlan_devilTravelStarted")) {
+            mem.set("\$tahlan_devilTravelStarted", true)
+            Global.getSector().addScript(DevilTravel(dialog.interactionTarget.market))
+        }
         return true
     }
 }
