@@ -15,7 +15,9 @@ Mod id `tahlan`, author Nia Tahl. Targets Starsector `0.98a`.
 ## Languages & build
 
 - Mixed **Kotlin + Java** (~90 Kotlin files, ~220 Java files). New code is usually Kotlin; large
-  swaths of older code are still Java. Match the language of the file/package you're editing.
+  swaths of older code are still Java. For small edits, match the language of the file you're in. But
+  when a Java class needs larger changes anyway, take the opportunity to rewrite it in Kotlin — the
+  long-term direction is Kotlin.
 - Source lives under `jars/src/org/niatahl/tahlan/`. There is **no Gradle/Ant build** — the project
   is an IntelliJ module (`tahlan-shipworks.iml`) that compiles to the committed artifact
   `jars/TahlanShipworks.jar`. Rebuild the jar via IntelliJ's build/artifacts, not a CLI tool.
