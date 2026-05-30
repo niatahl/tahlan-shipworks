@@ -250,7 +250,7 @@ tahlan_illustriousClue3Defeated,tahlan_illustriousClue3Defeated,,$global.tahlan_
 ,,,,,,
 tahlan_illustriousRestoreOption,PopulateOptions,"$id == tahlan_devil score:10
 $global.tahlan_illustriousRecovered
-not $global.tahlan_illustriousRestored",RestoreIllustrious price,,10:tahlan_illustriousRestore_start:Ask about restoring the Illustrious,
+!$global.tahlan_illustriousRestored",RestoreIllustrious price,,10:tahlan_illustriousRestore_start:Ask about restoring the Illustrious,
 tahlan_illustriousRestoreOffer,DialogOptionSelected,$option == tahlan_illustriousRestore_start,"RestoreIllustrious price
 SetTextHighlights $tahlan_illustrious_restorePrice
 DoCanAffordCheck $tahlan_illustrious_restorePrice tahlan_illustriousRestore_confirm true","""Centuries adrift leaves a mark. I know a yard that owes the Blackwatch a great many favors — they'll strip every scar off her hull. You'll still foot the bill, but call it a friend's rate: $tahlan_illustrious_restorePrice credits.""","tahlan_illustriousRestore_confirm:Pay $tahlan_illustrious_restorePrice credits to restore the Illustrious
