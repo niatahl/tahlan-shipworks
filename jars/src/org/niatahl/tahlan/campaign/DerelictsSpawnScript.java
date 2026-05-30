@@ -129,7 +129,12 @@ public class DerelictsSpawnScript {
                             150f,
                             300f
                     );
-                    addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, recoverable, angryBois);
+                    // Capstone reward fork: attach the Traumtänzer dilemma instead of stock recovery.
+                    // recoverable=false so addDerelict does NOT also set a ShipRecoverySpecial; the
+                    // dilemma owns the salvage interaction (ship XOR crew/Henrietta). See TraumDilemma.kt.
+                    // Placement, BATTERED condition, and the Remnant guards are unchanged.
+                    SectorEntityToken traum = addDerelict(system, spawnData.one, placeToSpawn.orbit, shipCondition, false, angryBois);
+                    Misc.setSalvageSpecial(traum, new TraumDilemmaSpecialData());
                     actuallySpawn = false;
                 }
                 if (spawnData.one.equals("tahlan_throne_admech_derelict") || spawnData.one.equals("tahlan_providence_admech_derelict")) {

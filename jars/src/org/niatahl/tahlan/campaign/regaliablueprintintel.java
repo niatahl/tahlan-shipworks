@@ -8,6 +8,7 @@ import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
 import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import org.niatahl.tahlan.utils.TahlanIDs;
 
 import java.awt.*;
 import java.util.List;
@@ -51,6 +52,12 @@ public class regaliablueprintintel extends BaseIntelPlugin {
         super.notifyEnded();
         script = null;
         Global.getSector().removeScript(this);
+    }
+
+    //True once the questline has reached the stage where it points at the Traumtänzer.
+    //Used by the Traumtänzer salvage dilemma to decide whether to drop this intel on resolution.
+    public boolean isAtFinalStage() {
+        return stage == QUEST_STAGE.END_OF_BLUEPRINTS;
     }
 
     //My own function, for advancing the intel when new blueprints are found
@@ -110,6 +117,9 @@ public class regaliablueprintintel extends BaseIntelPlugin {
         //Use a slightly different bullet list if we're finished with the blueprints
         if (stage != QUEST_STAGE.END_OF_BLUEPRINTS) {
             info.addPara("Keep the %s in your fleet to continue decrypting its databanks", initPad, h, "Halbmond");
+        } else if (Global.getSector().getMemoryWithoutUpdate().getBoolean(TahlanIDs.TRAUM_RESOLVED)) {
+            //The Traumtänzer has already been dealt with; the constellation pointer is irrelevant, so omit it.
+            info.addPara("You've succesfully recovered all intact data from the %s databanks.", initPad, h, "Halbmond's");
         } else {
             info.addPara("You've succesfully recovered all intact data from the %s databanks. Furthermore you have found information that an object of interest might be hidden in the " + Global.getSector().getMemoryWithoutUpdate().getString("$tahlan_traum_location") + " constellation", initPad, h, "Halbmond's", Global.getSector().getMemory().getString("$tahlan_traum_location"));
         }

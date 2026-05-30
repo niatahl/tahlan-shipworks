@@ -32,6 +32,16 @@ object TahlanIDs {
     const val ILLUSTRIOUS_CLUE2 = "\$tahlan_illustrious_clue2Gained"
     const val ILLUSTRIOUS_CLUE3 = "\$tahlan_illustrious_clue3Gained"
 
+    // Traumtänzer salvage dilemma (capstone reward fork: ship XOR crew/Henrietta)
+    // variant id of the placed derelict (see DerelictsSpawnScript)
+    const val TRAUM_VARIANT = "tahlan_schneefall_traum_albtraum"
+    // one-time global latch: set once the dilemma has been resolved either way
+    const val TRAUM_RESOLVED = "\$tahlan_traumResolved"
+    // OPTIONAL flavor-only gate for richer questline-aware text. Confirm the real
+    // Rosenritter-questline-complete flag during apply; wrong/absent flag just means
+    // the cold text is shown (harmless). Prose is author-rewritten.
+    const val TRAUM_QUEST_COMPLETE = "\$tahlan_regaliaQuestComplete"
+
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
     const val SOTF_SIERRA = "sotf_sierra"
