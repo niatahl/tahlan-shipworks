@@ -9,9 +9,6 @@ import com.fs.starfarer.api.impl.campaign.DModManager
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin.DerelictShipData
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithBarEvent
-import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithTriggers.FleetQuality
-import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithTriggers.FleetSize
-import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithTriggers.LocData
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial.PerShipData
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial.ShipCondition
 import com.fs.starfarer.api.ui.SectorMapAPI
