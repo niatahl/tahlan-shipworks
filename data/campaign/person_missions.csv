@@ -4,4 +4,6 @@ mission id,person id,tagsAll,tagsAny,tagsNotAny,tags,freq,min timeout,max timeou
 tahlan_devilCB,,,tahlan_devil,,,20,30,60,,,,,,,graphics/icons/missions/military_bounty.png,org.niatahl.tahlan.campaign.missions.devil.DevilCustomBounty
 tahlan_devilDaemonSurplus,,,tahlan_devil,,,10,30,60,,,,,,,,org.niatahl.tahlan.campaign.missions.devil.DaemonSurplusShipHull
 tahlan_devilDaemonCore,,,tahlan_devil,,,8,30,60,,,,,,,,org.niatahl.tahlan.campaign.missions.devil.DaemonCoreSale
+# Louisa Ferre one-time Illustrious recovery (gated COOPERATIVE; one-time via global latch in create()),,,,,,,,,,,,,,,,
+tahlan_devilIllustrious,,,tahlan_devil,,,5,30,60,COOPERATIVE,,,,,,,org.niatahl.tahlan.campaign.missions.devil.IllustriousRecovery
 ,,,,,,,,,,,,,,,,

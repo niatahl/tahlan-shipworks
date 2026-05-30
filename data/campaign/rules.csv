@@ -230,6 +230,33 @@ $missionId == tahlan_devilDaemonCore",,"""Pleasure doing business.""
 OR
 ""I'll look forward to hearing what you do with that.""",,
 ,,,,,,
+# DEVIL_ILLUSTRIOUS_QUEST,,,,,,
+,,,,,,
+tahlan_devilIllustriousBlurb,tahlan_devilIllustrious_blurb,$id == tahlan_devil score:10,,"""There's a ghost story I've been chasing. A ship the Legio would burn a system to get their claws on. I'd sooner see it fly with you.""",,
+tahlan_devilIllustriousOption,tahlan_devilIllustrious_option,,,,tahlan_devilIllustrious_start:Ask about the ghost story,
+tahlan_devilIllustriousOfferText,DialogOptionSelected,"$option == tahlan_devilIllustrious_start
+$id == tahlan_devil score:10","$missionId = tahlan_devilIllustrious","""An Illustrious-class. Nightwatch command-ship, lost when the gates went dark. The Blackwatch never stopped looking for her — and neither have the Legio.""
+
+$HeOrShe leans in, the usual predatory smile gone, replaced by something colder.
+
+""I won't hand you a wreck on a plate. I'll give you where the trail starts. Follow the dead-drops, take what the Legio are squatting on, and the last cache tells you where she drifts. Get there before they crack it.""","contact_accept:""I'll bring her home.""
+contact_decline:""Not my kind of ghost.""",
+tahlan_devilIllustriousPrintAcceptText,ContactPrintAcceptText,"$id == tahlan_devil score:10
+$missionId == tahlan_devilIllustrious",,"""Spite is a fine motivator, Captain. Don't disappoint me.""",,
+,,,,,,
+tahlan_illustriousClue1Defeated,tahlan_illustriousClue1Defeated,,$global.tahlan_illustrious_clue1Gained = true,"The Legio guards are scattered. Among the debris floats a Nightwatch dead-drop, and it yields a single decrypted coordinate.",,
+tahlan_illustriousClue2Defeated,tahlan_illustriousClue2Defeated,,$global.tahlan_illustrious_clue2Gained = true,"Another cache, another firefight won. The trail points deeper into the dark, and the Legio are throwing more hulls at it now.",,
+tahlan_illustriousClue3Defeated,tahlan_illustriousClue3Defeated,,$global.tahlan_illustrious_clue3Gained = true,"The last of the Legio armada breaks apart. The final dead-drop gives up its secret: a set of drift coordinates, untouched. They fought you the whole way and never cracked it.",,
+,,,,,,
+tahlan_illustriousRestoreOption,PopulateOptions,"$id == tahlan_devil score:10
+$global.tahlan_illustriousRecovered
+not $global.tahlan_illustriousRestored",RestoreIllustrious price,,10:tahlan_illustriousRestore_start:Ask about restoring the Illustrious,
+tahlan_illustriousRestoreOffer,DialogOptionSelected,$option == tahlan_illustriousRestore_start,"RestoreIllustrious price
+SetTextHighlights $tahlan_illustrious_restorePrice
+DoCanAffordCheck $tahlan_illustrious_restorePrice tahlan_illustriousRestore_confirm true","""Centuries adrift leaves a mark. I know a yard that owes the Blackwatch a great many favors — they'll strip every scar off her hull. You'll still foot the bill, but call it a friend's rate: $tahlan_illustrious_restorePrice credits.""","tahlan_illustriousRestore_confirm:Pay $tahlan_illustrious_restorePrice credits to restore the Illustrious
+contact_decline:Maybe later",
+tahlan_illustriousRestoreConfirm,DialogOptionSelected,$option == tahlan_illustriousRestore_confirm,RestoreIllustrious doRestore,"""Consider it done. She'll be as the Nightwatch built her.""",contact_decline:Continue,
+,,,,,,
 tahlan_aiCores_turnInOptionDevil,PopulateOptions,$id == tahlan_devil score:10,FireBest DisableTurnInCoresOptionIfNeeded,,10:aiCores_startTurnIn:Offer to sell some AI cores,
 tahlan_aiCores_turnInOptionSelDevil,DialogOptionSelected,"$option == aiCores_startTurnIn
 $id == tahlan_devil score:10",FireAll PopulateCoresTurnInOptions,"""AI cores? For me? Oh, you shouldn't have.""",,

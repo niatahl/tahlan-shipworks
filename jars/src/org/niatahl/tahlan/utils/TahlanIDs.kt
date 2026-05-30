@@ -16,6 +16,22 @@ object TahlanIDs {
     const val TAG_DAEMON = "tahlan_daemon"
     const val TAG_DAEMONIZE = "tahlan_daemonize"
 
+    // Illustrious recovery quest
+    const val ILLUSTRIOUS_HULL = "tahlan_illustrious"
+    // global latch: set once the Illustrious has been salvaged; gates the quest from ever re-offering
+    const val ILLUSTRIOUS_RECOVERED = "\$tahlan_illustriousRecovered"
+    // global latch: set once Louisa's one-time restoration has been paid for
+    const val ILLUSTRIOUS_RESTORED = "\$tahlan_illustriousRestored"
+    // member tag stamped on the recovered hull so the restoration step can find it again
+    const val ILLUSTRIOUS_MEMBER_TAG = "tahlan_illustriousRecoveredMember"
+    // global mission reference / in-progress flag (vanilla HubMission convention)
+    const val ILLUSTRIOUS_REF = "\$tahlan_illustrious_ref"
+    const val ILLUSTRIOUS_IN_PROGRESS = "\$tahlan_illustrious_inProgress"
+    // per-hop cache-salvage flags that advance the clue chain
+    const val ILLUSTRIOUS_CLUE1 = "\$tahlan_illustrious_clue1Gained"
+    const val ILLUSTRIOUS_CLUE2 = "\$tahlan_illustrious_clue2Gained"
+    const val ILLUSTRIOUS_CLUE3 = "\$tahlan_illustrious_clue3Gained"
+
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
     const val SOTF_SIERRA = "sotf_sierra"
