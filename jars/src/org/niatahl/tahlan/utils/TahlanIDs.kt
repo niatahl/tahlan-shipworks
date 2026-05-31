@@ -42,6 +42,10 @@ object TahlanIDs {
     // the cold text is shown (harmless). Prose is author-rewritten.
     const val TRAUM_QUEST_COMPLETE = "\$tahlan_regaliaQuestComplete"
 
+    // Siege system
+    const val SIEGE_CONDITION_ID = "tahlan_siegecondition"
+    const val SIEGE_MANAGER_KEY = "\$tahlan_siegeManager"
+
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
     const val SOTF_SIERRA = "sotf_sierra"

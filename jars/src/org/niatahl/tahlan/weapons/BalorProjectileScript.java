@@ -270,8 +270,9 @@ public class BalorProjectileScript extends BaseEveryFrameCombatPlugin {
                 pureVelocity.x -= offsetVelocity.x;
                 pureVelocity.y -= offsetVelocity.y;
                 proj.setFacing(facingSwayless + swayThisFrame);
-                proj.getVelocity().x = MathUtils.getPoint(new Vector2f(Misc.ZERO), pureVelocity.length(), facingSwayless + swayThisFrame).x + offsetVelocity.x;
-                proj.getVelocity().y = MathUtils.getPoint(new Vector2f(Misc.ZERO), pureVelocity.length(), facingSwayless + swayThisFrame).y + offsetVelocity.y;
+                Vector2f newVel = MathUtils.getPoint(new Vector2f(Misc.ZERO), pureVelocity.length(), facingSwayless + swayThisFrame);
+                proj.getVelocity().x = newVel.x + offsetVelocity.x;
+                proj.getVelocity().y = newVel.y + offsetVelocity.y;
             }
 
             //Target one-turns just turn to point towards their target's position
@@ -284,8 +285,9 @@ public class BalorProjectileScript extends BaseEveryFrameCombatPlugin {
                 }
                 facingSwayless += Misc.getClosestTurnDirection(facingSwayless, angleToHit) * Math.min(angleDiffAbsolute, actualTurnRate * amount);
                 proj.setFacing(facingSwayless + swayThisFrame);
-                proj.getVelocity().x = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame).x;
-                proj.getVelocity().y = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame).y;
+                Vector2f newVel = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame);
+                proj.getVelocity().x = newVel.x;
+                proj.getVelocity().y = newVel.y;
             }
 
             //Dumbchasers just try to point straight at their target at all times
@@ -299,8 +301,9 @@ public class BalorProjectileScript extends BaseEveryFrameCombatPlugin {
                 }
                 facingSwayless += Misc.getClosestTurnDirection(facingSwayless, angleToHit) * Math.min(angleDiffAbsolute, actualTurnRate * amount);
                 proj.setFacing(facingSwayless + swayThisFrame);
-                proj.getVelocity().x = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame).x;
-                proj.getVelocity().y = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame).y;
+                Vector2f newVel = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame);
+                proj.getVelocity().x = newVel.x;
+                proj.getVelocity().y = newVel.y;
             }
 
             //Interceptors use iterative calculations to find an intercept point to the target
@@ -317,8 +320,9 @@ public class BalorProjectileScript extends BaseEveryFrameCombatPlugin {
                 }
                 facingSwayless += Misc.getClosestTurnDirection(facingSwayless, angleToHit) * Math.min(angleDiffAbsolute, actualTurnRate * amount);
                 proj.setFacing(facingSwayless + swayThisFrame);
-                proj.getVelocity().x = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame).x;
-                proj.getVelocity().y = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame).y;
+                Vector2f newVel = MathUtils.getPoint(new Vector2f(Misc.ZERO), proj.getVelocity().length(), facingSwayless + swayThisFrame);
+                proj.getVelocity().x = newVel.x;
+                proj.getVelocity().y = newVel.y;
             }
         }
     }

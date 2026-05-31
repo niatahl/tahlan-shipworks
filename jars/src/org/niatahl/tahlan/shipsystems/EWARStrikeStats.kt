@@ -5,6 +5,7 @@ import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.combat.ShipAPI.HullSize
 import com.fs.starfarer.api.combat.ShipSystemAPI.SystemState
 import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags
+import com.fs.starfarer.api.graphics.SpriteAPI
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript
 import com.fs.starfarer.api.input.InputEventAPI
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript
@@ -86,11 +87,11 @@ open class EWARStrikeStats : BaseShipSystemScript() {
                             ballisticWeaponRangeBonus.modifyMult(id, 2f - currMult)
                         }
                         Global.getCombatEngine().addFloatingText(targetData.target.location,targetData.currDamMult.toString(),20f,Color.RED,targetData.target,1f,1f)
-                        val fxSprite = Global.getSettings().getSprite("fx", "tahlan_ewar_target")
-                        if (fxSprite != null) {
+                        val sprite = FX_SPRITE
+                        if (sprite != null) {
                             val radius = targetData.target.collisionRadius * 2.5f
                             MagicRender.singleframe(
-                                fxSprite,
+                                sprite,
                                 targetData.target.location,
                                 Vector2f(radius, radius),
                                 0f,
@@ -188,6 +189,9 @@ open class EWARStrikeStats : BaseShipSystemScript() {
         var KEY_TARGET = Any()
         var DAM_MULT = 1.25f
         protected var RANGE = 2000f
+
+        // Cached once on first use instead of re-fetched from settings every frame per affected target.
+        private val FX_SPRITE: SpriteAPI? by lazy { Global.getSettings().getSprite("fx", "tahlan_ewar_target") }
         var TEXT_COLOR = Color(255, 55, 55, 255)
         var JITTER_COLOR = Color(255, 50, 50, 75)
         var JITTER_UNDER_COLOR = Color(255, 100, 100, 155)

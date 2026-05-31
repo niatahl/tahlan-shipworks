@@ -23,6 +23,8 @@ import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
+import org.niatahl.tahlan.campaign.siege.SiegeConfig
+import org.niatahl.tahlan.campaign.siege.SiegeManager
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.listeners.SuccListener
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addArtillery
@@ -32,6 +34,7 @@ import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
 import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMONIZE
 import org.niatahl.tahlan.utils.TahlanIDs.HEL_CARAPACE
+import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMON
 import org.niatahl.tahlan.utils.TahlanPeople
@@ -225,6 +228,14 @@ class TahlanModPlugin : BaseModPlugin() {
         }
 
         if (sector.memoryWithoutUpdate.getBoolean("\$tahlan_haslegio")) {
+            // Legio siege manager — register once; permanent listener survives save/load
+            if (ENABLE_SIEGE && sector.memoryWithoutUpdate.get(TahlanIDs.SIEGE_MANAGER_KEY) == null) {
+                val siegeManager = SiegeManager()
+                sector.listenerManager.addListener(siegeManager, true)  // for reportFleetDespawned
+                sector.addScript(siegeManager)                          // for advance() (the siege loop)
+                sector.memoryWithoutUpdate.set(TahlanIDs.SIEGE_MANAGER_KEY, siegeManager, 0f)
+            }
+
             // Legio stealing pirates homework
             if (ENABLE_LEGIOBPS) {
                 sector.addTransientScript(LegioStealingHomework())
@@ -396,6 +407,17 @@ class TahlanModPlugin : BaseModPlugin() {
         ENABLE_LIFELESS = LunaSettings.getBoolean("tahlan", "tahlan_enable_lifeless") ?: false
         INDEVO_MINES = LunaSettings.getBoolean("IndEvo", "IndEvo_Enable_minefields") ?: true
         INDEVO_ARTY = LunaSettings.getBoolean("IndEvo", "IndEvo_Enable_Artillery") ?: true
+
+        // Siege balance sliders (guard: HAS_LUNA is already confirmed by call site)
+        ENABLE_SIEGE = LunaSettings.getBoolean("tahlan", "tahlan_enable_siege") ?: true
+        val freqMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_frequency")?.toFloat()  ?: 1f
+        val diffMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_difficulty")?.toFloat() ?: 1f
+        val attrMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_attrition")?.toFloat()  ?: 1f
+        SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN = (180f / freqMult).coerceIn(30f, 720f)
+        SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX = (360f / freqMult).coerceIn(60f, 1440f)
+        SiegeConfig.COMMAND_FP_BASE  = 150f * diffMult
+        SiegeConfig.COMMAND_FP_SCALE = 150f * diffMult
+        SiegeConfig.STRAIN_K = 0.003f * attrMult
     }
 
     companion object {
@@ -418,6 +440,7 @@ class TahlanModPlugin : BaseModPlugin() {
         var ENABLE_LIFELESS = false
         var ENABLE_LEGIOBPS = false
         var ENABLE_DAEMONS = false
+        var ENABLE_SIEGE = true
 
         var INDEVO_MINES = true
         var INDEVO_ARTY = true
@@ -512,6 +535,7 @@ class TahlanModPlugin : BaseModPlugin() {
             ENABLE_DAEMONS = setting.getBoolean("enableDaemons")
             ENABLE_FASTMODE = setting.getBoolean("enableFastmode")
             WEEB_MODE = setting.getBoolean("enableWaifu")
+            ENABLE_SIEGE = setting.optBoolean("enableSiege", true)
         }
     }
 }

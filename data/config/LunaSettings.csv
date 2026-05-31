@@ -9,3 +9,8 @@ tahlan_enable_fastmode,Enable Fast Mode,Boolean,false,,Lowers milestone requirem
 tahlan_enable_hardmode,Enable Hard Mode,Boolean,false,,Greatly increases the number of Daemons in Legio fleets and the quality of their AI cores.,,,Settings
 tahlan_enable_legiobps,Enable Legio black market blueprints,Boolean,false,,Lets Legio learn all blueprints known to pirates.,,,Settings
 tahlan_enable_lifeless,Enable The Lifeless,Boolean,false,,Adds unusual drone ships to Remnant fleets.,,,Settings
+tahlan_siegeHeader,Siege Header,Header,Siege settings - Applied on save load,,,,,Settings
+tahlan_enable_siege,Enable Legio Sieges,Boolean,true,,Enables periodic Legio Infernalis siege campaigns that blockade hostile systems and (with Nexerelin) capture markets.,,,Settings
+tahlan_siege_frequency,Siege Frequency,Slider,1.0,,How often Legio launches siege campaigns. Higher values = more frequent.,0.2,3.0,Settings
+tahlan_siege_difficulty,Siege Fleet Size,Slider,1.0,,Scales the size and strength of Legio siege fleets.,0.2,3.0,Settings
+tahlan_siege_attrition,Siege Attrition Strength,Slider,1.0,,Scales how much fleet losses damage the siege. Higher = easier to break.,0.2,3.0,Settings

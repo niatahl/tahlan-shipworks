@@ -23,7 +23,7 @@ import exerelin.campaign.customstart.CustomStart
 import exerelin.utilities.StringHelper
 
 /**
- * Nexerelin custom start that hands the player the retooled NX-A. Themed around (and gated on)
+ * Nexerelin custom start that hands the player the retooled Dreamweaver. Themed around (and gated on)
  * Secrets of the Frontier's "Child of the Lake" background: it stays disabled until the player has
  * unlocked that background by completing "The Haunted", using the exact same cross-save unlock flag
  * SotF checks (`sotf_haunted_completed` in the `sotf_persistent` [SharedUnlockData] set).
@@ -33,9 +33,9 @@ import exerelin.utilities.StringHelper
  * The actual Child-of-the-Lake mechanics are NOT reimplemented here: setting [MEM_COTL_START] is
  * enough, because SotF's own SotfModPlugin keys all of it off that flag on every game load - it
  * grants the Cult of the Daydream ship/weapon/fighter blueprints, spawns the Sirius intel, and
- * enables Invoke Her Blessing. We just hand over the NX-A on top and fire SotF's intro dialog.
+ * enables Invoke Her Blessing. We just hand over the Dreamweaver on top and fire SotF's intro dialog.
  */
-class NXAStart : CustomStart() {
+class DreamweaverStart : CustomStart() {
 
     override fun shouldShow(): Boolean =
         Global.getSettings().modManager.isModEnabled(SOTF_ID)
@@ -72,7 +72,7 @@ class NXAStart : CustomStart() {
             PlayerFactionStore.getPlayerFactionIdNGC(), FleetTypes.PATROL_SMALL, null
         )
 
-        addFleetMember(NXA_VARIANT, dialog, data, tempFleet, flagship = true)
+        addFleetMember(DREAMWEAVER_VARIANT, dialog, data, tempFleet, flagship = true)
 
         val credits = 25000
         data.startingCargo.credits.add(credits.toFloat())
@@ -87,7 +87,7 @@ class NXAStart : CustomStart() {
         var fuel = 0
         var supplies = 0
         for (member in tempFleet.fleetData.membersListCopy) {
-            crew += member.minCrew + ((member.maxCrew - member.minCrew) * 0.1f).toInt()
+            crew += (member.minCrew + (member.maxCrew - member.minCrew) * 0.1f).toInt()
             fuel += (member.fuelCapacity * 0.35f).toInt()
             supplies += (member.baseDeploymentCostSupplies * 2).toInt()
         }
@@ -96,10 +96,10 @@ class NXAStart : CustomStart() {
         cargo.addItems(CargoAPI.CargoItemType.RESOURCES, Commodities.FUEL, fuel.toFloat())
         cargo.addItems(CargoAPI.CargoItemType.RESOURCES, Commodities.SUPPLIES, supplies.toFloat())
         cargo.addItems(CargoAPI.CargoItemType.RESOURCES, Commodities.HEAVY_MACHINERY, 15f)
-        AddRemoveCommodity.addCommodityGainText(Commodities.CREW, crew.toFloat(), dialog.textPanel)
-        AddRemoveCommodity.addCommodityGainText(Commodities.FUEL, fuel.toFloat(), dialog.textPanel)
-        AddRemoveCommodity.addCommodityGainText(Commodities.SUPPLIES, supplies.toFloat(), dialog.textPanel)
-        AddRemoveCommodity.addCommodityGainText(Commodities.HEAVY_MACHINERY, 15f, dialog.textPanel)
+        AddRemoveCommodity.addCommodityGainText(Commodities.CREW, crew, dialog.textPanel)
+        AddRemoveCommodity.addCommodityGainText(Commodities.FUEL, fuel, dialog.textPanel)
+        AddRemoveCommodity.addCommodityGainText(Commodities.SUPPLIES, supplies, dialog.textPanel)
+        AddRemoveCommodity.addCommodityGainText(Commodities.HEAVY_MACHINERY, 15, dialog.textPanel)
 
         data.addScript {
             val fleet = Global.getSector().playerFleet
@@ -152,7 +152,8 @@ class NXAStart : CustomStart() {
         SharedUnlockData.get()?.getSet(SOTF_UNLOCK_SET)?.contains(SOTF_HAUNTED_DONE) == true
 
     companion object {
-        private const val NXA_VARIANT = "tahlan_nxa_experimental"
+        // Legacy variant id retained for save compatibility (ship is now the "Dreamweaver").
+        private const val DREAMWEAVER_VARIANT = "tahlan_nxa_experimental"
         private const val SOTF_ID = "secretsofthefrontier"
         // Mirrors SotfChildOfTheLakeStart / SotfChildOfTheLakeBackground's unlock check.
         private const val SOTF_UNLOCK_SET = "sotf_persistent"

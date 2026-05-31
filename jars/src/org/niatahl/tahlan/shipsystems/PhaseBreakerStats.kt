@@ -17,7 +17,7 @@ import org.niatahl.tahlan.utils.Utils.txt
 import org.niatahl.tahlan.utils.modify
 import java.awt.Color
 
-class PhaseBreakerV2Stats : BaseShipSystemScript() {
+class PhaseBreakerStats : BaseShipSystemScript() {
     private var activeTime = 0f
     private var runOnce = false
     private var levelForAlpha = 1f

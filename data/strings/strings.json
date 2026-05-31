@@ -148,5 +148,27 @@
 		"traum_crew_appears":"One of them finds her feet before the rest and steadies herself against the bulkhead. Whatever the long years in the ice took from her, they did not touch her bearing. She straightens, and inclines her head to you with the exact, practiced courtesy of a knight.",
 		"traum_crew_henrietta1":"\"You have my thanks. Mine, and that of every soul you have drawn out of the dark. I am Henrietta von Regenfels, Knight-Captain of the Rosenritter Order.\" There is a dry note beneath the formality. \"What remains of the Order, at any rate.\"",
 		"traum_crew_henrietta2":"\"My ship is cinders and my chain of command is a hundred years in its grave. But a knight without a banner is a knight still, and a debt is a debt. If you will have me, captain, my lance and my service are yours.\"",
+
+		"siege_condition_name": "Legio Siege",
+		"siege_condition_accessibility": "%s accessibility",
+		"siege_condition_stability": "%s stability",
+		"siege_condition_hazard": "%s hazard rating",
+
+		"siege_intel_title_active": "Legio Siege",
+		"siege_intel_title_broken": "Siege Broken",
+		"siege_intel_title_lifted": "Siege Lifted",
+		"siege_intel_title_succeeded": "Siege Succeeded",
+		"siege_intel_desc": "A Legio Infernalis expedition fleet has besieged a hostile star system. Their command fleet anchors the fringe while blockade patrols strangle trade and raid sorties hammer the market below.",
+		"siege_intel_target": "Primary target: %s (%s)",
+		"siege_intel_status": "Siege status",
+		"siege_stage_entrenched": "Entrenched",
+		"siege_stage_strained": "Strained",
+		"siege_stage_faltering": "Faltering",
+		"siege_intel_bounty_accrued": "%s in bounty accrued for your fleet kills",
+		"siege_intel_bounty_paid": "%s paid for your contributions to breaking the siege",
+		"siege_intel_resolved_broken": "The siege has been broken. The Legio expedition has been driven off.",
+		"siege_intel_resolved_lifted": "The siege has lifted. The blockade dispersed without achieving its objectives.",
+		"siege_intel_resolved_succeeded": "The siege has succeeded. A market in the besieged system has fallen to the Legio Infernalis.",
+		"siege_intel_garrison": "The Legio command fleet is garrisoning the captured market."
 	}
 }

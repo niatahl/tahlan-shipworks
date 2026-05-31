@@ -27,7 +27,6 @@ import org.niatahl.tahlan.utils.IndEvoIntegrations.addMines
 import org.niatahl.tahlan.utils.random
 import org.niatahl.tahlan.world.Lethia.Companion.addMarketplace
 import java.awt.Color
-import java.util.*
 
 class Rubicon {
     fun generate(sector: SectorAPI) {
@@ -91,8 +90,8 @@ class Rubicon {
         debrisRubicon2.isDiscoverable = true
         debrisRubicon2.setCircularOrbit(rubiconStar, 360 * Math.random().toFloat(), 1300f, 300f)
         debrisRubicon2.id = "tahlan_lethia_debrisRubicon2"
-        val rubicon_star2 = system.addPlanet("tahlan_rubicon_heart", rubiconStar, "The Infernal Heart", "star_red_dwarf", 90f, 200f, 2100f, 300f)
-        system.addCorona(rubicon_star2, 200f, 5f, 0.2f, 2f)
+        val rubiconStar2 = system.addPlanet("tahlan_rubicon_heart", rubiconStar, "The Infernal Heart", "star_red_dwarf", 90f, 200f, 2100f, 300f)
+        system.addCorona(rubiconStar2, 200f, 5f, 0.2f, 2f)
 
         system.addAsteroidBelt(rubiconStar, 1000, 3000f, 1000f, 120f, 500f, Terrain.ASTEROID_BELT, "")
         system.addRingBand(rubiconStar, "misc", "rings_asteroids0", 256f, 1, Color.gray, 500f, 3000f, 250f)
@@ -116,35 +115,29 @@ class Rubicon {
             "tahlan_legioinfernalis", melchiresa, null,
             "Melchiresa",
             5,
-            ArrayList(
-                Arrays.asList(
-                    Conditions.POPULATION_5,
-                    Conditions.ORE_RICH,
-                    Conditions.RARE_ORE_ABUNDANT,
-                    Conditions.COLD,
-                    Conditions.LOW_GRAVITY,
-                    Conditions.ORGANIZED_CRIME,
-                    "tahlan_legiotyranny"
-                )
+            arrayListOf(
+                Conditions.POPULATION_5,
+                Conditions.ORE_RICH,
+                Conditions.RARE_ORE_ABUNDANT,
+                Conditions.COLD,
+                Conditions.LOW_GRAVITY,
+                Conditions.ORGANIZED_CRIME,
+                "tahlan_legiotyranny"
             ),
-            ArrayList(
-                Arrays.asList(
-                    Submarkets.GENERIC_MILITARY,
-                    Submarkets.SUBMARKET_OPEN,
-                    Submarkets.SUBMARKET_STORAGE,
-                    Submarkets.SUBMARKET_BLACK
-                )
+            arrayListOf(
+                Submarkets.GENERIC_MILITARY,
+                Submarkets.SUBMARKET_OPEN,
+                Submarkets.SUBMARKET_STORAGE,
+                Submarkets.SUBMARKET_BLACK
             ),
-            ArrayList(
-                Arrays.asList(
-                    Industries.POPULATION,
-                    Industries.MEGAPORT,
-                    Industries.MINING,
-                    Industries.STARFORTRESS,
-                    Industries.HEAVYBATTERIES,
-                    Industries.MILITARYBASE,
-                    Industries.REFINING
-                )
+            arrayListOf(
+                Industries.POPULATION,
+                Industries.MEGAPORT,
+                Industries.MINING,
+                Industries.STARFORTRESS,
+                Industries.HEAVYBATTERIES,
+                Industries.MILITARYBASE,
+                Industries.REFINING
             ),
             0.3f,
             freePort = true,
@@ -195,45 +188,39 @@ class Rubicon {
             "tahlan_legioinfernalis", lucifron, null,
             "Lucifron",
             7,
-            ArrayList(
-                listOf(
-                    Conditions.POPULATION_7,
-                    Conditions.ORE_SPARSE,
-                    Conditions.RARE_ORE_SPARSE,
-                    Conditions.ORGANICS_COMMON,
-                    Conditions.COLD,
-                    Conditions.HIGH_GRAVITY,
-                    Conditions.ORGANIZED_CRIME,
-                    Conditions.REGIONAL_CAPITAL,
-                    "tahlan_legiotyranny"
-                )
+            arrayListOf(
+                Conditions.POPULATION_7,
+                Conditions.ORE_SPARSE,
+                Conditions.RARE_ORE_SPARSE,
+                Conditions.ORGANICS_COMMON,
+                Conditions.COLD,
+                Conditions.HIGH_GRAVITY,
+                Conditions.ORGANIZED_CRIME,
+                Conditions.REGIONAL_CAPITAL,
+                "tahlan_legiotyranny"
             ),
-            ArrayList(
-                listOf(
-                    Submarkets.GENERIC_MILITARY,
-                    Submarkets.SUBMARKET_OPEN,
-                    Submarkets.SUBMARKET_STORAGE,
-                    Submarkets.SUBMARKET_BLACK
-                )
+            arrayListOf(
+                Submarkets.GENERIC_MILITARY,
+                Submarkets.SUBMARKET_OPEN,
+                Submarkets.SUBMARKET_STORAGE,
+                Submarkets.SUBMARKET_BLACK
             ),
-            ArrayList(
-                listOf(
-                    Industries.POPULATION,
-                    Industries.MEGAPORT,
-                    Industries.MINING,
-                    Industries.STARFORTRESS,
-                    Industries.HEAVYBATTERIES,
-                    Industries.HIGHCOMMAND,
-                    Industries.LIGHTINDUSTRY,
-                    "tahlan_CloningFacility",
-                    "tahlan_legiohq"
-                )
+            arrayListOf(
+                Industries.POPULATION,
+                Industries.MEGAPORT,
+                Industries.MINING,
+                Industries.STARFORTRESS,
+                Industries.HEAVYBATTERIES,
+                Industries.HIGHCOMMAND,
+                Industries.LIGHTINDUSTRY,
+                "tahlan_CloningFacility",
+                "tahlan_legiohq"
             ),
             0.3f,
             freePort = false,
             withJunkAndChatter = true
         )
-        lucifronMarket.addIndustry(Industries.ORBITALWORKS, ArrayList(listOf(Items.PRISTINE_NANOFORGE)))
+        lucifronMarket.addIndustry(Industries.ORBITALWORKS, arrayListOf(Items.PRISTINE_NANOFORGE))
         lucifronMarket.getIndustry(Industries.HIGHCOMMAND).aiCoreId = Commodities.ALPHA_CORE
         lucifronMarket.getIndustry(Industries.STARFORTRESS).aiCoreId = Commodities.ALPHA_CORE
         lucifronMarket.getIndustry(Industries.HEAVYBATTERIES).aiCoreId = Commodities.ALPHA_CORE
@@ -276,31 +263,25 @@ class Rubicon {
             "tahlan_legioinfernalis", adramelech, null,
             "Adramelech Fortress",
             5,
-            ArrayList(
-                Arrays.asList(
-                    Conditions.POPULATION_3,
-                    Conditions.NO_ATMOSPHERE,
-                    Conditions.OUTPOST,
-                    Conditions.ORGANIZED_CRIME,
-                    "tahlan_legiotyranny"
-                )
+            arrayListOf(
+                Conditions.POPULATION_3,
+                Conditions.NO_ATMOSPHERE,
+                Conditions.OUTPOST,
+                Conditions.ORGANIZED_CRIME,
+                "tahlan_legiotyranny"
             ),
-            ArrayList(
-                Arrays.asList(
-                    Submarkets.GENERIC_MILITARY,
-                    Submarkets.SUBMARKET_OPEN,
-                    Submarkets.SUBMARKET_STORAGE,
-                    Submarkets.SUBMARKET_BLACK
-                )
+            arrayListOf(
+                Submarkets.GENERIC_MILITARY,
+                Submarkets.SUBMARKET_OPEN,
+                Submarkets.SUBMARKET_STORAGE,
+                Submarkets.SUBMARKET_BLACK
             ),
-            ArrayList(
-                Arrays.asList(
-                    Industries.POPULATION,
-                    Industries.SPACEPORT,
-                    Industries.STARFORTRESS,
-                    Industries.HEAVYBATTERIES,
-                    Industries.MILITARYBASE
-                )
+            arrayListOf(
+                Industries.POPULATION,
+                Industries.SPACEPORT,
+                Industries.STARFORTRESS,
+                Industries.HEAVYBATTERIES,
+                Industries.MILITARYBASE
             ),
             0.3f,
             freePort = false,
@@ -321,9 +302,9 @@ class Rubicon {
         ) // whether to use custom or system-name based names
 
         // add nightwatch derelicts in random spots
-        addDerelict(system, rubicon_star2, "tahlan_eagle_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random() < 0.25)
-        addDerelict(system, rubicon_star2, "tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.BATTERED, (800f..radiusAfter2).random(), Math.random() < 0.25)
-        addDerelict(system, rubicon_star2, "tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random() < 0.25)
+        addDerelict(system, rubiconStar2, "tahlan_eagle_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random() < 0.25)
+        addDerelict(system, rubiconStar2, "tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.BATTERED, (800f..radiusAfter2).random(), Math.random() < 0.25)
+        addDerelict(system, rubiconStar2, "tahlan_falcon_nw_enforcer", ShipRecoverySpecial.ShipCondition.WRECKED, (800f..radiusAfter2).random(), Math.random() < 0.25)
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true)
@@ -352,7 +333,7 @@ class Rubicon {
     }
 
     //Shorthand for adding derelicts, thanks Tart
-    protected fun addDerelict(
+    private fun addDerelict(
         system: StarSystemAPI?, focus: SectorEntityToken?, variantId: String?,
         condition: ShipRecoverySpecial.ShipCondition?, orbitRadius: Float, recoverable: Boolean
     ) {
@@ -367,7 +348,7 @@ class Rubicon {
         }
     }
 
-    protected fun setBlackHole(star: PlanetAPI, system: StarSystemAPI) {
+    private fun setBlackHole(star: PlanetAPI, system: StarSystemAPI) {
         val coronaPlugin = Misc.getCoronaFor(star)
         if (coronaPlugin != null) {
             system.removeEntity(coronaPlugin.entity)

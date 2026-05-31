@@ -31,6 +31,10 @@
 	#enables Timeless and Nameless type ships spawning in remnant fleets.
 	"enableLifelessShips": false,
 
+	#enables the Legio Infernalis siege system: periodic expedition fleets that blockade hostile systems,
+	#pressure their economies, and (with Nexerelin) capture markets. Toggle, not save-locked.
+	"enableSiege": true,
+
 	#WIP - This does nothing yet
 	"enableWaifu": true
 }
