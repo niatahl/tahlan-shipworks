@@ -69,6 +69,11 @@ Mod id `tahlan`, author Nia Tahl. Targets Starsector `0.98a`.
   distinction when adding new ones.
 - Prefer library helpers over hand-rolled boilerplate: MagicLib for fleets/bounties, LazyLib for
   combat utility lookups, LunaLib for settings and terser campaign scripting.
+- **Externalize player-facing prose; never hardcode it.** Dialogue, descriptions, tooltips, and option
+  text live in `data/strings/strings.json` (under the `tahlan` category) and are fetched via
+  `Utils.txt("key")` (`org.niatahl.tahlan.utils.Utils.txt`). This is a courtesy to translators — strings
+  can be localized without recompiling the jar. Namespace keys per feature (e.g. `traum_*`), and keep
+  literal strings out of the source.
 
 ## Detailed subsystem guides
 
@@ -80,3 +85,4 @@ implementing in that area:
 - `fleet_interaction_dialog.md` — `FleetInteractionDialogPluginImpl` overrides (boss encounters, etc.).
 - `scripted_dialog.md` — Java-authored `InteractionDialogPlugin` setpieces.
 - `rules.md` — the `rules.csv` system and custom rule commands.
+- `balance.md` — judging ship stat budgets vs vanilla (DP basis, tech lineage, built-ins, mounts).

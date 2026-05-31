@@ -190,7 +190,7 @@ class IllustriousRecovery : HubMissionWithBarEvent() {
         } ?: return false
         val what =
             if (currentStage == Stage.RECOVER_SHIP) "Salvage the drifting Illustrious in the "
-            else "Seize the Legio-held Nightwatch dead-drop in the "
+            else "Seize the Nightwatch dead-drop in the "
         info.addPara(what + sys.nameWithLowercaseTypeShort, tc, pad)
         return true
     }

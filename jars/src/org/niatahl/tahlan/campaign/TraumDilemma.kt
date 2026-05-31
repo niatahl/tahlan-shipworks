@@ -13,6 +13,7 @@ import org.niatahl.tahlan.utils.TahlanIDs.TRAUM_QUEST_COMPLETE
 import org.niatahl.tahlan.utils.TahlanIDs.TRAUM_RESOLVED
 import org.niatahl.tahlan.utils.TahlanIDs.TRAUM_VARIANT
 import org.niatahl.tahlan.utils.TahlanPeople
+import org.niatahl.tahlan.utils.Utils.txt
 
 /**
  * Self-describing salvage-special data for the Traumtänzer dilemma. Attached to the derelict via
@@ -32,7 +33,7 @@ class TraumDilemmaSpecialData : SalvageSpecialData {
  *   SAVE CREW : defrost them, reactor collapses -> ship destroyed -> recruit Henrietta + crew/marines.
  *
  * Reads cold (no questline state assumed); shows extra flavor only if the questline-complete flag is
- * set. ALL on-screen text is placeholder for hand-rewrite.
+ * set.
  *
  * NOTE: written against the API but not compiled in this environment; expect IntelliJ-compiler
  * iteration (see the change's task group 5).
@@ -56,18 +57,17 @@ class TraumDilemma : BaseSalvageSpecial() {
         val text = dialog.textPanel
         val options = dialog.optionPanel
 
-        // [PLACEHOLDER] situation: derelict Traumtänzer, reserve power sustaining the crew's cryopods,
-        // reactor on the verge of collapse, the two cannot both be saved. Author rewrites.
-        text.addPara("[PLACEHOLDER] The derelict still has reserve power — all of it routed to a bank of cryopods holding the surviving crew. The reactor is failing. You cannot save both the ship and the people.")
+        text.addPara(txt("traum_intro1"))
+        text.addPara(txt("traum_intro2"))
 
         // Optional questline-aware flavor only (identical options either way).
         if (Global.getSector().memoryWithoutUpdate.getBoolean(TRAUM_QUEST_COMPLETE)) {
-            text.addPara("[PLACEHOLDER] Quest-aware context: you know whose ship this is, and who sleeps aboard.")
+            text.addPara(txt("traum_questAware"))
         }
 
         options.clearOptions()
-        options.addOption("[PLACEHOLDER] Shut off the cryopods and stabilize the reactor — save the ship", OPT_SHIP)
-        options.addOption("[PLACEHOLDER] Defrost the crew and let the reactor go — save the people", OPT_CREW)
+        options.addOption(txt("traum_opt_ship"), OPT_SHIP)
+        options.addOption(txt("traum_opt_crew"), OPT_CREW)
     }
 
     override fun optionSelected(optionText: String?, optionData: Any?) {
@@ -89,7 +89,7 @@ class TraumDilemma : BaseSalvageSpecial() {
         val member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, variant)
         member.repairTracker.cr = 0.3f
         playerFleet.fleetData.addFleetMember(member)
-        dialog.textPanel.addPara("[PLACEHOLDER] The cryopods go dark. The reactor steadies. The Traumtänzer is yours — battered, but whole.")
+        dialog.textPanel.addPara(txt("traum_saveShip"))
     }
 
     /** Save the crew: ship is destroyed, recruit the (already-tuned) Henrietta + a little crew/marines. */
@@ -102,7 +102,12 @@ class TraumDilemma : BaseSalvageSpecial() {
         // Flavor bonus (cheap by design).
         playerFleet.cargo.addCommodity(Commodities.CREW, CREW_REWARD)
         playerFleet.cargo.addCommodity(Commodities.MARINES, MARINE_REWARD)
-        dialog.textPanel.addPara("[PLACEHOLDER] The pods cycle open as the reactor tears itself apart. The Traumtänzer is gone — but Henrietta von Regenfels and her crew live, and throw in with you.")
+
+        val text = dialog.textPanel
+        text.addPara(txt("traum_crew_narration"))
+        text.addPara(txt("traum_crew_appears"))
+        text.addPara(txt("traum_crew_henrietta1"))
+        text.addPara(txt("traum_crew_henrietta2"))
     }
 
     /** Latch the one-time flag, clean up the questline intel, consume the derelict, and offer Continue. */

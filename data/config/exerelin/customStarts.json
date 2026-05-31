@@ -1,0 +1,13 @@
+{
+	"starts":[
+		{
+			"id":"tahlan_nxa_cotl",
+			"name":"Inheritor of the Lake",
+			"difficulty":"Hard",
+			"desc":"The patterns on your skin trace the same winding paths as the one who came before. They left you little: a name half-remembered, a debt of dreams, and the NX-A - a vessel that should not run, yet does, humming with something that watches back.\n\nYou tell yourself the ship is only a ship.\n\nBegin with the NX-A and little else, out on the quiet fringe where the lake's reflection never quite matches the sky.",
+			"className":"org.niatahl.tahlan.campaign.customstart.NXAStart",
+			"factionId":"player",
+			"requiredModId":"secretsofthefrontier",
+		},
+	],
+}

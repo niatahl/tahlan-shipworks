@@ -5,7 +5,6 @@ import com.fs.starfarer.api.combat.*
 import com.fs.starfarer.api.graphics.SpriteAPI
 import com.fs.starfarer.api.input.InputEventAPI
 import com.fs.starfarer.api.util.Misc
-import org.lazywizard.lazylib.FastTrig
 import org.lazywizard.lazylib.MathUtils
 import org.lazywizard.lazylib.VectorUtils
 import org.lwjgl.opengl.GL14.*
@@ -31,7 +30,10 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
     @Deprecated("On a technicality")
     override fun init(engine: CombatEngineAPI) {
+        // Companion state is static and survives between battles - clear all of it, not just nebulae.
         nebulaData.clear()
+        afterimageData.clear()
+        effectProjectiles.clear()
         val layerRenderer: CombatLayeredRenderingPlugin = CustomRenderer(this)
         engine.addLayeredRenderingPlugin(layerRenderer)
     }
@@ -41,37 +43,27 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
         val engine = Global.getCombatEngine()
         if (engine.isPaused) return
 
-        // tick and clean up nebula list
-        val nebulaToRemove = ArrayList<Long>()
-        nebulaData.forEach { (_, nebula) ->
-            nebula.lifetime += engine.elapsedInLastFrame
-            if (nebula.lifetime > nebula.duration)
-                nebulaToRemove.add(nebula.id)
-        }
-        nebulaToRemove.forEach { nebulaData.remove(it) }
+        val elapsed = engine.elapsedInLastFrame
 
-        // tick and clean up afterimage list
-        val afterimageToRemove = ArrayList<Long>()
-        afterimageData.forEach { (_, afterimage) ->
-            afterimage.lifetime += engine.elapsedInLastFrame
-            if (afterimage.lifetime > afterimage.duration)
-                afterimageToRemove.add(afterimage.id)
-        }
-        afterimageToRemove.forEach { afterimageData.remove(it) }
+        // tick lifetimes, then drop expired - removeAll{} prunes in place, no temp lists
+        nebulaData.values.forEach { it.lifetime += elapsed }
+        nebulaData.values.removeAll { it.lifetime > it.duration }
 
-        // clean up spear list
-        val projToRemove = ArrayList<DamagingProjectileAPI>()
-        effectProjectiles.forEach { if (!engine.isEntityInPlay(it)) projToRemove.add(it) }
-        effectProjectiles.removeAll(projToRemove)
+        afterimageData.values.forEach { it.lifetime += elapsed }
+        afterimageData.values.removeAll { it.lifetime > it.duration }
+
+        // drop projectiles that have left play
+        effectProjectiles.removeAll { !engine.isEntityInPlay(it) }
     }
 
     fun render(layer: CombatEngineLayers, view: ViewportAPI) {
-        nebulaData
-            .filter { (_, nebula) -> nebula.layer == layer }
-            .forEach { (_, nebula) -> renderNebula(nebula, view) }
+        // Called once per active layer per frame, so iterate directly rather than allocating a filtered list.
+        nebulaData.values.forEach { nebula ->
+            if (nebula.layer == layer) renderNebula(nebula, view)
+        }
 
         // afterimages
-        if (layer == CombatEngineLayers.BELOW_SHIPS_LAYER) afterimageData.forEach { (_, afterimage) ->
+        if (layer == CombatEngineLayers.BELOW_SHIPS_LAYER) afterimageData.values.forEach { afterimage ->
             renderAfterimage(afterimage, view)
         }
 
@@ -85,26 +77,25 @@ class CustomRender : BaseEveryFrameCombatPlugin() {
 
     private fun renderSpear(proj: DamagingProjectileAPI, view: ViewportAPI) {
         if (!view.isNearViewport(proj.location, view.visibleWidth)) return
-        val flare1 = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
-        val flare2 = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
+        // getSprite returns a shared cached instance, so a single handle drives both passes.
+        val flare = Global.getSettings().getSprite("fx", "tahlan_novaspear_glow")
         val scale = if (proj.weapon.size == WeaponAPI.WeaponSize.LARGE) 1f else 0.6f
+        val alpha = (80 * proj.brightness).roundToInt().coerceIn(0..255)
 
-        flare1.apply {
+        flare.apply {
             setAdditiveBlend()
-            color = SpearOnFireEffect.PARTICLE_COLOR.modify(alpha = (80 * proj.brightness).roundToInt().coerceIn(0..255))
+            color = SpearOnFireEffect.PARTICLE_COLOR.modify(alpha = alpha)
             angle = proj.facing - 90f
             setSize(100f * scale, 200f * scale)
         }
-        flare1.renderAtCenter(proj.location.x, proj.location.y)
+        flare.renderAtCenter(proj.location.x, proj.location.y)
 
-        flare2.apply {
-            setAdditiveBlend()
-            color = SpearOnFireEffect.GLOW_COLOR.modify(alpha = (80 * proj.brightness).roundToInt().coerceIn(0..255))
-            angle = proj.facing - 90f
+        flare.apply {
+            color = SpearOnFireEffect.GLOW_COLOR.modify(alpha = alpha)
             setSize(120f * scale, 200f * scale)
         }
         val pos = MathUtils.getRandomPointInCircle(proj.location, 5f)
-        flare2.renderAtCenter(pos.x, pos.y)
+        flare.renderAtCenter(pos.x, pos.y)
     }
 
     private fun renderAfterimage(afterimage: Afterimage, view: ViewportAPI) {

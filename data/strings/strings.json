@@ -107,9 +107,6 @@
 		"digitalSoulLevel1a_hl":"automated ships",
 		"digitalSoulLevel1b":"Increases maximum combat readiness by 15%%",
 		"digitalSoulLevel1b_hl":"15%",
-		"digitalSoulLevel2a":"Reduces combat readiness reduction from deployment by 50%%",
-		"digitalSoulLevel2a_hl":"50%",
-		"digitalSoulLevel2b":"Piloted ship no longer counts for automated ship points calculation",
 
 		"skill_suffix":" skill",
 		"sModBonus":"S-mod bonus",
@@ -140,5 +137,16 @@
 		"RaketentanzL1a":"All missile ammo and ammo regeneration doubled",
 		"RaketentanzL1b":"Missile rate of fire doubled",
 		"RaketentanzL1c":"Missile damage reduced by 30%",
+
+		"traum_intro1":"The derelict hangs dark but for one bank of cryopods, drinking down what little the failing reactor still musters. Your engineers put it plainly over the comm: the reserve can hold the pods, or it can hold the reactor. Not both, and not for much longer.",
+		"traum_intro2":"Cut the pods, and the reactor can be coaxed back to stability long enough to bring the hull in under tow. Wake the sleepers, and the ship has to be given up before the reactor goes and takes the teams aboard with it. However long you study the reports, there is no third answer in them.",
+		"traum_questAware":"You know this hull. The Traumtänzer, the command ship that slipped its leash above Kassadar and sailed off into the dark, never to signal home. Its commander was a man fond of the old ways. It seems the old ways kept his knights sleeping in the cold, this whole while.",
+		"traum_opt_ship":"Order the cryopods cut, and the reactor stabilized.",
+		"traum_opt_crew":"Order the crew woken, and the ship abandoned.",
+		"traum_saveShip":"Your engineering teams reroute the last of the reserve away from the pods. One bank at a time the indicators wink out, and the reactor's pitch climbs back to something steady. Whoever they were, they kept it burning long enough for you to give the order. A working capital hull is not a thing to leave behind for the next salvager to pick over. Under tow, the Traumtänzer answers, battered but whole. She is yours.",
+		"traum_crew_narration":"Your crews blow the pods and pull the feed off the reactor. It comes apart deck by deck behind the boarding teams as they fall back, and they are clear of the Traumtänzer by the time the last of her lights go dark for good. The sleepers come up coughing in the cold, stiff and disoriented, but alive.",
+		"traum_crew_appears":"One of them finds her feet before the rest and steadies herself against the bulkhead. Whatever the long years in the ice took from her, they did not touch her bearing. She straightens, and inclines her head to you with the exact, practiced courtesy of a knight.",
+		"traum_crew_henrietta1":"\"You have my thanks. Mine, and that of every soul you have drawn out of the dark. I am Henrietta von Regenfels, Knight-Captain of the Rosenritter Order.\" There is a dry note beneath the formality. \"What remains of the Order, at any rate.\"",
+		"traum_crew_henrietta2":"\"My ship is cinders and my chain of command is a hundred years in its grave. But a knight without a banner is a knight still, and a debt is a debt. If you will have me, captain, my lance and my service are yours.\"",
 	}
 }

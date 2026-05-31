@@ -10,7 +10,13 @@ public class Utils {
 
     // For translation friendliness
     public static String txt(String id) {
-        return Global.getSettings().getString(tahlan, id);
+        try {
+            return Global.getSettings().getString(tahlan, id);
+        } catch (Exception e) {
+            // Missing/malformed key: surface the id rather than crashing the dialog/tooltip.
+            Global.getLogger(Utils.class).warn("Tahlan: missing string for key '" + id + "'");
+            return id;
+        }
     }
 
     // Interpolation
