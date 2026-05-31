@@ -173,6 +173,7 @@ class TahlanModPlugin : BaseModPlugin() {
 
         CieveScript.register()
         DigitalSoulScript.register()
+        SuccListener.register()
 
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
             sector.getFaction("remnant").apply {
