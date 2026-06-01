@@ -247,8 +247,9 @@ class TahlanModPlugin : BaseModPlugin() {
             } else {
                 removeDaemons(sector)
             }
-            // If somehow the Daemons are missing, add them
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
+            // If somehow the Daemons are missing, add them (also covers the quiet planetkiller-gift state)
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")
+                || Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio")) {
                 addDaemons(sector)
             }
             val legio = Global.getSector().getFaction(LEGIO)
@@ -259,7 +260,8 @@ class TahlanModPlugin : BaseModPlugin() {
                 if (INDEVO_ARTY) addArtillery()
                 if (INDEVO_MINES) addMines()
                 // Daemon upgrade now also upgrades defenses
-                if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered"))
+                if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")
+                    || Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio"))
                     upgradeDefenses()
             }
         }
@@ -294,11 +296,20 @@ class TahlanModPlugin : BaseModPlugin() {
     private class TahlanTrigger : BaseCampaignEventListener(false) {
         override fun reportEconomyMonthEnd() {
             val sector = Global.getSector()
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
+            // Keep daemons topped up whenever they're enabled — full awakening OR a planetkiller gift.
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")
+                || Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio")) {
                 LOGGER.info("Daemons lurk")
                 addDaemons(sector)  // retroactively add new daemons for mid-campaign updates
-                return
             }
+            // Already fully awoken → nothing left to roll.
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) return
+            // A gifted planetkiller strike is still pending → hold the betrayal back; the Legio stays
+            // friendly until it lands (the delayed betrayal — see PlanetkillerStrike). Once the strike
+            // resolves by interception, that suppression lifts and the natural incursion resumes below:
+            // a gift only delays the reckoning, it never cancels it. Without a gift, this flips as normal.
+            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio")
+                && !Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_pkStrikeResolved")) return
 
             var iLegioStartingCondition = 0
 
@@ -350,20 +361,7 @@ class TahlanModPlugin : BaseModPlugin() {
             }
             val trigger = if (ENABLE_FASTMODE) 2 else 4
             if (iLegioStartingCondition >= trigger) {
-                Global.getSector().memoryWithoutUpdate["\$tahlan_triggered"] = true
-                LOGGER.info("The Daemonic horde awakens")
-                val legio = sector.getFaction(LEGIO)
-                if (Misc.getCommissionFaction() !== legio) {
-                    legio.setRelationship(sector.playerFaction.id, RepLevel.HOSTILE)
-                    if (Misc.getCommissionFaction() != null) legio.setRelationship(Misc.getCommissionFactionId(), RepLevel.HOSTILE)
-                }
-                if (HAS_NEX) {
-                    NexConfig.getFactionConfig(LEGIO).diplomacyTraits.add("monstrous")
-                    NexConfig.getFactionConfig(LEGIO).diplomacyPositiveChance["default"] = 0.1f
-                    NexConfig.getFactionConfig(LEGIO).diplomacyNegativeChance["default"] = 2f
-                }
-                addDaemons(sector)
-                upgradeDefenses()
+                triggerDaemonicIncursion()
             }
         }
     }
@@ -415,9 +413,17 @@ class TahlanModPlugin : BaseModPlugin() {
         val attrMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_attrition")?.toFloat()  ?: 1f
         SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN = (180f / freqMult).coerceIn(30f, 720f)
         SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX = (360f / freqMult).coerceIn(60f, 1440f)
+        // "Siege Fleet Size" scales every siege fleet — command, escorts, and raid waves
         SiegeConfig.COMMAND_FP_BASE  = 150f * diffMult
         SiegeConfig.COMMAND_FP_SCALE = 150f * diffMult
-        SiegeConfig.STRAIN_K = 0.003f * attrMult
+        SiegeConfig.ESCORT_FP_BASE   = 60f * diffMult
+        SiegeConfig.ESCORT_FP_SCALE  = 90f * diffMult
+        SiegeConfig.RAID_FP_BASE     = 50f * diffMult
+        SiegeConfig.RAID_FP_SCALE    = 75f * diffMult
+        // "Siege Attrition Strength" — higher = losses hurt more. Strains command CR harder AND
+        // drains more siege health per FP killed (inverse: lower HEALTH_PER_FP = more damage/kill).
+        SiegeConfig.STRAIN_K      = 0.003f * attrMult
+        SiegeConfig.HEALTH_PER_FP = (5f / attrMult).coerceAtLeast(0.5f)
     }
 
     companion object {
@@ -492,6 +498,48 @@ class TahlanModPlugin : BaseModPlugin() {
             "gigacannon"
         )
 
+
+        /**
+         * Quietly makes the Legio's daemon arsenal available (and upgrades its market defenses) WITHOUT
+         * touching the Legio's relationships or Nex diplomacy — they stay as friendly as the player left
+         * them. Used for the "delayed betrayal" path when the player hands the Legio a planetkiller:
+         * daemons appear immediately, but the Legio stays friendly until its planetkiller strike lands.
+         * Persistence across loads is driven by the `$tahlan_gavePKtoLegio` flag (set by the handover rule),
+         * which re-adds the daemons on game load. Idempotent.
+         */
+        fun enableDaemons() {
+            addDaemons(Global.getSector())
+            upgradeDefenses()
+        }
+
+        /**
+         * Fully awakens the Legio Infernalis: enables daemons (if not already), sets the `$tahlan_triggered`
+         * flag, turns the Legio hostile (unless the player is commissioned with them), and flips Nex
+         * diplomacy to "monstrous". Idempotent — a no-op past the first call. This is the betrayal: driven
+         * either by the natural daemonic-incursion thresholds (reportEconomyMonthEnd) or by the planetkiller
+         * strike detonating (PlanetkillerStrikeFleetAI).
+         */
+        fun awakenLegioHostility() {
+            val sector = Global.getSector()
+            enableDaemons()
+            if (sector.memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) return
+            sector.memoryWithoutUpdate["\$tahlan_triggered"] = true
+            LOGGER.info("The Daemonic horde awakens")
+            val legio = sector.getFaction(LEGIO)
+            if (Misc.getCommissionFaction() !== legio) {
+                legio.setRelationship(sector.playerFaction.id, RepLevel.HOSTILE)
+                if (Misc.getCommissionFaction() != null) legio.setRelationship(Misc.getCommissionFactionId(), RepLevel.HOSTILE)
+            }
+            if (HAS_NEX) {
+                val cfg = NexConfig.getFactionConfig(LEGIO)
+                if (!cfg.diplomacyTraits.contains("monstrous")) cfg.diplomacyTraits.add("monstrous")
+                cfg.diplomacyPositiveChance["default"] = 0.1f
+                cfg.diplomacyNegativeChance["default"] = 2f
+            }
+        }
+
+        /** The natural daemonic incursion: the full awakening (daemons + hostility). */
+        fun triggerDaemonicIncursion() = awakenLegioHostility()
 
         private fun addDaemons(sector: SectorAPI) {
             DAEMON_SHIPS.forEach {

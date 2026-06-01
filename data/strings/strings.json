@@ -169,6 +169,10 @@
 		"siege_intel_resolved_broken": "The siege has been broken. The Legio expedition has been driven off.",
 		"siege_intel_resolved_lifted": "The siege has lifted. The blockade dispersed without achieving its objectives.",
 		"siege_intel_resolved_succeeded": "The siege has succeeded. A market in the besieged system has fallen to the Legio Infernalis.",
-		"siege_intel_garrison": "The Legio command fleet is garrisoning the captured market."
+		"siege_intel_garrison": "The Legio command fleet is garrisoning the captured market.",
+		"pkstrike_warning": "Long-range augurs flag a lone fleet on an odd heading, transponder broadcasting a clean independent registry. Something about it sits wrong.",
+		"pkstrike_revealed": "Close-range identification confirms it: the 'independent' fleet is flying false colors. It is Legio Infernalis.",
+		"pkstrike_struck": "%s is gone. A planetkiller has been detonated over the colony, and the Legio Infernalis have used the gift you gave them. There was nothing to recover.",
+		"pkstrike_averted": "The disguised Legio fleet is destroyed, and the planetkiller with it. You have bought time, nothing more. The Legio has tasted what you handed them, and sooner or later they will come for the rest."
 	}
 }

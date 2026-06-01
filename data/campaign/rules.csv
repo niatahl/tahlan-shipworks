@@ -30,6 +30,32 @@ OR
 ""Can't stand it when the bosses tell me not to shoot someone. Go fuck off.""",,
 #END LEGIO,,,,,,
 ,,,,,,
+# LEGIO_PLANETKILLER - the spectacularly bad idea of handing a Domain planetkiller to the Legio,,,,,,
+tahlanPKGiveToLegio,PopulateOptions,"$isPerson
+!$player.turnedInPlanetkiller
+PlayerHasCargo planetkiller
+$personFaction.id == tahlan_legioinfernalis",,,"tahlan_pkGiveToLegio:""I'm carrying a Domain-era planetkiller. The Legio might have a use for it.""",
+tahlanPKGiveToLegioSel,DialogOptionSelected,$option == tahlan_pkGiveToLegio,,"There is a pause on the line. Then the officer leans into the pickup, crimson eyes catching the light.
+
+""...Say that again. Slowly."" $HeOrShe is no longer bored. ""You, some soft little independent, are offering the Legio a working Domain planetkiller. Do you have the faintest idea what we would do with it?""
+
+A slow, delighted grin spreads across $hisOrHer face. ""No. Of course you don't. Hand it over and find out, buddy.""","tahlan_pkGiveToLegioConfirm:Surrender the planetkiller to the Legio
+tahlan_pkGiveToLegioBack:""...You know what, forget I said anything.""",
+tahlanPKGiveToLegioDo,DialogOptionSelected,$option == tahlan_pkGiveToLegioConfirm,"AddRemoveAnyItem SPECIAL planetkiller -1
+$player.turnedInPlanetkiller = true
+AdjustRep tahlan_legioinfernalis 20
+AdjustRepActivePerson 10
+AdjustRep hegemony -15
+AdjustRep luddic_church -15
+$global.tahlan_gavePKtoLegio = true 0
+ArmPlanetkillerStrike","A boarding shuttle is already burning toward your $shipOrFleet before you have finished speaking. The Legio crew who take the device handle it with something close to reverence, and they do not bother to hide their laughter.
+
+""The Legio thanks you, buddy,"" the officer says, mock-sincere. ""When the sky burns over some world that earned it, we'll think of you. Briefly.""
+
+The comm cuts. You have handed one of the deadliest weapons ever forged to people who can hardly wait to use it. It is difficult to imagine a more catastrophic decision.",cutCommLink:Cut the comm link,
+tahlanPKGiveToLegioBackSel,DialogOptionSelected,$option == tahlan_pkGiveToLegioBack,FireAll PopulateOptions,"""Heh. Cold feet."" $HeOrShe sounds almost disappointed. ""Pathetic. But expected, from your sort.""",,
+#END LEGIO_PLANETKILLER,,,,,,
+,,,,,,
 # KASSADARI,,,,,,
 greetingKassadariFriendly,OpenCommLink,"$faction.id == tahlan_greathouses
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0

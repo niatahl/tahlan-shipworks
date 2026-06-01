@@ -46,6 +46,18 @@ object TahlanIDs {
     const val SIEGE_CONDITION_ID = "tahlan_siegecondition"
     const val SIEGE_MANAGER_KEY = "\$tahlan_siegeManager"
 
+    // Legio "awoken" / daemonic-incursion flag (set by the natural incursion or by gifting them a planetkiller)
+    const val TRIGGERED = "\$tahlan_triggered"
+
+    // Planetkiller handed to the Legio (the "incredibly stupid" path) and its delayed doomsday strike
+    const val GAVE_PK_TO_LEGIO = "\$tahlan_gavePKtoLegio"
+    const val PK_STRIKE_ARMED = "\$tahlan_pkStrikeArmed"
+    const val PK_STRIKE_FIRED = "\$tahlan_pkStrikeFired"
+    const val PK_STRIKE_FLEET = "\$tahlan_pkStrikeFleet"
+    // Set when the strike resolves by interception — lifts the natural-incursion suppression so the
+    // Legio still awakens eventually (a gifted planetkiller only delays the betrayal, never cancels it).
+    const val PK_STRIKE_RESOLVED = "\$tahlan_pkStrikeResolved"
+
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
     const val SOTF_SIERRA = "sotf_sierra"
