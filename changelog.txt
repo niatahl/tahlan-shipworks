@@ -1,10 +1,23 @@
-1.4.1
+1.5
 - Louisa Ferre will now periodically change market
 - Added Scathach codex description
 - Karion Seeker Battery
 	- Set efficiency to the intended 1.0
 - Ristreza variants
 	- Fixed built-in missiles having wrong stat block
+- Added new mission to Louisa Ferre
+- Added Traumtänzer salvage dilemma
+- Added "Inheritor of the Lake" custom start (Secrets of the Frontier integration)
+- Rubicon system made more immersive
+- Completely reworked the Legio siege system
+	- Replaced the old broken implementation with a fleet-based siege
+	- Siege fleets besiege markets and apply CR attrition to defenders
+	- Can capture markets in Nexerelin; story markets are protected
+	- Toggle available in settings and LunaLib
+- Added option to give a recovered Domain planetkiller to the Legio
+    - I'm sure this is a good idea
+- Mondlicht
+	- DP 18 -> 20
 
 1.4
 - Added Raven
