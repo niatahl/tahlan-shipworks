@@ -44,7 +44,7 @@ class SuccListener : EveryFrameScript {
         val target = center.location
 
         val present = HashSet<String>()
-        for (fleet in system.fleets) {
+        for (fleet in system.fleets.toList()) {
             present.add(fleet.id)
 
             if (fleet.isStationMode) continue // not an arriving fleet; never pulled, don't track

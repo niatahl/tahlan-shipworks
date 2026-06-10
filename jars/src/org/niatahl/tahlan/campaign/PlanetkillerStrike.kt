@@ -234,7 +234,7 @@ class PlanetkillerStrikeFleetAI(
         revealed = true
         fleet.setFaction(TahlanIDs.LEGIO, true)
         fleet.setNoFactionInName(false)
-        fleet.name = "Legio Strike Group"
+        fleet.name = "Strike Group"
         fleet.memoryWithoutUpdate.set(MemFlags.MEMORY_KEY_MAKE_HOSTILE, true)
         Global.getSector().campaignUI.addMessage(txt("pkstrike_revealed"), Misc.getNegativeHighlightColor())
     }

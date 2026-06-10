@@ -62,7 +62,7 @@ class SiegeIntel(
     override fun isEnded(): Boolean = outcome != null
 
     override fun getIcon(): String =
-        Global.getSettings().getSpriteName("intel", "raid") ?: "graphics/intel/raid.png"
+        Global.getSettings().getSpriteName("intel", "hostilities")
 
     override fun getName(): String {
         val sysName = targetSystem.baseName

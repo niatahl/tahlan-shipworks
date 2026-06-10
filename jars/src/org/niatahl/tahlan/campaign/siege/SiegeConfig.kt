@@ -67,4 +67,15 @@ object SiegeConfig {
     var RAID_FP_BASE = 50f
     var RAID_FP_SCALE = 75f
     var MAX_ACTIVE_RAID_FLEETS = 3
+
+    // --- Blockade interception ---
+    // A blockade fleet breaks station to intercept a trade fleet whose destination is the besieged
+    // market, or which has closed to within this range of it. Tuned wide enough to interdict before
+    // the trader docks, but short enough that the blockade fleet drifts back to its jump point.
+    var BLOCKADE_INTERCEPT_RANGE = 2500f
+    var BLOCKADE_INTERCEPT_DURATION_DAYS = 10f
+    // When true, blockade fleets are flagged hostile to all trade fleets ($cfai flag) so the
+    // interception actually engages even neutral-faction traders — without it, INTERCEPT only
+    // results in a fight against factions Legio is already hostile to.
+    var BLOCKADE_HOSTILE_TO_TRADERS = true
 }

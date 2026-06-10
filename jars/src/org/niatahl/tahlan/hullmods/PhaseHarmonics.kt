@@ -62,7 +62,7 @@ class PhaseHarmonics : BaseHullMod() {
 
     }
 
-    override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI): String? {
+    override fun getDescriptionParam(index: Int, hullSize: HullSize, ship: ShipAPI?): String? {
         return when (index) {
             0 -> txt("phaseBreaker")
             1 -> "${((1f - DAMAGE_MOD) * 100f).roundToInt()}${txt("%")}"
