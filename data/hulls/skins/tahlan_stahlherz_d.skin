@@ -7,6 +7,7 @@
     "baseValueMult":1,
     "restoreToBaseHull":false,
     "addHints":[],
+    "tags":["no_dealer"],
 	"systemId":"tahlan_plasmarounds",
     "tech":"Rosenritter",
     "removeWeaponSlots":[], 		# ids
