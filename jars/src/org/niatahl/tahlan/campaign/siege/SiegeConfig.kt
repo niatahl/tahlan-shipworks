@@ -12,6 +12,15 @@ object SiegeConfig {
     var INTENSITY_PER_LEGIO_MARKET = 0.05f  // +5% per Legio-owned market
     var INTENSITY_MAX = 2.0f
 
+    /**
+     * Normalized 0..1 interpolation factor for [intensity] across the full [INTENSITY_BASE, INTENSITY_MAX]
+     * range. Scale fleet budgets as `BASE + SCALE * intensityFactor(intensity)` so a fresh campaign sits
+     * at base strength and ramps to base+scale at max — anchoring on this (not on a hardcoded 1.0) is
+     * what keeps the bottom half of the intensity range from clamping inert.
+     */
+    fun intensityFactor(intensity: Float): Float =
+        ((intensity - INTENSITY_BASE) / (INTENSITY_MAX - INTENSITY_BASE)).coerceIn(0f, 1f)
+
     // --- Command fleet (Blackwatch) ---
     var COMMAND_FP_BASE = 150f              // fleet points at intensity 1.0
     var COMMAND_FP_SCALE = 150f             // bonus FP at max intensity
@@ -25,9 +34,16 @@ object SiegeConfig {
     var ESCORT_FP_SCALE = 90f
 
     // --- Two-value health model ---
+    // Two distinct damage paths reduce siege health, NOT a partitioned pool:
+    //   * Command fleet: contributes a flat chunk (SIEGE_HEALTH_MAX * COMMAND_HEALTH_SHARE) that is
+    //     removed once, on its removal — whether killed or withdrawn (identical effect, per design).
+    //     The command fleet does NOT take the per-FP path.
+    //   * Escort / blockade / raid fleets: each death deals uncapped per-FP damage (fp / HEALTH_PER_FP),
+    //     floored at 0. Their total is not capped to the remaining share — the floor handles overkill.
+    // So removing the command fleet is the single biggest blow but never an instant break: the residual
+    // (1 - COMMAND_HEALTH_SHARE) must still be mopped up via escort/blockade/raid kills to reach 0.
     var SIEGE_HEALTH_MAX = 100f
-    var COMMAND_HEALTH_SHARE = 0.6f         // command fleet = 60% of total health; removed on kill/withdraw
-    // Note: escort share = 1 - COMMAND_HEALTH_SHARE, distributed among escort/blockade/raid fleets
+    var COMMAND_HEALTH_SHARE = 0.6f         // command chunk = 60% of max health; removed on kill/withdraw
 
     // --- Attrition (strain coefficient k) ---
     // Per FP destroyed: siegeHealth -= fp / HEALTH_PER_FP; commandCR -= fp * STRAIN_K

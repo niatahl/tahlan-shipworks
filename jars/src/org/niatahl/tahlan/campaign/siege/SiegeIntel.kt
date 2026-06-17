@@ -52,6 +52,14 @@ class SiegeIntel(
         if (playerBountyEarned > 0f && !bountyPaid) {
             bountyPaid = true
             Global.getSector().playerFleet.cargo.credits.add(playerBountyEarned)
+            // Surface the payout — the intel's "bounty paid" line lingers, but a campaign message is the
+            // expected idiom for credits arriving. addMessage colors literal substrings (no %s subst),
+            // so format the text first, then highlight the credit string.
+            val creditStr = Misc.getDGSCredits(playerBountyEarned)
+            Global.getSector().campaignUI.addMessage(
+                txt("siege_bounty_message").format(creditStr),
+                Misc.getTextColor(), creditStr, "", Misc.getPositiveHighlightColor(), Misc.getTextColor()
+            )
         }
         sendUpdateIfPlayerHasIntel(null, false)
         endAfterDelay()
@@ -59,7 +67,11 @@ class SiegeIntel(
 
     // --- BaseIntelPlugin overrides ---
 
-    override fun isEnded(): Boolean = outcome != null
+    // NB: do NOT override isEnded() to key off `outcome`. resolve() calls endAfterDelay() so the
+    // resolution text + bounty-paid line linger for the standard window; an isEnded()==outcome!=null
+    // override would make the base advance() short-circuit (`if (isEnded()) return`) before the
+    // ending timer ticks, and the IntelManager would drop the entry the next frame. Let the base
+    // track ending/ended via endAfterDelay().
 
     override fun getIcon(): String =
         Global.getSettings().getSpriteName("intel", "hostilities")

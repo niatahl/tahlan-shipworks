@@ -41,6 +41,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         enum class Stage { INBOUND, BESIEGING, BROKEN, LIFTED, SUCCEEDED }
 
         var stage = Stage.INBOUND
+        var intensity = 1f      // captured at launch; scales command/escort/raid budgets
         var commandFleet: CampaignFleetAPI? = null
         val escortFleets  = mutableListOf<CampaignFleetAPI>()
         val raidFleets    = mutableListOf<CampaignFleetAPI>()
@@ -103,6 +104,15 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         pruneDeadSieges()
         advanceHealthModel(days)
 
+        // Re-derive the spawn cadence from config so a mid-save LunaLib frequency-slider change takes
+        // effect — the manager (and its spawnTimer) persists across saves, so the construction-time
+        // interval would otherwise be frozen forever. Guarded on a real change: setInterval() rolls a
+        // new currInterval and resets elapsed, so calling it every tick would stall the timer.
+        if (spawnTimer.minInterval != SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN ||
+            spawnTimer.maxInterval != SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX) {
+            spawnTimer.setInterval(SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN, SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX)
+        }
+
         spawnTimer.advance(days)
         if (spawnTimer.intervalElapsed() && activeSieges.size < SiegeConfig.ACTIVE_SIEGE_CAP) {
             tryLaunchSiege()
@@ -117,22 +127,31 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val siege = findSiege(siegeId) ?: return
 
         // Stat updates are safe inline (just field writes); complex resolution is deferred.
-        val healthDmg = fleetFp / SiegeConfig.HEALTH_PER_FP
-        siege.siegeHealth = max(0f, siege.siegeHealth - healthDmg)
-        siege.commandCR = max(0f, siege.commandCR - fleetFp * SiegeConfig.STRAIN_K)
         siege.daysSinceLastLoss = 0f
+
+        if (isCommand) {
+            // The command fleet's health contribution is solely its chunk — NOT the per-FP path —
+            // so a kill matches a withdrawal (triggerWithdrawal) in health effect (per design: killing
+            // vs. driving off differs only in reward), and always leaves the escort residual to mop up.
+            // CR strain is skipped: it's moot once the command fleet is dead (governs regen / its own
+            // strength / withdrawal floor, all irrelevant now).
+            if (siege.commandFleetPresent) {
+                siege.commandFleetPresent = false
+                val cmdChunk = SiegeConfig.SIEGE_HEALTH_MAX * SiegeConfig.COMMAND_HEALTH_SHARE
+                siege.siegeHealth = max(0f, siege.siegeHealth - cmdChunk)
+            }
+        } else {
+            // Escort/blockade/raid: uncapped per-FP health damage (floored at 0) + FP-weighted CR strain.
+            val healthDmg = fleetFp / SiegeConfig.HEALTH_PER_FP
+            siege.siegeHealth = max(0f, siege.siegeHealth - healthDmg)
+            siege.commandCR = max(0f, siege.commandCR - fleetFp * SiegeConfig.STRAIN_K)
+        }
 
         if (playerInvolved) {
             val bounty = if (isCommand) SiegeConfig.COMMAND_FLEET_BOUNTY
                          else fleetFp * SiegeConfig.ESCORT_BOUNTY_PER_FP
             siege.playerBountyAccrued += bounty
             siege.intel?.addPlayerBounty(bounty)
-        }
-
-        if (isCommand && siege.commandFleetPresent) {
-            siege.commandFleetPresent = false
-            val cmdChunk = SiegeConfig.SIEGE_HEALTH_MAX * SiegeConfig.COMMAND_HEALTH_SHARE
-            siege.siegeHealth = max(0f, siege.siegeHealth - cmdChunk)
         }
 
         // Defer CR application and broken-check to advance() — safe side of the battle callback boundary
@@ -159,6 +178,13 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val siege = findSiege(siegeId) ?: return
         siege.stage = SiegeData.Stage.BESIEGING
         applyPressureCondition(siege)
+        // Give the travel escorts a job: screen the command fleet. They arrived on a 1000-day
+        // GO_TO_LOCATION and would otherwise idle at the system center. Do this BEFORE spawnBlockadeFleets,
+        // which appends the (separately-tasked) blockade fleets to the same escortFleets list.
+        for (escort in siege.escortFleets.filter { it.isAlive }) {
+            escort.clearAssignments()
+            escort.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, fleet, 9999f, "screening ${fleet.name}")
+        }
         spawnBlockadeFleets(siege)
         siege.intel?.updateStage(siege.commandCR)
     }
@@ -336,8 +362,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val (targetSystem, primaryMarket) = pickTargetSystem(source) ?: return
 
         val intensity = computeIntensity()
+        val factor = SiegeConfig.intensityFactor(intensity)
         val id = "siege_${targetSystem.id}_${System.nanoTime()}"
         val siege = SiegeData(id, targetSystem, source, primaryMarket)
+        siege.intensity = intensity
 
         // Intel entry
         val intel = SiegeIntel(targetSystem, primaryMarket)
@@ -345,19 +373,17 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         siege.intel = intel
 
         // Command fleet — Blackwatch (task 4.1)
-        val commandFP = (SiegeConfig.COMMAND_FP_BASE + SiegeConfig.COMMAND_FP_SCALE * (intensity - 1f))
-            .coerceIn(SiegeConfig.COMMAND_FP_BASE, SiegeConfig.COMMAND_FP_BASE + SiegeConfig.COMMAND_FP_SCALE)
+        val commandFP = SiegeConfig.COMMAND_FP_BASE + SiegeConfig.COMMAND_FP_SCALE * factor
         val cmdFleet = spawnCommandFleet(source, commandFP, intensity, id) ?: return
         siege.commandFleet = cmdFleet
         siege.commandFleetFP = cmdFleet.fleetPoints.toFloat()
 
         // Initial escort fleets — standard Legio (task 4.1)
         val escortCount = (SiegeConfig.ESCORT_COUNT_BASE +
-                (intensity - 1f) * (SiegeConfig.ESCORT_COUNT_MAX - SiegeConfig.ESCORT_COUNT_BASE))
+                factor * (SiegeConfig.ESCORT_COUNT_MAX - SiegeConfig.ESCORT_COUNT_BASE))
             .toInt().coerceIn(SiegeConfig.ESCORT_COUNT_BASE, SiegeConfig.ESCORT_COUNT_MAX)
         repeat(escortCount) {
-            val eFP = (SiegeConfig.ESCORT_FP_BASE + SiegeConfig.ESCORT_FP_SCALE * (intensity - 1f))
-                .coerceIn(SiegeConfig.ESCORT_FP_BASE, SiegeConfig.ESCORT_FP_BASE + SiegeConfig.ESCORT_FP_SCALE)
+            val eFP = SiegeConfig.ESCORT_FP_BASE + SiegeConfig.ESCORT_FP_SCALE * factor
             spawnEscortFleet(source, eFP, id)?.let { siege.escortFleets.add(it) }
         }
 
@@ -381,7 +407,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     private fun spawnCommandFleet(source: MarketAPI, fp: Float, intensity: Float, siegeId: String): CampaignFleetAPI? {
         val sMods = (SiegeConfig.COMMAND_SMODS_BASE +
-                (intensity - 1f) * (SiegeConfig.COMMAND_SMODS_MAX - SiegeConfig.COMMAND_SMODS_BASE))
+                SiegeConfig.intensityFactor(intensity) * (SiegeConfig.COMMAND_SMODS_MAX - SiegeConfig.COMMAND_SMODS_BASE))
             .toInt().coerceIn(SiegeConfig.COMMAND_SMODS_BASE, SiegeConfig.COMMAND_SMODS_MAX)
         // Inflate with Blackwatch doctrine (elite spearhead ship composition), then reassign the
         // fleet to Legio so it flies under Legio colors and uses Legio relationships. The ships are
@@ -435,7 +461,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     /** Launch a raid sortie toward the primary target market (task 4.3). */
     private fun spawnRaidFleet(siege: SiegeData) {
         val raidTarget = (siege.primaryTargetMarket?.primaryEntity ?: siege.targetSystem.center) ?: return
-        val fp = SiegeConfig.RAID_FP_BASE
+        val fp = SiegeConfig.RAID_FP_BASE + SiegeConfig.RAID_FP_SCALE * SiegeConfig.intensityFactor(siege.intensity)
         val params = FleetParamsV3(siege.sourceMarket, FleetTypes.PATROL_LARGE, fp, 0f, 0f, 0f, 0f, 0f, 0f)
         val fleet = FleetFactoryV3.createFleet(params) ?: return
         tagSiegeFleet(fleet, siege.id, fp, isCommand = false)

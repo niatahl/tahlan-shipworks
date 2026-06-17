@@ -166,6 +166,7 @@
 		"siege_stage_faltering": "Faltering",
 		"siege_intel_bounty_accrued": "%s in bounty accrued for your fleet kills",
 		"siege_intel_bounty_paid": "%s paid for your contributions to breaking the siege",
+		"siege_bounty_message": "Siege bounty: %s deposited for your contributions against the Legio blockade",
 		"siege_intel_resolved_broken": "The siege has been broken. The Legio expedition has been driven off.",
 		"siege_intel_resolved_lifted": "The siege has lifted. The blockade dispersed without achieving its objectives.",
 		"siege_intel_resolved_succeeded": "The siege has succeeded. A market in the besieged system has fallen to the Legio Infernalis.",
