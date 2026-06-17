@@ -19,6 +19,7 @@ import com.fs.starfarer.api.util.DelayedActionScript
 import com.fs.starfarer.api.util.Misc
 import exerelin.campaign.ExerelinSetupData
 import exerelin.campaign.PlayerFactionStore
+import exerelin.campaign.backgrounds.CharacterBackgroundUtils
 import exerelin.campaign.customstart.CustomStart
 import exerelin.utilities.StringHelper
 
@@ -67,6 +68,16 @@ class DreamweaverStart : CustomStart() {
         PlayerFactionStore.setPlayerFactionIdNGC(Factions.PLAYER)
         ExerelinSetupData.getInstance().freeStart = true
 
+        // Custom starts skip Nex's background picker, but Nex persists the last-picked background in
+        // ExerelinSetupData (disk-backed) and never clears it on a new game - the clears in
+        // ExerelinModPlugin.onNewGame are commented out. Left alone, onNewGame would graft that stale
+        // background (e.g. a previous Child of the Lake run) onto this start: a second Sirius intro and
+        // a silently-spent skill point. execute() runs before onNewGame, so wipe it here to pre-empt
+        // that. (The intro guard further down is the version-independent backstop if Nex ever fixes
+        // this and the timing shifts.)
+        ExerelinSetupData.getInstance().backgroundId = null
+        ExerelinSetupData.getInstance().selectedFactionForBackground = null
+
         // Display fleet for the right-hand panel; the actual fleet is built from addStartingFleetMember.
         val tempFleet = FleetFactoryV3.createEmptyFleet(
             PlayerFactionStore.getPlayerFactionIdNGC(), FleetTypes.PATROL_SMALL, null
@@ -111,8 +122,14 @@ class DreamweaverStart : CustomStart() {
             fleet.fleetData.setSyncNeeded()
 
             // SotF fires its intro from its own start; mirror that so the player meets Sirius.
+            // BUT the "Child of the Lake" background fires the exact same intro (with its own VFX)
+            // from SotfChildOfTheLakeBackground.onNewGameAfterTimePass. If the player took both this
+            // start and that background, skip ours so Sirius isn't introduced twice — let the
+            // background's (nicer, fade-in/out) version play. By the time this runs on the campaign
+            // clock, Nex has long since written $nex_selected_background (in ExerelinModPlugin.onNewGame).
             Global.getSector().addScript(object : DelayedActionScript(1.25f) {
                 override fun doAction() {
+                    if (CharacterBackgroundUtils.isBackgroundActive(SOTF_COTL_BACKGROUND)) return
                     Misc.showRuleDialog(Global.getSector().playerFleet, "sotfCOTLIntro")
                 }
             })
@@ -158,6 +175,9 @@ class DreamweaverStart : CustomStart() {
         // Mirrors SotfChildOfTheLakeStart / SotfChildOfTheLakeBackground's unlock check.
         private const val SOTF_UNLOCK_SET = "sotf_persistent"
         private const val SOTF_HAUNTED_DONE = "sotf_haunted_completed"
+        // Nex background spec id (data/config/exerelin/character_backgrounds.csv) for "Child of the
+        // Lake" - if it's the selected background, it already fires sotfCOTLIntro itself.
+        private const val SOTF_COTL_BACKGROUND = "sotf_cotl_bg"
         // SotfIDs.MEM_COTL_START - the flag SotF's machinery reads to set up the whole CotL run.
         private const val MEM_COTL_START = "\$sotf_cotlStart"
     }
