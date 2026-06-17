@@ -12,8 +12,8 @@ import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
 import org.niatahl.tahlan.hullmods.DaemonHeart
 import org.niatahl.tahlan.plugins.DaemonOfficerPlugin
-import org.niatahl.tahlan.plugins.TahlanModPlugin
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_ADAPTIVEMODE
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_HARDMODE
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_REVERIE
@@ -146,7 +146,7 @@ class LegioFleetInflationListener : FleetInflationListener {
 
             val min = if (member.hullSpec.hullId.contains("tahlan_DunScaith_dmn")) {
                 3
-            } else if (TahlanModPlugin.ENABLE_HARDMODE) {
+            } else if (ENABLE_HARDMODE) {
                 Global.getSector().playerPerson.stats.level.div(3).coerceAtLeast(1)
             } else {
                 1

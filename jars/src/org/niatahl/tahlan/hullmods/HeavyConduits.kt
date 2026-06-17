@@ -9,7 +9,7 @@ import com.fs.starfarer.api.combat.listeners.WeaponOPCostModifier
 import com.fs.starfarer.api.impl.campaign.ids.HullMods
 import com.fs.starfarer.api.loading.WeaponSpecAPI
 import org.magiclib.util.MagicIncompatibleHullmods
-import org.niatahl.tahlan.plugins.TahlanModPlugin
+import org.niatahl.tahlan.utils.TahlanRegistry
 import org.niatahl.tahlan.utils.Utils
 
 class HeavyConduits : BaseHullMod() {
@@ -21,7 +21,7 @@ class HeavyConduits : BaseHullMod() {
                 MagicIncompatibleHullmods.removeHullmodWithWarning(ship.variant, tmp, "tahlan_heavyconduits")
             }
         }
-        for (tmp in TahlanModPlugin.SHIELD_HULLMODS) {
+        for (tmp in TahlanRegistry.SHIELD_HULLMODS) {
             if (ship.variant.hullMods.contains(tmp)) {
                 MagicIncompatibleHullmods.removeHullmodWithWarning(ship.variant, tmp, "tahlan_heavyconduits")
             }

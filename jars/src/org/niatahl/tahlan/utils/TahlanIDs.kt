@@ -8,6 +8,15 @@ object TahlanIDs {
     const val DIGITAL_SOUL = "tahlan_digitalSoul"
     const val ALLMOTHER = "tahlan_allmother"
 
+    // Missile projectile ids (drive TahlanModPlugin.pickMissileAI)
+    const val FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl"
+    const val KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl"
+    const val DOLCH_MISSILE_ID = "tahlan_dolch_msl"
+    const val OMNA_MISSILE_ID = "tahlan_omna_msl"
+
+    // Settings file (read by TahlanSettings.loadFromJson)
+    const val SETTINGS_FILE = "tahlan_settings.json"
+
     const val CORE_DAEMON = "tahlan_daemoncore"
     const val CORE_ARCHDAEMON = "tahlan_archdaemoncore"
     const val DAEMONIC_HEART = "tahlan_daemoncore"

@@ -6,7 +6,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 
-import static org.niatahl.tahlan.plugins.TahlanModPlugin.ENABLE_HARDMODE;
+import static org.niatahl.tahlan.utils.TahlanSettings.ENABLE_HARDMODE;
 import static org.niatahl.tahlan.utils.TahlanIDs.LEGIO;
 import static org.niatahl.tahlan.utils.Utils.txt;
 

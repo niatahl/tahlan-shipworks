@@ -15,7 +15,8 @@ import com.fs.starfarer.api.util.Misc
 import com.fs.starfarer.api.util.WeightedRandomPicker
 import exerelin.campaign.SectorManager
 import exerelin.utilities.NexConfig
-import org.niatahl.tahlan.plugins.TahlanModPlugin
+import org.niatahl.tahlan.utils.ModCompat
+import org.niatahl.tahlan.utils.TahlanSettings
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.apache.log4j.Logger
 import kotlin.math.max
@@ -85,7 +86,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     override fun advance(amount: Float) {
         val days = Misc.getDays(amount)
 
-        if (!TahlanModPlugin.ENABLE_SIEGE) {
+        if (!TahlanSettings.ENABLE_SIEGE) {
             if (activeSieges.isNotEmpty()) tearDown()
             return
         }
@@ -220,7 +221,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             // BROKEN: siege health 0 (universal counter in both pathways)
             if (siege.siegeHealth <= 0f) { resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); continue }
 
-            if (TahlanModPlugin.HAS_NEX) {
+            if (ModCompat.HAS_NEX) {
                 // Nex pathway: capture only advances while the command fleet still coordinates the
                 // strangle — a withdrawn or destroyed command cannot complete the takeover (task 7a.3)
                 val target = siege.primaryTargetMarket
@@ -543,7 +544,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             if (allMarkets.any { it.factionId == TahlanIDs.LEGIO || it.factionId == TahlanIDs.BLACKWATCH }) continue
 
             // Nex: filter out story-protected markets; skip system if none remain eligible
-            val eligibleMarkets = if (TahlanModPlugin.HAS_NEX) {
+            val eligibleMarkets = if (ModCompat.HAS_NEX) {
                 hostileMarkets.filter { !isNexProtected(it) }
             } else {
                 hostileMarkets
@@ -592,7 +593,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
      * NexConfig field directly picks up the live LunaLib override.
      */
     private fun isNexCaptureBlocked(market: MarketAPI): Boolean {
-        if (!TahlanModPlugin.HAS_NEX) return false
+        if (!ModCompat.HAS_NEX) return false
         return try {
             !NexConfig.allowInvadeStartingMarkets &&
                 market.memoryWithoutUpdate.getBoolean(NEX_MARKET_EXISTED_AT_START)
@@ -603,7 +604,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Story-critical markets are flagged no-deciv by quests; never capture those (holds even
         // without Nex). Also honor Nex's faction-level "invasion only to retake" territory rule.
         if (market.memoryWithoutUpdate.getBoolean(DecivTracker.NO_DECIV_KEY)) return true
-        if (!TahlanModPlugin.HAS_NEX) return false
+        if (!ModCompat.HAS_NEX) return false
         try {
             if (NexConfig.getFactionConfig(market.factionId)?.invasionOnlyRetake == true) return true
         } catch (_: Exception) {}

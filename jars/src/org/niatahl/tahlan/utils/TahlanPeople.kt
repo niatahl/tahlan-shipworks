@@ -6,7 +6,7 @@ import com.fs.starfarer.api.characters.FullName
 import com.fs.starfarer.api.characters.ImportantPeopleAPI
 import com.fs.starfarer.api.characters.PersonAPI
 import com.fs.starfarer.api.impl.campaign.ids.*
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.WEEB_MODE
+import org.niatahl.tahlan.utils.TahlanSettings.WEEB_MODE
 import org.niatahl.tahlan.utils.TahlanIDs.ALLMOTHER
 import org.niatahl.tahlan.utils.TahlanIDs.BLACKWATCH
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO

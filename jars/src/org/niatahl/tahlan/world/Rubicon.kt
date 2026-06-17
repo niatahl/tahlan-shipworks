@@ -19,9 +19,9 @@ import com.fs.starfarer.api.impl.campaign.terrain.MagneticFieldTerrainPlugin.Mag
 import com.fs.starfarer.api.impl.campaign.terrain.StarCoronaTerrainPlugin.CoronaParams
 import com.fs.starfarer.api.util.Misc
 import org.lazywizard.lazylib.MathUtils
-import org.niatahl.tahlan.plugins.TahlanModPlugin
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.INDEVO_ARTY
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.INDEVO_MINES
+import org.niatahl.tahlan.utils.ModCompat
+import org.niatahl.tahlan.utils.TahlanSettings.INDEVO_ARTY
+import org.niatahl.tahlan.utils.TahlanSettings.INDEVO_MINES
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addArtillery
 import org.niatahl.tahlan.utils.IndEvoIntegrations.addMines
 import org.niatahl.tahlan.utils.random
@@ -308,7 +308,7 @@ class Rubicon {
 
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true)
-        if (TahlanModPlugin.HAS_INDEVO) {
+        if (ModCompat.HAS_INDEVO) {
             if (INDEVO_MINES) addMines()
             if (INDEVO_ARTY) addArtillery()
         } else {

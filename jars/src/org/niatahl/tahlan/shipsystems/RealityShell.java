@@ -16,7 +16,7 @@ import org.lwjgl.util.vector.Vector2f;
 import java.awt.*;
 import java.util.Arrays;
 
-import static org.niatahl.tahlan.plugins.TahlanModPlugin.HAS_GRAPHICSLIB;
+import static org.niatahl.tahlan.utils.ModCompat.HAS_GRAPHICSLIB;
 
 /**
  * First comes the time-mult, then comes the reversal.

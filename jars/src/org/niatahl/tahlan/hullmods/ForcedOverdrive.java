@@ -4,7 +4,7 @@ import com.fs.starfarer.api.combat.BaseHullMod;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShieldAPI.ShieldType;
 import com.fs.starfarer.api.combat.ShipAPI;
-import org.niatahl.tahlan.plugins.TahlanModPlugin;
+import org.niatahl.tahlan.utils.TahlanRegistry;
 
 import static org.niatahl.tahlan.hullmods.KnightRefit.*;
 import static org.niatahl.tahlan.utils.Utils.txt;
@@ -52,7 +52,7 @@ public class ForcedOverdrive extends BaseHullMod {
         }
 
         for (String s : ship.getVariant().getHullMods()) {
-            if (TahlanModPlugin.SHIELD_HULLMODS.contains(s) && !s.equals("tahlan_forcedoverdrive")) {
+            if (TahlanRegistry.SHIELD_HULLMODS.contains(s) && !s.equals("tahlan_forcedoverdrive")) {
                 canBeApplied = false;
                 break;
             }
@@ -71,7 +71,7 @@ public class ForcedOverdrive extends BaseHullMod {
         }
 
         for (String s : ship.getVariant().getHullMods()) {
-                if (TahlanModPlugin.SHIELD_HULLMODS.contains(s) && !s.equals("tahlan_forcedoverdrive")) {
+                if (TahlanRegistry.SHIELD_HULLMODS.contains(s) && !s.equals("tahlan_forcedoverdrive")) {
                     return "Incompatible with shield-related hullmods";
                 }
         }

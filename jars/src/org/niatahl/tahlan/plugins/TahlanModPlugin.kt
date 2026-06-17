@@ -16,14 +16,12 @@ import com.fs.starfarer.api.impl.campaign.shared.SharedData
 import com.fs.starfarer.api.util.Misc
 import exerelin.campaign.SectorManager
 import exerelin.utilities.NexConfig
-import lunalib.lunaSettings.LunaSettings
 import org.apache.log4j.Level
 import org.dark.shaders.light.LightData
 import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
-import org.niatahl.tahlan.campaign.siege.SiegeConfig
 import org.niatahl.tahlan.campaign.siege.SiegeManager
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.listeners.SuccListener
@@ -36,7 +34,31 @@ import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMONIZE
 import org.niatahl.tahlan.utils.TahlanIDs.HEL_CARAPACE
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
-import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMON
+import org.niatahl.tahlan.utils.ModCompat
+import org.niatahl.tahlan.utils.TahlanSettings
+import org.niatahl.tahlan.utils.TahlanRegistry
+import org.niatahl.tahlan.utils.ModCompat.HAS_NEX
+import org.niatahl.tahlan.utils.ModCompat.HAS_INDEVO
+import org.niatahl.tahlan.utils.ModCompat.HAS_LUNA
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_LETHIA
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_LEGIO
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_FASTMODE
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_LIFELESS
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_LEGIOBPS
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_DAEMONS
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_SIEGE
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_HARDMODE
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_ADAPTIVEMODE
+import org.niatahl.tahlan.utils.TahlanSettings.INDEVO_MINES
+import org.niatahl.tahlan.utils.TahlanSettings.INDEVO_ARTY
+import org.niatahl.tahlan.utils.TahlanRegistry.DAEMON_SHIPS
+import org.niatahl.tahlan.utils.TahlanRegistry.DAEMON_WINGS
+import org.niatahl.tahlan.utils.TahlanRegistry.DAEMON_WEAPONS
+import org.niatahl.tahlan.utils.TahlanRegistry.BLACKWATCH_DAEMONS
+import org.niatahl.tahlan.utils.TahlanIDs.FOUNTAIN_MISSILE_ID
+import org.niatahl.tahlan.utils.TahlanIDs.KRIEGSMESSER_MISSILE_ID
+import org.niatahl.tahlan.utils.TahlanIDs.DOLCH_MISSILE_ID
+import org.niatahl.tahlan.utils.TahlanIDs.OMNA_MISSILE_ID
 import org.niatahl.tahlan.utils.TahlanPeople
 import org.niatahl.tahlan.weapons.ai.FountainAI
 import org.niatahl.tahlan.weapons.ai.KriegsmesserAI
@@ -63,20 +85,15 @@ class TahlanModPlugin : BaseModPlugin() {
                 "Tahlan Shipworks requires MagicLib!\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718"
             )
         }
-        val hasGraphicsLib = Global.getSettings().modManager.isModEnabled("shaderLib")
-        if (hasGraphicsLib) {
-            HAS_GRAPHICSLIB = true
+        ModCompat.detectAtAppLoad()
+        if (ModCompat.HAS_GRAPHICSLIB) {
             ShaderLib.init()
             LightData.readLightDataCSV("data/lights/tahlan_lights.csv")
             TextureData.readTextureDataCSV("data/lights/tahlan_texture.csv")
-        } else {
-            HAS_GRAPHICSLIB = false
         }
-        HAS_INDEVO = Global.getSettings().modManager.isModEnabled("IndEvo")
-        HAS_LUNA = Global.getSettings().modManager.isModEnabled("lunalib")
 
         try {
-            loadTahlanSettings()
+            TahlanSettings.loadFromJson()
         } catch (e: IOException) {
             Global.getLogger(TahlanModPlugin::class.java).log(Level.ERROR, "tahlan_settings.json loading failed! ;....; " + e.message)
         } catch (e: JSONException) {
@@ -84,41 +101,26 @@ class TahlanModPlugin : BaseModPlugin() {
         }
 
 
-        //Adds shield hullmods
-        for (hullModSpecAPI in Global.getSettings().allHullModSpecs) {
-            if (hullModSpecAPI.hasTag("shields") && !SHIELD_HULLMODS.contains(hullModSpecAPI.id)) {
-                SHIELD_HULLMODS.add(hullModSpecAPI.id)
-            } else if (hullModSpecAPI.id.contains("swp_shieldbypass") && !SHIELD_HULLMODS.contains(hullModSpecAPI.id)) {
-                SHIELD_HULLMODS.add("swp_shieldbypass") //Dirty fix for Shield Bypass, since that one is actually not tagged as a Shield mod, apparently
-            }
-        }
+        // Collect shield hullmods + tagged daemon ships/wings
+        TahlanRegistry.collectFromSpecs()
 
+        // Stamp daemon built-ins onto daemonize-tagged hulls
         Global.getSettings().allShipHullSpecs
             .filter { it.hasTag(TAG_DAEMONIZE) && it.hullSize != ShipAPI.HullSize.FIGHTER }
             .forEach { ship ->
                 ship.addBuiltInMod(DAEMONIC_HEART)
                 ship.addBuiltInMod(HEL_CARAPACE)
             }
-
-        Global.getSettings().allShipHullSpecs
-            .filter { it.hasTag(TAG_DAEMON) && it.hullSize != ShipAPI.HullSize.FIGHTER }
-            .filter { !DAEMON_SHIPS.contains(it.baseHullId) }
-            .forEach { DAEMON_SHIPS.add(it.baseHullId) }
-
-        Global.getSettings().allFighterWingSpecs
-            .filter { it.hasTag(TAG_DAEMON) }
-            .filter { !DAEMON_WINGS.contains(it.id) }
-            .forEach { DAEMON_WINGS.add(it.id) }
     }
 
     //New game stuff
     override fun onNewGame() {
         val sector = Global.getSector()
 
-        if (HAS_LUNA) loadLunaSettings()
+        if (HAS_LUNA) TahlanSettings.loadFromLuna()
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
-        HAS_NEX = Global.getSettings().modManager.isModEnabled("nexerelin")
+        ModCompat.detectNexerelin()
         if (!HAS_NEX || SectorManager.getManager().isCorvusMode) {
             if (ENABLE_LETHIA) {
                 Lethia().generate(sector)
@@ -165,7 +167,7 @@ class TahlanModPlugin : BaseModPlugin() {
     override fun onGameLoad(newGame: Boolean) {
         val sector = Global.getSector()
 
-        if (HAS_LUNA) loadLunaSettings()
+        if (HAS_LUNA) TahlanSettings.loadFromLuna()
 
         sector.registerPlugin(CampaignPluginImpl())
 
@@ -394,109 +396,9 @@ class TahlanModPlugin : BaseModPlugin() {
         return null
     }
 
-    fun loadLunaSettings() {
-        ENABLE_LETHIA = LunaSettings.getBoolean("tahlan", "tahlan_enable_lethia") ?: true
-        ENABLE_LEGIO = LunaSettings.getBoolean("tahlan", "tahlan_enable_legio") ?: true
-        ENABLE_FASTMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_fastmode") ?: false
-        ENABLE_DAEMONS = LunaSettings.getBoolean("tahlan", "tahlan_enable_daemons") ?: true
-        ENABLE_HARDMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_hardmode") ?: false
-        ENABLE_ADAPTIVEMODE = LunaSettings.getBoolean("tahlan", "tahlan_enable_adaptivemode") ?: true
-        ENABLE_LEGIOBPS = LunaSettings.getBoolean("tahlan", "tahlan_enable_legiobps") ?: false
-        ENABLE_LIFELESS = LunaSettings.getBoolean("tahlan", "tahlan_enable_lifeless") ?: false
-        INDEVO_MINES = LunaSettings.getBoolean("IndEvo", "IndEvo_Enable_minefields") ?: true
-        INDEVO_ARTY = LunaSettings.getBoolean("IndEvo", "IndEvo_Enable_Artillery") ?: true
-
-        // Siege balance sliders (guard: HAS_LUNA is already confirmed by call site)
-        ENABLE_SIEGE = LunaSettings.getBoolean("tahlan", "tahlan_enable_siege") ?: true
-        val freqMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_frequency")?.toFloat()  ?: 1f
-        val diffMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_difficulty")?.toFloat() ?: 1f
-        val attrMult  = LunaSettings.getDouble("tahlan", "tahlan_siege_attrition")?.toFloat()  ?: 1f
-        SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN = (180f / freqMult).coerceIn(30f, 720f)
-        SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX = (360f / freqMult).coerceIn(60f, 1440f)
-        // "Siege Fleet Size" scales every siege fleet — command, escorts, and raid waves
-        SiegeConfig.COMMAND_FP_BASE  = 150f * diffMult
-        SiegeConfig.COMMAND_FP_SCALE = 150f * diffMult
-        SiegeConfig.ESCORT_FP_BASE   = 60f * diffMult
-        SiegeConfig.ESCORT_FP_SCALE  = 90f * diffMult
-        SiegeConfig.RAID_FP_BASE     = 50f * diffMult
-        SiegeConfig.RAID_FP_SCALE    = 75f * diffMult
-        // "Siege Attrition Strength" — higher = losses hurt more. Strains command CR harder AND
-        // drains more siege health per FP killed (inverse: lower HEALTH_PER_FP = more damage/kill).
-        SiegeConfig.STRAIN_K      = 0.003f * attrMult
-        SiegeConfig.HEALTH_PER_FP = (5f / attrMult).coerceAtLeast(0.5f)
-    }
 
     companion object {
-        @JvmField
-        var HAS_GRAPHICSLIB = false
-
-        @JvmField
-        val SHIELD_HULLMODS: MutableList<String> = ArrayList()
-
-        const val FOUNTAIN_MISSILE_ID = "tahlan_fountain_msl"
-        const val KRIEGSMESSER_MISSILE_ID = "tahlan_kriegsmesser_msl"
-        const val DOLCH_MISSILE_ID = "tahlan_dolch_msl"
-        const val OMNA_MISSILE_ID = "tahlan_omna_msl"
-
-        private const val SETTINGS_FILE = "tahlan_settings.json"
-        var ENABLE_LETHIA = false
-        var ENABLE_LEGIO = false
-
-        var ENABLE_FASTMODE = false
-        var ENABLE_LIFELESS = false
-        var ENABLE_LEGIOBPS = false
-        var ENABLE_DAEMONS = false
-        var ENABLE_SIEGE = true
-
-        var INDEVO_MINES = true
-        var INDEVO_ARTY = true
-
-        @JvmField
-        var ENABLE_HARDMODE = false
-        @JvmField
-        var ENABLE_ADAPTIVEMODE = false
-        var WEEB_MODE = false
-
-        @JvmField
-        var HAS_NEX = false
-        var HAS_INDEVO = false
-        var HAS_LUNA = false
         val LOGGER = Global.getLogger(TahlanModPlugin::class.java)!!
-
-        val DAEMON_SHIPS = mutableListOf(
-            "tahlan_dominator_dmn",
-            "tahlan_champion_dmn",
-            "tahlan_manticore_dmn",
-            "tahlan_hammerhead_dmn",
-            "tahlan_centurion_dmn",
-            "tahlan_vanguard_dmn",
-            "tahlan_DunScaith_dmn",
-            "tahlan_hound_dmn",
-            "tahlan_sunder_dmn",
-            "tahlan_kodai_dmn",
-            "tahlan_retribution_dmn",
-            "tahlan_mudskipper_dmn"
-        )
-
-        // to be added to blackwatch only
-        val BLACKWATCH_DAEMONS = mutableListOf(
-            "tahlan_doom_dmn",
-            "tahlan_afflictor_dmn"
-        )
-
-        val DAEMON_WINGS = mutableListOf(
-            "tahlan_miasma_drone_wing",
-            "tahlan_flash_dmn_wing",
-            "tahlan_spark_dmn_wing",
-            "tahlan_lux_dmn_wing",
-            "tahlan_thunder_dmn_wing",
-            "tahlan_gaze_dmn_wing"
-        )
-
-        val DAEMON_WEAPONS = mutableListOf(
-            "kineticblaster",
-            "gigacannon"
-        )
 
 
         /**
@@ -571,19 +473,5 @@ class TahlanModPlugin : BaseModPlugin() {
             }
         }
 
-        @Throws(IOException::class, JSONException::class)
-        private fun loadTahlanSettings() {
-            val setting = Global.getSettings().loadJSON(SETTINGS_FILE)
-            ENABLE_LETHIA = setting.getBoolean("enableLethia")
-            ENABLE_LEGIO = setting.getBoolean("enableLegio")
-            ENABLE_LIFELESS = setting.getBoolean("enableLifelessShips")
-            ENABLE_LEGIOBPS = setting.getBoolean("enableLegioBlueprintLearning")
-            ENABLE_HARDMODE = setting.getBoolean("enableHardMode")
-            ENABLE_ADAPTIVEMODE = setting.getBoolean("enableAdaptiveMode")
-            ENABLE_DAEMONS = setting.getBoolean("enableDaemons")
-            ENABLE_FASTMODE = setting.getBoolean("enableFastmode")
-            WEEB_MODE = setting.getBoolean("enableWaifu")
-            ENABLE_SIEGE = setting.optBoolean("enableSiege", true)
-        }
     }
 }

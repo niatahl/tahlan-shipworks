@@ -11,7 +11,7 @@ import org.lazywizard.lazylib.combat.CombatUtils
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.SIN_OPTIONS
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.addDaemonCore
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener.Companion.addSMods
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.ENABLE_ADAPTIVEMODE
+import org.niatahl.tahlan.utils.TahlanSettings.ENABLE_ADAPTIVEMODE
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONIC_HEART
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_BARROW
 import org.niatahl.tahlan.utils.TahlanIDs.SOTF_CYWAR

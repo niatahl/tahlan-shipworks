@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI
 import com.fs.starfarer.api.combat.WeaponAPI
 import com.fs.starfarer.api.combat.listeners.AdvanceableListener
 import com.fs.starfarer.api.util.IntervalUtil
-import org.niatahl.tahlan.plugins.TahlanModPlugin.Companion.HAS_GRAPHICSLIB
+import org.niatahl.tahlan.utils.ModCompat.HAS_GRAPHICSLIB
 import org.niatahl.tahlan.utils.GraphicLibEffects.customLight
 
 class Blinker : EveryFrameWeaponEffectPlugin {
