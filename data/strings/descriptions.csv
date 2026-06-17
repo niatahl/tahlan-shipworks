@@ -373,7 +373,7 @@ tahlan_miasma,SHIP,"#> Object Classification: Unknown
 #> >> Capabilities: unknown",,,
 tahlan_scathach,SHIP,,,,
 ,,,,,
-tahlan_spark_dmn,SHIP,"A variant of the Spark-class interceptor drone, trading its burst laser for a pair of standard PD lasers.",,,
+tahlan_spark_dmn,SHIP,"A variant of the Spark-class interceptor drone, trading its burst laser for a pair of custom pulse lasers.",,,
 tahlan_lux_dmn,SHIP,"A variant of the Lux-class fighter drone, armed with a needler for shield suppression.",,,
 tahlan_flash_dmn,SHIP,"A variant of the Flash-class strike drone, carrying a devastating Reaper-class torpedo.",,,
 tahlan_thunder_dmn,SHIP,"A drone variant of the Thunder-class interceptor, upgraded with a shield generator and heavily upgunned.",,,

@@ -152,7 +152,7 @@
         "trigger_memKeys_all": {"$tahlan_daemons":true},
         "job_name": "Sovereign of Hel",
         "job_description": "Human, you have defeated Idris and caught our interest. Come, seek an audience with us, that we may judge your potential. Do come prepared for we will not show you mercy.",
-        "job_comm_reply": "So you have come. Show us your worth. Preveil and you shall be our champion. Fall and you shall be but dust among the stars. Prepare for immediate combat.",
+        "job_comm_reply": "So you have come. Show us your worth. Prevail and you shall be our champion. Fall and you shall be but dust among the stars. Prepare for immediate combat.",
         "job_forFaction": "independent",
         "job_credit_reward": 0,
         "job_reward_scaling": 0,
