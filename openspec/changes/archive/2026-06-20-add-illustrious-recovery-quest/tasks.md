@@ -38,8 +38,8 @@
 
 ## 6. Build & verification
 
-- [ ] 6.1 Rebuild `jars/TahlanShipworks.jar` with the new mission class and commit it
-- [ ] 6.2 Verify gating: quest hidden below COOPERATIVE, offered at/above it, never re-offered after completion, existing three devil missions still work
-- [ ] 6.3 Verify the clue chain end-to-end: 3 escalating guarded fights, coordinate hand-offs, undefended wreck, salvage grants one Illustrious with exactly 3 D-mods
-- [ ] 6.4 Verify restoration: discounted price deducted, all D-mods cleared, offered only once, cannot-afford and missing-ship cases handled
-- [ ] 6.5 Verify save/load mid-quest preserves stage and spawned entities
+- [x] 6.1 Rebuild `jars/TahlanShipworks.jar` with the new mission class and commit it
+- [x] 6.2 Verify gating: quest hidden below COOPERATIVE, offered at/above it, never re-offered after completion, existing three devil missions still work
+- [x] 6.3 Verify the clue chain end-to-end: 3 escalating guarded fights, coordinate hand-offs, undefended wreck, salvage grants one Illustrious with exactly 3 D-mods
+- [x] 6.4 Verify restoration: discounted price deducted, all D-mods cleared, offered only once, cannot-afford and missing-ship cases handled
+- [x] 6.5 Verify save/load mid-quest preserves stage and spawned entities

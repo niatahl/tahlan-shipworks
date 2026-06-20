@@ -60,8 +60,8 @@
 ## 9. Prose & build
 
 - [x] 9.1 Externalize all player-facing prose (intel text, stage labels, update strings, condition tooltip) to `data/strings/strings.json` via `Utils.txt`, namespaced (e.g. `siege_*`)
-- [ ] 9.2 Compile into `jars/TahlanShipworks.jar` via IntelliJ artifacts
-- [ ] 9.3 In-game validation: launch a siege (dev), confirm no market/hyperspace entity created, verify attrition by defender patrols, command CR strain/recovery/withdrawal, decapitation-then-mop-up, pressure condition apply/remove, intel staging, and clean teardown on toggle-off
+- [x] 9.2 Compile into `jars/TahlanShipworks.jar` via IntelliJ artifacts
+- [x] 9.3 In-game validation: launch a siege (dev), confirm no market/hyperspace entity created, verify attrition by defender patrols, command CR strain/recovery/withdrawal, decapitation-then-mop-up, pressure condition apply/remove, intel staging, and clean teardown on toggle-off
 
 ## 10. Post-implementation review fixes
 
@@ -73,4 +73,4 @@ Defects found in a code review of the (unshipped) implementation; see "Post-impl
 - [x] 10.4 (#4) Make the LunaLib frequency slider live: re-derive the spawn interval from `SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN/MAX` at reset time via `spawnTimer.setInterval(min, max)` (e.g. each `advance` before the elapsed check) rather than freezing it in the field initializer at construction. The manager persists across saves, so the construction-time capture means slider changes never reach an existing save's timer.
 - [x] 10.5 (#5) Give the travel escort fleets post-arrival behavior: in `onCommandFleetArrived`, reassign them to `ORBIT_AGGRESSIVE` the command anchor (screen the flagship) instead of leaving them idling on their launch-time 1000-day `GO_TO_LOCATION` at the system center.
 - [x] 10.6 (#7) Notify the player on bounty payout (a campaign-UI message or `MessageIntel`), since fixing #1 restores the intel line but a transaction message is the expected idiom; externalize the string to `strings.json` (`siege_*`).
-- [ ] 10.7 Rebuild `jars/TahlanShipworks.jar` and fold these into the 9.3 validation pass: confirm decapitation leaves a mop-up residual, kill == withdrawal health effect, intel lingers on resolve with a bounty message, the frequency slider changes cadence on an existing save, and escorts screen the command fleet.
+- [x] 10.7 Rebuild `jars/TahlanShipworks.jar` and fold these into the 9.3 validation pass: confirm decapitation leaves a mop-up residual, kill == withdrawal health effect, intel lingers on resolve with a bounty message, the frequency slider changes cadence on an existing save, and escorts screen the command fleet.

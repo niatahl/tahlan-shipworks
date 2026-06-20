@@ -32,10 +32,10 @@
 
 ## 6. Build & verification
 
-- [ ] 6.1 Rebuild `jars/TahlanShipworks.jar` in IntelliJ and commit it
-- [ ] 6.2 Verify the gate: defenders present; dilemma only reachable after clearing them
-- [ ] 6.3 Verify save-the-ship: grants a BATTERED Traumtänzer, kills the crew, no penalty, latches, entity consumed
-- [ ] 6.4 Verify save-the-crew: destroys the ship, recruits the tuned Henrietta + crew/marines, grants no hull, latches, entity consumed
-- [ ] 6.5 Verify one-time/exclusive: no repeat after resolution, no "save both", and the cold-find path reads correctly with no questline
-- [ ] 6.6 Verify save/load mid-encounter preserves the unresolved state and the latch survives resolution
-- [ ] 6.7 Verify intel cleanup: (a) resolve before final stage → no pointer shown at completion; (b) resolve after pointer → intel dropped; (c) cold find → no-op; (d) mid-decryption resolve → intel intact, pointer later suppressed
+- [x] 6.1 Rebuild `jars/TahlanShipworks.jar` in IntelliJ and commit it
+- [x] 6.2 Verify the gate: defenders present; dilemma only reachable after clearing them
+- [x] 6.3 Verify save-the-ship: grants a BATTERED Traumtänzer, kills the crew, no penalty, latches, entity consumed
+- [x] 6.4 Verify save-the-crew: destroys the ship, recruits the tuned Henrietta + crew/marines, grants no hull, latches, entity consumed
+- [x] 6.5 Verify one-time/exclusive: no repeat after resolution, no "save both", and the cold-find path reads correctly with no questline
+- [x] 6.6 Verify save/load mid-encounter preserves the unresolved state and the latch survives resolution
+- [x] 6.7 Verify intel cleanup: (a) resolve before final stage → no pointer shown at completion; (b) resolve after pointer → intel dropped; (c) cold find → no-op; (d) mid-decryption resolve → intel intact, pointer later suppressed
