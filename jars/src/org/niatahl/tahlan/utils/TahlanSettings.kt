@@ -78,5 +78,8 @@ object TahlanSettings {
         // drains more siege health per FP killed (inverse: lower HEALTH_PER_FP = more damage/kill).
         SiegeConfig.STRAIN_K = 0.003f * attrMult
         SiegeConfig.HEALTH_PER_FP = (5f / attrMult).coerceAtLeast(0.5f)
+        // Fleet kills also knock back the subjugation meter; scale that with attrition too so the
+        // slider governs "how much losses hurt" on BOTH the health bar and the subjugation meter.
+        SiegeConfig.CAPTURE_KNOCKBACK_PER_FP = 0.05f * attrMult
     }
 }

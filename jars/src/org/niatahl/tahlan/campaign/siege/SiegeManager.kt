@@ -10,9 +10,11 @@ import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags
 import com.fs.starfarer.api.impl.campaign.intel.deciv.DecivTracker
+import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import com.fs.starfarer.api.util.WeightedRandomPicker
+import java.util.Random
 import exerelin.campaign.SectorManager
 import exerelin.utilities.NexConfig
 import org.niatahl.tahlan.utils.ModCompat
@@ -56,7 +58,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
         var daysSinceLastLoss = 0f
         var daysElapsed       = 0f
-        var captureProgress   = 0f
+        var captureProgress   = 0f                  // unified subjugation meter, 0..CAPTURE_PROGRESS_MAX
+        var lastPressureMult  = 1f                  // last strangle multiplier (for the intel display)
         var raidCooldown      = SiegeConfig.RAID_INTERVAL_DAYS
 
         var intel: SiegeIntel? = null
@@ -145,6 +148,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             val healthDmg = fleetFp / SiegeConfig.HEALTH_PER_FP
             siege.siegeHealth = max(0f, siege.siegeHealth - healthDmg)
             siege.commandCR = max(0f, siege.commandCR - fleetFp * SiegeConfig.STRAIN_K)
+            // Knock the subjugation meter back (a command kill already freezes it via commandFleetPresent).
+            siege.captureProgress = max(0f, siege.captureProgress - fleetFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP)
         }
 
         if (playerInvolved) {
@@ -153,6 +158,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             siege.playerBountyAccrued += bounty
             siege.intel?.addPlayerBounty(bounty)
         }
+
+        // Surface the kill as a one-time factor (display-only; the meter was already knocked back).
+        val knockback = if (isCommand) 0f else fleetFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP
+        siege.intel?.addFleetKill(knockback, isCommand)
 
         // Defer CR application and broken-check to advance() — safe side of the battle callback boundary
         pendingKills.add(Triple(siegeId, fleetFp, isCommand))
@@ -186,7 +195,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             escort.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, fleet, 9999f, "screening ${fleet.name}")
         }
         spawnBlockadeFleets(siege)
-        siege.intel?.updateStage(siege.commandCR)
+        siege.intel?.syncProgress(siege)
     }
 
     /** Polled by SiegeAssignmentAI to know if withdrawal has been ordered. */
@@ -228,8 +237,6 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 siege.siegeHealth = min(SiegeConfig.SIEGE_HEALTH_MAX, siege.siegeHealth + regen)
             }
 
-            siege.intel?.updateStage(siege.commandCR)
-
             // Withdrawal at CR floor
             if (!siege.withdrawalOrdered && siege.commandCR <= SiegeConfig.COMMAND_CR_WITHDRAWAL_FLOOR) {
                 triggerWithdrawal(siege)
@@ -247,31 +254,35 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             // BROKEN: siege health 0 (universal counter in both pathways)
             if (siege.siegeHealth <= 0f) { resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); continue }
 
-            if (ModCompat.HAS_NEX) {
-                // Nex pathway: capture only advances while the command fleet still coordinates the
-                // strangle — a withdrawn or destroyed command cannot complete the takeover (task 7a.3)
+            // Unified subjugation meter — advances in BOTH modes while the command fleet coordinates
+            // the strangle (a withdrawn/destroyed command freezes commandFleetPresent). There is no
+            // fixed siege lifetime anymore: both pathways are pure races between the meter filling and
+            // the siege being broken. Rate is scaled by how strangled the target is and braked by CR.
+            if (siege.commandFleetPresent) {
                 val target = siege.primaryTargetMarket
-                if (target == null || isNexCaptureBlocked(target)) {
-                    // Target can never be captured — e.g. a core/"starting" market while Nex's
-                    // allowInvadeStartingMarkets is off. Don't strangle it forever: behave like the
-                    // no-Nex case and let the siege run its finite lifetime, then LIFTED.
-                    if (siege.daysElapsed >= SiegeConfig.SIEGE_LIFETIME_NO_NEX_DAYS) {
-                        resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED); continue
-                    }
-                } else if (siege.commandFleetPresent) {
+                val pressureMult = if (target != null) {
                     val accessibility = target.accessibilityMod.computeEffective(0f).coerceIn(0f, 1f)
-                    val pressureMult = 1f + max(0f, 0.7f - accessibility)  // more strangled = faster
-                    siege.captureProgress += SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * pressureMult * days
-                    if (siege.captureProgress >= SiegeConfig.CAPTURE_PROGRESS_MAX) {
+                    1f + max(0f, 0.7f - accessibility)  // more strangled = faster
+                } else 1f
+                siege.lastPressureMult = pressureMult
+                siege.captureProgress += SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * pressureMult * siege.commandCR * days
+
+                if (siege.captureProgress >= SiegeConfig.CAPTURE_PROGRESS_MAX) {
+                    siege.captureProgress = SiegeConfig.CAPTURE_PROGRESS_MAX
+                    // Branch on whether the target is actually capturable under Nex; everything else
+                    // (no Nex, no target, story-protected, or a Nex-locked core market) resolves via
+                    // the lasting no-Nex scar against the target.
+                    if (ModCompat.HAS_NEX && target != null
+                        && !isNexCaptureBlocked(target) && !isNexProtected(target)) {
                         attemptNexCapture(siege); continue
+                    } else {
+                        applyNoNexAftermath(siege)
+                        resolveSiege(siege, SiegeIntel.SiegeOutcome.SUCCEEDED); continue
                     }
-                }
-            } else {
-                // No-Nex pathway: finite lifetime → LIFTED with full market recovery (task 7a.1)
-                if (siege.daysElapsed >= SiegeConfig.SIEGE_LIFETIME_NO_NEX_DAYS) {
-                    resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED); continue
                 }
             }
+
+            siege.intel?.syncProgress(siege)
         }
     }
 
@@ -299,6 +310,29 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         siege.garrisonMarket = target
         siege.commandFleet?.memoryWithoutUpdate?.set(FLEET_GARRISON_MARKET_KEY, target.id)
         resolveSiege(siege, SiegeIntel.SiegeOutcome.SUCCEEDED, keepCommandFleet = true)
+    }
+
+    // --- No-Nex aftermath scar (task 4.1–4.3) ---
+
+    /**
+     * Apply the lasting "you let the siege win" consequence to the primary target market. Must be
+     * called BEFORE resolveSiege (which clears conditionedMarkets). Acts on the primary target only —
+     * other in-system markets already endured the blockade. Adds the self-expiring half-siege scar
+     * condition and disrupts the market's core industries for the scar's duration.
+     */
+    private fun applyNoNexAftermath(siege: SiegeData) {
+        val target = siege.primaryTargetMarket ?: return
+        if (!target.hasCondition(TahlanIDs.SIEGE_AFTERMATH_CONDITION_ID)) {
+            target.addCondition(TahlanIDs.SIEGE_AFTERMATH_CONDITION_ID)
+        }
+        // Disrupt core industries (skip population/spaceport infrastructure) for the scar duration.
+        val random = Random()
+        for (industry in target.industries) {
+            if (!industry.canBeDisrupted() || !industry.isIndustry()) continue
+            val dur = SiegeConfig.AFTERMATH_DURATION_DAYS * StarSystemGenerator.getNormalRandom(random, 1f, 1.25f)
+            industry.setDisrupted(dur, true)  // useMax: only ever extend an existing disruption
+        }
+        LOG.info("Tahlan siege: no-Nex aftermath applied to ${target.name}")
     }
 
     // --- Withdrawal ---
@@ -368,7 +402,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         siege.intensity = intensity
 
         // Intel entry
-        val intel = SiegeIntel(targetSystem, primaryMarket)
+        val intel = SiegeIntel(targetSystem, primaryMarket, ModCompat.HAS_NEX)
         Global.getSector().intelManager.addIntel(intel)
         siege.intel = intel
 

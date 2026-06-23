@@ -68,12 +68,23 @@ object SiegeConfig {
     var COMMAND_FLEET_BOUNTY = 100_000f
     var ESCORT_BOUNTY_PER_FP = 200f
 
-    // --- No-Nex finite lifetime (~6 months) ---
-    var SIEGE_LIFETIME_NO_NEX_DAYS = 180f
-
-    // --- Nex capture progress ---
+    // --- Subjugation meter ---
     var CAPTURE_PROGRESS_MAX = 100f
-    var CAPTURE_PROGRESS_PER_DAY_BASE = 0.3f   // rate while besieging; multiplied by pressure factor
+    // Rate while besieging; multiplied by pressure factor AND command CR. The old fixed no-Nex
+    // 6-month lifetime now lives in this fill-rate (both Nex / no-Nex are pure races, no clock).
+    // BALANCE-PASS STARTING VALUE: bumped 0.3 -> 0.6 to absorb the retired no-Nex duration; confirm
+    // in a dev-mode pace pass and record the final value in changelog.txt.
+    var CAPTURE_PROGRESS_PER_DAY_BASE = 0.6f
+    // Per FP of a destroyed escort/blockade/raid fleet, knock the subjugation meter back this much
+    // (floored at 0). Scaled by the attrition slider in TahlanSettings.loadFromLuna.
+    var CAPTURE_KNOCKBACK_PER_FP = 0.05f
+
+    // --- No-Nex aftermath scar (applied on a successful no-Nex subjugation) ---
+    // Scar penalties are SiegeCondition.{ACCESSIBILITY,STABILITY,HAZARD}_MOD * this fraction — i.e.
+    // "half a siege", derived live so the scar always tracks the active siege penalty / any slider.
+    var AFTERMATH_PENALTY_FRACTION = 0.5f
+    // How long the scar condition lingers, and the disruption window for the target's core industries.
+    var AFTERMATH_DURATION_DAYS = 120f
 
     // --- Nex garrison duration (~1 year) ---
     var GARRISON_DURATION_DAYS = 365f

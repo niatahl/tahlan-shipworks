@@ -13,6 +13,10 @@
 	- Replaced the old broken implementation with a fleet-based siege
 	- Siege fleets besiege markets and apply CR attrition to defenders
 	- Can capture markets in Nexerelin; story markets are protected
+	- Siege status now reads as a colony-crisis event: a progress bar racing toward the siege's objective, with stage markers and contributing-factor tables
+	- A siege now advances the same way with or without Nexerelin; destroying siege fleets knocks its progress back
+	- Letting a siege win without Nexerelin now leaves a lasting scar on the target market (lingering penalties + disrupted industries) instead of lifting harmlessly
+	- Siege subjugation rate: CAPTURE_PROGRESS_PER_DAY_BASE 0.3 -> 0.6
 	- Toggle available in settings and LunaLib
 - Added option to give a recovered Domain planetkiller to the Legio
     - I'm sure this is a good idea

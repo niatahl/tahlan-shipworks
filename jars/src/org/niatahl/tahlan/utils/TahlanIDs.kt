@@ -53,6 +53,7 @@ object TahlanIDs {
 
     // Siege system
     const val SIEGE_CONDITION_ID = "tahlan_siegecondition"
+    const val SIEGE_AFTERMATH_CONDITION_ID = "tahlan_siegeaftermath"
     const val SIEGE_MANAGER_KEY = "\$tahlan_siegeManager"
 
     // Legio "awoken" / daemonic-incursion flag (set by the natural incursion or by gifting them a planetkiller)

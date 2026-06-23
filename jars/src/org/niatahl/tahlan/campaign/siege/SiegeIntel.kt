@@ -1,60 +1,112 @@
 package org.niatahl.tahlan.campaign.siege
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.campaign.FactionAPI
 import com.fs.starfarer.api.campaign.SectorEntityToken
 import com.fs.starfarer.api.campaign.StarSystemAPI
 import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.impl.campaign.ids.Tags
-import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin
+import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventFactor
+import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventIntel
+import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventIntel.StageIconSize
+import com.fs.starfarer.api.impl.campaign.intel.events.BaseFactorTooltip
+import com.fs.starfarer.api.impl.campaign.intel.events.BaseOneTimeFactor
 import com.fs.starfarer.api.ui.SectorMapAPI
 import com.fs.starfarer.api.ui.TooltipMakerAPI
+import com.fs.starfarer.api.ui.TooltipMakerAPI.TooltipCreator
 import com.fs.starfarer.api.util.Misc
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.Utils.txt
 import java.awt.Color
+import kotlin.math.roundToInt
 
+/**
+ * Colony-crisis-style event renderer for a Legio siege. Extends [BaseEventIntel] for the progress
+ * bar + stage markers + factor tables UI, but does NOT use the framework's progress driver:
+ * [SiegeManager] is authoritative and pushes the bar value each besieging tick via [syncProgress].
+ * Every factor returns `getProgress() == 0` and [reportEconomyTick] is a no-op, so the framework
+ * never mutates `progress` on its own; [getMonthlyProgress] is overridden purely to feed the bar's
+ * projected-monthly tooltip.
+ *
+ * The bar measures the siege's subjugation progress (0..100): rising progress is bad for the player
+ * (red), and the player's fleet kills knock it back (green one-time factors). Command CR is demoted
+ * from the headline stat to an all-progress brake factor.
+ */
 class SiegeIntel(
     private val targetSystem: StarSystemAPI,
-    private val primaryTarget: MarketAPI?
-) : BaseIntelPlugin() {
+    private val primaryTarget: MarketAPI?,
+    private val hasNex: Boolean
+) : BaseEventIntel() {
 
-    enum class SiegeStage { ENTRENCHED, STRAINED, FALTERING }
+    // Kept (name + values) for save-compat: SiegeOutcome is referenced by SiegeManager, and the
+    // stage ids below are serialized as EventStageData.id. SiegeStage's constants are the new
+    // colony-crisis stage model (old ENTRENCHED/STRAINED/FALTERING are gone; old saves migrate via
+    // readResolve, which discards the stale serialized state and rebuilds setup()).
+    enum class SiegeStage { START, FOOTHOLD, STRANGLEHOLD, CLIMAX }
 
     enum class SiegeOutcome { BROKEN, LIFTED, SUCCEEDED }
 
-    private var stage = SiegeStage.ENTRENCHED
     private var outcome: SiegeOutcome? = null
     private var playerBountyEarned = 0f
     private var bountyPaid = false
 
+    // --- Display snapshot, pushed by syncProgress (manager state at the last tick) ---
+    private var dispPressureMult = 1f
+    private var dispCommandCR     = 1f
+    private var dispIntensity     = 1f
+    private var dispRaidFleets    = 0
+
+    init {
+        // Manager owns lifecycle (it calls intelManager.addIntel) — do NOT addIntel here.
+        setup()
+    }
+
+    fun setup() {
+        setMaxProgress(MAX_PROGRESS)
+        getStages().clear()
+        getFactors().clear()
+
+        // START at 0 is mandatory: the bar dereferences the last active stage with no null guard.
+        addStage(SiegeStage.START, 0)
+        addStage(SiegeStage.FOOTHOLD, 33, StageIconSize.MEDIUM)
+        addStage(SiegeStage.STRANGLEHOLD, 66, StageIconSize.MEDIUM)
+        addStage(SiegeStage.CLIMAX, 100, true, StageIconSize.LARGE)
+
+        addFactor(BlockadePressureFactor())
+        addFactor(RaidSortiesFactor())
+        addFactor(SiegeIntensityFactor())
+        addFactor(CommandReadinessFactor())
+    }
+
     // --- Called by SiegeManager ---
 
-    fun updateStage(commandCR: Float) {
-        val newStage = when {
-            commandCR >= SiegeConfig.STAGE_ENTRENCHED_MIN_CR -> SiegeStage.ENTRENCHED
-            commandCR >= SiegeConfig.STAGE_STRAINED_MIN_CR   -> SiegeStage.STRAINED
-            else                                              -> SiegeStage.FALTERING
-        }
-        if (newStage != stage) {
-            stage = newStage
-            sendUpdateIfPlayerHasIntel(null, false)
-        }
+    /** Snapshot manager state and push the bar value. Cheap; called every besieging tick. */
+    fun syncProgress(siege: SiegeManager.SiegeData) {
+        dispPressureMult = siege.lastPressureMult
+        dispCommandCR    = siege.commandCR
+        dispIntensity    = siege.intensity
+        dispRaidFleets   = siege.raidFleets.count { it.isAlive }
+        setProgress(siege.captureProgress.roundToInt().coerceIn(0, MAX_PROGRESS))
     }
 
     fun addPlayerBounty(amount: Float) {
         playerBountyEarned += amount
     }
 
+    /** Push a one-time fleet-kill factor (display-only; the manager already knocked the meter back). */
+    fun addFleetKill(knockback: Float, isCommand: Boolean) {
+        addFactor(FleetKillFactor(knockback, isCommand))
+    }
+
     /** Resolve as one of BROKEN / LIFTED / SUCCEEDED. Pays out accrued bounty. Safe to call once. */
     fun resolve(how: SiegeOutcome) {
         if (outcome != null) return
         outcome = how
+        if (how == SiegeOutcome.SUCCEEDED) setProgress(maxProgress)
         if (playerBountyEarned > 0f && !bountyPaid) {
             bountyPaid = true
             Global.getSector().playerFleet.cargo.credits.add(playerBountyEarned)
-            // Surface the payout — the intel's "bounty paid" line lingers, but a campaign message is the
-            // expected idiom for credits arriving. addMessage colors literal substrings (no %s subst),
-            // so format the text first, then highlight the credit string.
+            // addMessage colors literal substrings (no %s subst), so format first then highlight.
             val creditStr = Misc.getDGSCredits(playerBountyEarned)
             Global.getSector().campaignUI.addMessage(
                 txt("siege_bounty_message").format(creditStr),
@@ -65,13 +117,21 @@ class SiegeIntel(
         endAfterDelay()
     }
 
-    // --- BaseIntelPlugin overrides ---
+    // --- BaseEventIntel overrides ---
 
-    // NB: do NOT override isEnded() to key off `outcome`. resolve() calls endAfterDelay() so the
-    // resolution text + bounty-paid line linger for the standard window; an isEnded()==outcome!=null
-    // override would make the base advance() short-circuit (`if (isEnded()) return`) before the
-    // ending timer ticks, and the IntelManager would drop the entry the next frame. Let the base
-    // track ending/ended via endAfterDelay().
+    // Rising progress is the siege advancing — adverse to the player.
+    override fun isEventProgressANegativeThingForThePlayer(): Boolean = true
+
+    // The manager is authoritative; neutralize the framework's economy-tick auto-driver.
+    override fun reportEconomyTick(iterIndex: Int) { /* no-op */ }
+
+    // Feeds the bar's projected-monthly tooltip only (reportEconomyTick is a no-op, so this never
+    // drives progress). Net monthly subjugation = base rate * strangle * CR brake over ~a month.
+    override fun getMonthlyProgress(): Int =
+        (SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * DAYS_PER_MONTH * dispPressureMult * dispCommandCR).roundToInt()
+
+    override fun getFactionForUIColors(): FactionAPI =
+        Global.getSector().getFaction(TahlanIDs.LEGIO) ?: super.getFactionForUIColors()
 
     override fun getIcon(): String =
         Global.getSettings().getSpriteName("intel", "hostilities")
@@ -86,49 +146,61 @@ class SiegeIntel(
         }
     }
 
-    override fun getSmallDescriptionTitle(): String = getName()
+    override fun getStageIconImpl(stageId: Any?): String = when (stageId) {
+        SiegeStage.CLIMAX -> Global.getSettings().getSpriteName("events", "hostile_activity")
+        else              -> Global.getSettings().getSpriteName("events", "stage_unknown_bad")
+    }
 
-    private fun addNextStepText(info: TooltipMakerAPI, tc: Color, initPad: Float) {
-        if (outcome != null) return
-        val stageLabel = when (stage) {
-            SiegeStage.ENTRENCHED -> txt("siege_stage_entrenched")
-            SiegeStage.STRAINED   -> txt("siege_stage_strained")
-            SiegeStage.FALTERING  -> txt("siege_stage_faltering")
-        }
-        info.addPara("${txt("siege_intel_status")}: $stageLabel", initPad,
-            Misc.getHighlightColor(), stageLabel)
-        if (playerBountyEarned > 0f) {
-            info.addPara(txt("siege_intel_bounty_accrued"), 3f,
-                Misc.getPositiveHighlightColor(), Misc.getDGSCredits(playerBountyEarned))
+    override fun getStageLabel(stageId: Any?): String? = when (stageId) {
+        SiegeStage.FOOTHOLD     -> txt("siege_stage2_foothold")
+        SiegeStage.STRANGLEHOLD -> txt("siege_stage2_stranglehold")
+        SiegeStage.CLIMAX       -> if (hasNex) txt("siege_stage2_climax_nex") else txt("siege_stage2_climax_nonex")
+        else                    -> null
+    }
+
+    override fun getStageTooltipImpl(stageId: Any?): TooltipCreator? {
+        val label = getStageLabel(stageId) ?: return null
+        val tip = stageTip(stageId) ?: return null
+        return object : BaseFactorTooltip() {
+            override fun createTooltip(tooltip: TooltipMakerAPI, expanded: Boolean, tooltipParam: Any?) {
+                tooltip.addPara(label, Misc.getHighlightColor(), 0f)
+                tooltip.addPara(tip, 10f)
+            }
         }
     }
 
-    override fun createSmallDescription(info: TooltipMakerAPI, width: Float, height: Float) {
+    override fun addStageDescriptionText(info: TooltipMakerAPI, width: Float, stageId: Any?) {
+        stageDesc(stageId)?.let { info.addPara(it, 0f) }
+    }
+
+    /** Overall siege blurb, target, resolution line, and bounty — rendered under the stage prose. */
+    override fun afterStageDescriptions(info: TooltipMakerAPI) {
+        val opad = 10f
         val legioColor: Color = Global.getSector().getFaction(TahlanIDs.LEGIO)?.baseUIColor
             ?: Misc.getHighlightColor()
-
-        info.addPara(txt("siege_intel_desc"), legioColor, 0f)
+        info.addPara(txt("siege_intel_desc"), legioColor, opad)
 
         primaryTarget?.let { market ->
-            info.addPara(txt("siege_intel_target"), 10f,
+            info.addPara(txt("siege_intel_target"), opad,
                 Misc.getHighlightColor(),
-                market.name,
-                market.faction?.displayName ?: market.factionId)
+                market.name, market.faction?.displayName ?: market.factionId)
         }
 
         when (outcome) {
-            null -> addNextStepText(info, Misc.getTextColor(), 10f)
-            SiegeOutcome.BROKEN    -> info.addPara(txt("siege_intel_resolved_broken"), 10f,
+            null -> {}
+            SiegeOutcome.BROKEN    -> info.addPara(txt("siege_intel_resolved_broken"), opad,
                 Misc.getPositiveHighlightColor(), "broken")
-            SiegeOutcome.LIFTED    -> info.addPara(txt("siege_intel_resolved_lifted"), 10f,
+            SiegeOutcome.LIFTED    -> info.addPara(txt("siege_intel_resolved_lifted"), opad,
                 Misc.getHighlightColor(), "lifted")
-            SiegeOutcome.SUCCEEDED -> info.addPara(txt("siege_intel_resolved_succeeded"), 10f,
-                Misc.getNegativeHighlightColor(), "succeeded")
+            SiegeOutcome.SUCCEEDED -> {
+                val key = if (hasNex) "siege_intel_resolved_succeeded" else "siege_intel_resolved_succeeded_nonex"
+                info.addPara(txt(key), opad, Misc.getNegativeHighlightColor(), "succeeded")
+            }
         }
 
-        if (bountyPaid && playerBountyEarned > 0f) {
-            info.addPara(txt("siege_intel_bounty_paid"), 10f,
-                Misc.getPositiveHighlightColor(), Misc.getDGSCredits(playerBountyEarned))
+        if (playerBountyEarned > 0f) {
+            val key = if (bountyPaid) "siege_intel_bounty_paid" else "siege_intel_bounty_accrued"
+            info.addPara(txt(key), opad, Misc.getPositiveHighlightColor(), Misc.getDGSCredits(playerBountyEarned))
         }
     }
 
@@ -139,5 +211,124 @@ class SiegeIntel(
         tags.add(Tags.INTEL_FLEET_DEPARTURES)
         tags.add(TahlanIDs.LEGIO)
         return tags
+    }
+
+    // --- Save-compat for the BaseIntelPlugin -> BaseEventIntel superclass change ---
+    private fun readResolve(): Any {
+        // An in-flight siege serialized before this class extended BaseEventIntel has none of the
+        // event-framework collections (they were never initialized via the constructor on the
+        // reflective deserialize path), so seed them before rebuilding the stages/factors.
+        if (getStages() == null) initEventCollections()
+        if (getStages().isEmpty()) setup()
+        return this
+    }
+
+    /** Reflectively initialize BaseEventIntel's protected collections (no public setters exist). */
+    private fun initEventCollections() {
+        try {
+            BaseEventIntel::class.java.getDeclaredField("stages")
+                .apply { isAccessible = true }.set(this, ArrayList<Any>())
+            BaseEventIntel::class.java.getDeclaredField("factors")
+                .apply { isAccessible = true }.set(this, ArrayList<Any>())
+        } catch (e: Exception) {
+            // Worst case the entry won't render; better than a hard crash on load.
+        }
+    }
+
+    // --- Stage prose helpers ---
+
+    private fun stageTip(stageId: Any?): String? = when (stageId) {
+        SiegeStage.FOOTHOLD     -> txt("siege_stagetip_foothold")
+        SiegeStage.STRANGLEHOLD -> txt("siege_stagetip_stranglehold")
+        SiegeStage.CLIMAX       -> if (hasNex) txt("siege_stagetip_climax_nex") else txt("siege_stagetip_climax_nonex")
+        else                    -> null
+    }
+
+    private fun stageDesc(stageId: Any?): String? = when (stageId) {
+        SiegeStage.START        -> txt("siege_stagedesc_start")
+        SiegeStage.FOOTHOLD     -> txt("siege_stagedesc_foothold")
+        SiegeStage.STRANGLEHOLD -> txt("siege_stagedesc_stranglehold")
+        SiegeStage.CLIMAX       -> if (hasNex) txt("siege_stagedesc_climax_nex") else txt("siege_stagedesc_climax_nonex")
+        else                    -> null
+    }
+
+    private fun factorTip(key: String): TooltipCreator = object : BaseFactorTooltip() {
+        override fun createTooltip(tooltip: TooltipMakerAPI, expanded: Boolean, tooltipParam: Any?) {
+            tooltip.addPara(txt(key), 0f)
+        }
+    }
+
+    // --- Factors (all display-only: getProgress() == 0; the manager pushes the bar) ---
+
+    /** Base monthly push: the blockade strangling the market is the engine of the siege. */
+    inner class BlockadePressureFactor : BaseEventFactor() {
+        override fun getProgress(intel: BaseEventIntel): Int = 0
+        override fun shouldShow(intel: BaseEventIntel): Boolean = true
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_blockade")
+        override fun getProgressStr(intel: BaseEventIntel): String =
+            "+" + (SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * DAYS_PER_MONTH * dispPressureMult).roundToInt()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator = factorTip("siege_factortip_blockade")
+    }
+
+    /** Raid sorties hammering the market — contextual pressure indicator (active raid wings). */
+    inner class RaidSortiesFactor : BaseEventFactor() {
+        override fun getProgress(intel: BaseEventIntel): Int = 0
+        override fun shouldShow(intel: BaseEventIntel): Boolean = true
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_raids")
+        override fun getProgressStr(intel: BaseEventIntel): String = "+$dispRaidFleets"
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator = factorTip("siege_factortip_raids")
+    }
+
+    /** Overall expedition scale (intensity 0.5..2.0) — context, not a direct progress multiplier. */
+    inner class SiegeIntensityFactor : BaseEventFactor() {
+        override fun getProgress(intel: BaseEventIntel): Int = 0
+        override fun shouldShow(intel: BaseEventIntel): Boolean = true
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_intensity")
+        override fun getProgressStr(intel: BaseEventIntel): String = "×" + "%.1f".format(dispIntensity)
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator = factorTip("siege_factortip_intensity")
+    }
+
+    /** Command CR brake: a battered command fleet subjugates more slowly (green when < 1). */
+    inner class CommandReadinessFactor : BaseEventFactor() {
+        override fun getProgress(intel: BaseEventIntel): Int = 0
+        override fun shouldShow(intel: BaseEventIntel): Boolean = true
+        override fun getAllProgressMult(intel: BaseEventIntel): Float = dispCommandCR
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_cr")
+        override fun getProgressStr(intel: BaseEventIntel): String = "×" + "%.2f".format(dispCommandCR)
+        override fun getProgressColor(intel: BaseEventIntel): Color =
+            if (dispCommandCR < 1f) Misc.getPositiveHighlightColor() else Misc.getHighlightColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator = factorTip("siege_factortip_cr")
+    }
+
+    /**
+     * One-time fleet-kill factor (auto-expires after [BaseOneTimeFactor.SHOW_DURATION_DAYS]). Passes
+     * `super(0)` so it never mutates `progress` on add — the manager already knocked the meter back.
+     * Shown green as a favourable knock-back; a command kill shows no number (it freezes the meter).
+     */
+    inner class FleetKillFactor(
+        private val knockback: Float,
+        private val isCommand: Boolean
+    ) : BaseOneTimeFactor(0) {
+        override fun getDesc(intel: BaseEventIntel): String =
+            if (isCommand) txt("siege_factor_kill_command") else txt("siege_factor_kill_escort")
+        override fun getProgressStr(intel: BaseEventIntel): String =
+            if (isCommand) "" else "-" + knockback.roundToInt()
+        override fun getProgressColor(intel: BaseEventIntel): Color = Misc.getPositiveHighlightColor()
+        override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
+            factorTip(if (isCommand) "siege_factortip_kill_command" else "siege_factortip_kill_escort")
+        override fun addBulletPointForOneTimeFactor(intel: BaseEventIntel, info: TooltipMakerAPI, tc: Color, initPad: Float) {
+            if (isCommand) {
+                info.addPara(txt("siege_killbullet_command"), tc, initPad)
+            } else {
+                info.addPara("${txt("siege_killbullet_escort")}: %s", initPad,
+                    Misc.getPositiveHighlightColor(), "-" + knockback.roundToInt())
+            }
+        }
+    }
+
+    companion object {
+        const val MAX_PROGRESS = 100
+        const val DAYS_PER_MONTH = 30f
     }
 }
