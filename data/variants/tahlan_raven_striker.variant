@@ -1,0 +1,47 @@
+{
+    "displayName": "Striker",
+    "fluxCapacitors": 0,
+    "fluxVents": 22,
+    "hullId": "tahlan_raven",
+    "hullMods": [
+        "targetingunit",
+        "expanded_deck_crew"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "goalVariant": true,
+    "variantId": "tahlan_raven_striker",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "tahlan_aetnos"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "tahlan_aetnos"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "railgun",
+                "WS0005": "railgun"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "pdburst",
+                "WS0006": "pdlaser",
+                "WS0007": "pdlaser"
+            }
+        }
+    ],
+    "wings": [
+        "perdition_wing",
+        "perdition_wing"
+    ]
+}
