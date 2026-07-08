@@ -84,16 +84,17 @@ class LegioFleetInflationListener : FleetInflationListener {
 
             if (Global.getSector() == null || Global.getSector().playerFleet == null) return
 
-            val sMods = Global.getSector().playerFleet.membersWithFightersCopy
+            val combatMembers = Global.getSector().playerFleet.membersWithFightersCopy
                 .filter { !it.isFighterWing && !it.isCivilian }
-                .sumOf {
-                    if (it.variant != null) it.variant.sMods.count() else 0
-                }
 
-            if (sMods == 0) return
+            val totalFp = combatMembers.sumOf { it.fleetPointCost }.coerceAtLeast(1)
+            val weightedSMods = combatMembers.sumOf {
+                (if (it.variant != null) it.variant.sMods.count() else 0) * it.fleetPointCost
+            }
 
-            val numShips = Global.getSector().playerFleet.membersWithFightersCopy.count { !it.isFighterWing && !it.isCivilian }.coerceAtLeast(1)
-            val avgSMods = (sMods.toFloat() / numShips.toFloat()).roundToInt()
+            if (weightedSMods == 0) return
+
+            val avgSMods = (weightedSMods.toFloat() / totalFp.toFloat()).roundToInt()
 
             member.stats.dynamic.getMod(Stats.MAX_PERMANENT_HULLMODS_MOD).modifyFlat(DaemonHeart.DC_ID, avgSMods.toFloat())
 

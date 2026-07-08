@@ -1,19 +1,26 @@
 package org.niatahl.tahlan.campaign.missions.devil
 
 import com.fs.starfarer.api.Global
+import com.fs.starfarer.api.campaign.CampaignFleetAPI
+import com.fs.starfarer.api.campaign.FleetAssignment
 import com.fs.starfarer.api.campaign.RepLevel
 import com.fs.starfarer.api.campaign.SectorEntityToken
 import com.fs.starfarer.api.campaign.StarSystemAPI
 import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.impl.campaign.DModManager
 import com.fs.starfarer.api.impl.campaign.DerelictShipEntityPlugin.DerelictShipData
+import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3
+import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes
+import com.fs.starfarer.api.impl.campaign.ids.MemFlags
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithBarEvent
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial.PerShipData
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.special.ShipRecoverySpecial.ShipCondition
 import com.fs.starfarer.api.ui.SectorMapAPI
 import com.fs.starfarer.api.ui.TooltipMakerAPI
+import com.fs.starfarer.api.util.Misc
 import java.awt.Color
+import org.apache.log4j.Logger
 import org.niatahl.tahlan.utils.TahlanIDs.ILLUSTRIOUS_CLUE1
 import org.niatahl.tahlan.utils.TahlanIDs.ILLUSTRIOUS_CLUE2
 import org.niatahl.tahlan.utils.TahlanIDs.ILLUSTRIOUS_CLUE3
@@ -74,10 +81,22 @@ class IllustriousRecovery : HubMissionWithBarEvent() {
         setRepFactionChangesNone()
 
         // --- Pick four distinct, out-of-the-way systems for the trail and the wreck. ---
-        clue1System = pickQuestSystem() ?: return false
-        clue2System = pickQuestSystem(clue1System) ?: return false
-        clue3System = pickQuestSystem(clue2System, clue1System) ?: return false
-        wreckSystem = pickQuestSystem(clue3System, clue2System, clue1System) ?: return false
+        clue1System = pickQuestSystem()
+        clue2System = pickQuestSystem(clue1System)
+        clue3System = pickQuestSystem(clue2System, clue1System)
+        wreckSystem = pickQuestSystem(clue3System, clue2System, clue1System)
+        if (clue1System == null || clue2System == null || clue3System == null || wreckSystem == null) {
+            LOG.warn(
+                "Illustrious: aborting mission creation — could not pick four distinct quest systems " +
+                    "(clue1=${clue1System?.name}, clue2=${clue2System?.name}, " +
+                    "clue3=${clue3System?.name}, wreck=${wreckSystem?.name})"
+            )
+            return false
+        }
+        LOG.info(
+            "Illustrious: trail systems chosen — clue1=${clue1System?.name}, clue2=${clue2System?.name}, " +
+                "clue3=${clue3System?.name}, wreck=${wreckSystem?.name}"
+        )
 
         // --- Stage graph ---
         setStartingStage(Stage.GO_TO_CLUE1)
@@ -99,6 +118,16 @@ class IllustriousRecovery : HubMissionWithBarEvent() {
         // --- Final wreck: the drifting, undefended Illustrious. ---
         beginStageTrigger(Stage.RECOVER_SHIP)
         triggerSpawnDerelict(makeIllustriousDerelict(), LocData(pickEntityIn(wreckSystem!!)))
+        val wreckRefKey = "\$tahlan_illustrious_wreckRef"
+        triggerSaveGlobalEntityRef(wreckRefKey)
+        triggerRunScriptAfterDelay(0f) {
+            val wreck = getEntityFromGlobal(wreckRefKey)
+            if (wreck == null) {
+                LOG.warn("Illustrious: wreck FAILED to spawn in ${wreckSystem?.name}; player will find an empty system")
+            } else {
+                LOG.info("Illustrious: wreck spawned in ${wreckSystem?.name} at ${wreck.containingLocation?.name}")
+            }
+        }
         endTrigger()
 
         // Set the recovered latch when the mission completes (i.e. when the wreck is salvaged).
@@ -126,7 +155,86 @@ class IllustriousRecovery : HubMissionWithBarEvent() {
         triggerOrderFleetPatrol(anchor)
         triggerFleetMakeImportant("\$tahlan_illustrious_guard", stage)
         triggerFleetAddDefeatTrigger("tahlan_illustriousClue${hop}Defeated")
+        // Actually place the fleet in the world. triggerCreateFleet only builds the fleet object;
+        // without an explicit spawn it is never added to a StarSystem, so the player is pointed at an
+        // empty system. This mirrors the vanilla pattern (create -> configure -> orders -> spawn).
+        triggerSpawnFleetNear(anchor, "\$tahlan_illustrious_guard${hop}Flag", null)
+        val refKey = "\$tahlan_illustrious_guard${hop}Ref"
+        triggerSaveGlobalFleetRef(refKey)
+        // Runtime spawn confirmation: fires just after the guard is placed, when this stage becomes
+        // active. A missing/empty fleet here is the "player pointed at an empty system" failure — the
+        // trail can only advance by defeating a guard that never spawned.
+        triggerRunScriptAfterDelay(0f) {
+            val fleet = getEntityFromGlobal(refKey) as? CampaignFleetAPI
+            if (fleet == null || fleet.fleetData.membersListCopy.isEmpty()) {
+                LOG.warn(
+                    "Illustrious: clue$hop guard FAILED to spawn in ${system.name} (fleet=$fleet); " +
+                        "player will find an empty system and the trail cannot advance"
+                )
+            } else {
+                LOG.info(
+                    "Illustrious: clue$hop guard spawned in ${system.name} — " +
+                        "${fleet.fleetData.membersListCopy.size} ships, ${fleet.fleetPoints.toInt()} FP, " +
+                        "at ${fleet.containingLocation?.name}"
+                )
+            }
+        }
         endTrigger()
+    }
+
+    /**
+     * Save-repair for pre-fix saves: earlier builds created each clue guard but never spawned it into
+     * its system (see [spawnClueGuard]), leaving the player at an empty system with no way forward.
+     * Because a mission's triggers are serialized with the save, that defect persists for the current
+     * *and* not-yet-reached clue stages even on the fixed jar — so this rebuilds the current clue
+     * stage's guard directly, bypassing the stale triggers.
+     *
+     * Spawns only if the current stage is a clue hop, its clue flag is not yet set, and no guard is
+     * already present (detected by the hop's defeat trigger, which both the normal and repair paths
+     * attach). Idempotent: a no-op on healthy saves and new games. Driven on an interval by
+     * [IllustriousGuardRepair].
+     */
+    fun ensureCurrentGuardSpawned() {
+        val hop: Int
+        val system: StarSystemAPI?
+        val fleetType: String
+        val combatPts: Float
+        val clueFlag: String
+        when (currentStage) {
+            Stage.GO_TO_CLUE1 -> { hop = 1; system = clue1System; fleetType = FleetTypes.PATROL_SMALL;  combatPts = 40f;  clueFlag = ILLUSTRIOUS_CLUE1 }
+            Stage.GO_TO_CLUE2 -> { hop = 2; system = clue2System; fleetType = FleetTypes.PATROL_MEDIUM; combatPts = 90f;  clueFlag = ILLUSTRIOUS_CLUE2 }
+            Stage.GO_TO_CLUE3 -> { hop = 3; system = clue3System; fleetType = FleetTypes.PATROL_LARGE;  combatPts = 160f; clueFlag = ILLUSTRIOUS_CLUE3 }
+            else -> return
+        }
+        val sys = system ?: return
+
+        // Guard was defeated (flag set) but the stage hasn't ticked over yet — don't respawn it.
+        if (Global.getSector().memoryWithoutUpdate.getBoolean(clueFlag)) return
+
+        // A guard is already in place (healthy save / new game / already repaired).
+        val defeatTrigger = "tahlan_illustriousClue${hop}Defeated"
+        if (sys.fleets.any { Misc.getDefeatTriggers(it, false)?.contains(defeatTrigger) == true }) return
+
+        // Build and place the missing guard, mirroring spawnClueGuard's intended end state.
+        val anchor = pickEntityIn(sys)
+        val params = FleetParamsV3(sys.location, LEGIO, null, fleetType, combatPts, 0f, 0f, 0f, 0f, 0f, 0.25f)
+        val fleet = FleetFactoryV3.createFleet(params)
+        if (fleet == null || fleet.fleetData.membersListCopy.isEmpty()) {
+            LOG.warn("Illustrious: save-repair could not build a clue$hop guard for ${sys.name} (fleet=$fleet)")
+            return
+        }
+        fleet.setNoFactionInName(true)
+        sys.addEntity(fleet)
+        fleet.setLocation(anchor.location.x, anchor.location.y)
+        fleet.memoryWithoutUpdate.set(MemFlags.MEMORY_KEY_MAKE_HOSTILE, true)
+        fleet.memoryWithoutUpdate.set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true)
+        Misc.makeImportant(fleet, "\$tahlan_illustrious_guard")
+        Misc.addDefeatTrigger(fleet, defeatTrigger)
+        fleet.addAssignment(FleetAssignment.PATROL_SYSTEM, anchor, 1_000_000f)
+        LOG.info(
+            "Illustrious: save-repair spawned missing clue$hop guard in ${sys.name} — " +
+                "${fleet.fleetData.membersListCopy.size} ships at ${anchor.name}"
+        )
     }
 
     /** Builds the recoverable Illustrious derelict in a battered state with exactly three D-mods. */
@@ -193,5 +301,9 @@ class IllustriousRecovery : HubMissionWithBarEvent() {
             else "Seize the Nightwatch dead-drop in the "
         info.addPara(what + sys.nameWithLowercaseTypeShort, tc, pad)
         return true
+    }
+
+    companion object {
+        private val LOG: Logger = Global.getLogger(IllustriousRecovery::class.java)
     }
 }

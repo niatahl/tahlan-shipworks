@@ -17,3 +17,6 @@ deliberate "this looks like a bug but isn't"), note it here so it survives in on
   shader overlay on the Dreamweaver (`tahlan_nxa`), and the rendering technique behind it.
 - [Mod-wide globals: split singletons](design/mod-globals-architecture.md) — where cross-cutting
   flags/settings/ids/registries live (`ModCompat`, `TahlanSettings`, `TahlanRegistry`, `TahlanIDs`).
+- [Legio Balancing & Challenge Mechanics](design/legio-balance-and-challenge.md) — adaptive-mode
+  S-mod matching (FP-weighted average) and hard-mode daemon-core scaling in
+  `LegioFleetInflationListener`, and why they scale to the player.

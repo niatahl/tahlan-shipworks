@@ -22,6 +22,7 @@ import org.dark.shaders.util.ShaderLib
 import org.dark.shaders.util.TextureData
 import org.json.JSONException
 import org.niatahl.tahlan.campaign.*
+import org.niatahl.tahlan.campaign.missions.devil.IllustriousGuardRepair
 import org.niatahl.tahlan.campaign.siege.SiegeManager
 import org.niatahl.tahlan.listeners.LegioFleetInflationListener
 import org.niatahl.tahlan.listeners.SuccListener
@@ -179,6 +180,7 @@ class TahlanModPlugin : BaseModPlugin() {
         CieveScript.register()
         DigitalSoulScript.register()
         SuccListener.register()
+        IllustriousGuardRepair.register()
 
         if (!ENABLE_LIFELESS && sector.getFaction("remnant").knowsShip("tahlan_Timeless")) {
             sector.getFaction("remnant").apply {
