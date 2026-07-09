@@ -81,6 +81,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     // Captured when the manager is first created (≈ campaign start, or feature-enable on an existing
     // save); persists with the manager. Used to scale siege intensity off elapsed campaign time.
     private val gameStartTimestamp: Long = Global.getSector().clock.timestamp
+    // Run-once-per-load latch for reconcileIntels(). @Transient so it re-fires on every load; a
+    // primitive Boolean defaults to false when XStream reconstructs the manager without a constructor.
+    @Transient
+    private var reconciledThisLoad: Boolean = false
 
     // --- EveryFrameScript ---
 
@@ -89,6 +93,12 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     override fun advance(amount: Float) {
         val days = Misc.getDays(amount)
+
+        // Once per load, before anything else: sweep siege intels that no live siege owns.
+        if (!reconciledThisLoad) {
+            reconciledThisLoad = true
+            reconcileIntels()
+        }
 
         if (!TahlanSettings.ENABLE_SIEGE) {
             if (activeSieges.isNotEmpty()) tearDown()
@@ -681,6 +691,52 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         }
         activeSieges.clear()
         LOG.info("Tahlan siege: torn down (feature disabled mid-save)")
+    }
+
+    /**
+     * Reconcile siege intels once per load. Two problems this fixes, both rooted in the
+     * BaseIntelPlugin -> BaseEventIntel superclass change:
+     *
+     * 1. A siege in flight across the update deserializes its intel without BaseEventIntel's
+     *    stages/factors collections (XStream skips the constructor's field initializers). Those fields
+     *    cannot be seeded from mod code — reflection is forbidden to scripts, and there is no setter —
+     *    so the only fix is to REPLACE the intel with a freshly-constructed one, which runs the
+     *    constructor and rebuilds the event UI. Every BaseEventIntel method that iterates the
+     *    collections (createLargeDescription, setProgress, notifyEnding) NPEs until this happens.
+     * 2. A resolved siege's intel fades via endAfterDelay(), but that only completes while the intel's
+     *    own advance() runs — which relies on its constructor having registered it as a sector script.
+     *    A migrated intel was never registered, so it would linger forever; drop any orphan outright.
+     */
+    private fun reconcileIntels() {
+        val im = Global.getSector().intelManager ?: return
+
+        // 1) Replace broken (uninitialized) intels still owned by a live siege.
+        var rebuilt = 0
+        for (siege in activeSieges) {
+            val old = siege.intel
+            if (old != null && old.isUninitialized()) {
+                im.removeIntel(old)   // reportRemovedIntel() is a no-op; safe on a null-collection intel
+                val fresh = SiegeIntel(siege.targetSystem, siege.primaryTargetMarket, ModCompat.HAS_NEX)
+                im.addIntel(fresh, true)   // forceNoMessage: it's a silent migration, not a new event
+                siege.intel = fresh
+                rebuilt++
+            }
+        }
+
+        // 2) Drop any siege intel no live siege owns. Only a valid (initialized) intel can be ended
+        //    cleanly — notifyEnding() iterates factors — so end those; just remove the rest.
+        val owned = activeSieges.mapNotNull { it.intel }.toSet()
+        var cleared = 0
+        for (plugin in im.getIntel(SiegeIntel::class.java).toList()) {
+            val intel = plugin as? SiegeIntel ?: continue
+            if (intel in owned) continue
+            if (!intel.isUninitialized()) intel.endImmediately()
+            im.removeIntel(intel)
+            cleared++
+        }
+
+        if (rebuilt > 0 || cleared > 0)
+            LOG.info("Tahlan siege: reconciled intels on load (rebuilt=$rebuilt, cleared=$cleared)")
     }
 
     // --- Helpers ---

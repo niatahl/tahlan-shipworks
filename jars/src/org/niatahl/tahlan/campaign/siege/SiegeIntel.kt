@@ -11,6 +11,7 @@ import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventIntel
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventIntel.StageIconSize
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseFactorTooltip
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseOneTimeFactor
+import com.fs.starfarer.api.ui.CustomPanelAPI
 import com.fs.starfarer.api.ui.SectorMapAPI
 import com.fs.starfarer.api.ui.TooltipMakerAPI
 import com.fs.starfarer.api.ui.TooltipMakerAPI.TooltipCreator
@@ -40,8 +41,9 @@ class SiegeIntel(
 
     // Kept (name + values) for save-compat: SiegeOutcome is referenced by SiegeManager, and the
     // stage ids below are serialized as EventStageData.id. SiegeStage's constants are the new
-    // colony-crisis stage model (old ENTRENCHED/STRAINED/FALTERING are gone; old saves migrate via
-    // readResolve, which discards the stale serialized state and rebuilds setup()).
+    // colony-crisis stage model (old ENTRENCHED/STRAINED/FALTERING are gone; a siege in flight across
+    // the superclass change is migrated by SiegeManager.reconcileIntels, which replaces the stale
+    // intel with a freshly-constructed one rather than trying to repair it in place).
     enum class SiegeStage { START, FOOTHOLD, STRANGLEHOLD, CLIMAX }
 
     enum class SiegeOutcome { BROKEN, LIFTED, SUCCEEDED }
@@ -214,25 +216,25 @@ class SiegeIntel(
     }
 
     // --- Save-compat for the BaseIntelPlugin -> BaseEventIntel superclass change ---
-    private fun readResolve(): Any {
-        // An in-flight siege serialized before this class extended BaseEventIntel has none of the
-        // event-framework collections (they were never initialized via the constructor on the
-        // reflective deserialize path), so seed them before rebuilding the stages/factors.
-        if (getStages() == null) initEventCollections()
-        if (getStages().isEmpty()) setup()
-        return this
-    }
 
-    /** Reflectively initialize BaseEventIntel's protected collections (no public setters exist). */
-    private fun initEventCollections() {
-        try {
-            BaseEventIntel::class.java.getDeclaredField("stages")
-                .apply { isAccessible = true }.set(this, ArrayList<Any>())
-            BaseEventIntel::class.java.getDeclaredField("factors")
-                .apply { isAccessible = true }.set(this, ArrayList<Any>())
-        } catch (e: Exception) {
-            // Worst case the entry won't render; better than a hard crash on load.
-        }
+    /**
+     * Whether this instance came through save-migration with BaseEventIntel's framework collections
+     * left null. A siege serialized before this class extended BaseEventIntel has no <stages>/<factors>
+     * in its XML, and XStream reconstructs the object without running the constructor's field
+     * initializers — so the collections are null. They CANNOT be seeded from here: mod code runs under
+     * a classloader that forbids reflection (SecurityException), the fields are protected with no setter,
+     * and every mutator (addStage/addFactor) assumes a non-null list. The only fix is wholesale
+     * replacement, which [SiegeManager.reconcileIntels] does on load. Reading the field is allowed, so
+     * this is used both there (to detect the broken instance) and below (to fail safe until replaced).
+     */
+    fun isUninitialized(): Boolean = getStages() == null || getFactors() == null
+
+    // The engine's render entry point for the large event UI iterates `stages`/`factors` with no null
+    // guard. If this is a not-yet-replaced migrated instance, skip rendering rather than NPE; the
+    // reconcile pass on the first campaign tick removes/replaces it right after load.
+    override fun createLargeDescription(panel: CustomPanelAPI, width: Float, height: Float) {
+        if (isUninitialized()) return
+        super.createLargeDescription(panel, width, height)
     }
 
     // --- Stage prose helpers ---
