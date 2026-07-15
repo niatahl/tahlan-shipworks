@@ -4,6 +4,9 @@ object TahlanIDs {
     const val LEGIO = "tahlan_legioinfernalis"
     const val BLACKWATCH = "tahlan_legioelite"
     const val DAEMONS = "tahlan_legiodaemons"
+    // Lucifron — the Legio Infernalis capital/HQ (Rubicon system). Their siege campaign is contingent
+    // on Legio still holding it.
+    const val LUCIFRON_MARKET = "tahlan_rubicon_p03_market"
     const val NEURALLINK_COMM = "tahlan_neurallink"
     const val DIGITAL_SOUL = "tahlan_digitalSoul"
     const val ALLMOTHER = "tahlan_allmother"

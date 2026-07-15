@@ -1,11 +1,9 @@
 package org.niatahl.tahlan.campaign.siege
 
-import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.campaign.BattleAPI
 import com.fs.starfarer.api.campaign.CampaignFleetAPI
 import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason
 import com.fs.starfarer.api.campaign.listeners.FleetEventListener
-import org.niatahl.tahlan.utils.TahlanIDs
 
 /**
  * Attached to every siege fleet at spawn. Routes kill/despawn events back to SiegeManager.
@@ -38,6 +36,5 @@ class SiegeFleetListener(
         manager.onSiegeFleetDespawned(siegeId, fleetFp, isCommandFleet)
     }
 
-    private fun findManager(): SiegeManager? =
-        Global.getSector().memoryWithoutUpdate.get(TahlanIDs.SIEGE_MANAGER_KEY) as? SiegeManager
+    private fun findManager(): SiegeManager? = SiegeManager.get()
 }

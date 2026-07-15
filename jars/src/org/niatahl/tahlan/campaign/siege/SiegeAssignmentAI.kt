@@ -7,7 +7,6 @@ import com.fs.starfarer.api.campaign.FleetAssignment
 import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
-import org.niatahl.tahlan.utils.TahlanIDs
 
 /**
  * Drives the command fleet through its lifecycle: TRAVELING → BESIEGING → (GARRISONING →) RETURNING.
@@ -105,8 +104,7 @@ class SiegeAssignmentAI(
             "besieging ${loc.nameWithLowercaseType}")
     }
 
-    private fun findManager(): SiegeManager? =
-        Global.getSector().memoryWithoutUpdate.get(TahlanIDs.SIEGE_MANAGER_KEY) as? SiegeManager
+    private fun findManager(): SiegeManager? = SiegeManager.get()
 
     override fun isDone(): Boolean = phase == Phase.DONE
     override fun runWhilePaused(): Boolean = false

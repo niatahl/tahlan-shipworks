@@ -232,12 +232,12 @@ class TahlanModPlugin : BaseModPlugin() {
         }
 
         if (sector.memoryWithoutUpdate.getBoolean("\$tahlan_haslegio")) {
-            // Legio siege manager — register once; permanent listener survives save/load
-            if (ENABLE_SIEGE && sector.memoryWithoutUpdate.get(TahlanIDs.SIEGE_MANAGER_KEY) == null) {
-                val siegeManager = SiegeManager()
-                sector.listenerManager.addListener(siegeManager, true)  // for reportFleetDespawned
-                sector.addScript(siegeManager)                          // for advance() (the siege loop)
-                sector.memoryWithoutUpdate.set(TahlanIDs.SIEGE_MANAGER_KEY, siegeManager, 0f)
+            // Legio siege manager — idempotent registration. getOrCreate reuses the instance that
+            // persisted with the save (located via the scripts list) and only constructs a new one
+            // when none exists, so a reload can never leave a second, empty manager running alongside
+            // the real one — the failure that wiped live sieges' intel and stalled their progress.
+            if (ENABLE_SIEGE) {
+                SiegeManager.getOrCreate()
             }
 
             // Legio stealing pirates homework

@@ -4,9 +4,11 @@ import com.fs.starfarer.api.EveryFrameScript
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.campaign.*
 import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason
+import com.fs.starfarer.api.campaign.FactionAPI.ShipPickMode
 import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3
+import com.fs.starfarer.api.impl.campaign.ids.Conditions
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags
 import com.fs.starfarer.api.impl.campaign.intel.deciv.DecivTracker
@@ -102,6 +104,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
         if (!TahlanSettings.ENABLE_SIEGE) {
             if (activeSieges.isNotEmpty()) tearDown()
+            return
+        }
+
+        // The campaign is run out of Lucifron. If Legio has lost their capital, call off every
+        // in-flight siege (fleets disperse home) — new launches are gated in tryLaunchSiege.
+        if (activeSieges.isNotEmpty() && !legioHoldsCapital()) {
+            for (siege in activeSieges.toList()) resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED)
+            LOG.info("Tahlan siege: capital Lucifron lost — all active sieges lifted")
             return
         }
 
@@ -401,7 +411,21 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     // --- Fleet spawning ---
 
+    /**
+     * The Legio siege campaign is directed from their capital, Lucifron. It counts as "held" only
+     * while the market still exists, is Legio-owned, and is a going concern (not decivilized). Losing
+     * Lucifron — to the player, to a Nex invasion, or to decivilization — shuts the campaign down:
+     * no new launches (tryLaunchSiege) and any in-flight sieges are lifted (advance).
+     */
+    private fun legioHoldsCapital(): Boolean {
+        val lucifron = Global.getSector().economy.getMarket(TahlanIDs.LUCIFRON_MARKET) ?: return false
+        if (lucifron.factionId != TahlanIDs.LEGIO) return false
+        if (lucifron.hasCondition(Conditions.DECIVILIZED)) return false
+        return true
+    }
+
     private fun tryLaunchSiege() {
+        if (!legioHoldsCapital()) return
         val source = pickSourceMarket() ?: return
         val (targetSystem, primaryMarket) = pickTargetSystem(source) ?: return
 
@@ -411,16 +435,23 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val siege = SiegeData(id, targetSystem, source, primaryMarket)
         siege.intensity = intensity
 
-        // Intel entry
+        // Command fleet — Blackwatch (task 4.1). Spawn BEFORE the intel entry: it is the only hard
+        // failure point in the launch, so if it can't be built we must bail with nothing committed.
+        // Creating the intel first would orphan it (a siege announced in the feed with no fleets in
+        // the world, cleaned up only on the next load via reconcileIntels).
+        val commandFP = SiegeConfig.COMMAND_FP_BASE + SiegeConfig.COMMAND_FP_SCALE * factor
+        val cmdFleet = spawnCommandFleet(source, commandFP, intensity, id)
+        if (cmdFleet == null) {
+            LOG.warn("Tahlan siege: aborted launch on ${targetSystem.baseName} — command fleet failed to spawn")
+            return
+        }
+        siege.commandFleet = cmdFleet
+        siege.commandFleetFP = cmdFleet.fleetPoints.toFloat()
+
+        // Intel entry — only now that the siege force actually exists.
         val intel = SiegeIntel(targetSystem, primaryMarket, ModCompat.HAS_NEX)
         Global.getSector().intelManager.addIntel(intel)
         siege.intel = intel
-
-        // Command fleet — Blackwatch (task 4.1)
-        val commandFP = SiegeConfig.COMMAND_FP_BASE + SiegeConfig.COMMAND_FP_SCALE * factor
-        val cmdFleet = spawnCommandFleet(source, commandFP, intensity, id) ?: return
-        siege.commandFleet = cmdFleet
-        siege.commandFleetFP = cmdFleet.fleetPoints.toFloat()
 
         // Initial escort fleets — standard Legio (task 4.1)
         val escortCount = (SiegeConfig.ESCORT_COUNT_BASE +
@@ -456,12 +487,20 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Inflate with Blackwatch doctrine (elite spearhead ship composition), then reassign the
         // fleet to Legio so it flies under Legio colors and uses Legio relationships. The ships are
         // already rolled by createFleet, so setFaction keeps the Blackwatch loadout intact.
+        //
+        // modeOverride is REQUIRED: the source market is Legio, so factionId=Blackwatch differs from
+        // the market faction, which makes FleetFactoryV3 default to IMPORTED ship-pick mode — that
+        // rolls only Blackwatch's meagre `shipsWhenImporting` list, not its elite roster, producing a
+        // wrong/near-empty command fleet. PRIORITY_THEN_ALL forces the full Blackwatch roster. This
+        // mirrors LegioHQ's off-faction patrol spawn.
         val params = FleetParamsV3(source, FleetTypes.MERC_ARMADA, fp, 0f, 0f, 0f, 0f, 0f, 0.25f)
         params.factionId = TahlanIDs.BLACKWATCH
         params.averageSMods = sMods
         params.officerNumberMult = 2f
+        params.modeOverride = ShipPickMode.PRIORITY_THEN_ALL
 
-        val fleet = FleetFactoryV3.createFleet(params) ?: return null
+        val fleet = FleetFactoryV3.createFleet(params)
+        if (fleet == null || fleet.isEmpty) return null
         fleet.setFaction(TahlanIDs.LEGIO, true)
         fleet.name = "Vanguard"
         tagSiegeFleet(fleet, siegeId, fp, isCommand = true)
@@ -694,49 +733,73 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     }
 
     /**
-     * Reconcile siege intels once per load. Two problems this fixes, both rooted in the
-     * BaseIntelPlugin -> BaseEventIntel superclass change:
+     * Reconcile siege intels once per load. Matches live sieges to their intel by target SYSTEM (a
+     * stable, serialized key) rather than by object identity, so it is safe against references that
+     * didn't round-trip and against the BaseIntelPlugin -> BaseEventIntel migration:
      *
-     * 1. A siege in flight across the update deserializes its intel without BaseEventIntel's
-     *    stages/factors collections (XStream skips the constructor's field initializers). Those fields
-     *    cannot be seeded from mod code — reflection is forbidden to scripts, and there is no setter —
-     *    so the only fix is to REPLACE the intel with a freshly-constructed one, which runs the
-     *    constructor and rebuilds the event UI. Every BaseEventIntel method that iterates the
-     *    collections (createLargeDescription, setProgress, notifyEnding) NPEs until this happens.
-     * 2. A resolved siege's intel fades via endAfterDelay(), but that only completes while the intel's
-     *    own advance() runs — which relies on its constructor having registered it as a sector script.
-     *    A migrated intel was never registered, so it would linger forever; drop any orphan outright.
+     * 1. A siege in flight across the superclass change deserializes its intel without BaseEventIntel's
+     *    stages/factors collections (XStream skips the constructor's field initializers), leaving them
+     *    null. Those fields cannot be seeded from mod code (reflection is forbidden, no setter), so an
+     *    uninitialized intel is REPLACED with a freshly-constructed one that rebuilds the event UI.
+     * 2. Only intels whose target system has NO live siege are removed. A live siege's intel is never
+     *    swept — the previous identity-only pass deleted every intel not found by reference in
+     *    activeSieges, which wiped all active sieges on load whenever that state was empty or mismatched.
+     *
+     * The whole pass is wrapped so a migration edge case can't brick the manager's advance() loop.
      */
     private fun reconcileIntels() {
         val im = Global.getSector().intelManager ?: return
+        try {
+            val siegeIntels = im.getIntel(SiegeIntel::class.java).mapNotNull { it as? SiegeIntel }
+            val claimed = mutableSetOf<SiegeIntel>()
+            var rebuilt = 0
 
-        // 1) Replace broken (uninitialized) intels still owned by a live siege.
-        var rebuilt = 0
-        for (siege in activeSieges) {
-            val old = siege.intel
-            if (old != null && old.isUninitialized()) {
-                im.removeIntel(old)   // reportRemovedIntel() is a no-op; safe on a null-collection intel
-                val fresh = SiegeIntel(siege.targetSystem, siege.primaryTargetMarket, ModCompat.HAS_NEX)
-                im.addIntel(fresh, true)   // forceNoMessage: it's a silent migration, not a new event
-                siege.intel = fresh
-                rebuilt++
+            // 1) Re-link each live siege to a valid intel for its target SYSTEM (a stable, serialized
+            //    key). This repairs a reference that didn't round-trip and re-adopts a surviving intel
+            //    rather than trusting object identity alone. Only when nothing valid can be adopted —
+            //    e.g. the old intel migrated in from a pre-BaseEventIntel save with null stages/factors
+            //    (isUninitialized) — do we rebuild one from scratch.
+            for (siege in activeSieges) {
+                val current = siege.intel?.takeIf {
+                    !it.isUninitialized() && it in siegeIntels && it !in claimed
+                }
+                val adopted = current ?: siegeIntels.firstOrNull {
+                    it !in claimed && !it.isUninitialized() && it.getTargetSystem() == siege.targetSystem
+                }
+                if (adopted != null) {
+                    siege.intel = adopted
+                    claimed.add(adopted)
+                } else {
+                    siege.intel?.let { old -> try { im.removeIntel(old) } catch (_: Exception) {} }
+                    val fresh = SiegeIntel(siege.targetSystem, siege.primaryTargetMarket, ModCompat.HAS_NEX)
+                    im.addIntel(fresh, true)   // forceNoMessage: silent migration, not a new event
+                    siege.intel = fresh
+                    claimed.add(fresh)
+                    rebuilt++
+                }
             }
-        }
 
-        // 2) Drop any siege intel no live siege owns. Only a valid (initialized) intel can be ended
-        //    cleanly — notifyEnding() iterates factors — so end those; just remove the rest.
-        val owned = activeSieges.mapNotNull { it.intel }.toSet()
-        var cleared = 0
-        for (plugin in im.getIntel(SiegeIntel::class.java).toList()) {
-            val intel = plugin as? SiegeIntel ?: continue
-            if (intel in owned) continue
-            if (!intel.isUninitialized()) intel.endImmediately()
-            im.removeIntel(intel)
-            cleared++
-        }
+            // 2) Remove ONLY intels that no live siege owns — checked by target system, not just object
+            //    identity, so a live siege's intel is never swept even if its reference broke. This is
+            //    the fix for the "loading deletes all active sieges" regression: the old pass removed
+            //    every intel not identity-matched in activeSieges, which nuked everything whenever the
+            //    manager's state was momentarily empty or mismatched.
+            val ownedSystems = activeSieges.map { it.targetSystem }.toSet()
+            var cleared = 0
+            for (intel in siegeIntels) {
+                if (intel in claimed) continue
+                if (intel.getTargetSystem() in ownedSystems) continue
+                if (!intel.isUninitialized()) intel.endImmediately()  // only a valid intel ends cleanly
+                im.removeIntel(intel)
+                cleared++
+            }
 
-        if (rebuilt > 0 || cleared > 0)
-            LOG.info("Tahlan siege: reconciled intels on load (rebuilt=$rebuilt, cleared=$cleared)")
+            if (rebuilt > 0 || cleared > 0)
+                LOG.info("Tahlan siege: reconciled intels on load (rebuilt=$rebuilt, cleared=$cleared)")
+        } catch (e: Exception) {
+            // A migration edge case must never brick the manager's advance() loop.
+            LOG.warn("Tahlan siege: reconcileIntels failed — ${e.message}")
+        }
     }
 
     // --- Helpers ---
@@ -763,5 +826,62 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         const val NEX_MARKET_EXISTED_AT_START = "\$nex_existed_at_start"
 
         val LOG: Logger = Global.getLogger(SiegeManager::class.java)!!
+
+        /**
+         * Locate the live siege manager, robustly across save/load. The **scripts list is the source
+         * of truth** — [SectorAPI.addScript] reliably round-trips (cf. PlanetkillerStrikeWatcher), so
+         * a scan of it always finds the instance that persisted with the save. `persistentData` and
+         * sector memory are only fast-lookup caches (and cover older saves that stored the pointer
+         * there); whatever is found is re-cached so later lookups stay cheap. Returns null only when
+         * no manager has ever been registered.
+         *
+         * This exists because the AIs and fleet listeners used to read the manager *solely* from
+         * sector memory. If that single pointer ever failed to resolve, the onGameLoad guard created a
+         * second, empty manager: its reconcileIntels wiped every live siege's intel, and callbacks
+         * routed to it (never flipping sieges to BESIEGING) stalled all progress. A scripts-list scan
+         * makes the lookup independent of any one store.
+         */
+        fun get(): SiegeManager? {
+            val sector = Global.getSector() ?: return null
+            (sector.persistentData[TahlanIDs.SIEGE_MANAGER_KEY] as? SiegeManager)?.let { return it }
+            // Cache miss: scan the (reliably-persisted) scripts list. If more than one manager exists —
+            // a legacy save corrupted by the old duplicate-on-load bug — prefer the one actually
+            // holding sieges so the real state wins over a stray empty instance.
+            val found = sector.scripts.filterIsInstance(SiegeManager::class.java)
+                .maxByOrNull { it.activeSieges.size }
+                ?: sector.memoryWithoutUpdate.get(TahlanIDs.SIEGE_MANAGER_KEY) as? SiegeManager
+            if (found != null) {
+                sector.persistentData[TahlanIDs.SIEGE_MANAGER_KEY] = found
+                sector.memoryWithoutUpdate.set(TahlanIDs.SIEGE_MANAGER_KEY, found, 0f)
+            }
+            return found
+        }
+
+        /**
+         * Return the single live manager, creating and registering it only if none exists yet.
+         * Idempotent — safe to call on every onGameLoad. Reuses the instance that persisted with the
+         * save (found via the scripts list) and prunes any duplicates left by the old bug, so exactly
+         * one manager runs and every lookup resolves to it.
+         */
+        fun getOrCreate(): SiegeManager {
+            val sector = Global.getSector()
+            val managers = sector.scripts.filterIsInstance(SiegeManager::class.java)
+            val mgr = when {
+                managers.isEmpty() -> SiegeManager().also { sector.addScript(it) }  // ctor registers listener
+                else -> managers.maxByOrNull { it.activeSieges.size }!!             // richest = the real one
+            }
+            // Prune stray duplicate managers (legacy corruption from the pre-fix duplicate-on-load bug).
+            for (dup in managers) {
+                if (dup !== mgr) {
+                    sector.removeScript(dup)
+                    sector.listenerManager.removeListener(dup)
+                }
+            }
+            if (!sector.listenerManager.hasListenerOfClass(SiegeManager::class.java))
+                sector.listenerManager.addListener(mgr)   // persistent (isTransient defaults to false)
+            sector.persistentData[TahlanIDs.SIEGE_MANAGER_KEY] = mgr
+            sector.memoryWithoutUpdate.set(TahlanIDs.SIEGE_MANAGER_KEY, mgr, 0f)
+            return mgr
+        }
     }
 }

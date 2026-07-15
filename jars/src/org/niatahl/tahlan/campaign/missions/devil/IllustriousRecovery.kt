@@ -107,8 +107,18 @@ class IllustriousRecovery : HubMissionWithBarEvent() {
         connectWithGlobalFlag(Stage.GO_TO_CLUE1, Stage.GO_TO_CLUE2, ILLUSTRIOUS_CLUE1)
         connectWithGlobalFlag(Stage.GO_TO_CLUE2, Stage.GO_TO_CLUE3, ILLUSTRIOUS_CLUE2)
         connectWithGlobalFlag(Stage.GO_TO_CLUE3, Stage.RECOVER_SHIP, ILLUSTRIOUS_CLUE3)
-        // Salvaging the drifting hull sets the recovered latch and completes the mission.
-        connectWithGlobalFlag(Stage.RECOVER_SHIP, Stage.COMPLETED, ILLUSTRIOUS_RECOVERED)
+        // Complete when the salvaged Illustrious actually enters the player's fleet. The peaceful
+        // wreck has no defeat trigger to set a flag (unlike the clue guards), so detect the hull
+        // directly — mirroring RestoreIllustrious.findIllustrious(). The COMPLETED trigger below
+        // then sets ILLUSTRIOUS_RECOVERED as a *consequence* of completion (cf. vanilla
+        // RecoverAPlanetkiller's separate $pk_completed condition vs. $pk_recovered latch). Gating
+        // this transition on ILLUSTRIOUS_RECOVERED itself would deadlock: nothing sets that flag
+        // until the COMPLETED stage is reached.
+        connectWithCustomCondition(Stage.RECOVER_SHIP, Stage.COMPLETED) {
+            Global.getSector().playerFleet.fleetData.membersListCopy.any {
+                it.hullSpec.hullId == ILLUSTRIOUS_HULL
+            }
+        }
 
         // --- Per-hop spawns: escalating faceless Legio guards over the dead-drop. ---
         spawnClueGuard(Stage.GO_TO_CLUE1, clue1System!!, FleetSize.SMALL, FleetTypes.PATROL_SMALL, 1)

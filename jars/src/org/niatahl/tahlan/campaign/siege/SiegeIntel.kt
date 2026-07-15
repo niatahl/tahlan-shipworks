@@ -229,6 +229,10 @@ class SiegeIntel(
      */
     fun isUninitialized(): Boolean = getStages() == null || getFactors() == null
 
+    /** The system this intel tracks — used by [SiegeManager.reconcileIntels] to re-link sieges to
+     *  their intel by a stable, serialized key rather than by a fragile object reference. */
+    fun getTargetSystem(): StarSystemAPI = targetSystem
+
     // The engine's render entry point for the large event UI iterates `stages`/`factors` with no null
     // guard. If this is a not-yet-replaced migrated instance, skip rendering rather than NPE; the
     // reconcile pass on the first campaign tick removes/replaces it right after load.
