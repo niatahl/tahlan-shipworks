@@ -4,7 +4,6 @@ object SiegeConfig {
     // --- Spawn cadence ---
     var LAUNCH_INTERVAL_DAYS_MIN = 180f     // fastest possible interval
     var LAUNCH_INTERVAL_DAYS_MAX = 360f     // slowest interval (scaled by frequency mult)
-    var ACTIVE_SIEGE_CAP = 2
 
     // --- Intensity scaling (elapsed campaign time + Legio strength, replaces currentCycle-206) ---
     var INTENSITY_BASE = 0.5f

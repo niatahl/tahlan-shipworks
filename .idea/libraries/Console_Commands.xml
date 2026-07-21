@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Console Commands">
+    <CLASSES>
+      <root url="jar://G:/Starsector/mods/Console Commands/jars/lw_Console.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://G:/Starsector/mods/Console Commands/jars/lw_Console.jar!/" />
+    </SOURCES>
+  </library>
+</component>

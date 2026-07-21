@@ -83,10 +83,6 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     // Captured when the manager is first created (≈ campaign start, or feature-enable on an existing
     // save); persists with the manager. Used to scale siege intensity off elapsed campaign time.
     private val gameStartTimestamp: Long = Global.getSector().clock.timestamp
-    // Run-once-per-load latch for reconcileIntels(). @Transient so it re-fires on every load; a
-    // primitive Boolean defaults to false when XStream reconstructs the manager without a constructor.
-    @Transient
-    private var reconciledThisLoad: Boolean = false
 
     // --- EveryFrameScript ---
 
@@ -95,12 +91,6 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     override fun advance(amount: Float) {
         val days = Misc.getDays(amount)
-
-        // Once per load, before anything else: sweep siege intels that no live siege owns.
-        if (!reconciledThisLoad) {
-            reconciledThisLoad = true
-            reconcileIntels()
-        }
 
         if (!TahlanSettings.ENABLE_SIEGE) {
             if (activeSieges.isNotEmpty()) tearDown()
@@ -136,9 +126,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             spawnTimer.setInterval(SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN, SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX)
         }
 
-        spawnTimer.advance(days)
-        if (spawnTimer.intervalElapsed() && activeSieges.size < SiegeConfig.ACTIVE_SIEGE_CAP) {
-            tryLaunchSiege()
+        // The launch cadence measures the *gap between sieges*, not launch-to-launch: only tick the
+        // timer while no siege is ongoing, so a long-running siege can't burn down the interval and
+        // trigger the next launch the moment it resolves. Sieges therefore run strictly one at a time.
+        if (activeSieges.isEmpty()) {
+            spawnTimer.advance(days)
+            if (spawnTimer.intervalElapsed()) {
+                tryLaunchSiege()
+            }
         }
     }
 
@@ -262,11 +257,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 triggerWithdrawal(siege)
             }
 
-            // Raid sorties
-            siege.raidCooldown -= days
-            if (siege.raidCooldown <= 0f && siege.raidFleets.size < SiegeConfig.MAX_ACTIVE_RAID_FLEETS) {
-                siege.raidCooldown = SiegeConfig.RAID_INTERVAL_DAYS
-                spawnRaidFleet(siege)
+            // Raid sorties — command-coordinated, like the subjugation meter below: once the command
+            // fleet is gone (killed/withdrawn) the siege is in mop-up and launches no new sorties.
+            if (siege.commandFleetPresent) {
+                siege.raidCooldown -= days
+                if (siege.raidCooldown <= 0f && siege.raidFleets.size < SiegeConfig.MAX_ACTIVE_RAID_FLEETS) {
+                    siege.raidCooldown = SiegeConfig.RAID_INTERVAL_DAYS
+                    spawnRaidFleet(siege)
+                }
             }
 
             // ── Resolution checks ──
@@ -428,7 +426,15 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         if (!legioHoldsCapital()) return
         val source = pickSourceMarket() ?: return
         val (targetSystem, primaryMarket) = pickTargetSystem(source) ?: return
+        launchSiege(source, targetSystem, primaryMarket)
+    }
 
+    /**
+     * Build and register a siege on [targetSystem] from [source]. Shared by the auto-launcher
+     * (tryLaunchSiege) and the TahlanSiegeStart console command. Returns the new siege, or null if the
+     * command fleet could not be spawned (the only hard failure point — nothing is committed on null).
+     */
+    private fun launchSiege(source: MarketAPI, targetSystem: StarSystemAPI, primaryMarket: MarketAPI?): SiegeData? {
         val intensity = computeIntensity()
         val factor = SiegeConfig.intensityFactor(intensity)
         val id = "siege_${targetSystem.id}_${System.nanoTime()}"
@@ -438,12 +444,12 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Command fleet — Blackwatch (task 4.1). Spawn BEFORE the intel entry: it is the only hard
         // failure point in the launch, so if it can't be built we must bail with nothing committed.
         // Creating the intel first would orphan it (a siege announced in the feed with no fleets in
-        // the world, cleaned up only on the next load via reconcileIntels).
+        // the world).
         val commandFP = SiegeConfig.COMMAND_FP_BASE + SiegeConfig.COMMAND_FP_SCALE * factor
         val cmdFleet = spawnCommandFleet(source, commandFP, intensity, id)
         if (cmdFleet == null) {
             LOG.warn("Tahlan siege: aborted launch on ${targetSystem.baseName} — command fleet failed to spawn")
-            return
+            return null
         }
         siege.commandFleet = cmdFleet
         siege.commandFleetFP = cmdFleet.fleetPoints.toFloat()
@@ -478,6 +484,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
         activeSieges.add(siege)
         LOG.info("Tahlan siege: launched on ${targetSystem.baseName} from ${source.name} (intensity=${"%.2f".format(intensity)})")
+        return siege
     }
 
     private fun spawnCommandFleet(source: MarketAPI, fp: Float, intensity: Float, siegeId: String): CampaignFleetAPI? {
@@ -549,7 +556,12 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val fleet = FleetFactoryV3.createFleet(params) ?: return
         tagSiegeFleet(fleet, siege.id, fp, isCommand = false)
 
-        val spawnAnchor = siege.commandFleet?.takeIf { it.isAlive } ?: raidTarget
+        // Anchor on the command fleet (it holds station at a system fringe). Fall back to a jump
+        // point / system center if it's momentarily unavailable — NEVER to raidTarget, which is the
+        // besieged enemy planet: spawning there makes raids appear to erupt from the planet itself.
+        val spawnAnchor = siege.commandFleet?.takeIf { it.isAlive }
+            ?: siege.targetSystem.jumpPoints.firstOrNull()
+            ?: siege.targetSystem.center
         siege.targetSystem.addEntity(fleet)
         fleet.setLocation(spawnAnchor.location.x, spawnAnchor.location.y)
         fleet.clearAssignments()
@@ -631,41 +643,49 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             .filter { it.factionId == TahlanIDs.LEGIO && !it.isHidden }
             .maxByOrNull { it.size }
 
+    /**
+     * Eligibility + primary-target determination for a single system, shared by the auto-picker
+     * (pickTargetSystem) and the TahlanSiegeStart console command. Returns
+     * (primaryTargetMarket, eligibleMarkets) if [system] is a valid siege target — has a hostile
+     * non-Legio market, no existing Legio/Blackwatch presence, is not already under siege, and (under
+     * Nex) has at least one non-story-protected market — else null. The primary target is the
+     * worst-relation eligible market (task 3.2 + design decision).
+     */
+    private fun evaluateTarget(system: StarSystemAPI): Pair<MarketAPI, List<MarketAPI>>? {
+        val sector = Global.getSector()
+        val legioFaction = sector.getFaction(TahlanIDs.LEGIO)
+
+        if (activeSieges.any { it.targetSystem == system }) return null
+
+        val allMarkets = sector.economy.marketsCopy.filter { it.starSystem == system && !it.isHidden }
+
+        // Must have at least one hostile market
+        val hostileMarkets = allMarkets.filter { legioFaction.isHostileTo(sector.getFaction(it.factionId)) }
+        if (hostileMarkets.isEmpty()) return null
+
+        // Exclude systems with existing Legio presence
+        if (allMarkets.any { it.factionId == TahlanIDs.LEGIO || it.factionId == TahlanIDs.BLACKWATCH }) return null
+
+        // Nex: filter out story-protected markets; skip system if none remain eligible
+        val eligibleMarkets = if (ModCompat.HAS_NEX) hostileMarkets.filter { !isNexProtected(it) } else hostileMarkets
+        if (eligibleMarkets.isEmpty()) return null
+
+        val primaryMarket = eligibleMarkets.minByOrNull { legioFaction.getRelationship(it.factionId) } ?: return null
+        return primaryMarket to eligibleMarkets
+    }
+
     private fun pickTargetSystem(source: MarketAPI): Pair<StarSystemAPI, MarketAPI?>? {
         val sector = Global.getSector()
         val legioFaction = sector.getFaction(TahlanIDs.LEGIO)
-        val activeSystems = activeSieges.map { it.targetSystem }.toSet()
 
         val picker = WeightedRandomPicker<Pair<StarSystemAPI, MarketAPI?>>()
 
         for (system in sector.starSystems) {
-            if (system in activeSystems) continue
-
-            val allMarkets = sector.economy.marketsCopy.filter { it.starSystem == system && !it.isHidden }
-
-            // Must have at least one hostile market
-            val hostileMarkets = allMarkets.filter {
-                legioFaction.isHostileTo(sector.getFaction(it.factionId))
-            }
-            if (hostileMarkets.isEmpty()) continue
-
-            // Exclude systems with existing Legio presence
-            if (allMarkets.any { it.factionId == TahlanIDs.LEGIO || it.factionId == TahlanIDs.BLACKWATCH }) continue
-
-            // Nex: filter out story-protected markets; skip system if none remain eligible
-            val eligibleMarkets = if (ModCompat.HAS_NEX) {
-                hostileMarkets.filter { !isNexProtected(it) }
-            } else {
-                hostileMarkets
-            }
-            if (eligibleMarkets.isEmpty()) continue
-
-            // Declare primary target: worst-relation hostile market (task 3.2 + design decision)
-            val primaryMarket = eligibleMarkets.minByOrNull { legioFaction.getRelationship(it.factionId) }
+            val (primaryMarket, eligibleMarkets) = evaluateTarget(system) ?: continue
 
             // Weight: combined market size + hostility + prioritize at-war factions
             var weight = eligibleMarkets.sumOf { it.size.toInt() }.toFloat() * 10f
-            val worstRel = legioFaction.getRelationship(primaryMarket!!.factionId)
+            val worstRel = legioFaction.getRelationship(primaryMarket.factionId)
             if (worstRel < -0.5f) weight *= 1.5f
             if (legioFaction.isHostileTo(sector.getFaction(primaryMarket.factionId))) weight *= 2f
 
@@ -732,74 +752,68 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         LOG.info("Tahlan siege: torn down (feature disabled mid-save)")
     }
 
-    /**
-     * Reconcile siege intels once per load. Matches live sieges to their intel by target SYSTEM (a
-     * stable, serialized key) rather than by object identity, so it is safe against references that
-     * didn't round-trip and against the BaseIntelPlugin -> BaseEventIntel migration:
-     *
-     * 1. A siege in flight across the superclass change deserializes its intel without BaseEventIntel's
-     *    stages/factors collections (XStream skips the constructor's field initializers), leaving them
-     *    null. Those fields cannot be seeded from mod code (reflection is forbidden, no setter), so an
-     *    uninitialized intel is REPLACED with a freshly-constructed one that rebuilds the event UI.
-     * 2. Only intels whose target system has NO live siege are removed. A live siege's intel is never
-     *    swept — the previous identity-only pass deleted every intel not found by reference in
-     *    activeSieges, which wiped all active sieges on load whenever that state was empty or mismatched.
-     *
-     * The whole pass is wrapped so a migration edge case can't brick the manager's advance() loop.
-     */
-    private fun reconcileIntels() {
-        val im = Global.getSector().intelManager ?: return
-        try {
-            val siegeIntels = im.getIntel(SiegeIntel::class.java).mapNotNull { it as? SiegeIntel }
-            val claimed = mutableSetOf<SiegeIntel>()
-            var rebuilt = 0
+    // --- Console-command debug API (SiegeInfo / SiegeKill / SiegeStart) ---
 
-            // 1) Re-link each live siege to a valid intel for its target SYSTEM (a stable, serialized
-            //    key). This repairs a reference that didn't round-trip and re-adopts a surviving intel
-            //    rather than trusting object identity alone. Only when nothing valid can be adopted —
-            //    e.g. the old intel migrated in from a pre-BaseEventIntel save with null stages/factors
-            //    (isUninitialized) — do we rebuild one from scratch.
-            for (siege in activeSieges) {
-                val current = siege.intel?.takeIf {
-                    !it.isUninitialized() && it in siegeIntels && it !in claimed
-                }
-                val adopted = current ?: siegeIntels.firstOrNull {
-                    it !in claimed && !it.isUninitialized() && it.getTargetSystem() == siege.targetSystem
-                }
-                if (adopted != null) {
-                    siege.intel = adopted
-                    claimed.add(adopted)
-                } else {
-                    siege.intel?.let { old -> try { im.removeIntel(old) } catch (_: Exception) {} }
-                    val fresh = SiegeIntel(siege.targetSystem, siege.primaryTargetMarket, ModCompat.HAS_NEX)
-                    im.addIntel(fresh, true)   // forceNoMessage: silent migration, not a new event
-                    siege.intel = fresh
-                    claimed.add(fresh)
-                    rebuilt++
-                }
-            }
-
-            // 2) Remove ONLY intels that no live siege owns — checked by target system, not just object
-            //    identity, so a live siege's intel is never swept even if its reference broke. This is
-            //    the fix for the "loading deletes all active sieges" regression: the old pass removed
-            //    every intel not identity-matched in activeSieges, which nuked everything whenever the
-            //    manager's state was momentarily empty or mismatched.
-            val ownedSystems = activeSieges.map { it.targetSystem }.toSet()
-            var cleared = 0
-            for (intel in siegeIntels) {
-                if (intel in claimed) continue
-                if (intel.getTargetSystem() in ownedSystems) continue
-                if (!intel.isUninitialized()) intel.endImmediately()  // only a valid intel ends cleanly
-                im.removeIntel(intel)
-                cleared++
-            }
-
-            if (rebuilt > 0 || cleared > 0)
-                LOG.info("Tahlan siege: reconciled intels on load (rebuilt=$rebuilt, cleared=$cleared)")
-        } catch (e: Exception) {
-            // A migration edge case must never brick the manager's advance() loop.
-            LOG.warn("Tahlan siege: reconcileIntels failed — ${e.message}")
+    /** Human-readable dump of manager state and every active siege, for the TahlanSiegeInfo command. */
+    fun debugDump(): String {
+        val sb = StringBuilder()
+        sb.appendLine("=== Tahlan Siege Manager ===")
+        sb.appendLine("ENABLE_SIEGE=${TahlanSettings.ENABLE_SIEGE}  HAS_NEX=${ModCompat.HAS_NEX}  legioHoldsCapital=${legioHoldsCapital()}")
+        sb.appendLine("spawnTimer=${"%.1f".format(spawnTimer.elapsed)}/${"%.1f".format(spawnTimer.intervalDuration)} days (bounds ${SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN}-${SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX}; ticks only while no siege active)")
+        sb.appendLine("intensity if launched now=${"%.2f".format(computeIntensity())}")
+        sb.appendLine("active sieges: ${activeSieges.size}")
+        if (activeSieges.isEmpty()) {
+            sb.appendLine("  (none)")
+            return sb.toString()
         }
+        for ((i, s) in activeSieges.withIndex()) {
+            sb.appendLine("--- #${i + 1}  ${s.id} ---")
+            sb.appendLine("  stage=${s.stage}  intensity=${"%.2f".format(s.intensity)}")
+            sb.appendLine("  target=${s.targetSystem.baseName}  primaryMarket=${s.primaryTargetMarket?.name ?: "none"}  source=${s.sourceMarket.name}")
+            sb.appendLine("  siegeHealth=${"%.1f".format(s.siegeHealth)}/${SiegeConfig.SIEGE_HEALTH_MAX}  captureProgress=${"%.1f".format(s.captureProgress)}/${SiegeConfig.CAPTURE_PROGRESS_MAX}")
+            sb.appendLine("  commandCR=${"%.2f".format(s.commandCR)}  commandFleetPresent=${s.commandFleetPresent}  withdrawalOrdered=${s.withdrawalOrdered}")
+            sb.appendLine("  daysElapsed=${"%.1f".format(s.daysElapsed)}  daysSinceLastLoss=${"%.1f".format(s.daysSinceLastLoss)}  raidCooldown=${"%.1f".format(s.raidCooldown)}  lastPressureMult=${"%.2f".format(s.lastPressureMult)}")
+            val cmd = s.commandFleet
+            sb.appendLine("  commandFleet=" + if (cmd == null) "null"
+                else "${cmd.name} [alive=${cmd.isAlive}, fp=${cmd.fleetPoints}, at=${cmd.starSystem?.baseName ?: cmd.containingLocation?.name ?: "?"}]")
+            sb.appendLine("  escortFleets=${s.escortFleets.count { it.isAlive }} alive / ${s.escortFleets.size} tracked")
+            sb.appendLine("  raidFleets=${s.raidFleets.count { it.isAlive }} alive / ${s.raidFleets.size} tracked (max ${SiegeConfig.MAX_ACTIVE_RAID_FLEETS})")
+            sb.appendLine("  conditionedMarkets=${s.conditionedMarkets.joinToString { it.name }.ifEmpty { "none" }}")
+            sb.appendLine("  garrisonMarket=${s.garrisonMarket?.name ?: "none"}  playerBountyAccrued=${"%.0f".format(s.playerBountyAccrued)}")
+        }
+        return sb.toString()
+    }
+
+    /** Force-end (lift) every active siege, dispersing their fleets home. Returns the count ended. */
+    fun debugEndAllSieges(): Int {
+        val n = activeSieges.size
+        for (siege in activeSieges.toList()) resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED)
+        return n
+    }
+
+    /**
+     * Force-launch a siege now, bypassing the spawn timer (for the TahlanSiegeStart command).
+     * [forcedSystem] optionally pins the target; when null the normal weighted picker chooses one.
+     * Returns a status string describing success or the reason for failure.
+     */
+    fun debugForceLaunch(forcedSystem: StarSystemAPI?): String {
+        if (!TahlanSettings.ENABLE_SIEGE)
+            return "Siege feature is disabled (ENABLE_SIEGE=false); a forced siege would be torn down next tick."
+        if (!legioHoldsCapital())
+            return "Legio does not hold Lucifron; forced sieges would be lifted next tick."
+        val source = pickSourceMarket()
+            ?: return "No eligible Legio source market found."
+        val target: Pair<StarSystemAPI, MarketAPI?> = if (forcedSystem != null) {
+            val primary = evaluateTarget(forcedSystem)?.first
+                ?: return "${forcedSystem.baseName} is not a valid siege target (needs a hostile, non-Legio, non-story-protected market and must not already be under siege)."
+            forcedSystem to primary
+        } else {
+            pickTargetSystem(source)
+                ?: return "No eligible target system found."
+        }
+        val siege = launchSiege(source, target.first, target.second)
+            ?: return "Launch failed — command fleet could not be spawned."
+        return "Launched ${siege.id} on ${target.first.baseName} from ${source.name} (intensity ${"%.2f".format(siege.intensity)})."
     }
 
     // --- Helpers ---
@@ -837,9 +851,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
          *
          * This exists because the AIs and fleet listeners used to read the manager *solely* from
          * sector memory. If that single pointer ever failed to resolve, the onGameLoad guard created a
-         * second, empty manager: its reconcileIntels wiped every live siege's intel, and callbacks
-         * routed to it (never flipping sieges to BESIEGING) stalled all progress. A scripts-list scan
-         * makes the lookup independent of any one store.
+         * second, empty manager whose callbacks — routed to it, never flipping sieges to BESIEGING —
+         * stalled all progress. A scripts-list scan makes the lookup independent of any one store.
          */
         fun get(): SiegeManager? {
             val sector = Global.getSector() ?: return null

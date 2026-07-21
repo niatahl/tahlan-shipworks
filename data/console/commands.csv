@@ -1,0 +1,4 @@
+command,class,tags,syntax,help
+TahlanSiegeInfo,org.niatahl.tahlan.campaign.siege.TahlanSiegeInfo,"tahlan,campaign",TahlanSiegeInfo (no arguments),"Prints in-depth debug data for the Legio siege manager and every active siege (stage, health, capture progress, command CR, fleet counts, etc.)."
+TahlanSiegeKill,org.niatahl.tahlan.campaign.siege.TahlanSiegeKill,"tahlan,campaign,cheat",TahlanSiegeKill (no arguments),"Force-ends (lifts) all active Legio sieges, dispersing their fleets back home."
+TahlanSiegeStart,org.niatahl.tahlan.campaign.siege.TahlanSiegeStart,"tahlan,campaign,cheat",TahlanSiegeStart [systemName],"Force-launches a new Legio siege now, bypassing the spawn timer. Optionally pass a star system name to pin the target; otherwise one is auto-picked."
