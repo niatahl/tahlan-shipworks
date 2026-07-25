@@ -25,6 +25,9 @@
 	- New LunaLib sliders: coalition interventions on/off + frequency, desperation bounties on/off, hunter-killer force on/off + size + aggression
 - Added option to give a recovered Domain planetkiller to the Legio
     - I'm sure this is a good idea
+- Certain Legio events now judge your readiness more fairly across playstyles
+    - Your preparations are counted even when converted or set aside; lying low no longer helps
+    - The Legio's patience, however, is not infinite
 - Mondlicht
 	- DP 18 -> 20
 

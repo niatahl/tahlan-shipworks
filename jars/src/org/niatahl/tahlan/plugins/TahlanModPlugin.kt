@@ -38,6 +38,10 @@ import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
 import org.niatahl.tahlan.utils.TahlanIDs.TRIGGERED
 import org.niatahl.tahlan.utils.TahlanIDs.GAVE_PK_TO_LEGIO
 import org.niatahl.tahlan.utils.TahlanIDs.PK_STRIKE_RESOLVED
+import org.niatahl.tahlan.utils.TahlanIDs.HW_FLEET_DP
+import org.niatahl.tahlan.utils.TahlanIDs.HW_OFFICER_LEVELS
+import org.niatahl.tahlan.utils.TahlanIDs.HW_CREDITS
+import org.niatahl.tahlan.utils.TahlanIDs.HW_COLONY_SIZE
 import org.niatahl.tahlan.utils.ModCompat
 import org.niatahl.tahlan.utils.TahlanSettings
 import org.niatahl.tahlan.utils.TahlanRegistry
@@ -301,78 +305,129 @@ class TahlanModPlugin : BaseModPlugin() {
         }
     }
 
+    /**
+     * The daemonic-incursion readiness check. The awakening is deliberately NOT tied to the player's
+     * relationship with the Legio — it fires when the player is established enough to survive the added
+     * challenge of the awakened Legio. Readiness is scored monthly across playstyle-neutral axes
+     * (fleet weight in DP, officer corps, wealth, colonies, level, story progress) whose volatile
+     * metrics are latched as high-water marks — readiness once demonstrated never un-demonstrates —
+     * plus a time term that grows without cap so every playstyle meets the Legio eventually.
+     * Tuning rationale: docs/design/daemonic-incursion-readiness.md.
+     */
     private class TahlanTrigger : BaseCampaignEventListener(false) {
         override fun reportEconomyMonthEnd() {
             val sector = Global.getSector()
+            val mem = sector.memoryWithoutUpdate
             // Keep daemons topped up whenever they're enabled — full awakening OR a planetkiller gift.
-            if (sector.memoryWithoutUpdate.getBoolean(TRIGGERED)
-                || sector.memoryWithoutUpdate.getBoolean(GAVE_PK_TO_LEGIO)) {
+            if (mem.getBoolean(TRIGGERED) || mem.getBoolean(GAVE_PK_TO_LEGIO)) {
                 LOGGER.info("Daemons lurk")
                 addDaemons(sector)  // retroactively add new daemons for mid-campaign updates
             }
             // Already fully awoken → nothing left to roll.
-            if (sector.memoryWithoutUpdate.getBoolean(TRIGGERED)) return
+            if (mem.getBoolean(TRIGGERED)) return
             // A gifted planetkiller strike is still pending → hold the betrayal back; the Legio stays
             // friendly until it lands (the delayed betrayal — see PlanetkillerStrike). Once the strike
             // resolves by interception, that suppression lifts and the natural incursion resumes below:
             // a gift only delays the reckoning, it never cancels it. Without a gift, this flips as normal.
-            if (sector.memoryWithoutUpdate.getBoolean(GAVE_PK_TO_LEGIO)
-                && !sector.memoryWithoutUpdate.getBoolean(PK_STRIKE_RESOLVED)) return
+            if (mem.getBoolean(GAVE_PK_TO_LEGIO) && !mem.getBoolean(PK_STRIKE_RESOLVED)) return
 
-            var iLegioStartingCondition = 0
+            // Flying a daemon is the strongest possible proof of readiness — instant trigger.
+            // (tahlan_ prefix so other mods' "_dmn" hulls don't count)
+            if (sector.playerFleet.membersWithFightersCopy.any {
+                    it.hullSpec.hullId.startsWith("tahlan_") && it.hullSpec.hullId.contains("_dmn")
+                }) {
+                LOGGER.info("Daemonic Incursion - player flies a daemon")
+                triggerDaemonicIncursion()
+                return
+            }
 
-            if (Global.getSector().clock.cycle >= 210) {
-                iLegioStartingCondition++
-                LOGGER.info("Daemonic Incursion - Cycle")
-            }
-            // Any player market of size 5+
-            for (market in Misc.getPlayerMarkets(true)) {
-                if (market.size >= 5) {
-                    iLegioStartingCondition++
-                    LOGGER.info("Daemonic Incursion - Market")
-                    break
-                }
-            }
-            val mem = Global.getSector().memoryWithoutUpdate
-            if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES) && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)) {
-                iLegioStartingCondition++ //Follow Histidine's "Skip Story format"
-                LOGGER.info("Daemonic Incursion - Gates")
-            }
-            if (sector.playerStats.level >= 13) {
-                iLegioStartingCondition++
-                LOGGER.info("Daemonic Incursion - Level")
-            }
-            // Two capitals (a Metafalica counts double)
-            var caps = 0
-            for (bote in sector.playerFleet.membersWithFightersCopy) {
-                if (bote.hullSpec.hullSize == ShipAPI.HullSize.CAPITAL_SHIP) {
-                    caps++
-                }
-                // Metafalica counts double
-                if (bote.hullSpec.hullId.contains("Metafalica")) {
-                    caps++
-                }
-                // got Daemons? instant trigger (tahlan_ prefix so other mods' "_dmn" hulls don't count)
-                if (bote.hullSpec.hullId.startsWith("tahlan_") && bote.hullSpec.hullId.contains("_dmn")) {
-                    iLegioStartingCondition = 99
-                }
-            }
-            if (caps >= 2) {
-                iLegioStartingCondition++
-                LOGGER.info("Daemonic Incursion - Ships")
-            }
-            if (Global.getSector().playerFleet.cargo.credits.get() > 5000000f) {
-                iLegioStartingCondition++
-                LOGGER.info("Daemonic Incursion - Wealth")
-            }
-            if (Misc.getNumNonMercOfficers(Global.getSector().playerFleet) > 7) {
-                iLegioStartingCondition++
-                LOGGER.info("Daemonic Incursion - Officers")
-            }
-            val trigger = if (ENABLE_FASTMODE) 2 else 4
-            if (iLegioStartingCondition >= trigger) {
+            latchHighWaterMarks(sector)
+            val threshold = if (ENABLE_FASTMODE) THRESHOLD_FAST else THRESHOLD
+            if (readinessScore(sector) >= threshold) {
                 triggerDaemonicIncursion()
             }
+        }
+
+        /**
+         * Latch the volatile readiness metrics as high-water marks. Snapshot sampling mis-measures
+         * readiness: wealth spent founding a colony or a battle line parked in storage is readiness
+         * *converted*, not lost. Latching also closes the "leave the capitals home on roll day" dodge.
+         */
+        private fun latchHighWaterMarks(sector: SectorAPI) {
+            val mem = sector.memoryWithoutUpdate
+            val fleet = sector.playerFleet
+
+            val fleetDP = fleet.fleetData.membersListCopy.sumOf { it.deploymentPointsCost.toDouble() }.toFloat()
+            if (fleetDP > mem.getFloat(HW_FLEET_DP)) mem[HW_FLEET_DP] = fleetDP
+
+            val officerLevels = fleet.fleetData.officersCopy
+                .filterNot { Misc.isMercenary(it.person) }
+                .sumOf { it.person.stats.level }
+            if (officerLevels > mem.getInt(HW_OFFICER_LEVELS)) mem[HW_OFFICER_LEVELS] = officerLevels
+
+            val credits = fleet.cargo.credits.get()
+            if (credits > mem.getFloat(HW_CREDITS)) mem[HW_CREDITS] = credits
+
+            val colonySize = Misc.getPlayerMarkets(true).sumOf { it.size }
+            if (colonySize > mem.getInt(HW_COLONY_SIZE)) mem[HW_COLONY_SIZE] = colonySize
+        }
+
+        private fun readinessScore(sector: SectorAPI): Int {
+            val mem = sector.memoryWithoutUpdate
+            var score = 0
+
+            // Military — fleet weight in DP, graded against what the awakened Legio fields...
+            val fleetDP = mem.getFloat(HW_FLEET_DP)
+            score += FLEET_DP_TIERS.count { fleetDP >= it }
+            // ...and an officer corps to crew it (eight seasoned officers, or a handful of elites)
+            if (mem.getInt(HW_OFFICER_LEVELS) >= OFFICER_LEVEL_SUM) score++
+
+            // Economic — can the player absorb losses? Banked wealth and colony income each prove it
+            if (mem.getFloat(HW_CREDITS) >= WEALTH) score++
+            if (mem.getInt(HW_COLONY_SIZE) >= COLONY_TOTAL_SIZE) score++
+
+            // Progression — these are already monotonic, no latch needed
+            if (sector.playerStats.level >= PLAYER_LEVEL) score++
+            if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES) && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)) {
+                score++ //Follow Histidine's "Skip Story format"
+            }
+
+            // Time backstop — grows without cap: past a certain date the player has had every
+            // opportunity to get ready, and the Legio doesn't wait forever. Guarantees even the
+            // quietest playstyle meets the daemons eventually.
+            if (sector.clock.cycle >= TIME_BASE_CYCLE) {
+                score += 1 + (sector.clock.cycle - TIME_BASE_CYCLE) / TIME_STEP_CYCLES
+            }
+
+            LOGGER.info(
+                "Daemonic Incursion readiness $score: fleet ${fleetDP.toInt()} DP, " +
+                        "officer levels ${mem.getInt(HW_OFFICER_LEVELS)}, " +
+                        "credits ${mem.getFloat(HW_CREDITS).toInt()}, " +
+                        "colony size ${mem.getInt(HW_COLONY_SIZE)}, " +
+                        "level ${sector.playerStats.level}, cycle ${sector.clock.cycle}"
+            )
+            return score
+        }
+
+        companion object {
+            // Fleet-weight tiers in deployment points (fleet-wide sum, high-water). Benchmarked against
+            // daemon DP costs (frigates 10-12, destroyers 16-18, cruisers 35, capitals 45-65):
+            // 60 ≈ a solid cruiser squadron, 120 ≈ a battle line (the old "two capitals plus escorts"),
+            // 180 ≈ a war fleet that can face a large daemon patrol head-on.
+            val FLEET_DP_TIERS = listOf(60f, 120f, 180f)
+            // Sum of non-merc officer levels: eight level-3s, or five elite level-5s.
+            const val OFFICER_LEVEL_SUM = 24
+            const val WEALTH = 5_000_000f
+            // Sum of player market sizes: an established colony plus a satellite (5+3), or two size-4s.
+            const val COLONY_TOTAL_SIZE = 8
+            const val PLAYER_LEVEL = 13
+            // One point at cycle 210 (~4 years in), +1 every 3 cycles after, uncapped.
+            const val TIME_BASE_CYCLE = 210
+            const val TIME_STEP_CYCLES = 3
+            // Max static score (everything but time) is 8; time alone crosses the normal threshold
+            // by cycle 222 and the fast one by cycle 216.
+            const val THRESHOLD = 5
+            const val THRESHOLD_FAST = 3
         }
     }
 

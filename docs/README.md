@@ -20,3 +20,6 @@ deliberate "this looks like a bug but isn't"), note it here so it survives in on
 - [Legio Balancing & Challenge Mechanics](design/legio-balance-and-challenge.md) — adaptive-mode
   S-mod matching (FP-weighted average) and hard-mode daemon-core scaling in
   `LegioFleetInflationListener`, and why they scale to the player.
+- [Daemonic Incursion — Readiness Scoring](design/daemonic-incursion-readiness.md) — how the
+  natural Legio awakening decides the player is ready: high-water-latched, DP-normalized,
+  playstyle-neutral readiness axes with an uncapped time backstop.

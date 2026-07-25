@@ -71,6 +71,14 @@ object TahlanIDs {
     // Legio still awakens eventually (a gifted planetkiller only delays the betrayal, never cancels it).
     const val PK_STRIKE_RESOLVED = "\$tahlan_pkStrikeResolved"
 
+    // Daemonic-incursion readiness high-water marks, latched monthly by TahlanTrigger. Readiness once
+    // demonstrated never un-demonstrates (wealth spent founding a colony, a battle line parked in
+    // storage — that's readiness converted, not lost), so these only ever increase.
+    const val HW_FLEET_DP = "\$tahlan_hwFleetDP"
+    const val HW_OFFICER_LEVELS = "\$tahlan_hwOfficerLevels"
+    const val HW_CREDITS = "\$tahlan_hwCredits"
+    const val HW_COLONY_SIZE = "\$tahlan_hwColonySize"
+
     // SOTF references
     const val SOTF_NIGHTINGALE = "sotf_nightingale"
     const val SOTF_SIERRA = "sotf_sierra"
