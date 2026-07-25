@@ -150,6 +150,9 @@
 		"traum_crew_henrietta2":"\"My ship is cinders and my chain of command is a hundred years in its grave. But a knight without a banner is a knight still, and a debt is a debt. If you will have me, captain, my lance and my service are yours.\"",
 
 		"siege_fleet_command_name": "Vanguard",
+		"siege_fleet_taskforce_name": "Huntsmen",
+		"siege_fleet_intervention_primary": "Relief Force",
+		"siege_fleet_intervention_aux": "Relief Detachment",
 
 		"siege_assign_travel": "en route to %s",
 		"siege_assign_screen": "screening %s",
@@ -159,6 +162,9 @@
 		"siege_assign_besiege": "besieging %s",
 		"siege_assign_return": "returning to %s",
 		"siege_assign_garrison": "garrisoning %s",
+		"siege_assign_intervene": "moving to relieve %s",
+		"siege_assign_engage": "engaging %s",
+		"siege_assign_hunt": "hunting %s",
 
 		"siege_condition_name": "Legio Siege",
 		"siege_condition_accessibility": "%s accessibility",
@@ -202,6 +208,10 @@
 		"siege_factor_kill_escort": "Siege fleet destroyed",
 		"siege_factor_kill_command": "Command fleet destroyed",
 		"siege_factor_withdrawal": "Command fleet withdrawn",
+		"siege_factor_intervention": "%s relief force inbound",
+		"siege_factor_intervention_aux": "%s detachment inbound",
+		"siege_factor_marked": "You have been marked",
+		"siege_factor_huntsman_lost": "Huntsmen destroyed",
 
 		"siege_factortip_blockade": "How hard the blockade is strangling the target market. The more cut off the market, the faster the siege advances.",
 		"siege_factortip_raids": "The number of Legio raid wings currently hammering the colony.",
@@ -210,6 +220,9 @@
 		"siege_factortip_kill_escort": "A Legio siege fleet was destroyed, knocking the siege's progress back.",
 		"siege_factortip_kill_command": "The Legio command fleet was destroyed, halting the siege's advance entirely.",
 		"siege_factortip_withdrawal": "The Legio command fleet has withdrawn from the siege, halting all progress toward subjugation. Destroy the remaining siege fleets to break the siege fully.",
+		"siege_factortip_intervention": "The besieged world's bloc has mobilised against the siege. Relief fleets make for the command fleet directly; even a rescue that fails leaves the Legio command worse off than it was.",
+		"siege_factortip_marked": "Your attacks on the siege have drawn the attention of the expedition's hunter-killer force. While you remain marked, they will come for you rather than anyone else. Lie low and their interest will fade.",
+		"siege_factortip_huntsman_lost": "The expedition's hunter-killer force has been destroyed. The Legio are sending another out from their own space — it will take them a while to arrive.",
 
 		"siege_aftermath_name": "Legio Siege Aftermath",
 		"siege_aftermath_desc": "The world is still reeling from a Legio Infernalis siege. Infrastructure lies wrecked, trade ties are severed, and the population is slow to recover.",

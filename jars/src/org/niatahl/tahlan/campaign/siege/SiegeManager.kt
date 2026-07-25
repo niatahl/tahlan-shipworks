@@ -9,14 +9,18 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3
 import com.fs.starfarer.api.impl.campaign.ids.Conditions
+import com.fs.starfarer.api.impl.campaign.ids.Factions
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes
+import com.fs.starfarer.api.impl.campaign.ids.Industries
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags
+import com.fs.starfarer.api.impl.campaign.intel.SystemBountyManager
 import com.fs.starfarer.api.impl.campaign.intel.deciv.DecivTracker
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import com.fs.starfarer.api.util.WeightedRandomPicker
 import java.util.Random
+import exerelin.campaign.AllianceManager
 import exerelin.campaign.SectorManager
 import exerelin.utilities.NexConfig
 import org.niatahl.tahlan.utils.ModCompat
@@ -66,6 +70,26 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
         var intel: SiegeIntel? = null
         var playerBountyAccrued = 0f
+
+        // ── Reactive systems (add-siege-reactivity). Plain fields, serialized with the manager
+        // exactly like everything above; the AIs and listeners that read them are identified by
+        // siege id and resolve the manager via SiegeManager.get(), never by direct reference. ──
+
+        // F3 — coalition interventions. Fleets are tracked so resolution can disperse them; they are
+        // NOT siege fleets and never appear in escortFleets/raidFleets.
+        val interventionFleets = mutableListOf<CampaignFleetAPI>()
+        var interventionCooldown = SiegeConfig.INTERVENTION_INTERVAL_DAYS
+
+        // F2 — desperation system bounty. The intel itself lives in the vanilla SystemBountyManager
+        // (looked up by market), so only the cadence and a display flag are kept here.
+        var bountyPosted = false
+        var bountyTimer  = 0f
+
+        // F1 — huntsman task force. A negative redispatch timer means "no replacement pending".
+        var taskForceFleet: CampaignFleetAPI? = null
+        var taskForceRedispatchTimer = -1f
+        var playerHeat   = 0f
+        var playerMarked = false
     }
 
     // --- Fields ---
@@ -81,6 +105,15 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     private var _pendingKills: MutableList<String>? = null
     private val pendingKills: MutableList<String>
         get() = _pendingKills ?: mutableListOf<String>().also { _pendingKills = it }
+    // Same deferral, for intervention-fleet deaths (siege id -> FP lost). Their CR strain has to
+    // wait for the safe side of the battle-callback boundary just like siege-fleet losses do:
+    // applyCommandCR walks the command fleet's members and triggerWithdrawal rewrites assignments,
+    // neither of which is safe while CampaignEngine is iterating its listeners.
+    @Transient
+    private var _pendingInterventionLosses: MutableList<Pair<String, Float>>? = null
+    private val pendingInterventionLosses: MutableList<Pair<String, Float>>
+        get() = _pendingInterventionLosses
+            ?: mutableListOf<Pair<String, Float>>().also { _pendingInterventionLosses = it }
     // Slow cadence for maintainPressureConditions. Same @Transient + lazy-getter shape as
     // _pendingKills, and for the same reason: a plain non-null IntervalUtil field added to the
     // serialized manager would deserialize as null on any save that predates it, then NPE on tick.
@@ -124,6 +157,12 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 flushKill(siegeId)
             }
             pendingKills.clear()
+        }
+        if (pendingInterventionLosses.isNotEmpty()) {
+            for ((siegeId, fp) in pendingInterventionLosses.toList()) {
+                flushInterventionLoss(siegeId, fp)
+            }
+            pendingInterventionLosses.clear()
         }
 
         pruneDeadSieges()
@@ -205,6 +244,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // incrementally per FP shed; the command bounty stays a single kill-only lump sum (driving the
         // flagship force off is not the same as putting it down).
         val involvement = playerFraction.coerceIn(0f, 1f)
+
+        // Heat: the huntsmen's grudge ledger. Kills-only (scaled by how much of the work was the
+        // player's) keeps the eventual marking legible — the player felt themselves earn it — and
+        // leaves the whole system inert for anyone who never shoots at the siege.
+        if (involvement > 0f && SiegeConfig.TASKFORCE_ENABLED) {
+            siege.playerHeat += lostFp * SiegeConfig.HEAT_PER_FP * involvement
+        }
+
         if (involvement > 0f) {
             val bounty = when {
                 isCommand && destroyed -> SiegeConfig.COMMAND_FLEET_BOUNTY * involvement
@@ -267,6 +314,9 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 txt("siege_assign_screen").format(fleet.name))
         }
         spawnBlockadeFleets(siege)
+        // Give the defenders a beat to notice before the first relief force mobilizes — half a
+        // cooldown, rather than a wave arriving on the heels of the expedition itself.
+        siege.interventionCooldown = SiegeConfig.INTERVENTION_INTERVAL_DAYS * 0.5f
         siege.intel?.syncProgress(siege)
     }
 
@@ -284,7 +334,9 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Remove from tracking lists (backup pruning — triple-check in pruneDeadSieges handles the rest)
         siege.escortFleets.remove(fleet)
         siege.raidFleets.remove(fleet)
+        siege.interventionFleets.remove(fleet)
         if (siege.commandFleet == fleet) siege.commandFleet = null
+        if (siege.taskForceFleet == fleet) siege.taskForceFleet = null
     }
 
     // --- Health model (called each advance tick) ---
@@ -368,6 +420,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); continue
             }
 
+            // ── Reactive systems: the world pushing back (add-siege-reactivity) ──
+            // Deliberately placed after the resolution checks (a siege about to end mobilizes
+            // nobody) and before the meter, so the bounty reads the same progress the player sees.
+            advanceHeat(siege, days)
+            advanceInterventions(siege, days)
+            advanceBounty(siege, days)
+            advanceTaskForce(siege, days)
+
             // Unified subjugation meter — advances in BOTH modes while the command fleet coordinates
             // the strangle (a withdrawn/destroyed command freezes commandFleetPresent). There is no
             // fixed siege lifetime anymore: both pathways are pure races between the meter filling and
@@ -448,6 +508,420 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         }
         LOG.info("Tahlan siege: no-Nex aftermath applied to ${target.name}")
     }
+
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+    // F3 — Coalition interventions
+    //
+    // The besieged bloc fights back on its own. Coalition = the victim plus its allies; the member
+    // with the highest *response capacity* leads with a fleet sized to contest the command fleet,
+    // everyone else contributes capacity-scaled detachments. Distance discounts capacity (and so
+    // ranking) but never disqualifies — a far-off umbrella ally simply arrives later.
+    //
+    // Intervention fleets are NOT siege fleets: no tagSiegeFleet, no SiegeFleetListener. Their
+    // deaths never touch siege health, the meter, or the player's bounty ledger — only command CR,
+    // through [onInterventionFleetLost], so that even a failed rescue softens the siege.
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+
+    /** A coalition faction's single best projection source, and the strength it can project. */
+    private class CoalitionMember(val factionId: String, val market: MarketAPI, val capacity: Float)
+
+    private fun advanceInterventions(siege: SiegeData, days: Float) {
+        if (!SiegeConfig.INTERVENTION_ENABLED) return
+        // Interventions exist to contest the command fleet. Once it is dead or withdrawn the siege
+        // is in mop-up and there is nothing left worth mobilizing a relief force against.
+        if (!siege.commandFleetPresent) return
+
+        if (siege.interventionCooldown > 0f) { siege.interventionCooldown -= days; return }
+        siege.interventionCooldown = SiegeConfig.INTERVENTION_INTERVAL_DAYS
+
+        val victimId = siege.primaryTargetMarket?.factionId ?: return
+        val coalition = coalitionFactions(victimId)
+            .mapNotNull { responseCapacity(it, siege.targetSystem) }
+            .sortedByDescending { it.capacity }
+        if (coalition.isEmpty()) return
+
+        // Contest the command fleet as it stands right now — a battered one draws a smaller response.
+        val commandFp = siege.commandFleet?.takeIf { it.isAlive }?.fleetPoints?.toFloat()
+            ?: (SiegeConfig.COMMAND_FP_BASE +
+                SiegeConfig.COMMAND_FP_SCALE * SiegeConfig.intensityFactor(siege.intensity))
+
+        for ((index, member) in coalition.withIndex()) {
+            val capacityFp = member.capacity * SiegeConfig.INTERVENTION_AUX_FP_PER_CAPACITY
+            val fp = if (index == 0) {
+                // Lead: sized to contest, but a weak or distant lead cannot field the full fleet.
+                min(commandFp * SiegeConfig.INTERVENTION_PRIMARY_FP_MULT, capacityFp)
+            } else {
+                if (member.capacity < SiegeConfig.INTERVENTION_AUX_CAPACITY_FLOOR) continue
+                capacityFp
+            }
+            if (fp < MIN_INTERVENTION_FP) continue
+            spawnInterventionFleet(siege, member, fp, isPrimary = index == 0)
+        }
+    }
+
+    /**
+     * The victim plus its allies. Under Nexerelin that means the victim's alliance (Nex's own core
+     * mechanic and the environment Legio is designed around); without it, any faction at
+     * WELCOMING-or-better toward the victim. The Legio side and the player faction are never
+     * coalition members — the former for obvious reasons, the latter because the player's own
+     * fleets are not the manager's to spawn.
+     */
+    private fun coalitionFactions(victimId: String): Set<String> {
+        val out = linkedSetOf(victimId)
+        if (ModCompat.HAS_NEX) {
+            try {
+                AllianceManager.getFactionAlliance(victimId)?.membersCopy?.let { out.addAll(it) }
+            } catch (_: Exception) { /* Nex present but alliance state unavailable — victim alone */ }
+        } else {
+            val victim = Global.getSector().getFaction(victimId)
+            if (victim != null) {
+                for (faction in Global.getSector().allFactions) {
+                    if (faction.id == victimId) continue
+                    if (victim.isAtWorst(faction.id, RepLevel.WELCOMING)) out.add(faction.id)
+                }
+            }
+        }
+        out.removeAll(setOf(TahlanIDs.LEGIO, TahlanIDs.BLACKWATCH, TahlanIDs.DAEMONS, Factions.PLAYER))
+        return out
+    }
+
+    /**
+     * A faction's best military projection against [targetSystem]: over its markets, the highest
+     * `(size + military-industry tier bonus) x distance falloff`. Local projection, not global
+     * economy — a superpower on the far rim should not out-respond the neighbour next door. A
+     * market with no *functioning* High Command or Military Base does not qualify at all, so a
+     * faction of farming worlds sends nothing rather than a militia.
+     */
+    private fun responseCapacity(factionId: String, targetSystem: StarSystemAPI): CoalitionMember? {
+        var bestCapacity = 0f
+        var bestMarket: MarketAPI? = null
+        for (market in Global.getSector().economy.marketsCopy) {
+            if (market.factionId != factionId) continue
+            if (market.isHidden || !market.isInEconomy) continue
+            val tier = militaryTierBonus(market)
+            if (tier <= 0f) continue
+            val dist = Misc.getDistance(market.locationInHyperspace, targetSystem.location)
+            val falloff = 10000f / (dist.coerceAtLeast(1000f) + 10000f)
+            val capacity = (market.size + tier) * falloff
+            if (capacity > bestCapacity) { bestCapacity = capacity; bestMarket = market }
+        }
+        return bestMarket?.let { CoalitionMember(factionId, it, bestCapacity) }
+    }
+
+    /** High Command > Military Base > nothing; a disrupted or non-functional industry projects zero. */
+    private fun militaryTierBonus(market: MarketAPI): Float {
+        market.getIndustry(Industries.HIGHCOMMAND)
+            ?.takeIf { it.isFunctional && !it.isDisrupted }?.let { return 6f }
+        market.getIndustry(Industries.MILITARYBASE)
+            ?.takeIf { it.isFunctional && !it.isDisrupted }?.let { return 3f }
+        return 0f
+    }
+
+    private fun spawnInterventionFleet(
+        siege: SiegeData,
+        member: CoalitionMember,
+        fp: Float,
+        isPrimary: Boolean
+    ): CampaignFleetAPI? {
+        // Each fleet spawns with its OWN faction's doctrine and colors — the visual contrast with
+        // Legio's Blackwatch is half the point of a coalition response.
+        val params = FleetParamsV3(member.market, FleetTypes.TASK_FORCE, fp, 0f, 0f, 0f, 0f, 0f, 0.2f)
+        params.officerNumberMult = 1.5f
+        val fleet = FleetFactoryV3.createFleet(params)
+        if (fleet == null || fleet.isEmpty) return null
+
+        fleet.name = txt(if (isPrimary) "siege_fleet_intervention_primary" else "siege_fleet_intervention_aux")
+        // Siege id so despawn pruning can attribute it; the intervention tag so the huntsmen (and
+        // the loss listener) can tell it apart from a passing patrol. Deliberately NOT tagSiegeFleet.
+        fleet.memoryWithoutUpdate.set(FLEET_SIEGE_ID_KEY, siege.id)
+        fleet.memoryWithoutUpdate.set(FLEET_INTERVENTION_KEY, true)
+        fleet.memoryWithoutUpdate.set(FLEET_FP_KEY, fp)
+
+        // The victim is hostile to Legio by construction and Nex allies are almost always dragged in
+        // by the shared alliance war — but a non-Nex relationship-ally may be perfectly neutral
+        // toward Legio. Fleet-local hostility covers that edge case with no faction-level rep change,
+        // so nothing cascades into sector diplomacy or Nex's war bookkeeping.
+        val legio = Global.getSector().getFaction(TahlanIDs.LEGIO)
+        val owner = Global.getSector().getFaction(member.factionId)
+        if (legio != null && owner != null && !owner.isHostileTo(legio)) {
+            Misc.makeHostileToFaction(fleet, TahlanIDs.LEGIO, 0f)
+        }
+
+        member.market.primaryEntity.containingLocation.addEntity(fleet)
+        fleet.setLocation(member.market.primaryEntity.location.x, member.market.primaryEntity.location.y)
+        fleet.clearAssignments()
+        fleet.addAssignment(FleetAssignment.GO_TO_LOCATION, siege.targetSystem.center, 1000f,
+            txt("siege_assign_intervene").format(siege.targetSystem.nameWithLowercaseType))
+        fleet.addEventListener(SiegeInterventionListener(siege.id, fp))
+        fleet.addScript(SiegeInterventionAI(fleet, member.market, siege.id, siege.targetSystem))
+        siege.interventionFleets.add(fleet)
+
+        val factionName = Global.getSector().getFaction(member.factionId)?.displayNameWithArticle
+            ?: member.factionId
+        siege.intel?.addIntervention(factionName, isPrimary)
+        LOG.info("Tahlan siege: ${siege.id} — ${member.factionId} dispatched a " +
+                (if (isPrimary) "primary" else "auxiliary") +
+                " intervention (${"%.0f".format(fp)} FP) from ${member.market.name}")
+        return fleet
+    }
+
+    /**
+     * Called from [SiegeInterventionListener] inside a battle callback: an intervention fleet died
+     * fighting the siege. Books nothing but the loss clock inline; the CR strain itself is deferred
+     * to the next [advance] tick.
+     */
+    fun onInterventionFleetLost(siegeId: String, fp: Float) {
+        val siege = findSiege(siegeId) ?: return
+        // A relief force dying on the siege's guns is not a lull: the command fleet was fighting,
+        // so it should not be recovering CR. (Safe for the mop-up stall backstop, which only
+        // applies once the command fleet is gone — and interventions stop being sent at that point.)
+        siege.daysSinceLastLoss = 0f
+        pendingInterventionLosses.add(siegeId to fp)
+    }
+
+    private fun flushInterventionLoss(siegeId: String, fp: Float) {
+        val siege = findSiege(siegeId) ?: return
+        siege.commandCR = max(0f, siege.commandCR - fp * SiegeConfig.INTERVENTION_STRAIN_K)
+        applyCommandCR(siege)
+        LOG.info("Tahlan siege: $siegeId — intervention wiped out (${"%.0f".format(fp)} FP), " +
+                "command CR now ${"%.2f".format(siege.commandCR)}")
+    }
+
+    /**
+     * What an in-system intervention fleet should be attacking, polled by [SiegeInterventionAI]:
+     * the command fleet while it holds, otherwise whatever siege force is left to fight. Null means
+     * "nothing here for you" — the AI then goes home and despawns.
+     */
+    fun getInterventionTarget(siegeId: String): CampaignFleetAPI? {
+        val siege = findSiege(siegeId) ?: return null
+        siege.commandFleet?.takeIf { it.isAlive && siege.commandFleetPresent }?.let { return it }
+        return (siege.escortFleets + siege.raidFleets)
+            .firstOrNull { it.isAlive && it.containingLocation != null }
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+    // F2 — Desperation system bounty
+    //
+    // At the Stranglehold threshold the strangled market does what a desperate colony does: it puts
+    // money on the table. This is the *vanilla* system bounty — the familiar "Bounty Posted" feed
+    // item with vanilla payout, reputation, and lifecycle — with only the "likely cause" attribution
+    // corrected to Legio (see SiegeSystemBountyIntel) and an intensity-scaled reward.
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+
+    private fun advanceBounty(siege: SiegeData, days: Float) {
+        if (!SiegeConfig.BOUNTY_ENABLED) return
+        val market = siege.primaryTargetMarket ?: return
+        // Keep-alive is conditional on the command fleet still holding the system. Once it is gone
+        // we simply STOP refreshing: the bounty then lapses on its own remaining vanilla duration,
+        // which conveniently keeps paying through the mop-up. No teardown code at all.
+        if (!siege.commandFleetPresent) return
+        if (siege.captureProgress < SiegeConfig.BOUNTY_TRIGGER_PROGRESS) return
+
+        if (siege.bountyTimer > 0f) { siege.bountyTimer -= days; return }
+        siege.bountyTimer = SiegeConfig.BOUNTY_KEEPALIVE_INTERVAL_DAYS
+
+        if (!market.isInEconomy) return
+        // Vanilla guards this in the constructor too (endImmediately), but a player-faction market
+        // must never even reach construction: an ended intel would still be registered as active and
+        // would NPE on the next reset() (its MilitaryResponseScript is never created).
+        if (market.faction?.isPlayerFaction != false) return
+
+        val manager = try { SystemBountyManager.getInstance() } catch (_: Exception) { null } ?: return
+
+        // Registering through the manager is what keeps its own market-dedup honest: if vanilla (or
+        // an earlier pass of ours) already has a bounty running here, refresh that one instead of
+        // stacking a second.
+        val existing = try { manager.getActive(market) } catch (_: Exception) { null }
+        if (existing != null) {
+            try { existing.reset() } catch (_: Exception) { /* commerce-mode intel has no script */ }
+            return
+        }
+
+        try {
+            // Reward scales from the vanilla amount at base intensity up to ~2x at max, times the
+            // config multiplier (0 disables scaling entirely and leaves the vanilla formula alone).
+            val mult = if (SiegeConfig.BOUNTY_BASE_REWARD_MULT <= 0f) 0f
+                       else SiegeConfig.BOUNTY_BASE_REWARD_MULT *
+                            (1f + SiegeConfig.intensityFactor(siege.intensity))
+            val intel = SiegeSystemBountyIntel(market, mult)
+            manager.addActive(intel)   // the intel self-queues into the feed in its own constructor
+            siege.bountyPosted = true
+            LOG.info("Tahlan siege: ${siege.id} — desperation bounty posted at ${market.name}")
+        } catch (e: Exception) {
+            LOG.warn("Tahlan siege: failed to post desperation bounty at ${market.name} — ${e.message}")
+        }
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+    // F1 — Huntsman task force
+    //
+    // One standing elite hunter-killer per siege, travelling with the command fleet. It is the
+    // siege's punishment arm, so it is emphatically NOT a siege fleet: killing it moves no siege
+    // stat and drops no salvage. What it buys instead is a respite window — a replacement is
+    // dispatched from the siege source market, and the window is however long the delay plus the
+    // trip out takes.
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+
+    /**
+     * Heat: the player's own kill record against this siege, decaying daily. Crossing the threshold
+     * marks them as the task force's priority prey; the mark clears again once heat decays back
+     * down (with hysteresis, so a player sitting on the line does not flicker in and out).
+     */
+    private fun advanceHeat(siege: SiegeData, days: Float) {
+        if (siege.playerHeat > 0f) {
+            siege.playerHeat = max(0f, siege.playerHeat - SiegeConfig.HEAT_DECAY_PER_DAY * days)
+        }
+        if (!siege.playerMarked && siege.playerHeat >= SiegeConfig.HEAT_MARK_THRESHOLD) {
+            siege.playerMarked = true
+            siege.intel?.notifyPlayerMarked()
+            LOG.info("Tahlan siege: ${siege.id} — huntsmen have marked the player " +
+                    "(heat ${"%.0f".format(siege.playerHeat)})")
+        } else if (siege.playerMarked &&
+            siege.playerHeat < SiegeConfig.HEAT_MARK_THRESHOLD * SiegeConfig.HEAT_UNMARK_FRACTION) {
+            siege.playerMarked = false
+            LOG.info("Tahlan siege: ${siege.id} — player heat decayed below the mark")
+        }
+    }
+
+    private fun advanceTaskForce(siege: SiegeData, days: Float) {
+        if (!SiegeConfig.TASKFORCE_ENABLED) return
+        if (siege.taskForceRedispatchTimer < 0f) return
+        siege.taskForceRedispatchTimer -= days
+        if (siege.taskForceRedispatchTimer > 0f) return
+        siege.taskForceRedispatchTimer = -1f
+        // Replacements only keep coming while there is still a siege to punish for.
+        if (!siege.commandFleetPresent) return
+        siege.taskForceFleet = spawnTaskForce(siege, sendToTarget = true)
+    }
+
+    /**
+     * Called from [SiegeTaskForceListener]. Deliberately cheap and side-effect-light: it arms the
+     * redispatch timer, which [advanceTaskForce] picks up on the safe side of the tick boundary.
+     */
+    fun onTaskForceLost(siegeId: String) {
+        val siege = findSiege(siegeId) ?: return
+        siege.taskForceFleet = null
+        if (!SiegeConfig.TASKFORCE_ENABLED) return
+        if (siege.stage != SiegeData.Stage.BESIEGING || !siege.commandFleetPresent) return
+        if (siege.taskForceRedispatchTimer >= 0f) return   // a replacement is already inbound
+        siege.taskForceRedispatchTimer = SiegeConfig.TASKFORCE_REDISPATCH_DELAY_DAYS
+        siege.intel?.notifyTaskForceReplacement()
+        LOG.info("Tahlan siege: $siegeId — huntsmen destroyed, replacement in " +
+                "${"%.0f".format(SiegeConfig.TASKFORCE_REDISPATCH_DELAY_DAYS)} days")
+    }
+
+    /**
+     * Spawn the huntsmen at the siege source market. [sendToTarget] is false at launch (the fleet
+     * travels with the command fleet on the shared travel order issued by launchSiege) and true for
+     * a replacement, which has to make the trip on its own.
+     *
+     * Roster is decided HERE, at spawn time, not at launch: kill the Blackwatch pack after the
+     * Legio awakening and what comes back for you is daemons.
+     */
+    private fun spawnTaskForce(siege: SiegeData, sendToTarget: Boolean): CampaignFleetAPI? {
+        val source = siege.sourceMarket
+        val awakened = Global.getSector().memoryWithoutUpdate.getBoolean(TahlanIDs.TRIGGERED)
+        val roster = if (awakened) TahlanIDs.DAEMONS else TahlanIDs.BLACKWATCH
+        var fp = SiegeConfig.TASKFORCE_FP_BASE +
+                SiegeConfig.TASKFORCE_FP_SCALE * SiegeConfig.intensityFactor(siege.intensity)
+        if (awakened) fp *= SiegeConfig.TASKFORCE_DAEMON_FP_MULT
+
+        val fleet = buildHunterFleet(source, roster, fp) ?: run {
+            LOG.warn("Tahlan siege: ${siege.id} — could not build a task force from roster $roster")
+            return null
+        }
+        fleet.setFaction(TahlanIDs.LEGIO, true)
+        fleet.name = txt("siege_fleet_taskforce_name")
+        fleet.memoryWithoutUpdate.set(FLEET_SIEGE_ID_KEY, siege.id)
+        fleet.memoryWithoutUpdate.set(FLEET_TASKFORCE_KEY, true)
+        fleet.memoryWithoutUpdate.set(FLEET_FP_KEY, fp)
+        // Set explicitly: the task force is outside tagSiegeFleet, and a recoverable pure-daemon
+        // pack respawning every month would be an outright hull-farming jackpot.
+        fleet.memoryWithoutUpdate.set(MemFlags.MEMORY_KEY_NO_SHIP_RECOVERY, true)
+
+        source.primaryEntity.containingLocation.addEntity(fleet)
+        fleet.setLocation(source.primaryEntity.location.x, source.primaryEntity.location.y)
+        if (sendToTarget) {
+            fleet.clearAssignments()
+            fleet.addAssignment(FleetAssignment.GO_TO_LOCATION, siege.targetSystem.center, 1000f,
+                txt("siege_assign_travel").format(siege.targetSystem.nameWithLowercaseType))
+        }
+        fleet.addEventListener(SiegeTaskForceListener(siege.id))
+        fleet.addScript(SiegeTaskForceAI(fleet, source, siege.id, siege.targetSystem))
+        LOG.info("Tahlan siege: ${siege.id} — task force spawned from $roster " +
+                "(${fleet.fleetPoints} FP, burn ${fleet.fleetData.burnLevel})")
+        return fleet
+    }
+
+    /**
+     * Build a hunter-killer fleet from [rosterFaction], keeping only hulls at or above
+     * [SiegeConfig.TASKFORCE_MIN_BURN]. Fleet burn is the *slowest* member, so a single lumbering
+     * capital would make the whole force uncatchable-by-nobody — the filter is what makes the
+     * huntsmen mechanically what their name says.
+     *
+     * Strip-and-refill with bounded retries: inflate, drop the slow hulls, re-roll the freed budget,
+     * repeat. Accepts an under-budget fleet rather than looping forever if the roster runs dry.
+     */
+    private fun buildHunterFleet(source: MarketAPI, rosterFaction: String, targetFp: Float): CampaignFleetAPI? {
+        val base = rollRosterFleet(source, rosterFaction, targetFp) ?: return null
+        stripSlowMembers(base)
+        if (base.fleetData.membersListCopy.isEmpty()) return null   // roster has no fast hulls at all
+
+        var attempts = 0
+        while (attempts < SiegeConfig.TASKFORCE_BUILD_RETRIES) {
+            val deficit = targetFp - base.fleetPoints
+            if (deficit <= targetFp * TASKFORCE_BUDGET_TOLERANCE) break
+            attempts++
+            val extra = rollRosterFleet(source, rosterFaction, deficit) ?: break
+            stripSlowMembers(extra)
+            val members = extra.fleetData.membersListCopy
+            if (members.isEmpty()) continue
+            for (member in members) {
+                extra.fleetData.removeFleetMember(member)
+                base.fleetData.addFleetMember(member)
+            }
+        }
+        base.fleetData.ensureHasFlagship()
+        base.forceSync()
+        return base
+    }
+
+    /**
+     * One inflation pass on an off-faction roster. Same trick as the Blackwatch command fleet:
+     * PRIORITY_THEN_ALL is REQUIRED because the source market is Legio, so a differing factionId
+     * would otherwise put FleetFactoryV3 into IMPORTED mode and roll the roster's meagre
+     * `shipsWhenImporting` list instead of its real one.
+     */
+    private fun rollRosterFleet(source: MarketAPI, rosterFaction: String, fp: Float): CampaignFleetAPI? {
+        if (fp <= 0f) return null
+        // MERC_ARMADA mirrors the command fleet's proven off-faction spawn exactly; the fleet type
+        // only colors naming/quality here, and this is the combination already known to roll a real
+        // Blackwatch roster off a Legio market rather than an empty import list.
+        val params = FleetParamsV3(source, FleetTypes.MERC_ARMADA, fp, 0f, 0f, 0f, 0f, 0f, 0.25f)
+        params.factionId = rosterFaction
+        params.modeOverride = ShipPickMode.PRIORITY_THEN_ALL
+        params.officerNumberMult = 2f
+        val fleet = FleetFactoryV3.createFleet(params)
+        return if (fleet == null || fleet.isEmpty) null else fleet
+    }
+
+    private fun stripSlowMembers(fleet: CampaignFleetAPI) {
+        for (member in fleet.fleetData.membersListCopy) {
+            if (member.isFighterWing) continue
+            val burn = member.stats?.maxBurnLevel?.modifiedValue ?: 0f
+            if (burn < SiegeConfig.TASKFORCE_MIN_BURN) fleet.fleetData.removeFleetMember(member)
+        }
+    }
+
+    /** Polled by [SiegeTaskForceAI]: is the player currently the huntsmen's priority prey? */
+    fun isPlayerMarked(siegeId: String): Boolean = findSiege(siegeId)?.playerMarked == true
+
+    /** Polled by [SiegeTaskForceAI] for its idle screening station. */
+    fun getCommandFleet(siegeId: String): CampaignFleetAPI? =
+        findSiege(siegeId)?.commandFleet?.takeIf { it.isAlive }
+
+    /** True while the siege is still being tracked; false once it has resolved or been torn down. */
+    fun isSiegeActive(siegeId: String): Boolean = findSiege(siegeId) != null
 
     // --- Withdrawal ---
 
@@ -651,6 +1125,17 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 txt("siege_assign_travel").format(targetSystem.nameWithLowercaseType))
         }
 
+        // The huntsmen ride out with the expedition. Spawned last and given the same travel order:
+        // its own AI takes over once it reaches the target system. Not a hard failure point — a
+        // siege without a task force is simply the pre-reactivity siege.
+        if (SiegeConfig.TASKFORCE_ENABLED) {
+            siege.taskForceFleet = spawnTaskForce(siege, sendToTarget = false)?.also { tf ->
+                tf.clearAssignments()
+                tf.addAssignment(FleetAssignment.GO_TO_LOCATION, travelDest, 1000f,
+                    txt("siege_assign_travel").format(targetSystem.nameWithLowercaseType))
+            }
+        }
+
         activeSieges.add(siege)
         LOG.info("Tahlan siege: launched on ${targetSystem.baseName} from ${source.name} (intensity=${"%.2f".format(intensity)})")
         return siege
@@ -750,6 +1235,13 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             fleet.clearAssignments()
             fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, home, 1000f)
         }
+        // The task force disperses home like any other siege-attached fleet.
+        siege.taskForceFleet?.takeIf { it.isAlive }?.memoryWithoutUpdate?.set(FLEET_RETURN_FLAG, true)
+        // Intervention fleets go home to their OWN markets, not to Legio's — so signal their AIs
+        // via the shared return flag and let each one route itself back where it came from.
+        for (fleet in siege.interventionFleets.filter { it.isAlive }) {
+            fleet.memoryWithoutUpdate.set(FLEET_RETURN_FLAG, true)
+        }
         if (!keepCommandFleet) {
             siege.commandFleet?.takeIf { it.isAlive }?.let { cmd ->
                 // Signal the SiegeAssignmentAI via fleet memory — it polls this flag and calls orderReturn()
@@ -795,6 +1287,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             // Same triple check — the middle leg catches a fleet stripped from its location's fleet
             // list mid-transition, which the two-leg version used to read as still alive.
             val noEscorts = siege.escortFleets.all { f ->
+                f.containingLocation == null ||
+                !f.containingLocation.fleets.contains(f) ||
+                !f.isAlive
+            }
+            // Intervention fleets are not part of the siege force, so they never gate the
+            // "everything is dead" check — but their references still need reaping or the list
+            // grows for the life of the siege.
+            siege.interventionFleets.removeAll { f ->
                 f.containingLocation == null ||
                 !f.containingLocation.fleets.contains(f) ||
                 !f.isAlive
@@ -969,6 +1469,12 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             sb.appendLine("  raidFleets=${s.raidFleets.count { it.isAlive }} alive / ${s.raidFleets.size} tracked (max ${SiegeConfig.MAX_ACTIVE_RAID_FLEETS})")
             sb.appendLine("  conditionedMarkets=${s.conditionedMarkets.joinToString { it.name }.ifEmpty { "none" }}")
             sb.appendLine("  garrisonMarket=${s.garrisonMarket?.name ?: "none"}  playerBountyAccrued=${"%.0f".format(s.playerBountyAccrued)}")
+            sb.appendLine("  [F3] interventions=${s.interventionFleets.count { it.isAlive }} alive / ${s.interventionFleets.size} tracked  cooldown=${"%.1f".format(s.interventionCooldown)}d  enabled=${SiegeConfig.INTERVENTION_ENABLED}")
+            sb.appendLine("  [F2] bountyPosted=${s.bountyPosted}  keepAliveIn=${"%.1f".format(s.bountyTimer)}d  triggerAt=${SiegeConfig.BOUNTY_TRIGGER_PROGRESS}  enabled=${SiegeConfig.BOUNTY_ENABLED}")
+            val tf = s.taskForceFleet
+            sb.appendLine("  [F1] taskForce=" + (if (tf == null) "none" else "${tf.name} [alive=${tf.isAlive}, fp=${tf.fleetPoints}, burn=${tf.fleetData.burnLevel}, at=${tf.starSystem?.baseName ?: "?"}]") +
+                    "  redispatchIn=${if (s.taskForceRedispatchTimer < 0f) "n/a" else "%.1fd".format(s.taskForceRedispatchTimer)}")
+            sb.appendLine("  [F1] playerHeat=${"%.0f".format(s.playerHeat)}/${SiegeConfig.HEAT_MARK_THRESHOLD}  marked=${s.playerMarked}  enabled=${SiegeConfig.TASKFORCE_ENABLED}")
         }
         return sb.toString()
     }
@@ -1023,6 +1529,13 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         const val FLEET_RETURN_FLAG  = "\$tahlan_siege_return"
         const val FLEET_GARRISON_MARKET_KEY = "\$tahlan_siege_garrison"
 
+        // Reactive-system fleet tags. Both these fleet kinds carry FLEET_SIEGE_ID_KEY (so despawn
+        // pruning and battle-side checks can attribute them to a siege) but NOT the rest of
+        // tagSiegeFleet — they are deliberately not siege fleets and carry no SiegeFleetListener,
+        // so their losses never feed siege health, command CR, the meter, or the bounty ledger.
+        const val FLEET_INTERVENTION_KEY = "\$tahlan_siege_intervention"
+        const val FLEET_TASKFORCE_KEY    = "\$tahlan_siege_taskforce"
+
         // Nexerelin's ExerelinConstants.MEMKEY_MARKET_EXISTED_AT_START — markets present at sector
         // start (core/"starting" markets). Hardcoded as a literal so this class never hard-links the
         // Nex constant outside a HAS_NEX guard; it's a serialized memory key and is stable.
@@ -1035,6 +1548,12 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
         // One-shot marker for the legacy stat-mod leak repair (see sweepLeakedConditionMods).
         const val SIEGE_LEAK_SWEPT_KEY = "\$tahlan_siegeleak_swept"
+
+        /** Below this, an "intervention" is a rounding error — skip it rather than spawn a token. */
+        private const val MIN_INTERVENTION_FP = 20f
+
+        /** How far under its FP budget a burn-filtered task force may land before we stop re-rolling. */
+        private const val TASKFORCE_BUDGET_TOLERANCE = 0.15f
 
         val LOG: Logger = Global.getLogger(SiegeManager::class.java)!!
 

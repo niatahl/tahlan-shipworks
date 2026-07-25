@@ -108,6 +108,24 @@ class SiegeIntel(
         sendUpdateIfPlayerHasIntel(null, false)
     }
 
+    /** A coalition relief force has been dispatched — good news, and worth a feed ping. */
+    fun addIntervention(factionName: String, isPrimary: Boolean) {
+        addFactor(InterventionFactor(factionName, isPrimary))
+        sendUpdateIfPlayerHasIntel(null, false)
+    }
+
+    /** The huntsmen have picked the player out of the crowd. Adverse, and very much worth a ping. */
+    fun notifyPlayerMarked() {
+        addFactor(HuntsmanMarkFactor())
+        sendUpdateIfPlayerHasIntel(null, false)
+    }
+
+    /** The huntsmen were destroyed and the Legio is sending more. */
+    fun notifyTaskForceReplacement() {
+        addFactor(HuntsmanReplacedFactor())
+        sendUpdateIfPlayerHasIntel(null, false)
+    }
+
     /** Resolve as one of BROKEN / LIFTED / SUCCEEDED. Pays out accrued bounty. Safe to call once. */
     fun resolve(how: SiegeOutcome) {
         if (outcome != null) return
@@ -329,6 +347,45 @@ class SiegeIntel(
         override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
         override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
             factorTip("siege_factortip_withdrawal")
+    }
+
+    // --- Reactive-system announcements (add-siege-reactivity) ---
+    // All `super(0)` one-time factors, like the kill/withdrawal rows above: they announce something
+    // that happened in the world, they never mutate the bar. The manager remains authoritative.
+
+    /**
+     * A coalition faction has dispatched a relief force. Favourable: someone else is doing the
+     * player's work for them (or at least softening the target).
+     */
+    inner class InterventionFactor(
+        private val factionName: String,
+        private val isPrimary: Boolean
+    ) : BaseOneTimeFactor(0) {
+        override fun getDesc(intel: BaseEventIntel): String =
+            txt(if (isPrimary) "siege_factor_intervention" else "siege_factor_intervention_aux")
+                .format(factionName)
+        override fun getProgressStr(intel: BaseEventIntel): String = ""
+        override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
+            factorTip("siege_factortip_intervention")
+    }
+
+    /** The huntsmen have marked the player. Adverse — this one is a warning, not a status line. */
+    inner class HuntsmanMarkFactor : BaseOneTimeFactor(0) {
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_marked")
+        override fun getProgressStr(intel: BaseEventIntel): String = ""
+        override fun getDescColor(intel: BaseEventIntel): Color = Misc.getNegativeHighlightColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
+            factorTip("siege_factortip_marked")
+    }
+
+    /** The huntsmen were destroyed; a replacement is on its way out from Legio space. */
+    inner class HuntsmanReplacedFactor : BaseOneTimeFactor(0) {
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_huntsman_lost")
+        override fun getProgressStr(intel: BaseEventIntel): String = ""
+        override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
+            factorTip("siege_factortip_huntsman_lost")
     }
 
     companion object {

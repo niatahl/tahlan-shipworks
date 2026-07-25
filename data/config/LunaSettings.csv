@@ -14,3 +14,9 @@ tahlan_enable_siege,Enable Legio Sieges,Boolean,true,,Enables periodic Legio Inf
 tahlan_siege_frequency,Siege Frequency,Double,1.0,,How often Legio launches siege campaigns. Higher values = more frequent.,0.2,3.0,Settings
 tahlan_siege_difficulty,Siege Fleet Size,Double,1.0,,Scales the size and strength of Legio siege fleets.,0.2,3.0,Settings
 tahlan_siege_attrition,Siege Attrition Strength,Double,1.0,,Scales how much fleet losses damage the siege. Higher = easier to break.,0.2,3.0,Settings
+tahlan_siege_interventions,Enable Coalition Interventions,Boolean,true,,Lets the besieged faction and its allies mobilise relief fleets against an active siege.,,,Settings
+tahlan_siege_intervention_freq,Intervention Frequency,Double,1.0,,How often the besieged bloc sends relief fleets. Higher = more frequent waves.,0.2,3.0,Settings
+tahlan_siege_bounty,Enable Desperation Bounties,Boolean,true,,Lets a strangled market post a system bounty once a siege reaches its Stranglehold stage.,,,Settings
+tahlan_siege_taskforce,Enable Huntsman Task Force,Boolean,true,,Gives each siege a standing elite hunter-killer fleet that hunts threats to the siege - and you.,,,Settings
+tahlan_siege_taskforce_size,Huntsman Task Force Size,Double,1.0,,Scales the size and strength of the siege hunter-killer fleet.,0.2,3.0,Settings
+tahlan_siege_heat,Huntsman Aggression,Double,1.0,,How readily the hunter-killer force marks you for hunting after you attack a siege. Higher = marked sooner.,0.2,3.0,Settings

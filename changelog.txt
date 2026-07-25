@@ -17,7 +17,12 @@
 	- A siege now advances the same way with or without Nexerelin; destroying siege fleets knocks its progress back
 	- Letting a siege win without Nexerelin now leaves a lasting scar on the target market (lingering penalties + disrupted industries) instead of lifting harmlessly
 	- Siege subjugation rate: CAPTURE_PROGRESS_PER_DAY_BASE 0.3 -> 0.6
+	- Sieges no longer sit unopposed: the besieged world's bloc now mobilises relief fleets against the siege command fleet, and even a rescue that fails leaves the command fleet worse off
+	- A strangled market will eventually put money on the table for anyone willing to help
+	- Each siege now fields a standing hunter-killer force that will come looking for you if you make enough of a nuisance of yourself
+	- Killing that force buys you a window, not a reprieve
 	- Toggle available in settings and LunaLib
+	- New LunaLib sliders: coalition interventions on/off + frequency, desperation bounties on/off, hunter-killer force on/off + size + aggression
 - Added option to give a recovered Domain planetkiller to the Legio
     - I'm sure this is a good idea
 - Mondlicht

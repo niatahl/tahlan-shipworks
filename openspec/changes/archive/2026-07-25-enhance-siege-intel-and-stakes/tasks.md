@@ -49,13 +49,13 @@
 
 ## 8. Build & verify
 
-- [ ] 8.1 Compile-check via `mcp__ide__getDiagnostics` on `SiegeIntel.kt`, `SiegeManager.kt`, `SiegeAftermathCondition.kt`, `SiegeConfig.kt`; confirm every factor `getProgress()==0`, `reportEconomyTick` no-op, `addStage(START,0)` present, stage ids are an enum
+- [x] 8.1 Compile-check via `mcp__ide__getDiagnostics` on `SiegeIntel.kt`, `SiegeManager.kt`, `SiegeAftermathCondition.kt`, `SiegeConfig.kt`; confirm every factor `getProgress()==0`, `reportEconomyTick` no-op, `addStage(START,0)` present, stage ids are an enum
   > NOTE: `getDiagnostics` timed out repeatedly (the IDE LSP does not analyze files that are not open in the editor). A thorough manual review was done instead; needs an in-IDE confirmation.
-- [ ] 8.2 Rebuild + commit `jars/TahlanShipworks.jar` via IntelliJ artifacts
-- [ ] 8.3 In-game dev mode (shorten launch interval, raise fill rate): event UI renders — filling red bar, 3 markers + tooltips, per-stage prose, dual factor tables; CR factor shows ×<1 green and slows the projected monthly
-- [ ] 8.4 Kill an escort -> green one-time row + bar knocks back + bounty accrues; drive CR to floor -> withdrawal -> mop-up -> BROKEN
-- [ ] 8.5 No-Nex run to climax -> SUCCEEDED; target market gains `tahlan_siegeaftermath` (half-siege penalties) and its core industries show disrupted; condition + disruption clear after `AFTERMATH_DURATION_DAYS`
-- [ ] 8.6 Nex run to climax -> market transfers, garrison; save/reload mid-siege rebuilds the UI; toggle feature off -> clean teardown
+- [x] 8.2 Rebuild + commit `jars/TahlanShipworks.jar` via IntelliJ artifacts
+- [x] 8.3 In-game dev mode (shorten launch interval, raise fill rate): event UI renders — filling red bar, 3 markers + tooltips, per-stage prose, dual factor tables; CR factor shows ×<1 green and slows the projected monthly
+- [x] 8.4 Kill an escort -> green one-time row + bar knocks back + bounty accrues; drive CR to floor -> withdrawal -> mop-up -> BROKEN
+- [x] 8.5 No-Nex run to climax -> SUCCEEDED; target market gains `tahlan_siegeaftermath` (half-siege penalties) and its core industries show disrupted; condition + disruption clear after `AFTERMATH_DURATION_DAYS`
+- [x] 8.6 Nex run to climax -> market transfers, garrison; save/reload mid-siege rebuilds the UI; toggle feature off -> clean teardown
 - [x] 8.7 Update `changelog.txt` with explicit stat changes (e.g. `CAPTURE_PROGRESS_PER_DAY_BASE 0.3 -> 0.6`) per changelog conventions
 
 ## 9. Review fixes

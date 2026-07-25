@@ -81,5 +81,24 @@ object TahlanSettings {
         // Fleet kills also knock back the subjugation meter; scale that with attrition too so the
         // slider governs "how much losses hurt" on BOTH the health bar and the subjugation meter.
         SiegeConfig.CAPTURE_KNOCKBACK_PER_FP = 0.05f * attrMult
+
+        // Reactive-system sliders. Each of the three systems has its own kill switch (so a player
+        // who wants the plain siege can have it, and a misbehaving one can be turned off mid-save)
+        // plus one curated intensity knob. As above, the literals are the SiegeConfig defaults
+        // restated — the config fields are mutable and may already hold a previous slider value.
+        SiegeConfig.INTERVENTION_ENABLED = LunaSettings.getBoolean("tahlan", "tahlan_siege_interventions") ?: true
+        SiegeConfig.BOUNTY_ENABLED       = LunaSettings.getBoolean("tahlan", "tahlan_siege_bounty") ?: true
+        SiegeConfig.TASKFORCE_ENABLED    = LunaSettings.getBoolean("tahlan", "tahlan_siege_taskforce") ?: true
+
+        val interventionMult = LunaSettings.getDouble("tahlan", "tahlan_siege_intervention_freq")?.toFloat() ?: 1f
+        SiegeConfig.INTERVENTION_INTERVAL_DAYS = (50f / interventionMult).coerceIn(10f, 250f)
+
+        val taskForceMult = LunaSettings.getDouble("tahlan", "tahlan_siege_taskforce_size")?.toFloat() ?: 1f
+        SiegeConfig.TASKFORCE_FP_BASE  = 80f * taskForceMult
+        SiegeConfig.TASKFORCE_FP_SCALE = 80f * taskForceMult
+
+        // "Huntsman Aggression": higher = marked sooner, so it divides the heat threshold.
+        val heatMult = LunaSettings.getDouble("tahlan", "tahlan_siege_heat")?.toFloat() ?: 1f
+        SiegeConfig.HEAT_MARK_THRESHOLD = (150f / heatMult).coerceIn(20f, 1000f)
     }
 }

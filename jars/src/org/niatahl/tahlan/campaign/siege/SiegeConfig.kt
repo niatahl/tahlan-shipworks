@@ -115,4 +115,72 @@ object SiegeConfig {
     // interception actually engages even neutral-faction traders — without it, INTERCEPT only
     // results in a fight against factions Legio is already hostile to.
     var BLOCKADE_HOSTILE_TO_TRADERS = true
+
+    // ─────────────────────────────────────────────────────────────────────────────────────────
+    // Reactive systems. Each gates on its own enable flag so a misbehaving one can be switched
+    // off (config or LunaLib) without reverting code. Every numeric below is a
+    // BALANCE-PASS STARTING VALUE — confirm in a dev-mode pass and record finals in changelog.txt.
+    // ─────────────────────────────────────────────────────────────────────────────────────────
+
+    // --- F3: Coalition interventions ---
+    var INTERVENTION_ENABLED = true
+    // Per-siege cooldown between mobilization waves. Sized against a ~110-day unopposed siege
+    // (CAPTURE_PROGRESS_PER_DAY_BASE * typical pressure), so a full siege sees roughly two waves.
+    var INTERVENTION_INTERVAL_DAYS = 50f
+    // Primary fleet is sized to CONTEST the command fleet, never to reliably crush it — the player
+    // must stay relevant. Capped by the lead member's response capacity (see below).
+    var INTERVENTION_PRIMARY_FP_MULT = 0.9f
+    // Fleet points per point of response capacity. Doubles as the capacity cap on the primary:
+    // a weak or distant lead cannot field a full-sized contesting fleet however badly it wants to.
+    // Capacity typically runs ~2..11, so this yields ~40..220 FP.
+    var INTERVENTION_AUX_FP_PER_CAPACITY = 20f
+    // Coalition members below this capacity send nothing — a size-3 rimworld dribbling out two
+    // frigates reads as noise, not as a rescue.
+    var INTERVENTION_AUX_CAPACITY_FLOOR = 4f
+    // Command CR strained per FP of an intervention fleet destroyed fighting the siege. Deliberately
+    // far below STRAIN_K: a failed rescue softens the siege for the next attacker, it does not break
+    // it. At 150 FP that is ~0.15 CR, so ~2 failed interventions eat half the way to the
+    // withdrawal floor.
+    var INTERVENTION_STRAIN_K = 0.001f
+
+    // --- F2: Desperation system bounty ---
+    var BOUNTY_ENABLED = true
+    // Subjugation-meter value at which the target market posts its bounty. Default = the
+    // Stranglehold stage marker on the intel bar, so the feed item lands as the colony starts failing.
+    var BOUNTY_TRIGGER_PROGRESS = 66f
+    // Scales the vanilla base-bounty formula. 0 = pure vanilla amount, no scaling applied at all.
+    // The siege additionally scales by intensity on top of this (1x at base intensity, 2x at max).
+    var BOUNTY_BASE_REWARD_MULT = 1f
+    // How often the posted bounty is refreshed (vanilla duration is 60 days, so this must stay
+    // comfortably under it) while the command fleet still holds the system.
+    var BOUNTY_KEEPALIVE_INTERVAL_DAYS = 20f
+
+    // --- F1: Huntsman task force ---
+    var TASKFORCE_ENABLED = true
+    // ~1/2..2/3 of command FP: a real elite threat, not a second command fleet.
+    var TASKFORCE_FP_BASE = 80f
+    var TASKFORCE_FP_SCALE = 80f
+    // Daemon rosters are stronger per FP by design (regen armor, daemoncore). 1.0 accepts that
+    // step-up as the intended post-awakening escalation; lower it if testing says it is too much.
+    var TASKFORCE_DAEMON_FP_MULT = 1.0f
+    // The task force's identity is mechanical: fleet burn is the slowest member, so a single
+    // capital would make it uncatchable-by-nobody. 9 keeps frigates/destroyers and the faster
+    // cruisers on both rosters (daemon hulls run burn 7..10; Blackwatch draws on wide vanilla tags).
+    var TASKFORCE_MIN_BURN = 9f
+    // Respite window after a kill = this delay PLUS travel from the siege source market, so the
+    // real window is geographic: sieges near Legio space refill fast, deep-rim ones leave weeks.
+    var TASKFORCE_REDISPATCH_DELAY_DAYS = 30f
+    // Bounded re-rolls when the burn filter strips the fleet under budget.
+    var TASKFORCE_BUILD_RETRIES = 4
+
+    // --- F1: Player heat (marking) ---
+    // Heat accrues per FP of siege fleet the player is involved in destroying, and decays daily.
+    // At threshold 150 / accrual 1.0 the player is marked after roughly 1.5 escort fleets' worth of
+    // killing; at decay 3/day a marked player cools off over ~50 quiet days.
+    var HEAT_PER_FP = 1f
+    var HEAT_DECAY_PER_DAY = 3f
+    var HEAT_MARK_THRESHOLD = 150f
+    // Hysteresis: once marked, the player stays marked until heat falls to this fraction of the
+    // threshold. Without it a player sitting near the line would flicker marked/unmarked every tick.
+    var HEAT_UNMARK_FRACTION = 0.5f
 }
