@@ -121,7 +121,6 @@ class TahlanModPlugin : BaseModPlugin() {
         if (HAS_LUNA) TahlanSettings.loadFromLuna()
 
         //If we have Nexerelin and random worlds enabled, don't spawn our manual systems
-        ModCompat.detectNexerelin()
         if (!HAS_NEX || SectorManager.getManager().isCorvusMode) {
             if (ENABLE_LETHIA) {
                 Lethia().generate(sector)

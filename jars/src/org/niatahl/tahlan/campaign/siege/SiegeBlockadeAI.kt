@@ -9,6 +9,7 @@ import com.fs.starfarer.api.impl.campaign.ids.MemFlags
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
 import org.niatahl.tahlan.utils.TahlanIDs
+import org.niatahl.tahlan.utils.Utils.txt
 
 /**
  * Blockade-fleet behavior: holds station on its assigned jump point, but breaks off to INTERCEPT any
@@ -59,10 +60,10 @@ class SiegeBlockadeAI(
             chasing = prey
             fleet.clearAssignments()
             fleet.addAssignment(FleetAssignment.INTERCEPT, prey, SiegeConfig.BLOCKADE_INTERCEPT_DURATION_DAYS,
-                "intercepting ${prey.name}")
+                txt("siege_assign_intercept").format(prey.name))
             // After the chase, fall back to blockading the jump point.
             fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, jumpPoint, 9999f,
-                "blockading ${jumpPoint.name}")
+                txt("siege_assign_blockade").format(jumpPoint.name))
         } else {
             holdStation()
         }
@@ -96,7 +97,8 @@ class SiegeBlockadeAI(
     private fun holdStation() {
         if (fleet.currentAssignment != null) return
         fleet.clearAssignments()
-        fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, jumpPoint, 9999f, "blockading ${jumpPoint.name}")
+        fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, jumpPoint, 9999f,
+            txt("siege_assign_blockade").format(jumpPoint.name))
     }
 
     override fun isDone(): Boolean = done

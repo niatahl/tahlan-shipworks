@@ -26,6 +26,12 @@ class SiegeCondition : BaseMarketConditionPlugin(), MarketImmigrationModifier {
 
     override fun unapply(id: String) {
         super.unapply(id)
+        // BaseMarketConditionPlugin.unapply is empty — every stat modified in apply() must be
+        // explicitly unmodified here or the flat mods persist on the market forever after the
+        // condition is removed (cf. vanilla RecentUnrest / Habitable).
+        market.accessibilityMod.unmodifyFlat(id)
+        market.stability.unmodifyFlat(id)
+        market.hazard.unmodifyFlat(id)
         market.removeTransientImmigrationModifier(this)
     }
 

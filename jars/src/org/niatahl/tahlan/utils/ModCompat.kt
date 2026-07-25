@@ -3,9 +3,10 @@ package org.niatahl.tahlan.utils
 import com.fs.starfarer.api.Global
 
 /**
- * Soft-dependency presence flags. GraphicsLib/IndEvo/LunaLib are detected at application
- * load; Nexerelin is detected at new-game time (its random-sector mode matters there, and
- * the original code probed it in onNewGame - timing preserved).
+ * Soft-dependency presence flags, all detected once at application load — the mod list cannot
+ * change within a running game, so app load is always safe. (Nexerelin used to be probed only in
+ * onNewGame, which left HAS_NEX false for any session that started by *loading* a save and
+ * silently disabled every load-time/runtime Nex integration, e.g. the siege capture pathway.)
  *
  * `@JvmField` so Java call sites read these as plain static fields
  * (e.g. `ModCompat.HAS_GRAPHICSLIB`), matching the old TahlanModPlugin access.
@@ -21,12 +22,8 @@ object ModCompat {
     /** Detect soft deps available at application load. */
     fun detectAtAppLoad() {
         HAS_GRAPHICSLIB = enabled("shaderLib")
+        HAS_NEX = enabled("nexerelin")
         HAS_INDEVO = enabled("IndEvo")
         HAS_LUNA = enabled("lunalib")
-    }
-
-    /** Nexerelin presence; probed at new-game time to mirror the original timing. */
-    fun detectNexerelin() {
-        HAS_NEX = enabled("nexerelin")
     }
 }

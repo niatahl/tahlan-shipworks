@@ -37,8 +37,9 @@ object SiegeConfig {
     //   * Command fleet: contributes a flat chunk (SIEGE_HEALTH_MAX * COMMAND_HEALTH_SHARE) that is
     //     removed once, on its removal — whether killed or withdrawn (identical effect, per design).
     //     The command fleet does NOT take the per-FP path.
-    //   * Escort / blockade / raid fleets: each death deals uncapped per-FP damage (fp / HEALTH_PER_FP),
-    //     floored at 0. Their total is not capped to the remaining share — the floor handles overkill.
+    //   * Escort / blockade / raid fleets: every fleet point they LOSE deals uncapped per-FP damage
+    //     (fp / HEALTH_PER_FP), floored at 0 — partial losses count as they happen, not only deaths.
+    //     Their total is not capped to the remaining share — the floor handles overkill.
     // So removing the command fleet is the single biggest blow but never an instant break: the residual
     // (1 - COMMAND_HEALTH_SHARE) must still be mopped up via escort/blockade/raid kills to reach 0.
     var SIEGE_HEALTH_MAX = 100f
@@ -46,8 +47,12 @@ object SiegeConfig {
 
     // --- Attrition (strain coefficient k) ---
     // Per FP destroyed: siegeHealth -= fp / HEALTH_PER_FP; commandCR -= fp * STRAIN_K
-    var HEALTH_PER_FP = 5f                  // 1 FP killed → -0.2 siege health
-    var STRAIN_K = 0.003f                   // per FP killed, strain commandCR this much
+    var HEALTH_PER_FP = 5f                  // 1 FP lost → -0.2 siege health
+    // BALANCE-PASS NOTE: strain is now booked on *partial* losses as well as kills, and the command
+    // fleet's own losses strain CR too (previously only escort deaths did). Total strain per siege is
+    // therefore materially higher than when this value was picked — the pace at which CR reaches
+    // COMMAND_CR_WITHDRAWAL_FLOOR needs a play-check, and this may want lowering.
+    var STRAIN_K = 0.003f                   // per FP lost, strain commandCR this much
 
     // --- CR model ---
     var CR_RECOVERY_DELAY_DAYS = 20f        // no losses for this long → start CR recovery
@@ -58,10 +63,16 @@ object SiegeConfig {
     // Actual regen/day = HEALTH_REGEN_PER_DAY_BASE * commandCR
     var HEALTH_REGEN_PER_DAY_BASE = 0.5f
 
-    // --- Intel stage thresholds (commandCR) ---
-    const val STAGE_ENTRENCHED_MIN_CR = 0.6f
-    const val STAGE_STRAINED_MIN_CR = 0.35f
-    // CR < STAGE_STRAINED_MIN_CR → Faltering
+    // --- Stall backstops (a siege must never be able to persist forever) ---
+    // Mop-up stall: the command fleet is gone but nobody is finishing off the residual fleets. Reset
+    // by every siege-fleet loss, partial ones included (daysSinceLastLoss), so an actively-ground
+    // siege never times out.
+    // BALANCE-PASS STARTING VALUE.
+    var MOPUP_STALL_TIMEOUT_DAYS = 60f
+    // Travel timeout: insurance against an expedition that never reaches its target system and would
+    // otherwise leave the siege stuck INBOUND (which also blocks all future launches).
+    // BALANCE-PASS STARTING VALUE.
+    var INBOUND_TIMEOUT_DAYS = 180f
 
     // --- Bounty ---
     var COMMAND_FLEET_BOUNTY = 100_000f

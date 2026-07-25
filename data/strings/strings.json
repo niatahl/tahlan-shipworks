@@ -149,6 +149,17 @@
 		"traum_crew_henrietta1":"\"You have my thanks. Mine, and that of every soul you have drawn out of the dark. I am Henrietta von Regenfels, Knight-Captain of the Rosenritter Order.\" There is a dry note beneath the formality. \"What remains of the Order, at any rate.\"",
 		"traum_crew_henrietta2":"\"My ship is cinders and my chain of command is a hundred years in its grave. But a knight without a banner is a knight still, and a debt is a debt. If you will have me, captain, my lance and my service are yours.\"",
 
+		"siege_fleet_command_name": "Vanguard",
+
+		"siege_assign_travel": "en route to %s",
+		"siege_assign_screen": "screening %s",
+		"siege_assign_blockade": "blockading %s",
+		"siege_assign_intercept": "intercepting %s",
+		"siege_assign_raid": "raiding %s",
+		"siege_assign_besiege": "besieging %s",
+		"siege_assign_return": "returning to %s",
+		"siege_assign_garrison": "garrisoning %s",
+
 		"siege_condition_name": "Legio Siege",
 		"siege_condition_accessibility": "%s accessibility",
 		"siege_condition_stability": "%s stability",
@@ -160,10 +171,6 @@
 		"siege_intel_title_succeeded": "Siege Succeeded",
 		"siege_intel_desc": "A Legio Infernalis expedition fleet has besieged a hostile star system. Their command fleet anchors the fringe while blockade patrols strangle trade and raid sorties hammer the market below.",
 		"siege_intel_target": "Primary target: %s (%s)",
-		"siege_intel_status": "Siege status",
-		"siege_stage_entrenched": "Entrenched",
-		"siege_stage_strained": "Strained",
-		"siege_stage_faltering": "Faltering",
 		"siege_intel_bounty_accrued": "%s in bounty accrued for your fleet kills",
 		"siege_intel_bounty_paid": "%s paid for your contributions to breaking the siege",
 		"siege_bounty_message": "Siege bounty: %s deposited for your contributions against the Legio blockade",
@@ -171,7 +178,6 @@
 		"siege_intel_resolved_lifted": "The siege has lifted. The blockade dispersed without achieving its objectives.",
 		"siege_intel_resolved_succeeded": "The siege has succeeded. A market in the besieged system has fallen to the Legio Infernalis.",
 		"siege_intel_resolved_succeeded_nonex": "The siege has succeeded. The Legio withdrew at last, but the target market has been left in ruins — its industries gutted and its economy crippled for months to come.",
-		"siege_intel_garrison": "The Legio command fleet is garrisoning the captured market.",
 
 		"siege_stage2_foothold": "Foothold",
 		"siege_stage2_stranglehold": "Stranglehold",
@@ -195,16 +201,15 @@
 		"siege_factor_cr": "Command readiness",
 		"siege_factor_kill_escort": "Siege fleet destroyed",
 		"siege_factor_kill_command": "Command fleet destroyed",
+		"siege_factor_withdrawal": "Command fleet withdrawn",
 
 		"siege_factortip_blockade": "How hard the blockade is strangling the target market. The more cut off the market, the faster the siege advances.",
 		"siege_factortip_raids": "The number of Legio raid wings currently hammering the colony.",
 		"siege_factortip_intensity": "The overall scale of the Legio expedition. Larger expeditions field tougher, more numerous fleets.",
 		"siege_factortip_cr": "The command fleet's combat readiness. A battered command fleet coordinates the siege more slowly, braking all progress toward subjugation.",
-		"siege_factortip_kill_escort": "A Legio siege fleet your forces destroyed, knocking the siege's progress back.",
+		"siege_factortip_kill_escort": "A Legio siege fleet was destroyed, knocking the siege's progress back.",
 		"siege_factortip_kill_command": "The Legio command fleet was destroyed, halting the siege's advance entirely.",
-
-		"siege_killbullet_escort": "Siege fleet destroyed",
-		"siege_killbullet_command": "Command fleet destroyed — siege advance halted",
+		"siege_factortip_withdrawal": "The Legio command fleet has withdrawn from the siege, halting all progress toward subjugation. Destroy the remaining siege fleets to break the siege fully.",
 
 		"siege_aftermath_name": "Legio Siege Aftermath",
 		"siege_aftermath_desc": "The world is still reeling from a Legio Infernalis siege. Infrastructure lies wrecked, trade ties are severed, and the population is slow to recover.",

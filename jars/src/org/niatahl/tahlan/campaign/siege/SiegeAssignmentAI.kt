@@ -7,6 +7,7 @@ import com.fs.starfarer.api.campaign.FleetAssignment
 import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.util.IntervalUtil
 import com.fs.starfarer.api.util.Misc
+import org.niatahl.tahlan.utils.Utils.txt
 
 /**
  * Drives the command fleet through its lifecycle: TRAVELING → BESIEGING → (GARRISONING →) RETURNING.
@@ -68,7 +69,7 @@ class SiegeAssignmentAI(
                         fleet.clearAssignments()
                         fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE,
                             gm.primaryEntity, SiegeConfig.GARRISON_DURATION_DAYS,
-                            "garrisoning ${gm.name}")
+                            txt("siege_assign_garrison").format(gm.name))
                     }
                 }
             }
@@ -92,7 +93,7 @@ class SiegeAssignmentAI(
         fleet.clearAssignments()
         val home = sourceMarket.primaryEntity
         fleet.addAssignment(FleetAssignment.GO_TO_LOCATION, home, 1000f,
-            "returning to ${sourceMarket.name}")
+            txt("siege_assign_return").format(sourceMarket.name))
         fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, home, 1000f)
     }
 
@@ -101,7 +102,7 @@ class SiegeAssignmentAI(
         val anchor = loc.jumpPoints.firstOrNull() ?: fleet.starSystem?.center ?: return
         fleet.clearAssignments()
         fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, anchor, 9999f,
-            "besieging ${loc.nameWithLowercaseType}")
+            txt("siege_assign_besiege").format(loc.nameWithLowercaseType))
     }
 
     private fun findManager(): SiegeManager? = SiegeManager.get()

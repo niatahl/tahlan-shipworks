@@ -8,7 +8,6 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI
 import com.fs.starfarer.api.impl.campaign.ids.Tags
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventFactor
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventIntel
-import com.fs.starfarer.api.impl.campaign.intel.events.BaseEventIntel.StageIconSize
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseFactorTooltip
 import com.fs.starfarer.api.impl.campaign.intel.events.BaseOneTimeFactor
 import com.fs.starfarer.api.ui.SectorMapAPI
@@ -53,6 +52,9 @@ class SiegeIntel(
     private var dispCommandCR     = 1f
     private var dispIntensity     = 1f
     private var dispRaidFleets    = 0
+    // The meter only advances while the command fleet is present, so once it is killed or withdrawn
+    // every projection must read zero instead of extrapolating from the last live snapshot.
+    private var dispFrozen        = false
 
     init {
         // Manager owns lifecycle (it calls intelManager.addIntel) — do NOT addIntel here.
@@ -84,6 +86,7 @@ class SiegeIntel(
         dispCommandCR    = siege.commandCR
         dispIntensity    = siege.intensity
         dispRaidFleets   = siege.raidFleets.count { it.isAlive }
+        dispFrozen       = !siege.commandFleetPresent
         setProgress(siege.captureProgress.roundToInt().coerceIn(0, MAX_PROGRESS))
     }
 
@@ -94,6 +97,15 @@ class SiegeIntel(
     /** Push a one-time fleet-kill factor (display-only; the manager already knocked the meter back). */
     fun addFleetKill(knockback: Float, isCommand: Boolean) {
         addFactor(FleetKillFactor(knockback, isCommand))
+    }
+
+    /**
+     * Surface a command-fleet withdrawal. A command *kill* already shows up via [addFleetKill], but a
+     * withdrawal was previously invisible even though it halts subjugation just the same.
+     */
+    fun notifyWithdrawal() {
+        addFactor(CommandWithdrawnFactor())
+        sendUpdateIfPlayerHasIntel(null, false)
     }
 
     /** Resolve as one of BROKEN / LIFTED / SUCCEEDED. Pays out accrued bounty. Safe to call once. */
@@ -125,8 +137,10 @@ class SiegeIntel(
 
     // Feeds the bar's projected-monthly tooltip only (reportEconomyTick is a no-op, so this never
     // drives progress). Net monthly subjugation = base rate * strangle * CR brake over ~a month.
+    // Zero once the command fleet is gone — the manager stops advancing the meter at that point.
     override fun getMonthlyProgress(): Int =
-        (SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * DAYS_PER_MONTH * dispPressureMult * dispCommandCR).roundToInt()
+        if (dispFrozen) 0
+        else (SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * DAYS_PER_MONTH * dispPressureMult * dispCommandCR).roundToInt()
 
     override fun getFactionForUIColors(): FactionAPI =
         Global.getSector().getFaction(TahlanIDs.LEGIO) ?: super.getFactionForUIColors()
@@ -242,7 +256,10 @@ class SiegeIntel(
         override fun shouldShow(intel: BaseEventIntel): Boolean = true
         override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_blockade")
         override fun getProgressStr(intel: BaseEventIntel): String =
-            "+" + (SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * DAYS_PER_MONTH * dispPressureMult).roundToInt()
+            if (dispFrozen) "+0"
+            else "+" + (SiegeConfig.CAPTURE_PROGRESS_PER_DAY_BASE * DAYS_PER_MONTH * dispPressureMult).roundToInt()
+        override fun getProgressColor(intel: BaseEventIntel): Color =
+            if (dispFrozen) Misc.getGrayColor() else super.getProgressColor(intel)
         override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator = factorTip("siege_factortip_blockade")
     }
 
@@ -293,14 +310,25 @@ class SiegeIntel(
         override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
         override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
             factorTip(if (isCommand) "siege_factortip_kill_command" else "siege_factortip_kill_escort")
-        override fun addBulletPointForOneTimeFactor(intel: BaseEventIntel, info: TooltipMakerAPI, tc: Color, initPad: Float) {
-            if (isCommand) {
-                info.addPara(txt("siege_killbullet_command"), tc, initPad)
-            } else {
-                info.addPara("${txt("siege_killbullet_escort")}: %s", initPad,
-                    Misc.getPositiveHighlightColor(), "-" + knockback.roundToInt())
-            }
-        }
+        // No addBulletPointForOneTimeFactor override: BaseEventIntel.addEventFactorBulletPoints only
+        // renders a factor's bullet when `isUpdate && getListInfoParam() is EventFactor` — i.e. when
+        // that factor was itself the update payload — and BaseEventIntel.addFactor only sends such an
+        // update when getProgress() != 0. These factors pass super(0), so the bullet is unreachable.
+        // (SiegeIntel never calls addEventFactorBulletPoints itself either.) Same goes for
+        // CommandWithdrawnFactor below.
+    }
+
+    /**
+     * One-time factor announcing that the command fleet withdrew. Same shape as [FleetKillFactor]'s
+     * command branch — `super(0)` so it never mutates `progress`, and no number to show, since the
+     * effect is simply that all subjugation progress halts.
+     */
+    inner class CommandWithdrawnFactor : BaseOneTimeFactor(0) {
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_withdrawal")
+        override fun getProgressStr(intel: BaseEventIntel): String = ""
+        override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
+            factorTip("siege_factortip_withdrawal")
     }
 
     companion object {

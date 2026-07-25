@@ -34,6 +34,119 @@ reduced when siege fleets are destroyed. Reaching the maximum SHALL resolve the 
 
 ## MODIFIED Requirements
 
+### Requirement: Periodic, scaling siege launches
+
+A siege manager SHALL periodically launch sieges from the largest non-hidden Legio market against an eligible hostile star system, with intensity scaling on campaign progress, subject to an active-siege cap, and only while the feature is enabled.
+
+#### Scenario: Launch from largest Legio market against a hostile system
+- **WHEN** the launch interval elapses and the feature is enabled and the active-siege cap is not reached
+- **THEN** a siege expedition is spawned from the largest non-hidden Legio market targeting an eligible hostile system (weighted by market size)
+
+#### Scenario: Ineligible targets excluded
+- **WHEN** the manager picks a target
+- **THEN** systems with no non-hidden hostile market, systems already hosting a Legio presence or an active siege, and (under Nexerelin) systems whose only eligible markets are Nex-protected/story markets are excluded
+
+#### Scenario: Targeting follows Legio relations and wars
+- **WHEN** the manager weights candidate systems and declares a primary target market
+- **THEN** systems hosting markets of factions with worse relations to Legio are weighted proportionally higher — a continuous grade rather than a flat at-war step — and the declared primary target market is the worst-relation hostile market in the chosen system
+
+#### Scenario: Primary target declared at launch
+- **WHEN** a siege is launched
+- **THEN** a single primary target market is fixed for the siege, and pressure, raids, and (under Nexerelin) capture all concentrate on it
+
+#### Scenario: Scaling is not tied to the hardcoded start cycle
+- **WHEN** siege intensity (command/escort fleet points, escort count, raid cadence) is computed
+- **THEN** it scales on elapsed campaign time and/or a Legio-strength metric, not on a hardcoded `currentCycle - 206` offset
+
+#### Scenario: Disabled feature launches nothing
+- **WHEN** the siege feature toggle is off
+- **THEN** no new siege is launched
+
+### Requirement: Two-value health model with mandatory mop-up
+
+A siege SHALL track an overall **siege health** value and a separate **command-fleet combat-readiness (CR)** value. The siege SHALL be fully broken only when siege health reaches zero. Removing the command fleet SHALL stop all siege-health regeneration but SHALL NOT by itself reduce siege health to zero.
+
+#### Scenario: Command fleet is the biggest health contributor and the regen source
+- **WHEN** the command fleet is present and coordinating
+- **THEN** siege health regenerates over time (regen strength scaling with command CR), and the command fleet represents the single largest contribution to siege health
+
+#### Scenario: Removing the command fleet stops regeneration
+- **WHEN** the command fleet is removed (destroyed or withdrawn)
+- **THEN** siege-health regeneration ceases and the command fleet's health contribution is removed
+
+#### Scenario: Decapitation still requires mop-up
+- **WHEN** the command fleet is removed while escort/blockade/raid forces remain
+- **THEN** the siege is not yet broken, and remaining siege health must be reduced to zero by destroying the residual fleets
+
+#### Scenario: Siege breaks at zero health
+- **WHEN** siege health reaches zero
+- **THEN** the siege ends as broken: remaining siege fleets disperse/withdraw, the besieged-market condition is removed, and the intel resolves
+
+#### Scenario: Decapitation before arrival disbands the expedition
+- **WHEN** the command fleet is destroyed while the expedition is still inbound, before the siege is established
+- **THEN** the siege resolves as Broken, the remaining escorts disperse home, and any accrued bounty pays out — the mandatory mop-up rule applies only to established sieges
+
+#### Scenario: A stalled mop-up eventually breaks
+- **WHEN** the command fleet is gone and no siege fleet has been destroyed for a configured timeout
+- **THEN** the siege resolves as Broken, the leaderless residuals having lost cohesion, so a siege can never persist indefinitely
+
+### Requirement: Faction-agnostic, FP-weighted attrition
+
+Losses inflicted on any siege fleet SHALL reduce siege health and strain command CR proportionally to the
+fleet points lost, regardless of which faction inflicted them. Losses SHALL be counted per fleet-point as
+they occur, including partial losses to a fleet that survives the engagement — not only the destruction of
+a whole fleet. Losses to the command fleet itself SHALL strain command CR. Besieged-faction patrols SHALL
+contribute identically to the player.
+
+#### Scenario: Player and defender kills count the same
+- **WHEN** a siege fleet is destroyed by the player or by a besieged-faction patrol
+- **THEN** siege health is reduced and command CR is strained by the same FP-weighted amount in both cases
+
+#### Scenario: Bigger kills hurt more
+- **WHEN** comparing the destruction of a high-FP escort to a low-FP picket
+- **THEN** the high-FP kill reduces siege health and strains command CR by a proportionally larger amount
+
+#### Scenario: Partial losses count as they happen
+- **WHEN** a siege fleet is mauled in an engagement but survives it
+- **THEN** the fleet points it lost immediately reduce siege health, strain command CR, and knock the
+  subjugation meter back — a fleet ground down over several engagements contributes the same attrition as
+  one destroyed outright, and grinding one down without killing it is never free
+
+#### Scenario: Command-fleet losses strain its readiness
+- **WHEN** the command fleet takes losses but is not destroyed
+- **THEN** command CR is strained proportionally to the fleet points it lost, slowing the subjugation
+  meter and bringing the rational-withdrawal floor closer, while siege health is unaffected (the command
+  fleet's health contribution remains its single all-or-nothing chunk)
+
+#### Scenario: Bounty share only on player involvement
+- **WHEN** a siege fleet is destroyed in a battle the player was involved in
+- **THEN** the player accrues a bounty share scaled by involvement, while non-player kills grant the player no payment
+
+### Requirement: Pressure on the besieged markets
+
+While a siege is active, the besieged system's hostile markets SHALL carry a siege market condition that
+applies economic pressure, periodically re-validated against current hostility and ownership, and removed
+cleanly when the siege ends.
+
+#### Scenario: Condition applied during the siege
+- **WHEN** a siege enters its besieging state
+- **THEN** the target system's non-hidden hostile markets gain a siege condition reducing accessibility/stability (and applying hazard/immigration penalties)
+
+#### Scenario: Markets that leave hostility lose the condition mid-siege
+- **WHEN** a conditioned market stops being a valid pressure target during the siege — its faction is no
+  longer hostile to Legio, it changes hands to Legio, or it leaves the economy
+- **THEN** the siege condition is removed from it on the next re-validation pass, without waiting for the
+  siege to end
+
+#### Scenario: Newly hostile markets gain the condition mid-siege
+- **WHEN** a market in the besieged system becomes hostile to Legio (or changes hands into a hostile
+  faction's column) after the siege was established
+- **THEN** it gains the siege condition on the next re-validation pass
+
+#### Scenario: Condition removed on resolution
+- **WHEN** a siege ends for any reason
+- **THEN** the siege condition is removed from all affected markets
+
 ### Requirement: Progressing intel reflecting command CR
 
 A siege SHALL present an intel entry, marking the target system, rendered as a colony-crisis-style event:
@@ -126,3 +239,10 @@ Nexerelin's invasion-fleet or faction-war systems.
 - **WHEN** a Nex siege capture occurs
 - **THEN** it does not enroll the siege in Nexerelin's invasion, faction-war scoring, alliance, or
   hard-mode mechanics
+
+#### Scenario: A target that stops being a valid objective lifts the siege
+
+- **WHEN** the primary target market is decivilized or leaves the economy, is transferred to Legio by other
+  means, or its faction is no longer hostile to Legio
+- **THEN** the siege resolves as Lifted without capture or scar — none of the outcome having been earned by
+  the siege itself

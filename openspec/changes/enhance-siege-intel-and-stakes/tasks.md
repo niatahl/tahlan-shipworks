@@ -34,7 +34,6 @@
 - [x] 5.5 Add display-only factors (all `getProgress()==0`): monthly `BlockadePressureFactor`, `RaidSortiesFactor`, `SiegeIntensityFactor`, and `CommandReadinessFactor` (`getAllProgressMult()` = `commandCR`, colored green when < 1); one-time `FleetKillFactor` (green, shown as a knock-back)
 - [x] 5.6 Add `syncProgress(siege)`: snapshot manager state, `setProgress(round(captureProgress))`, cache the projected-monthly value for the bar tooltip (fold in / replace `updateStage`)
 - [x] 5.7 Keep `addPlayerBounty`/`resolve` (bounty payout + campaign message + `endAfterDelay`); on `SUCCEEDED` `setProgress(100)`; do NOT override `isEnded()`
-- [x] 5.8 Add `readResolve()` that rebuilds `setup()` when `stages` is null/empty (save-compat for the superclass change)
 
 ## 6. Wire-up (SiegeManager call sites)
 
@@ -58,3 +57,24 @@
 - [ ] 8.5 No-Nex run to climax -> SUCCEEDED; target market gains `tahlan_siegeaftermath` (half-siege penalties) and its core industries show disrupted; condition + disruption clear after `AFTERMATH_DURATION_DAYS`
 - [ ] 8.6 Nex run to climax -> market transfers, garrison; save/reload mid-siege rebuilds the UI; toggle feature off -> clean teardown
 - [x] 8.7 Update `changelog.txt` with explicit stat changes (e.g. `CAPTURE_PROGRESS_PER_DAY_BASE 0.3 -> 0.6`) per changelog conventions
+
+## 9. Review fixes
+
+- [x] 9.1 Fix stat-modifier leak: `SiegeCondition.unapply` + new `SiegeAftermathCondition.unapply` now `unmodifyFlat` accessibility/stability/hazard (`BaseMarketConditionPlugin.unapply` is empty); plus a one-time `sweepLeakedConditionMods()` repair pass for existing dev saves
+- [x] 9.2 Fix permanent INBOUND stall: a command fleet lost before arrival now aborts the expedition as `BROKEN` (`flushKill`), and `pruneDeadSieges` resolves the intel on an INBOUND wipe too
+- [x] 9.3 Fix withdrawal leaving screening escorts stranded: `triggerWithdrawal` re-anchors escorts whose assignment target *is* the command fleet onto an in-system anchor; add `MOPUP_STALL_TIMEOUT_DAYS` / `INBOUND_TIMEOUT_DAYS` backstops so a siege can never persist forever
+- [x] 9.4 Complete the story-protection guard in `isNexProtected`: add `Misc.isStoryCritical` (distinct from `$core_noDeciv`) and Nex's `$nex_npc_no_invade`; documented as unconditional since we bypass `canBeInvaded`
+- [x] 9.5 Fix `getOrCreate` registering into `sector.listenerManager` (which never delivers `CampaignEventListener` callbacks) — use `SectorAPI.addListener`/`removeListener` with an `allListeners` double-registration guard
+- [x] 9.6 Stop the intel projecting positive monthly progress while the meter is frozen (`dispFrozen`), and surface command-fleet withdrawal as a one-time `CommandWithdrawnFactor` with new `siege_factor{,tip}_withdrawal` strings
+
+## 10. Gameplay & polish fixes
+
+- [x] 10.1 Count partial fleet losses toward attrition: `SiegeFleetListener` tracks a `lastFp` ledger and reports the FP delta per battle; `onSiegeFleetKilled` becomes `onSiegeFleetLosses(siegeId, lostFp, isCommand, destroyed, playerFraction)`, so grinding a fleet down feeds health/CR/meter as it happens instead of only on the killing blow
+- [x] 10.2 Strain command CR on command-fleet partial losses (no health damage or meter knockback — the CR drop already brakes the meter); add a BALANCE-PASS note at `STRAIN_K` since total strain sources increased
+- [x] 10.3 Scale the bounty by `BattleAPI.getPlayerInvolvementFraction()`: escort losses pay incrementally per FP shed, the command bounty stays a kill-only lump sum; intel factor rows are still emitted on kills only, to avoid row spam
+- [x] 10.4 Re-validate the primary target mid-siege in `advanceHealthModel`: a decivilized/depopulated target, one transferred to Legio by other means, or one whose faction is no longer hostile to Legio now resolves the siege as `LIFTED` — no undeserved `SUCCEEDED` climax
+- [x] 10.5 Maintain the pressure condition on a slow (2–3 day) interval via `maintainPressureConditions`: drop it from markets that left hostility / changed hands / left the economy, then re-run the idempotent `applyPressureCondition` to pick up newly hostile ones
+- [x] 10.6 Replace the dead target weighting in `pickTargetSystem` (a flat ×2 that applied to every candidate, plus a coarse ×1.5 step) with a continuous graded-hostility multiplier `1 + max(0, -worstRel)`
+- [x] 10.7 Externalize the last hardcoded player-facing prose: `siege_fleet_command_name` + `siege_assign_{travel,screen,blockade,intercept,raid,besiege,return,garrison}` in `strings.json`, fetched via `Utils.txt`; reword `siege_factortip_kill_escort` (the factor fires on defender kills too)
+- [x] 10.8 Give the escort liveness check in `pruneDeadSieges` the missing middle leg (`!containingLocation.fleets.contains(f)`), matching the command-fleet check
+- [x] 10.9 Remove dead code: `SiegeConfig.STAGE_{ENTRENCHED,STRAINED}_MIN_CR`, `SiegeData.commandFleetFP`, `FleetKillFactor.addBulletPointForOneTimeFactor` (unreachable for zero-progress one-time factors) and its `siege_killbullet_*` strings, the unused `StageIconSize` import, and the orphaned `siege_{intel_status,stage_entrenched,stage_strained,stage_faltering,intel_garrison}` strings

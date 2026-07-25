@@ -32,6 +32,16 @@ class SiegeAftermathCondition : BaseMarketConditionPlugin() {
         market.hazard.modifyFlat(id, hazardMod, label)
     }
 
+    override fun unapply(id: String) {
+        super.unapply(id)
+        // BaseMarketConditionPlugin.unapply is empty — every stat modified in apply() must be
+        // explicitly unmodified here or the flat mods persist on the market forever after the
+        // condition self-expires (cf. vanilla RecentUnrest / Habitable).
+        market.accessibilityMod.unmodifyFlat(id)
+        market.stability.unmodifyFlat(id)
+        market.hazard.unmodifyFlat(id)
+    }
+
     override fun advance(amount: Float) {
         super.advance(amount)
         elapsedDays += Global.getSector().clock.convertToDays(amount)

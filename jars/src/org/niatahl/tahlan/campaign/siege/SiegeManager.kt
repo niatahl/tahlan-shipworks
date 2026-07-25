@@ -22,6 +22,7 @@ import exerelin.utilities.NexConfig
 import org.niatahl.tahlan.utils.ModCompat
 import org.niatahl.tahlan.utils.TahlanSettings
 import org.niatahl.tahlan.utils.TahlanIDs
+import org.niatahl.tahlan.utils.Utils.txt
 import org.apache.log4j.Logger
 import kotlin.math.max
 import kotlin.math.min
@@ -53,7 +54,6 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
         var siegeHealth         = SiegeConfig.SIEGE_HEALTH_MAX
         var commandCR           = 1.0f
-        var commandFleetFP      = SiegeConfig.COMMAND_FP_BASE
         var commandFleetPresent = true
         var withdrawalOrdered   = false
         var garrisonMarket: MarketAPI? = null
@@ -72,14 +72,22 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     private val activeSieges = mutableListOf<SiegeData>()
     private val spawnTimer   = IntervalUtil(SiegeConfig.LAUNCH_INTERVAL_DAYS_MIN, SiegeConfig.LAUNCH_INTERVAL_DAYS_MAX)
     // Pending broken-checks deferred from battle callbacks (safe to do inline would risk CME
-    // if resolveSiege touches campaign listeners while CampaignEngine iterates them).
+    // if resolveSiege touches campaign listeners while CampaignEngine iterates them). Holds siege
+    // ids only — every deferred step reads its state off the SiegeData, not off the loss report.
     // @Transient + lazy getter: list is session-only (no cross-save meaning), and guards against
     // the field being null when loaded from a save that predates it (Java deserialization skips
     // constructors, leaving new val fields as null).
     @Transient
-    private var _pendingKills: MutableList<Triple<String, Float, Boolean>>? = null
-    private val pendingKills: MutableList<Triple<String, Float, Boolean>>
-        get() = _pendingKills ?: mutableListOf<Triple<String, Float, Boolean>>().also { _pendingKills = it }
+    private var _pendingKills: MutableList<String>? = null
+    private val pendingKills: MutableList<String>
+        get() = _pendingKills ?: mutableListOf<String>().also { _pendingKills = it }
+    // Slow cadence for maintainPressureConditions. Same @Transient + lazy-getter shape as
+    // _pendingKills, and for the same reason: a plain non-null IntervalUtil field added to the
+    // serialized manager would deserialize as null on any save that predates it, then NPE on tick.
+    @Transient
+    private var _conditionSweepTimer: IntervalUtil? = null
+    private val conditionSweepTimer: IntervalUtil
+        get() = _conditionSweepTimer ?: IntervalUtil(2f, 3f).also { _conditionSweepTimer = it }
     // Captured when the manager is first created (≈ campaign start, or feature-enable on an existing
     // save); persists with the manager. Used to scale siege intensity off elapsed campaign time.
     private val gameStartTimestamp: Long = Global.getSector().clock.timestamp
@@ -91,6 +99,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     override fun advance(amount: Float) {
         val days = Misc.getDays(amount)
+
+        // Runs before the feature gate: the leak it repairs is from conditions applied in the past,
+        // and self-disables after the first pass.
+        sweepLeakedConditionMods()
 
         if (!TahlanSettings.ENABLE_SIEGE) {
             if (activeSieges.isNotEmpty()) tearDown()
@@ -105,17 +117,22 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             return
         }
 
-        // Flush kills that were enqueued during battle callbacks (safe to resolve here,
+        // Flush losses that were enqueued during battle callbacks (safe to resolve here,
         // outside any CampaignEngine listener iteration)
         if (pendingKills.isNotEmpty()) {
-            for ((siegeId, fleetFp, isCommand) in pendingKills.toList()) {
-                flushKill(siegeId, fleetFp, isCommand)
+            for (siegeId in pendingKills.toList()) {
+                flushKill(siegeId)
             }
             pendingKills.clear()
         }
 
         pruneDeadSieges()
         advanceHealthModel(days)
+
+        // Keep the pressure condition pointed at whoever is actually hostile right now. Slow interval:
+        // this tracks diplomacy and market ownership, which move on the order of months.
+        conditionSweepTimer.advance(days)
+        if (conditionSweepTimer.intervalElapsed()) maintainPressureConditions()
 
         // Re-derive the spawn cadence from config so a mid-save LunaLib frequency-slider change takes
         // effect — the manager (and its spawnTimer) persists across saves, so the construction-time
@@ -139,15 +156,25 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     // --- Callbacks from SiegeFleetListener ---
 
-    /** Called from SiegeFleetListener (inside a battle callback) — enqueues the kill for safe
-     *  processing in the next advance() tick, avoiding CME in CampaignEngine's listener iteration. */
-    fun onSiegeFleetKilled(siegeId: String, fleetFp: Float, isCommand: Boolean, playerInvolved: Boolean) {
+    /**
+     * Called from SiegeFleetListener (inside a battle callback) — books the losses a siege fleet took
+     * and enqueues the siege for safe resolution in the next advance() tick, avoiding CME in
+     * CampaignEngine's listener iteration.
+     *
+     * [lostFp] is the fleet points the fleet *shed in this engagement*, not its spawn-time size, so a
+     * fleet ground down over several battles contributes attrition as it happens instead of only on
+     * the killing blow; [destroyed] flags that killing blow. [playerFraction] is the battle's
+     * player-involvement fraction and scales the bounty share.
+     */
+    fun onSiegeFleetLosses(siegeId: String, lostFp: Float, isCommand: Boolean, destroyed: Boolean, playerFraction: Float) {
         val siege = findSiege(siegeId) ?: return
 
         // Stat updates are safe inline (just field writes); complex resolution is deferred.
+        // Partial losses reset the loss clock as well as kills do: a siege actively being ground down
+        // is not stalled, so it should neither recover CR nor trip the mop-up stall timeout.
         siege.daysSinceLastLoss = 0f
 
-        if (isCommand) {
+        if (isCommand && destroyed) {
             // The command fleet's health contribution is solely its chunk — NOT the per-FP path —
             // so a kill matches a withdrawal (triggerWithdrawal) in health effect (per design: killing
             // vs. driving off differs only in reward), and always leaves the escort residual to mop up.
@@ -158,41 +185,70 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 val cmdChunk = SiegeConfig.SIEGE_HEALTH_MAX * SiegeConfig.COMMAND_HEALTH_SHARE
                 siege.siegeHealth = max(0f, siege.siegeHealth - cmdChunk)
             }
+        } else if (isCommand) {
+            // Command fleet bloodied but alive: bleeding the flagship force strains coordination, so it
+            // takes FP-weighted CR strain like any other loss. No health damage — the command's
+            // contribution to siege health is the one-shot chunk above, never the per-FP path — and no
+            // direct meter knockback either: the CR drop already brakes the subjugation meter through
+            // the commandCR multiplier in advanceHealthModel.
+            siege.commandCR = max(0f, siege.commandCR - lostFp * SiegeConfig.STRAIN_K)
         } else {
             // Escort/blockade/raid: uncapped per-FP health damage (floored at 0) + FP-weighted CR strain.
-            val healthDmg = fleetFp / SiegeConfig.HEALTH_PER_FP
+            val healthDmg = lostFp / SiegeConfig.HEALTH_PER_FP
             siege.siegeHealth = max(0f, siege.siegeHealth - healthDmg)
-            siege.commandCR = max(0f, siege.commandCR - fleetFp * SiegeConfig.STRAIN_K)
+            siege.commandCR = max(0f, siege.commandCR - lostFp * SiegeConfig.STRAIN_K)
             // Knock the subjugation meter back (a command kill already freezes it via commandFleetPresent).
-            siege.captureProgress = max(0f, siege.captureProgress - fleetFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP)
+            siege.captureProgress = max(0f, siege.captureProgress - lostFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP)
         }
 
-        if (playerInvolved) {
-            val bounty = if (isCommand) SiegeConfig.COMMAND_FLEET_BOUNTY
-                         else fleetFp * SiegeConfig.ESCORT_BOUNTY_PER_FP
-            siege.playerBountyAccrued += bounty
-            siege.intel?.addPlayerBounty(bounty)
+        // Bounty, scaled by how much of the battle was the player's own work. Escort losses pay out
+        // incrementally per FP shed; the command bounty stays a single kill-only lump sum (driving the
+        // flagship force off is not the same as putting it down).
+        val involvement = playerFraction.coerceIn(0f, 1f)
+        if (involvement > 0f) {
+            val bounty = when {
+                isCommand && destroyed -> SiegeConfig.COMMAND_FLEET_BOUNTY * involvement
+                isCommand              -> 0f
+                else                   -> lostFp * SiegeConfig.ESCORT_BOUNTY_PER_FP * involvement
+            }
+            if (bounty > 0f) {
+                siege.playerBountyAccrued += bounty
+                siege.intel?.addPlayerBounty(bounty)
+            }
         }
 
         // Surface the kill as a one-time factor (display-only; the meter was already knocked back).
-        val knockback = if (isCommand) 0f else fleetFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP
-        siege.intel?.addFleetKill(knockback, isCommand)
+        // Kills only: a row per bruising engagement would spam the factor table, and partial losses
+        // are already legible in the bar receding.
+        if (destroyed) {
+            val knockback = if (isCommand) 0f else lostFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP
+            siege.intel?.addFleetKill(knockback, isCommand)
+        }
 
         // Defer CR application and broken-check to advance() — safe side of the battle callback boundary
-        pendingKills.add(Triple(siegeId, fleetFp, isCommand))
+        pendingKills.add(siegeId)
     }
 
-    private fun flushKill(siegeId: String, fleetFp: Float, isCommand: Boolean) {
+    private fun flushKill(siegeId: String) {
         val siege = findSiege(siegeId) ?: return
         applyCommandCR(siege)
         checkBroken(siege)
+        // Decapitation before arrival: the stage only leaves INBOUND via onCommandFleetArrived, which
+        // is driven by the command fleet's own SiegeAssignmentAI — so a command fleet lost en route
+        // would leave the siege stuck INBOUND forever (which also blocks every future launch, since
+        // spawnTimer only ticks while activeSieges is empty). Abort the whole expedition instead:
+        // escorts disperse home and the accrued bounty pays out. Covers both the battle-kill path and
+        // the non-battle despawn path (both funnel through onSiegeFleetLosses -> pendingKills).
+        if (siege.stage == SiegeData.Stage.INBOUND && !siege.commandFleetPresent) {
+            resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN)
+        }
     }
 
     fun onSiegeFleetDespawned(siegeId: String, fleetFp: Float, isCommand: Boolean) {
         val siege = findSiege(siegeId) ?: return
         if (isCommand && siege.commandFleetPresent && !siege.withdrawalOrdered) {
             // Unexpected non-battle despawn of command fleet — treat as killed for health accounting
-            onSiegeFleetKilled(siegeId, fleetFp, true, false)
+            onSiegeFleetLosses(siegeId, fleetFp, true, destroyed = true, playerFraction = 0f)
         }
         if (isCommand) siege.commandFleetPresent = false
     }
@@ -207,7 +263,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // which appends the (separately-tasked) blockade fleets to the same escortFleets list.
         for (escort in siege.escortFleets.filter { it.isAlive }) {
             escort.clearAssignments()
-            escort.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, fleet, 9999f, "screening ${fleet.name}")
+            escort.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, fleet, 9999f,
+                txt("siege_assign_screen").format(fleet.name))
         }
         spawnBlockadeFleets(siege)
         siege.intel?.syncProgress(siege)
@@ -233,9 +290,22 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     // --- Health model (called each advance tick) ---
 
     private fun advanceHealthModel(days: Float) {
+        val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO)
         for (siege in activeSieges.toList()) {
-            if (siege.stage != SiegeData.Stage.BESIEGING) continue
+            // Both live stages age; anything else is already resolved and awaiting pruning.
+            if (siege.stage != SiegeData.Stage.INBOUND && siege.stage != SiegeData.Stage.BESIEGING) continue
             siege.daysElapsed += days
+
+            if (siege.stage == SiegeData.Stage.INBOUND) {
+                // Travel backstop: an expedition that never arrives would otherwise sit INBOUND
+                // forever, which also blocks every future launch (spawnTimer only ticks while no
+                // siege is active). Everything below is besieging-only.
+                if (siege.daysElapsed >= SiegeConfig.INBOUND_TIMEOUT_DAYS) {
+                    LOG.info("Tahlan siege: ${siege.id} never reached ${siege.targetSystem.baseName} — lifted on travel timeout")
+                    resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED)
+                }
+                continue
+            }
 
             // CR recovery: no losses within window → recover toward 1.0
             siege.daysSinceLastLoss += days
@@ -269,15 +339,41 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
             // ── Resolution checks ──
 
+            // LIFTED: the target stopped being a valid one. Eligibility is otherwise only checked at
+            // launch, so a mid-siege change of circumstance — a Nexerelin peace treaty, the market
+            // decivilizing or being depopulated, or someone else taking it (including another Legio
+            // force) — would otherwise still end in "subjugating" a market Legio has no quarrel with,
+            // or in laying siege to a rock. All of those resolve LIFTED: the expedition packs up with
+            // no capture and no scar, since none of it was earned by the siege — there is no
+            // undeserved SUCCEEDED climax to be had here.
+            val target = siege.primaryTargetMarket
+            if (target != null) {
+                val gone = !target.isInEconomy || target.hasCondition(Conditions.DECIVILIZED)
+                if (gone || target.factionId == TahlanIDs.LEGIO || !legioFaction.isHostileTo(target.faction)) {
+                    LOG.info("Tahlan siege: ${siege.id} target ${target.name} is no longer a valid objective — lifted")
+                    resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED); continue
+                }
+            }
+
             // BROKEN: siege health 0 (universal counter in both pathways)
             if (siege.siegeHealth <= 0f) { resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); continue }
+
+            // BROKEN: stalled mop-up. The command fleet is gone but nobody is finishing off the
+            // residual fleets, so the health bar would never reach 0 and the siege (plus its pressure
+            // condition) would persist indefinitely. daysSinceLastLoss resets on every siege-fleet
+            // loss, partials included, so an actively-ground siege never trips this — only a genuinely
+            // abandoned one.
+            if (!siege.commandFleetPresent && siege.daysSinceLastLoss >= SiegeConfig.MOPUP_STALL_TIMEOUT_DAYS) {
+                LOG.info("Tahlan siege: ${siege.id} mop-up stalled for ${"%.0f".format(siege.daysSinceLastLoss)} days — broken")
+                resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); continue
+            }
 
             // Unified subjugation meter — advances in BOTH modes while the command fleet coordinates
             // the strangle (a withdrawn/destroyed command freezes commandFleetPresent). There is no
             // fixed siege lifetime anymore: both pathways are pure races between the meter filling and
             // the siege being broken. Rate is scaled by how strangled the target is and braked by CR.
             if (siege.commandFleetPresent) {
-                val target = siege.primaryTargetMarket
+                // `target` was resolved (and re-validated) with the resolution checks above.
                 val pressureMult = if (target != null) {
                     val accessibility = target.accessibilityMod.computeEffective(0f).coerceIn(0f, 1f)
                     1f + max(0f, 0.7f - accessibility)  // more strangled = faster
@@ -364,7 +460,22 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             val cmdChunk = SiegeConfig.SIEGE_HEALTH_MAX * SiegeConfig.COMMAND_HEALTH_SHARE
             siege.siegeHealth = max(0f, siege.siegeHealth - cmdChunk)
         }
+        // Cut the screening escorts loose. onCommandFleetArrived parked them on ORBIT_AGGRESSIVE around
+        // the command FLEET; left alone they trail it home into Legio space and idle there forever once
+        // it despawns — still alive in escortFleets, so the residual could never be mopped up and the
+        // pressure condition would stick. Re-anchor them in-system instead. Matched by IDENTITY of the
+        // assignment target, not action text; the blockade fleets target jump points and are untouched.
+        siege.commandFleet?.let { cmd ->
+            val anchor = siege.targetSystem.jumpPoints.firstOrNull() ?: siege.targetSystem.center
+            for (escort in siege.escortFleets.filter { it.isAlive }) {
+                if (escort.currentAssignment?.target !== cmd) continue
+                escort.clearAssignments()
+                escort.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, anchor, 9999f,
+                    txt("siege_assign_blockade").format(anchor.name))
+            }
+        }
         // The SiegeAssignmentAI polls isSiegeWithdrawing() and calls orderReturn() on itself
+        siege.intel?.notifyWithdrawal()
     }
 
     // --- Siege resolution ---
@@ -405,6 +516,65 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             try { market.removeCondition(TahlanIDs.SIEGE_CONDITION_ID) } catch (_: Exception) {}
         }
         siege.conditionedMarkets.clear()
+    }
+
+    /**
+     * Re-validate the pressure condition against the current state of the besieged system.
+     * [applyPressureCondition] only ever runs once, on arrival, so on its own the condition sticks to
+     * markets that made peace with Legio or changed hands mid-siege, and never reaches markets that
+     * turned hostile (or were founded) after the expedition arrived. Called from [advance] on the slow
+     * [conditionSweepTimer] cadence.
+     */
+    private fun maintainPressureConditions() {
+        val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO)
+        for (siege in activeSieges) {
+            if (siege.stage != SiegeData.Stage.BESIEGING) continue
+            for (market in siege.conditionedMarkets.toList()) {
+                val stillValid = market.isInEconomy &&
+                        market.factionId != TahlanIDs.LEGIO &&
+                        legioFaction.isHostileTo(market.faction)
+                if (stillValid) continue
+                try { market.removeCondition(TahlanIDs.SIEGE_CONDITION_ID) } catch (_: Exception) {}
+                siege.conditionedMarkets.remove(market)
+            }
+            // Idempotent (hasCondition-guarded), so this is purely additive: it picks up markets in the
+            // besieged system that have newly become hostile to Legio or newly changed hands into a
+            // hostile faction's column.
+            applyPressureCondition(siege)
+        }
+    }
+
+    /**
+     * One-time repair for saves made before [SiegeCondition] / [SiegeAftermathCondition] learned to
+     * unapply their stat mods. `BaseMarketConditionPlugin.unapply()` is empty, so removing either
+     * condition used to leave its flat accessibility/stability/hazard mods on the market forever.
+     * Sweeps every market that does NOT currently carry the condition and drops any orphaned flat mod
+     * keyed to it — mod keys are `MarketConditionAPI.idForPluginModifications`, i.e.
+     * `"<conditionId>_<uid>"`, so a prefix match is exact. The leak never shipped in a release, so
+     * this can be dropped once dev saves have rolled over.
+     */
+    private fun sweepLeakedConditionMods() {
+        val sector = Global.getSector()
+        if (sector.memoryWithoutUpdate.getBoolean(SIEGE_LEAK_SWEPT_KEY)) return
+        sector.memoryWithoutUpdate.set(SIEGE_LEAK_SWEPT_KEY, true, 0f)
+
+        var cleaned = 0
+        for (market in sector.economy.marketsCopy) {
+            val stale = listOf(TahlanIDs.SIEGE_CONDITION_ID, TahlanIDs.SIEGE_AFTERMATH_CONDITION_ID)
+                .filterNot { market.hasCondition(it) }
+            if (stale.isEmpty()) continue
+            // Snapshot the key sets first — unmodifyFlat mutates the backing maps.
+            for (key in market.accessibilityMod.flatBonuses.keys.toList()) {
+                if (stale.any { key.startsWith(it) }) { market.accessibilityMod.unmodifyFlat(key); cleaned++ }
+            }
+            for (key in market.stability.flatMods.keys.toList()) {
+                if (stale.any { key.startsWith(it) }) { market.stability.unmodifyFlat(key); cleaned++ }
+            }
+            for (key in market.hazard.flatMods.keys.toList()) {
+                if (stale.any { key.startsWith(it) }) { market.hazard.unmodifyFlat(key); cleaned++ }
+            }
+        }
+        if (cleaned > 0) LOG.info("Tahlan siege: swept $cleaned leaked siege-condition stat mod(s)")
     }
 
     // --- Fleet spawning ---
@@ -452,7 +622,6 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             return null
         }
         siege.commandFleet = cmdFleet
-        siege.commandFleetFP = cmdFleet.fleetPoints.toFloat()
 
         // Intel entry — only now that the siege force actually exists.
         val intel = SiegeIntel(targetSystem, primaryMarket, ModCompat.HAS_NEX)
@@ -472,14 +641,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val travelDest = targetSystem.center
         cmdFleet.clearAssignments()
         cmdFleet.addAssignment(FleetAssignment.GO_TO_LOCATION, travelDest, 1000f,
-            "en route to ${targetSystem.nameWithLowercaseType}")
+            txt("siege_assign_travel").format(targetSystem.nameWithLowercaseType))
         cmdFleet.addScript(SiegeAssignmentAI(cmdFleet, source, id))
 
         // Escort travel alongside
         for (escort in siege.escortFleets) {
             escort.clearAssignments()
             escort.addAssignment(FleetAssignment.GO_TO_LOCATION, travelDest, 1000f,
-                "en route to ${targetSystem.nameWithLowercaseType}")
+                txt("siege_assign_travel").format(targetSystem.nameWithLowercaseType))
         }
 
         activeSieges.add(siege)
@@ -509,7 +678,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val fleet = FleetFactoryV3.createFleet(params)
         if (fleet == null || fleet.isEmpty) return null
         fleet.setFaction(TahlanIDs.LEGIO, true)
-        fleet.name = "Vanguard"
+        fleet.name = txt("siege_fleet_command_name")
         tagSiegeFleet(fleet, siegeId, fp, isCommand = true)
         val loc = source.primaryEntity.location
         source.primaryEntity.containingLocation.addEntity(fleet)
@@ -541,7 +710,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             siege.targetSystem.addEntity(fleet)
             fleet.setLocation(jp.location.x, jp.location.y)
             fleet.clearAssignments()
-            fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, jp, 9999f, "blockading ${jp.name}")
+            fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, jp, 9999f,
+                txt("siege_assign_blockade").format(jp.name))
             fleet.addScript(SiegeBlockadeAI(fleet, jp, siege.primaryTargetMarket, siege.id))
             fleet.addEventListener(SiegeFleetListener(siege.id, SiegeConfig.ESCORT_FP_BASE, isCommandFleet = false))
             siege.escortFleets.add(fleet)
@@ -565,7 +735,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         siege.targetSystem.addEntity(fleet)
         fleet.setLocation(spawnAnchor.location.x, spawnAnchor.location.y)
         fleet.clearAssignments()
-        fleet.addAssignment(FleetAssignment.RAID_SYSTEM, raidTarget, 30f, "raiding ${raidTarget.name}")
+        fleet.addAssignment(FleetAssignment.RAID_SYSTEM, raidTarget, 30f,
+            txt("siege_assign_raid").format(raidTarget.name))
         fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, siege.sourceMarket.primaryEntity, 60f)
         fleet.addEventListener(SiegeFleetListener(siege.id, fp, isCommandFleet = false))
         siege.raidFleets.add(fleet)
@@ -621,15 +792,20 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 !f.containingLocation.fleets.contains(f) ||
                 !f.isAlive
             } ?: true
+            // Same triple check — the middle leg catches a fleet stripped from its location's fleet
+            // list mid-transition, which the two-leg version used to read as still alive.
             val noEscorts = siege.escortFleets.all { f ->
-                f.containingLocation == null || !f.isAlive
+                f.containingLocation == null ||
+                !f.containingLocation.fleets.contains(f) ||
+                !f.isAlive
             }
             if (cmdGone && !siege.commandFleetPresent && noEscorts && siege.raidFleets.isEmpty()) {
-                // All fleets gone and command already accounted for — auto-broken (mopped up)
-                if (siege.stage == SiegeData.Stage.BESIEGING) {
-                    removePressureCondition(siege)
-                    siege.intel?.resolve(SiegeIntel.SiegeOutcome.BROKEN)
-                }
+                // All fleets gone and command already accounted for — auto-broken (mopped up).
+                // Stage here is always INBOUND or BESIEGING (later stages were filtered above), and an
+                // INBOUND wipe must resolve its intel too, or the entry hangs in the feed forever.
+                // removePressureCondition is a safe no-op on an empty conditionedMarkets list.
+                removePressureCondition(siege)
+                siege.intel?.resolve(SiegeIntel.SiegeOutcome.BROKEN)
                 toRemove.add(siege)
             }
         }
@@ -683,11 +859,13 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         for (system in sector.starSystems) {
             val (primaryMarket, eligibleMarkets) = evaluateTarget(system) ?: continue
 
-            // Weight: combined market size + hostility + prioritize at-war factions
+            // Weight: combined market size, graded by how much Legio hates the primary target's owner.
             var weight = eligibleMarkets.sumOf { it.size.toInt() }.toFloat() * 10f
             val worstRel = legioFaction.getRelationship(primaryMarket.factionId)
-            if (worstRel < -0.5f) weight *= 1.5f
-            if (legioFaction.isHostileTo(sector.getFaction(primaryMarket.factionId))) weight *= 2f
+            // Graded hostility: deeper hatred = likelier target (-0.5 relation → ×1.5, -1.0 → ×2.0).
+            // Replaces a flat ×2 that applied to every candidate, since all candidates are hostile by
+            // construction, plus an equally coarse ×1.5 step at relation < -0.5.
+            weight *= 1f + max(0f, -worstRel)
 
             // Distance weight: prefer closer targets (inverse-distance with floor)
             val dist = Misc.getDistance(source.locationInHyperspace, system.location)
@@ -729,14 +907,25 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         } catch (_: Exception) { false }
     }
 
+    /**
+     * True when this market must never be captured. attemptNexCapture calls Nex's
+     * SectorManager.transferMarket directly, bypassing Nex's own NexUtilsMarket.canBeInvaded checks,
+     * so this guard is the ONLY gate — it is deliberately unconditional. In particular we do not
+     * consult NexConfig.allowInvadeStoryCritical: the spec says story-protected markets are never
+     * captured, full stop.
+     */
     private fun isNexProtected(market: MarketAPI): Boolean {
-        // Story-critical markets are flagged no-deciv by quests; never capture those (holds even
-        // without Nex). Also honor Nex's faction-level "invasion only to retake" territory rule.
+        // Vanilla story protection — these are two DISTINCT flags and both must be checked:
+        // $storyCritical (Misc.isStoryCritical) and $core_noDeciv (quests flag no-deciv markets).
+        // Both hold even without Nex.
+        if (Misc.isStoryCritical(market)) return true
         if (market.memoryWithoutUpdate.getBoolean(DecivTracker.NO_DECIV_KEY)) return true
         if (!ModCompat.HAS_NEX) return false
         try {
             if (NexConfig.getFactionConfig(market.factionId)?.invasionOnlyRetake == true) return true
         } catch (_: Exception) {}
+        // Nex's own per-market opt-out, honored even though we bypass canBeInvaded.
+        if (market.memoryWithoutUpdate.getBoolean(NEX_NPC_NO_INVADE)) return true
         return false
     }
 
@@ -839,6 +1028,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Nex constant outside a HAS_NEX guard; it's a serialized memory key and is stable.
         const val NEX_MARKET_EXISTED_AT_START = "\$nex_existed_at_start"
 
+        // Nexerelin's ExerelinConstants.MEMORY_KEY_NPC_NO_INVADE — per-market opt-out from NPC
+        // invasion. Hardcoded as a literal for the same reason as the key above: no hard link to the
+        // Nex constant, and it's a serialized memory key so it's stable.
+        const val NEX_NPC_NO_INVADE = "\$nex_npc_no_invade"
+
+        // One-shot marker for the legacy stat-mod leak repair (see sweepLeakedConditionMods).
+        const val SIEGE_LEAK_SWEPT_KEY = "\$tahlan_siegeleak_swept"
+
         val LOG: Logger = Global.getLogger(SiegeManager::class.java)!!
 
         /**
@@ -875,6 +1072,14 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
          * Idempotent — safe to call on every onGameLoad. Reuses the instance that persisted with the
          * save (found via the scripts list) and prunes any duplicates left by the old bug, so exactly
          * one manager runs and every lookup resolves to it.
+         *
+         * Event-listener registration is handled entirely through [SectorAPI.addListener]: a freshly
+         * constructed manager registers itself there via `BaseCampaignEventListener(true)`, and that
+         * list persists in the save, so a deserialized manager is already registered. The defensive
+         * re-add below only covers a manager that somehow round-tripped in `scripts` but not in the
+         * listener list. Note `sector.listenerManager` is a *different* registry
+         * (`ListenerManagerAPI`) that never delivers `CampaignEventListener` callbacks — registering
+         * there would silently receive nothing.
          */
         fun getOrCreate(): SiegeManager {
             val sector = Global.getSector()
@@ -887,11 +1092,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             for (dup in managers) {
                 if (dup !== mgr) {
                     sector.removeScript(dup)
-                    sector.listenerManager.removeListener(dup)
+                    sector.removeListener(dup)
                 }
             }
-            if (!sector.listenerManager.hasListenerOfClass(SiegeManager::class.java))
-                sector.listenerManager.addListener(mgr)   // persistent (isTransient defaults to false)
+            // Guard against double registration (which would double every callback).
+            if (sector.allListeners.none { it === mgr }) sector.addListener(mgr)
             sector.persistentData[TahlanIDs.SIEGE_MANAGER_KEY] = mgr
             sector.memoryWithoutUpdate.set(TahlanIDs.SIEGE_MANAGER_KEY, mgr, 0f)
             return mgr
