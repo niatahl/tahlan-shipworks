@@ -15,6 +15,7 @@ import com.fs.starfarer.api.impl.campaign.missions.SurplusShipHull
 import com.fs.starfarer.api.util.Misc
 import org.niatahl.tahlan.utils.TahlanIDs.DAEMONS
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
+import org.niatahl.tahlan.utils.TahlanIDs.TRIGGERED
 import kotlin.math.roundToInt
 
 class DaemonSurplusShipHull : SurplusShipHull() {
@@ -23,7 +24,7 @@ class DaemonSurplusShipHull : SurplusShipHull() {
         val person = person ?: return false
         val market = person.market ?: return false
         if (!Misc.getAllowedRecoveryTags().contains(Tags.AUTOMATED_RECOVERABLE)) return false
-        if (!Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) return false
+        if (!Global.getSector().memoryWithoutUpdate.getBoolean(TRIGGERED)) return false
         if (person.relToPlayer.rel < 0.5f) return false
         if (!setPersonMissionRef(person, "\$sShip_ref")) return false
 

@@ -35,6 +35,9 @@ import org.niatahl.tahlan.utils.TahlanIDs.TAG_DAEMONIZE
 import org.niatahl.tahlan.utils.TahlanIDs.HEL_CARAPACE
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.TahlanIDs.LEGIO
+import org.niatahl.tahlan.utils.TahlanIDs.TRIGGERED
+import org.niatahl.tahlan.utils.TahlanIDs.GAVE_PK_TO_LEGIO
+import org.niatahl.tahlan.utils.TahlanIDs.PK_STRIKE_RESOLVED
 import org.niatahl.tahlan.utils.ModCompat
 import org.niatahl.tahlan.utils.TahlanSettings
 import org.niatahl.tahlan.utils.TahlanRegistry
@@ -244,15 +247,19 @@ class TahlanModPlugin : BaseModPlugin() {
                 sector.addTransientScript(LegioStealingHomework())
             }
 
+            // Once the Legio is awoken (or quietly holds a gifted planetkiller), the daemons are out
+            // for good — the enableDaemons toggle only applies before that point.
+            val daemonsLoose = sector.memoryWithoutUpdate.getBoolean(TRIGGERED)
+                || sector.memoryWithoutUpdate.getBoolean(GAVE_PK_TO_LEGIO)
+
             // Add our listener for stuff
             if (ENABLE_DAEMONS) {
                 sector.addTransientListener(TahlanTrigger())
-            } else {
+            } else if (!daemonsLoose) {
                 removeDaemons(sector)
             }
             // If somehow the Daemons are missing, add them (also covers the quiet planetkiller-gift state)
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")
-                || Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio")) {
+            if (daemonsLoose) {
                 addDaemons(sector)
             }
             val legio = Global.getSector().getFaction(LEGIO)
@@ -263,13 +270,11 @@ class TahlanModPlugin : BaseModPlugin() {
                 if (INDEVO_ARTY) addArtillery()
                 if (INDEVO_MINES) addMines()
                 // Daemon upgrade now also upgrades defenses
-                if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")
-                    || Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio"))
-                    upgradeDefenses()
+                if (daemonsLoose) upgradeDefenses()
             }
         }
         if (HAS_NEX) {
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) {
+            if (Global.getSector().memoryWithoutUpdate.getBoolean(TRIGGERED)) {
                 if (!NexConfig.getFactionConfig(LEGIO).diplomacyTraits.contains("monstrous")) {
                     NexConfig.getFactionConfig(LEGIO).diplomacyTraits.add("monstrous")
                 }
@@ -300,33 +305,34 @@ class TahlanModPlugin : BaseModPlugin() {
         override fun reportEconomyMonthEnd() {
             val sector = Global.getSector()
             // Keep daemons topped up whenever they're enabled — full awakening OR a planetkiller gift.
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")
-                || Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio")) {
+            if (sector.memoryWithoutUpdate.getBoolean(TRIGGERED)
+                || sector.memoryWithoutUpdate.getBoolean(GAVE_PK_TO_LEGIO)) {
                 LOGGER.info("Daemons lurk")
                 addDaemons(sector)  // retroactively add new daemons for mid-campaign updates
             }
             // Already fully awoken → nothing left to roll.
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) return
+            if (sector.memoryWithoutUpdate.getBoolean(TRIGGERED)) return
             // A gifted planetkiller strike is still pending → hold the betrayal back; the Legio stays
             // friendly until it lands (the delayed betrayal — see PlanetkillerStrike). Once the strike
             // resolves by interception, that suppression lifts and the natural incursion resumes below:
             // a gift only delays the reckoning, it never cancels it. Without a gift, this flips as normal.
-            if (Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_gavePKtoLegio")
-                && !Global.getSector().memoryWithoutUpdate.getBoolean("\$tahlan_pkStrikeResolved")) return
+            if (sector.memoryWithoutUpdate.getBoolean(GAVE_PK_TO_LEGIO)
+                && !sector.memoryWithoutUpdate.getBoolean(PK_STRIKE_RESOLVED)) return
 
             var iLegioStartingCondition = 0
 
             if (Global.getSector().clock.cycle >= 210) {
                 iLegioStartingCondition++
                 LOGGER.info("Daemonic Incursion - Cycle")
-            } //Choose cycle
+            }
+            // Any player market of size 5+
             for (market in Misc.getPlayerMarkets(true)) {
                 if (market.size >= 5) {
                     iLegioStartingCondition++
                     LOGGER.info("Daemonic Incursion - Market")
                     break
                 }
-            } //Ok size 6
+            }
             val mem = Global.getSector().memoryWithoutUpdate
             if (mem.getBoolean(GateEntityPlugin.CAN_SCAN_GATES) && mem.getBoolean(GateEntityPlugin.GATES_ACTIVE)) {
                 iLegioStartingCondition++ //Follow Histidine's "Skip Story format"
@@ -335,7 +341,8 @@ class TahlanModPlugin : BaseModPlugin() {
             if (sector.playerStats.level >= 13) {
                 iLegioStartingCondition++
                 LOGGER.info("Daemonic Incursion - Level")
-            } // Two capitals or Metafalica
+            }
+            // Two capitals (a Metafalica counts double)
             var caps = 0
             for (bote in sector.playerFleet.membersWithFightersCopy) {
                 if (bote.hullSpec.hullSize == ShipAPI.HullSize.CAPITAL_SHIP) {
@@ -345,8 +352,8 @@ class TahlanModPlugin : BaseModPlugin() {
                 if (bote.hullSpec.hullId.contains("Metafalica")) {
                     caps++
                 }
-                // got Daemons? instant trigger
-                if (bote.hullSpec.hullId.contains("_dmn")) {
+                // got Daemons? instant trigger (tahlan_ prefix so other mods' "_dmn" hulls don't count)
+                if (bote.hullSpec.hullId.startsWith("tahlan_") && bote.hullSpec.hullId.contains("_dmn")) {
                     iLegioStartingCondition = 99
                 }
             }
@@ -425,8 +432,8 @@ class TahlanModPlugin : BaseModPlugin() {
         fun awakenLegioHostility() {
             val sector = Global.getSector()
             enableDaemons()
-            if (sector.memoryWithoutUpdate.getBoolean("\$tahlan_triggered")) return
-            sector.memoryWithoutUpdate["\$tahlan_triggered"] = true
+            if (sector.memoryWithoutUpdate.getBoolean(TRIGGERED)) return
+            sector.memoryWithoutUpdate[TRIGGERED] = true
             LOGGER.info("The Daemonic horde awakens")
             val legio = sector.getFaction(LEGIO)
             if (Misc.getCommissionFaction() !== legio) {
@@ -471,6 +478,13 @@ class TahlanModPlugin : BaseModPlugin() {
             DAEMON_WINGS.forEach {
                 sector.getFaction(LEGIO).removeKnownFighter(it)
                 sector.getFaction(BLACKWATCH).removeKnownFighter(it)
+            }
+            DAEMON_WEAPONS.forEach {
+                sector.getFaction(LEGIO).removeKnownWeapon(it)
+                sector.getFaction(BLACKWATCH).removeKnownWeapon(it)
+            }
+            BLACKWATCH_DAEMONS.forEach {
+                sector.getFaction(BLACKWATCH).removeKnownShip(it)
             }
         }
 

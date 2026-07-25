@@ -8,6 +8,7 @@ import com.fs.starfarer.api.util.Misc;
 
 import static org.niatahl.tahlan.utils.TahlanSettings.ENABLE_HARDMODE;
 import static org.niatahl.tahlan.utils.TahlanIDs.LEGIO;
+import static org.niatahl.tahlan.utils.TahlanIDs.TRIGGERED;
 import static org.niatahl.tahlan.utils.Utils.txt;
 
 public class LegioTyranny extends BaseMarketConditionPlugin {
@@ -22,11 +23,11 @@ public class LegioTyranny extends BaseMarketConditionPlugin {
         if (market.getFaction() == null) {
             return;
         }
-        if (market.getFactionId().contains(LEGIO)) {
+        if (market.getFactionId().equals(LEGIO)) {
             int marketMult = Misc.getFactionMarkets(market.getFactionId()).size();
             market.getStability().modifyFlat(id, STAB_BONUS * marketMult, txt("tyranny"));
 
-            if (Global.getSector().getMemoryWithoutUpdate().getBoolean("$tahlan_triggered")) {
+            if (Global.getSector().getMemoryWithoutUpdate().getBoolean(TRIGGERED)) {
                 if (ENABLE_HARDMODE) {
                     FLEET_PERCENT = 30f;
                 } else {
