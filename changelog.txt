@@ -21,6 +21,9 @@
 	- A strangled market will eventually put money on the table for anyone willing to help
 	- Each siege now fields a standing hunter-killer force that will come looking for you if you make enough of a nuisance of yourself
 	- Killing that force buys you a window, not a reprieve
+	- A siege that runs its course no longer ends on paperwork — the Legio come down, and there is a narrow window in which the landing can still be stopped
+	- Worlds taken that way do not change hands untouched
+	- Do not downgrade to an older version with a save made during a siege's final act; older versions will not understand what state it is in
 	- Toggle available in settings and LunaLib
 	- New LunaLib sliders: coalition interventions on/off + frequency, desperation bounties on/off, hunter-killer force on/off + size + aggression
 - Added option to give a recovered Domain planetkiller to the Legio

@@ -18,6 +18,10 @@ import org.niatahl.tahlan.utils.Utils.txt
  * SiegeConfig.BLOCKADE_HOSTILE_TO_TRADERS is on), this lets the blockade actually interdict traders
  * regardless of base faction relations.
  *
+ * Stands down when the landing starts: on FLEET_PLANETFALL_KEY the interdiction stops entirely and the
+ * hold-station anchor moves from the jump point to the planet, cooperating with the manager's
+ * convergence order rather than dragging the fleet back out to the fringe on the next idle tick.
+ *
  * Stops cleanly when the siege ends: the manager either sets FLEET_RETURN_FLAG or replaces the
  * fleet's orders with a GO_TO_LOCATION_AND_DESPAWN during dispersal — either signals the AI to retire.
  */
@@ -44,6 +48,16 @@ class SiegeBlockadeAI(
         if (fleet.memoryWithoutUpdate.getBoolean(SiegeManager.FLEET_RETURN_FLAG)) { done = true; return }
         if (fleet.currentAssignment?.assignment == FleetAssignment.GO_TO_LOCATION_AND_DESPAWN) {
             done = true; return
+        }
+
+        // Planetfall: the blockade is over. Interdicting a jump point is moot once the landing has
+        // started, and the manager has already put this fleet on the planet — re-anchoring our own
+        // hold-station there is what keeps that order from being fought on the next idle tick.
+        val landing = landingAnchor()
+        if (landing != null) {
+            chasing = null
+            holdOverPlanet(landing)
+            return
         }
 
         val target = targetMarket ?: run { holdStation(); return }
@@ -99,6 +113,23 @@ class SiegeBlockadeAI(
         fleet.clearAssignments()
         fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, jumpPoint, 9999f,
             txt("siege_assign_blockade").format(jumpPoint.name))
+    }
+
+    /**
+     * The planet, once the manager has flagged this fleet for the landing; null while the blockade is
+     * still the job. The key is only ever a signal here — the entity comes from [targetMarket], which
+     * this AI already holds.
+     */
+    private fun landingAnchor(): SectorEntityToken? {
+        if (!fleet.memoryWithoutUpdate.contains(SiegeManager.FLEET_PLANETFALL_KEY)) return null
+        return targetMarket?.primaryEntity
+    }
+
+    private fun holdOverPlanet(planet: SectorEntityToken) {
+        if (fleet.currentAssignment != null) return
+        fleet.clearAssignments()
+        fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, planet, 9999f,
+            txt("siege_assign_landing_support").format(planet.name))
     }
 
     override fun isDone(): Boolean = done

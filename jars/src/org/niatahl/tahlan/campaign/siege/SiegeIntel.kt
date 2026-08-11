@@ -17,6 +17,7 @@ import com.fs.starfarer.api.util.Misc
 import org.niatahl.tahlan.utils.TahlanIDs
 import org.niatahl.tahlan.utils.Utils.txt
 import java.awt.Color
+import kotlin.math.ceil
 import kotlin.math.roundToInt
 
 /**
@@ -53,8 +54,13 @@ class SiegeIntel(
     private var dispIntensity     = 1f
     private var dispRaidFleets    = 0
     // The meter only advances while the command fleet is present, so once it is killed or withdrawn
-    // every projection must read zero instead of extrapolating from the last live snapshot.
+    // every projection must read zero instead of extrapolating from the last live snapshot. Also set
+    // during planetfall, where the meter is spent rather than merely stalled.
     private var dispFrozen        = false
+    // Planetfall display state. Primitives, so a SiegeIntel from a save that predates them
+    // deserializes false/0 — correct, since such a save can never be in the planetfall stage.
+    private var dispPlanetfall     = false
+    private var dispPlanetfallDays = 0f
 
     init {
         // Manager owns lifecycle (it calls intelManager.addIntel) — do NOT addIntel here.
@@ -86,7 +92,9 @@ class SiegeIntel(
         dispCommandCR    = siege.commandCR
         dispIntensity    = siege.intensity
         dispRaidFleets   = siege.raidFleets.count { it.isAlive }
-        dispFrozen       = !siege.commandFleetPresent
+        dispPlanetfall     = siege.stage == SiegeManager.SiegeData.Stage.PLANETFALL
+        dispPlanetfallDays = siege.planetfallTimer
+        dispFrozen       = !siege.commandFleetPresent || dispPlanetfall
         setProgress(siege.captureProgress.roundToInt().coerceIn(0, MAX_PROGRESS))
     }
 
@@ -117,6 +125,16 @@ class SiegeIntel(
     /** The huntsmen have picked the player out of the crowd. Adverse, and very much worth a ping. */
     fun notifyPlayerMarked() {
         addFactor(HuntsmanMarkFactor())
+        sendUpdateIfPlayerHasIntel(null, false)
+    }
+
+    /**
+     * The landing has begun. The loudest beat of the event short of resolution: the meter stops
+     * mattering here, and the player has a fixed handful of days to decapitate the siege or lose the
+     * planet.
+     */
+    fun notifyPlanetfall() {
+        addFactor(PlanetfallFactor())
         sendUpdateIfPlayerHasIntel(null, false)
     }
 
@@ -216,6 +234,14 @@ class SiegeIntel(
                 market.name, market.faction?.displayName ?: market.factionId)
         }
 
+        // Countdown while the landing is underway. Rounded up and floored at one: a "0 days" line
+        // would read as already over while the window is in fact still open.
+        if (outcome == null && dispPlanetfall) {
+            val days = ceil(dispPlanetfallDays).toInt().coerceAtLeast(1)
+            info.addPara(txt("siege_intel_planetfall_countdown"), opad,
+                Misc.getNegativeHighlightColor(), days.toString())
+        }
+
         when (outcome) {
             null -> {}
             SiegeOutcome.BROKEN    -> info.addPara(txt("siege_intel_resolved_broken"), opad,
@@ -223,7 +249,14 @@ class SiegeIntel(
             SiegeOutcome.LIFTED    -> info.addPara(txt("siege_intel_resolved_lifted"), opad,
                 Misc.getHighlightColor(), "lifted")
             SiegeOutcome.SUCCEEDED -> {
-                val key = if (hasNex) "siege_intel_resolved_succeeded" else "siege_intel_resolved_succeeded_nonex"
+                // The Nex capture has no other notification — Nex's own transfer intel is suppressed —
+                // so this line is the whole success beat. Bounty earned means the player fought this
+                // siege and lost it anyway, which gets its own tone.
+                val key = when {
+                    !hasNex                 -> "siege_intel_resolved_succeeded_nonex"
+                    playerBountyEarned > 0f -> "siege_intel_resolved_succeeded_fought"
+                    else                    -> "siege_intel_resolved_succeeded"
+                }
                 info.addPara(txt(key), opad, Misc.getNegativeHighlightColor(), "succeeded")
             }
         }
@@ -314,7 +347,9 @@ class SiegeIntel(
     /**
      * One-time fleet-kill factor (auto-expires after [BaseOneTimeFactor.SHOW_DURATION_DAYS]). Passes
      * `super(0)` so it never mutates `progress` on add — the manager already knocked the meter back.
-     * Shown green as a favourable knock-back; a command kill shows no number (it freezes the meter).
+     * Shown green as a favourable knock-back; a zero knockback shows no number at all rather than a
+     * misleading "-0" (a command kill, which freezes the meter, and every kill during planetfall,
+     * where the meter no longer gates anything).
      */
     inner class FleetKillFactor(
         private val knockback: Float,
@@ -323,7 +358,7 @@ class SiegeIntel(
         override fun getDesc(intel: BaseEventIntel): String =
             if (isCommand) txt("siege_factor_kill_command") else txt("siege_factor_kill_escort")
         override fun getProgressStr(intel: BaseEventIntel): String =
-            if (isCommand) "" else "-" + knockback.roundToInt()
+            if (isCommand || knockback <= 0f) "" else "-" + knockback.roundToInt()
         override fun getProgressColor(intel: BaseEventIntel): Color = Misc.getPositiveHighlightColor()
         override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
         override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
@@ -386,6 +421,15 @@ class SiegeIntel(
         override fun getDescColor(intel: BaseEventIntel): Color = Misc.getTextColor()
         override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
             factorTip("siege_factortip_huntsman_lost")
+    }
+
+    /** The landing has started. Adverse, and the last warning the player is going to get. */
+    inner class PlanetfallFactor : BaseOneTimeFactor(0) {
+        override fun getDesc(intel: BaseEventIntel): String = txt("siege_factor_planetfall")
+        override fun getProgressStr(intel: BaseEventIntel): String = ""
+        override fun getDescColor(intel: BaseEventIntel): Color = Misc.getNegativeHighlightColor()
+        override fun getMainRowTooltip(intel: BaseEventIntel): TooltipCreator =
+            factorTip("siege_factortip_planetfall")
     }
 
     companion object {

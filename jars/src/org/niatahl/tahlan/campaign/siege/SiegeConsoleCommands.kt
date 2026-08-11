@@ -52,6 +52,32 @@ class TahlanSiegeKill : BaseCommand {
     }
 }
 
+/**
+ * TahlanSiegeProgress — set the subjugation meter on every active siege. Only the meter is written;
+ * the manager's own tick is left to decide what a full meter means, so parking it just short of max
+ * is how the planetfall entry path gets exercised in a dev pass.
+ */
+class TahlanSiegeProgress : BaseCommand {
+    override fun runCommand(args: String, context: CommandContext): CommandResult {
+        if (!context.isCampaignAccessible) {
+            Console.showMessage("Run TahlanSiegeProgress on the campaign map.")
+            return CommandResult.WRONG_CONTEXT
+        }
+        val value = args.trim().toFloatOrNull()
+        if (value == null) {
+            Console.showMessage("Usage: TahlanSiegeProgress <0-${SiegeConfig.CAPTURE_PROGRESS_MAX.toInt()}>")
+            return CommandResult.BAD_SYNTAX
+        }
+        val mgr = SiegeManager.get()
+        if (mgr == null) {
+            Console.showMessage("No siege manager found (the siege system has not initialized this game).")
+            return CommandResult.SUCCESS
+        }
+        Console.showMessage(mgr.debugSetProgress(value))
+        return CommandResult.SUCCESS
+    }
+}
+
 /** TahlanSiegeStart — force-launch a new siege now, bypassing the spawn timer. */
 class TahlanSiegeStart : BaseCommand {
     override fun runCommand(args: String, context: CommandContext): CommandResult {

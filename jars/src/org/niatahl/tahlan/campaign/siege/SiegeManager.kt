@@ -6,6 +6,7 @@ import com.fs.starfarer.api.campaign.*
 import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason
 import com.fs.starfarer.api.campaign.FactionAPI.ShipPickMode
 import com.fs.starfarer.api.campaign.econ.MarketAPI
+import com.fs.starfarer.api.impl.campaign.econ.RecentUnrest
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3
 import com.fs.starfarer.api.impl.campaign.ids.Conditions
@@ -47,7 +48,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val sourceMarket: MarketAPI,
         val primaryTargetMarket: MarketAPI?
     ) {
-        enum class Stage { INBOUND, BESIEGING, BROKEN, LIFTED, SUCCEEDED }
+        // PLANETFALL sits between BESIEGING and the terminal stages: still live, but past the point
+        // where the subjugation meter means anything. It is a distinct stage rather than a flag on
+        // BESIEGING because nearly every consumer of `stage` needs different behavior during it —
+        // pruning, pressure sweeps, knockback, withdrawal, and the reactive systems all diverge.
+        enum class Stage { INBOUND, BESIEGING, PLANETFALL, BROKEN, LIFTED, SUCCEEDED }
 
         var stage = Stage.INBOUND
         var intensity = 1f      // captured at launch; scales command/escort/raid budgets
@@ -67,6 +72,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         var captureProgress   = 0f                  // unified subjugation meter, 0..CAPTURE_PROGRESS_MAX
         var lastPressureMult  = 1f                  // last strangle multiplier (for the intel display)
         var raidCooldown      = SiegeConfig.RAID_INTERVAL_DAYS
+
+        // Planetfall window (add-siege-planetfall). Primitives, so a save that predates them
+        // deserializes 0f — never read, because such a save can never be in PLANETFALL.
+        var planetfallTimer       = 0f              // counts down from PLANETFALL_DURATION_DAYS
+        var defenderSweepCooldown = 0f              // cadence for the repeating defender flee sweep
 
         var intel: SiegeIntel? = null
         var playerBountyAccrued = 0f
@@ -237,7 +247,13 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             siege.siegeHealth = max(0f, siege.siegeHealth - healthDmg)
             siege.commandCR = max(0f, siege.commandCR - lostFp * SiegeConfig.STRAIN_K)
             // Knock the subjugation meter back (a command kill already freezes it via commandFleetPresent).
-            siege.captureProgress = max(0f, siege.captureProgress - lostFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP)
+            // Never during planetfall: the meter is spent and no longer gates the capture, so a
+            // receding bar would tell the player their kills are buying something they are not.
+            // Breaking the siege force or the command fleet is the only counter left, and both of
+            // those still work — through siege health and the decapitation rule respectively.
+            if (siege.stage != SiegeData.Stage.PLANETFALL) {
+                siege.captureProgress = max(0f, siege.captureProgress - lostFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP)
+            }
         }
 
         // Bounty, scaled by how much of the battle was the player's own work. Escort losses pay out
@@ -268,7 +284,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Kills only: a row per bruising engagement would spam the factor table, and partial losses
         // are already legible in the bar receding.
         if (destroyed) {
-            val knockback = if (isCommand) 0f else lostFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP
+            // Zero knockback (command kills, and every kill during planetfall) renders as a row with
+            // no number rather than a misleading "-0".
+            val knockback = if (isCommand || siege.stage == SiegeData.Stage.PLANETFALL) 0f
+                            else lostFp * SiegeConfig.CAPTURE_KNOCKBACK_PER_FP
             siege.intel?.addFleetKill(knockback, isCommand)
         }
 
@@ -280,13 +299,21 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val siege = findSiege(siegeId) ?: return
         applyCommandCR(siege)
         checkBroken(siege)
-        // Decapitation before arrival: the stage only leaves INBOUND via onCommandFleetArrived, which
-        // is driven by the command fleet's own SiegeAssignmentAI — so a command fleet lost en route
-        // would leave the siege stuck INBOUND forever (which also blocks every future launch, since
-        // spawnTimer only ticks while activeSieges is empty). Abort the whole expedition instead:
-        // escorts disperse home and the accrued bounty pays out. Covers both the battle-kill path and
-        // the non-battle despawn path (both funnel through onSiegeFleetLosses -> pendingKills).
-        if (siege.stage == SiegeData.Stage.INBOUND && !siege.commandFleetPresent) {
+        // Decapitation, in the two stages where losing the command fleet ends the whole expedition
+        // rather than dropping it into mop-up. Covers both the battle-kill path and the non-battle
+        // despawn path (both funnel through onSiegeFleetLosses -> pendingKills).
+        //
+        //  * INBOUND: the stage only leaves INBOUND via onCommandFleetArrived, which is driven by the
+        //    command fleet's own SiegeAssignmentAI — so a command fleet lost en route would leave the
+        //    siege stuck INBOUND forever (which also blocks every future launch, since spawnTimer
+        //    only ticks while activeSieges is empty).
+        //  * PLANETFALL: the landing is the command fleet; without it there is nothing to mop up and
+        //    the whole force scatters. Resolved here rather than left to the next advancePlanetfall
+        //    tick so the intel beat lands together with the kill.
+        //
+        // Either way: escorts disperse home and the accrued bounty pays out.
+        if (!siege.commandFleetPresent &&
+            (siege.stage == SiegeData.Stage.INBOUND || siege.stage == SiegeData.Stage.PLANETFALL)) {
             resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN)
         }
     }
@@ -344,14 +371,16 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     private fun advanceHealthModel(days: Float) {
         val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO)
         for (siege in activeSieges.toList()) {
-            // Both live stages age; anything else is already resolved and awaiting pruning.
-            if (siege.stage != SiegeData.Stage.INBOUND && siege.stage != SiegeData.Stage.BESIEGING) continue
+            // The three live stages age; anything else is already resolved and awaiting pruning.
+            if (siege.stage != SiegeData.Stage.INBOUND &&
+                siege.stage != SiegeData.Stage.BESIEGING &&
+                siege.stage != SiegeData.Stage.PLANETFALL) continue
             siege.daysElapsed += days
 
             if (siege.stage == SiegeData.Stage.INBOUND) {
                 // Travel backstop: an expedition that never arrives would otherwise sit INBOUND
                 // forever, which also blocks every future launch (spawnTimer only ticks while no
-                // siege is active). Everything below is besieging-only.
+                // siege is active). Nothing else in this loop applies before arrival.
                 if (siege.daysElapsed >= SiegeConfig.INBOUND_TIMEOUT_DAYS) {
                     LOG.info("Tahlan siege: ${siege.id} never reached ${siege.targetSystem.baseName} — lifted on travel timeout")
                     resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED)
@@ -359,20 +388,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 continue
             }
 
-            // CR recovery: no losses within window → recover toward 1.0
-            siege.daysSinceLastLoss += days
-            if (siege.daysSinceLastLoss >= SiegeConfig.CR_RECOVERY_DELAY_DAYS) {
-                val oldCR = siege.commandCR
-                siege.commandCR = min(1.0f, siege.commandCR + SiegeConfig.CR_RECOVERY_RATE_PER_DAY * days)
-                if (siege.commandCR != oldCR) applyCommandCR(siege)
-            }
+            // The landing has its own, much shorter rule set — see advancePlanetfall.
+            if (siege.stage == SiegeData.Stage.PLANETFALL) { advancePlanetfall(siege, days); continue }
 
-            // Health regen: only while command fleet alive, rate scales with commandCR
-            val cmdAlive = siege.commandFleetPresent && siege.commandFleet?.isAlive == true
-            if (cmdAlive) {
-                val regen = SiegeConfig.HEALTH_REGEN_PER_DAY_BASE * siege.commandCR * days
-                siege.siegeHealth = min(SiegeConfig.SIEGE_HEALTH_MAX, siege.siegeHealth + regen)
-            }
+            advanceCommandCondition(siege, days)
 
             // Withdrawal at CR floor
             if (!siege.withdrawalOrdered && siege.commandCR <= SiegeConfig.COMMAND_CR_WITHDRAWAL_FLOOR) {
@@ -391,21 +410,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
             // ── Resolution checks ──
 
-            // LIFTED: the target stopped being a valid one. Eligibility is otherwise only checked at
-            // launch, so a mid-siege change of circumstance — a Nexerelin peace treaty, the market
-            // decivilizing or being depopulated, or someone else taking it (including another Legio
-            // force) — would otherwise still end in "subjugating" a market Legio has no quarrel with,
-            // or in laying siege to a rock. All of those resolve LIFTED: the expedition packs up with
-            // no capture and no scar, since none of it was earned by the siege — there is no
-            // undeserved SUCCEEDED climax to be had here.
             val target = siege.primaryTargetMarket
-            if (target != null) {
-                val gone = !target.isInEconomy || target.hasCondition(Conditions.DECIVILIZED)
-                if (gone || target.factionId == TahlanIDs.LEGIO || !legioFaction.isHostileTo(target.faction)) {
-                    LOG.info("Tahlan siege: ${siege.id} target ${target.name} is no longer a valid objective — lifted")
-                    resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED); continue
-                }
-            }
+            if (!targetStillValid(siege, legioFaction)) continue
 
             // BROKEN: siege health 0 (universal counter in both pathways)
             if (siege.siegeHealth <= 0f) { resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); continue }
@@ -448,7 +454,7 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                     // the lasting no-Nex scar against the target.
                     if (ModCompat.HAS_NEX && target != null
                         && !isNexCaptureBlocked(target) && !isNexProtected(target)) {
-                        attemptNexCapture(siege); continue
+                        beginPlanetfall(siege); continue
                     } else {
                         applyNoNexAftermath(siege)
                         resolveSiege(siege, SiegeIntel.SiegeOutcome.SUCCEEDED); continue
@@ -458,6 +464,239 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
             siege.intel?.syncProgress(siege)
         }
+    }
+
+    /**
+     * The command fleet's condition, shared verbatim by the besieging and planetfall ticks: CR
+     * recovers toward 1.0 during a lull, and siege health regenerates only while the command fleet
+     * is alive to coordinate. The planetfall window is short enough that neither moves far, but a
+     * landing that has to be fought for should recover the same way a blockade does.
+     */
+    private fun advanceCommandCondition(siege: SiegeData, days: Float) {
+        // CR recovery: no losses within window → recover toward 1.0
+        siege.daysSinceLastLoss += days
+        if (siege.daysSinceLastLoss >= SiegeConfig.CR_RECOVERY_DELAY_DAYS) {
+            val oldCR = siege.commandCR
+            siege.commandCR = min(1.0f, siege.commandCR + SiegeConfig.CR_RECOVERY_RATE_PER_DAY * days)
+            if (siege.commandCR != oldCR) applyCommandCR(siege)
+        }
+
+        // Health regen: only while command fleet alive, rate scales with commandCR
+        val cmdAlive = siege.commandFleetPresent && siege.commandFleet?.isAlive == true
+        if (cmdAlive) {
+            val regen = SiegeConfig.HEALTH_REGEN_PER_DAY_BASE * siege.commandCR * days
+            siege.siegeHealth = min(SiegeConfig.SIEGE_HEALTH_MAX, siege.siegeHealth + regen)
+        }
+    }
+
+    /**
+     * The LIFTED gate, shared by the besieging and planetfall ticks. Eligibility is otherwise only
+     * checked at launch, so a mid-siege change of circumstance — a Nexerelin peace treaty, the market
+     * decivilizing or being depopulated, or someone else taking it (including another Legio force) —
+     * would otherwise still end in "subjugating" a market Legio has no quarrel with, or in laying
+     * siege to a rock. All of those resolve LIFTED: the expedition packs up with no capture and no
+     * scar, since none of it was earned by the siege — there is no undeserved SUCCEEDED climax to be
+     * had here. Returns false once it has resolved the siege, so callers must abandon it.
+     */
+    private fun targetStillValid(siege: SiegeData, legioFaction: FactionAPI): Boolean {
+        val target = siege.primaryTargetMarket ?: return true
+        val gone = !target.isInEconomy || target.hasCondition(Conditions.DECIVILIZED)
+        if (gone || target.factionId == TahlanIDs.LEGIO || !legioFaction.isHostileTo(target.faction)) {
+            LOG.info("Tahlan siege: ${siege.id} target ${target.name} is no longer a valid objective — lifted")
+            resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED)
+            return false
+        }
+        return true
+    }
+
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+    // Planetfall — the Nex capture climax (add-siege-planetfall)
+    //
+    // A full subjugation meter no longer flips the market in the same tick. Instead the expedition
+    // commits: the whole siege force converges on the planet, the defending navy quits the system,
+    // the station is starved out, relief stands down, and the transfer fires only if the command
+    // fleet is still over the planet when the window closes.
+    //
+    // The window is a point of no return for the *meter* (no more knockback — see
+    // [onSiegeFleetLosses]) but explicitly not for the siege: driving siege health to zero still
+    // breaks it, and removing the command fleet breaks it instantly.
+    // ═════════════════════════════════════════════════════════════════════════════════════════
+
+    /**
+     * Commit to the landing. Everything here is one-shot setup; [advancePlanetfall] owns the window.
+     */
+    private fun beginPlanetfall(siege: SiegeData) {
+        val target = siege.primaryTargetMarket
+        val planet = target?.primaryEntity
+        if (target == null || planet == null) {
+            // Nothing in the world to converge on. Degrade to the pre-planetfall behavior rather than
+            // strand the siege in a stage whose every rule reads the planet.
+            LOG.info("Tahlan siege: ${siege.id} — no target entity to make planetfall on; capturing directly")
+            attemptNexCapture(siege)
+            return
+        }
+
+        siege.stage = SiegeData.Stage.PLANETFALL
+        siege.planetfallTimer = SiegeConfig.PLANETFALL_DURATION_DAYS
+        siege.defenderSweepCooldown = SiegeConfig.DEFENDER_SWEEP_INTERVAL_DAYS
+
+        // The command fleet leaves its fringe anchor on its own AI's terms — it reads the key and
+        // switches phase, which keeps the anchor logic in one place instead of split between us.
+        siege.commandFleet?.takeIf { it.isAlive }
+            ?.memoryWithoutUpdate?.set(FLEET_PLANETFALL_KEY, planet.id)
+
+        // Everything else is re-tasked directly: raid fleets carry no AI script at all, and the
+        // blockade AI's own station-holding would fight a convergence order it did not issue itself
+        // (which is why it gets the key too — see SiegeBlockadeAI).
+        for (fleet in (siege.escortFleets + siege.raidFleets).filter { it.isAlive }) {
+            fleet.memoryWithoutUpdate.set(FLEET_PLANETFALL_KEY, planet.id)
+            // Never yank a fighting fleet. Nothing is stranded by skipping one: blockade fleets
+            // re-anchor themselves off the key once the fight ends, plain escorts are orbiting the
+            // command fleet and follow it in, and raiders are already pointed at this planet.
+            if (fleet.battle != null) continue
+            fleet.clearAssignments()
+            fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, planet, 9999f,
+                txt("siege_assign_landing_support").format(planet.name))
+        }
+
+        // Relief stands down: the navy has given up, and its allies with it. Their own AIs route each
+        // fleet back to its own market off this flag.
+        for (fleet in siege.interventionFleets.filter { it.isAlive }) {
+            fleet.memoryWithoutUpdate.set(FLEET_RETURN_FLAG, true)
+        }
+
+        disruptStation(target)
+        sweepDefenders(siege)
+        siege.intel?.notifyPlanetfall()
+        siege.intel?.syncProgress(siege)
+        LOG.info("Tahlan siege: ${siege.id} — planetfall on ${target.name}, " +
+                "${"%.0f".format(SiegeConfig.PLANETFALL_DURATION_DAYS)} days to the landing")
+    }
+
+    /**
+     * The landing window. Deliberately runs none of the reactive systems that mobilize anybody new:
+     * no raid sorties (there is nothing left to soften), no relief waves (the coalition stood down),
+     * no bounty keep-alive (it lapses on its own vanilla duration, which conveniently keeps paying
+     * through the window). F1 continues in full — the huntsmen are the one thing still hunting.
+     */
+    private fun advancePlanetfall(siege: SiegeData, days: Float) {
+        val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO)
+        advanceCommandCondition(siege, days)
+
+        // Decapitation. Killed, despawned and driven to the CR floor all read the same here: the
+        // landing collapses and the force scatters. Deliberately NOT triggerWithdrawal — its mop-up
+        // machinery (residual health chunk, escort re-anchoring, withdrawal factor) is meaningless
+        // when everything is about to disperse home anyway. The battle-kill path resolves a tick
+        // earlier, in flushKill; this covers every other way the command fleet can go away.
+        val cmdAlive = siege.commandFleetPresent && siege.commandFleet?.isAlive == true
+        if (!cmdAlive || siege.commandCR <= SiegeConfig.COMMAND_CR_WITHDRAWAL_FLOOR) {
+            LOG.info("Tahlan siege: ${siege.id} — the landing has been decapitated; siege broken")
+            resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); return
+        }
+
+        if (!targetStillValid(siege, legioFaction)) return
+
+        // Breaking the siege force during the landing counts exactly as it does during the blockade.
+        if (siege.siegeHealth <= 0f) { resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN); return }
+
+        advanceHeat(siege, days)
+        advanceTaskForce(siege, days)
+
+        // Repeating rather than one-shot: the market's own military base keeps spawning patrols right
+        // through the window, so a single sweep at planetfall start would only clear the first batch.
+        siege.defenderSweepCooldown -= days
+        if (siege.defenderSweepCooldown <= 0f) {
+            siege.defenderSweepCooldown = SiegeConfig.DEFENDER_SWEEP_INTERVAL_DAYS
+            sweepDefenders(siege)
+        }
+
+        siege.planetfallTimer -= days
+        siege.intel?.syncProgress(siege)
+        if (siege.planetfallTimer > 0f) return
+        // Never flip the market out from under a fight the player might still win. The battle resolves
+        // first; if it goes badly for the Legio, the decapitation check above catches it next tick.
+        if (siege.commandFleet?.battle != null) return
+        attemptNexCapture(siege)
+    }
+
+    /**
+     * Starve the station out instead of fighting it: months of blockade have emptied its magazines,
+     * so it stands down for the landing — which also keeps a Star Fortress from deciding the scripted
+     * climax on a die roll. Identified by spec tag rather than an id whitelist, so modded stations are
+     * covered. The disruption outlasts the window on purpose (see STATION_DISRUPTION_EXTRA_DAYS), so
+     * whoever ends up owning the market inherits a recovering station.
+     */
+    private fun disruptStation(target: MarketAPI) {
+        val duration = SiegeConfig.PLANETFALL_DURATION_DAYS + SiegeConfig.STATION_DISRUPTION_EXTRA_DAYS
+        for (industry in target.industries) {
+            if (industry.spec?.hasTag(Industries.TAG_STATION) != true) continue
+            if (!industry.canBeDisrupted()) continue
+            industry.setDisrupted(duration, true)   // useMax: never shorten an existing disruption
+            LOG.info("Tahlan siege: starved out ${industry.spec.name} at ${target.name}")
+        }
+    }
+
+    /**
+     * The defending navy gives up. Narrowly scoped on purpose: only *military* fleets of the victim's
+     * own bloc are pushed out, so traders keep flying, third parties are untouched, and the station
+     * (handled by [disruptStation]) is left where it is. Fleets in a battle are skipped rather than
+     * yanked; the repeating sweep catches them once the fight ends.
+     *
+     * The player's navy is never swept — a player-owned market is a valid siege target, and its
+     * defenders have no reason to abandon it just because the Legio showed up in force.
+     */
+    private fun sweepDefenders(siege: SiegeData) {
+        val victimId = siege.primaryTargetMarket?.factionId ?: return
+        // Already excludes the Legio side and the player faction; see coalitionFactions.
+        val coalition = coalitionFactions(victimId)
+        if (coalition.isEmpty()) return
+        val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO) ?: return
+        // Sized to the window so the orders lapse on their own if the siege is broken mid-landing —
+        // no teardown code, and a survivor goes straight back to ordinary patrol behavior.
+        val orderDays = SiegeConfig.PLANETFALL_DURATION_DAYS
+
+        var pushed = 0
+        for (fleet in siege.targetSystem.fleets.toList()) {
+            if (!fleet.isAlive) continue
+            if (fleet.isPlayerFleet) continue
+            val factionId = fleet.faction?.id ?: continue
+            if (factionId !in coalition) continue
+            if (!legioFaction.isHostileTo(fleet.faction)) continue
+            val mem = fleet.memoryWithoutUpdate
+            // Siege-attached fleets — interventions and the huntsmen — have their own signaling.
+            if (mem.contains(FLEET_SIEGE_ID_KEY)) continue
+            if (mem.getBoolean(MemFlags.STATION_FLEET)) continue
+            val military = mem.getBoolean(MemFlags.MEMORY_KEY_PATROL_FLEET) ||
+                           mem.getBoolean(MemFlags.MEMORY_KEY_WAR_FLEET)
+            if (!military) continue
+            if (fleet.battle != null) continue
+
+            // Disengage + no-sidetracking is what makes them actually leave rather than turn and
+            // fight the first Legio picket on the way out.
+            mem.set(MemFlags.MEMORY_KEY_MAKE_ALLOW_DISENGAGE, true, orderDays)
+            mem.set(MemFlags.MEMORY_KEY_FLEET_DO_NOT_GET_SIDETRACKED, true, orderDays)
+            fleet.clearAssignments()
+            fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, fleeDestination(fleet, factionId, siege.targetSystem),
+                1000f, txt("siege_assign_flee").format(siege.targetSystem.nameWithLowercaseType))
+            pushed++
+        }
+        if (pushed > 0) LOG.info("Tahlan siege: ${siege.id} — $pushed defending fleet(s) ordered out of " +
+                siege.targetSystem.baseName)
+    }
+
+    /**
+     * Where a fleeing defender runs to: the nearest friendly market **outside** the besieged system,
+     * so the despawn happens somewhere plausible rather than in the middle of the landing.
+     * Despawn-at-destination is what makes the navy *gone* instead of loitering; vanilla respawn
+     * economics replace them in their own time. Falls back to the nearest jump point for a faction
+     * with nowhere left to run.
+     */
+    private fun fleeDestination(fleet: CampaignFleetAPI, factionId: String, besieged: StarSystemAPI): SectorEntityToken {
+        val refuge = Global.getSector().economy.marketsCopy
+            .filter { it.factionId == factionId && it.isInEconomy && !it.isHidden }
+            .filter { it.starSystem != null && it.starSystem != besieged }
+            .minByOrNull { Misc.getDistance(fleet.locationInHyperspace, it.locationInHyperspace) }
+        return refuge?.primaryEntity ?: Misc.findNearestJumpPoint(fleet) ?: besieged.center
     }
 
     // --- Nex capture (task 7a.4–7a.6) ---
@@ -473,17 +712,48 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         try {
             val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO)
             val oldOwner = Global.getSector().getFaction(target.factionId)
-            // transferMarket(market, newOwner, oldOwner, playerInvolved, isCapture, factionsToNotify, repChangeStrength)
-            SectorManager.transferMarket(target, legioFaction, oldOwner, false, true, emptyList<String>(), 0f)
+            // transferMarket(market, newOwner, oldOwner, playerInvolved, isCapture, factionsToNotify,
+            //                repChangeStrength, silent)
+            // The trailing `silent` suppresses Nex's own generic MarketTransferIntel: the siege's
+            // SUCCEEDED resolution is the single beat for this capture, and a second, toneless feed
+            // item would undercut it. Nex's diplomacy and war bookkeeping are unaffected by the flag.
+            SectorManager.transferMarket(target, legioFaction, oldOwner, false, true, emptyList<String>(), 0f, true)
         } catch (e: Exception) {
             LOG.warn("Tahlan siege: Nex market transfer failed — ${e.message}")
             resolveSiege(siege, SiegeIntel.SiegeOutcome.LIFTED); return
         }
+        // Applied after the transfer so it acts on the post-handover industry list.
+        applyOccupationAftermath(target)
         // Hand the garrison target to the command fleet via its OWN memory: resolveSiege is about to
         // drop this siege from tracking, so the assignment AI must read it independently of the manager.
         siege.garrisonMarket = target
         siege.commandFleet?.memoryWithoutUpdate?.set(FLEET_GARRISON_MARKET_KEY, target.id)
         resolveSiege(siege, SiegeIntel.SiegeOutcome.SUCCEEDED, keepCommandFleet = true)
+    }
+
+    /**
+     * A captured world does not change hands pristine. Core industries are disrupted and the
+     * population is left restive, so a fresh conquest reads as conquered and stays a natural retake
+     * target. The station's own (longer) disruption from [disruptStation] survives this pass: it is a
+     * structure, not an industry, and `useMax` would protect it either way.
+     *
+     * Deliberately does NOT apply the no-Nex scar condition. Its accessibility/stability penalties
+     * exist to punish a market that held out against a siege; this one is Legio's now, so the scar
+     * would be a nonsense penalty on the conqueror.
+     */
+    private fun applyOccupationAftermath(target: MarketAPI) {
+        val random = Random()
+        for (industry in target.industries) {
+            if (!industry.canBeDisrupted() || !industry.isIndustry()) continue
+            val dur = SiegeConfig.OCCUPATION_DISRUPTION_DAYS * StarSystemGenerator.getNormalRandom(random, 1f, 1.25f)
+            industry.setDisrupted(dur, true)  // useMax: only ever extend an existing disruption
+        }
+        try {
+            RecentUnrest.get(target).add(SiegeConfig.OCCUPATION_UNREST_POINTS, txt("siege_unrest_reason"))
+        } catch (e: Exception) {
+            LOG.warn("Tahlan siege: could not apply occupation unrest at ${target.name} — ${e.message}")
+        }
+        LOG.info("Tahlan siege: occupation aftermath applied to ${target.name}")
     }
 
     // --- No-Nex aftermath scar (task 4.1–4.3) ---
@@ -802,6 +1072,9 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val siege = findSiege(siegeId) ?: return
         siege.taskForceFleet = null
         if (!SiegeConfig.TASKFORCE_ENABLED) return
+        // BESIEGING only, PLANETFALL deliberately excluded: the redispatch delay alone outlasts the
+        // landing window, so a replacement armed here could never arrive — killing the huntsmen during
+        // the landing simply buys the rest of it.
         if (siege.stage != SiegeData.Stage.BESIEGING || !siege.commandFleetPresent) return
         if (siege.taskForceRedispatchTimer >= 0f) return   // a replacement is already inbound
         siege.taskForceRedispatchTimer = SiegeConfig.TASKFORCE_REDISPATCH_DELAY_DAYS
@@ -1002,7 +1275,9 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     private fun maintainPressureConditions() {
         val legioFaction = Global.getSector().getFaction(TahlanIDs.LEGIO)
         for (siege in activeSieges) {
-            if (siege.stage != SiegeData.Stage.BESIEGING) continue
+            // Planetfall keeps sweeping: the system is still strangled, and a market that changes
+            // hands or makes peace during the landing must still shed the condition.
+            if (siege.stage != SiegeData.Stage.BESIEGING && siege.stage != SiegeData.Stage.PLANETFALL) continue
             for (market in siege.conditionedMarkets.toList()) {
                 val stillValid = market.isInEconomy &&
                         market.factionId != TahlanIDs.LEGIO &&
@@ -1265,7 +1540,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     // --- Broken check (task 5.7) ---
 
     private fun checkBroken(siege: SiegeData) {
-        if (siege.stage == SiegeData.Stage.BESIEGING && siege.siegeHealth <= 0f) {
+        // PLANETFALL is not a safe stage: driving siege health to zero breaks the landing exactly as
+        // it breaks the blockade. INBOUND is excluded because health damage before arrival is handled
+        // by flushKill's decapitation rule instead.
+        val live = siege.stage == SiegeData.Stage.BESIEGING || siege.stage == SiegeData.Stage.PLANETFALL
+        if (live && siege.siegeHealth <= 0f) {
             resolveSiege(siege, SiegeIntel.SiegeOutcome.BROKEN)
         }
     }
@@ -1275,7 +1554,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     private fun pruneDeadSieges() {
         val toRemove = mutableListOf<SiegeData>()
         for (siege in activeSieges) {
-            if (siege.stage != SiegeData.Stage.INBOUND && siege.stage != SiegeData.Stage.BESIEGING) {
+            // Live stages only survive the reap. PLANETFALL is emphatically live: leaving it out of
+            // this set would have a planetfall siege removed on the very first tick after it starts.
+            if (siege.stage != SiegeData.Stage.INBOUND &&
+                siege.stage != SiegeData.Stage.BESIEGING &&
+                siege.stage != SiegeData.Stage.PLANETFALL) {
                 toRemove.add(siege); continue
             }
             // Triple liveness check per fleet_behavior.md
@@ -1301,8 +1584,9 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             }
             if (cmdGone && !siege.commandFleetPresent && noEscorts && siege.raidFleets.isEmpty()) {
                 // All fleets gone and command already accounted for — auto-broken (mopped up).
-                // Stage here is always INBOUND or BESIEGING (later stages were filtered above), and an
-                // INBOUND wipe must resolve its intel too, or the entry hangs in the feed forever.
+                // Stage here is always one of the three live ones (later stages were filtered above),
+                // and an INBOUND or PLANETFALL wipe must resolve its intel too, or the entry hangs in
+                // the feed forever.
                 // removePressureCondition is a safe no-op on an empty conditionedMarkets list.
                 removePressureCondition(siege)
                 siege.intel?.resolve(SiegeIntel.SiegeOutcome.BROKEN)
@@ -1431,6 +1715,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     // --- Clean teardown for toggle-off mid-save (task 8.1) ---
 
+    /**
+     * Needs no per-stage handling, PLANETFALL included: [disperseFleets] covers a converged force the
+     * same way it covers a blockading one, and [SiegeAssignmentAI] checks FLEET_RETURN_FLAG ahead of
+     * its phase switch, so the return order wins over any planetfall order already in fleet memory.
+     */
     fun tearDown() {
         for (siege in activeSieges.toList()) {
             removePressureCondition(siege)
@@ -1462,6 +1751,9 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             sb.appendLine("  siegeHealth=${"%.1f".format(s.siegeHealth)}/${SiegeConfig.SIEGE_HEALTH_MAX}  captureProgress=${"%.1f".format(s.captureProgress)}/${SiegeConfig.CAPTURE_PROGRESS_MAX}")
             sb.appendLine("  commandCR=${"%.2f".format(s.commandCR)}  commandFleetPresent=${s.commandFleetPresent}  withdrawalOrdered=${s.withdrawalOrdered}")
             sb.appendLine("  daysElapsed=${"%.1f".format(s.daysElapsed)}  daysSinceLastLoss=${"%.1f".format(s.daysSinceLastLoss)}  raidCooldown=${"%.1f".format(s.raidCooldown)}  lastPressureMult=${"%.2f".format(s.lastPressureMult)}")
+            sb.appendLine("  [planetfall] timer=" +
+                    (if (s.stage == SiegeData.Stage.PLANETFALL) "${"%.2f".format(s.planetfallTimer)}d of ${SiegeConfig.PLANETFALL_DURATION_DAYS}d" else "n/a (stage ${s.stage})") +
+                    "  defenderSweepIn=${"%.2f".format(s.defenderSweepCooldown)}d (every ${SiegeConfig.DEFENDER_SWEEP_INTERVAL_DAYS}d)")
             val cmd = s.commandFleet
             sb.appendLine("  commandFleet=" + if (cmd == null) "null"
                 else "${cmd.name} [alive=${cmd.isAlive}, fp=${cmd.fleetPoints}, at=${cmd.starSystem?.baseName ?: cmd.containingLocation?.name ?: "?"}]")
@@ -1477,6 +1769,24 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
             sb.appendLine("  [F1] playerHeat=${"%.0f".format(s.playerHeat)}/${SiegeConfig.HEAT_MARK_THRESHOLD}  marked=${s.playerMarked}  enabled=${SiegeConfig.TASKFORCE_ENABLED}")
         }
         return sb.toString()
+    }
+
+    /**
+     * Jump the subjugation meter on every active siege (for the TahlanSiegeProgress command). Exists
+     * for the planetfall pass specifically: reaching the climax honestly takes an in-game season, so
+     * there has to be a way to park the meter just short of full and watch the landing from there.
+     * Writes the meter only — the next [advanceHealthModel] tick is what actually trips planetfall,
+     * so the whole entry path is exercised rather than bypassed.
+     */
+    fun debugSetProgress(value: Float): String {
+        if (activeSieges.isEmpty()) return "No active sieges."
+        val clamped = value.coerceIn(0f, SiegeConfig.CAPTURE_PROGRESS_MAX)
+        for (siege in activeSieges) {
+            siege.captureProgress = clamped
+            siege.intel?.syncProgress(siege)
+        }
+        return "Set captureProgress to ${"%.1f".format(clamped)}/${SiegeConfig.CAPTURE_PROGRESS_MAX} " +
+                "on ${activeSieges.size} active siege(s)."
     }
 
     /** Force-end (lift) every active siege, dispersing their fleets home. Returns the count ended. */
@@ -1528,6 +1838,11 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         const val FLEET_FP_KEY       = "\$tahlan_siege_fp"
         const val FLEET_RETURN_FLAG  = "\$tahlan_siege_return"
         const val FLEET_GARRISON_MARKET_KEY = "\$tahlan_siege_garrison"
+        // Set on every converging siege fleet when the landing starts; the value is the target
+        // planet's entity id. Same reason as the garrison key for going through fleet memory rather
+        // than a manager poll: SiegeAssignmentAI and SiegeBlockadeAI each read it independently, and
+        // the command fleet has to keep acting on it after resolveSiege drops the siege.
+        const val FLEET_PLANETFALL_KEY = "\$tahlan_siege_planetfall"
 
         // Reactive-system fleet tags. Both these fleet kinds carry FLEET_SIEGE_ID_KEY (so despawn
         // pruning and battle-side checks can attribute them to a siege) but NOT the rest of

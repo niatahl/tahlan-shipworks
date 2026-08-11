@@ -89,6 +89,29 @@ object SiegeConfig {
     // (floored at 0). Scaled by the attrition slider in TahlanSettings.loadFromLuna.
     var CAPTURE_KNOCKBACK_PER_FP = 0.05f
 
+    // --- Planetfall (the Nex capture climax) ---
+    // Every numeric here is a BALANCE-PASS STARTING VALUE — confirm in a dev-mode pass and record
+    // finals in changelog.txt.
+    //
+    // The window is the player's entire last chance, so it is sized against how far away a fleet
+    // that heeded the Stranglehold/Climax warnings can realistically be — not against how long a
+    // landing would plausibly take.
+    var PLANETFALL_DURATION_DAYS = 6f
+    // The victim's own military base keeps spawning patrols throughout the window, so the flee sweep
+    // repeats instead of running once at planetfall start.
+    var DEFENDER_SWEEP_INTERVAL_DAYS = 2f
+    // Station disruption deliberately outlasts the landing: Legio inherits a *recovering* station,
+    // which reads as battle-scarred and only partly softens an immediate retake.
+    var STATION_DISRUPTION_EXTRA_DAYS = 30f
+
+    // --- Occupation aftermath (applied to a market captured under Nex) ---
+    // Shorter than AFTERMATH_DURATION_DAYS on purpose: the no-Nex scar punishes a market that held
+    // out, while this only has to make a fresh conquest read as conquered.
+    var OCCUPATION_DISRUPTION_DAYS = 60f
+    // Stability points of vanilla RecentUnrest, which decays on its own one-point-per-90-days clock.
+    // Flat rather than intensity-scaled for now — revisit if captured markets stabilize implausibly fast.
+    var OCCUPATION_UNREST_POINTS = 4
+
     // --- No-Nex aftermath scar (applied on a successful no-Nex subjugation) ---
     // Scar penalties are SiegeCondition.{ACCESSIBILITY,STABILITY,HAZARD}_MOD * this fraction — i.e.
     // "half a siege", derived live so the scar always tracks the active siege penalty / any slider.

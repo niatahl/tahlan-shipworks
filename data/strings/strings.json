@@ -165,6 +165,9 @@
 		"siege_assign_intervene": "moving to relieve %s",
 		"siege_assign_engage": "engaging %s",
 		"siege_assign_hunt": "hunting %s",
+		"siege_assign_planetfall": "making planetfall on %s",
+		"siege_assign_landing_support": "supporting landing operations at %s",
+		"siege_assign_flee": "abandoning %s",
 
 		"siege_condition_name": "Legio Siege",
 		"siege_condition_accessibility": "%s accessibility",
@@ -180,25 +183,27 @@
 		"siege_intel_bounty_accrued": "%s in bounty accrued for your fleet kills",
 		"siege_intel_bounty_paid": "%s paid for your contributions to breaking the siege",
 		"siege_bounty_message": "Siege bounty: %s deposited for your contributions against the Legio blockade",
+		"siege_intel_planetfall_countdown": "Legio ground forces are going down now. The planet falls in %s days unless the landing is broken.",
 		"siege_intel_resolved_broken": "The siege has been broken. The Legio expedition has been driven off.",
 		"siege_intel_resolved_lifted": "The siege has lifted. The blockade dispersed without achieving its objectives.",
-		"siege_intel_resolved_succeeded": "The siege has succeeded. A market in the besieged system has fallen to the Legio Infernalis.",
+		"siege_intel_resolved_succeeded": "The siege has succeeded. Legio landers came down through a sky nobody was left to defend, and the colony's guns fell silent one after another. The Infernalis hold the ground now, and what they hold they keep.",
+		"siege_intel_resolved_succeeded_fought": "The siege has succeeded. You bled the expedition for every day of it, and it landed anyway. Legio banners fly over the colony now, and every soul on it knows exactly how close the reprieve came.",
 		"siege_intel_resolved_succeeded_nonex": "The siege has succeeded. The Legio withdrew at last, but the target market has been left in ruins — its industries gutted and its economy crippled for months to come.",
 
 		"siege_stage2_foothold": "Foothold",
 		"siege_stage2_stranglehold": "Stranglehold",
-		"siege_stage2_climax_nex": "Occupation",
+		"siege_stage2_climax_nex": "Planetfall",
 		"siege_stage2_climax_nonex": "Devastation",
 
 		"siege_stagetip_foothold": "The blockade is established and the colony is under pressure.",
 		"siege_stagetip_stranglehold": "The system is choked and the colony is failing.",
-		"siege_stagetip_climax_nex": "At full progress, the Legio captures the target market outright.",
+		"siege_stagetip_climax_nex": "At full progress the Legio commit to a landing. The expedition converges on the planet and the market changes hands a few days later — unless the landing is broken first.",
 		"siege_stagetip_climax_nonex": "At full progress, the target market is left scarred — half-siege penalties and its core industries disrupted for months.",
 
 		"siege_stagedesc_start": "A Legio expedition has dropped out of hyperspace at the system's edge. The command fleet anchors the fringe while blockade patrols move to choke the trade lanes.",
 		"siege_stagedesc_foothold": "The blockade has taken hold. Trade is bleeding out and the first raid sorties are battering the colony below.",
 		"siege_stagedesc_stranglehold": "The system is strangled. Supplies are failing and the population's will is breaking under sustained pressure.",
-		"siege_stagedesc_climax_nex": "Full subjugation is imminent. Should the siege complete, the Legio Infernalis will seize the target market for their own.",
+		"siege_stagedesc_climax_nex": "Full subjugation is imminent. When the meter fills the Legio stop waiting and come down: the whole expedition converges on the planet, the defending navy quits the system, and the market is theirs within days. Killing or driving off the command fleet during those days collapses the landing outright.",
 		"siege_stagedesc_climax_nonex": "Full subjugation is imminent. Should the siege complete, the target market will be left in lasting ruin, its industries gutted for months.",
 
 		"siege_factor_blockade": "Blockade pressure",
@@ -212,6 +217,7 @@
 		"siege_factor_intervention_aux": "%s detachment inbound",
 		"siege_factor_marked": "You have been marked",
 		"siege_factor_huntsman_lost": "Huntsmen destroyed",
+		"siege_factor_planetfall": "Planetfall has begun",
 
 		"siege_factortip_blockade": "How hard the blockade is strangling the target market. The more cut off the market, the faster the siege advances.",
 		"siege_factortip_raids": "The number of Legio raid wings currently hammering the colony.",
@@ -223,6 +229,8 @@
 		"siege_factortip_intervention": "The besieged world's bloc has mobilised against the siege. Relief fleets make for the command fleet directly; even a rescue that fails leaves the Legio command worse off than it was.",
 		"siege_factortip_marked": "Your attacks on the siege have drawn the attention of the expedition's hunter-killer force. While you remain marked, they will come for you rather than anyone else. Lie low and their interest will fade.",
 		"siege_factortip_huntsman_lost": "The expedition's hunter-killer force has been destroyed. The Legio are sending another out from their own space — it will take them a while to arrive.",
+		"siege_factortip_planetfall": "The Legio have committed to a landing. Their whole force has converged on the planet, the defending navy has abandoned the system and the orbital station has been starved into silence — no relief is coming. Knocking the siege's progress back no longer helps. Break the siege force, or kill or drive off the command fleet, and the landing collapses; otherwise the market changes hands when the window closes.",
+		"siege_unrest_reason": "Legio Infernalis occupation",
 
 		"siege_aftermath_name": "Legio Siege Aftermath",
 		"siege_aftermath_desc": "The world is still reeling from a Legio Infernalis siege. Infrastructure lies wrecked, trade ties are severed, and the population is slow to recover.",
