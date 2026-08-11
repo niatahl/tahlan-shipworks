@@ -1,6 +1,7 @@
 package org.niatahl.tahlan.campaign.siege
 
 import com.fs.starfarer.api.EveryFrameScript
+import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.campaign.CampaignFleetAPI
 import com.fs.starfarer.api.campaign.FleetAssignment
 import com.fs.starfarer.api.campaign.SectorEntityToken
@@ -24,6 +25,8 @@ import org.niatahl.tahlan.utils.Utils.txt
  *
  * Stops cleanly when the siege ends: the manager either sets FLEET_RETURN_FLAG or replaces the
  * fleet's orders with a GO_TO_LOCATION_AND_DESPAWN during dispersal — either signals the AI to retire.
+ * A siege that vanishes from tracking without either signal is caught by the self-heal poll in
+ * [advance], which sends the fleet home on its own.
  */
 class SiegeBlockadeAI(
     private val fleet: CampaignFleetAPI,
@@ -49,6 +52,16 @@ class SiegeBlockadeAI(
         if (fleet.currentAssignment?.assignment == FleetAssignment.GO_TO_LOCATION_AND_DESPAWN) {
             done = true; return
         }
+
+        // Self-heal for a siege dropped from tracking WITHOUT dispersal (the historical
+        // duplicate-manager corruption is the proven case): dispersal reaches this fleet as a
+        // direct GO_TO_LOCATION_AND_DESPAWN order, so if the manager no longer knows the siege
+        // and that order never came, nothing would ever end the blockade and the fleet would
+        // hold its jump point forever. Same poll as SiegeInterventionAI / SiegeTaskForceAI —
+        // deliberately AFTER the two checks above, so normal dispersal always wins and this
+        // only ever catches a genuinely orphaned fleet.
+        val manager = SiegeManager.get()
+        if (manager == null || !manager.isSiegeActive(siegeId)) { orderHomeAndRetire(); return }
 
         // Planetfall: the blockade is over. Interdicting a jump point is moot once the landing has
         // started, and the manager has already put this fleet on the planet — re-anchoring our own
@@ -130,6 +143,24 @@ class SiegeBlockadeAI(
         fleet.clearAssignments()
         fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, planet, 9999f,
             txt("siege_assign_landing_support").format(planet.name))
+    }
+
+    /**
+     * Orphan bail-out: send the fleet home to despawn and retire this AI. The constructor holds
+     * no home-market reference (and cannot grow one — serialized instances exist in saves), so
+     * home is computed here: the nearest Legio market, falling back to our own jump point so
+     * the despawn at least reads as the fleet jumping out rather than evaporating mid-system.
+     */
+    private fun orderHomeAndRetire() {
+        val home = Global.getSector().economy.marketsCopy
+            .filter { it.factionId == TahlanIDs.LEGIO && it.isInEconomy && !it.isHidden }
+            .minByOrNull { Misc.getDistance(fleet.locationInHyperspace, it.locationInHyperspace) }
+            ?.primaryEntity
+            ?: jumpPoint
+        fleet.clearAssignments()
+        fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, home, 1000f,
+            txt("siege_assign_return").format(home.name))
+        done = true
     }
 
     override fun isDone(): Boolean = done

@@ -45,6 +45,29 @@ class SiegeAssignmentAI(
 
         val manager = findManager()
 
+        // Self-heal for a siege dropped from tracking WITHOUT dispersal (the historical
+        // duplicate-manager corruption is the proven case): FLEET_RETURN_FLAG only ever arrives
+        // via disperseFleets/tearDown, so if the manager no longer knows this siege and the flag
+        // never came, nothing would ever order us home and the command fleet would anchor at the
+        // fringe forever. Same poll as SiegeInterventionAI / SiegeTaskForceAI. Only the three
+        // tracked-siege phases bail: GARRISONING is the one *intentional* untracked-siege state
+        // (resolveSiege(SUCCEEDED, keepCommandFleet=true) drops the siege while we stay to
+        // garrison), and RETURNING/DONE are already going home. The garrison key exempts the
+        // bail for the same reason — race-free, because attemptNexCapture writes the key BEFORE
+        // resolveSiege in the same call stack, so there is no tick where the siege reads
+        // inactive and the key is not yet visible; checkGarrisonHandoff below then performs the
+        // normal transition.
+        if ((phase == Phase.TRAVELING || phase == Phase.BESIEGING || phase == Phase.PLANETFALL) &&
+            (manager == null || !manager.isSiegeActive(siegeId))) {
+            val gmId = fleet.memoryWithoutUpdate.getString(SiegeManager.FLEET_GARRISON_MARKET_KEY)
+            // No garrison handoff pending — or one that can never complete because the captured
+            // market no longer resolves (removed before the handoff), which would otherwise
+            // leave checkGarrisonHandoff spinning at the fringe forever. Either way: go home.
+            if (gmId == null || Global.getSector().economy.getMarket(gmId) == null) {
+                orderReturn(); return
+            }
+        }
+
         when (phase) {
             Phase.TRAVELING -> {
                 if (manager?.isSiegeWithdrawing(siegeId) == true) { orderReturn(); return }

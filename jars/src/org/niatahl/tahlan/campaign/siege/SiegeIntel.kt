@@ -86,6 +86,12 @@ class SiegeIntel(
 
     // --- Called by SiegeManager ---
 
+    /** True once [resolve] has run. The manager's reconciliation sweep must skip these. */
+    val isResolved: Boolean get() = outcome != null
+
+    /** The besieged system, letting the reconciliation sweep match intel back to an active siege. */
+    val besiegedSystem: StarSystemAPI get() = targetSystem
+
     /** Snapshot manager state and push the bar value. Cheap; called every besieging tick. */
     fun syncProgress(siege: SiegeManager.SiegeData) {
         dispPressureMult = siege.lastPressureMult

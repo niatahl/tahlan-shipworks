@@ -81,13 +81,15 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         var intel: SiegeIntel? = null
         var playerBountyAccrued = 0f
 
-        // ── Reactive systems (add-siege-reactivity). Plain fields, serialized with the manager
-        // exactly like everything above; the AIs and listeners that read them are identified by
-        // siege id and resolve the manager via SiegeManager.get(), never by direct reference. ──
+        // ── Reactive systems (add-siege-reactivity). Serialized with the manager like everything
+        // above — but only the primitives are safe on a save that predates them (they deserialize
+        // as harmless zeros); the reference fields deserialize as null despite their Kotlin types,
+        // see readResolve below. The AIs and listeners that read them are identified by siege id
+        // and resolve the manager via SiegeManager.get(), never by direct reference. ──
 
         // F3 — coalition interventions. Fleets are tracked so resolution can disperse them; they are
         // NOT siege fleets and never appear in escortFleets/raidFleets.
-        val interventionFleets = mutableListOf<CampaignFleetAPI>()
+        var interventionFleets = mutableListOf<CampaignFleetAPI>()
         var interventionCooldown = SiegeConfig.INTERVENTION_INTERVAL_DAYS
 
         // F2 — desperation system bounty. The intel itself lives in the vanilla SystemBountyManager
@@ -100,6 +102,17 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         var taskForceRedispatchTimer = -1f
         var playerHeat   = 0f
         var playerMarked = false
+
+        // XStream skips constructors, so a SiegeData loaded from a save that predates
+        // add-siege-reactivity deserializes [interventionFleets] as null despite the non-null
+        // Kotlin type — and NPEs the first prune/dispersal that touches it. readResolve is the
+        // deserialization hook XStream honors; the field itself keeps its name and stays
+        // non-transient so newer saves keep their tracked lists.
+        @Suppress("SENSELESS_COMPARISON")
+        private fun readResolve(): Any {
+            if (interventionFleets == null) interventionFleets = mutableListOf()
+            return this
+        }
     }
 
     // --- Fields ---
@@ -181,7 +194,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         // Keep the pressure condition pointed at whoever is actually hostile right now. Slow interval:
         // this tracks diplomacy and market ownership, which move on the order of months.
         conditionSweepTimer.advance(days)
-        if (conditionSweepTimer.intervalElapsed()) maintainPressureConditions()
+        if (conditionSweepTimer.intervalElapsed()) {
+            maintainPressureConditions()
+            reconcileOrphans()
+        }
 
         // Re-derive the spawn cadence from config so a mid-save LunaLib frequency-slider change takes
         // effect — the manager (and its spawnTimer) persists across saves, so the construction-time
@@ -1294,6 +1310,44 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
     }
 
     /**
+     * Reconciliation backstop for a siege lost from tracking WITHOUT passing through [resolveSiege]
+     * or [tearDown] — the duplicate-manager corruption is the proven instance of that failure class.
+     * Every regular cleanup route reaches conditions and intel through the siege's own SiegeData, so
+     * a siege this manager no longer knows about would leave its pressure condition suppressing
+     * markets forever and its intel hanging in the feed as "active", with nothing ever able to reach
+     * either again. Sweeping from the world side instead — every conditioned market, every unresolved
+     * [SiegeIntel] — against the active-siege list converts any such failure into one that self-heals
+     * within a sweep interval. Same slow cadence as [maintainPressureConditions]; racing a regular
+     * resolution is harmless (removeCondition tolerates repeats, and resolve() is idempotent).
+     */
+    private fun reconcileOrphans() {
+        // A condition may legitimately exist only in a system under a BESIEGING or PLANETFALL siege
+        // (it is applied on arrival). Multiple concurrent sieges are possible via the console
+        // command, hence the set. Hidden markets are swept too: applyPressureCondition never
+        // conditions one, so a condition there is an orphan by definition.
+        val besiegedSystems = activeSieges
+            .filter { it.stage == SiegeData.Stage.BESIEGING || it.stage == SiegeData.Stage.PLANETFALL }
+            .map { it.targetSystem }
+            .toSet()
+        for (market in Global.getSector().economy.marketsCopy) {
+            if (!market.hasCondition(TahlanIDs.SIEGE_CONDITION_ID)) continue
+            if (market.starSystem in besiegedSystems) continue
+            try { market.removeCondition(TahlanIDs.SIEGE_CONDITION_ID) } catch (_: Exception) {}
+            LOG.info("Tahlan siege: reconciled an orphaned siege condition off ${market.name}")
+        }
+
+        // Intel matches against ANY live siege, unlike the condition pass: an INBOUND siege
+        // legitimately has live intel while its target system carries no conditions yet.
+        val activeSystems = activeSieges.map { it.targetSystem }.toSet()
+        for (intel in Global.getSector().intelManager.getIntel(SiegeIntel::class.java).filterIsInstance<SiegeIntel>()) {
+            if (intel.isResolved) continue
+            if (intel.besiegedSystem in activeSystems) continue
+            intel.resolve(SiegeIntel.SiegeOutcome.LIFTED)
+            LOG.info("Tahlan siege: reconciled an orphaned siege intel entry for ${intel.besiegedSystem.baseName}")
+        }
+    }
+
+    /**
      * One-time repair for saves made before [SiegeCondition] / [SiegeAftermathCondition] learned to
      * unapply their stat mods. `BaseMarketConditionPlugin.unapply()` is empty, so removing either
      * condition used to leave its flat accessibility/stability/hazard mods on the market forever.
@@ -1449,7 +1503,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
 
     private fun spawnEscortFleet(source: MarketAPI, fp: Float, siegeId: String): CampaignFleetAPI? {
         val params = FleetParamsV3(source, FleetTypes.PATROL_LARGE, fp, 0f, 0f, 0f, 0f, 0f, 0f)
-        val fleet = FleetFactoryV3.createFleet(params) ?: return null
+        val fleet = FleetFactoryV3.createFleet(params)
+        if (fleet == null || fleet.isEmpty) return null
         tagSiegeFleet(fleet, siegeId, fp, isCommand = false)
         source.primaryEntity.containingLocation.addEntity(fleet)
         fleet.setLocation(source.primaryEntity.location.x, source.primaryEntity.location.y)
@@ -1462,7 +1517,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         for (jp in siege.targetSystem.jumpPoints) {
             val params = FleetParamsV3(siege.sourceMarket, FleetTypes.PATROL_MEDIUM,
                 SiegeConfig.ESCORT_FP_BASE, 0f, 0f, 0f, 0f, 0f, 0f)
-            val fleet = FleetFactoryV3.createFleet(params) ?: continue
+            val fleet = FleetFactoryV3.createFleet(params)
+            if (fleet == null || fleet.isEmpty) continue
             tagSiegeFleet(fleet, siege.id, SiegeConfig.ESCORT_FP_BASE, isCommand = false)
             if (SiegeConfig.BLOCKADE_HOSTILE_TO_TRADERS) {
                 fleet.memoryWithoutUpdate.set(MemFlags.MEMORY_KEY_MAKE_HOSTILE_TO_ALL_TRADE_FLEETS, true)
@@ -1483,7 +1539,8 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         val raidTarget = (siege.primaryTargetMarket?.primaryEntity ?: siege.targetSystem.center) ?: return
         val fp = SiegeConfig.RAID_FP_BASE + SiegeConfig.RAID_FP_SCALE * SiegeConfig.intensityFactor(siege.intensity)
         val params = FleetParamsV3(siege.sourceMarket, FleetTypes.PATROL_LARGE, fp, 0f, 0f, 0f, 0f, 0f, 0f)
-        val fleet = FleetFactoryV3.createFleet(params) ?: return
+        val fleet = FleetFactoryV3.createFleet(params)
+        if (fleet == null || fleet.isEmpty) return
         tagSiegeFleet(fleet, siege.id, fp, isCommand = false)
 
         // Anchor on the command fleet (it holds station at a system fringe). Fall back to a jump
@@ -1497,7 +1554,10 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
         fleet.clearAssignments()
         fleet.addAssignment(FleetAssignment.RAID_SYSTEM, raidTarget, 30f,
             txt("siege_assign_raid").format(raidTarget.name))
-        fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, siege.sourceMarket.primaryEntity, 60f)
+        // 1000f is the effectively-unlimited travel sentinel every other despawn leg uses. A timed
+        // leg can expire mid-trip and strand the raider — it carries no AI script, so nothing would
+        // re-order it until dispersal.
+        fleet.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, siege.sourceMarket.primaryEntity, 1000f)
         fleet.addEventListener(SiegeFleetListener(siege.id, fp, isCommandFleet = false))
         siege.raidFleets.add(fleet)
     }
@@ -1719,15 +1779,18 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
      * Needs no per-stage handling, PLANETFALL included: [disperseFleets] covers a converged force the
      * same way it covers a blockading one, and [SiegeAssignmentAI] checks FLEET_RETURN_FLAG ahead of
      * its phase switch, so the return order wins over any planetfall order already in fleet memory.
+     *
+     * Also the wind-down for a pruned duplicate manager's sieges — see [getOrCreate], which passes
+     * its own [reason] so the log tells the two apart.
      */
-    fun tearDown() {
+    fun tearDown(reason: String = "feature disabled mid-save") {
         for (siege in activeSieges.toList()) {
             removePressureCondition(siege)
             siege.intel?.resolve(SiegeIntel.SiegeOutcome.LIFTED)
             disperseFleets(siege, keepCommandFleet = false)
         }
         activeSieges.clear()
-        LOG.info("Tahlan siege: torn down (feature disabled mid-save)")
+        LOG.info("Tahlan siege: torn down ($reason)")
     }
 
     // --- Console-command debug API (SiegeInfo / SiegeKill / SiegeStart) ---
@@ -1922,9 +1985,16 @@ class SiegeManager : BaseCampaignEventListener(true), EveryFrameScript {
                 managers.isEmpty() -> SiegeManager().also { sector.addScript(it) }  // ctor registers listener
                 else -> managers.maxByOrNull { it.activeSieges.size }!!             // richest = the real one
             }
-            // Prune stray duplicate managers (legacy corruption from the pre-fix duplicate-on-load bug).
+            // Prune stray duplicate managers (legacy corruption from the pre-fix duplicate-on-load
+            // bug). A dup is wound down via tearDown, not just dropped: both managers ran advance()
+            // blind to each other, so the dup can hold live sieges of its own — silently discarding
+            // those orphans their fleets, conditions and intel forever. If the dup besieged the same
+            // system as the survivor, tearDown may strip a condition the survivor legitimately
+            // tracks; that self-heals within one sweep, since maintainPressureConditions re-applies
+            // idempotently.
             for (dup in managers) {
                 if (dup !== mgr) {
+                    dup.tearDown("duplicate manager pruned")
                     sector.removeScript(dup)
                     sector.removeListener(dup)
                 }
