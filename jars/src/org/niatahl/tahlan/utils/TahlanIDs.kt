@@ -44,6 +44,17 @@ object TahlanIDs {
     const val ILLUSTRIOUS_CLUE2 = "\$tahlan_illustrious_clue2Gained"
     const val ILLUSTRIOUS_CLUE3 = "\$tahlan_illustrious_clue3Gained"
 
+    // Louisa Ferre's custom-bounty creators (DevilCustomBounty). These ids drive both the
+    // "<id>OfferDesc" rules trigger fired by BaseCustomBounty.callAction and the creators'
+    // per-person/global completion-count memory keys, so they are namespaced rather than left to
+    // BaseCustomBountyCreator's getClass().getSimpleName() default.
+    const val CB_LEGIO_DESERTER = "tahlan_CBLegioDeserter"
+    const val CB_LEGIO_PURGE = "tahlan_CBLegioPurge"
+    // CustomBountyData.customMap key holding the clean-kill verdict (Boolean). Sampled in
+    // DevilCustomBounty.reportBattleOccurred at the moment of the kill and read back when the
+    // completed intel entry is drawn; its presence also latches the one-shot bonus.
+    const val CB_CLEAN_KILL = "\$tahlan_cbCleanKill"
+
     // Traumtänzer salvage dilemma (capstone reward fork: ship XOR crew/Henrietta)
     // variant id of the placed derelict (see DerelictsSpawnScript)
     const val TRAUM_VARIANT = "tahlan_schneefall_traum_albtraum"

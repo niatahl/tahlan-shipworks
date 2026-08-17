@@ -239,6 +239,11 @@
 		"pkstrike_warning": "Long-range augurs flag a lone fleet on an odd heading, transponder broadcasting a clean independent registry. Something about it sits wrong.",
 		"pkstrike_revealed": "Close-range identification confirms it: the 'independent' fleet is flying false colors. It is Legio Infernalis.",
 		"pkstrike_struck": "%s is gone. A planetkiller has been detonated over the colony, and the Legio Infernalis have used the gift you gave them. There was nothing to recover.",
-		"pkstrike_averted": "The disguised Legio fleet is destroyed, and the planetkiller with it. You have bought time, nothing more. The Legio has tasted what you handed them, and sooner or later they will come for the rest."
+		"pkstrike_averted": "The disguised Legio fleet is destroyed, and the planetkiller with it. You have bought time, nothing more. The Legio has tasted what you handed them, and sooner or later they will come for the rest.",
+		"devilcb_deserter_fleetname": "Legio Deserter",
+		"devilcb_deserter_postfix": " - Legio Deserter",
+		"devilcb_purge_postfix": " - Internal Matter",
+		"devilcb_purge_clean": "The strike went unremarked. No transponder, no witnesses, nothing on the Legio's books but a detachment that stopped reporting in. Blackwatch pays the cleanup rate it quoted you, in full.",
+		"devilcb_purge_seen": "The strike was traced back to you. Whether it was your own transponder or another Legio crew watching from a safe distance, the Legio knows whose hand did this — and Blackwatch has kept back the part of the fee it set aside for tidying up after you."
 	}
 }

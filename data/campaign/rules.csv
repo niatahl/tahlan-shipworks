@@ -234,6 +234,39 @@ tahlan_CBRemnantDevil,CBRemnantOfferDesc,$id == tahlan_devil score:10,Highlight 
 $HeOrShe seems entirely unconcerned for your safety despite the well-known danger of dealing with remnant dronefleets and continues to flick through the data.
 
 ""The reward is a generous $bcb_reward credits, just get it done within $bcb_days days and everyone is happy.""",,
+tahlan_CBLegioDeserterDevil,tahlan_CBLegioDeserterOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Housekeeping,"" $heOrShe says, without looking up. ""One of ours decided the oath was optional and left with a hull that wasn't $bcb_targetHisOrHer to take. $bcb_TargetHeOrShe's calling $bcb_targetHimOrHer self a free captain now. Cute.""
+
+""Officially, $bcb_targetName stopped existing the day $bcb_targetHeOrShe ran. No file, no rank, no protection. Nobody is going to ask who did it and nobody is going to care. That is the whole appeal of the job.""
+
+""Last fix puts $bcb_targetHimOrHer in the $bcb_systemName, $bcb_dist light-years out. $bcb_reward credits, $bcb_days days. Bring me nothing, I only want it done.""",,
+tahlan_CBLegioPurgeDevil,tahlan_CBLegioPurgeOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"$HeOrShe closes the dossier before you can read the letterhead, and for once the smile is gone.
+
+""This one is still ours. Still on the rolls, still drawing a Legio ration, still saluted. That is precisely the problem, and it is not one I can solve with paperwork.""
+
+""$bcb_TargetHeOrShe is in the $bcb_systemName, $bcb_dist light-years from here, flying our colors. Kill $bcb_targetHimOrHer and the Legio will want to know who. If you are broadcasting when you do it, or if there's another of our crews close enough to read the engagement, they will find out — and I will be spending your money on burying it instead of paying you with it.""
+
+""So run dark and run alone. Transponder off, nobody watching. Do that and the fee stays whole: $bcb_reward credits, $bcb_days days, and rather more than that if the file simply goes quiet.""",,
+tahlan_CBTraderDevil,CBTraderOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""A haulier with opinions about who $heOrShe sells to,"" $heOrShe says, spinning a fleet disposition report across the table to you. ""We made $bcb_targetHimOrHer a fair offer. $bcb_TargetHeOrShe took it to a Hegemony liaison instead. Poor instincts.""
+
+""Customs is holding the fleet in the $bcb_systemName, $bcb_dist light-years out. Convenient, isn't it, how often that happens to people who disappoint us. The escort is not part of the arrangement, so mind it.""
+
+""$bcb_reward credits, and you have $bcb_days days before the inspection ends and $bcb_targetHeOrShe slips away thinking $bcb_targetHeOrShe won.""",,
+tahlan_CBPatrolDevil,CBPatrolOfferDesc,$id == tahlan_devil score:10,"SetTextHighlightColors $bcb_patrolFactionColor h h h
+Highlight $bcb_patrolFaction $bcb_dist $bcb_reward $bcb_days","""Oh, I like this one,"" $heOrShe grins, pulling up a service portrait of an officer in a pressed $bcb_patrolFaction uniform. ""Incorruptible. Do you know how rare that is? We tried money, we tried the other thing. $bcb_TargetHeOrShe filed a report on both.""
+
+""$bcb_TargetHeOrShe commands a patrol out of $bcb_targetMarketName in the $bcb_systemName, $bcb_dist light-years away. You'll find $bcb_targetHimOrHer near home, or a jump point, or fussing over some relay — $bcb_targetHeOrShe is very conscientious.""
+
+""$bcb_reward credits within $bcb_days days. Do try to make it look like the hazards of the profession.""",,
+tahlan_CBDerelictDevil,CBDerelictOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward $bcb_days,"""Domain drones,"" $heOrShe says, with the mild interest of someone reading a weather report. ""A whole swarm of them, awake and under way in the $bcb_systemName, $bcb_dist light-years from here. They are not supposed to be able to do that.""
+
+""Something out there is telling them where to go. I would love to know what. I would love rather more for it to stop happening in a lane we use.""
+
+""$bcb_reward credits, $bcb_days days. The pay is high because the things shoot back and because you are not going to mention this to anyone.""",,
+tahlan_CBRemnantPlusDevil,CBRemnantPlusOfferDesc,$id == tahlan_devil score:10,Highlight $bcb_dist $bcb_reward,"""Now this,"" $heOrShe says quietly, ""is the one I have been saving for someone with your particular disregard for consequences.""
+
+$HeOrShe brings up an image that is barely an image at all — a silhouette in false color, angular, wrong. ""Sighted with a Remnant fleet in the $bcb_systemName, $bcb_dist light-years out. It matches nothing in our archives, and our archives are better than the Hegemony's. Whatever it is, it is not left over from the AI Wars. It is newer than that.""
+
+""I am not sending a Legio detachment to find out what it does. I am sending you. $bcb_reward credits, no deadline — take as long as you need, or as long as you last.""",,
 ,,,,,,
 tahlan_devilDaemonCoreBlurb,tahlan_devilDaemonCore_blurb,,,"""I have some spare pieces of critical hardware that might be of use to you. Red, round and probably smarter than both of us combined, if you catch my drift.""",,
 tahlan_devilDaemonCoreOption,tahlan_devilDaemonCore_option,,,,tahlan_devilDaemonCore_start:Ask about the core,

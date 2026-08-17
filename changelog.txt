@@ -6,6 +6,11 @@
 - Ristreza variants
 	- Fixed built-in missiles having wrong stat block
 - Added new mission to Louisa Ferre
+- Louisa Ferre's bounty register expanded
+	- Wider spread of contract types on offer, so repeat visits stop repeating themselves
+	- She will now put you on Legio deserters — people the Legio has already written out of its own records, so nobody comes asking
+	- Earn her trust and she starts handing out the work Blackwatch actually does. It is not consequence-free, and she will tell you exactly how to keep it that way
+	- Doing that work for her is the fastest way into her good graces
 - Added Traumtänzer salvage dilemma
 - Added "Inheritor of the Lake" custom start (Secrets of the Frontier integration)
 - Rubicon system made more immersive
