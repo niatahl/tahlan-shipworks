@@ -88,7 +88,7 @@
       dev-mode testing (add a debug setter if none exists)
 - [x] 7.3 Build via IntelliJ MCP `build_project` (regenerates the committed jar) and fix any
       compile errors
-- [ ] 7.4 Dev-mode pass: force a siege, drive the meter to full, observe convergence / fleeing
+- [x] 7.4 Dev-mode pass: force a siege, drive the meter to full, observe convergence / fleeing
       defenders / station stand-down / countdown intel; verify decapitation mid-planetfall resolves
       instant BROKEN and timer completion transfers the market with occupation aftermath and only
       the flavored intel beat
